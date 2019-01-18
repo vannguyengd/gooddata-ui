@@ -13,7 +13,7 @@ See the [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0
 
 ## Dimensions
 
-### Structure
+### Structure of dimensions
 
 ```js
 // Type: IResultSpec
@@ -37,7 +37,7 @@ The `dimensions` field communicates the executor how the data is organized into 
 
 Each *item* consists of several *elements*. For example, the attribute 'Year' would have 2016, 2017, and so on. The same applies to `measureGroup`: its *elements* are the individual measures from the AFM. All these *elements* are sent in the `headerItems` property.
 
-### Examples
+### Examples of dimensions
 
 #### AFM with one measure (*Revenue*) and one attribute (*Year*)
 Data is needed in one dimension: a simple array.
@@ -183,7 +183,7 @@ For more examples, sign up to the Live Examples and watch the Network tab in you
 
 Optionally, you can define totals for each dimension. Totals are used to get aggregated data over several rows or columns of measure data.
 
-### Definition 
+### Definition of totals
 
 ```js
 totals: [
@@ -198,7 +198,7 @@ totals: [
 
 See the [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L110-L126).
 
-### Order of Totals
+### Order of totals
 
 The order of total items is `[sum, max, min, avg, med, nat]` and cannot be changed.
 
@@ -218,7 +218,7 @@ If you want to define a `nat` (native) total, make sure that it is in sync with 
 
 See [Table Totals in ExecutionObject](table_totals_in_execution_context.md).
 
-### Example
+### Example of totals
 
 ```js
 {
@@ -260,7 +260,7 @@ If the selected attributes, attribute values or measures are not available (for 
 
 Measures are always listed in the same order in which they were defined in the AFM. Sorting measures based on their value is currently *not* supported.
 
-### Structure
+### Structure of sorting
 
 ```js
 {
