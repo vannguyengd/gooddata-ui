@@ -21,7 +21,7 @@ Grand totals are totals that are computed for the measure in a whole column or r
 
 ### In 1st dimension
 
-![Grand Totals for Coluns](assets/GrandTotalsForColumns.png)
+![Grand Totals for Columns](assets/GrandTotalsForColumns.png)
 
 * **a1**, **a2** are attributes.
 * **m1** is a measure.

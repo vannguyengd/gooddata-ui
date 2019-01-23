@@ -38,7 +38,6 @@
       "create_new_visualization",
       "afm",
       "result_specification",
-      "table_totals_in_execution_object",
       "execute_component",
       "execution_rest_api_and_result"
     ],
@@ -51,6 +50,7 @@
       "model_helpers",
       "sso",
       "cors",
+      "table_totals",
       "data_layer",
       "filter_visual_components",
       "create_custom_attribute_filter",
