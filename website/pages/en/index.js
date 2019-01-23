@@ -202,7 +202,7 @@ const CodeExample2 = () => (
 );
 
 const InstallationExample1 =  (
-  <pre className="exampleCode">
+  <pre className="exampleCode" key="InstallationExample1">
     <code className="hljs highlighting">
       <span className="hljs-comment">// optional - see <a href="https://yarnpkg.com/lang/en/docs/install/">how to install yarn</a>, or <a href="https://docs.npmjs.com/cli/install">npm</a>.</span><br/>
       <span className="hljs-literal">$ yarn</span> global add <span className="hljs-type">create-react-app</span><br/>
