@@ -66,7 +66,7 @@ const attributes = [
 
 ## Totals
 
-You can display rows with aggregated measure data using the `totals` prop. For more information see [Specify Table Totals](table_totals.md).
+You can display rows with aggregated measure data using the `totals` prop. For more information, see [Specify Table Totals](table_totals.md).
 
 ## Properties
 
