@@ -16,7 +16,7 @@ You can display rows with aggregated measure data in both Table and Pivot Table 
 | Minimum | supported | supported | Smallest value |
 | Average | supported | supported | Average value |
 | Median | supported | supported | Middle value |
-| Rollup | supported | not supported | Sum of unique values |
+| Rollup | supported | not supported | Sum (or another type of aggregation) of pre-aggregated (raw) values; see [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data) |
 
 ## Column grand total
 
