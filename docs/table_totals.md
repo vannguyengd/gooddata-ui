@@ -20,8 +20,9 @@ You can display rows with aggregated measure data in both Table and Pivot Table 
 
 ## Column grand total
 
-A column grand total aggregates data for all values in a column and displays it in the row pinned to the bottom of the table. It is defined by the local identifiers of a measure and the first row attribute.
-Totals cannot be calculated for the tables without row attributes or for the tables without measures. A pivot table with column attributes shows totals for all columns with the specified measure.
+A column grand total aggregates data for all values in a column and displays it in the row pinned to the bottom of the table. The column grand total is defined by the local identifiers of a measure and the first row attribute.
+
+Totals cannot be calculated for tables without row attributes or for tables without measures. A pivot table with column attributes shows totals for all columns with the specified measure.
 
 **NOTE:** Although the Execute component supports both grand totals and sub totals on any dimension, the Table and Pivot Table components support only grand totals on rows.
 
