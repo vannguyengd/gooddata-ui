@@ -88,7 +88,7 @@ The **object identifier** is a reference to a project object. The object identif
 Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the **same** object identifier in **any** of those projects.
 
 #### Measure definition
-You can find full TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.4.2/src/AFM.ts#L30).
+You can find full TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.6.0/src/VisualizationObject.ts#L94).
 
 ```ts
 IMeasure = {
@@ -150,7 +150,7 @@ For more information about the derived measures, see [Time Over Time Comparison]
 For more information about the arithmetic measures, see [Arithmetic Measure](arithmetic_measure.md).
 
 #### Attribute definition
-You can find full TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.3.0/src/AFM.ts#L23).
+You can find full TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.6.0/src/VisualizationObject.ts#L104).
 
 ```ts
 IVisualizationAttribute = {
