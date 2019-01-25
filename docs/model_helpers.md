@@ -128,7 +128,7 @@ In addition to the common measure builder methods, `measure` also has the follow
 
 * `filters(...filters)` for setting up measure filters (you can also use [filter helpers](#filter-helpers) for creating filter objects)
 * `aggregation(aggregationType)` for setting the measure aggregation type (`sum`, `max`, and so on)
-* `ratio()` for setting the `computeRatio` flag to `true`
+* `ratio()` for setting the `computeRatio` flag to `true` (to display the measure value as a percentage instead of a number)
 
 ### arithmeticMeasure helper
 

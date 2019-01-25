@@ -22,7 +22,9 @@ The following arithmetic operations are supported:
 | Ratio | `ratio` |  =A÷B | = gross profit / net sales
 | Change | `change` |  =(A-B)÷B | = (this month revenue - last month revenue) / last month revenue
 
-By default, the result data is returned in the following format: `#,##0.00`
+By default, the result data of a `change` operation is returned as a percentage in the `#,##0.00%` format. The format cannot be overridden. 
+
+All the other operations return data in the default `#,##0.00` format. 
 To change the format, use the `format` attribute of the measure (see the [examples](#examples)).
 
 ## Arithmetic measure structure
@@ -104,8 +106,7 @@ const measures = [
 
 ### Calculation with a derived measure (percentage change between two years)
 
-The result of a `change` operation is returned as a raw value in the default `#,##0.00` format. 
-To display the value as a percentage, change the default arithmetic measure format to `#,##0.00%`.
+The result of a `change` operation is returned as a percentage value in the default `#,##0.00%` format. 
 
 ```jsx harmony
 const measures = [
@@ -143,7 +144,6 @@ const measures = [
                 operator: 'change'
             }
         },
-        format: '#,##0.00%',
         alias: 'Change between the previous and the current year'
     }
 ];
@@ -154,7 +154,7 @@ const measures = [
 />
 ```
 
-### Calculation with an arithmetic measure
+### Calculation with an arithmetic measure and format override
 
 ````jsx harmony
 const measures = [
@@ -209,7 +209,8 @@ const measures = [
                 operator: 'difference'
             }
         },
-        alias: 'Difference of sold product A and B vs C'
+        format: '#,##0.00%',
+        alias: 'Difference of sold product A and B vs C returned as percentage'
     }
 ];
 
