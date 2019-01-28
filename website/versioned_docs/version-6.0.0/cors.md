@@ -35,6 +35,9 @@ module.exports = function (app) {
          "headers": {
              "host": "secure.gooddata.com",
              "origin": null
+         },
+         "onProxyReq": function(proxyReq, req, res) {
+             proxyReq.setHeader('accept-encoding', 'identity')
          }
      }));
      app.use(proxy("/*.html", {
