@@ -12,6 +12,8 @@ After you complete this tutorial, you will be able to display various measures 
 
 **NOTE:** Before you start this tutorial, make sure that you have a GoodData account (see [About GoodData.UI](about_gooddataui.md#supported-technologies)).
 
+**NOTE:** We use `yarn` dependency manager in this tutorial. To install it, follow its [`documentation`](https://yarnpkg.com/lang/en/docs/install/).
+
 ## Step 1. Get create-react-app
 
 Run the following command from the command line:
@@ -42,7 +44,7 @@ This command installs the `create-react-app` tool that will help you create a fu
 Run the following command from the command line:
 
 ```bash
-yarn add @gooddata/react-components
+yarn add @gooddata/react-components node-sass
 ```
 
 This command adds the latest `@gooddata/react-components` to the list of your project dependencies in `package.json` and downloads all required packages.
@@ -63,6 +65,9 @@ module.exports = function (app) {
          "headers": {
              "host": "secure.gooddata.com",
              "origin": null
+         },
+         "onProxyReq": function(proxyReq, req, res) {
+             proxyReq.setHeader('accept-encoding', 'identity')
          }
      }));
      app.use(proxy("/*.html", {
@@ -122,7 +127,36 @@ Now, you can start adding your first GoodData component:
     ```javascript
     import '@gooddata/react-components/styles/css/main.css';
     ```
-4. Add a simple line chart by appending the following lines in the `render()` method:
+4. Add a simple line chart:
+
+    4a. Define measures and attributes.
+    ```javascript
+    const measures = [
+        {
+            measure: {
+                localIdentifier: 'franchiseFeesIdentifier',
+                definition: {
+                    measureDefinition: {
+                        item: {
+                            identifier: 'aaEGaXAEgB7U'
+                        }
+                    }
+                },
+                format: '#,##0'
+            }
+        }
+    ];
+
+    const attribute = {
+        visualizationAttribute: {
+            displayForm: {
+                identifier: 'date.abm81lMifn6q'
+            },
+            localIdentifier: 'month'
+        }
+    };
+    ```
+    4b. Append the following lines in the `render()` method:
     ```javascript
     <div style={{ height: 300 }}>
       <LineChart
@@ -135,7 +169,7 @@ Now, you can start adding your first GoodData component:
       />
     </div>
     ```
-    > This example uses the project ID from the [live examples](https://gooddata-examples.herokuapp.com/). If you want to use this code in your project, replace the properties with the appropriate values from your project. For more details, see [Line Chart](line_chart_component.md).
+    > This example uses the project ID and measure/attribute identifiers from the [live examples](https://gooddata-examples.herokuapp.com/). If you want to use this code in your project, replace the properties with the appropriate values from your project. For more details, see [Line Chart](line_chart_component.md).
 5. Save the changes. The content of your `App.js` file should now look something like the following example:
     ```javascript
     import React, { Component } from 'react';
