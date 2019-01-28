@@ -22,7 +22,9 @@ The following arithmetic operations are supported:
 | Ratio | `ratio` |  =A÷B | = gross profit / net sales
 | Change | `change` |  =(A-B)÷B | = (this month revenue - last month revenue) / last month revenue
 
-By default, the result data is returned in the following format: `#,##0.00`
+By default, the result data of a `change` operation is returned as a percentage in the `#,##0.00%` format. The format cannot be overridden. 
+
+All the other operations return data in the default `#,##0.00` format. 
 To change the format, use the `format` attribute of the measure (see the [examples](#examples)).
 
 ## Arithmetic measure structure
@@ -44,7 +46,7 @@ To add an arithmetic measure to a visualization, use the following `IArithmeticM
 }
 ````
 
-For the full TypeScript definition, see [this code section](https://github.com/gooddata/gooddata-typings/blob/v2.4.2/src/AFM.ts#L46).
+For the full TypeScript definition, see [this code section](https://github.com/gooddata/gooddata-typings/blob/v2.6.0/src/VisualizationObject.ts#L121).
 
 An arithmetic measure can reference the following as its operand:
 * Simple measures
@@ -63,7 +65,7 @@ const measures = [
     {
         localIdentifier: 'boughtProductsLocalIdentifier',
         definition: {
-            measure: {
+            measureDefinition: {
                 item: {
                     identifier: 'boughtProductsIdentifier'
                 }
@@ -75,7 +77,7 @@ const measures = [
     {
         localIdentifier: 'soldProductsLocalIdentifier',
         definition: {
-            measure: {
+            measureDefinition: {
                 item: {
                     identifier: 'soldProductsIdentifier'
                 }
@@ -104,8 +106,7 @@ const measures = [
 
 ### Calculation with a derived measure (percentage change between two years)
 
-The result of a `change` operation is returned as a raw value in the default `#,##0.00` format. 
-To display the value as a percentage, change the default arithmetic measure format to `#,##0.00%`.
+The result of a `change` operation is returned as a percentage value in the default `#,##0.00%` format. 
 
 ```jsx harmony
 const measures = [
@@ -113,7 +114,7 @@ const measures = [
     {
         localIdentifier: 'spDerivedMeasureLocalIdentifier',
         definition: {
-            popMeasure: {
+            popMeasureDefinition: {
                 measureIdentifier: 'spMasterMeasureLocalIdentifier',
                 popAttribute: {
                     identifier: 'attributeDisplayFormYearIdentifier'
@@ -126,7 +127,7 @@ const measures = [
     {
         localIdentifier: 'spMasterMeasureLocalIdentifier',
         definition: {
-            measure: {
+            measureDefinition: {
                 item: {
                     identifier: 'measureIdentifier'
                 }
@@ -143,7 +144,6 @@ const measures = [
                 operator: 'change'
             }
         },
-        format: '#,##0.00%',
         alias: 'Change between the previous and the current year'
     }
 ];
@@ -154,14 +154,14 @@ const measures = [
 />
 ```
 
-### Calculation with an arithmetic measure
+### Calculation with an arithmetic measure and format override
 
 ````jsx harmony
 const measures = [
     {
         localIdentifier: 'soldProductA_localIdentifier',
         definition: {
-            measure: {
+            measureDefinition: {
                 item: {
                     identifier: 'soldProductA_identifier'
                 }
@@ -172,7 +172,7 @@ const measures = [
     {
         localIdentifier: 'soldProductB_localIdentifier',
         definition: {
-            measure: {
+            measureDefinition: {
                 item: {
                     identifier: 'soldProductB_identifier'
                 }
@@ -183,7 +183,7 @@ const measures = [
     {
         localIdentifier: 'soldProductC_localIdentifier',
         definition: {
-            measure: {
+            measureDefinition: {
                 item: {
                     identifier: 'soldProductC_identifier'
                 }
@@ -209,7 +209,8 @@ const measures = [
                 operator: 'difference'
             }
         },
-        alias: 'Difference of sold product A and B vs C'
+        format: '#,##0.00%',
+        alias: 'Difference of sold product A and B vs C returned as percentage'
     }
 ];
 

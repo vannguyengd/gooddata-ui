@@ -84,7 +84,7 @@ Measures inside an AFM are represented by an array of the following objects, eac
         }
     },
     alias: 'Custom measure title',  // Optional; overrides the default measure title
-    format: '#,##0.00'  // Optional; overrides the default measure format
+    format: '#,##0.00'  // Optional; overrides the default measure format; ignored in some special cases, see the sections below
 }
 
 ```
@@ -119,7 +119,7 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 | Type | Description |
 | :--- | :--- |
 | `'sum'` | Returns a sum of all numbers in the set |
-| `'count'` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter |
+| `'count'` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter  (ignores the measure's `format` value and uses the default value `#,##0` instead) |
 | `'avg'` | Returns the average value of all numbers in the set; null values are ignored |
 | `'min'` | Returns the minimum value of all numbers in the set |
 | `'max'` | Returns the maximum value of all numbers in the set |
@@ -140,6 +140,8 @@ Only one filter of the `DateFilter` type is allowed in the measure's filter de
 When an AFM is executed on the GoodData platform, the result measure data is, by default, returned as raw values \(numbers\).
 
 If you want the measures data to be displayed as a percentage instead, add a `computeRatio` property and set it to `true`.
+
+When the property is enabled, the measure's `format` value is ignored. The default format `#,##0.00%` is used instead.
 
 When `computeRatio` is not specified, it defaults to `false`, and values from execution are displayed as numbers.
 

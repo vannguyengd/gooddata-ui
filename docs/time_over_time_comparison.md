@@ -13,25 +13,27 @@ You can compare data to:
 * The same period previous year
 * The previous period
 
+> We do not recommend that you create a derived measure from an [arithmetic measure](arithmetic_measure.md) that refers to another derived measure. The resulting derived measure may be hard to interpret.
+
 ## Comparing to the same period (SP) previous year
  
 **Time shift**: -1 year
 
 **Period**: 1 year
  
-To add a SP derived measure to a visualization, use the following `PopMeasureDefinition` structure (for the full TypeScript definition, see [this code section](https://github.com/gooddata/gooddata-typings/blob/v2.3.0/src/AFM.ts#L42)):
+To add a SP derived measure to a visualization, use the following `PopMeasureDefinition` structure (for the full TypeScript definition, see [this code section](https://github.com/gooddata/gooddata-typings/blob/v2.6.0/src/VisualizationObject.ts#L128)):
  
  ```javascript
 // Type: IMeasure 
 {        
-     localIdentifier: '<sply-derived-measure-local-identifier>',
+     localIdentifier: '<sp-derived-measure-local-identifier>',
      // Type: IPopMeasureDefinition
      definition: { 
-         popMeasure: {
+         popMeasureDefinition: {
              measureIdentifier: '<master-measure-local-identifier>', // a reference to localIdentifier of the master measure
              // Type: IObjUriQualifier
              popAttribute: { 
-                 uri: '<attribute-displayForm-year-uri>' // or identifier: '<attribute-displayForm-year-identifier>', defines both shift and period, currently supports a year only
+                 uri: '<attribute-year-uri>' // or `identifier: '<attribute-year-identifier>'`, defines both shift and period, currently supports a year only
              }
          }
      }
@@ -46,10 +48,10 @@ const measures = [
     {
         localIdentifier: 'spDerivedMeasureLocalIdentifier',
         definition: {
-            popMeasure: {
+            popMeasureDefinition: {
                 measureIdentifier: 'spMasterMeasureLocalIdentifier',
                 popAttribute: {
-                    identifier: 'attributeDisplayFormYearIdentifier'
+                    identifier: 'attributeYearIdentifier'
                 }
             }
         }
@@ -58,7 +60,7 @@ const measures = [
     {
         localIdentifier: 'spMasterMeasureLocalIdentifier',
         definition: {
-            measure: {
+            measureDefinition: {
                 item: {
                     identifier: 'measureIdentifier'
                 }
@@ -79,7 +81,7 @@ const measures = [
 
 **Period**: defined by global [date filters](filter_visual_components.html#date-filter) referenced by the date data set URI or identifier in the derived measure definition (if no global date filter is defined, the derived measure returns the same data as the master measure)
 
-To add a PP derived measure to a visualization, use the following `PreviousPeriodMeasureDefinition` structure  (for the full TypeScript definition, see [this code section](https://github.com/gooddata/gooddata-typings/blob/v2.3.0/src/AFM.ts#L46)):
+To add a PP derived measure to a visualization, use the following `PreviousPeriodMeasureDefinition` structure (for the full TypeScript definition, see [this code section](https://github.com/gooddata/gooddata-typings/blob/v2.6.0/src/VisualizationObject.ts#L135)):
 
 ```javascript
 // Type: IMeasure 
@@ -95,7 +97,7 @@ To add a PP derived measure to a visualization, use the following `PreviousPerio
                 {    
                     // Type: IObjUriQualifier
                     dataSet: { 
-                         uri: '<global-filter-date-data-set-uri>' // or identifier: '<global-filter-date-data-set-identifier>'
+                         uri: '<global-filter-date-data-set-uri>' // or `identifier: '<global-filter-date-data-set-identifier>'`
                     },
                     periodsAgo: 1 // the number of periods the data is shifted back to, currently only the value "1" is supported
                 }       
@@ -130,7 +132,7 @@ const measures = [
     {
         localIdentifier: 'ppMasterMeasureLocalIdentifier',
         definition: {
-            measure: {
+            measureDefinition: {
                 item: {
                     identifier: 'measureIdentifier'
                 }
