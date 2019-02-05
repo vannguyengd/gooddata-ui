@@ -31,9 +31,9 @@ import { PivotTable } from '@gooddata/react-components';
 
 ## Examples
 
-The following code sample shows arrangement for a typical pivot table.
-
 ### Pivot table
+
+The following code sample shows an arrangement for a typical pivot table.
 
 ```jsx
 const measures = [
@@ -86,7 +86,7 @@ const rows = [
 
 ### Flat table
 
-You can also use the pivot table component to create a regular, flat, table.
+You can also use the pivot table component to create a regular (flat) table.
 
 ```jsx
 const measures = [
@@ -130,7 +130,7 @@ const rows = [
 
 You can [sort](result_specification.md#sorting) rows and attribute columns in any pivot table. Measures are always listed in the same order in which they were defined in the ```measures``` prop.
 
-**Important!** Sorting must be applied to any column attribute that is used in the pivot table. For example, in the table above, you apply sorting to both the Franchise Fees (measure) and the Date (column attribute)
+**Important!** Sorting must be applied to any column attribute that is used in the pivot table. For example, in the table above, you apply sorting to both the Franchise Fees (measure) and the Date (column attribute).
 
 ### Example: Sorting by measure
 
@@ -173,6 +173,37 @@ const sortBy = [
 
 You can display rows with aggregated measure data using the `totals` prop. For more information, see [Specify Table Totals](table_totals.md).
 
+Alternatively, you can enable the menu through which you can turn on the totals. For more information, see [Configuration menu](#Configuration-menu).
+
+![Pivot Table Menu Totals](assets/pivot_table_menu_totals.png "Pivot Table Menu Totals")
+
+## Configuration menu
+
+You can configure the following settings:
+* Separators used when formatting numbers. See [Change a separator in the number format](chart_config.md#Change-a-separator-in-the-number-format).
+* Menu items. Currently, only the totals are supported.
+
+```jsx
+const config = {
+    menu: {
+        aggregations: true
+    },
+    separators: {
+        thousand: ',',
+        decimal: '.'
+    }
+};
+
+<PivotTable
+    projectId={projectId}
+    measures={measures}
+    rows={rows}
+    columns={columns}
+    sortBy={sortBy}
+    config={config}
+/>
+```
+
 ## Properties
 
 | Name | Required? | Type | Description |
@@ -183,7 +214,7 @@ You can display rows with aggregated measure data using the `totals` prop. For m
 | columns | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions that breaks measure data into columns (either measures, or rows, or columns must be provided for the pivot table to render properly) |
 | totals | false | [Total[]](table_totals.md) | An array of total definitions |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
-| config | false | [ChartConfig](chart_config.md) | The configuration object |
+| config | false | [ConfigObject](#Configuration-menu) | The configuration object |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | [DrillableItem[]](drillable_item.md) | An array of points and attribute values to be drillable. |
