@@ -9,14 +9,14 @@ You can display rows with aggregated measure data in both Table and Pivot Table 
 
 ## Supported aggregation functions
 
-| Function | Table component | Pivot Table component | Description |
-| :--- | :--- | :--- | :--- |
-| Sum | supported | supported | Sum of values |
-| Maximum | supported | supported | Largest value |
-| Minimum | supported | supported | Smallest value |
-| Average | supported | supported | Average value |
-| Median | supported | supported | Middle value |
-| Rollup | supported | not supported | Sum (or another type of aggregation) of pre-aggregated (raw) values; see [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data) |
+| Function | Description |
+| :--- | :--- |
+| Sum | Sum of values |
+| Maximum | Largest value |
+| Minimum | Smallest value |
+| Average | Average value |
+| Median | Middle value |
+| Rollup | Sum (or another type of aggregation) of pre-aggregated (raw) values; see [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data) |
 
 ## Column grand total
 
