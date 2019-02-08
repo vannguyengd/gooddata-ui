@@ -48,7 +48,7 @@ const measure = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| primaryMeasure | true | Measure | A measure definition |
+| primaryMeasure | true | [Measure](afm.md#measure) | A measure definition |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | [DrillableItem[]](drillable_item.md) | An array of points and attribute values to be drillable. |

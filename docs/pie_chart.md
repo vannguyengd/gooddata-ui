@@ -82,8 +82,8 @@ const measures = [
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| measures | true | Measure[] | An array of measure definitions |
-| viewBy | false | Attribute | An attribute definition |
+| measures | true | [Measure[]](afm.md#measure) | An array of measure definitions |
+| viewBy | false | [Attribute](afm.md#attribute) | An attribute definition |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | config | false | [ChartConfig](chart_config.md) | The chart configuration object |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |

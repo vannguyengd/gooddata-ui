@@ -102,10 +102,10 @@ const viewBy = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | false | string | The project ID |
-| xAxisMeasure | false | Measure | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the bubble chart to render properly) |
-| yAxisMeasure | false | Measure | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the bubble chart to render properly) |
-| size | false | Measure | A measure definition that determines the size of the bubbles |
-| viewBy | false | Attribute | An attribute definition |
+| xAxisMeasure | false | [Measure](afm.md#measure) | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the bubble chart to render properly) |
+| yAxisMeasure | false | [Measure](afm.md#measure) | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the bubble chart to render properly) |
+| size | false | [Measure](afm.md#measure) | A measure definition that determines the size of the bubbles |
+| viewBy | false | [Attribute](afm.md#attribute) | An attribute definition |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | config | false | [ChartConfig](chart_config.md) | The chart configuration object |
