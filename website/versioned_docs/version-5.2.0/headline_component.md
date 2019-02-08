@@ -89,8 +89,8 @@ const secondaryMeasure = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| primaryMeasure | true | Measure | The definition of the primary measure |
-| secondaryMeasure | false | Measure | The definition of the secondary measure |
+| primaryMeasure | true | [Measure](afm.md#measure) | The definition of the primary measure |
+| secondaryMeasure | false | [Measure](afm.md#measure) | The definition of the secondary measure |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | [DrillableItem[]](drillable_item.md) | An array of points and attribute values to be drillable. |
