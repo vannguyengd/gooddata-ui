@@ -21,9 +21,11 @@ class Footer extends React.Component {
             <a href="https://www.npmjs.com/package/@gooddata/react-components" target="_blank" className="social-button npm">NPM</a>
           </div>
         </section>
-        <section className="copyright wrapper">
-          Copyright &copy; 2007–{currentYear} GoodData Corporation. All Rights Reserved.
-          Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE">CC BY-NC 4.0 for trial experience and GoodData.UI EULA for commercial use.</a>.
+        <section className="copyright">
+          <div className="wrapper">
+            Copyright &copy; 2007–{currentYear} GoodData Corporation. All Rights Reserved.
+            Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE">CC BY-NC 4.0 for trial experience and GoodData.UI EULA for commercial use.</a>.
+          </div>
         </section>
       </footer>
     );
