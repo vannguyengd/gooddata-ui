@@ -43,7 +43,7 @@ This command installs the `create-react-app` tool that will help you create a fu
 Run the following command from the command line:
 
 ```bash
-yarn add @gooddata/react-components node-sass
+yarn add @gooddata/react-components
 ```
 
 This command adds the latest `@gooddata/react-components` to the list of your project dependencies in `package.json` and downloads all required packages.
