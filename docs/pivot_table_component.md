@@ -173,18 +173,28 @@ const sortBy = [
 
 You can display rows with aggregated measure data using the `totals` prop. For more information, see [Specify Table Totals](table_totals.md).
 
-Alternatively, you can enable the menu through which you can turn on the totals. For more information, see [Configuration menu](#Configuration-menu).
+Alternatively, you can enable the menu through which you can turn on the totals. For more information, see [Configuration menu](#configuration-menu).
 
 ![Pivot Table Menu Totals](assets/pivot_table_menu_totals.png "Pivot Table Menu Totals")
+
+## Maximum height
+
+By default, the maximum hight is not specified, and the pivot table fills the whole container. If there is still some empty space within the container after all the rows have been displayed, and the table has a total specified, a gap may appear between the data and the total because the total row sticks to the bottom.
+
+To avoid this gap, specify the maximum height of the table using the `maxHeight` prop. With the `maxHeight` set, the table is displayed as small as possible while not expanding beyond the `maxHeight` limit, thus avoiding the gap. For more information, see [Configuration menu](#configuration-menu).
+
+**NOTE:** The `maxHeight` must be specified in pixels. If you want your table to be responsive, consider using [react-measure](https://github.com/souporserious/react-measure) to derive the `maxHeight` value dynamically.
 
 ## Configuration menu
 
 You can configure the following settings:
 * Separators used when formatting numbers. See [Change a separator in the number format](chart_config.md#Change-a-separator-in-the-number-format).
 * Menu items. Currently, only the totals are supported.
+* Maximum height. See [Maximum height](#maximum-height).
 
 ```jsx
 const config = {
+    maxHeight: 800,
     menu: {
         aggregations: true
     },
@@ -214,7 +224,7 @@ const config = {
 | columns | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions that breaks measure data into columns (either measures, or rows, or columns must be provided for the pivot table to render properly) |
 | totals | false | [Total[]](table_totals.md) | An array of total definitions |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
-| config | false | [ConfigObject](#Configuration-menu) | The configuration object |
+| config | false | [ConfigObject](#configuration-menu) | The configuration object |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | [DrillableItem[]](drillable_item.md) | An array of points and attribute values to be drillable. |
