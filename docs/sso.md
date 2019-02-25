@@ -12,7 +12,7 @@ Depending on whether SSO is implemented on your site, you can use one of the fol
 ## Prerequisites
 Before you start, verify that your site meets the following requirements:
 * Cross-Origin Resource Sharing (CORS) is set up. The URL where your analytical application runs is whitelisted in the CORS settings.
-    
+
     If CORS is not set up, contact [GoodData Support](https://support.gooddata.com/hc/en-us/requests/new?ticket_form_id=582387) and request them to set up CORS and whitelist the URL where your analytical application runs in the CORS settings. Optionally, ask them to enable cross-origin redirects to sites allowed by your CORS settings.
 * All your users have a GoodData account and have access to your GoodData project.
 
@@ -36,7 +36,7 @@ This is how authentication process works:
 You do not have to perform any steps for authentication to start working. It is automatically enabled as long as the [prerequisites](#Prerequisites) are met.
 
 This is how authentication process works:
-1. The user goes to the URL where your analytical application runs. For example: 
+1. The user goes to the URL where your analytical application runs. For example:
 
     `https://my.app.com/`
 2. Your application verifies whether the user is logged in. For example:
@@ -49,11 +49,9 @@ This is how authentication process works:
 
         sdk.user.isLoggedIn().then((isLogged) => {
           if (isLogged) {
-            ReactDOM.render(
-             <App />,
-              document.getElementById('root')
-            );
+            // write your own application logic for logged-in users here
           } else {
+            // redirect to the login page providing the URL to redirect to upon a successful login
             window.location.replace(`${domain}/account.html?lastUrl=${encodeURIComponent(window.location)}`);
           }
         };
@@ -64,7 +62,7 @@ This is how authentication process works:
     `https://my.company.com/account.html?lastUrl=https://my.app.com/`
 4. The user logs in to the GoodData Portal.
 5. If authentication is successful, the GoodData Portal redirects the user back to the URL where your analytical application runs:
-    
+
     `https://my.app.com/`
 
 ### Grant users access to your project
@@ -76,8 +74,8 @@ To do so, follow these steps:
 1. Customize the link in the invitation email: set the `invitationWelcomePage` platform setting to the URL where your application runs. For example:
 
     `"invitationWelcomePage": "https://my.app.com"`
-     
+
     For more information, see [Platform Settings](https://help.gooddata.com/display/doc/Platform+Settings) and the [API for updating the platform settings](https://help.gooddata.com/display/doc/API+Reference#/reference/hierarchical-configuration).
 2. Invite the users to your GoodData project via the [GoodData Portal](https://help.gooddata.com/display/doc/Managing+Users+in+Projects).
-   
+
     The link in the invitation email will redirect an invited user to the URL where your application runs. The users with no GoodData account will additionally be asked to  create a GoodData account.
