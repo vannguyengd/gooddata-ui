@@ -1,0 +1,2 @@
+pull-request:
+  - cd website && yarn build
