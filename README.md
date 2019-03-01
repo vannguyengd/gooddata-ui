@@ -19,6 +19,6 @@ This repository contains the source code of the [documentation](https://sdk.good
 
 ## License
 
-(C) 2007-2018 GoodData Corporation
+(C) 2007-2019 GoodData Corporation
 
 For more information, please see [LICENSE](LICENSE)
