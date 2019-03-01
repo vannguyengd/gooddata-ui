@@ -1,4 +1,4 @@
 before:
   - ci-yarn-install
 pull-request:
-  - yarn build 2>&1 | tee ./ci/results/docusaurus-build-result.txt
+  - mkdir -p ./ci/results/ && yarn build 2>&1 | tee ./ci/results/docusaurus-build-result.txt
