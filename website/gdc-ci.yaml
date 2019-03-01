@@ -1,0 +1,4 @@
+before:
+  - ci-yarn-install
+pull-request:
+  - yarn build
