@@ -7,7 +7,7 @@ id: area_chart_component
 
 Area chart shows data as an area under a line intersecting dots. It can display either multiple measures as different areas or a single measure split by one attribute into multiple areas with points intersecting attribute values.
 
-Areas stack by default. Alternatively, areas can overlap if config is set to ```{ stacking: false }```.
+Areas stack by default. Alternatively, areas can overlap if config is set to ```{ stackMeasures: false }```.
 
 ![Area Chart Component](assets/area_chart.png "Area Chart Component")
 
@@ -68,9 +68,9 @@ const attribute = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| measures | true | [Measure[]](afm.md#measure) | An array of measure definitions |
-| viewBy | false | [Attribute](afm.md#attribute) | Attribute definition |
-| stackBy | false | [Attribute](afm.md#attribute) | Attribute definition |
+| measures | true | [Measure[]](afm.md#measure) | An array of measure definitions. If `viewBy` has two attributes, only the first measure is used. |
+| viewBy | false | [Attribute[]](afm.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the second attribute slices the measure horizontally, and the areas are always overlapped regardless of what `stackBy` is set to. |
+| stackBy | false | [Attribute](afm.md#attribute) | An attribute definition. `stackBy` is ignored if `viewBy` has two attributes. |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | config | false | [ChartConfig](chart_config.md) | The chart configuration object |
