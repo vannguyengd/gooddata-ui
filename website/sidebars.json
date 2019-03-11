@@ -31,6 +31,7 @@
       "drillable_item",
       "error_component",
       "loading_component",
+      "on_export_ready",
       "on_legend_ready",
       "on_fire_drill_event"
     ],

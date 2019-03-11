@@ -89,6 +89,8 @@
     "Migration guide to v6.x.x": "Migration guide to v6.x.x",
     "model_helpers": "Model Helpers",
     "Model Helpers": "Model Helpers",
+    "on_export_ready": "OnExportReady",
+    "OnExportReady": "OnExportReady",
     "on_fire_drill_event": "OnFireDrillEvent",
     "OnFireDrillEvent": "OnFireDrillEvent",
     "on_legend_ready": "OnLegendReady",

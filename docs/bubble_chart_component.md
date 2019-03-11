@@ -113,8 +113,9 @@ const viewBy = {
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 | ErrorComponent | false | Component | A component to be rendered if this component is in error state |
 | LoadingComponent | false | Component | A component to be rendered if this component is in loading state |
-| onError | false | Function | A callback when component updates its error state |
-| onLoadingChanged | false | Function | A callback when component updates its loading state |
+| onError | false | Function | A callback when the component updates its error state |
+| onExportReady | false | Function | A callback when the component is ready for exporting its data |
+| onLoadingChanged | false | Function | A callback when the component updates its loading state |
 
 <!-- These internals are intentionally undocumented
 | afterRender | false | Function | A callback after component is rendered |
