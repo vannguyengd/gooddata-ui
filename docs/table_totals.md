@@ -24,8 +24,6 @@ A column grand total aggregates data for all values in a column and displays it 
 
 Totals cannot be calculated for tables without row attributes or for tables without measures. A pivot table with column attributes shows totals for all columns with the specified measure.
 
-**NOTE:** Although the Execute component supports both grand totals and sub totals on any dimension, the Table and Pivot Table components support only grand totals on rows.
-
 **Example:**
 
 ![Grand Totals for Columns](assets/pivot_table_totals.png)
@@ -88,6 +86,90 @@ return (
             measures={measures}
             columns={columns}
             rows={rows}
+            totals={totals}
+        />
+    </div>
+);
+```
+
+## Subtotal
+
+A subtotal aggregates data for all values in an attribute group. A subtotal is displayed as a regular table row with data and is not pinned to the bottom of the table.
+
+**NOTE:** Although the Execute component supports both grand totals and sub totals on any dimension, the Table component supports only grand totals on rows.
+
+A subtotal is defined the same way a grant total is, except `attributeIdentifier` is defined by the attribute that is being grouped.
+
+**Example:**
+
+![Sub Totals for Columns](assets/pivot_table_subtotals.png)
+
+```jsx
+const measures = [
+    {
+        measure: {
+            localIdentifier: 'franchiseFeesIdentifier',
+            definition: {
+                measureDefinition: {
+                    item: {
+                        identifier: franchiseFeesIdentifier
+                    }
+                }
+            }
+        }
+    }
+];
+
+const attributes = [
+    {
+        visualizationAttribute: {
+            displayForm: {
+                identifier: locationStateDisplayFormIdentifier
+            },
+            localIdentifier: 'location'
+        }
+    },
+    {
+        visualizationAttribute: {
+            displayForm: {
+                identifier: menuCategoryAttributeDFIdentifier
+            },
+            localIdentifier: 'menu'
+        }
+    }
+];
+
+const columns = [
+    {
+        visualizationAttribute: {
+            displayForm: {
+                identifier: monthDateIdentifier
+            },
+            localIdentifier: 'month'
+        }
+    }
+];
+
+const totals = [
+    {
+        type: 'sum',
+        measureIdentifier: 'franchiseFeesIdentifier',
+        attributeIdentifier: 'location' // Grand total
+    },
+    {
+        type: 'sum',
+        measureIdentifier: 'franchiseFeesIdentifier',
+        attributeIdentifier: 'menu' // Subtotal
+    }
+];
+
+return (
+    <div style={{ height: 300 }}>
+        <PivotTable
+            projectId={projectId}
+            measures={measures}
+            rows={rows}
+            columns={columns}
             totals={totals}
         />
     </div>
