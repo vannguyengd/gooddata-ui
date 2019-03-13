@@ -9,6 +9,8 @@ Area chart shows data as an area under a line intersecting dots. It can display 
 
 Areas stack by default. Alternatively, areas can overlap if config is set to ```{ stackMeasures: false }```.
 
+> Before Version 6.3, the `stackMeasure` property was named `stacking` (see [Area Chart](https://sdk.gooddata.com/gooddata-ui/docs/6.2.0/area_chart_component.html) in the Version 6.2 documentation). While `stacking` is still supported in the existing visualizations that use it, it will be ignored if both `stacking` and `stackMeasures` are present.
+
 ![Area Chart Component](assets/area_chart.png "Area Chart Component")
 
 ## Structure
@@ -69,7 +71,7 @@ const attribute = {
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
 | measures | true | [Measure[]](afm.md#measure) | An array of measure definitions. If `viewBy` has two attributes, only the first measure is used. |
-| viewBy | false | [Attribute[]](afm.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the second attribute slices the measure horizontally, and the areas are always overlapped regardless of what `stackBy` is set to. |
+| viewBy | false | [Attribute](afm.md#attribute) &#124; [Attribute[]](afm.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the second attribute slices the measure horizontally, and the areas are always overlapped regardless of what `stackBy` is set to. |
 | stackBy | false | [Attribute](afm.md#attribute) | An attribute definition. `stackBy` is ignored if `viewBy` has two attributes. |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
