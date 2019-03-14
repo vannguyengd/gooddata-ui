@@ -93,5 +93,6 @@ clearSdkCache();
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 | uriResolver | false | function | A custom method for querying URIs for identifiers. Defaults to the standard Gooddata SDK. `getObjectUri()`. |
 | onError | false | function | A custom error handler. Called with the argument containing the state and original error message, for example: `{ status:ErrorStates.BAD_REQUEST,error: {...} }`. See the [full list of error states](https://github.com/gooddata/gooddata-react-components/blob/master/src/constants/errorStates.ts). Defaults to `console.error`.|
+| onExportReady | false | Function | A callback when the component is ready for exporting its data |
 | onLoadingChanged | false | function | A custom loading handler. Called when a visualization changes to/from the loading state. Called with the argument denoting a valid state, for example: `{ isLoading:false}`. |
 | onLegendReady | false | [onLegendReady()](on_legend_ready.md) | The legend ready callback. Called when the visualization series are ready to render. Can be used for rendering a custom legend. |
