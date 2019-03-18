@@ -169,6 +169,18 @@ const sortBy = [
 </div>
 ```
 
+## Grouping
+
+By default, the same values in column attributes are grouped across the rows, which help improves data readability in pivot tables. The header of the grouped columns is displayed at the top of the table even when you scroll through a long group.
+
+The grouping is applied when the following conditions are both met:
+* The table is sorted by the **first** column attribute (either in ascending or descending order).
+* The table has **two or more** column attributes.
+
+![Pivot Table Grouping](assets/pivot_table_grouping.png "Pivot Table Grouping")
+
+To disable grouping, set the `groupRows` property to `false` (see [Properties](#properties)).
+
 ## Totals
 
 You can display rows with aggregated measure data using the `totals` prop. For more information, see [Specify Table Totals](table_totals.md).
@@ -226,6 +238,7 @@ const config = {
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | config | false | [ConfigObject](#configuration-menu) | The configuration object |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
+| groupRows | false | boolean | Specifies whether [grouping of the same values in attribute columns](#grouping) is enabled (`true`; default) or disabled (`false`). | 
 | locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | [DrillableItem[]](drillable_item.md) | An array of points and attribute values to be drillable. |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
