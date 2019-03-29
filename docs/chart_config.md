@@ -32,7 +32,7 @@ This article describes the options for configuring a chart.
         rotation: 'auto', // string
         min: '300', // numeral string
         max: '400', // numeral string
-        measures: ['metricLocalIdentifier']
+        measures: ['measureLocalIdentifier']
     },
     legend: {
         enabled: true, // boolean
@@ -273,7 +273,7 @@ import { Visualization } from '@gooddata/react-components';
             rotation: '-90',
             min: '1500',
             max: '4400',
-            measures: ['metricLocalIdentifier1', 'metricLocalIdentifier2']
+            measures: ['measureLocalIdentifier1', 'measureLocalIdentifier2']
         }
     }}
 />
@@ -306,10 +306,10 @@ import { Visualization } from '@gooddata/react-components';
     * [Bar charts](bar_chart_component.md)
     * [Column charts](column_chart_component.md)
     * Charts with the [secondary axis](#Configure-axes)
-* To display the total contribution of each metric, enable `config.stackMeasures`.
+* To display the total contribution of each measure, enable `config.stackMeasures`.
     * For area charts, `config.stackMeasures` is enabled by default.
     * For bar charts, column charts, and charts with the secondary axis, `config.stackMeasures` is ignored when the chart has only one measure.
-* To display the percentage contribution of each metric, enable `config.stackMeasuresToPercent`.
+* To display the percentage contribution of each measure, enable `config.stackMeasuresToPercent`.
     * If both `config.stackMeasuresToPercent` and `config.stackMeasures` are present, `config.stackMeasuresToPercent` overwrites `config.stackMeasures`.
     * For charts with the secondary axis, `config.stackMeasuresToPercent` is applied only to the left axis. 
 
