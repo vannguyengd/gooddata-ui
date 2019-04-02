@@ -88,7 +88,7 @@ The **object identifier** is a reference to a project object. The object identif
 Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the **same** object identifier in **any** of those projects.
 
 #### Measure definition
-You can find full TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.6.0/src/VisualizationObject.ts#L94).
+You can find full TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.10.0/src/VisualizationInput.ts).
 
 ```ts
 IMeasure = {
@@ -109,7 +109,7 @@ IMeasureDefinition = {
             // URI or identifier of a specific measure from your project
         aggregation: string 
             // Optional; possible values: sum, count, avg, min, max, median, runsum (when set to 'count', ignores the measure's 'format' value and uses the default value '#,##0' instead)
-        filters: VisualizationObjectFilter[] 
+        filters: IFilter[] 
             // Optional; an array of attribute filters or date filters (for more information, see Filter Visual Components)
         computeRatio: boolean 
             // Optional; returns values as ratios; useful for showing percents (ignores the measure's 'format' value and uses the default value '#,##0.00%' instead)
@@ -150,7 +150,7 @@ For more information about the derived measures, see [Time Over Time Comparison]
 For more information about the arithmetic measures, see [Arithmetic Measure](arithmetic_measure.md).
 
 #### Attribute definition
-You can find full TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.6.0/src/VisualizationObject.ts#L104).
+You can find full TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.10.0/src/VisualizationInput.ts).
 
 ```ts
 IVisualizationAttribute = {
@@ -161,6 +161,7 @@ IVisualizationAttribute = {
     }
 }
 ```
+
 
 ## Visualization lifecycle
 

@@ -15,6 +15,11 @@ Both global filters and filters set on measures are always interpreted as an int
 
 ## Attribute filter
 
+All filters are defined using the `displayForm` identifiers. Attribute filters (both `positiveAttributeFilter` and `negativeAttributeFilter`) can be defined to match attribute elements by their URI (this is the default) or value (text filter).
+To use text filters, define the `textFilter` property of the filter and use values instead of URIs in the `in` or `notIn` arrays. 
+
+**NOTE:** Specifying attribute elements by value may slow down performance.
+
 ### Positive attribute filter
 
 A **positive attribute filter** lists only those items whose attribute elements' URIs are included in the `in` property array.
@@ -26,7 +31,22 @@ A **positive attribute filter** lists only those items whose attribute elements'
         displayForm: {
             identifier: '<attribute-displayForm-identifier>' // Or URI: '<attribute-displayForm-uri>'
         },
-        in: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute elements currently support only URIs
+        in: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute element URIs
+    }
+},
+```
+
+A **positive attribute text filter** lists only those items whose attribute elements are included in the `in` property array.
+
+```javascript
+// Type: IPositiveAttributeFilter
+{
+    positiveAttributeFilter: {
+        displayForm: {
+            identifier: '<attribute-displayForm-identifier>' // Or URI: '<attribute-displayForm-uri>'
+        },
+        in: ['<attribute-element-value-1>', '<attribute-element-value-2>'], // Attribute element values
+        textFilter: true
     }
 },
 ```
@@ -42,7 +62,22 @@ A **negative attribute filter** lists only those items whose attribute elements
         displayForm: {
             identifier: '<attribute-displayForm-identifier>' // Or URI: '<attribute-displayForm-uri>'
         },
-        notIn: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute elements currently support only URIs
+        notIn: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute element URIs
+    }
+},
+```
+
+A **negative attribute text filter** lists only those items whose attribute elements are *not* included in the `notIn` property array.
+
+```javascript
+// Type: INegativeAttributeFilter
+{
+    negativeAttributeFilter: {
+        displayForm: {
+            identifier: '<attribute-displayForm-identifier>' // Or URI: '<attribute-displayForm-uri>'
+        },
+        notIn: ['<attribute-element-value-1>', '<attribute-element-value-2>'], // Attribute element values
+        textFilter: true
     }
 },
 ```
