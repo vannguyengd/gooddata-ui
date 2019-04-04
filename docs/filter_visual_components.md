@@ -176,7 +176,7 @@ The `from` and `to` properties set the number of granularity units (for example,
 
 Applying a filter to a specific measure is helpful when you have duplicate measures with different filters.
 
-To apply a filter to a specific measure, pass an array of attribute filters or date filters as the `filters` prop inside the definition of this measure.
+To apply a filter to a specific measure, pass an array of attribute filters or date filters as the `filters` prop inside the definition of this measure. Attribute filters (both `positiveAttributeFilter` and `negativeAttributeFilter`) can be defined to match attribute elements by their URI (this is the default) or value (text filter).
 
 * When both the measure filter of the `DateFilter` type and the AFM global filter of the `DateFilter` type are set with the **same** date dimension, the measure date filter overrides the AFM global date filter for this measure \(global date filters are still applied to other measures that do not have a measure date filter defined\).
 * When the measure filter of the DateFilter type and the AFM global filter of the DateFilter type are set with **different** date dimensions, the filters are interpreted as an intersection of those filters (f1 AND f2).
@@ -199,10 +199,20 @@ To apply a filter to a specific measure, pass an array of attribute filters or d
                                     displayForm: {
                                         identifier: '<attribute-displayform-identifier>'
                                     },
-                                    // Attribute elements currently support only URIs like: /gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116
-                                    in: ['<attribute-value-uri>', ...]
+                                    // Attribute element URIs
+                                    in: ['<attribute-element-uri>', ...]
                                 }
-                            }
+                            },
+                            {
+                                positiveAttributeFilter: {
+                                    displayForm: {
+                                        identifier: '<attribute-displayform-identifier>'
+                                    },
+                                    // Attribute element values
+                                    in: ['<attribute-element-value>', ...],
+                                    textFilter: true
+                                }
+                            },
                         ],
                     }
                 },
@@ -217,7 +227,7 @@ To apply a filter to a specific measure, pass an array of attribute filters or d
 
 ### Visualization component filter
 
-```javascript
+```jsx
 import '@gooddata/react-components/styles/css/main.css';
 import { Visualization } from '@gooddata/react-components';
 
@@ -231,8 +241,18 @@ import { Visualization } from '@gooddata/react-components';
                     displayForm: {
                         identifier: '<attribute-displayform-identifier>'
                     },
-                    // Attribute elements currently support only URIs like: /gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116
+                    // Attribute element URIs
                     in: ['<attribute-element-uri>', ...]
+                }
+            },
+            {
+                positiveAttributeFilter: {
+                    displayForm: {
+                        identifier: '<attribute-displayform-identifier>'
+                    },
+                    // Attribute element values
+                    in: ['<attribute-element-value>', ...],
+                    textFilter: true
                 }
             }
         ]}
@@ -269,7 +289,7 @@ If you reference a saved visualization with active filters and set the `filters`
                     displayForm: {
                         identifier: '<attribute-displayform-identifier>'
                     },
-                    // Attribute elements currently support only URIs
+                    // Attribute element URIs
                     notIn: ['/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116']
                 }
             }
