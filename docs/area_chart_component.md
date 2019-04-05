@@ -9,7 +9,7 @@ Area chart shows data as an area under a line intersecting dots. It can display 
 
 Areas stack by default. Alternatively, areas can overlap if config is set to ```{ stackMeasures: false }```.
 
-> Before Version 6.3, the `stackMeasure` property was named `stacking` (see [Area Chart](https://sdk.gooddata.com/gooddata-ui/docs/6.2.0/area_chart_component.html) in the Version 6.2 documentation). While `stacking` is still supported in the existing visualizations that use it, it will be ignored if both `stacking` and `stackMeasures` are present.
+> Before Version 6.3, the `stackMeasures` property was named `stacking` (see [Area Chart](https://sdk.gooddata.com/gooddata-ui/docs/6.2.0/area_chart_component.html) in the Version 6.2 documentation). While `stacking` is still supported in the existing visualizations that use it, it will be ignored if both `stacking` and `stackMeasures` are present.
 
 ![Area Chart Component](assets/area_chart.png "Area Chart Component")
 
