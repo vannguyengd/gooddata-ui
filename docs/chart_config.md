@@ -49,9 +49,13 @@ This article describes the options for configuring a chart.
         decimal: '.'
     },
     stackMeasures: true, // boolean
-    stackMeasuresToPercent: true // boolean
+    stackMeasuresToPercent: true, // boolean
+    primaryChartType: 'column', // string
+    secondaryChartType: 'area', // string
+    dualAxis: false // boolean
 }
 ```
+Note: `primaryChartType`, `secondaryChartType`, `dualAxis` are only available for [Combo chart](combo_chart_component.md)
 
 ## Configure colors
 
