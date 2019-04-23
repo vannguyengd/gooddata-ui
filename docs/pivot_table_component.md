@@ -185,7 +185,7 @@ To disable grouping, set the `groupRows` property to `false` (see [Properties](#
 
 You can display rows with aggregated measure data using the `totals` prop. For more information, see [Specify Table Totals](table_totals.md).
 
-Alternatively, you can enable the menu through which you can turn on the totals. For more information, see [Configuration menu](#configuration-menu).
+Alternatively, you can enable the menu through which you can turn on the totals and subtotals. For more information, see [Configuration menu](#configuration-menu).
 
 ![Pivot Table Menu Totals](assets/pivot_table_menu_totals.png "Pivot Table Menu Totals")
 
@@ -200,15 +200,16 @@ To avoid this gap, specify the maximum height of the table using the `maxHeight`
 ## Configuration menu
 
 You can configure the following settings:
+* Totals and subtotals. If you enable the subtotals menu but disable totals, subtotals will be disabled too.
 * Separators used when formatting numbers. See [Change a separator in the number format](chart_config.md#Change-a-separator-in-the-number-format).
-* Menu items. Currently, only the totals are supported.
 * Maximum height. See [Maximum height](#maximum-height).
 
 ```jsx
 const config = {
     maxHeight: 800,
     menu: {
-        aggregations: true
+        aggregations: true,
+        aggregationsSubMenu: true
     },
     separators: {
         thousand: ',',
