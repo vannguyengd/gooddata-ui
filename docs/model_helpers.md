@@ -30,7 +30,7 @@ const measure = {
 };
 ```
 
-Unless you use a static type checker (for example, TypeScript), writing such code may be tedious and prone to errors.  With the helpers, you can achieve the same result easier and in a less error-prone manner:
+Unless you use a static type checker (for example, TypeScript), writing such code may be tedious and prone to errors. With the helpers, you can achieve the same result easier and in a less error-prone manner:
 
 ```js harmony
 import { Model } from '@gooddata/react-components';
@@ -129,6 +129,10 @@ In addition to the common measure builder methods, `measure` also has the follow
 * `filters(...filters)` for setting up measure filters (you can also use [filter helpers](#filter-helpers) for creating filter objects)
 * `aggregation(aggregationType)` for setting the measure aggregation type (`sum`, `max`, and so on)
 * `ratio()` for setting the `computeRatio` flag to `true` (to display the measure value as a percentage instead of a number)
+     
+     * Do not use `ratio()` in visualizations with the `stackBy` property set. 
+     * If used in visualizations with multiple measures, `ratio()` is ignored.
+     * If used in visualizations with one measure and [stacking configured](chart_config.md#configure-stacking) with the `stackMeasuresToPercent` property set, `ratio()` overrides `stackMeasuresToPercent`. That is, `computeRatio` is applied, and `stackMeasuresToPercent` is ignored.
 
 ### arithmeticMeasure helper
 
