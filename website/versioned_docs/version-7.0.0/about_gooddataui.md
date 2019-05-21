@@ -1,8 +1,9 @@
 ---
-id: about_gooddataui
+id: version-7.0.0-about_gooddataui
 title: About GoodData.UI
 sidebar_label: About GoodData.UI
 copyright: (C) 2007-2018 GoodData Corporation
+original_id: about_gooddataui
 ---
 
 GoodData.UI is a React-based JavaScript library for building responsive analytical applications.
