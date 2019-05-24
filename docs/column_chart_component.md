@@ -68,7 +68,7 @@ const month = {
 | projectId | true | string | The project ID |
 | measures | true | [Measure[]](afm.md#measure) | An array of measure definitions |
 | viewBy | false | [Attribute](afm.md#attribute) &#124; [Attribute[]](afm.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the first attribute wraps up the second one. |
-| stackBy | false | [Attribute](afm.md#attribute) | An attribute definition |
+| stackBy | false | [Attribute](afm.md#attribute) | An attribute definition. Do not use `stackBy` in charts with multiple measures. |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | config | false | [ChartConfig](chart_config.md) | The chart configuration object |

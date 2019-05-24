@@ -309,6 +309,9 @@ import { Visualization } from '@gooddata/react-components';
     * [Area charts](area_chart_component.md)
     * [Bar charts](bar_chart_component.md)
     * [Column charts](column_chart_component.md)
+    * [Combo charts](combo_chart_component.md)
+    
+         **NOTE:** In combo charts using column or area charts, stacking is applied only to the measures shown on the left axis.
     * Charts with the [secondary axis](#Configure-axes)
 * To display the total contribution of each measure, enable `config.stackMeasures`.
     * For area charts, `config.stackMeasures` is enabled by default.
@@ -316,7 +319,6 @@ import { Visualization } from '@gooddata/react-components';
 * To display the percentage contribution of each measure, enable `config.stackMeasuresToPercent`.
     * If both `config.stackMeasuresToPercent` and `config.stackMeasures` are present, `config.stackMeasuresToPercent` overwrites `config.stackMeasures`.
     * For charts with the secondary axis, `config.stackMeasuresToPercent` is applied only to the left axis. 
-
 
 ```javascript
 import { Visualization } from '@gooddata/react-components';
