@@ -23,7 +23,7 @@ GoodData.UI is compatible with:
 * TypeScript 3.3.4000+, ES6, ES5
 
     **NOTE:** The _latest_ supported version of `@types/react-intl` for `@gooddata/react-components` used within a TypeScript project is 2.3.5. Using a later version may result in errors.
-* Node 8.9.4
+* Node ^8.10.0 or >=9.10.0
 * [Officially supported browsers](https://help.gooddata.com/display/doc/System+Requirements+and+Supported+Browsers)
 
 **NOTE:** [Server-side rendering](https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md) is *not* supported.
