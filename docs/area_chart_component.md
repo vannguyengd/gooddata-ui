@@ -7,9 +7,9 @@ id: area_chart_component
 
 Area chart shows data as an area under a line intersecting dots. It can display either multiple measures as different areas or a single measure split by one attribute into multiple areas with points intersecting attribute values.
 
-Areas stack by default. Alternatively, areas can overlap if config is set to ```{ stackMeasures: false }```.
+Areas stack by default. Alternatively, the areas can overlap if ```{ stackMeasures: false }``` is set in the [chart config](chart_config.md).
 
-> Before Version 6.3, the `stackMeasures` property was named `stacking` (see [Area Chart](https://sdk.gooddata.com/gooddata-ui/docs/6.2.0/area_chart_component.html) in the Version 6.2 documentation). While `stacking` is still supported in the existing visualizations that use it, it will be ignored if both `stacking` and `stackMeasures` are present.
+> The `stacking` property, which was supported in area charts [in Version 6.2](https://sdk.gooddata.com/gooddata-ui/docs/6.2.0/area_chart_component.html) and older versions, is deprecated and will be removed in the future. Use the `stackMeasures` property instead (see [chart config](chart_config.md)).
 
 ![Area Chart Component](assets/area_chart.png "Area Chart Component")
 
@@ -93,7 +93,7 @@ const attribute = {
 | pushData | false | Function | A callback after AFM is resolved |
 -->
 
-The following example shows the supported `config` structure with sample values. To see descriptions of individual options, see [ChartConfig section](chart_config.md).
+The following example shows the supported `config` structure with sample values. To see the descriptions of the individual options, see [ChartConfig](chart_config.md).
 ```javascript
 {
     colors: ['rgb(195, 49, 73)', 'rgb(168, 194, 86)'],
