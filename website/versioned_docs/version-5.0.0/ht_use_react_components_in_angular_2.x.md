@@ -147,7 +147,61 @@ export class KpiComponent implements OnInit, OnDestroy, OnChanges, AfterViewInit
 }
 ```
 
-When this article was last updated, there was an [outstanding issue in Angular 4](https://github.com/angular/angular/issues/14252). `ngOnDestroy` is called _after_ a DOM node has already been removed. Not calling `ReactDOM.unmountComponentAtNode(this.getRootDomNode())` results in memory leaks.
+If you want to render some of the charts, you need to use root dom node with size defined:
+
+**columnchart.component.ts**:
+```javascript
+...
+
+import { ColumnChart } from '@gooddata/react-components';
+
+...
+
+@Component({
+  selector: 'app-column-chart',
+  template: '<div style="height: 300px" [id]="rootDomID"></div>'
+})
+
+...
+}
+```
+
+And you need to import main.css file from `@gooddata/react-components` to your global styles
+
+**styles.css**:
+```css
+@import "@gooddata/react-components/styles/css/main.css"
+
+```
+
+or
+
+**angular.json**:
+```json
+{
+  ...
+  "architect": {
+      "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+
+            "styles": [
+              "src/styles.css",
+              "node_modules/@gooddata/react-components/styles/css/main.css"
+            ],
+            "scripts": []
+          },
+          ...
+      }
+  ...
+}
+
+```
+
+For more details about importing global styles in Angular app see [Angular documentation](https://angular.io/guide/workspace-config#styles-and-scripts-configuration).
+
+
+**Note:** When this article was last updated, there was an [outstanding issue in Angular 4](https://github.com/angular/angular/issues/14252). `ngOnDestroy` is called _after_ a DOM node has already been removed. Not calling `ReactDOM.unmountComponentAtNode(this.getRootDomNode())` results in memory leaks.
 
 Verify whether the issue is present in your version of Angular. If not, uncomment the commented out line in `ngOnDestroy`.
 
