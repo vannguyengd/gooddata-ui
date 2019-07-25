@@ -13,6 +13,7 @@ The `onExportReady` parameter is available in all visual components except for 
 
 The `exportConfig` object includes the following properties:
 * **format** (optional, string) specifies the format of the exported data. Can be set to `csv` (default) or `xlsx`.
+* **includeFilterContext** (only when `format` is set to `xlsx`; optional, boolean) specifies whether the applied filters should be added (`true`) or should not be added (`false`; default) to the exported XLSX file.
 * **mergeHeaders** (only when `format` is set to `xlsx`; optional, boolean) specifies whether repeating header cells should be merged (`true`; default) or should not be merged (`false`).
 * **title** (optional, string) is the title of the exported data.
 
@@ -44,6 +45,7 @@ export class Example extends React.Component {
         try {
             const result = await this.exportResult({
                 format: 'xlsx',
+                includeFilterContext: true,
                 mergeHeaders: true,
                 title: 'CustomTitle'
             });
