@@ -52,7 +52,7 @@ yarn add @types/react @types/react-intl --dev
 ```
 
 ## 2. Declare the Angular wrapper component
-Angular wrapper component renders a React component and re-renders it on property change.
+The Angular wrapper component renders a React component and re-renders it on a property change.
 
 The component wrapper must be able to render React components imported from `@gooddata/react-components`. 
 You can import any supported components from the package, and then either put them together using multiple `React.createElement` functions, or make an abstract wrapper component that accepts a React component reference as a parameter. 
@@ -147,10 +147,64 @@ export class KpiComponent implements OnInit, OnDestroy, OnChanges, AfterViewInit
 }
 ```
 
-When this article was last updated, there was an [outstanding issue in Angular 4](https://github.com/angular/angular/issues/14252). `ngOnDestroy` is called _after_ a DOM node has already been removed. Not calling `ReactDOM.unmountComponentAtNode(this.getRootDomNode())` results in memory leaks.
+If you want to render some charts, do the following:
 
-Verify whether the issue is present in your version of Angular. If not, uncomment the commented out line in `ngOnDestroy`.
+1. Use a root dom node with the size defined:
 
+    **columnchart.component.ts**:
+    ```javascript
+    ...
+    
+    import { ColumnChart } from '@gooddata/react-components';
+    
+    ...
+    
+    @Component({
+      selector: 'app-column-chart',
+      template: '<div style="height: 300px" [id]="rootDomID"></div>'
+    })
+    
+    ...
+    }
+    ```
+
+2. Import the `main.css` file from `@gooddata/react-components` to your global styles:
+
+    **styles.css**:
+    ```css
+    @import "@gooddata/react-components/styles/css/main.css"
+    
+    ```
+
+    or
+
+    **angular.json**:
+    ```json
+    {
+      ...
+      "architect": {
+          "build": {
+              "builder": "@angular-devkit/build-angular:browser",
+              "options": {
+    
+                "styles": [
+                  "src/styles.css",
+                  "node_modules/@gooddata/react-components/styles/css/main.css"
+                ],
+                "scripts": []
+              },
+              ...
+          }
+      ...
+    }
+    
+    ```
+
+For more details about importing global styles in an Angular app, see the [Angular documentation](https://angular.io/guide/workspace-config#styles-and-scripts-configuration).
+
+**NOTE:** When this article was last updated, there was an [outstanding issue in Angular 4](https://github.com/angular/angular/issues/14252). `ngOnDestroy` is called _after_ a DOM node has already been removed. Not calling `ReactDOM.unmountComponentAtNode(this.getRootDomNode())` results in memory leaks.
+
+Verify whether the issue is present in your version of Angular. If not, uncomment the commented-out line in `ngOnDestroy`.
 
 ## 3. Use the component
 You are now ready to use the GoodData React components in your Angular app.
