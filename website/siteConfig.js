@@ -66,7 +66,8 @@ const siteConfig = {
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/gooddata/gooddata-react-components',
-  gaTrackingId: 'UA-3766725-19',
+  gaTrackingId: 'GTM-5G49LK',
+  gaGtag: true,
   /* On page navigation for the current documentation page */
   // onPageNav: 'separate',
   algolia: {
