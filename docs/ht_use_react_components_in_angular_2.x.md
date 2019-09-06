@@ -199,6 +199,8 @@ If you want to render some charts, do the following:
     
     ```
 
+**NOTE:** If you are using the `PivotTable` component, import the `pivotTable.css` file into your global styles.
+
 For more details about importing global styles in an Angular app, see the [Angular documentation](https://angular.io/guide/workspace-config#styles-and-scripts-configuration).
 
 **NOTE:** When this article was last updated, there was an [outstanding issue in Angular 4](https://github.com/angular/angular/issues/14252). `ngOnDestroy` is called _after_ a DOM node has already been removed. Not calling `ReactDOM.unmountComponentAtNode(this.getRootDomNode())` results in memory leaks.
