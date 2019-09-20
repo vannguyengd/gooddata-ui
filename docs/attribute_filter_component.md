@@ -5,7 +5,9 @@ sidebar_label: Attribute Filter
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
-Attribute filter component is a dropdown component that lists attribute values. You can pass a callback function, which receives a list of the selected values when a user clicks **Apply**.
+Attribute filter component is a dropdown component that lists attribute values. You pass a callback function, which receives a list of the selected values when a user clicks **Apply**.
+
+Optionally, you can define what attribute values should be selected in the filter by default.
 
 ![Attribute Filter Component](assets/attribute_filter.png "Attribute Filter Component")
 
@@ -17,7 +19,7 @@ In the following example, attribute values are listed and the ```onApply``` call
 
 ```javascript
 import React, { Component } from 'react';
-import { AttributeFilter } from '@gooddata/react-components';
+import { AttributeFilter, Model } from '@gooddata/react-components';
 
 import '@gooddata/react-components/styles/css/main.css';
 
@@ -33,7 +35,7 @@ export class AttributeFilterExample extends Component {
         return (
             <div>
                 <AttributeFilter
-                    identifier={employeeNameIdentifier}
+                    filter={Model.negativeAttributeFilter(employeeNameIdentifier, [])}
                     projectId={projectId}
                     onApply={this.onApply}
                     sdk={<sdk>}
@@ -43,3 +45,38 @@ export class AttributeFilterExample extends Component {
     }
 }
 ```
+## Define the values selected by default
+
+To define the attribute values that should be selected in the filter by default, include those attribute values in the ```filter``` property. For more details about filtering, see [Filter Visual Components](filter_visual_components.md).
+
+```javascript
+    render() {
+        return (
+            <div>
+                <AttributeFilter
+                    filter={Model.positiveAttributeFilter(employeeNameIdentifier, ["Abbie Adams"], true)}
+                    projectId={projectId}
+                    onApply={this.onApply}
+                    sdk={<sdk>}
+                />
+            </div>
+        );
+    }
+```
+
+## Properties
+
+| Name | Required? | Type | Description |
+| :--- | :--- | :--- | :--- |
+| projectId | true | string | The project ID |
+| onApply | true | Function | A callback when the selection is confirmed by a user |
+| sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
+| filter | false | [Filter](filter_visual_components.md) | The attribute filter definition |
+| locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
+| fullscreenOnMobile | false | boolean | If `true`, adjusts the filter to be properly rendered on a mobile device |
+| title | false | string | A custom label to show on the dropdown icon |
+| FilterLoading | false | Component | A component to be rendered if attribute elements are loading |
+| FilterError | false | Component | A component to be rendered if attribute elements loading fails |
+
+**NOTE:** The ```uri``` property (the URI of the attribute displayForm used in the filter) and the ```identifier``` property (the identifier of the attribute displayForm used in the filter) are **deprecated**. Do not use them.
+To define an attribute, use the ```filter``` property. 
