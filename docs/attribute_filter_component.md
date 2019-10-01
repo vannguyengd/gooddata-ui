@@ -64,12 +64,44 @@ To define the attribute values that should be selected in the filter by default,
     }
 ```
 
+## Simplier way how to handle change of selection
+
+If you provide ```onApplyWithFilterDefinition``` instead of ```onApply``` you will recieve new selection already transformed into attribute filter definition and you can directly send it to the chart.
+
+```javascript
+    export class AttributeFilterExample extends Component {
+        onApplyWithFilterDefinition(filter) {
+            // eslint-disable-next-line no-console
+            console.log('AttributeFilterExample onApplyWithFilterDefinition', filter);
+            this.setState(filter);
+        }
+
+        render() {
+            return (
+                <div>
+                    <AttributeFilter
+                        filter={this.state.filter}
+                        projectId={projectId}
+                        onApply={this.onApplyWithFilterDefinition}
+                        sdk={<sdk>}
+                    />
+                    <BarChart
+                        filters={[this.state.filter]}
+                        ...otherProps
+                    />
+                </div>
+            );
+        }
+    }
+```
+
 ## Properties
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
 | onApply | true | Function | A callback when the selection is confirmed by a user |
+| onApplyWithFilterDefinition | false | Function | A callback when the selection is confirmed by a user. Selection is already transformed into Attribute filter definition usable for chart filtering |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 | filter | false | [Filter](filter_visual_components.md) | The attribute filter definition |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
@@ -79,4 +111,4 @@ To define the attribute values that should be selected in the filter by default,
 | FilterError | false | Component | A component to be rendered if attribute elements loading fails |
 
 **NOTE:** The ```uri``` property (the URI of the attribute displayForm used in the filter) and the ```identifier``` property (the identifier of the attribute displayForm used in the filter) are **deprecated**. Do not use them.
-To define an attribute, use the ```filter``` property. 
+To define an attribute, use the ```filter``` property.
