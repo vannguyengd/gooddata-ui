@@ -25,16 +25,18 @@
       "treemap_component",
       "visualization_component",
       "afm_components",
-      "attribute_filter_component"
+      "attribute_filter_component",
+      "date_filter_component"
     ],
-    "Properties" : [
+    "Properties": [
       "chart_config",
+      "date_filter_option",
       "drillable_item",
       "error_component",
       "loading_component",
       "on_export_ready",
-      "on_legend_ready",
-      "on_fire_drill_event"
+      "on_fire_drill_event",
+      "on_legend_ready"
     ],
     "Custom Visualizations": [
       "create_new_visualization",
