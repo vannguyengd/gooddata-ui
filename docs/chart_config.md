@@ -246,15 +246,19 @@ import { Visualization } from '@gooddata/react-components';
 
 ## Configure axes
 
-* To change axis visibility, set the `config.xaxis.visible` property.
-* To hide axis labels, set the `config.xaxis.labelsEnabled` property to `false`.
+The properties listed in this section are specific to the **X** axis. To get the properties for the **Y** axis, replace `xaxis` with `yaxis` in a property's name.
+
+* To hide the axis, set `config.xaxis.visible` to `false`. If not set, it defaults to `true` (the axis is visible).
+* To hide axis labels, set `config.xaxis.labelsEnabled` to `false`. If not set, it defaults to `true` (the axis labels are visible).
 
     **NOTE:** When `config.xaxis.visible` is set to `false`, axis labels are hidden automatically regardless of what `config.xaxis.labelsEnabled` is set to.
 * To rotate axis labels, set `config.xaxis.rotation` to a desired value.
-* To set the axis scale, set `config.xaxis.min` and `config.xaxis.max`.
-* To show measures on a secondary axis, set `config.secondary_xaxis.measures`. If `config.secondary_xaxis.measures` is not configured, all measures are displayed on the main axis by default.
-
-> For the properties of the Y axis, replace `xaxis` with `yaxis`.
+* To set the axis scale, set `config.xaxis.min` and `config.xaxis.max` to desired values.
+* To show measures on a secondary axis, set `config.secondary_xaxis.measures` to the measures that you want to display. If `config.secondary_xaxis.measures` is not set, all measures are displayed on the main axis by default.
+* To hide the axis name, set `config.xaxis.name.visible` to `false`. If not set, it defaults to `true` (the axis name is visible).
+* To set the axis name position, set `config.xaxis.name.position` to one of the possible values: `low`, `middle`, `high`.
+    
+    **NOTE:** If the axis represents more than one attribute/measure, the `config.xaxis.name.visible` and `config.xaxis.name.position` properties are both ignored, and the axis name is hidden.
 
 ```javascript
 import { Visualization } from '@gooddata/react-components';
@@ -269,7 +273,10 @@ import { Visualization } from '@gooddata/react-components';
             labelsEnabled: false,
             rotation: '-90',
             min: '150',
-            max: '440'
+            max: '440',
+            name: {
+                position: 'low', // 'low', 'middle', 'high'
+            }
         },
         secondary_xaxis: {
             visible: true,
@@ -277,6 +284,9 @@ import { Visualization } from '@gooddata/react-components';
             rotation: '-90',
             min: '1500',
             max: '4400',
+            name: {
+                visible: false
+            }
             measures: ['measureLocalIdentifier1', 'measureLocalIdentifier2']
         }
     }}
