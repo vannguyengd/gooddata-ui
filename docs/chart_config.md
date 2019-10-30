@@ -11,6 +11,9 @@ This article describes the options for configuring a chart.
 
 ```javascript
 {
+    chart: {
+        verticalAlign: 'top' // 'top' | 'middle' | 'bottom'
+    },
     colors: ['rgb(195, 49, 73)', 'rgb(168, 194, 86)'], // array of strings
     xaxis: {
         visible: true, // boolean
@@ -55,7 +58,28 @@ This article describes the options for configuring a chart.
     dualAxis: false // boolean
 }
 ```
-Note: `primaryChartType`, `secondaryChartType`, `dualAxis` are only available for [Combo chart](combo_chart_component.md)
+**NOTE:** `primaryChartType`, `secondaryChartType`, and `dualAxis` are available only for [combo charts](combo_chart_component.md).
+
+## Align a chart vertically
+
+You can configure a vertical alignment for [pie charts](pie_chart.md) and [donut charts](donut_chart.md).
+
+To align a chart vertically, set `config.chart.verticalAlign` to one of the possible values: `top`, `middle`, `bottom`. If not set, it defaults to `middle`.
+
+```javascript
+import { Visualization } from '@gooddata/react-components';
+
+// Example of embedding a visualization with a custom chart alignment
+<Visualization
+    projectId=<project-id>
+    identifier=<visualization-id>
+    config={{
+        chart: {
+            verticalAlign: 'bottom'
+        }
+    }}
+/>
+```
 
 ## Configure colors
 
