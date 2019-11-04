@@ -87,7 +87,7 @@ module.exports = function (app) {
 
 > **Careful:** If you are only using the [development proxy](cors.md#on-your-local-dev-machine), you will still need to autenticate users by going to `/account.html` or by calling the `sdk.user.login()` method, and filling in valid GoodData credentials.
 
-**Also**, note that older browsers and MSIE are not supported by `create-react-app`. You have to configure the development server to support browsers you want. Read more about [browser support](https://create-react-app.dev/docs/supported-browsers-features/).
+**NOTE:** `create-react-app` does not support Microsoft Internet Explorer and older browsers. You have to configure the development server to support the browsers that you want to use. For more information, see [Create React App - Supported Browsers and Features](https://create-react-app.dev/docs/supported-browsers-features/).
 
 ## Step 5. Start the development server
 
