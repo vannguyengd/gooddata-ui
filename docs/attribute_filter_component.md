@@ -100,7 +100,7 @@ Use ```onApplyWithFilterDefinition``` instead of ```onApply``` to recieve the se
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| onApply | true | Function | A callback when the selection is confirmed by a user |
+| onApply | false | Function | A callback when the selection is confirmed by a user |
 | onApplyWithFilterDefinition | false | Function | A callback when the selection is confirmed by a user. The selection of attribute values is received already transformed into an attribute filter definition, which you can then send directly to a chart. |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 | filter | false | [Filter](filter_visual_components.md) | The attribute filter definition |
