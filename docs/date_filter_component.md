@@ -68,11 +68,6 @@ export class DateFilterComponentExample extends Component {
         );
     };
 
-    onCancel = () => {
-        // eslint-disable-next-line no-console
-        console.log("DateFilterExample onCancel");
-    };
-
     render() {
         return (
             <div style={{ width: 300 }}>
@@ -84,9 +79,6 @@ export class DateFilterComponentExample extends Component {
                     customFilterName="Date filter name"
                     dateFilterMode="active"
                     onApply={this.onApply}
-                    onCancel={this.onCancel}
-                    onOpen={this.onOpen}
-                    onClose={this.onClose}
                 />
             </div>
         );
@@ -106,6 +98,7 @@ export class DateFilterComponentExample extends Component {
 | availableGranularities | true | [DateFilterGranularity[]](date_filter_option.md#date-filter-granularity) | An array of available types of granularity for the Relative Form  |
 | customFilterName | false | string | A custom filter label |
 | dateFilterMode | true | string | Filter mode; can be `readonly`, `hidden`, or `active` |
+| locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | onApply | true | Function | A callback when the selection is confirmed by the user |
 | onCancel | false | Function | A callback when the selection is canceled by the user |
 | onOpen | false | Function | A callback when the filter dropdown is opened by the user |
