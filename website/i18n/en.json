@@ -91,6 +91,7 @@
     "Line Chart": "Line Chart",
     "loading_component": "LoadingComponent",
     "LoadingComponent": "LoadingComponent",
+    "measure_value_filter_component": "measure_value_filter_component",
     "measure_value_filter": "measure_value_filter",
     "migration_guide_7": "Migration guide to React Components v7.x.x",
     "Migration guide to v7.x.x": "Migration guide to v7.x.x",
