@@ -1,8 +1,9 @@
 ---
-title: Create Your First Application
-sidebar_label: Create Your First Application
-copyright: (C) 2007-2018 GoodData Corporation
-id: ht_create_your_first_visualization
+title: Create Your First Application from Scratch
+sidebar_label: Create Your First Application from Scratch
+copyright: (C) 2007-2019 GoodData Corporation
+id: version-7.1.0-ht_create_your_first_visualization
+original_id: ht_create_your_first_visualization
 ---
 
 This tutorial will guide you through the process of creating your first analytical application from scratch, using GoodData.UI with Facebook’s `create-react-app` tool.
@@ -162,7 +163,7 @@ Now, you can start adding your first GoodData component:
         }
     };
     ```
-    4b. Replace the React elements returned by the `App` functional component with the following elements:
+    4b. Append the following lines in the `render()` method:
     ```javascript
     <div style={{ height: 300 }}>
       <LineChart
@@ -180,12 +181,13 @@ Now, you can start adding your first GoodData component:
 5. Save the changes. The content of your `App.js` file should now look something like the following example:
 
     ```javascript
-    import React from 'react';
+    import React, { Component } from 'react';
     import { LineChart } from '@gooddata/react-components';
     import '@gooddata/react-components/styles/css/main.css';
 
+    import logo from './logo.svg';
     import './App.css';
-   
+
     const measures = [
         {
             measure: {
@@ -211,19 +213,30 @@ Now, you can start adding your first GoodData component:
         }
     };
 
-    function App() {
-        return (
-            <div style={{ height: 300 }}>
-                <LineChart
-                    projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
-                    measures={measures}
-                    trendBy={attribute}
-                    config={{
-                        colors: ['#14b2e2']
-                    }}
-                />
-            </div>
-        );
+    class App extends Component {
+       render() {
+          return (
+             <div className="App">
+                <div className="App-header">
+                   <img src={logo} className="App-logo" alt="logo" />
+                   <h2>Welcome to React</h2>
+                </div>
+                <div style={{ height: 300 }}>
+                   <LineChart
+                      projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+                      measures={measures}
+                      trendBy={attribute}
+                      config={{
+                          colors: ['#14b2e2']
+                      }}
+                  />
+                </div>
+                <p className="App-intro">
+                   To get started, edit <code>src/App.js</code> and save to reload.
+                </p>
+             </div>
+          );
+       }
     }
 
     export default App;
