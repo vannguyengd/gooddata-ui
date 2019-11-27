@@ -20,9 +20,10 @@ import { MeasureValueFilterDropdown } from "@gooddata/react-components";
 
 <MeasureValueFilterDropdown
   onApply={<on-apply-callback>}
-  measureTitle={<measure-title>}
+  onCancel={<on-cancel-callback>}
   measureIdentifier={<measure-local-identifier>}
   filter={<filter>}
+  anchorEl={<toggle-button-selector>}
 />
 ```
 
@@ -49,67 +50,56 @@ const locationResort = Model.attribute(
 ).localIdentifier("locationResort");
 
 export default class SalesByResort extends Component {
-  this.state = { filter: null };
+    this.state = { filters: [], displayDropdown: false };
 
-  onApply = filter => {
-    this.setState({ filter });
-  };
+    onApply = filter => {
+        this.setState({ filters: [filter], displayDropdown: false });
+    };
 
-  render() {
-    const { filter } = this.state;
+    onCancel = () => {
+        this.toggleButtonRef = null;
+        this.setState({ displayDropdown: false });
+    };
 
-    return (
-      <div>
-        <MeasureValueFilterDropdown
-          onApply={this.onApply}
-          measureTitle={totalSales.measure.title}
-          measureIdentifier={totalSales.measure.localIdentifier}
-          filter={filter}
-        />
-        <BarChart
-          projectId={projectId}
-          measures={[totalSales]}
-          viewBy={[locationResort]}
-          filters={filter ? [filter] : []}
-        />
-      </div>
-    );
-  }
+    toggleDropdown = e => {
+        this.toggleButtonRef = !this.state.displayDropdown ? e.currentTarget : null;
+        this.setState(state => ({ ...state, displayDropdown: !state.displayDropdown }));
+    };
+
+    render() {
+        const { filters, displayDropdown } = this.state;
+
+        return (
+            <div>
+                <div onClick={this.toggleDropdown}>Measure button</div>
+                {displayDropdown ? (
+                    <MeasureValueFilterDropdown
+                        onApply={this.onApply}
+                        onCancel={this.onCancel}
+                        measureIdentifier={totalSales.measure.localIdentifier}
+                        filter={filters[0] || null}
+                        anchorEl={this.toggleButtonRef}
+                    />
+                ) : null}
+                <BarChart
+                    projectId={projectId}
+                    measures={[totalSales]}
+                    viewBy={[locationResort]}
+                    filters={filters}
+                />
+            </div>
+        );
+    }
 }
 ```
 
 ## Properties
 
-| Name              | Required? | Type                                                       | Description                                                                                                                                                                                                  |
-| :---------------- | :-------- | :--------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| measureIdentifier | true      | string                                                     | The identifier of the filtered measure. You can use either the local identifier or URI.                                                                                                                                       |
-| onApply           | true      | Function                                                   | A callback when the selection is confirmed by a user. The passed configuration of the measure value filter is already transformed into a measure value filter definition, which you can then send directly to a chart.         |
-| filter            | false     | [Filter](filter_visual_components.md#measure-value-filter) | The measure value filter definition                                                                                                                                                                          |
-| measureTitle      | false     | string                                                     | The name of the filtered measure to display on the dropdown toggle button                                                                                                                                                   |
-| button            | false     | Component                                                  | The custom dropdown [toggle button component](#custom-dropdown-button)                                                                                                                                           |
-| locale            | false     | string                                                     | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
-| displayDropdown   | false     | boolean                                                    | Specifies whether the dropdown is loaded open                                                                                                                                                           |
-
-## Custom dropdown button
-
-To use your own button as the dropdown toggle button, pass the custom dropdown toggle button component to the `button` prop of `MeasureValueFilter`.
-
-![Custom dropdown button](assets/mvf_custom_button.png "Custom dropdown button")
-
-### Properties
-
-| Name          | Required? | Type            | Description                                                                                                        |
-| :------------ | :-------- | :-------------- | :----------------------------------------------------------------------------------------------------------------- |
-| onClick       | true      | Function        | A callback when the button is clicked. Toggles the dropdown itself.                                                |
-| isActive      | false     | boolean         | Specifies whether the dropdown is displayed                                                                 |
-| measureTitle  | false     | string          | The name of the filtered measure                                                                                              |
-| operator      | false     | string          | The identifier of the [operator](measure_value_filter.md#filtering-by-comparing-a-measure-value-to-a-specific-value) |
-| operatorTitle | false     | string          | The translated label of the operator                                                                               |
-| value         | false     | [Value](#value) | The value of the filter                                                                                                    |
-### Value
-
-The `Value` object contains the current configuration of the filter value and can be of the following types:
-
-- `from` for a range
-- `to` for a range
-- `value` for a comparison
+| Name              | Required? | Type                                                       | Description                                                                                                                                                                                                            |
+| :---------------- | :-------- | :--------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| measureIdentifier | true      | string                                                     | The identifier of the filtered measure. You can use either the local identifier or URI.                                                                                                                                |
+| onApply           | true      | Function                                                   | A callback when the selection is confirmed by a user. The passed configuration of the measure value filter is already transformed into a measure value filter definition, which you can then send directly to a chart. |
+| onCancel          | true      | Function                                                   | A callback when user clicks on the Cancel button or invokes dropdown to be closed by clicking outside of it. Use this callback to hide dropdown.                                                                       |
+| filter            | false     | [Filter](filter_visual_components.md#measure-value-filter) | The measure value filter definition                                                                                                                                                                                    |
+| displayDropdown   | false     | boolean                                                    | Specifies whether the dropdown is opened                                                                                                                                                                               |
+| anchorEl          | false     | event target or string                                     | Element which dropdown is aligned to, typically your toggle button                                                                                                                                                     |
