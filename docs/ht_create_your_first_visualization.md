@@ -1,6 +1,6 @@
 ---
-title: Create Your First Application
-sidebar_label: Create Your First Application
+title: Create Your First Application from Scratch
+sidebar_label: Create Your First Application from Scratch
 copyright: (C) 2007-2018 GoodData Corporation
 id: ht_create_your_first_visualization
 ---

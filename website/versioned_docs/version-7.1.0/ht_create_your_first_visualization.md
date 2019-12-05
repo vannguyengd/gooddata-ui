@@ -163,7 +163,7 @@ Now, you can start adding your first GoodData component:
         }
     };
     ```
-    4b. Append the following lines in the `render()` method:
+    4b. Replace the React elements returned by the `App` functional component with the following elements:
     ```javascript
     <div style={{ height: 300 }}>
       <LineChart
@@ -181,11 +181,10 @@ Now, you can start adding your first GoodData component:
 5. Save the changes. The content of your `App.js` file should now look something like the following example:
 
     ```javascript
-    import React, { Component } from 'react';
+    import React from 'react';
     import { LineChart } from '@gooddata/react-components';
     import '@gooddata/react-components/styles/css/main.css';
 
-    import logo from './logo.svg';
     import './App.css';
 
     const measures = [
@@ -213,30 +212,19 @@ Now, you can start adding your first GoodData component:
         }
     };
 
-    class App extends Component {
-       render() {
-          return (
-             <div className="App">
-                <div className="App-header">
-                   <img src={logo} className="App-logo" alt="logo" />
-                   <h2>Welcome to React</h2>
-                </div>
-                <div style={{ height: 300 }}>
-                   <LineChart
-                      projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
-                      measures={measures}
-                      trendBy={attribute}
-                      config={{
-                          colors: ['#14b2e2']
-                      }}
-                  />
-                </div>
-                <p className="App-intro">
-                   To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
-             </div>
-          );
-       }
+    function App() {
+        return (
+            <div style={{ height: 300 }}>
+                <LineChart
+                    projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+                    measures={measures}
+                    trendBy={attribute}
+                    config={{
+                        colors: ['#14b2e2']
+                    }}
+                />
+            </div>
+        );
     }
 
     export default App;
