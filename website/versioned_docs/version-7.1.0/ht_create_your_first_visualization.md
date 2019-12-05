@@ -86,7 +86,7 @@ module.exports = function (app) {
 
 > **Careful:** Only use the proxy authentication for development. Do not use this authentication method for production.
 
-> **Careful:** If you are only using the [development proxy](cors.md#on-your-local-dev-machine), you will still need to autenticate users by going to `/account.html` or by calling the `sdk.user.login()` method, and filling in valid GoodData credentials.
+> **Careful:** If you are only using the [development proxy](cors.md#on-your-local-dev-machine), you will still need to authenticate users by going to `/account.html` or by calling the `sdk.user.login()` method, and filling in valid GoodData credentials.
 
 **NOTE:** `create-react-app` does not support Microsoft Internet Explorer and older browsers. You have to configure the development server to support the browsers that you want to use. For more information, see [Create React App - Supported Browsers and Features](https://create-react-app.dev/docs/supported-browsers-features/).
 
