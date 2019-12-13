@@ -58,7 +58,7 @@ Because all the measure types have several properties in common, GoodData.UI pro
 * `localIdentifier(identifier)` for setting the localIdentifier
 * `title(measureTitle)` for setting the title
 
-**NOTE:** If you do not explicitly specify the `localIdentifier`, a unique one will be automatically generated for you.
+**NOTE:** If you do not specify the `localIdentifier`, a unique one will be automatically generated for you. An automatically generated `localIdentifier` may change between calls of the helper. If you are using the same measure more than once, having different `localIdentifier`s may result in unexpected behavior such as unnecessary UI re-rendering or extra API calls. To avoid this, either reuse the same helper result, or set the `localIdentifier` manually.
 
 ### measure helper
 
@@ -323,7 +323,7 @@ The resulting value has two customization methods:
 * `alias(aliasValue)` for setting the alias
 * `localIdentifier(identifier)` for setting the localIdentifier
 
-**NOTE:** If you do not explicitly specify the `localIdentifier`, a unique one will be automatically generated for you.
+**NOTE:** If you do not specify the `localIdentifier`, a unique one will be automatically generated for you. An automatically generated `localIdentifier` may change between calls of the helper. If you are using the same attribute more than once, having different `localIdentifier`s may result in unexpected behavior such as unnecessary UI re-rendering or extra API calls. To avoid this, either reuse the same helper result, or set the `localIdentifier` manually.
 
 **Example:**
 
