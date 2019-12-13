@@ -279,10 +279,12 @@ Measures are always listed in the same order in which they were defined in the A
                 direction: 'asc',   // or 'desc',
                 // Type: LocatorItem[]
                 locators: [
-                    attributeLocatorItem: {
-                        attributeIdentifier: '<attribute-local-identifier>',
-                        element: '<attribute-value-uri>'
-                    };
+                    {
+                        attributeLocatorItem: {
+                            attributeIdentifier: '<attribute-local-identifier>',
+                            element: '<attribute-value-uri>'
+                        }
+                    }
                 ]
             }
         }
