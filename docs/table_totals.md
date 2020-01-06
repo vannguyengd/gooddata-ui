@@ -96,7 +96,7 @@ return (
 
 A subtotal aggregates data for all values in an attribute group. A subtotal is displayed as a regular table row with data and is not pinned to the bottom of the table.
 
-A subtotal is defined the same way a grant total is, except `attributeIdentifier` is defined by the attribute that is being grouped.
+A subtotal is defined the same way a grand total is, except `attributeIdentifier` is defined by the attribute that is being grouped.
 
 **NOTE:** Although the Execute component supports both grand totals and subtotals on any dimension, the Table component supports only grand totals on rows. In addition, the subtotals are supported only for tables sorted by the first row attribute, and this is the default sorting for tables.
 
@@ -120,7 +120,7 @@ const measures = [
     }
 ];
 
-const attributes = [
+const rows = [
     {
         visualizationAttribute: {
             displayForm: {

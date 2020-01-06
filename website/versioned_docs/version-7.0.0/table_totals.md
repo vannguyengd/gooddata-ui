@@ -2,7 +2,7 @@
 title: Specify Table Totals
 sidebar_label: Specify Table Totals
 copyright: (C) 2007-2018 GoodData Corporation
-id: version-6.3.0-table_totals
+id: version-7.0.0-table_totals
 original_id: table_totals
 ---
 
