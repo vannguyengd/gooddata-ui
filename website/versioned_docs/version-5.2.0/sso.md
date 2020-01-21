@@ -76,7 +76,7 @@ To do so, follow these steps:
 
     `"invitationWelcomePage": "https://my.app.com"`
 
-    For more information, see [Platform Settings](https://help.gooddata.com/display/doc/Platform+Settings) and the [API for updating the platform settings](https://help.gooddata.com/display/doc/API+Reference#/reference/hierarchical-configuration).
+    For more information, see [Configure Various Features via Platform Settings](https://help.gooddata.com/display/doc/Configure+Various+Features+via+Platform+Settings) and the [API for updating the platform settings](https://help.gooddata.com/display/doc/API+Reference#/reference/hierarchical-configuration).
 2. Invite the users to your GoodData project via the [GoodData Portal](https://help.gooddata.com/display/doc/Managing+Users+in+Projects).
 
     The link in the invitation email will redirect an invited user to the URL where your application runs. The users with no GoodData account will additionally be asked to  create a GoodData account.
