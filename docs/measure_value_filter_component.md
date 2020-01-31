@@ -95,6 +95,19 @@ export default class SalesByResort extends Component {
 }
 ```
 
+## User input formatting
+
+Input inside measure value filter component is formatted using separators. They can be changed using `separators` property. The property specifies thousand separator character and decimal point character. By default `,` for thousands and `.` for decimal point are used.
+
+### Example
+
+```javascript
+<MeasureValueFilterDropdown
+    ...
+    separators={{ thousand: " ", decimal: "," }}
+/>
+```
+
 ## Properties
 
 | Name              | Required? | Type                                                      | Default value | Description                                                                                                                                                                                             |
@@ -107,3 +120,4 @@ export default class SalesByResort extends Component {
 | anchorEl          | false     | event target or string                                    | 'body'        | Element which dropdown is aligned to, typically your toggle button                                                                                                                                                     |
 | usePercentage     | false     | boolean                                                   | false         | Specifies whether the filtered measure is formatted as percentage. In this case, the filter dropdown will accept percentage values, not the actual measure values. It should be set to false when computeRatio is enabled on the filtered measure, as it is filtered by actual measure values and not percentage ones.                                                                                          |
 | warningMessage    | false     | string                                                    | undefined     | Warning message displayed in the dropdown                                                                                                                                                                              |
+| separators | false | [Separators](#user-input-formatting) | undefined |  Separators used for formatting string in input. By default `,` for thousands and `.` for decimal point are used |
