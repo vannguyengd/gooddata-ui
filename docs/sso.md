@@ -71,7 +71,7 @@ Setting up authentication depends on what type of SSO is implemented on your sit
         import sdk from '@gooddata/gooddata-js';
         import qs from 'qs';
 
-        const relayState = 'relay-state';
+        const relayState = 'https://my.app.com/';
 
         sdk.xhr
           .get(`/gdc/account/samlrequest?${qs.stringify({ relayState })}`)
