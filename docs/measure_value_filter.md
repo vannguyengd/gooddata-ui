@@ -1,10 +1,13 @@
 <!-- BB-1694 - Move the content of this page to filter_visual_components.md between 'Data filter' and 'Filters set on a specific measure' sections -->
+<!-- There is a section about MVF that must be uncommented in table_totals.md marked with TODO -->
 
 ## Filters by measure value
 
 You can filter a visual component by the value of a measure. You can filter only the measures that are present in the visualization, on a granularity defined by the attributes in the visualization.
 
-**NOTE:** Be aware that the numbers rendered by a vizualization are often rounded up/down. However, filters are applied to the original exact numbers (those before rounding), and that may lead to unexpected results. For example, the number `400.01` rounded to a whole number would be `400`, but it will still be included in the visualization with a filter that filters out the values smaller than or equal to `400`.
+> **NOTE:** Be aware that the numbers rendered by a visualization are often rounded up/down. However, filters are applied to the original exact numbers (those before rounding), and that may lead to unexpected results. For example, the number `400.01` rounded to a whole number would be `400`, but it will still be included in the visualization with a filter that filters out the values smaller than or equal to `400`.
+
+> **NOTE:** [Rollup total](table_totals.md) is not supported when an insight has Measure value filters configured. The insight is not rendered in this case and error message is shown instead.
 
 ### Filtering by comparing a measure value to a specific value
 

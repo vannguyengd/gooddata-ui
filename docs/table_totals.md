@@ -18,6 +18,10 @@ You can display rows with aggregated measure data in both Table and Pivot Table 
 | Median | Middle value |
 | Rollup | Sum (or another type of aggregation) of pre-aggregated (raw) values; see [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data) |
 
+<!-- TODO: BB-1694
+> **NOTE:** Rollup total is not supported when an insight has [Measure value filters configured](measure_value_filter.md). The insight is not rendered in this case and error message is shown instead.  
+-->
+
 ## Column grand total
 
 A column grand total aggregates data for all values in a column and displays it in the row pinned to the bottom of the table. The column grand total is defined by the local identifiers of a measure and the first row attribute.
