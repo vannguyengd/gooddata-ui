@@ -1,7 +1,7 @@
 ---
 title: Specify Table Totals
 sidebar_label: Specify Table Totals
-copyright: (C) 2007-2018 GoodData Corporation
+copyright: (C) 2007-2020 GoodData Corporation
 id: table_totals
 ---
 
@@ -18,9 +18,7 @@ You can display rows with aggregated measure data in both Table and Pivot Table 
 | Median | Middle value |
 | Rollup | Sum (or another type of aggregation) of pre-aggregated (raw) values; see [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data) |
 
-<!-- TODO: BB-1694
-> **NOTE:** Rollup total is not supported when an insight has [Measure value filters configured](measure_value_filter.md). The insight is not rendered in this case and error message is shown instead.  
--->
+> **NOTE:** A rollup total is not supported in visualizations with [measure value filters](filter_visual_components.md#filter-by-a-measure-value). Such visualizations are not rendered, and the error message is shown instead.
 
 ## Column grand total
 
