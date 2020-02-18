@@ -1,5 +1,9 @@
 {
   "version-7.2.0-Docs": {
+    "Support": [
+      "support_options",
+      "live_examples"
+    ],
     "Getting Started": [
       "version-7.2.0-about_gooddataui",
       "version-7.2.0-platform_intro",

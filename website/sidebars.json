@@ -1,5 +1,9 @@
 {
   "Docs": {
+    "Support": [
+      "support_options",
+      "live_examples"
+    ],
     "Getting Started": [
       "about_gooddataui",
       "platform_intro",

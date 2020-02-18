@@ -35,6 +35,18 @@ Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com
     font-weight: 700;
 }
 
+// Avenir Black
+@font-face {
+    src: url($base_path + 'fonts/Avenir-Black.eot?#iefix');
+    src:
+        url($base_path + 'fonts/Avenir-Black.eot?#iefix') format('eot'),
+        url($base_path + 'fonts/Avenir-Black.woff') format('woff'),
+        url($base_path + 'fonts/Avenir-Black.ttf') format('truetype'),
+        url($base_path + 'fonts/Avenir-Black.svg') format('svg');
+    font-family: 'Avenir-Black';
+    font-style: normal;
+}
+
 // Smoother Rendering in Chrome
 // http://www.fontspring.com/blog/smoother-rendering-in-chrome-update
 

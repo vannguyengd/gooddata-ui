@@ -4,7 +4,7 @@
 
     header img,
     .logo {
-        width: 143px;
+        width: 212px;
         height: 35px;
     }
 
@@ -42,17 +42,21 @@
 
         h3 {
             position: absolute;
-            right: 7rem;
+            right: 168px;
             margin: 0;
             color: $gd-color-text;
             font-family: $gd-font-primary;
             font-weight: lighter;
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-decoration: none;
 
             @media #{$large-down} {
                 right: 0;
             }
+        }
+
+        @media #{$large-down} {
+            height: 64px;
         }
     }
 
@@ -67,9 +71,11 @@
     flex: 1 1 auto;
 
     .slidingNav {
-        padding: 0 2rem;
+        padding: 0 30px;
 
         ul {
+            background-color: transparent;
+
             @media #{$large-down} {
                 justify-content: space-evenly;
                 margin-top: 64px;
@@ -89,7 +95,7 @@
             }
 
             a {
-                padding: 0 1rem;
+                padding: 3px 8px 0;
                 border-bottom: 2px solid transparent;
                 color: transparentize($gd-color-dark, 0.3);
                 font-size: 15px;
@@ -111,12 +117,14 @@
                     height: 4rem;
                     line-height: 4rem;
 
-                    &[href*="https://github.com/"] {
+                    &[href*="https://github.com/"],
+                    &[href*="https://gooddata-examples.herokuapp.com/"] {
                         position: absolute;
                         top: 17px;
                         right: 0;
                         height: 1.75rem;
                         margin: 0;
+                        padding: 5px 10px;
                         border: 1px solid transparentize($gd-color-dark, 0.5);
                         border-radius: 100px;
                         color: $gd-color-dark;
@@ -129,17 +137,26 @@
                             border-color: $gd-color-dark;
                         }
                     }
+
+                    &[href*="https://github.com/"] {
+                        right: 0;
+                    }
+
+                    &[href*="https://gooddata-examples.herokuapp.com/"] {
+                        right: 78px;
+                    }
                 }
 
                 @media #{$large-up} {
-                    margin: 0 1rem;
+                    margin: 0 8px;
                 }
             }
 
             a:focus,
             a:hover,
             &.siteNavItemActive a,
-            &.siteNavGroupActive a {
+            &.siteNavGroupActive a,
+            a[href*="/gooddata-ui/"] {
                 color: transparentize($gd-color-dark, 0.1);
                 background-color: transparent;
                 transition: all 100ms ease-in;
@@ -151,21 +168,57 @@
             }
 
             &.siteNavItemActive a,
-            &.siteNavGroupActive a {
+            &.siteNavGroupActive a,
+            a[href*="/gooddata-ui/"] {
                 border-bottom-color: $gd-color-highlight;
             }
         }
 
         .navSearchWrapper {
             position: absolute;
-            top: 50%;
-            right: 200px;
-            width: 218px;
-            margin-top: -14px;
+            z-index: 1;
+            top: 0;
+            right: 199px;
+            bottom: 0;
+            width: auto;
+            justify-content: flex-start;
+            padding: 0 20px;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -20px;
+                width: 20px;
+                height: auto;
+                border: none;
+                border-radius: 0;
+                background-image: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+                transform: none;
+            }
+
+            @media #{$large-up} {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: auto;
+                    background-color: #f4f4f4;
+                    z-index: -1;
+                    transform: none;
+                }
+            }
 
             @media #{$large-down} {
-                top: 32px;
                 right: 100px;
+                height: 64px;
+
+                &::after {
+                    display: none;
+                }
             }
         }
 
@@ -231,5 +284,13 @@ nav.toc .toggleNav .navGroup.navGroupActive {
 
     h3 {
         background: linear-gradient(to bottom, #1e2025 0%, #0a0d14 100%);
+    }
+}
+
+.hamburger-menu {
+    top: 0;
+
+    .docsSliderActive & {
+        top: 5px;
     }
 }

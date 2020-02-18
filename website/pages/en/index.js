@@ -94,7 +94,10 @@ class HomeSplash extends React.Component {
           <ProjectTitle />
           <ProjectDescription />
           <PromoSection>
-            <Button href={docUrl('about_gooddataui.html')}>Get Started</Button>
+            <Button href={docUrl('about_gooddataui.html')}>See documentation</Button>
+            <Button href="https://gooddata-examples.herokuapp.com/" className="button button-secondary">Live examples</Button>
+          </PromoSection>
+          <PromoSection>
             <Button href="https://help.gooddata.com/display/doc/GoodData+Platform+Overview" className="button-link">About GoodData Platform</Button>
           </PromoSection>
         </div>
