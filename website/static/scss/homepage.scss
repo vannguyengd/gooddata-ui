@@ -67,20 +67,46 @@ $homesplashBgOverflowProduct: ($homesplashBgOverflow * ((100 - 2 * $homesplashBg
     }
 
     .button {
-        padding: 0.7rem 4.1rem;
-        border: 2px solid $gd-color-white;
-        border-radius: 3px;
-        color: $gd-color-white;
-        font-size: 1rem;
+        display: inline-block;
+        height: 44px;
+        margin: 0 auto;
+        padding: 4px 35px;
+        font-size: 16px;
+        line-height: 36px;
         text-align: center;
-        background-color: transparentize($gd-color-dark, 0.85);
-        transition: background-color 0.2s;
+        align-self: flex-start;
+        border-radius: 3px;
+        color: #464e56;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: #ffffff;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTAwMCcgaGVpZ2h0PSczNicgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSdub25lJz48cGF0aCBmaWxsPScjMDAwJyBmaWxsLXJ1bGU9J25vbnplcm8nIGQ9J00wIDBoMTAwMGwtMTAgMzZIMHonLz48L3N2Zz4=);
+        background-size: 1000px 100%;
+        background-position: -1000px center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
 
         &:hover,
         &:focus,
         &:active {
+            background-position: 90% center;
+            color: #ffffff;
             text-decoration: none !important;
-            background-color: transparentize($gd-color-dark, 0.65);
+        }
+    }
+
+    .button-secondary {
+        border: 2px solid #ffffff;
+        color: #ffffff;
+        line-height: 34px;
+        background-color: transparent;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI1MCI+PGRlZnM+PHBhdGggZD0iTTAgMGgxMDAwbC0xMCA1MEgwVjB6IiBpZD0iYSIvPjwvZGVmcz48dXNlIHhsaW5rOmhyZWY9IiNhIiBmaWxsPSIjZmZmIi8+PHVzZSB4bGluazpocmVmPSIjYSIgZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMCIvPjwvc3ZnPg==);
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: #464e56;
         }
     }
 
@@ -133,6 +159,12 @@ $homesplashBgOverflowProduct: ($homesplashBgOverflow * ((100 - 2 * $homesplashBg
     .promoRow {
         .pluginRowBlock {
             display: block;
+        }
+
+        .buttonWrapper {
+            display: inline-block;
+            margin: 0 10px;
+            vertical-align: middle;
         }
     }
 }

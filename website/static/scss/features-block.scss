@@ -42,6 +42,7 @@
     @media #{$medium-down} {
         padding: 2rem;
         flex-basis: 100%;
+        max-width: 100%;
     }
 }
 
@@ -69,6 +70,7 @@
 }
 
 .exampleCode {
+    margin: 0;
     padding: 1.56rem 1.3rem;
     border: none;
     border-radius: 0;
