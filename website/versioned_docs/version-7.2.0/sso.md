@@ -27,7 +27,7 @@ GoodData supports SAML 2.0-based and PGP-based authentication. For more informat
 
 Setting up authentication depends on what type of SSO is implemented on your site.
 
-* If you use the [GoodData PGP SSO](https://help.gooddata.com/display/doc/GoodData+PGP+Single+Sign-On) implementation, you can use the `loginSSO` method from [GoodData Javascript SDK](https://github.com/gooddata/gooddata-js). Note that although this method requires a mandatory parameter of `targetUrl`, this parameter is used very rarely in the context of GoodData.UI, because in a typical scenario there is no need to redirect a user to any GoodData URL. But as this parameter is mandatory, set it to an arbitrary URL (for example, the absolute path to your application).
+* If you use the [GoodData PGP SSO](https://help.gooddata.com/display/doc/GoodData+PGP+Single+Sign-On) implementation, you can use the `loginSSO` method from [GoodData Javascript SDK](https://github.com/gooddata/gooddata-js). Note that although this method requires a mandatory parameter of `targetUrl`, this parameter is used very rarely in the context of GoodData.UI, because in a typical scenario there is no need to redirect a user to any GoodData URL. But as this parameter is mandatory, set it to an arbitrary relative URL (for example, `/`).
 
         ```javascript
         import { factory } from '@gooddata/gooddata-js';
@@ -36,7 +36,7 @@ Setting up authentication depends on what type of SSO is implemented on your sit
         const sdk = factory({ domain });
         const encryptedClaims = 'your-generated-encrypted-claims';
         const ssoProvider = 'your-sso-provider-name';
-        const targetUrl = 'your-target-url'; // set to an arbitrary URL
+        const targetUrl = 'your-target-url'; // set to an arbitrary relative URL
 
         sdk.user
          .loginSso(encryptedClaims, ssoProvider, targetUrl)

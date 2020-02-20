@@ -181,7 +181,7 @@
         "sidebar_label": "Line Chart"
       },
       "live_examples": {
-        "title": "_",
+        "title": "Live Examples",
         "sidebar_label": "Live Examples"
       },
       "loading_component": {
@@ -189,10 +189,8 @@
         "sidebar_label": "LoadingComponent"
       },
       "measure_value_filter_component": {
-        "title": "measure_value_filter_component"
-      },
-      "measure_value_filter": {
-        "title": "measure_value_filter"
+        "title": "Measure Value Filter",
+        "sidebar_label": "Measure Value Filter"
       },
       "migration_guide_7": {
         "title": "Migration guide to React Components v7.x.x",
