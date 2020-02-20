@@ -56,7 +56,6 @@ const siteConfig = {
     new Date().getFullYear() +
     ' GoodData',
   organizationName: 'gooddata',
-  projectName: 'gooddata-ui',
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'default',

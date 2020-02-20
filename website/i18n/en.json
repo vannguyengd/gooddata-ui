@@ -1148,11 +1148,27 @@
         "title": "Use Angular 2+",
         "sidebar_label": "Use Angular 2+"
       },
+      "version-7.2.0/version-7.2.0-live_examples": {
+        "title": "Live Examples",
+        "sidebar_label": "Live Examples"
+      },
       "version-7.2.0/version-7.2.0-sso": {
         "title": "Set Up Authentication and Single Sign-On",
         "sidebar_label": "Set Up Authentication and Single Sign-On"
       },
       "version-7.2.0/version-7.2.0-table_totals": {
+        "title": "Specify Table Totals",
+        "sidebar_label": "Specify Table Totals"
+      },
+      "version-7.3.0/version-7.3.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
+      },
+      "version-7.3.0/version-7.3.0-measure_value_filter_component": {
+        "title": "Measure Value Filter",
+        "sidebar_label": "Measure Value Filter"
+      },
+      "version-7.3.0/version-7.3.0-table_totals": {
         "title": "Specify Table Totals",
         "sidebar_label": "Specify Table Totals"
       }
