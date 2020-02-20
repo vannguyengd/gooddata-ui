@@ -1159,6 +1159,18 @@
       "version-7.2.0/version-7.2.0-table_totals": {
         "title": "Specify Table Totals",
         "sidebar_label": "Specify Table Totals"
+      },
+      "version-7.3.0/version-7.3.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
+      },
+      "version-7.3.0/version-7.3.0-measure_value_filter_component": {
+        "title": "Measure Value Filter",
+        "sidebar_label": "Measure Value Filter"
+      },
+      "version-7.3.0/version-7.3.0-table_totals": {
+        "title": "Specify Table Totals",
+        "sidebar_label": "Specify Table Totals"
       }
     },
     "links": {
