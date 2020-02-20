@@ -1148,6 +1148,10 @@
         "title": "Use Angular 2+",
         "sidebar_label": "Use Angular 2+"
       },
+      "version-7.2.0/version-7.2.0-live_examples": {
+        "title": "Live Examples",
+        "sidebar_label": "Live Examples"
+      },
       "version-7.2.0/version-7.2.0-sso": {
         "title": "Set Up Authentication and Single Sign-On",
         "sidebar_label": "Set Up Authentication and Single Sign-On"
