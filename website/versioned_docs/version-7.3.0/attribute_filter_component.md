@@ -1,8 +1,9 @@
 ---
-id: attribute_filter_component
+id: version-7.3.0-attribute_filter_component
 title: Attribute Filter
 sidebar_label: Attribute Filter
-copyright: (C) 2007-2018 GoodData Corporation
+copyright: (C) 2007-2020 GoodData Corporation
+original_id: attribute_filter_component
 ---
 
 Attribute Filter component is a dropdown component that lists attribute values. You pass a callback function, which receives a list of the selected values when a user clicks **Apply**.
