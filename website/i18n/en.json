@@ -1160,6 +1160,10 @@
         "title": "Specify Table Totals",
         "sidebar_label": "Specify Table Totals"
       },
+      "version-7.3.0/version-7.3.0-attribute_filter_component": {
+        "title": "Attribute Filter",
+        "sidebar_label": "Attribute Filter"
+      },
       "version-7.3.0/version-7.3.0-filter_visual_components": {
         "title": "Filter Visual Components",
         "sidebar_label": "Filter Visual Components"
