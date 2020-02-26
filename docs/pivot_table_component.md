@@ -9,9 +9,9 @@ Pivot table component expands capabilities of a regular (flat) table by allowing
 
 In GoodData.UI, a pivot table allows you to break measures into columns by setting attributes in the ```columns``` prop. You can also choose to display only attributes (without any measures). On the other hand, a flat table cannot display attributes in columns.
 
-Compared with charts, pivot tables have higher limits for the number of datapoints to display.
+Compared to charts, pivot tables have higher limits for the number of datapoints to display.
 
-In the following example, we are watching franchise fees (measure) which we split down horizontaly by location state (attribute) and vertically by month (column attribute).
+The following pivot table shows franchise fees (a measure), which are split down by location state (an attribute) horizontally and by month (a column attribute) vertically.
 
 ![Pivot Table Component](assets/pivot_table_description.png "Pivot Table Component")
 
@@ -197,12 +197,30 @@ To avoid this gap, specify the maximum height of the table using the `maxHeight`
 
 **NOTE:** The `maxHeight` must be specified in pixels. If you want your table to be responsive, consider using [react-measure](https://github.com/souporserious/react-measure) to derive the `maxHeight` value dynamically.
 
+## Column width resizing
+
+By default, the width of the columns is not set, and all columns have the same fixed width regardless of the actual content. To automatically resize the columns to fit their content, add the `columnSizing` prop and set it to `defaultWidth: "viewport"`:
+```
+columnSizing: {
+    defaultWidth: "viewport"
+}
+```
+* The size is calculated based on the content in the header of the column that represents the lowest level of the grouped attributes (see [Grouping](#grouping)). If this is not applicable, the size is calculated based on the content in the header of the column with the measure name and the cells with the measure values.
+* Only the columns that are visible during the initial rendering of the table are automatically resized to fit their content.
+* A change of attributes, measures, filters, or totals in the table is handled as a new table. After the change is made, the column size is re-calculated based on the new data.
+* Scrolling horizontally or vertically and sorting values in a column do not affect the column width.
+* If you manually adjust the column width, the adjusted width is preserved only temporarily and will be reset to the previously set value after the table is re-rendered.
+* When auto-resizing is turned on, the column width can be set to 500 px maximum (for both auto-resized and manually resized columns).
+
+To switch to the default behavior (all columns have the same fixed size), set the `columnSizing` prop to `defaultWidth: "unset"` or don't provide `columnSizing` at all.
+
 ## Configuration menu
 
 You can configure the following settings:
-* Totals and subtotals. If you enable the subtotals menu but disable totals, subtotals will be disabled too.
-* Separators used when formatting numbers. See [Change a separator in the number format](chart_config.md#Change-a-separator-in-the-number-format).
-* Maximum height. See [Maximum height](#maximum-height).
+* **Totals** and **subtotals**. If you enable the subtotals menu but disable totals, subtotals will be disabled too.
+* **Separators** used when formatting numbers. See [Change a separator in the number format](chart_config.md#Change-a-separator-in-the-number-format).
+* **Maximum height**. See [Maximum height](#maximum-height).
+* **Column width resizing**. See [Column width resizing](#column-width-resizing).
 
 ```jsx
 const config = {
@@ -214,6 +232,9 @@ const config = {
     separators: {
         thousand: ',',
         decimal: '.'
+    },
+    columnSizing: {
+        defaultWidth: "viewport"
     }
 };
 
@@ -239,7 +260,7 @@ const config = {
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | config | false | [ConfigObject](#configuration-menu) | The configuration object |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
-| groupRows | false | boolean | Specifies whether [grouping of the same values in attribute columns](#grouping) is enabled (`true`; default) or disabled (`false`). | 
+| groupRows | false | boolean | Specifies whether [grouping of the same values in attribute columns](#grouping) is enabled (`true`; default) or disabled (`false`). |
 | locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | [DrillableItem[]](drillable_item.md) | An array of points and attribute values to be drillable. |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
