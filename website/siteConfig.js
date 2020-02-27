@@ -20,7 +20,7 @@ const siteConfig = {
   tagline: 'A powerful JavaScript library for building analytical applications',
   url: 'https://gooddata.github.io' /* your website url */,
   baseUrl: '/gooddata-ui/' /* base url for your project */,
-  projectName: 'GoodData UI SDK',
+  projectName: 'gooddata-ui',
   headerLinks: [
     {href: '/gooddata-ui/', label: 'GoodData.UI'},
     {href: 'https://developer.gooddata.com/data-integration', label: 'Data Integration'},
