@@ -1,11 +1,11 @@
 ---
 title: OnExportReady
 sidebar_label: OnExportReady
-copyright: (C) 2007-2019 GoodData Corporation
+copyright: (C) 2007-2020 GoodData Corporation
 id: on_export_ready
 ---
 
-The `onExportReady` parameter returns the `exportResult` function that allows you to export data from an existing insight into CSV or XLSX. The `exportResult` function accepts one parameter (the `exportConfig` object), and returns the URI of the exported file.
+The `onExportReady` parameter returns the `getExportMeta` function that allows you to export data from an existing insight into CSV or XLSX. The `getExportMeta` function accepts one parameter (the `exportConfig` object), and returns the URI of the exported file.
 
 The `onExportReady` parameter is available in all visual components except for the KPI, the AFM components, and the AttributeFilter component.
 
@@ -23,7 +23,7 @@ The `exportConfig` object includes the following properties:
 <Visualization
     projectId="<project-id>"
     identifier="<visualization-identifier>"
-    onExportReady={(exportResult) => exportResult()}
+    onExportReady={(getExportMeta) => getExportMeta()}
 />
 ```
 
@@ -37,13 +37,13 @@ export class Example extends React.Component {
         this.onExportReady = this.onExportReady.bind(this);
     }
 
-    onExportReady(exportResult) {
-        this.exportResult = exportResult;
+    onExportReady(getExportMeta) {
+        this.getExportMeta = getExportMeta;
     }
 
     async doExport() {
         try {
-            const result = await this.exportResult({
+            const result = await this.getExportMeta({
                 format: 'xlsx',
                 includeFilterContext: true,
                 mergeHeaders: true,

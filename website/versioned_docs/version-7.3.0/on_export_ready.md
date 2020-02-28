@@ -2,7 +2,7 @@
 title: OnExportReady
 sidebar_label: OnExportReady
 copyright: (C) 2007-2020 GoodData Corporation
-id: version-7.1.0-on_export_ready
+id: version-7.3.0-on_export_ready
 original_id: on_export_ready
 ---
 
