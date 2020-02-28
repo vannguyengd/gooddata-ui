@@ -2,7 +2,7 @@
 title: OnExportReady
 sidebar_label: OnExportReady
 copyright: (C) 2007-2020 GoodData Corporation
-id: version-7.1.0-on_export_ready
+id: version-7.0.0-on_export_ready
 original_id: on_export_ready
 ---
 
@@ -14,7 +14,6 @@ The `onExportReady` parameter is available in all visual components except for 
 
 The `exportConfig` object includes the following properties:
 * **format** (optional, string) specifies the format of the exported data. Can be set to `csv` (default) or `xlsx`.
-* **includeFilterContext** (only when `format` is set to `xlsx`; optional, boolean) specifies whether the applied filters should be added (`true`) or should not be added (`false`; default) to the exported XLSX file.
 * **mergeHeaders** (only when `format` is set to `xlsx`; optional, boolean) specifies whether repeating header cells should be merged (`true`; default) or should not be merged (`false`).
 * **title** (optional, string) is the title of the exported data.
 
@@ -46,7 +45,6 @@ export class Example extends React.Component {
         try {
             const result = await this.getExportMeta({
                 format: 'xlsx',
-                includeFilterContext: true,
                 mergeHeaders: true,
                 title: 'CustomTitle'
             });
