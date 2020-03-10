@@ -47,7 +47,7 @@ All attributes are defined using their `displayForm` identifiers.
 
 ## Filter
 
-You can limit the execution by providing a `filters` prop to your AFM. It is an array of filters. Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...)`.
+You can limit the execution by providing a `filters` prop to your AFM. It is an array of filters. Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...`).
 
 The structure of individual filters is identical to the `filters` prop that is used to filter visual components. For more information, see [Filter Visual Components](filter_visual_components.md).
 
@@ -62,6 +62,12 @@ const afm = {
 
 Attribute filters (both `positiveAttributeFilter` and `negativeAttributeFilter`) can be defined to match attribute elements by their URI (this is the default) or value (text filter). 
 To use text filters, define the `textFilter` property of the filter and use values instead of URIs in the `in` or `notIn` arrays. 
+
+If you need to escape characters while using text filters, make sure that the input for a filter is escaped correctly. Incorrectly escaped input may cause errors.
+
+Characters that are prone to mistakes are `"` and `\`. For example, if you want to filter out this exact string: `Foo\"`, enter it as `'Foo\\"'` or `"Foo\\\""`, which will result in `"Foo\\\""`. The browser will send `"Foo\\\""` to the server where `"Foo\\\""` will be queried as `Foo\"`.
+
+**NOTE:** Single quotes and double quotes behave differently while escaping characters.
 
 ## Measure
 
