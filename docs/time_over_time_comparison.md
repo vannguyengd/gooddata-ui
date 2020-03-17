@@ -79,7 +79,12 @@ const measures = [
 
 **Time shift**: a specified number of periods
 
-**Period**: defined by global [date filters](filter_visual_components.html#date-filter) referenced by the date data set URI or identifier in the derived measure definition (if no global date filter is defined, the derived measure returns the same data as the master measure)
+**Period**: defined by global [date filters](filter_visual_components.html#date-filter) referenced by the date data set URI or identifier in the derived measure definition.
+
+* For an [absolute date filter](filter_visual_components.html#absolute-date-filter), the period is N days.
+* For a [relative date filter](filter_visual_components.html#relative-date-filter), the period can be N days, weeks, months, quarters, or years depending on the selected granularity.
+
+If no global date filter is defined, the derived measure returns the same data as the master measure.
 
 To add a PP derived measure to a visualization, use the following `PreviousPeriodMeasureDefinition` structure (for the full TypeScript definition, see [this code section](https://github.com/gooddata/gooddata-typings/blob/v2.6.0/src/VisualizationObject.ts#L135)):
 
@@ -160,7 +165,12 @@ const filters = [
     measures={measures}
     filters={filters}
 />
-```  
+```
+### Comparison to the PP and absolute date filters
+
+Be careful when combining comparison to the PP with an [absolute date filter](filter_visual_components.html#absolute-date-filter).
+For example, when filtering from March 1 to March 31, the previous period is the previous 31 days and **not** the previous month.
+For comparing over a period other than a day, use a [relative date filter](filter_visual_components.html#relative-date-filter) with the required granularity (month, quarter).
 
 ## More examples
 
