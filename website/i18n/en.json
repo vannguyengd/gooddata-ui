@@ -37,6 +37,10 @@
         "title": "Bubble Chart",
         "sidebar_label": "Bubble Chart"
       },
+      "bullet_chart_component": {
+        "title": "Bullet Chart",
+        "sidebar_label": "Bullet Chart"
+      },
       "chart_config": {
         "title": "Chart Config",
         "sidebar_label": "Chart Config"

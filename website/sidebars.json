@@ -16,6 +16,7 @@
       "area_chart_component",
       "bar_chart_component",
       "bubble_chart_component",
+      "bullet_chart_component",
       "column_chart_component",
       "combo_chart_component",
       "donut_chart_component",
