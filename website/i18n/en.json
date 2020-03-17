@@ -117,6 +117,10 @@
         "title": "Get Identifiers from the Platform",
         "sidebar_label": "Get Identifiers from the Platform"
       },
+      "geo_pushpin_chart_component": {
+        "title": "Geo Pushpin Chart",
+        "sidebar_label": "Geo Pushpin Chart"
+      },
       "glossary": {
         "title": "Glossary",
         "sidebar_label": "Glossary"
