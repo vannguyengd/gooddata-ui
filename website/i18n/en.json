@@ -1072,6 +1072,10 @@
         "title": "Migration guide to React Components v7.x.x",
         "sidebar_label": "Migration guide to v7.x.x"
       },
+      "version-7.0.0/version-7.0.0-on_export_ready": {
+        "title": "OnExportReady",
+        "sidebar_label": "OnExportReady"
+      },
       "version-7.0.0/version-7.0.0-pivot_table_component": {
         "title": "Pivot Table",
         "sidebar_label": "Pivot Table"
@@ -1156,6 +1160,10 @@
         "title": "Live Examples",
         "sidebar_label": "Live Examples"
       },
+      "version-7.2.0/version-7.2.0-on_export_ready": {
+        "title": "OnExportReady",
+        "sidebar_label": "OnExportReady"
+      },
       "version-7.2.0/version-7.2.0-sso": {
         "title": "Set Up Authentication and Single Sign-On",
         "sidebar_label": "Set Up Authentication and Single Sign-On"
@@ -1176,9 +1184,25 @@
         "title": "Measure Value Filter",
         "sidebar_label": "Measure Value Filter"
       },
+      "version-7.3.0/version-7.3.0-on_export_ready": {
+        "title": "OnExportReady",
+        "sidebar_label": "OnExportReady"
+      },
       "version-7.3.0/version-7.3.0-table_totals": {
         "title": "Specify Table Totals",
         "sidebar_label": "Specify Table Totals"
+      },
+      "version-7.4.0/version-7.4.0-afm": {
+        "title": "Set Up an AFM Query",
+        "sidebar_label": "Set Up an AFM Query"
+      },
+      "version-7.4.0/version-7.4.0-bullet_chart_component": {
+        "title": "Bullet Chart",
+        "sidebar_label": "Bullet Chart"
+      },
+      "version-7.4.0/version-7.4.0-pivot_table_component": {
+        "title": "Pivot Table",
+        "sidebar_label": "Pivot Table"
       }
     },
     "links": {
