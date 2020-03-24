@@ -220,6 +220,10 @@
                     display: none;
                 }
             }
+
+            @media #{$medium-down} {
+                right: 60px;
+            }
         }
 
         @media #{$large-down} {

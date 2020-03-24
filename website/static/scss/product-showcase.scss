@@ -27,6 +27,10 @@
         padding-right: 30px;
         border-right: 1px solid transparentize($gd-color-dark, 0.67);
     }
+
+    @media #{$medium-down} {
+        max-width: 100%;
+    }
 }
 
 .productShowcaseBlock {
