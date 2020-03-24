@@ -1,68 +1,178 @@
-footer.nav-footer {
+.nav-footer {
+    display: flex;
     flex: 0 0 auto;
-    padding: 0;
-    box-shadow: none;
-    color: $gd-color-link;
+    flex-direction: column;
+    align-self: stretch;
+    justify-content: center;
+    height: 120px;
+    color: transparentize($gd-color-text-light, 0.2);
+    line-height: 22px;
     text-align: center;
-    background-color: transparentize(#59626b, 0.89);
+    background-color: $gray-4;
+    padding: 16px 24px;
 
-    .copyright {
-        padding: 1rem 20px;
-        color: transparentize($gd-color-text-light, 0.2);
-        background-color: $gray-4;
+    @media #{$large-down} {
+        height: auto;
+        padding: 10px 12px;
+    }
 
-        a {
-            color: inherit;
-            text-decoration: underline;
+    &-links {
+        display: flex;
+        align-items: stretch;
+        padding: 0 19px;
+        vertical-align: middle;
 
-            &:hover,
-            &:active,
-            &:focus {
-                color: $gd-color-text-light;
+        & + & {
+            border-left: 2px solid transparentize($gd-color-white, 0.5);
+
+            @media #{$large-down} {
+                border-left: none;
+            }
+        }
+
+        &:first-child {
+            justify-content: flex-end;
+        }
+
+        @media #{$large-down} {
+            flex-direction: column;
+            margin-bottom: 15px;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid transparentize($gd-color-white, 0.5);
+        }
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1280px;
+            margin: 0 auto 15px;
+            color: $gd-color-text-light;
+            font-size: 14px;
+            line-height: 18px;
+
+            @media #{$large-down} {
+                flex-direction: column;
+                align-items: stretch;
+                margin: 0 20px;
+            }
+        }
+
+        &-heading {
+            align-self: center;
+            margin: 0 15px;
+            font-weight: bold;
+            white-space: nowrap;
+
+            @media #{$large-down} {
+                margin-bottom: 5px;
+                font-size: 16px;
+            }
+        }
+
+        &-list {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            @media #{$large-down} {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &-item {
+                display: flex;
+                align-items: stretch;
+                flex: 0 0 auto;
+            }
+
+            & &-item {
+                margin: 0;
             }
         }
     }
-}
 
-.footer-links {
-    display: none;
-    padding: 20px;
+    &-link {
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
 
-    body.doc & {
-        display: block;
-    }
+        img {
+            vertical-align: middle;
+        }
 
-    h3 {
-        margin: 1.5rem 0;
-        color: inherit;
-    }
-
-    .social-buttons {
-        margin-top: 0;
-        padding: 1.5rem 0 0;
-        border-top-color: transparentize($gd-color-link, 0.5);
-        color: inherit;
-
-        a {
-            color: inherit;
+        @media #{$large-down} {
+            padding-top: 5px;
+            padding-bottom: 5px;
         }
     }
 
-    .social-button {
-        &.github::before {
-            background-image: url('../img/footer/github-logo.png');
+    &-logo {
+        &::before {
+            content: '';
+            display: block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
         }
 
-        &.stackoverflow::before {
+        &-stackoverflow::before {
+            width: 91px;
+            height: 24px;
+            margin-top: -10px;
             background-image: url('../img/footer/stackoverflow-logo.png');
         }
 
-        &.twitter::before {
-            background-image: url('../img/footer/twitter-logo.png');
+        &-github::before {
+            width: 65px;
+            height: 19px;
+            background-image: url('../img/footer/github-logo.png');
         }
 
-        &.npm::before {
-            background-image: url('../img/footer/npm-logo.png');
+        &-twitter::before {
+            width: 20px;
+            height: 20px;
+            background-image: url('../img/footer/twitter-logo.png');
+        }
+    }
+
+    &-copyright {
+        max-width: 1280px;
+        margin: 0 auto;
+        color: rgb(255, 255, 255, 0.7);
+        font-size: 12px;
+
+        @media #{$large-down} {
+            margin: 0 25px 5px;
+
+            a {
+                display: block;
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            color: $gd-color-text-light;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: underline;
+
+            &::before {
+                opacity: 0.9;
+            }
         }
     }
 }

@@ -34,6 +34,14 @@
         &::placeholder {
             color: $gd-color-state-blank;
         }
+
+        @media #{$medium-down} {
+            &,
+            &:focus,
+            &:active {
+                width: 75px;
+            }
+        }
     }
 
     .aa-dropdown-menu {
