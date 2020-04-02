@@ -108,9 +108,9 @@ For example:
 ## Treating null values as 0
 
 By default, an execution containing a measure value filter does not pass null (missing) values to arithmetic operations.
-However, you can allow users to make the execution replace the null values with 0 and include the null results in calculation.
+However, you can allow users to make the execution treat the null values as 0 and include the null results in calculation.
 
-To do so, enable the "Treat blank values as zero" checkbox in the filter dialog. By default, the checkbox is not selected.
+To do so, enable the "Treat blank values as 0" checkbox in the filter dialog. By default, the checkbox is not selected.
 
 ![Treat null values as 0](assets/mvf_treat_null_values_as.png "Treat null values as 0")
 
@@ -139,6 +139,6 @@ To make it to be selected by default, set the `treatNullAsZeroDefaultValue` prop
 | usePercentage     | false     | boolean                                                   | false         | Specifies whether the filtered measure is formatted as a percentage. If it is, the filter dropdown will accept percentage values, not the actual measure values. Set `usePercentage` to `false` when `computeRatio` is enabled in the filtered measure, because in this case it is filtered by actual measure values and not percentage ones.                                                                                          |
 | warningMessage    | false     | string                                                    | undefined     | The warning message displayed in the dropdown                                                                                                                                                                              |
 | separators        | false     | [Separators](#formatting-user-input) | `,` for thousands; `.` for decimal points |  Separators used for formatting strings in the input |
-| displayTreatNullAsZeroOption        | false     | boolean | false | Specifies whether the ["Treat blank values as zero" checkbox](#Treating-null-values-as-0) is shown in the filter dialog |
-| treatNullAsZeroDefaultValue        | false     | boolean | false | Specifies whether the ["Treat blank values as zero" checkbox](#Treating-null-values-as-0) is selected by default
+| displayTreatNullAsZeroOption        | false     | boolean | false | Specifies whether the ["Treat blank values as 0" checkbox](#Treating-null-values-as-0) is shown in the filter dialog |
+| treatNullAsZeroDefaultValue        | false     | boolean | false | Specifies whether the ["Treat blank values as 0" checkbox](#Treating-null-values-as-0) is selected by default
 | locale            | false     | string                                                    | `en-US`       | The localization of the component. See the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
