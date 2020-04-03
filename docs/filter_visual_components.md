@@ -263,6 +263,21 @@ This applies to the following types of measures:
 * Calculated measures with the percentage format set in the metadata catalog
 * Arithmetic measures with the `change` operator that has the percentage property `format` set
 
+#### Treating null values as numbers
+By default, any filter condition filters out null values. If you want a filter condition to treat null values as a number and to include them in the filtering process, add the optional `treatNullValuesAs` property to this condition and set it to that number.
+For instance, you can treat null values as 0 to be accepted by a less than 100 condition:
+
+```javascript
+// Type: MeasureValueFilterCondition
+{
+    comparison: {
+        operator: 'LESS_THAN',
+        value: 100,
+        treatNullValuesAs: 0
+    }
+}
+```
+
 ## Filter set on a specific measure
 
 Applying a filter to a specific measure is helpful when you have duplicate measures with different filters.
