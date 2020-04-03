@@ -108,7 +108,7 @@ For example:
 ## Treating null values as 0
 
 By default, an execution containing a measure value filter does not pass null (missing) values to arithmetic operations.
-However, you can allow users to make the execution treat the null values as 0 and include the null results in calculation.
+However, you can allow users to make the execution treat the null values as 0 and include the null results in the filtering process.
 
 To do so, enable the "Treat blank values as 0" checkbox in the filter dialog. By default, the checkbox is not selected.
 
