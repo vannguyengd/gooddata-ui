@@ -45,7 +45,7 @@ const population = {
         },
         format: '#,##0'
     }
-}
+};
 
 const density = {
     measure: {
@@ -59,23 +59,23 @@ const density = {
         },
         format: '#,##0'
     }
-}
+};
 
 const usStateLocation = {
     visualizationAttribute: {
         displayForm: {
-            identifier: 'usStateLocationIdentifier'
+            identifier: usStateLocationIdentifier
         },
-        localIdentifier: usStateLocationIdentifier
+        localIdentifier: 'usStateLocationIdentifier'
     }
 };
 
 const usStateName = {
     visualizationAttribute: {
         displayForm: {
-            identifier: 'usStateNameIdentifier'
+            identifier: usStateNameIdentifier
         },
-        localIdentifier: usStateNameIdentifier
+        localIdentifier: 'usStateNameIdentifier'
     }
 };
 
@@ -165,9 +165,9 @@ The following example shows the supported `geoConfig` structure with sample valu
     tooltipText: {
         visualizationAttribute: {
             displayForm: {
-                identifier: 'usStateNameIdentifier'
+                identifier: usStateNameIdentifier
             },
-            localIdentifier: usStateNameIdentifier
+            localIdentifier: 'usStateNameIdentifier'
         }
     },
     colors: ['rgb(195, 49, 73)', 'rgb(168, 194, 86)'],
