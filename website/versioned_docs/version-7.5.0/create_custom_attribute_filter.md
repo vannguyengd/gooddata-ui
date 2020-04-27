@@ -1,8 +1,9 @@
 ---
-id: create_custom_attribute_filter
+id: version-7.5.0-create_custom_attribute_filter
 title: Create a Custom Attribute Filter
 sidebar_label: Create Custom Filter
 copyright: (C) 2007-2020 GoodData Corporation
+original_id: create_custom_attribute_filter
 ---
 
 Attribute elements component is a low level counterpart to the [Attribute Filter component](attribute_filter_component.md).
