@@ -18,7 +18,7 @@ const users = [
 const siteConfig = {
   title: 'GoodData.UI' /* title for your website */,
   tagline: 'A powerful JavaScript library for building analytical applications',
-  url: 'https://gooddata.github.io' /* your website url */,
+  url: 'https://sdk.gooddata.com' /* your website url */,
   baseUrl: '/gooddata-ui/' /* base url for your project */,
   projectName: 'gooddata-ui',
   headerLinks: [
