@@ -72,7 +72,10 @@ const siteConfig = {
   // onPageNav: 'separate',
   algolia: {
     apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
-    indexName: 'gooddata'
+    indexName: 'gooddata',
+    algoliaOptions: {
+      facetFilters: ['version:VERSION'],
+    },
   },
   twitter: 'true',
   twitterImage: 'img/metaimage.jpg',
