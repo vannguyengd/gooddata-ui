@@ -2,7 +2,8 @@
 title: Pivot Table
 sidebar_label: Pivot Table
 copyright: (C) 2020 GoodData Corporation
-id: pivot_table_component
+id: version-7.5.0-pivot_table_component
+original_id: pivot_table_component
 ---
 
 Pivot table component expands capabilities of a regular (flat) table by allowing you to reorganize and summarize selected data beyond the typical row-column relationship.
