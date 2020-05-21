@@ -387,8 +387,8 @@ This helper creates measure sort items.
 
 The helper takes the following parameters:
 
-* `measureIdentifier` is the measure's local identifier
-* `direction` specifies the sorting direction (`'asc'` for ascending, `'desc'` for descending)
+* `measureIdentifier` is the measure's local identifier.
+* `direction` specifies the sorting direction (`'asc'` for ascending, `'desc'` for descending).
 
 The resulting object has one customization method, `attributeLocators(...locators)`, that adds specified attribute locators. The attribute locators are objects with the following properties:
   * `attributeIdentifier` is an identifier or an URI.
@@ -424,6 +424,87 @@ sortBy is equivalent to
             {
                 measureLocatorItem: {
                     measureIdentifier: totalSalesIdentifier
+                }
+            }
+        ]
+    }
+}
+*/
+```
+
+## Pivot Table width items helpers
+
+You can use the following width items helpers:
+
+* `attributeColumnWidthItem` for creating attribute [width items](pivot_table_component.md#manual-resizing)
+* `measureColumnWidthItem` for creating measure [width items](pivot_table_component.md#manual-resizing)
+
+### attributeColumnWidthItem helper
+
+This helper creates attribute width items.
+
+The helper takes the following parameters:
+
+* `attributeIdentifier` is the attribute's local identifier.
+* `width` specifies the width of the attribute column.
+
+**Example:**
+
+```js harmony
+import { Model } from '@gooddata/react-components';
+
+const attributeWidth = Model.attributeColumnWidthItem('state', 200);
+
+/*
+attributeWidth is equivalent to
+{
+    attributeColumnWidthItem: {
+        width: 200,
+        attributeIdentifier: 'state'
+    }
+}
+*/
+```
+
+### measureColumnWidthItem helper
+
+This helper creates measure width items.
+
+The helper takes the following parameters:
+
+* `measureIdentifier` is the measure's local identifier.
+* `width` specifies the width of the attribute column.
+
+The resulting object has one customization method, `attributeLocators(...locators)`, that adds specified attribute locators. The attribute locators are objects with the following properties:
+  * `attributeIdentifier` is an identifier or an URI.
+  * `element` is the attribute element identifier or URI.
+
+**Example:**
+
+```js harmony
+import { Model } from '@gooddata/react-components';
+
+const measureWidth = Model.measureColumnWidthItem('franchiseFees', 100)
+    .attributeLocators({
+        attributeIdentifier: 'month',
+        element: monthDateIdentifierJanuary
+    });
+
+/*
+measureWidth is equivalent to
+{
+    measureColumnWidthItem: {
+        width: 100,
+        locators: [
+            {
+                attributeLocatorItem: {
+                    attributeIdentifier: 'franchiseFees',
+                    element: monthDateIdentifierJanuary
+                }
+            },
+            {
+                measureLocatorItem: {
+                    measureIdentifier: 'franchiseFees'
                 }
             }
         ]
