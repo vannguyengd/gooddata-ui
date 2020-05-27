@@ -130,7 +130,7 @@ const rows = [
 
 You can [sort](result_specification.md#sorting) rows and attribute columns in any pivot table. Measures are always listed in the same order in which they were defined in the ```measures``` prop.
 
-**Important!** Sorting must be applied to any column attribute that is used in the pivot table. For example, in the table bellow, you apply sorting to both the Franchise Fees (measure) and the Date (column attribute).
+**Important!** Sorting must be applied to any column attribute that is used in the pivot table. For example, in the following table, you apply sorting to both the Franchise Fees (measure) and the Date (column attribute).
 
 ### Example: Sorting by measure
 
@@ -217,11 +217,11 @@ columnSizing: {
 
 ### Manual resizing
 
-> **Manual resizing in the Pivot Table is in the beta stage.**
+> **The manual resizing feature is in the beta stage.**
 
-To provide width of the columns, add to the `columnSizing` prop `columnWidths` prop. 
+To set the width of the columns, add the `columnWidths` prop to the `columnSizing` prop.
 
-**Important!** Column width definitions must be applied to any column attribute that is used in the table. For example, in the column width definition bellow, you apply width to both the Franchise Fees (measure) and the Date (column attribute).
+**Important!** Column width definitions must be applied to any column attribute that is used in the table. For example, in the following column width definition, you apply the width to both the Franchise Fees (measure) and the Date (column attribute).
 ```jsx
 columnSizing: {
    columnWidths: [
@@ -252,26 +252,30 @@ columnSizing: {
    ]
 }
 ```
-* Columns of the table have widths according to provided column width definitions.
+* The width of the table columns is set according to the provided column width definitions.
 * Scrolling horizontally or vertically and sorting values in a column do not affect the column width.
-* When column width definitions are changed the table will be re-rendered with provided column width definitions.
-* It is not necessary to create `attributeColumnWidthItem` and `measureColumnWidthItem` manually. You can use [attributeColumnWidthItem helper](model_helpers.md#attributecolumnwidthitem-helper) and [measureColumnWidthItem helper](model_helpers.md#measurecolumnwidthitem-helper)
+* If the column width definitions change, the table is re-rendered with the new column width definitions.
 
-To get notified about the change in the width of columns, you must add `onColumnResized` prop with a callback function to the table props:
-```html
-<PivotTable
-    projectId={projectId}
-    measures={measures}
-    rows={rows}
-    columns={columns}
-    sortBy={sortBy}
-    config={config}
-    onColumnResized={handleOnColumnResized}
-/>
-```
-* Every change of the column width causes call of a callback function which has column width definitions as a parameter.
+    To get notified about the change in the width of columns, add the `onColumnResized` prop with a callback function to the table props:
+    ```html
+    <PivotTable
+        projectId={projectId}
+        measures={measures}
+        rows={rows}
+        columns={columns}
+        sortBy={sortBy}
+        config={config}
+        onColumnResized={handleOnColumnResized}
+    />
+    ```
+    
+    A change of the column width calls the callback function that has the column width definitions as a parameter.
 
-**NOTE:** It is possible to combine auto resizing with manual resizing. You have to just provide to `columnSizing` prop `defaultWidth` and `columnWidths` props:
+**TIP:** Instead of creating `attributeColumnWidthItem` and `measureColumnWidthItem` manually, you can use the [attributeColumnWidthItem helper](model_helpers.md#attributecolumnwidthitem-helper) and the [measureColumnWidthItem helper](model_helpers.md#measurecolumnwidthitem-helper).
+
+### Combining auto resizing and manual resizing
+
+To combine auto resizing and manual resizing, add the `defaultWidth` and `columnWidths` props to the `columnSizing` prop:
 ```jsx
 columnSizing: {
     defaultWidth: "viewport",
@@ -303,7 +307,10 @@ columnSizing: {
     ]
 }
 ```
-* The width of columns that are defined in `columnWidths` prop matches the defined width. Other columns are automatically resized as it is described in [auto resizing](pivot_table_component.md#auto-resizing).
+
+The width of the columns that are defined in the `columnWidths` prop is set according to the defined width. The other columns are [resized automatically](pivot_table_component.md#auto-resizing).
+
+### Switching to the default resizing
 
 To switch to the default behavior (all columns have the same fixed size), do not provide `columnSizing` at all or set `columnSizing` to:
 ```jsx
@@ -312,7 +319,7 @@ columnSizing: {
     columnWidths: undefined 
 }
 ```
-* Feel free to not provide `columnWidths` prop at all, it will work in the same way as with `columnWidths: undefined`.
+You can omit the `columnWidths` prop completely. It has the same effect as specifying `columnWidths: undefined`.
 
 ## Configuration menu
 

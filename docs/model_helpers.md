@@ -344,9 +344,9 @@ equivalent to
 */
 ```
 
-## Sort items helpers
+## Sort item helpers
 
-You can use the following sort items helpers:
+You can use the following sort item helpers:
 
 * `attributeSortItem` for creating attribute [sort items](result_specification.md#sorting)
 * `measureSortItem` for creating measure [sort items](result_specification.md#sorting)
@@ -432,12 +432,12 @@ sortBy is equivalent to
 */
 ```
 
-## Pivot Table width items helpers
+## Width item helpers for pivot tables
 
-You can use the following width items helpers:
+You can use the following width item helpers for setting the column width in [pivot tables](pivot_table_component.md#manual-resizing):
 
-* `attributeColumnWidthItem` for creating attribute [width items](pivot_table_component.md#manual-resizing)
-* `measureColumnWidthItem` for creating measure [width items](pivot_table_component.md#manual-resizing)
+* `attributeColumnWidthItem` for creating attribute width items
+* `measureColumnWidthItem` for creating measure width items
 
 ### attributeColumnWidthItem helper
 
