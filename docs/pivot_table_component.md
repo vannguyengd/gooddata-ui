@@ -130,7 +130,7 @@ const rows = [
 
 You can [sort](result_specification.md#sorting) rows and attribute columns in any pivot table. Measures are always listed in the same order in which they were defined in the ```measures``` prop.
 
-**Important!** Sorting must be applied to any column attribute that is used in the pivot table. For example, in the table above, you apply sorting to both the Franchise Fees (measure) and the Date (column attribute).
+**Important!** Sorting must be applied to any column attribute that is used in the pivot table. For example, in the following table, you apply sorting to both the Franchise Fees (measure) and the Date (column attribute).
 
 ### Example: Sorting by measure
 
@@ -199,8 +199,10 @@ To avoid this gap, specify the maximum height of the table using the `maxHeight`
 
 ## Column width resizing
 
+### Auto resizing
+
 By default, the width of the columns is not set, and all columns have the same fixed width regardless of the actual content. To automatically resize the columns to fit their content, add the `columnSizing` prop and set it to `defaultWidth: "viewport"`:
-```
+```jsx
 columnSizing: {
     defaultWidth: "viewport"
 }
@@ -213,7 +215,111 @@ columnSizing: {
 * If you manually adjust the column width, the adjusted width is preserved only temporarily and will be reset to the previously set value after the table is re-rendered.
 * When auto-resizing is turned on, the column width can be set to 500 px maximum (for both auto-resized and manually resized columns).
 
-To switch to the default behavior (all columns have the same fixed size), set the `columnSizing` prop to `defaultWidth: "unset"` or do not provide `columnSizing` at all.
+### Manual resizing
+
+> **The manual resizing feature is in the beta stage.**
+
+To set the width of the columns, add the `columnWidths` prop to the `columnSizing` prop.
+
+**Important!** Column width definitions must be applied to any column attribute that is used in the table. For example, in the following column width definition, you apply the width to both the Franchise Fees (measure) and the Date (column attribute).
+```jsx
+columnSizing: {
+   columnWidths: [
+        {
+            attributeColumnWidthItem: {
+                width: 100,
+                attributeIdentifier: 'day'
+            }
+        },
+        {
+            measureColumnWidthItem: {
+                width: 200,
+                locators: [
+                    {
+                        attributeLocatorItem: {
+                            attributeIdentifier: 'month',
+                            element: monthDateIdentifierJanuary
+                        }
+                    },
+                    {
+                        measureLocatorItem: {
+                            measureIdentifier: 'franchiseFeesIdentifier'
+                        }
+                    }
+                ]
+            }
+        }
+   ]
+}
+```
+* The width of the table columns is set according to the provided column width definitions.
+* Scrolling horizontally or vertically and sorting values in a column do not affect the column width.
+* If the column width definitions change, the table is re-rendered with the new column width definitions.
+
+    To get notified about the change in the width of columns, add the `onColumnResized` prop with a callback function to the table props:
+    ```html
+    <PivotTable
+        projectId={projectId}
+        measures={measures}
+        rows={rows}
+        columns={columns}
+        sortBy={sortBy}
+        config={config}
+        onColumnResized={handleOnColumnResized}
+    />
+    ```
+    
+    A change of the column width calls the callback function that has the column width definitions as a parameter.
+
+**TIP:** Instead of creating `attributeColumnWidthItem` and `measureColumnWidthItem` manually, you can use the [attributeColumnWidthItem helper](model_helpers.md#attributecolumnwidthitem-helper) and the [measureColumnWidthItem helper](model_helpers.md#measurecolumnwidthitem-helper).
+
+### Combining auto resizing and manual resizing
+
+To combine auto resizing and manual resizing, add the `defaultWidth` and `columnWidths` props to the `columnSizing` prop:
+```jsx
+columnSizing: {
+    defaultWidth: "viewport",
+    columnWidths: [
+        {
+            attributeColumnWidthItem: {
+                width: 100,
+                attributeIdentifier: 'day'
+            }
+        },
+        {
+            measureColumnWidthItem: {
+                width: 200,
+                locators: [
+                   {
+                        attributeLocatorItem: {
+                            attributeIdentifier: 'month',
+                            element: monthDateIdentifierJanuary
+                        }
+                   },
+                   {
+                        measureLocatorItem: {
+                            measureIdentifier: 'franchiseFeesIdentifier'
+                        }
+                   }
+                ]
+            }
+        }
+    ]
+}
+```
+
+The width of the columns that are defined in the `columnWidths` prop is set according to the defined width. The other columns are [resized automatically](pivot_table_component.md#auto-resizing).
+
+### Switching to the default resizing
+
+To switch to the default behavior (all columns have the same fixed size), do not provide `columnSizing` at all or set `columnSizing` to:
+```jsx
+columnSizing: {
+    defaultWidth: "unset",
+    columnWidths: undefined 
+}
+```
+You can omit the `columnWidths` prop completely. It has the same effect as specifying `columnWidths: undefined`.
 
 ## Configuration menu
 
@@ -235,7 +341,33 @@ const config = {
         decimal: '.'
     },
     columnSizing: {
-        defaultWidth: "viewport"
+        defaultWidth: "viewport",
+        columnWidths: [
+            {
+                attributeColumnWidthItem: {
+                    width: 100,
+                    attributeIdentifier: 'day'
+                }
+            },
+            {
+                measureColumnWidthItem: {
+                    width: 100,
+                    locators: [
+                        {
+                            attributeLocatorItem: {
+                                attributeIdentifier: 'month',
+                                element: monthDateIdentifierJanuary
+                            }
+                        },
+                        {
+                            measureLocatorItem: {
+                                measureIdentifier: 'franchiseFeesIdentifier'
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
     }
 };
 
