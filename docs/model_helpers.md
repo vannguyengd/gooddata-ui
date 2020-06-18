@@ -129,8 +129,8 @@ In addition to the common measure builder methods, `measure` also has the follow
 * `filters(...filters)` for setting up measure filters (you can also use [filter helpers](#filter-helpers) for creating filter objects)
 * `aggregation(aggregationType)` for setting the measure aggregation type (`sum`, `max`, and so on)
 * `ratio()` for setting the `computeRatio` flag to `true` (to display the measure value as a percentage instead of a number)
-     
-     * Do not use `ratio()` in visualizations with the `stackBy` property set. 
+
+     * Do not use `ratio()` in visualizations with the `stackBy` property set.
      * If used in visualizations with multiple measures, `ratio()` is ignored.
      * If used in visualizations with one measure and [stacking configured](chart_config.md#configure-stacking) with the `stackMeasuresToPercent` property set, `ratio()` overrides `stackMeasuresToPercent`. That is, `computeRatio` is applied, and `stackMeasuresToPercent` is ignored.
 
@@ -438,6 +438,7 @@ You can use the following width item helpers for setting the column width in [pi
 
 * `attributeColumnWidthItem` for creating attribute width items
 * `measureColumnWidthItem` for creating measure width items
+* `allMeasureColumnWidthItem` for creating measure width items for all measure columns
 
 ### attributeColumnWidthItem helper
 
@@ -508,6 +509,29 @@ measureWidth is equivalent to
                 }
             }
         ]
+    }
+}
+*/
+```
+
+### allMeasureColumnWidthItem helper
+
+This helper creates measure width items for all measure columns.
+
+The helper takes one parameter, `width`, that specifies the width of all measure columns.
+
+**Example:**
+
+```js harmony
+import { Model } from '@gooddata/react-components';
+
+const allMeasureWidth = Model.allMeasureColumnWidthItem(100);
+
+/*
+allMeasureWidth is equivalent to
+{
+    measureColumnWidthItem: {
+        width: 100,
     }
 }
 */
