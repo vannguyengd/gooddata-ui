@@ -227,8 +227,6 @@ columnSizing: {
     }
     ```
 
-**TIP:** Instead of creating `attributeColumnWidthItem`, `measureColumnWidthItem`, `allMeasureColumnWidthItem` or `weakMeasureColumnWidthItem` manually, you can use the [width item helpers](model_helpers.md#width-item-helpers-for-pivot-tables).
-
 ### Priorities of column width definitions
 
 `measureColumnWidthItem` defined for a specific column overrides the value set by `weakMeasureColumnWidthItem` for a group of columns of one measure. `measureColumnWidthItem` for this column also overrides the value specified by `allMeasureColumnWidthItem` for all measure columns.
