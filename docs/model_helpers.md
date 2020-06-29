@@ -460,7 +460,7 @@ const attributeWidth = Model.attributeColumnWidthItem('state', 200);
 attributeWidth is equivalent to
 {
     attributeColumnWidthItem: {
-        width: 200,
+        width: { value: 200 },
         attributeIdentifier: 'state'
     }
 }
@@ -495,7 +495,7 @@ const measureWidth = Model.measureColumnWidthItem('franchiseFees', 100)
 measureWidth is equivalent to
 {
     measureColumnWidthItem: {
-        width: 100,
+        width: { value: 100 },
         locators: [
             {
                 attributeLocatorItem: {
@@ -531,7 +531,7 @@ const allMeasureWidth = Model.allMeasureColumnWidthItem(100);
 allMeasureWidth is equivalent to
 {
     measureColumnWidthItem: {
-        width: 100,
+        width: { value: 100 },
     }
 }
 */
