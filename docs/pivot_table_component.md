@@ -228,13 +228,13 @@ columnSizing: {
    columnWidths: [
         {
             attributeColumnWidthItem: {
-                width: 100,
+                width: { value: 100 },
                 attributeIdentifier: 'day'
             }
         },
         {
             measureColumnWidthItem: {
-                width: 200,
+                width: { value: 200 },
                 locators: [
                     {
                         attributeLocatorItem: {
@@ -280,7 +280,7 @@ columnSizing: {
         columnWidths: [
             {
                 measureColumnWidthItem: {
-                    width: 200,
+                    width: { value: 200 },
                 }
             }
         ]
@@ -304,13 +304,13 @@ columnSizing: {
     columnWidths: [
         {
             attributeColumnWidthItem: {
-                width: 100,
+                width: { value: 100 },
                 attributeIdentifier: 'day'
             }
         },
         {
             measureColumnWidthItem: {
-                width: 200,
+                width: { value: 200 },
                 locators: [
                    {
                         attributeLocatorItem: {
@@ -341,12 +341,12 @@ columnSizing: {
     columnWidths: [
         {
             measureColumnWidthItem: {
-                width: 200,
+                width: { value: 200 },
             }
         },
         {
             measureColumnWidthItem: {
-                width: "auto",
+                width: { value: "auto" },
                 locators: [
                    {
                         attributeLocatorItem: {
