@@ -7,8 +7,6 @@ id: on_legend_ready
 
 The `onLegendReady` parameter allows you to get a series from charts and to render a custom legend.
 
-This parameter is not available in the Table component.
-
 ## Callback data structure
 
 ```javascript

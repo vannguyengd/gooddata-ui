@@ -130,7 +130,7 @@ When the property is enabled, the measure's `format` value is ignored. The defau
 ### Compare a measure over time
 
 To compare a measure over time, add one of the supported measure types described 
-in [Time Over Time Comparison](20_misc__time_over_time_comparison.md) to `afm.measures`.
+in [Time Over Time Comparison](20_misc__time_over_time_comparison.md) to execution.
 
 ### Calculated measures
 

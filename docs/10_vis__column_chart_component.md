@@ -42,7 +42,6 @@ import { Ldm } from "./ldm";
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
 | measures | true | [IMeasure[]](50_custom__execution.md#measure) | An array of measure definitions |
 | viewBy | false | [IAttribute](50_custom__execution.md#attribute) &#124; [Attribute[]](50_custom__execution.md#attribute) | The attribute definition or an array of two attribute definitions. If set to a two-attribute array, the first attribute wraps up the second one. |
 | stackBy | false | [IAttribute](50_custom__execution.md#attribute) | The attribute definition. Do not use `stackBy` in charts with multiple measures. |
@@ -51,21 +50,11 @@ import { Ldm } from "./ldm";
 | config | false | [IChartConfig](15_props__chart_config.md) | The chart configuration object |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | drillableItems | false | [IDrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable. |
-| sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 | ErrorComponent | false | Component | A component to be rendered if this component is in error state (see [ErrorComponent](15_props__error_component.md)) |
 | LoadingComponent | false | Component | A component to be rendered if this component is in loading state (see [LoadingComponent](15_props__loading_component.md)) |
 | onError | false | Function | A callback when the component updates its error state |
 | onExportReady | false | Function | A callback when the component is ready for exporting its data |
 | onLoadingChanged | false | Function | A callback when the component updates its loading state |
-
-
-<!-- These internals are intentionally undocumented
-| afterRender | false | Function | A callback after component is rendered |
-| dataSource | false | DataSource class | A class that is used to resolve AFM |
-| environment | false | string | An Internal property that changes behaviour in Analytical Designer and KPI Dashboards |
-| height | false | number | Height of the component in pixels |
-| pushData | false | Function | A callback after AFM is resolved |
--->
 
 The following example shows the supported `config` structure with sample values. For the descriptions of the individual options, see [ChartConfig](15_props__chart_config.md).
 

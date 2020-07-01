@@ -85,11 +85,3 @@ import { Ldm } from "./ldm";
 | onError | false | Function | A callback when the component updates its error state |
 | onExportReady | false | Function | A callback when the component is ready for exporting its data |
 | onLoadingChanged | false | Function | A callback when the component updates its loading state |
-
-<!-- These internals are intentionally undocumented
-| afterRender | false | Function | A callback after component is rendered |
-| dataSource | false | DataSource class | A class that is used to resolve AFM |
-| environment | false | string | An Internal property that changes behaviour in Analytical Designer and KPI Dashboards |
-| height | false | number | Height of the component in pixels |
-| pushData | false | Function | A callback after AFM is resolved |
--->
