@@ -439,6 +439,7 @@ You can use the following width item helpers for setting the column width in [pi
 * `attributeColumnWidthItem` for creating attribute width items
 * `measureColumnWidthItem` for creating measure width items
 * `allMeasureColumnWidthItem` for creating measure width items for all measure columns
+* `weakMeasureColumnWidthItem` for creating measure width items for all columns of a specific measure
 
 ### attributeColumnWidthItem helper
 
@@ -532,6 +533,37 @@ allMeasureWidth is equivalent to
 {
     measureColumnWidthItem: {
         width: { value: 100 },
+    }
+}
+*/
+```
+
+### weakMeasureColumnWidthItem helper
+
+This helper creates measure width items for all columns of a specific measure.
+
+The helper takes the following parameters:
+
+* `measureIdentifier` is the measure's local identifier.
+* `width` specifies the width for all columns of the measure.
+
+**Example:**
+
+```js harmony
+import { Model } from '@gooddata/react-components';
+
+const weakMeasureWidth = Model.weakMeasureColumnWidthItemBuilder('franchiseFees', 100);
+
+/*
+weakMeasureWidth is equivalent to
+{
+    measureColumnWidthItem: {
+        width: { value: 100 },
+        locator: {
+            measureLocatorItem: {
+                measureIdentifier: 'franchiseFees'
+            }
+        }
     }
 }
 */

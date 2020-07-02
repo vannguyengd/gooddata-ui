@@ -276,25 +276,48 @@ columnSizing: {
     A change of the column width calls the provided callback function with all the current column width definitions as a parameter.
 * To set the same width for all measure columns, add the `allMeasureColumnWidthItem` prop:
     ```jsx
+    const allMeasureColumnWidthItem = {
+        measureColumnWidthItem: {
+            width: { value: 200 },
+        }
+    };
     columnSizing: {
         columnWidths: [
-            {
-                measureColumnWidthItem: {
-                    width: { value: 200 },
-                }
-            }
+            allMeasureColumnWidthItem
         ]
     }
     ```
-    **NOTE**: `measureColumnWidthItem` defined for a specific column overrides the value set by `allMeasureColumnWidthItem` for this column. The width of this column is set to the value of the `width` prop in `measureColumnWidthItem`.
 
-**TIP:** Instead of creating `attributeColumnWidthItem`, `measureColumnWidthItem`, and `allMeasureColumnWidthItem` manually, you can use the [width item helpers](model_helpers.md#width-item-helpers-for-pivot-tables).
+* To set the same width for all columns of a specific measure (applicable when column attributes are used), add the `weakMeasureColumnWidthItem` prop:
+    ```jsx
+    const weakMeasureColumnWidthItem = {
+        measureColumnWidthItem: {
+            width: { value: 200 },
+            locator: {
+                measureLocatorItem: {
+                    measureIdentifier: 'franchiseFees'
+                }
+            }
+        }
+    };
+    columnSizing: {
+        columnWidths: [
+            weakMeasureColumnWidthItem
+        ]
+    }
+    ```
+
+**TIP:** Instead of creating `attributeColumnWidthItem`, `measureColumnWidthItem`, `allMeasureColumnWidthItem` or `weakMeasureColumnWidthItem` manually, you can use the [width item helpers](model_helpers.md#width-item-helpers-for-pivot-tables).
+
+### Priorities of column width definitions
+
+`measureColumnWidthItem` defined for a specific column overrides the value set by `weakMeasureColumnWidthItem` for a group of columns of one measure. `measureColumnWidthItem` for this column also overrides the value specified by `allMeasureColumnWidthItem` for all measure columns.
 
 ### Combining auto resizing and manual resizing
 
 To combine auto resizing and manual resizing, add both the `defaultWidth` and `columnWidths` props under the `columnSizing` prop.
 
-**Example:** In the following code sample:
+**Example 1:** In the following code sample:
 * The width of the columns that are defined under `columnWidths` is set according to the values of their appropriate `width` props (see [Manual resizing](#manual-resizing)).
 * All the other columns are resized to fit the content (see [Auto resizing](#auto-resizing)).
 
@@ -330,9 +353,9 @@ columnSizing: {
 }
 ```
 
-**Example:** In the following code sample:
+**Example 2:** In the following code sample:
 * The width of all the measure columns is set to the value of the `width` prop under `allMeasureColumnWidthItem` (see [Manual resizing](#manual-resizing)).
-* However, the `measureColumnWidthItem` prop overrides the value set by `allMeasureColumnWidthItem` for the measure columns that are defined under `measureColumnWidthItem`. Notice that the `width` prop under `measureColumnWidthItem` is set to `"auto"` and not to a number as in the previous example. This means that at the initial rendering these measure columns will be resized to fit the content (see [Auto resizing](#auto-resizing)), while all the other measure columns will be set to the width defined by `allMeasureColumnWidthItem`.
+* However, the `measureColumnWidthItem` prop overrides the value set by `allMeasureColumnWidthItem` for the measure columns that are defined under `measureColumnWidthItem`. Notice that the `width` prop under `measureColumnWidthItem` is set to `"auto"` and not to a number as in **Example 1**. This means that at the initial rendering these measure columns will be resized to fit the content (see [Auto resizing](#auto-resizing)), while all the other measure columns will be set to the width defined by `allMeasureColumnWidthItem`.
 * All the attribute columns, if any, are resized to fit the content (see [Auto resizing](#auto-resizing)).
 
 ```jsx
@@ -342,6 +365,53 @@ columnSizing: {
         {
             measureColumnWidthItem: {
                 width: { value: 200 },
+            }
+        },
+        {
+            measureColumnWidthItem: {
+                width: { value: "auto" },
+                locators: [
+                   {
+                        attributeLocatorItem: {
+                            attributeIdentifier: 'month',
+                            element: monthDateIdentifierJanuary
+                        }
+                   },
+                   {
+                        measureLocatorItem: {
+                            measureIdentifier: 'franchiseFeesIdentifier'
+                        }
+                   }
+                ]
+            }
+        }
+    ]
+}
+```
+
+**Example 3:** In the following code sample:
+* The width of all the measure columns is set to the value of the `width` prop under `allMeasureColumnWidthItem` (see [Manual resizing](#manual-resizing)).
+* The width of all columns of the selected measure is set to the value of the `width` prop under `weakMeasureColumnWidthItem` and overrides value from `allMeasureColumnWidthItem` (see [Manual resizing](#manual-resizing)).
+* However, the `measureColumnWidthItem` prop overrides the value set by `allMeasureColumnWidthItem` and `weakMeasureColumnWidthItem` for the measure column that is defined under `measureColumnWidthItem`. Notice that the `width` prop under `measureColumnWidthItem` is set to `"auto"` and not to a number as in **Example 1**. This means that at the initial rendering this measure column will be resized to fit the content (see [Auto resizing](#auto-resizing)), while all the other measure columns will be set to the width defined by `allMeasureColumnWidthItem` or `weakMeasureColumnWidthItem`.
+* All the attribute columns, if any, are resized to fit the content (see [Auto resizing](#auto-resizing)).
+
+```jsx
+columnSizing: {
+    defaultWidth: "viewport",
+    columnWidths: [
+        {
+            measureColumnWidthItem: {
+                width: { value: 200 },
+            }
+        },
+        {
+            measureColumnWidthItem: {
+                width: { value: 400 },
+                locator: {
+                    measureLocatorItem: {
+                        measureIdentifier: 'totalSalesIdentifier'
+                    }
+                }
             }
         },
         {
@@ -384,6 +454,15 @@ columnSizing: {
 
     The new column widths are propagated via the `onColumnResized` callback array. All the `measureColumnWidthItem` props are removed. The `allMeasureColumnWidthItem` prop is added.
 
+### Resizing all columns of a specific measure at once to a custom width
+
+1. Hover over the right side of the header of any column of the specific measure until a horizontal resize cursor appears.
+2. Press and hold **Alt** or **Option**, and drag the column line.
+
+    All columns of the corresponding measure are resized to the set width.
+
+    The new column widths are propagated via the `onColumnResized` callback array. All the `measureColumnWidthItem` props of the corresponding measure are removed. The `weakMeasureColumnWidthItem` prop is added.
+
 ### Resizing a column to fit its content
 
 1. Hover over the right side of the column header until a horizontal resize cursor appears.
@@ -395,16 +474,25 @@ columnSizing: {
 
 **NOTES:**
 * This behavior is not applied if [auto resizing](#auto-resizing) is enabled and you double-click a column that was visible and auto-resized at the initial rendering and then its width was manually adjusted in the UI. Such column is removed from the `onColumnResized` callback array.
-* If [auto resizing](#auto-resizing) is enabled, and `columnWidths` includes the `allMeasureColumnWidthItem` prop, and you double-click a measure column, the `measureColumnWidthItem` prop with `width` set to `"auto"` is added to the `onColumnResized` callback array.
+* If [auto resizing](#auto-resizing) is enabled, and `columnWidths` includes the `allMeasureColumnWidthItem` or `weakMeasureColumnWidthItem` prop, and you double-click a measure column, the `measureColumnWidthItem` prop with `width` set to `"auto"` is added to the `onColumnResized` callback array.
 
 ### Resizing all measure columns at once to fit their content
 
 1. Hover over the right side of the header of any measure column until a horizontal resize cursor appears.
-2. Press and hold the **Ctrl** or **Command** key, and double-click the column line.
+2. Press and hold **Ctrl** or **Command**, and double-click the column line.
 
     All measure columns are resized to fit their content.
 
     The new column widths are propagated via the `onColumnResized` callback array. All the `allMeasureColumnWidthItem` props are removed.
+
+### Resizing all columns of a specific measure at once to fit their content
+
+1. Hover over the right side of the header of any column of the specific measure until a horizontal resize cursor appears.
+2. Press and hold **Alt** or **Option**, and double-click the column line.
+
+    All columns of the corresponding measure are resized to fit their content.
+
+    The new column widths are propagated via the `onColumnResized` callback array. All the `weakMeasureColumnWidthItem` props are removed.
 
 ### Switching to the default resizing
 
