@@ -176,8 +176,8 @@ The same values in column attributes are grouped across the rows, which helps im
 
 The grouping is applied when the following conditions are **all** met:
 * The `groupRows` property is set to `true` (see [Properties](#properties)).
-* The table is sorted by the **first** column attribute (either in ascending or descending order).
-* The table has **two or more** column attributes.
+* The table is sorted by the **first** row attribute (either in ascending or descending order).
+* The table has **two or more** row attributes.
 
 ![Pivot Table Grouping](assets/pivot_table_grouping.png "Pivot Table Grouping")
 
