@@ -171,11 +171,11 @@ const sortBy = [
 
 ## Grouping
 
-By default, the same values in column attributes are grouped across the rows, which helps improve data readability in pivot tables. The header of the grouped columns is displayed at the top of the table even when you scroll through a long group.
+By default, the same row attribute values in a column are grouped across the rows, which helps improve data readability in pivot tables. The header of the grouped columns is displayed at the top of the table even when you scroll through a long group.
 
 The grouping is applied when the following conditions are both met:
-* The table is sorted by the **first** column attribute (either in ascending or descending order).
-* The table has **two or more** column attributes.
+* The table is sorted by the **first** row attribute (either in ascending or descending order).
+* The table has **two or more** row attributes.
 
 ![Pivot Table Grouping](assets/pivot_table_grouping.png "Pivot Table Grouping")
 
