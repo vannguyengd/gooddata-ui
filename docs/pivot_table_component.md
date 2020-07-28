@@ -219,8 +219,6 @@ columnSizing: {
 
 ### Manual resizing
 
-> **The manual resizing feature is in the beta stage.**
-
 To set the width of the columns, add the `columnWidths` prop to the `columnSizing` prop.
 
 ```jsx
