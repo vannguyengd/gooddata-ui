@@ -434,6 +434,21 @@ columnSizing: {
 }
 ```
 
+### Resizing visible columns to fill up the container
+
+To make the currently visible columns take the available screen space, add the `growToFit` prop to the `columnSizing` object and set it to `true`.
+
+```jsx
+columnSizing: {
+    defaultWidth: "viewport",
+    growToFit: true
+}
+```
+
+**NOTES:**
+* This behavior is not applied to the [manually resized columns](#manual-resizing). It is applied only to the columns that are **not** inside the `columnWidths` object.
+* If [auto resizing](#auto-resizing) is enabled, the columns that are visible during the initial rendering of the table are automatically resized to fit their content. If these columns do not fit the screen, they will be resized to fill up the container.
+
 ### Resizing a column to a custom width
 
 1. Hover over the right side of the column header until a horizontal resize cursor appears.
@@ -490,7 +505,7 @@ columnSizing: {
 
     All columns of the corresponding measure are resized to fit their content.
 
-    The new column widths are propagated via the `onColumnResized` callback array. All the `weakMeasureColumnWidthItem` props are removed.
+    The new column widths are propagated via the `onColumnResized` callback array. All the `weakMeasureColumnWidthItem` props are removed. 
 
 ### Switching to the default resizing
 
