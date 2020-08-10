@@ -122,7 +122,17 @@ The `from` and `to` properties set the number of granularity units (for example,
 * `-1` for the previous period
 * `-n` for the *n*th previous period
 
-### Relative filter examples
+**NOTE:** If you use date filters by _weeks_ and compare the data to the [previous period or the same period of the last year](time_over_time_comparison.md) in those filters, you have to enable the GoodData platform to properly process such week filters. To do so, complete the following steps:
+
+1. Switch the version of the [Extensible Analytics Engine](https://help.gooddata.com/display/doc/XAE+-+Extensible+Analytics+Engine) to 3.
+
+    To do so, set the `xae_version` platform setting to 3 (see [Configure Various Features via Platform Settings](https://help.gooddata.com/display/doc/Configure+Various+Features+via+Platform+Settings)).
+
+2. Migrate the Date datasets in your project to the `urn:custom_v2:date` date dimension.
+
+    To do so, see "Migrate from a Legacy Date Dimension to urn:custom_v2:date" in [Custom Calendars - Self Service](https://help.gooddata.com/display/doc/Custom+Calendars+-+Self+Service).
+
+#### Relative filter examples
 
 **Last 7 days \(yesterday and 6 days before\):**
 
