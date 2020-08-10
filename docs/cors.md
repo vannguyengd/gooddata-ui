@@ -69,7 +69,7 @@ In addition, proxying the `/*.html` pages allows you to easily establish a use
 
 Setting up CORS allows you to develop and run web applications that can communicate directly with the GoodData APIs.
 
-This section does **not** address authentication. The easiest way to make sure that your API requests to the GoodData platform are authenticated is to be logged into your white-labelled domain in the same browser you are using for your local development.
+This section does **not** address authentication. The easiest way to make sure that your API requests to the GoodData platform are authenticated is to be logged into your white-labeled domain in the same browser you are using for your local development.
 
 ### Step 1. Get a white-labeled GoodData domain
 
@@ -83,14 +83,17 @@ You can white-label a brand new domain \(see [White-Label a New Domain](https://
 
 ### Step 2. Configure CORS
 
-To request CORS setup, submit a request via the [GoodData Support Portal](https://support.gooddata.com/hc/en-us). In your request, provide the following:
+The domains from which you want to enable API calls must be listed as allowed origins for your white-labeled domain.
+To make those domains allowed origins, use the [API for adding domains allowed for CORS access](https://help.gooddata.com/display/API/API+Reference#/reference/white-labeling/add-domains-allowed-for-cors-access/add-domains-allowed-for-cors-access).
+
+Alternatively, you can submit a request for CORS configuration to the [GoodData Support](https://support.gooddata.com/). In your request, provide the following:
 
 * The name of your GoodData domain.
 * (Optional, but recommended) URLs to enable API calls from a local machine during development. For example, `https://local.test:8443` \(you have to set up
   `local.test` as an alias for `localhost` because using the actual localhost is not allowed\).
 
 **Example:**
-If your white-labelled GoodData domain is `analytics.example.com` and your app is expected to be hosted at `https://smart-app.example.com/`, you can request CORS by submitting the following request:
+If your white-labeled GoodData domain is `analytics.example.com` and your app is expected to be hosted at `https://smart-app.example.com/`, you can request CORS by submitting the following request:
 
 ```
 To: support@gooddata.com
