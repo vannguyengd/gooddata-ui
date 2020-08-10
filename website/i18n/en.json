@@ -1247,6 +1247,26 @@
       "version-7.7.0/version-7.7.0-pivot_table_component": {
         "title": "Pivot Table",
         "sidebar_label": "Pivot Table"
+      },
+      "version-7.8.0/version-7.8.0-cors": {
+        "title": "Deal with Cross-Origin Issues",
+        "sidebar_label": "Deal with Cross-Origin Issues"
+      },
+      "version-7.8.0/version-7.8.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
+      },
+      "version-7.8.0/version-7.8.0-model_helpers": {
+        "title": "Model Helpers",
+        "sidebar_label": "Model Helpers"
+      },
+      "version-7.8.0/version-7.8.0-pivot_table_component": {
+        "title": "Pivot Table",
+        "sidebar_label": "Pivot Table"
+      },
+      "version-7.8.0/version-7.8.0-time_over_time_comparison": {
+        "title": "Time Over Time Comparison",
+        "sidebar_label": "Time Over Time Comparison"
       }
     },
     "links": {
