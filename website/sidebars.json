@@ -4,12 +4,22 @@
       "support_options",
       "live_examples"
     ],
-    "Getting Started": [
+    "Introduction": [
       "about_gooddataui",
+      "whats_new_8",
+      "framework_overview",
       "platform_intro",
+      "breaking_changes_8",
+      "migration_guide_8"
+    ],
+    "Getting Started": [
       "installation",
       "ht_create_your_first_visualization_toolkit",
-      "ht_create_your_first_visualization"
+      "ht_create_your_first_visualization",
+      "analytical_backend_integration",
+      "gdc_catalog_export",
+      "model_helpers",
+      "api_maturity"
     ],
     "Visual Components": [
       "start_with_visual_components",
@@ -31,7 +41,6 @@
       "table_component",
       "treemap_component",
       "visualization_component",
-      "afm_components",
       "attribute_filter_component",
       "date_filter_component",
       "measure_value_filter_component"
@@ -59,15 +68,12 @@
       "arithmetic_measure"
     ],
     "Development Tips": [
-      "gdc_catalog_export",
-      "model_helpers",
+      "ht_embed_visualization",
       "sso",
       "cors",
       "table_totals",
-      "data_layer",
       "filter_visual_components",
       "create_custom_attribute_filter",
-      "clean_up_your_code",
       "ht_render_visualization_from_different_domain",
       "ht_use_react_components_with_vanilla_js",
       "ht_use_react_component_in_angular_1.x",
