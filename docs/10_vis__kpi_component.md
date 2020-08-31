@@ -5,78 +5,34 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: kpi_component
 ---
 
-A **KPI** \(Key Performance Indicator\) renders a measure calculated by the GoodData platform.
+A **KPI** \(Key Performance Indicator\) renders a measure calculated by the GoodData platform.
 
 ## Structure
 
-```javascript
+```jsx
 import { Kpi } from '@gooddata/react-components';
 
 <Kpi
     measure="<measure-identifier>"
-    projectId="<project-id>"
     filters={<filters>}
     format="<format>"
     separators={<separators>}
-    sdk={<sdk>}
 />
 ```
 
 ## Example
 
-<!-- This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is. -->
+The KPI in this example will calculate the total sales in state of California.
 
-```javascript
-import { Kpi } from '@gooddata/react-components';
+```jsx
+import { Kpi } from '@gooddata/sdk-ui';
+import { newPositiveAttributeFilter } from "@gooddata/sdk-model";
+import { Ldm } from "./ldm";
 
-// with absolute dateFilter
 <Kpi
-    projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
-    measure="aaeb7jTCfexV"
+    measure={Ldm.$TotalSales}
     filters={[
-        {
-            absoluteDateFilter: {
-                dataSet: {
-                    identifier: 'oppclose.dataset.dt'
-                },
-                from: '2016-01-01',
-                to: '2016-12-31'
-            }
-        }
-    ]}
-/>
-
-
-// with positive attributeFilter
-<Kpi
-    projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
-    measure="aaeb7jTCfexV"
-    filters={[
-        {
-            positiveAttributeFilter: {
-                displayForm: {
-                    identifier: 'label.account.id.name'
-                },
-                in: ['{label.account.id.name?958077}', '{label.account.id.name?961040}', '{label.account.id.name?961042}']
-            }
-        }
-    ]}
-/>
-
-
-// with negative attributeFilter
-<Kpi
-    projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
-    measure="aaeb7jTCfexV"
-    filters={[
-        {
-            negativeAttributeFilter: {
-                displayForm: {
-                    identifier: 'label.account.id.name'
-                },
-                notIn: ['{label.account.id.name?958077}', '{label.account.id.name?961040}', '{label.account.id.name?961042}']
-            }
-        }
+        newPositiveAttributeFilter(Ldm.StateName, ['California'])
     ]}
 />
 ```
