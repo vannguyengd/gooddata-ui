@@ -140,40 +140,30 @@ columnSizing: {
 * Scrolling horizontally or vertically and sorting values in a column do not affect the column width.
 * If you manually adjust the column width, the adjusted width is preserved only temporarily and will be reset to the previously set value after the table is re-rendered.
 
-### Manual resizing - TODO: revisit for v8
+### Manual resizing
 
-To set the width of the columns, add the `columnWidths` prop to the `columnSizing` prop.
+To set the width of the columns, add the `columnWidths` prop to the `columnSizing` prop. The `columnWidths` is an array
+of width items that specify which columns should be affected and what width to set. You can conveniently create these
+items using the following factory functions:
+
+-  `newWidthForAttributeColumn` - set width of a row attribute column
+-  `newWidthForAllMeasureColumns` - set width of all measure columns
+-  `newWidthForAllColumnsForMeasure` - set width of all columns for particular measure
+-  `newWidthForSelectedColumns`  - set width for one or more selected columns, specified using locators
+
+The factory functions are exported from the `@gooddata/sdk-ui-pivot` package. 
 
 ```jsx
-columnSizing: {
-   columnWidths: [
-        {
-            attributeColumnWidthItem: {
-                width: { value: 100 },
-                attributeIdentifier: 'day'
-            }
-        },
-        {
-            measureColumnWidthItem: {
-                width: { value: 200 },
-                locators: [
-                    {
-                        attributeLocatorItem: {
-                            attributeIdentifier: 'month',
-                            element: monthDateIdentifierJanuary
-                        }
-                    },
-                    {
-                        measureLocatorItem: {
-                            measureIdentifier: 'franchiseFeesIdentifier'
-                        }
-                    }
-                ]
-            }
-        }
-   ]
+const config = { 
+    columnSizing: {
+       columnWidths: [
+            newWidthForAttributeColumn(Ldm.Date, 100),
+            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], 200)
+       ]
+    }
 }
 ```
+
 * The width of the table columns is set according to the provided column width definitions.
 * The width specified in a width definition or set by resizing the column manually in the UI can be between 60 px (minimum width) and 2000 px (maximum width). If the width is set outside of this range, the closest limit value is used instead.
 * Attribute and measure identifiers in width definitions are partially validated to match the items used in the table. If validation cannot be performed upon some width definitions, those width definitions are ignored.
@@ -194,163 +184,85 @@ columnSizing: {
     ```
 
     A change of the column width calls the provided callback function with all the current column width definitions as a parameter.
-* To set the same width for all measure columns, add the `allMeasureColumnWidthItem` prop:
+* To set the same width for all measure columns, use the width item created by `newWidthForAllMeasureColumns` function:
     ```jsx
-    const allMeasureColumnWidthItem = {
-        measureColumnWidthItem: {
-            width: { value: 200 },
-        }
-    };
-    columnSizing: {
+    const config = { 
+      columnSizing: {
         columnWidths: [
-            allMeasureColumnWidthItem
+            newWidthForAllMeasureColumns(200)
         ]
+      }
     }
     ```
 
-* To set the same width for all columns of a specific measure (applicable when column attributes are used), add the `weakMeasureColumnWidthItem` prop:
+* To set the same width for all columns of a specific measure (applicable when column attributes are used), use the width item created by the `newWidthForAllColumnsForMeasure` function:
     ```jsx
-    const weakMeasureColumnWidthItem = {
-        measureColumnWidthItem: {
-            width: { value: 200 },
-            locator: {
-                measureLocatorItem: {
-                    measureIdentifier: 'franchiseFees'
-                }
-            }
-        }
-    };
-    columnSizing: {
+    const config = {
+      columnSizing: {
         columnWidths: [
-            weakMeasureColumnWidthItem
+            newWidthForAllColumnsForMeasure(Ldm.$FranchiseFees, 200)
         ]
+      }
     }
     ```
 
 ### Priorities of column width definitions
 
-`measureColumnWidthItem` defined for a specific column overrides the value set by `weakMeasureColumnWidthItem` for a group of columns of one measure. `measureColumnWidthItem` for this column also overrides the value specified by `allMeasureColumnWidthItem` for all measure columns.
+`newWidthForSelectedColumns` defined for a specific column overrides the value set by `newWidthForAllColumnsForMeasure` or `newWidthForAllMeasureColumns`.
 
 ### Combining auto resizing and manual resizing
 
 To combine auto resizing and manual resizing, add both the `defaultWidth` and `columnWidths` props under the `columnSizing` prop.
 
 **Example 1:** In the following code sample:
-* The width of the columns that are defined under `columnWidths` is set according to the values of their appropriate `width` props (see [Manual resizing](#manual-resizing)).
+* The width of the columns that are defined under `columnWidths` is set according to the values of the `width` parameter (see [Manual resizing](#manual-resizing)).
 * All the other columns are resized to fit the content (see [Auto resizing](#auto-resizing)).
 
 ```jsx
-columnSizing: {
-    defaultWidth: "viewport",
-    columnWidths: [
-        {
-            attributeColumnWidthItem: {
-                width: { value: 100 },
-                attributeIdentifier: 'day'
-            }
-        },
-        {
-            measureColumnWidthItem: {
-                width: { value: 200 },
-                locators: [
-                   {
-                        attributeLocatorItem: {
-                            attributeIdentifier: 'month',
-                            element: monthDateIdentifierJanuary
-                        }
-                   },
-                   {
-                        measureLocatorItem: {
-                            measureIdentifier: 'franchiseFeesIdentifier'
-                        }
-                   }
-                ]
-            }
-        }
-    ]
+const config = {
+    columnSizing: {
+        defaultWidth: "viewport",
+        columnWidths: [
+            newWidthForAttributeColumn(Ldm.Date, 100),
+            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], 200),
+        ]
+    }
 }
 ```
 
 **Example 2:** In the following code sample:
-* The width of all the measure columns is set to the value of the `width` prop under `allMeasureColumnWidthItem` (see [Manual resizing](#manual-resizing)).
-* However, the `measureColumnWidthItem` prop overrides the value set by `allMeasureColumnWidthItem` for the measure columns that are defined under `measureColumnWidthItem`. Notice that the `width` prop under `measureColumnWidthItem` is set to `"auto"` and not to a number as in **Example 1**. This means that at the initial rendering these measure columns will be resized to fit the content (see [Auto resizing](#auto-resizing)), while all the other measure columns will be set to the width defined by `allMeasureColumnWidthItem`.
+* The width of all the measure columns is set to the value of the `width` passed to `newWidthForAllMeasureColumns` (see [Manual resizing](#manual-resizing)).
+* However, the `newWidthForSelectedColumns` overrides the value set by `newWidthForAllMeasureColumns` for the measure columns that are defined in call to `newWidthForSelectedColumns`. Notice that the `width` passed to `newWidthForSelectedColumns` is `"auto"` and not a number as in **Example 1**. This means that at the initial rendering these measure columns will be resized to fit the content (see [Auto resizing](#auto-resizing)), while all the other measure columns will be set to the width defined by `newWidthForAllMeasureColumns`.
 * All the attribute columns, if any, are resized to fit the content (see [Auto resizing](#auto-resizing)).
 
 ```jsx
-columnSizing: {
-    defaultWidth: "viewport",
-    columnWidths: [
-        {
-            measureColumnWidthItem: {
-                width: { value: 200 },
-            }
-        },
-        {
-            measureColumnWidthItem: {
-                width: { value: "auto" },
-                locators: [
-                   {
-                        attributeLocatorItem: {
-                            attributeIdentifier: 'month',
-                            element: monthDateIdentifierJanuary
-                        }
-                   },
-                   {
-                        measureLocatorItem: {
-                            measureIdentifier: 'franchiseFeesIdentifier'
-                        }
-                   }
-                ]
-            }
-        }
-    ]
+const config = {
+    columnSizing: {
+        defaultWidth: "viewport",
+        columnWidths: [
+            newWidthForAllMeasureColumns(200),
+            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], "auto"),
+        ]
+    }
 }
 ```
 
 **Example 3:** In the following code sample:
-* The width of all the measure columns is set to the value of the `width` prop under `allMeasureColumnWidthItem` (see [Manual resizing](#manual-resizing)).
-* The width of all columns of the selected measure is set to the value of the `width` prop under `weakMeasureColumnWidthItem` and overrides value from `allMeasureColumnWidthItem` (see [Manual resizing](#manual-resizing)).
-* However, the `measureColumnWidthItem` prop overrides the value set by `allMeasureColumnWidthItem` and `weakMeasureColumnWidthItem` for the measure column that is defined under `measureColumnWidthItem`. Notice that the `width` prop under `measureColumnWidthItem` is set to `"auto"` and not to a number as in **Example 1**. This means that at the initial rendering this measure column will be resized to fit the content (see [Auto resizing](#auto-resizing)), while all the other measure columns will be set to the width defined by `allMeasureColumnWidthItem` or `weakMeasureColumnWidthItem`.
+* The width of all the measure columns is set to the value of the `width` passed to `allMeasureColumnWidthItem` (see [Manual resizing](#manual-resizing)).
+* The width of all columns of the selected measure is set to the value of the `width` passed to `newWidthForAllColumnsForMeasure` and overrides value from `newWidthForAllMeasureColumns` (see [Manual resizing](#manual-resizing)).
+* However, the `newWidthForSelectedColumns` overrides the value set by `newWidthForAllMeasureColumns` and `newWidthForAllColumnsForMeasure` for the measure column that is defined under `newWidthForSelectedColumns`. Notice that the `width` passed to `newWidthForSelectedColumns` is `"auto"` and not a number as in **Example 1**. This means that at the initial rendering this measure column will be resized to fit the content (see [Auto resizing](#auto-resizing)), while all the other measure columns will be set to the width defined by `newWidthForAllMeasureColumns` or `newWidthForAllColumnsForMeasure`.
 * All the attribute columns, if any, are resized to fit the content (see [Auto resizing](#auto-resizing)).
 
 ```jsx
-columnSizing: {
-    defaultWidth: "viewport",
-    columnWidths: [
-        {
-            measureColumnWidthItem: {
-                width: { value: 200 },
-            }
-        },
-        {
-            measureColumnWidthItem: {
-                width: { value: 400 },
-                locator: {
-                    measureLocatorItem: {
-                        measureIdentifier: 'totalSalesIdentifier'
-                    }
-                }
-            }
-        },
-        {
-            measureColumnWidthItem: {
-                width: { value: "auto" },
-                locators: [
-                   {
-                        attributeLocatorItem: {
-                            attributeIdentifier: 'month',
-                            element: monthDateIdentifierJanuary
-                        }
-                   },
-                   {
-                        measureLocatorItem: {
-                            measureIdentifier: 'franchiseFeesIdentifier'
-                        }
-                   }
-                ]
-            }
-        }
-    ]
+const config = {
+    columnSizing: {
+        defaultWidth: "viewport",
+        columnWidths: [
+            newWidthForAllMeasureColumns(200),
+            newWidthForAllColumnsForMeasure(Ldm.$TotalSales, 200),
+            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], "auto"),
+        ]
+    }
 }
 ```
 
@@ -359,9 +271,11 @@ columnSizing: {
 To make the currently visible columns take the available screen space, add the `growToFit` prop to the `columnSizing` object and set it to `true`.
 
 ```jsx
-columnSizing: {
-    defaultWidth: "viewport",
-    growToFit: true
+const config = {
+    columnSizing: {
+        defaultWidth: "viewport",
+        growToFit: true
+    }
 }
 ```
 
@@ -385,7 +299,7 @@ columnSizing: {
 
     All the measures columns are resized to the set width.
 
-    The new column widths are propagated via the `onColumnResized` callback array. All the `measureColumnWidthItem` props are removed. The `allMeasureColumnWidthItem` prop is added.
+    The new column widths are propagated via the `onColumnResized` callback array. All the `newWidthForSelectedColumns` items are removed. The `newWidthForAllMeasureColumns` item is added.
 
 ### Resizing all columns of a specific measure at once to a custom width
 
@@ -394,7 +308,7 @@ columnSizing: {
 
     All columns of the corresponding measure are resized to the set width.
 
-    The new column widths are propagated via the `onColumnResized` callback array. All the `measureColumnWidthItem` props of the corresponding measure are removed. The `weakMeasureColumnWidthItem` prop is added.
+    The new column widths are propagated via the `onColumnResized` callback array. All the `newWidthForSelectedColumns` items for the corresponding measure are removed. The `newWidthForAllColumnsForMeasure` item is added.
 
 ### Resizing a column to fit its content
 
@@ -407,7 +321,7 @@ columnSizing: {
 
 **NOTES:**
 * This behavior is not applied if [auto resizing](#auto-resizing) is enabled and you double-click a column that was visible and auto-resized at the initial rendering and then its width was manually adjusted in the UI. Such column is removed from the `onColumnResized` callback array.
-* If [auto resizing](#auto-resizing) is enabled, and `columnWidths` includes the `allMeasureColumnWidthItem` or `weakMeasureColumnWidthItem` prop, and you double-click a measure column, the `measureColumnWidthItem` prop with `width` set to `"auto"` is added to the `onColumnResized` callback array.
+* If [auto resizing](#auto-resizing) is enabled, and `columnWidths` includes the `newWidthForAllMeasureColumns` or `newWidthForAllColumnsForMeasure` items, and you double-click a measure column, the `newWidthForSelectedColumns` item with `width` set to `"auto"` is added to the `onColumnResized` callback array.
 
 ### Resizing all measure columns at once to fit their content
 
@@ -416,7 +330,7 @@ columnSizing: {
 
     All measure columns are resized to fit their content.
 
-    The new column widths are propagated via the `onColumnResized` callback array. All the `allMeasureColumnWidthItem` props are removed.
+    The new column widths are propagated via the `onColumnResized` callback array. All the `newWidthForAllMeasureColumns` items are removed.
 
 ### Resizing all columns of a specific measure at once to fit their content
 
@@ -425,15 +339,17 @@ columnSizing: {
 
     All columns of the corresponding measure are resized to fit their content.
 
-    The new column widths are propagated via the `onColumnResized` callback array. All the `weakMeasureColumnWidthItem` props are removed. 
+    The new column widths are propagated via the `onColumnResized` callback array. All the `newWidthForAllColumnsForMeasure` items are removed. 
 
 ### Switching to the default resizing
 
 To switch to the default behavior (all columns have the same fixed size), do not provide `columnSizing` at all or set `columnSizing` to:
 ```jsx
-columnSizing: {
-    defaultWidth: "unset",
-    columnWidths: undefined
+const config = {
+    columnSizing: {
+        defaultWidth: "unset",
+        columnWidths: undefined
+    }
 }
 ```
 You can omit the `columnWidths` prop completely. It has the same effect as specifying `columnWidths: undefined`.
@@ -460,36 +376,13 @@ const config = {
     columnSizing: {
         defaultWidth: "viewport",
         columnWidths: [
-            {
-                attributeColumnWidthItem: {
-                    width: 100,
-                    attributeIdentifier: 'day'
-                }
-            },
-            {
-                measureColumnWidthItem: {
-                    width: 100,
-                    locators: [
-                        {
-                            attributeLocatorItem: {
-                                attributeIdentifier: 'month',
-                                element: monthDateIdentifierJanuary
-                            }
-                        },
-                        {
-                            measureLocatorItem: {
-                                measureIdentifier: 'franchiseFeesIdentifier'
-                            }
-                        }
-                    ]
-                }
-            }
+            newWidthForAttributeColumn(Ldm.Date, 100),
+            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], 200),
         ]
     }
 };
 
 <PivotTable
-    projectId={projectId}
     measures={measures}
     rows={rows}
     columns={columns}
@@ -518,6 +411,4 @@ const config = {
 | onExportReady | false | Function | A callback when the component is ready for exporting its data |
 | onLoadingChanged | false | Function | A callback when the component updates its loading state |
 
-
-## TODO: Factories for column width definitions
 
