@@ -74,8 +74,8 @@
         "sidebar_label": "Combo Chart"
       },
       "date_filter_component": {
-        "title": "Date Filter",
-        "sidebar_label": "Date Filter"
+        "title": "Date Filter Component",
+        "sidebar_label": "Date Filter Component"
       },
       "donut_chart_component": {
         "title": "Donut Chart",
@@ -130,16 +130,16 @@
         "sidebar_label": "Treemap"
       },
       "attribute_element_option": {
-        "title": "Attribute Elements Component Options",
-        "sidebar_label": "Attribute Elements Component Options"
+        "title": "AttributeElements Component Options",
+        "sidebar_label": "AttributeElements Component Options"
       },
       "chart_config": {
         "title": "Chart Config",
         "sidebar_label": "Chart Config"
       },
       "date_filter_option": {
-        "title": "Date Filter Component Options",
-        "sidebar_label": "Date Filter Component Options"
+        "title": "DateFilter Component Options",
+        "sidebar_label": "DateFilter Component Options"
       },
       "drillable_item": {
         "title": "DrillableItems",
@@ -236,14 +236,6 @@
       "breaking_changes_8": {
         "title": "Breaking Changes in Version 8.0",
         "sidebar_label": "Breaking Changes in Version 8.0"
-      },
-      "ex_global_filters": {
-        "title": "Global Filters",
-        "sidebar_label": "Global Filters"
-      },
-      "glossary": {
-        "title": "Glossary",
-        "sidebar_label": "Glossary"
       },
       "live_examples": {
         "title": "Live Examples",
