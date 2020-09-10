@@ -8,7 +8,7 @@ original_id: start_with_visual_components
 
 GoodData.UI comes with ready-made visual components listed in the Visual Components section. You can use these visual components as-is or customize them. You can also use the unique Visualization component that simply renders any chart that you create on the GoodData platform.
 
-This article provides components examples and basic instructions on component usage. 
+This article provides components examples and basic instructions on component usage.
 
 ## Responsive UI
 
@@ -16,7 +16,7 @@ Visual components are responsive by nature and take the whole space of their wra
 
 ### Example
 
-```javacsript
+```javascript
 <div style={{ height: 400, width: 600 }}>
     <Visualization ... />
 </div>
@@ -74,7 +74,7 @@ When using an attribute in a data prop, specify the identifier of the attribute'
 To find the identifier or URI of a measure or attribute, use either of the following options:
 
 * Use [gdc-catalog-export](gdc-catalog-export.md): Download a list of attributes and measures from your project. In the downloaded list, find the measures and attributes that you need.
-* Use [Analytical Designer](https://secure.gooddata.com/analyze). 
+* Use [Analytical Designer](https://secure.gooddata.com/analyze).
   1. Create a visualization that uses measures and attributes that you need.
   2. Use your browser's Developer Tools and open the [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter).
   3. Find requests to `/executeAfm`.
@@ -94,25 +94,25 @@ You can find full TypeScript typings [here](https://github.com/gooddata/gooddata
 ```ts
 IMeasure = {
   measure: {
-    localIdentifier: string 
+    localIdentifier: string
           // An arbitrary identifier, which is later used in sorting and filtering
     definition: IMeasureDefinition | IPoPMeasureDefinition | IPreviousPeriodMeasureDefinition | IArithmeticMeasureDefinition
           // The definition of the measure, see below
-    alias: string // Optional; an alternative measure name to be displayed 
-    format: string // Optional; rules for number formatting; if empty, the default formatting is used; ignored in some special cases, see below in the descriptions of particular measure definitions 
+    alias: string // Optional; an alternative measure name to be displayed
+    format: string // Optional; rules for number formatting; if empty, the default formatting is used; ignored in some special cases, see below in the descriptions of particular measure definitions
   }
 }
 
 // Simple measure - basic master measure
 IMeasureDefinition = {
     measureDefinition: {
-        item: { uri / identifier: string } 
+        item: { uri / identifier: string }
             // URI or identifier of a specific measure from your project
-        aggregation: string 
+        aggregation: string
             // Optional; possible values: sum, count, avg, min, max, median, runsum (when set to 'count', ignores the measure's 'format' value and uses the default value '#,##0' instead)
-        filters: IFilter[] 
+        filters: IFilter[]
             // Optional; an array of attribute filters or date filters (for more information, see Filter Visual Components)
-        computeRatio: boolean 
+        computeRatio: boolean
             // Optional; returns values as ratios; useful for showing percents (ignores the measure's 'format' value and uses the default value '#,##0.00%' instead)
     }
 }
@@ -121,7 +121,7 @@ IMeasureDefinition = {
 IPoPMeasureDefinition = {
     popMeasureDefinition: {
         measureIdentifier: Identifier // localIdentifier of the referenced measure
-        popAttribute: { uri / identifier: string } 
+        popAttribute: { uri / identifier: string }
             // URI or identifier of the attribute which is used for slicing (not the displayForm)
     }
 }
@@ -131,7 +131,7 @@ IPreviousPeriodMeasureDefinition = {
     previousPeriodMeasure: {
         measureIdentifier: Identifier // localIdentifier of the referenced measure
         dateDataSets:[{
-            dataSet : { uri / identifier: string } 
+            dataSet : { uri / identifier: string }
                 // URI or identifier of the date data set, which is used to determine the period length by matching it to a global date filter with the same date data set URI or identifier
             periodsAgo : number // the number of periods to the past
        }]

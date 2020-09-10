@@ -17,7 +17,7 @@ The visual components are responsive by nature and take the whole space of their
 
 ### Example
 
-```javacsript
+```javascript
 <div style={{ height: 400, width: 600 }}>
     <AreaChart ... />
 </div>
@@ -49,7 +49,7 @@ You can find more information about data props in the articles about individual 
 
 ## Visualization lifecycle
 
-The visualization lifecycle is a series of events that take place between mounting and rendering a visualization. 
+The visualization lifecycle is a series of events that take place between mounting and rendering a visualization.
 
 The following component props can be used as lifecycle callbacks:
 

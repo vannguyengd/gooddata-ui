@@ -8,7 +8,7 @@ original_id: start_with_visual_components
 
 GoodData.UI comes with ready-made visual components listed in the Visual Components section. You can use these visual components as-is or customize them. You can also use the unique Visualization component that simply renders any chart that you create on the GoodData platform.
 
-This article provides components examples and basic instructions on component usage.  
+This article provides components examples and basic instructions on component usage.
 
 ## Responsive UI
 
@@ -16,7 +16,7 @@ Visual components are responsive by nature and take the whole space of their wra
 
 ### Example
 
-```javacsript
+```javascript
 <div style={{ height: 400, width: 600 }}>
     <Visualization ... />
 </div>
@@ -74,14 +74,14 @@ When using an attribute in a data prop, specify the identifier of the attribute'
 To find the identifier or URI of a measure or attribute, use either of the following options:
 
 * Use [gdc-catalog-export](gdc-catalog-export.md): Download a list of attributes and measures from your project. In the downloaded list, find the measures and attributes that you need.
-* Use [Analytical Designer](https://secure.gooddata.com/analyze). 
+* Use [Analytical Designer](https://secure.gooddata.com/analyze).
   1. Create a visualization that uses measures and attributes that you need.
   2. Use your browser's Developer Tools and open the [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter).
   3. Find requests to `/executeAfm`.
   4. Search for the [AFM](afm.md) in the request body. It contains the required identifiers of the measures, atributes, and attribute display forms.
 
 #### Object URI vs. object identifier
-Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the **same** object identifier in **any** of those projects. 
+Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the **same** object identifier in **any** of those projects.
 
 #### Type definition
 You can find the TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/VisualizationObject.ts#L86-L102).
@@ -89,24 +89,24 @@ You can find the TypeScript typings [here](https://github.com/gooddata/gooddata-
 ```ts
 IMeasure = {
   measure: {
-    localIdentifier: string 
+    localIdentifier: string
           // An arbitrary identifier, which is later used in sorting and filtering
-    definition: IMeasureDefinition | IPoPMeasureDefinition 
+    definition: IMeasureDefinition | IPoPMeasureDefinition
           // Specifies simple measure or period-over-period measure, see below
-    alias: string // Optional. Alternative measure name to be displayed 
-    format: string // Optional. Rules for number formating, if empty measure default is used 
+    alias: string // Optional. Alternative measure name to be displayed
+    format: string // Optional. Rules for number formating, if empty measure default is used
   }
 }
 
 IMeasureDefinition = {
     measureDefinition: {
-        item: { uri / identifier: string } 
-            // uri or identifier of specific measure from your project 
-        aggregation: string 
-            // Optional. Operation on the measure - one of sum, count, avg, min, max, median, runsum 
-        filters: VisualizationObjectFilter[] 
+        item: { uri / identifier: string }
+            // uri or identifier of specific measure from your project
+        aggregation: string
+            // Optional. Operation on the measure - one of sum, count, avg, min, max, median, runsum
+        filters: VisualizationObjectFilter[]
             // Optional. Array of attribute or date filters (more at page Filter Visual Components)
-        computeRatio: boolean 
+        computeRatio: boolean
             // Optional. Return value as ratios from whole, useful for showing percents.
     }
 }
@@ -115,7 +115,7 @@ IMeasureDefinition = {
 IPoPMeasureDefinition = {
     popMeasureDefinition: {
         measureIdentifier: Identifier // localIdentifier of the referenced measure
-        popAttribute: { uri / identifier: string } 
+        popAttribute: { uri / identifier: string }
             // uri or identifier of attribute which is used for slicing (not the displayForm)
     }
 }
@@ -125,7 +125,7 @@ IPoPMeasureDefinition = {
 IVisualizationAttribute = {
     visualizationAttribute: {
         localIdentifier: Identifier // An arbitrary identifier, which is later used in sorting and filtering
-        displayForm: { uri / identifier: string } // The attribute`s display form 
+        displayForm: { uri / identifier: string } // The attribute`s display form
         alias: string // Optional. Alternative attribute name to be displayed
     }
 }

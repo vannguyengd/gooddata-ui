@@ -10,7 +10,7 @@ The element where you are inserting a React component in must have the height an
 
 Example:
 
-```javacsript
+```javascript
 <div style={{ height: 400, width: 600 }}>
     <Visualization ... />
 </div>
@@ -54,7 +54,7 @@ This example uses data from the GoodSales demo project. For testing purposes, yo
 
 ```javascript
 import { Kpi } from '@gooddata/react-components';
- 
+
 // with absolute dateFilter
 <Kpi
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
@@ -71,8 +71,8 @@ import { Kpi } from '@gooddata/react-components';
         }
     ]}
 />
- 
- 
+
+
 // with positive attributeFilter
 <Kpi
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
@@ -88,8 +88,8 @@ import { Kpi } from '@gooddata/react-components';
         }
     ]}
 />
- 
- 
+
+
 // with negative attributeFilter
 <Kpi
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
@@ -135,7 +135,7 @@ To have the visualization rendered, specify either the visualization URI or visu
 ```javascript
 import '@gooddata/react-components/styles/css/main.css';
 import { Visualization } from '@gooddata/react-components';
- 
+
 <div style={{ height: 400, width: 600 }}>
     <Visualization
         projectId="<project-id>"
@@ -165,7 +165,7 @@ This example uses data from the GoodSales demo project. For testing purposes, yo
 ```javascript
 import '@gooddata/react-components/styles/css/main.css';
 import { Visualization } from '@gooddata/react-components';
- 
+
 <div style={{ height: 400, width: 600 }}>
     <Visualization
         identifier="aoJqpe5Ib4mO"
