@@ -22,7 +22,7 @@ import { Kpi } from '@gooddata/react-components';
 
 ## Example
 
-The KPI in this example will calculate the total sales in state of California.
+The following sample KPI calculates the total sales in California:
 
 ```jsx
 import { Kpi } from '@gooddata/sdk-ui';

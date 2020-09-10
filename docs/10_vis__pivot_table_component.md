@@ -143,13 +143,14 @@ columnSizing: {
 ### Manual resizing
 
 To set the width of the columns, add the `columnWidths` prop to the `columnSizing` prop. The `columnWidths` is an array
-of width items that specify which columns should be affected and what width to set. You can conveniently create these
-items using the following factory functions:
+of width items that specify which columns should be affected and what width to set.
 
--  `newWidthForAttributeColumn` - set width of a row attribute column
--  `newWidthForAllMeasureColumns` - set width of all measure columns
--  `newWidthForAllColumnsForMeasure` - set width of all columns for particular measure
--  `newWidthForSelectedColumns`  - set width for one or more selected columns, specified using locators
+You can create these items using the following factory functions:
+
+-  `newWidthForAttributeColumn` sets the width of a row attribute column.
+-  `newWidthForAllMeasureColumns` sets the width of all measure columns.
+-  `newWidthForAllColumnsForMeasure` sets the width of all columns for a particular measure.
+-  `newWidthForSelectedColumns` sets the width for one or more columns specified by the locators.
 
 The factory functions are exported from the `@gooddata/sdk-ui-pivot` package. 
 
@@ -184,7 +185,7 @@ const config = {
     ```
 
     A change of the column width calls the provided callback function with all the current column width definitions as a parameter.
-* To set the same width for all measure columns, use the width item created by `newWidthForAllMeasureColumns` function:
+* To set the same width for all measure columns, use the width item created by the `newWidthForAllMeasureColumns` function:
     ```jsx
     const config = { 
       columnSizing: {
@@ -231,8 +232,8 @@ const config = {
 ```
 
 **Example 2:** In the following code sample:
-* The width of all the measure columns is set to the value of the `width` passed to `newWidthForAllMeasureColumns` (see [Manual resizing](#manual-resizing)).
-* However, the `newWidthForSelectedColumns` overrides the value set by `newWidthForAllMeasureColumns` for the measure columns that are defined in call to `newWidthForSelectedColumns`. Notice that the `width` passed to `newWidthForSelectedColumns` is `"auto"` and not a number as in **Example 1**. This means that at the initial rendering these measure columns will be resized to fit the content (see [Auto resizing](#auto-resizing)), while all the other measure columns will be set to the width defined by `newWidthForAllMeasureColumns`.
+* The width of all the measure columns is set to the value of the `width` prop passed to `newWidthForAllMeasureColumns` (see [Manual resizing](#manual-resizing)).
+* However, the `newWidthForSelectedColumns` prop overrides the value set by `newWidthForAllMeasureColumns` for the measure columns that are defined in the call to `newWidthForSelectedColumns`. Notice that the `width` prop passed to `newWidthForSelectedColumns` is set to `"auto"` and not to a number as in **Example 1**. This means that at the initial rendering these measure columns will be resized to fit the content (see [Auto resizing](#auto-resizing)), while all the other measure columns will be set to the width defined by `newWidthForAllMeasureColumns`.
 * All the attribute columns, if any, are resized to fit the content (see [Auto resizing](#auto-resizing)).
 
 ```jsx
@@ -248,9 +249,9 @@ const config = {
 ```
 
 **Example 3:** In the following code sample:
-* The width of all the measure columns is set to the value of the `width` passed to `allMeasureColumnWidthItem` (see [Manual resizing](#manual-resizing)).
-* The width of all columns of the selected measure is set to the value of the `width` passed to `newWidthForAllColumnsForMeasure` and overrides value from `newWidthForAllMeasureColumns` (see [Manual resizing](#manual-resizing)).
-* However, the `newWidthForSelectedColumns` overrides the value set by `newWidthForAllMeasureColumns` and `newWidthForAllColumnsForMeasure` for the measure column that is defined under `newWidthForSelectedColumns`. Notice that the `width` passed to `newWidthForSelectedColumns` is `"auto"` and not a number as in **Example 1**. This means that at the initial rendering this measure column will be resized to fit the content (see [Auto resizing](#auto-resizing)), while all the other measure columns will be set to the width defined by `newWidthForAllMeasureColumns` or `newWidthForAllColumnsForMeasure`.
+* The width of all the measure columns is set to the value of the `width` prop passed to `allMeasureColumnWidthItem` (see [Manual resizing](#manual-resizing)).
+* The width of all columns of the selected measure is set to the value of the `width` prop passed to `newWidthForAllColumnsForMeasure` and overrides the value from `newWidthForAllMeasureColumns` (see [Manual resizing](#manual-resizing)).
+* However, the `newWidthForSelectedColumns`prop overrides the value set by `newWidthForAllMeasureColumns` and `newWidthForAllColumnsForMeasure` for the measure column that is defined under `newWidthForSelectedColumns`. Notice that the `width` prop passed to `newWidthForSelectedColumns` is set to `"auto"` and not to a number as in **Example 1**. This means that at the initial rendering this measure column will be resized to fit the content (see [Auto resizing](#auto-resizing)), while all the other measure columns will be set to the width defined by `newWidthForAllMeasureColumns` or `newWidthForAllColumnsForMeasure`.
 * All the attribute columns, if any, are resized to fit the content (see [Auto resizing](#auto-resizing)).
 
 ```jsx
@@ -339,7 +340,7 @@ const config = {
 
     All columns of the corresponding measure are resized to fit their content.
 
-    The new column widths are propagated via the `onColumnResized` callback array. All the `newWidthForAllColumnsForMeasure` items are removed. 
+    The new column widths are propagated via the `onColumnResized` callback array. All the `newWidthForAllColumnsForMeasure` items are removed.
 
 ### Switching to the default resizing
 
