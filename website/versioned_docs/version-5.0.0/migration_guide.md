@@ -51,7 +51,7 @@ yarn upgrade react-dom@15.6.2
 ```
 
 ## Components with buckets interface
-[AFM React Components](http://sdk.gooddata.com/gdc-ui-sdk-doc/docs/afm_react_components.html) will be deprecated in one of the the next versions. We suggest to use components with buckets interface. E.g. [Line Chart Component](line_chart_component.md)
+[AFM React Components](http://sdk.gooddata.com/gdc-ui-sdk-doc/docs/afm_react_components.html) will be deprecated in one of the the next versions. We suggest to use components with buckets interface. E.g. [Line Chart Component](10_vis__line_chart_component.md)
 
 [Execute Component](http://sdk.gooddata.com/gdc-ui-sdk-doc/docs/execute_component.html) and [KPI and Visualization](react_components.md) are without change.
 
