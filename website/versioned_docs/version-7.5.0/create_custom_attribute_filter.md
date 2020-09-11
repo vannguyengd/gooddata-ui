@@ -114,4 +114,4 @@ export class AttributeElementsExample extends Component {
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 | uri | false | string | The attribute displayForm URI |
 | identifier | false | string | The attribute displayForm identifier |
-| options | false | [IValidElementsOptions](attribute_element_option.md) | Available options |
+| options | false | [IValidElementsOptions](15_props__attribute_element_option.md) | Available options |
