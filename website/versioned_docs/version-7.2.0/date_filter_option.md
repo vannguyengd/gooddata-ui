@@ -6,7 +6,7 @@ id: version-7.2.0-date_filter_option
 original_id: date_filter_option
 ---
 
-This article describes the options for configuring the [DateFilter component](date_filter_component.md).
+This article describes the options for configuring the [DateFilter component](10_vis__date_filter_component.md).
 
 The DateFilter options define the category of a date filter and a set of the date filter values.
 
