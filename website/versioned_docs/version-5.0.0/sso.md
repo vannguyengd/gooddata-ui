@@ -40,4 +40,4 @@ If your use case requires it, you can setup your own proxy server. The server wi
 
 > **Careful:** Only use the proxy authentication for development. Do not use this authentication method for production.
 
-> **Careful:** If you are only using the [development proxy](cors.md#on-your-local-dev-machine), you will still need to autenticate users by going to `/account.html` or by calling the `sdk.user.login()` method, and filling in valid GoodData credentials.
+> **Careful:** If you are only using the [development proxy](30_tips__cors.md#on-your-local-dev-machine), you will still need to autenticate users by going to `/account.html` or by calling the `sdk.user.login()` method, and filling in valid GoodData credentials.

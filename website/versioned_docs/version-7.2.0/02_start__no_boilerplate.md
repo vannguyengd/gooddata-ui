@@ -52,7 +52,7 @@ This command adds the latest `@gooddata/react-components` to the list of your pr
 
 ## Step 4. Configure the development server
 
-**Before** you start your development server, prevent cross-origin issues by [adding proxy settings](cors.md). To set up a proxy, in your project's `/src` directory, create the `setupProxy.js` file with the following content:
+**Before** you start your development server, prevent cross-origin issues by [adding proxy settings](30_tips__cors.md). To set up a proxy, in your project's `/src` directory, create the `setupProxy.js` file with the following content:
 
 ```javascript
 const proxy = require('http-proxy-middleware');
@@ -86,7 +86,7 @@ module.exports = function (app) {
 
 > **Careful:** Only use the proxy authentication for development. Do not use this authentication method for production.
 
-> **Careful:** If you are only using the [development proxy](cors.md#on-your-local-dev-machine), you will still need to authenticate users by going to `/account.html` or by calling the `sdk.user.login()` method, and filling in valid GoodData credentials.
+> **Careful:** If you are only using the [development proxy](30_tips__cors.md#on-your-local-dev-machine), you will still need to authenticate users by going to `/account.html` or by calling the `sdk.user.login()` method, and filling in valid GoodData credentials.
 
 **NOTE:** `create-react-app` does not support Microsoft Internet Explorer and older browsers. You have to configure the development server to support the browsers that you want to use. For more information, see [Create React App - Supported Browsers and Features](https://create-react-app.dev/docs/supported-browsers-features/).
 

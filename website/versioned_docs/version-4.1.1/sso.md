@@ -39,7 +39,7 @@ https://help.gooddata.com/display/doc/SAML+SSO+with+GoodData
 For some use cases you may setup your own proxy server, which will first login with a service user 
 and then add the authentication header to all requests.
 
-> **Careful:** If you are just using the [development proxy](cors.md#on-your-local-dev-machine), 
+> **Careful:** If you are just using the [development proxy](30_tips__cors.md#on-your-local-dev-machine), 
 you will still need to autenticate by going to `/account.html` or calling the `sdk.user.login()` method. 
 and filling in valid GoodData credentials.  
 

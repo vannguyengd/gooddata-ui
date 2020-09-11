@@ -49,11 +49,11 @@ This command adds the latest `@gooddata/react-components` to the list of your pr
 
 
 ## Step 4. Start the development server
-**Before** you start your development server, prevent cross-origin issues by [adding proxy settings](cors.md).
+**Before** you start your development server, prevent cross-origin issues by [adding proxy settings](30_tips__cors.md).
 
 > **Careful:** Only use the proxy authentication for development. Do not use this authentication method for production.
 
-> **Careful:** If you are only using the [development proxy](cors.md#on-your-local-dev-machine), you will still need to autenticate users by going to `/account.html` or by calling the `sdk.user.login()` method, and filling in valid GoodData credentials.
+> **Careful:** If you are only using the [development proxy](30_tips__cors.md#on-your-local-dev-machine), you will still need to autenticate users by going to `/account.html` or by calling the `sdk.user.login()` method, and filling in valid GoodData credentials.
 
 To set up a proxy, add the following section to the root level of your `package.json` \(this works with any application started using `react-scripts start`\):
 
