@@ -54,10 +54,10 @@ GoodData.UI SDK contains `HeaderPredicateFactory` that helps you easily build pr
     The helper builds a predicate function that matches any measure or attribute in a visualization to the provided identifier.
 * `composedFromUri('<measure-or-attribute-uri>')` 
 
-    The helper builds a predicate function that matches any [arithmetic measure](arithmetic_measure.md) in a visualization contaning measures to the provided URI in its tree of measures that the arithmetic measure is built from.
+    The helper builds a predicate function that matches any [arithmetic measure](20_misc__arithmetic_measure.md) in a visualization contaning measures to the provided URI in its tree of measures that the arithmetic measure is built from.
 * `composedFromIdentifier('<measure-or-attribute-identifier>')` 
 
-    The helper builds a predicate function that matches any [arithmetic measure](arithmetic_measure.md) in a visualization contaning measures to the provided identifier in its tree of measures that the arithmetic measure is built from.
+    The helper builds a predicate function that matches any [arithmetic measure](20_misc__arithmetic_measure.md) in a visualization contaning measures to the provided identifier in its tree of measures that the arithmetic measure is built from.
 
 ## Set up drilling
 
@@ -81,7 +81,7 @@ import { HeaderPredicateFactory } from '@gooddata/react-components';
 />
 ```
 
-**Example:** Drilling in a visualization enabled for every [arithmetic measure](arithmetic_measure.md) that has a measure with either the identifier set to `label.owner.department` or the URI set to `/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211` in its tree of measures that the arithmetic measure is built from
+**Example:** Drilling in a visualization enabled for every [arithmetic measure](20_misc__arithmetic_measure.md) that has a measure with either the identifier set to `label.owner.department` or the URI set to `/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211` in its tree of measures that the arithmetic measure is built from
 
 ```javascript 1.6
 // This is an example of event drilling on the visualization from the GoodSales demo project.

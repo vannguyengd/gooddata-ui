@@ -159,7 +159,7 @@ To compare a measure over time, add one of the supported measure types described
 
 ### Calculated measures
 
-To create calculated measures (for example, when you want to subtract a measure from another measure), add arithmetic measures described in [Arithmetic Measure](arithmetic_measure.md) to `afm.measures`.
+To create calculated measures (for example, when you want to subtract a measure from another measure), add arithmetic measures described in [Arithmetic Measure](20_misc__arithmetic_measure.md) to `afm.measures`.
 
 ### Examples of measures
 

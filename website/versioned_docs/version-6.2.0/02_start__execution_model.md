@@ -47,7 +47,7 @@ const myMeasure = Model.measure('someMeasureIdentifier')
 You can use the following measure helpers:
 
 * `measure` for standard measures
-* `arithmeticMeasure` for [arithmetic measures](arithmetic_measure.md)
+* `arithmeticMeasure` for [arithmetic measures](20_misc__arithmetic_measure.md)
 * `popMeasure` for [period over period measures](20_misc__time_over_time_comparison.md#comparing-to-the-same-period-sp-previous-year)
 * `previousPeriodMeasure` for [previous period measures](20_misc__time_over_time_comparison.md#comparing-to-the-previous-period-pp)
 
@@ -133,12 +133,12 @@ In addition to the common measure builder methods, `measure` also has the follow
 
 ### arithmeticMeasure helper
 
-This helper creates [arithmetic measures](arithmetic_measure.md).
+This helper creates [arithmetic measures](20_misc__arithmetic_measure.md).
 
 The helper takes the following parameters:
 
 * `measureIdentifiers` is an array of localIdentifiers of the measures included in the calculation.
-* `operation` is the operation to apply to the measures (for the the possible values, see [Supported operations](arithmetic_measure.md#supported-operations)).
+* `operation` is the operation to apply to the measures (for the the possible values, see [Supported operations](20_misc__arithmetic_measure.md#supported-operations)).
 
 **Example:**
 

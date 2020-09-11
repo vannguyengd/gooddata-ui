@@ -14,7 +14,7 @@ You can compare data to:
 * The same period previous year
 * The previous period
 
-> We do not recommend that you create a derived measure from an [arithmetic measure](arithmetic_measure.md) that refers to another derived measure. The resulting derived measure may be hard to interpret.
+> We do not recommend that you create a derived measure from an [arithmetic measure](20_misc__arithmetic_measure.md) that refers to another derived measure. The resulting derived measure may be hard to interpret.
 
 ## Comparing to the same period (SP) previous year
  

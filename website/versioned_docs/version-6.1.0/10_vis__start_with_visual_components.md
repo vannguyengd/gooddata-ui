@@ -148,7 +148,7 @@ IArithmeticMeasureDefinition = {
 
 For more information about the derived measures, see [Time Over Time Comparison](20_misc__time_over_time_comparison.md).
 
-For more information about the arithmetic measures, see [Arithmetic Measure](arithmetic_measure.md).
+For more information about the arithmetic measures, see [Arithmetic Measure](20_misc__arithmetic_measure.md).
 
 #### Attribute definition
 You can find full TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.3.0/src/AFM.ts#L23).
