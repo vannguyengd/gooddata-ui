@@ -8,7 +8,7 @@ original_id: filter_visual_components
 
 This article provides examples of filtering visual components by attribute, date, and measure values.
 
-You can filter the `Visualization` component, `Kpi`, `Headline`, chart components, and table components with the `filters` prop. The `filters` prop is an array of attribute filters and date filters. You can make the filters dynamic with the [`AttributeFilter`](attribute_filter_component.md), [`AttributeElements`](create_custom_attribute_filter.md), [`DateFilter`](date_filter_component.md), and [`MeasureValueFilterDropdown`](10_vis__measure_value_filter_component.md) components.
+You can filter the `Visualization` component, `Kpi`, `Headline`, chart components, and table components with the `filters` prop. The `filters` prop is an array of attribute filters and date filters. You can make the filters dynamic with the [`AttributeFilter`](10_vis__attribute_filter_component.md), [`AttributeElements`](create_custom_attribute_filter.md), [`DateFilter`](date_filter_component.md), and [`MeasureValueFilterDropdown`](10_vis__measure_value_filter_component.md) components.
 
 The same `filters` are used in AFM (for details, see [Set Up an AFM Query](afm.md)).
 

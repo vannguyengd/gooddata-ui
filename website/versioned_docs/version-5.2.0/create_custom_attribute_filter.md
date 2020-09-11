@@ -6,7 +6,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 original_id: create_custom_attribute_filter
 ---
 
-Attribute elements component is a low level counterpart to the [Attribute Filter component](attribute_filter_component.md).
+Attribute elements component is a low level counterpart to the [Attribute Filter component](10_vis__attribute_filter_component.md).
 
 It lists attribute values and allows you to completely customize how they are rendered.
 
