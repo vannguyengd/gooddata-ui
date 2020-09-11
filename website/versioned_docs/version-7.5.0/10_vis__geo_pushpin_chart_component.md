@@ -141,7 +141,7 @@ const config = {
 | viewport | false | GeoConfigViewport | The region that the viewport should focus on after the chart is rendered |
 | tooltipText | false | [Attribute](afm.md#attribute) | An additional item that shows a user-friendly label for the location attribute instead of the longitude and latitude |
 
-For the common chart configuration options such as colors, separators, or legend visibility, see [Chart Config](chart_config.md).
+For the common chart configuration options such as colors, separators, or legend visibility, see [Chart Config](15_props__chart_config.md).
 
 The following example shows the supported `geoConfig` structure with sample values:
 

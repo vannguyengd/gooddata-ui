@@ -133,7 +133,7 @@ In addition to the common measure builder methods, `measure` also has the follow
 
      * Do not use `ratio()` in visualizations with the `stackBy` property set.
      * If used in visualizations with multiple measures, `ratio()` is ignored.
-     * If used in visualizations with one measure and [stacking configured](chart_config.md#configure-stacking) with the `stackMeasuresToPercent` property set, `ratio()` overrides `stackMeasuresToPercent`. That is, `computeRatio` is applied, and `stackMeasuresToPercent` is ignored.
+     * If used in visualizations with one measure and [stacking configured](15_props__chart_config.md#configure-stacking) with the `stackMeasuresToPercent` property set, `ratio()` overrides `stackMeasuresToPercent`. That is, `computeRatio` is applied, and `stackMeasuresToPercent` is ignored.
 
 ### arithmeticMeasure helper
 

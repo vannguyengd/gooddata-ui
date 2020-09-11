@@ -23,7 +23,7 @@ The AFM components use [AFM](afm.md) property instead of specific properties suc
 | afm | true | [AFM](afm.md) |
 | projectId | true | string |
 | resultSpec  | false | [Result Specification \(resultSpec\)](result_specification.md) |
-| config  | false | [ChartConfig](chart_config.md) |
+| config  | false | [ChartConfig](15_props__chart_config.md) |
 
 ### Structure
 

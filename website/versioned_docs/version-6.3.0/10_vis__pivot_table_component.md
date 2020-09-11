@@ -200,7 +200,7 @@ To avoid this gap, specify the maximum height of the table using the `maxHeight`
 ## Configuration menu
 
 You can configure the following settings:
-* Separators used when formatting numbers. See [Change a separator in the number format](chart_config.md#Change-a-separator-in-the-number-format).
+* Separators used when formatting numbers. See [Change a separator in the number format](15_props__chart_config.md#Change-a-separator-in-the-number-format).
 * Menu items. Currently, only the totals are supported.
 * Maximum height. See [Maximum height](#maximum-height).
 

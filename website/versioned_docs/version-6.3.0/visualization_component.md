@@ -87,7 +87,7 @@ clearSdkCache();
 | uri | false | string | The URI of the visualization to be rendered. Can be omitted if the visualization identifier is present. |
 | identifier | false | string | The identifier of the visualization to be rendered. Can be omitted if the visualization URI is present. |
 | locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
-| config  | false | [ChartConfig](chart_config.md) | The chart configuration object |
+| config  | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |
 | filters | false | [FilterItem[]](filter_visual_components.md) | An array of filter definitions |
 | drillableItems | false | [DrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable. |
 | onFiredDrillEvent | false | [onFiredDrillEvent()](on_fire_drill_event.md) | The drilling event catcher. Called when drilling happens. |

@@ -119,7 +119,7 @@ A visualization is a generic component that renders a chart according to the giv
 | uri | false | string | URI of the visualization to be rendered Can be omitted if the visualization identifier is present. |
 | identifier | false | string | Identifier of the visualization to be rendered Can be omitted if the visualization URI is present. |
 | locale | false | string | Localization of the visualization Defaults to`en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
-| config  | false | [ChartConfig](chart_config.md) | Chart configuration |
+| config  | false | [ChartConfig](15_props__chart_config.md) | Chart configuration |
 | filters | false | [FilterItem](afm.md#AFM-Filter)\[\] | List of filters to be applied to the visualization |
 | drillableItems | false | [DrillableItem](drillable_item)\[\] | Drilling configuration |
 | onFiredDrillEvent | false | [onFiredDrillEvent](on_fired_drill_event.md)\(\) | Drilling event catcher Called when drilling happens. |

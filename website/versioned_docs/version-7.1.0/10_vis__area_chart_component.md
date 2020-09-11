@@ -8,9 +8,9 @@ original_id: area_chart_component
 
 Area chart shows data as an area under a line intersecting dots. It can display either multiple measures as different areas or a single measure split by one attribute into multiple areas with points intersecting attribute values.
 
-Areas stack by default. Alternatively, the areas can overlap if ```{ stackMeasures: false }``` is set in the [chart config](chart_config.md).
+Areas stack by default. Alternatively, the areas can overlap if ```{ stackMeasures: false }``` is set in the [chart config](15_props__chart_config.md).
 
-> The `stacking` property, which was supported in area charts [in Version 6.2](https://sdk.gooddata.com/gooddata-ui/docs/6.2.0/area_chart_component.html) and older versions, is deprecated and will be removed in the future. Use the `stackMeasures` property instead (see [chart config](chart_config.md)).
+> The `stacking` property, which was supported in area charts [in Version 6.2](https://sdk.gooddata.com/gooddata-ui/docs/6.2.0/area_chart_component.html) and older versions, is deprecated and will be removed in the future. Use the `stackMeasures` property instead (see [chart config](15_props__chart_config.md)).
 
 ![Area Chart Component](assets/area_chart.png "Area Chart Component")
 
@@ -76,7 +76,7 @@ const attribute = {
 | stackBy | false | [Attribute](afm.md#attribute) | An attribute definition. `stackBy` is ignored if `viewBy` has two attributes. Do not use `stackBy` in charts with multiple measures. |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
-| config | false | [ChartConfig](chart_config.md) | The chart configuration object |
+| config | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | [DrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable. |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
@@ -94,7 +94,7 @@ const attribute = {
 | pushData | false | Function | A callback after AFM is resolved |
 -->
 
-The following example shows the supported `config` structure with sample values. To see the descriptions of the individual options, see [ChartConfig](chart_config.md).
+The following example shows the supported `config` structure with sample values. To see the descriptions of the individual options, see [ChartConfig](15_props__chart_config.md).
 ```javascript
 {
     colors: ['rgb(195, 49, 73)', 'rgb(168, 194, 86)'],

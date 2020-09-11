@@ -19,7 +19,7 @@ Though you can use either object URIs or object identifiers, we recommend that y
 | afm | true | [AFM](afm.md) |
 | projectId | true | string |
 | resultSpec  | false | [Result Specification \(resultSpec\)](result_specification.md) |
-| config  | false | [ChartConfig](chart_config.md) |
+| config  | false | [ChartConfig](15_props__chart_config.md) |
 
 ### Structure
 
