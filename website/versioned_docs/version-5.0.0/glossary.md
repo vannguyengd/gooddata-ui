@@ -21,7 +21,7 @@ See [AFM](afm.md).
 
 ## B
 
-**bar chart** is a chart that allows you to visually compare discrete categories of data. See [Bar Chart](bar_chart_component.md).
+**bar chart** is a chart that allows you to visually compare discrete categories of data. See [Bar Chart](10_vis__bar_chart_component.md).
 
 ## D
 
