@@ -51,7 +51,7 @@ For the full TypeScript definition, see [this code section](https://github.com/g
 
 An arithmetic measure can reference the following as its operand:
 * Simple measures
-* Derived measures (see [Time Over Time Comparison](time_over_time_comparison.md))
+* Derived measures (see [Time Over Time Comparison](20_misc__time_over_time_comparison.md))
 * Another arithmetic measures
 
 If arithmetic measures reference each other in an infinite loop or the referenced measure is not found in the visualization (there is no measure with the referenced *localIdentifier*), the error message is rendered instead of the visualization.

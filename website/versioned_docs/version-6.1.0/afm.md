@@ -146,7 +146,7 @@ When `computeRatio` is not specified, it defaults to `false`, and values fr
 
 ### Compare a measure over time
 
-To compare a measure over time, add one of the supported measure types described in [Time Over Time Comparison](time_over_time_comparison.md) to `afm.measures`.
+To compare a measure over time, add one of the supported measure types described in [Time Over Time Comparison](20_misc__time_over_time_comparison.md) to `afm.measures`.
 
 ### Calculated measures
 

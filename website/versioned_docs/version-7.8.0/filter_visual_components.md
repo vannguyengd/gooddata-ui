@@ -123,7 +123,7 @@ The `from` and `to` properties set the number of granularity units (for example,
 * `-1` for the previous period
 * `-n` for the *n*th previous period
 
-**NOTE:** If you use date filters by _weeks_ and compare the data to the [previous period or the same period of the last year](time_over_time_comparison.md) in those filters, you have to enable the GoodData platform to properly process such week filters. To do so, complete the following steps:
+**NOTE:** If you use date filters by _weeks_ and compare the data to the [previous period or the same period of the last year](20_misc__time_over_time_comparison.md) in those filters, you have to enable the GoodData platform to properly process such week filters. To do so, complete the following steps:
 
 1. Switch the version of the [Extensible Analytics Engine](https://help.gooddata.com/display/doc/XAE+-+Extensible+Analytics+Engine) to 3.
 

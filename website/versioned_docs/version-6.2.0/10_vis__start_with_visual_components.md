@@ -146,7 +146,7 @@ IArithmeticMeasureDefinition = {
 }
 ```
 
-For more information about the derived measures, see [Time Over Time Comparison](time_over_time_comparison.md).
+For more information about the derived measures, see [Time Over Time Comparison](20_misc__time_over_time_comparison.md).
 
 For more information about the arithmetic measures, see [Arithmetic Measure](arithmetic_measure.md).
 

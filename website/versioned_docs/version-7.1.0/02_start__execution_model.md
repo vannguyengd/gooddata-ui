@@ -48,8 +48,8 @@ You can use the following measure helpers:
 
 * `measure` for standard measures
 * `arithmeticMeasure` for [arithmetic measures](arithmetic_measure.md)
-* `popMeasure` for [period over period measures](time_over_time_comparison.md#comparing-to-the-same-period-sp-previous-year)
-* `previousPeriodMeasure` for [previous period measures](time_over_time_comparison.md#comparing-to-the-previous-period-pp)
+* `popMeasure` for [period over period measures](20_misc__time_over_time_comparison.md#comparing-to-the-same-period-sp-previous-year)
+* `previousPeriodMeasure` for [previous period measures](20_misc__time_over_time_comparison.md#comparing-to-the-previous-period-pp)
 
 Because all the measure types have several properties in common, GoodData.UI provides methods for optionally setting those in all the measure helpers:
 
@@ -175,7 +175,7 @@ m1plusM2 is equivalent to
 
 ### popMeasure helper
 
-This helper creates [period over period measures](time_over_time_comparison.md#comparing-to-the-same-period-sp-previous-year).
+This helper creates [period over period measures](20_misc__time_over_time_comparison.md#comparing-to-the-same-period-sp-previous-year).
 
 The helper takes the following parameters:
 
@@ -210,7 +210,7 @@ pop is equivalent to
 
 ### previousPeriodMeasure helper
 
-This helper creates [previous period measures](time_over_time_comparison.md#comparing-to-the-previous-period-pp).
+This helper creates [previous period measures](20_misc__time_over_time_comparison.md#comparing-to-the-previous-period-pp).
 
 The helper takes the following parameters:
 
