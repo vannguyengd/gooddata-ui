@@ -189,7 +189,7 @@ You can filter a visualization by the value of a measure. You can filter only th
 
 > **NOTES:**
 > * The numbers rendered by a visualization are often rounded up/down. However, filters are applied to the original exact numbers (those before rounding), and that may lead to unexpected results. For example, the number `400.01` rounded to a whole number would be `400`, but it will still be included in the visualization with a filter that filters out the values smaller than or equal to `400`.
-> * A [rollup total](table_totals.md) is not supported in visualizations with measure value filters. Such visualizations are not rendered, and the error message is shown instead.
+> * A [rollup total](30_tips__table_totals.md) is not supported in visualizations with measure value filters. Such visualizations are not rendered, and the error message is shown instead.
 
 ### Filtering by comparing a measure value to a specific value
 

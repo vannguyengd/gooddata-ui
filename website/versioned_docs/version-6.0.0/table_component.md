@@ -72,7 +72,7 @@ const attributes = [
 | projectId | true | string | The project ID |
 | measures | false | [Measure[]](afm.md#measure) | An array of measure definitions (either measure or attribute definition must be provided for the table to render properly) |
 | attributes | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions (either measure or attribute definition must be provided for the table to render properly) |
-| totals | false | [Total[]](table_totals.md) | An array of total definitions |
+| totals | false | [Total[]](30_tips__table_totals.md) | An array of total definitions |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | false | [ChartConfig](15_props__chart_config.md) | The configuration object |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
