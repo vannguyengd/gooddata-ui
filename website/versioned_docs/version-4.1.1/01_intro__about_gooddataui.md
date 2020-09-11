@@ -33,7 +33,7 @@ The GoodData UI SDK is tested against and supports the following:
 
 * Mac, Linux OS
 * React 15.3.2, Angular 1, Angular 2
-  * For React using Create React App, see [How to Create Your First Visualization with GoodData UI SDK](ht_create_your_first_visualization.md).
+  * For React using Create React App, see [How to Create Your First Visualization with GoodData UI SDK](02_start__no_boilerplate.md).
   * For Angular 1, see [How to Use React Components in Angular 1.x](ht_use_react_components_in_angular_1.x.md).
   * For Angular 2+, see [How to Use React Components in Angular 2+](ht_use_react_components_in_angular_2.x.md).
 * TypeScript 2.3+, ES6, ES5
@@ -66,7 +66,7 @@ Choose either of the following options to bypass this restriction:
 * Local proxy
   Set up a local proxy on your server. For information on how to do that, see your server's user documentation. For your convenience, here are links to some common setups:
   * [Local proxy setup in Webpack](https://webpack.github.io/docs/webpack-dev-server.html#proxy)
-  * [Local proxy setup in Create react app](ht_create_your_first_visualization.md#step-4-prevent-cross-origin-issues)
+  * [Local proxy setup in Create react app](02_start__no_boilerplate.md#step-4-prevent-cross-origin-issues)
 * CORS white-labeling
   You can white-label your domain so that requests from this domain are accepted. To have your domain white-labeled, contact the GoodData Support.
 
@@ -107,7 +107,7 @@ Now, you can start building your application.
 
 We have a number of tutorials to help you start your development:
 
-* [How to Create Your First Visualization with GoodData UI SDK](ht_create_your_first_visualization.md)
+* [How to Create Your First Visualization with GoodData UI SDK](02_start__no_boilerplate.md)
 * [How to Build an App](ht_build_app.md)
 * [How to Use React Components in Angular 1.x](ht_use_react_components_in_angular_1.x.md)
 * [How to Use React Components in Angular 2+](ht_use_react_components_in_angular_2.x.md)

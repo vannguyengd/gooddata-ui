@@ -6,7 +6,7 @@ id: version-4.1.1-ht_access_gd_api_directly
 original_id: ht_access_gd_api_directly
 ---
 
-Our tutorial [How to Create Your First Visualization with GoodData UI SDK](ht_create_your_first_visualization.md) showed how you can create a simple web app with the GoodData UI SDK in a few minutes. For the sake of simplicity, that tutorial includes using a local proxy that enables the app to call the GoodData APIs without the need to address cross-origin requests. Using a proxy is not a best practice for creating production-ready apps. Instead, we recommend that you use Cross-Origin Resource Sharing \(CORS\). Setting up CORS allows you to develop and run web applications that can communicate directly with the GoodData APIs.
+Our tutorial [How to Create Your First Visualization with GoodData UI SDK](02_start__no_boilerplate.md) showed how you can create a simple web app with the GoodData UI SDK in a few minutes. For the sake of simplicity, that tutorial includes using a local proxy that enables the app to call the GoodData APIs without the need to address cross-origin requests. Using a proxy is not a best practice for creating production-ready apps. Instead, we recommend that you use Cross-Origin Resource Sharing \(CORS\). Setting up CORS allows you to develop and run web applications that can communicate directly with the GoodData APIs.
 
 This tutorial does \_not\_ address authentication. The easiest way to make sure that your API requests to the GoodData platform are authenticated is to be logged into your white-labelled domain in the same browser you are using for your local development.
 
@@ -83,7 +83,7 @@ In this example, `local.test` was added by you, and everything else is the origi
 Do \_not\_ modify the `/etc/hosts` file except for adding `local.test` to the end of the line starting with 127.0.0.1 unless you are absolutely sure that you know what you are doing.
 
 1. Make sure that your browser accesses your app via `https://local.test:8443` instead of `https://localhost:8443`.
-   If you use react-scripts \(for example, you followed the instructions in the tutorial[How to Create Your First Visualization with GoodData UI SDK](ht_create_your_first_visualization.md)\), set the `HOST` environment variable to `local.test` before starting the app. To do so, run the following command from the command line:
+   If you use react-scripts \(for example, you followed the instructions in the tutorial[How to Create Your First Visualization with GoodData UI SDK](02_start__no_boilerplate.md)\), set the `HOST` environment variable to `local.test` before starting the app. To do so, run the following command from the command line:
 
 ```bash
 HTTPS=true HOST=local.test PORT=8443 yarn start
