@@ -87,9 +87,9 @@ const attribute = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| xAxisMeasure | false | [Measure](afm.md#measure) | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the scatter plot to render properly) |
-| yAxisMeasure | false | [Measure](afm.md#measure) | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the scatter plot to render properly) |
-| attribute | false | [Attribute](afm.md#attribute) | An attribute definition |
+| xAxisMeasure | false | [Measure](50_custom__execution.md#measure) | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the scatter plot to render properly) |
+| yAxisMeasure | false | [Measure](50_custom__execution.md#measure) | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the scatter plot to render properly) |
+| attribute | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | config | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |

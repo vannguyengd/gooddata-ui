@@ -106,9 +106,9 @@ import { ComboChart } from '@gooddata/react-components';
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| primaryMeasures | false | [Measure[]](afm.md#measure) | An array of primary measure definitions |
-| secondaryMeasures | false | [Measure[]](afm.md#measure) | An array of secondary measure definitions |
-| viewBy | false | [Attribute](afm.md#attribute) &#124; [Attribute[]](afm.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the first attribute wraps up the second one. |
+| primaryMeasures | false | [Measure[]](50_custom__execution.md#measure) | An array of primary measure definitions |
+| secondaryMeasures | false | [Measure[]](50_custom__execution.md#measure) | An array of secondary measure definitions |
+| viewBy | false | [Attribute](50_custom__execution.md#attribute) &#124; [Attribute[]](50_custom__execution.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the first attribute wraps up the second one. |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | config | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |

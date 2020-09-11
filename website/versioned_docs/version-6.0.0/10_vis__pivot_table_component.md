@@ -210,9 +210,9 @@ For more information about the aggregation functions, see [Aggregate Table Data]
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| measures | false | [Measure[]](afm.md#measure) | An array of measure definitions (either measures, or rows, or columns must be provided for the pivot table to render properly) |
-| rows | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions that breaks measure data into rows (either measures, or rows, or columns must be provided for the pivot table to render properly) |
-| columns | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions that breaks measure data into columns (either measures, or rows, or columns must be provided for the pivot table to render properly) |
+| measures | false | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions (either measures, or rows, or columns must be provided for the pivot table to render properly) |
+| rows | false | [Attribute[]](50_custom__execution.md#attribute) | An array of attribute definitions that breaks measure data into rows (either measures, or rows, or columns must be provided for the pivot table to render properly) |
+| columns | false | [Attribute[]](50_custom__execution.md#attribute) | An array of attribute definitions that breaks measure data into columns (either measures, or rows, or columns must be provided for the pivot table to render properly) |
 | totals | false | [Total[]](table_totals_in_execution_context.md#grand_totals) | An array of total definitions |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | false | [ChartConfig](15_props__chart_config.md) | The configuration object |

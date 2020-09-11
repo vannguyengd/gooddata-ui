@@ -2,13 +2,13 @@
 title: Set Up an AFM Query
 sidebar_label: Set Up an AFM Query
 copyright: (C) 2007-2018 GoodData Corporation
-id: version-6.0.0-afm
+id: version-5.2.0-afm
 original_id: afm
 ---
 
 AFM is a combination of attributes, measures and filters that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer).
 
-**NOTE:** A measure contains numeric data (for example, Revenue). Measures can be sliced by selected attributes (for example, City, Date in years, or both) and filtered by attribute values or date constraints. For more information, see the [main concepts](01_intro__platform_intro.md#main-concepts).   
+**NOTE:** A measure contains numeric data (for example, Revenue). Measures can be sliced by selected attributes (for example, City, Date in years, or both) and filtered by attribute values or date constraints. For more information, see the [main concepts](01_intro__platform_intro.md#main-concepts).
 
 ## Structure
 
@@ -129,7 +129,7 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 
 ### Filters in a measure definition
 
-Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](afm.md).
+Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](50_custom__execution.md).
 
 Only one filter of the `DateFilter` type is allowed in the measure's filter definition.
 

@@ -31,7 +31,7 @@ import { Execute, isEmptyResult } from '@gooddata/react-components';
 
 The process of creating a new visualization component comprises the following stages:
 
-1. [Set up an AFM Query](afm.md)
+1. [Set up an AFM Query](50_custom__execution.md)
 
 Specify the combination of attributes, measures and filters to describe your query
 

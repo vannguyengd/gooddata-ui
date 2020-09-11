@@ -14,7 +14,7 @@ This article provides an overview of the main API parts that you need to execute
 POST /gdc/app/projects/<project-id>/executeAfm
 ```
 
-The request body consists of [AFM](afm.md) and [resultSpec](result_spec.md):
+The request body consists of [AFM](50_custom__execution.md) and [resultSpec](result_spec.md):
 
 ```javascript
 { "execution":

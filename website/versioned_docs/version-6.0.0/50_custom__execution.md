@@ -2,7 +2,7 @@
 title: Set Up an AFM Query
 sidebar_label: Set Up an AFM Query
 copyright: (C) 2007-2018 GoodData Corporation
-id: version-6.1.0-afm
+id: version-6.0.0-afm
 original_id: afm
 ---
 
@@ -129,7 +129,7 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 
 ### Filters in a measure definition
 
-Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](afm.md).
+Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](50_custom__execution.md).
 
 Only one filter of the `DateFilter` type is allowed in the measure's filter definition.
 
@@ -147,10 +147,6 @@ When `computeRatio` is not specified, it defaults to `false`, and values fr
 ### Compare a measure over time
 
 To compare a measure over time, add one of the supported measure types described in [Time Over Time Comparison](20_misc__time_over_time_comparison.md) to `afm.measures`.
-
-### Calculated measures
-
-To create calculated measures (for example, when you want to subtract a measure from another measure), add arithmetic measures described in [Arithmetic Measure](20_misc__arithmetic_measure.md) to `afm.measures`.
 
 ### Examples of measures
 

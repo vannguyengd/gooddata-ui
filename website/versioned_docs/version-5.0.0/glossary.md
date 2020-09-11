@@ -9,7 +9,7 @@ original_id: glossary
 ## A
 
 **AFM \(Attribute - Filter - Measure\)** is unified input for creating a visualization using GoodData.UI. AFM is a combination of attributes, filters, and measures that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer). 
-See [AFM](afm.md).
+See [AFM](50_custom__execution.md).
 
 **aggregation** is a general term for the process by which information is gathered and expressed in a summary form. Aggregation means:
 

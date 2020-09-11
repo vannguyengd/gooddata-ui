@@ -67,9 +67,9 @@ const attribute = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| measures | true | [Measure[]](afm.md#measure) | An array of measure definitions |
-| trendBy | false | [Attribute](afm.md#attribute) | An attribute definition |
-| segmentBy | false | [Attribute](afm.md#attribute) | An attribute definition |
+| measures | true | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions |
+| trendBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |
+| segmentBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | config | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |

@@ -6,7 +6,7 @@ id: version-5.0.0-table_totals_in_execution_object
 original_id: table_totals_in_execution_object
 ---
 
-There are several examples that can show how to define table totals, how they look in the UI and what has to be defined in ExecutionObject \([AFM](afm.md#native-total) and [ResultSpec](result_specification.md#totals)\) to achieve expected results.
+There are several examples that can show how to define table totals, how they look in the UI and what has to be defined in ExecutionObject \([AFM](50_custom__execution.md#native-total) and [ResultSpec](result_specification.md#totals)\) to achieve expected results.
 
 ## Currently supported types
 

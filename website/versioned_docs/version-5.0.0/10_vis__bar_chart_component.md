@@ -66,9 +66,9 @@ const month = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| measures | true | [Measure[]](afm.md#measure) | An array of measure definitions |
-| viewBy | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions |
-| stackBy | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions |
+| measures | true | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions |
+| viewBy | false | [Attribute[]](50_custom__execution.md#attribute) | An array of attribute definitions |
+| stackBy | false | [Attribute[]](50_custom__execution.md#attribute) | An array of attribute definitions |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | locale | false | string | The location string for translations |
 | drillableItems | false | DrillableItem[] | An array of points and attribute values to be drillable. See [DrillableItems](15_props__drillable_item.md).|

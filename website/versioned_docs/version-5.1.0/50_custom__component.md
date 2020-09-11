@@ -14,7 +14,7 @@ You specify the input data by using the component parameters. Then, the executio
 
 | Name | Required? | Type |
 | :--- | :--- | :--- |
-| afm | true | [AFM](afm.md) |
+| afm | true | [AFM](50_custom__execution.md) |
 | projectId | true | string |
 | resultSpec | false | [Result Specification \(resultSpec\)](result_specification.md) |
 | onError | false | function |

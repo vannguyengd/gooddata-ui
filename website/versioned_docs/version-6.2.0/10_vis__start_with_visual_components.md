@@ -78,7 +78,7 @@ To find the identifier or URI of a measure or attribute, use either of the follo
   1. Create a visualization that uses measures and attributes that you need.
   2. Use your browser's Developer Tools and open the [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter).
   3. Find requests to `/executeAfm`.
-  4. Search for the [AFM](afm.md) in the request body. It contains the required identifiers of the measures, atributes, and attribute display forms.
+  4. Search for the [AFM](50_custom__execution.md) in the request body. It contains the required identifiers of the measures, atributes, and attribute display forms.
 
 #### Object URI vs. object identifier
 

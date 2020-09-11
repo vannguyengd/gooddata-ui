@@ -108,9 +108,9 @@ const locationState = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| measure | true | [Measure](afm.md#measure) | A measure definition |
-| rows | false | [Attribute](afm.md#attribute) | An attribute definition |
-| columns | false | [Attribute](afm.md#attribute) | An attribute definition |
+| measure | true | [Measure](50_custom__execution.md#measure) | A measure definition |
+| rows | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |
+| columns | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |

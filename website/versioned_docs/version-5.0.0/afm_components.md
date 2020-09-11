@@ -10,7 +10,7 @@ In their current form, the Visual Components listed in this section, do not supp
 
 If your use case require data sorting, use the following AFM components.
 
-The AFM components use [AFM](afm.md) property instead of specific properties such as `measures` or `viewBy` that are used in Visual Components.
+The AFM components use [AFM](50_custom__execution.md) property instead of specific properties such as `measures` or `viewBy` that are used in Visual Components.
 
 > **Warning!** AFM components are legacy elements from the previous GoodData.UI version and will be eventually deprecated.
 
@@ -20,7 +20,7 @@ The AFM components use [AFM](afm.md) property instead of specific properties suc
 
 | Name | Required? | Type |
 | :--- | :--- | :--- |
-| afm | true | [AFM](afm.md) |
+| afm | true | [AFM](50_custom__execution.md) |
 | projectId | true | string |
 | resultSpec  | false | [Result Specification \(resultSpec\)](result_specification.md) |
 | config  | false | [ChartConfig](15_props__chart_config.md) |
@@ -84,7 +84,7 @@ const { BarChart } = AfmComponents;
 
 | Name | Required? | Type |
 | :--- | :--- | :--- |
-| afm | true | [AFM](afm.md) |
+| afm | true | [AFM](50_custom__execution.md) |
 | projectId | true | string |
 | resultSpec  | false | [Result Specification \(resultSpec\)](result_specification.md) |
 

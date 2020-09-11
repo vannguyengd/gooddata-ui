@@ -111,10 +111,10 @@ const config = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| location | true | [Attribute](afm.md#attribute) | An attribute definition that determines the longitude and latitude of the pins |
-| segmentBy | false | [Attribute](afm.md#attribute) | An attribute definition that categorizes the pins |
-| size | false | [Measure](afm.md#measure) | A measure definition that determines the size of the pins |
-| color | false | [Measure](afm.md#measure) | A measure definition that determines color saturation of the pins |
+| location | true | [Attribute](50_custom__execution.md#attribute) | An attribute definition that determines the longitude and latitude of the pins |
+| segmentBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition that categorizes the pins |
+| size | false | [Measure](50_custom__execution.md#measure) | A measure definition that determines the size of the pins |
+| color | false | [Measure](50_custom__execution.md#measure) | A measure definition that determines color saturation of the pins |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | true | [GeoConfig](#geo-config) | The geo chart configuration object |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
@@ -139,7 +139,7 @@ const config = {
 | mapboxToken | true | string | A map access token that the chart uses to render the map requiring such a token <br> To create a Mapbox account and an access token, see [this guide](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/). |
 | points | false | GeoPointsConfig | A configuration object where you can define clustering and the minimum and maximum sizes of the pins |
 | viewport | false | GeoConfigViewport | The region that the viewport should focus on after the chart is rendered |
-| tooltipText | false | [Attribute](afm.md#attribute) | An additional item that shows a user-friendly label for the location attribute instead of the longitude and latitude |
+| tooltipText | false | [Attribute](50_custom__execution.md#attribute) | An additional item that shows a user-friendly label for the location attribute instead of the longitude and latitude |
 
 For the common chart configuration options such as colors, separators, or legend visibility, see [Chart Config](15_props__chart_config.md).
 

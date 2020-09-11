@@ -14,7 +14,7 @@ The input data is specified using the component parameters \(see [Parameters](5
 
 | Name | Required? | Type |
 | :--- | :--- | :--- |
-| afm | true | [AFM](afm.md) |
+| afm | true | [AFM](50_custom__execution.md) |
 | projectId | true | string |
 | resultSpec | false | [Result Specification \(resultSpec\)](result_specification.md) |
 | onError | false | function |

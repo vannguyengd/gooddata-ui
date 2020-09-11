@@ -14,7 +14,7 @@ original_id: platform_intro
 
 * **GoodData REST API** is a low-level API that makes the platform features accessible to all GoodData users.
 
-* **GoodData JS** is a set of JavaScript wrappers written on top of the *REST API*. Additionally, GoodData JS handles authentication, unified query request format (AFM, [Attributes-Measures-Filters](afm.md)), and many more.
+* **GoodData JS** is a set of JavaScript wrappers written on top of the *REST API*. Additionally, GoodData JS handles authentication, unified query request format (AFM, [Attributes-Measures-Filters](50_custom__execution.md)), and many more.
 
 * **GoodData.UI** is a React-based JavaScript library for building responsive analytical applications. This library is written on top of *GoodData JS* and makes creating analytical applications even more convenient by adding visual components (listed in the left panel under **Visual Components**).
 

@@ -130,7 +130,7 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 
 ### Filters in a measure definition
 
-Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](afm.md).
+Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](50_custom__execution.md).
 
 Only one filter of the `DateFilter` type is allowed in the measure's filter definition.
 

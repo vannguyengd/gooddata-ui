@@ -2,7 +2,7 @@
 title: Set Up an AFM Query
 sidebar_label: Set Up an AFM Query
 copyright: (C) 2007-2018 GoodData Corporation
-id: version-7.4.0-afm
+id: version-6.1.0-afm
 original_id: afm
 ---
 
@@ -48,7 +48,7 @@ All attributes are defined using their `displayForm` identifiers.
 
 ## Filter
 
-You can limit the execution by providing a `filters` prop to your AFM. It is an array of filters. Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...`).
+You can limit the execution by providing a `filters` prop to your AFM. It is an array of filters. Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...)`.
 
 The structure of individual filters is identical to the `filters` prop that is used to filter visual components. For more information, see [Filter Visual Components](30_tips__filter_visual_components.md).
 
@@ -61,14 +61,7 @@ const afm = {
 }
 ```
 
-Attribute filters (both `positiveAttributeFilter` and `negativeAttributeFilter`) can be defined to match attribute elements by their URI (this is the default) or value (text filter). 
-To use text filters, define the `textFilter` property of the filter and use values instead of URIs in the `in` or `notIn` arrays. 
-
-If you need to escape characters while using text filters, make sure that the input for a filter is escaped correctly. Incorrectly escaped input may cause errors.
-
-Characters that are prone to mistakes are `"` and `\`. For example, if you want to filter out this exact string: `Foo\"`, enter it as `'Foo\\"'` or `"Foo\\\""`, which will result in `"Foo\\\""`. The browser will send `"Foo\\\""` to the server where `"Foo\\\""` will be queried as `Foo\"`.
-
-**NOTE:** Single quotes and double quotes behave differently while escaping characters.
+All filters are defined using the `displayForm` identifiers.
 
 ## Measure
 
@@ -92,7 +85,7 @@ Measures inside an AFM are represented by an array of the following objects, eac
         }
     },
     alias: 'Custom measure title',  // Optional; overrides the default measure title
-    format: '#,##0.00'  // Optional; overrides the default measure format; ignored in some special cases, see the sections below
+    format: '#,##0.00'  // Optional; overrides the default measure format
 }
 
 ```
@@ -127,7 +120,7 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 | Type | Description |
 | :--- | :--- |
 | `'sum'` | Returns a sum of all numbers in the set |
-| `'count'` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter  (ignores the measure's `format` value and uses the default value `#,##0` instead) |
+| `'count'` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter |
 | `'avg'` | Returns the average value of all numbers in the set; null values are ignored |
 | `'min'` | Returns the minimum value of all numbers in the set |
 | `'max'` | Returns the maximum value of all numbers in the set |
@@ -136,7 +129,7 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 
 ### Filters in a measure definition
 
-Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](afm.md).
+Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](50_custom__execution.md).
 
 Only one filter of the `DateFilter` type is allowed in the measure's filter definition.
 
@@ -148,8 +141,6 @@ Only one filter of the `DateFilter` type is allowed in the measure's filter de
 When an AFM is executed on the GoodData platform, the result measure data is, by default, returned as raw values \(numbers\).
 
 If you want the measures data to be displayed as a percentage instead, add a `computeRatio` property and set it to `true`.
-
-When the property is enabled, the measure's `format` value is ignored. The default format `#,##0.00%` is used instead.
 
 When `computeRatio` is not specified, it defaults to `false`, and values from execution are displayed as numbers.
 
@@ -218,7 +209,7 @@ To create calculated measures (for example, when you want to subtract a measure 
                                 displayForm: {
                                     identifier: '<attribute-displayForm-identifier>' // Or URI: '<attribute-displayForm-uri>'
                                 },
-                                in: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Elements to filter by are specified by URI
+                                in: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Currently, attribute elements support URI only
                             }
                         },
                     ],
@@ -275,8 +266,7 @@ To create calculated measures (for example, when you want to subtract a measure 
                 displayForm: {
                     identifier: '<attribute-displayForm-identifier>' // Or URI: '<attribute-displayForm-uri>'
                 },
-                in: ['<attribute-element-value-1>', '<attribute-element-value-2>'], // Elements to filter by are specified by value
-                textFilter: true
+                in: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Currently, attribute elements support URI only
             }
         }
     ]

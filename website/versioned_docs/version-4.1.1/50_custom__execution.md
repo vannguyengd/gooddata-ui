@@ -87,11 +87,11 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 
 ### Filters in a measure definition
 
-Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](afm.md).
+Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](50_custom__execution.md).
 
-Only one filter of the [`DateFilter`](afm.md#date-filter) type is allowed in a measure's filter definition.
+Only one filter of the [`DateFilter`](50_custom__execution.md#date-filter) type is allowed in a measure's filter definition.
 
-When both a measure filter of the [`DateFilter`](afm.md#date-filter) type and an AFM global filter of the [`DateFilter`](afm.md#date-filter)type are set, the measure date filter overrides the AFM global date filter for this measure \(global date filters are still applied to other measures that do not have a measure date filter defined\).
+When both a measure filter of the [`DateFilter`](50_custom__execution.md#date-filter) type and an AFM global filter of the [`DateFilter`](50_custom__execution.md#date-filter)type are set, the measure date filter overrides the AFM global date filter for this measure \(global date filters are still applied to other measures that do not have a measure date filter defined\).
 
 ### Show as a percentage
 

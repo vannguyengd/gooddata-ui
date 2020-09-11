@@ -2,13 +2,13 @@
 title: Set Up an AFM Query
 sidebar_label: Set Up an AFM Query
 copyright: (C) 2007-2018 GoodData Corporation
-id: version-5.2.0-afm
+id: version-6.2.0-afm
 original_id: afm
 ---
 
 AFM is a combination of attributes, measures and filters that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer).
 
-**NOTE:** A measure contains numeric data (for example, Revenue). Measures can be sliced by selected attributes (for example, City, Date in years, or both) and filtered by attribute values or date constraints. For more information, see the [main concepts](01_intro__platform_intro.md#main-concepts).
+**NOTE:** A measure contains numeric data (for example, Revenue). Measures can be sliced by selected attributes (for example, City, Date in years, or both) and filtered by attribute values or date constraints. For more information, see the [main concepts](01_intro__platform_intro.md#main-concepts).   
 
 ## Structure
 
@@ -85,7 +85,7 @@ Measures inside an AFM are represented by an array of the following objects, eac
         }
     },
     alias: 'Custom measure title',  // Optional; overrides the default measure title
-    format: '#,##0.00'  // Optional; overrides the default measure format
+    format: '#,##0.00'  // Optional; overrides the default measure format; ignored in some special cases, see the sections below
 }
 
 ```
@@ -120,7 +120,7 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 | Type | Description |
 | :--- | :--- |
 | `'sum'` | Returns a sum of all numbers in the set |
-| `'count'` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter |
+| `'count'` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter  (ignores the measure's `format` value and uses the default value `#,##0` instead) |
 | `'avg'` | Returns the average value of all numbers in the set; null values are ignored |
 | `'min'` | Returns the minimum value of all numbers in the set |
 | `'max'` | Returns the maximum value of all numbers in the set |
@@ -129,7 +129,7 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 
 ### Filters in a measure definition
 
-Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](afm.md).
+Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](50_custom__execution.md).
 
 Only one filter of the `DateFilter` type is allowed in the measure's filter definition.
 
@@ -142,11 +142,17 @@ When an AFM is executed on the GoodData platform, the result measure data is, by
 
 If you want the measures data to be displayed as a percentage instead, add a `computeRatio` property and set it to `true`.
 
+When the property is enabled, the measure's `format` value is ignored. The default format `#,##0.00%` is used instead.
+
 When `computeRatio` is not specified, it defaults to `false`, and values from execution are displayed as numbers.
 
 ### Compare a measure over time
 
 To compare a measure over time, add one of the supported measure types described in [Time Over Time Comparison](20_misc__time_over_time_comparison.md) to `afm.measures`.
+
+### Calculated measures
+
+To create calculated measures (for example, when you want to subtract a measure from another measure), add arithmetic measures described in [Arithmetic Measure](20_misc__arithmetic_measure.md) to `afm.measures`.
 
 ### Examples of measures
 

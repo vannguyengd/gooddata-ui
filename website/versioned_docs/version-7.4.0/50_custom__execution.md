@@ -2,14 +2,13 @@
 title: Set Up an AFM Query
 sidebar_label: Set Up an AFM Query
 copyright: (C) 2007-2018 GoodData Corporation
-id: version-5.0.0-afm
+id: version-7.4.0-afm
 original_id: afm
 ---
 
-
 AFM is a combination of attributes, measures and filters that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer).
 
-**Note:** A measure contains numeric data (for example, Revenue). Measures can be sliced by selected attributes (for example, City, Date in years, or both) and filtered by attribute values or date constraints. For more information, see the [main concepts](01_intro__platform_intro.md#main-concepts).  
+**NOTE:** A measure contains numeric data (for example, Revenue). Measures can be sliced by selected attributes (for example, City, Date in years, or both) and filtered by attribute values or date constraints. For more information, see the [main concepts](01_intro__platform_intro.md#main-concepts).   
 
 ## Structure
 
@@ -29,6 +28,8 @@ For more information about TypeScript specifications, see [typings](https://gith
 Each attribute requires `localIdentifier` and `displayForm`.
 
 * `localIdentifier` \(string\) is specified by the attribute's `displayForm` identifier.
+
+    `displayForm`, or attribute label, is a different means of representing an attribute. For example, the `Name` attribute might have labels for `Firstname` and `Lastname`. For more information, see [Determine the Attribute Value ID](https://help.gooddata.com/display/doc/Determine+the+Attribute+Value+ID).
 * `type` \(string\) can be either `date` or `attribute`.
 
 ```javascript
@@ -37,28 +38,37 @@ Each attribute requires `localIdentifier` and `displayForm`.
     localIdentifier: '<attribute-local-identifier>',
     // Type: ObjQualifier
     displayForm: {
-        identifier: '<attribute-displayForm-identifier>'    // Or uri: '<attribute-displayForm-uri>'
+        identifier: '<attribute-displayForm-identifier>'    // Or URI: '<attribute-displayForm-uri>'
     },
-    alias: 'My attribute'   // Optional; Overrides default attribute title
+    alias: 'My attribute'   // Optional; overrides the default attribute title
 }
 ```
 
+All attributes are defined using their `displayForm` identifiers.
+
 ## Filter
 
-You can limit the execution by providing a `filters` prop to your AFM. It is an array of filters. Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...)`.
+You can limit the execution by providing a `filters` prop to your AFM. It is an array of filters. Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...`).
 
 The structure of individual filters is identical to the `filters` prop that is used to filter visual components. For more information, see [Filter Visual Components](30_tips__filter_visual_components.md).
 
 ```javascript
 const afm = {
     ...
-    // Optional; By default [];
+    // Optional; by default [];
     filters: [ filter1, filter2, ... ]
     ...
 }
 ```
 
-All attributes, `popAttribute`s and filters are defined using the `displayForm` identifier.
+Attribute filters (both `positiveAttributeFilter` and `negativeAttributeFilter`) can be defined to match attribute elements by their URI (this is the default) or value (text filter). 
+To use text filters, define the `textFilter` property of the filter and use values instead of URIs in the `in` or `notIn` arrays. 
+
+If you need to escape characters while using text filters, make sure that the input for a filter is escaped correctly. Incorrectly escaped input may cause errors.
+
+Characters that are prone to mistakes are `"` and `\`. For example, if you want to filter out this exact string: `Foo\"`, enter it as `'Foo\\"'` or `"Foo\\\""`, which will result in `"Foo\\\""`. The browser will send `"Foo\\\""` to the server where `"Foo\\\""` will be queried as `Foo\"`.
+
+**NOTE:** Single quotes and double quotes behave differently while escaping characters.
 
 ## Measure
 
@@ -74,15 +84,15 @@ Measures inside an AFM are represented by an array of the following objects, eac
         measure: {
             // Type: ObjQualifier
             item: {
-                identifier: '<measure-identifier>'    // Or uri: '<measure-uri>'
+                identifier: '<measure-identifier>'    // Or URI: '<measure-uri>'
             },
-            aggregation: 'sum', // Optional; By default 'sum'; Possible values: 'sum' | 'count' | 'avg' | 'min' | 'max' | 'median' | 'runsum'
-            filters: [],        // Optional; By default []; Type: CompatibilityFilter[]
-            computeRatio: true  // Optional; By default false
+            aggregation: 'sum', // Optional; by default 'sum'; possible values: 'sum' | 'count' | 'avg' | 'min' | 'max' | 'median' | 'runsum'
+            filters: [],        // Optional; by default []; type: CompatibilityFilter[]
+            computeRatio: true  // Optional; by default false
         }
     },
-    alias: 'Custom measure title',  // Optional; Overrides default measure title
-    format: '#,##0.00'  // Optional; Overrides default measure format
+    alias: 'Custom measure title',  // Optional; overrides the default measure title
+    format: '#,##0.00'  // Optional; overrides the default measure format; ignored in some special cases, see the sections below
 }
 
 ```
@@ -117,7 +127,7 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 | Type | Description |
 | :--- | :--- |
 | `'sum'` | Returns a sum of all numbers in the set |
-| `'count'` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter |
+| `'count'` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter  (ignores the measure's `format` value and uses the default value `#,##0` instead) |
 | `'avg'` | Returns the average value of all numbers in the set; null values are ignored |
 | `'min'` | Returns the minimum value of all numbers in the set |
 | `'max'` | Returns the maximum value of all numbers in the set |
@@ -126,38 +136,30 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 
 ### Filters in a measure definition
 
-Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](afm.md).
+Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](50_custom__execution.md).
 
 Only one filter of the `DateFilter` type is allowed in the measure's filter definition.
 
-When both the measure filter of the `DateFilter` type and the AFM global filter of the `DateFilter` type are set, the measure date filter overrides the AFM global date filter for this measure \(global date filters are still applied to other measures that do not have a measure date filter defined\).
+* When both the measure filter of the `DateFilter` type and the AFM global filter of the `DateFilter` type are set with the **same** date dimension, the measure date filter overrides the AFM global date filter for this measure \(global date filters are still applied to other measures that do not have a measure date filter defined\).
+* When the measure filter of the DateFilter type and the AFM global filter of the DateFilter type are set with **different** date dimensions, the filters are interpreted as an intersection of those filters (f1 AND f2).
 
-### Show measure as a percentage
+### Show a measure as a percentage
 
 When an AFM is executed on the GoodData platform, the result measure data is, by default, returned as raw values \(numbers\).
 
 If you want the measures data to be displayed as a percentage instead, add a `computeRatio` property and set it to `true`.
 
+When the property is enabled, the measure's `format` value is ignored. The default format `#,##0.00%` is used instead.
+
 When `computeRatio` is not specified, it defaults to `false`, and values from execution are displayed as numbers.
 
-### Period-over-period
+### Compare a measure over time
 
-To enable period-over-period \(PoP\), use the `PopMeasureDefinition` structure instead of `SimpleMeasureDefinition` and reference the original measure by the `measureIdentifier` property.
+To compare a measure over time, add one of the supported measure types described in [Time Over Time Comparison](20_misc__time_over_time_comparison.md) to `afm.measures`.
 
-`PopMeasureDefinition` is represented by the following structure:
+### Calculated measures
 
-```javascript
-// Type: IPopMeasureDefinition
-definition: {
-    popMeasure: {
-        measureIdentifier: '<measure-local-identifier>',    // reference to localIdentifier in afm.measures
-        // Type: IObjUriQualifier
-        popAttribute: {
-            uri: '<measure-uri>'    // or identifier: '<measure-identifier>'
-        }
-    }
-}
-```
+To create calculated measures (for example, when you want to subtract a measure from another measure), add arithmetic measures described in [Arithmetic Measure](20_misc__arithmetic_measure.md) to `afm.measures`.
 
 ### Examples of measures
 
@@ -171,7 +173,7 @@ definition: {
             definition: {
                 measure: {
                     item: {
-                        identifier: '<measure-identifier>'    // Or uri: '<measure-uri>'
+                        identifier: '<measure-identifier>'    // Or URI: '<measure-uri>'
                     }
                 }
             },
@@ -195,16 +197,16 @@ definition: {
                 measure: {
                     // Type: ObjQualifier
                     item: {
-                        identifier: '<measure-identifier>'    // Or uri: '<measure-uri>'
+                        identifier: '<measure-identifier>'    // Or URI: '<measure-uri>'
                     },
-                    aggregation: 'count',   // Optional; By default 'sum'; Possible values: 'sum' | 'count' | 'avg' | 'min' | 'max' | 'median' | 'runsum'
-                    // Optional; By default []; Type: CompatibilityFilter[]
+                    aggregation: 'count',   // Optional; by default 'sum'; possible values: 'sum' | 'count' | 'avg' | 'min' | 'max' | 'median' | 'runsum'
+                    // Optional; By default []; type: CompatibilityFilter[]
                     filters: [
                         // Type: IAbsoluteDateFilter
                         {
                             absoluteDateFilter: {
                                 dataSet: {
-                                    identifier: '<date-dataset-identifier>' // Or uri: '<date-dataset-uri>'
+                                    identifier: '<date-dataset-identifier>' // Or URI: '<date-dataset-uri>'
                                 },
                                 from: '2017-07-31', // Supported string format 'YYYY-MM-DD'
                                 to: '2017-08-29' // Supported string format 'YYYY-MM-DD'
@@ -214,17 +216,17 @@ definition: {
                         {
                             positiveAttributeFilter: {
                                 displayForm: {
-                                    identifier: '<attribute-displayForm-identifier>' // Or uri: '<attribute-displayForm-uri>'
+                                    identifier: '<attribute-displayForm-identifier>' // Or URI: '<attribute-displayForm-uri>'
                                 },
-                                in: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute elements currently support only uri
+                                in: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Elements to filter by are specified by URI
                             }
                         },
                     ],
-                    computeRatio: true      // Optional; By default false
+                    computeRatio: true      // Optional; by default false
                 }
             },
-            alias: 'Custom measure title',  // Optional; Overrides default measure title
-            format: '#,##0.00'  // Optional; Overrides default measure format
+            alias: 'Custom measure title',  // Optional; overrides the default measure title
+            format: '#,##0.00'  // Optional; overrides the default measure format
         }
     ]
 }
@@ -244,14 +246,14 @@ definition: {
                 measure: {
                     // Type: ObjQualifier
                     item: {
-                        identifier: '<measure-identifier>'    // Or uri: '<measure-uri>'
+                        identifier: '<measure-identifier>'    // Or URI: '<measure-uri>'
                     },
-                    aggregation: 'count',   // Optional; By default 'sum'; Possible values: 'sum' | 'count' | 'avg' | 'min' | 'max' | 'median' | 'runsum'
-                    computeRatio: true      // Optional; By default false
+                    aggregation: 'count',   // Optional; by default 'sum'; possible values: 'sum' | 'count' | 'avg' | 'min' | 'max' | 'median' | 'runsum'
+                    computeRatio: true      // Optional; by default false
                 }
             },
-            alias: 'Custom measure title',  // Optional; Overrides default measure title
-            format: '#,##0.00'  // Optional; Overrides default measure format
+            alias: 'Custom measure title',  // Optional; overrides the default measure title
+            format: '#,##0.00'  // Optional; overrides the default measure format
         }
     ],
     // Optional; By default []; Type: CompatibilityFilter[]
@@ -260,7 +262,7 @@ definition: {
         {
             absoluteDateFilter: {
                     dataSet: {
-                    identifier: '<date-dataset-identifier>' // Or uri: '<date-dataset-uri>'
+                    identifier: '<date-dataset-identifier>' // Or URI: '<date-dataset-uri>'
                 },
                 from: '2017-07-31', // Supported string format 'YYYY-MM-DD'
                 to: '2017-08-29' // Supported string format 'YYYY-MM-DD'
@@ -271,51 +273,14 @@ definition: {
         {
             positiveAttributeFilter: {
                 displayForm: {
-                    identifier: '<attribute-displayForm-identifier>' // Or uri: '<attribute-displayForm-uri>'
+                    identifier: '<attribute-displayForm-identifier>' // Or URI: '<attribute-displayForm-uri>'
                 },
-                in: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute elements currently support only uri
+                in: ['<attribute-element-value-1>', '<attribute-element-value-2>'], // Elements to filter by are specified by value
+                textFilter: true
             }
         }
     ]
 
-}
-```
-
-#### Period-over-period with measure defined by reference in AFM
-
-```javasctript
-{
-    measures: [
-        {
-            localIdentifier: '<pop-measure-local-identifier>',
-            definition: {
-                popMeasure: {
-                    measureIdentifier: 'amountMeasure',
-                    popAttribute: {
-                        identifier: '<attribute-displayForm-identifier>' // Or uri: '<attribute-displayForm-uri>'
-                    }
-                }
-            }
-        },
-        {
-            localIdentifier: '<measure-local-identifier>',
-            definition: {
-                measure: {
-                    item: {
-                        identifier: '<measure-identifier>'    // Or uri: '<measure-uri>'
-                    }
-                }
-            }
-        }
-    ],
-    attributes: [
-        {
-            displayForm: {
-                identifier: '<attribute-displayForm-identifier>' // Or uri: '<attribute-displayForm-uri>'
-            },
-            localIdentifier: '<attribute-local-identifier>'
-        }
-    ]
 }
 ```
 
@@ -329,8 +294,8 @@ Native totals in the AFM structure represent a definition of the data needed for
 ...
 nativeTotals: [
     {
-        measureIdentifier: string       // local measure identifier on which total is defined
-        attributeIdentifiers: string[]  // subset of local attribute identifiers in AFM defining total placement
+        measureIdentifier: string       // The local measure identifier for which total is defined
+        attributeIdentifiers: string[]  // A subset of local attribute identifiers in AFM defining total placement
     },
     ...
 ]

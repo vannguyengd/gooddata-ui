@@ -88,7 +88,7 @@ Only the following are currently supported:
 * Grand totals in the first dimension
   * `total.attributeIdentifier` contains the first `attribute-local-identifier` from `itemIdentifiers`.
 
-If you want define 'nat'\(native\) total, make sure that it is in sync with the AFM.nativeTotals definition \(see[Native totals](afm.md#AFM-NativeTotal)\).
+If you want define 'nat'\(native\) total, make sure that it is in sync with the AFM.nativeTotals definition \(see[Native totals](50_custom__execution.md#AFM-NativeTotal)\).
 
 #### Defining table totals
 

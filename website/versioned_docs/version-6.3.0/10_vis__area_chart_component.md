@@ -71,9 +71,9 @@ const attribute = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| measures | true | [Measure[]](afm.md#measure) | An array of measure definitions. If `viewBy` has two attributes, only the first measure is used. |
-| viewBy | false | [Attribute](afm.md#attribute) &#124; [Attribute[]](afm.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the second attribute slices the measure horizontally, and the areas are always overlapped regardless of what `stackBy` is set to. |
-| stackBy | false | [Attribute](afm.md#attribute) | An attribute definition. `stackBy` is ignored if `viewBy` has two attributes. |
+| measures | true | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions. If `viewBy` has two attributes, only the first measure is used. |
+| viewBy | false | [Attribute](50_custom__execution.md#attribute) &#124; [Attribute[]](50_custom__execution.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the second attribute slices the measure horizontally, and the areas are always overlapped regardless of what `stackBy` is set to. |
+| stackBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition. `stackBy` is ignored if `viewBy` has two attributes. |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | config | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |

@@ -30,7 +30,7 @@ KPI \(Key Performance Indicator\) renders a measure calculated by the GoodData 
 | :--- | :--- | :--- | :--- |
 | measure | true | string | Measure URI |
 | projectId | true | string | Project ID |
-| filters | false | [FilterItem](afm.md#AFM-Filter)\[\] | KPI filters |
+| filters | false | [FilterItem](50_custom__execution.md#AFM-Filter)\[\] | KPI filters |
 | format | false | string | Measure format. If specified, overrides the format stored with the measure. |
 | onError | false | function | Custom error handler. Called with the argument containing the state and original error message, for example: `{ status:ErrorStates.BAD_REQUEST,error: {...} }` See the [full list of error states](https://github.com/gooddata/gooddata-react-components/blob/master/src/constants/errorStates.ts). Defaults to `console.error`. |
 | onLoadingChanged | false | function | Custom loading handler. Called when a KPI changes to/from the loading state. Called with the argument denoting a valid state, for example: `{ isLoading:false}` |
@@ -120,7 +120,7 @@ A visualization is a generic component that renders a chart according to the giv
 | identifier | false | string | Identifier of the visualization to be rendered Can be omitted if the visualization URI is present. |
 | locale | false | string | Localization of the visualization Defaults to`en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | config  | false | [ChartConfig](15_props__chart_config.md) | Chart configuration |
-| filters | false | [FilterItem](afm.md#AFM-Filter)\[\] | List of filters to be applied to the visualization |
+| filters | false | [FilterItem](50_custom__execution.md#AFM-Filter)\[\] | List of filters to be applied to the visualization |
 | drillableItems | false | [DrillableItem](drillable_item)\[\] | Drilling configuration |
 | onFiredDrillEvent | false | [onFiredDrillEvent](on_fired_drill_event.md)\(\) | Drilling event catcher Called when drilling happens. |
 | uriResolver | false | function | Custom method for querying URIs for identifiers. Defaults to the standard Gooddata SDK .`getObjectUri()`. |

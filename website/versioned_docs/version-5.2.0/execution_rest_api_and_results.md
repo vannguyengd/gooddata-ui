@@ -39,7 +39,7 @@ sdk.execution.getExecutionResponse('<project-id>', execution)
     );
 ```
 
-The `execution` parameter consists of [AFM](afm.md) and [resultSpec](result_specification.md). It can be defined as follows:
+The `execution` parameter consists of [AFM](50_custom__execution.md) and [resultSpec](result_specification.md). It can be defined as follows:
 
 ```javascript
 const afm = {
@@ -114,7 +114,7 @@ If you cannot or do not want to use the `gooddata-js` library, you can call the 
 POST /gdc/app/projects/<project-id>/executeAfm
 ```
 
-The request body consists of [AFM](afm.md) and [resultSpec](result_specification.md):
+The request body consists of [AFM](50_custom__execution.md) and [resultSpec](result_specification.md):
 
 ```javascript
 { "execution":
