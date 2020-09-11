@@ -114,7 +114,7 @@ Open [https://localhost:3000/account.html](https://localhost:3000/account.html)
 
 For the purpose of this tutorial, you are asked to establish a client session by simply logging in to GoodData.
 
-In your production environment, your end users may be authenticated using [single sign-on](sso.md).
+In your production environment, your end users may be authenticated using [single sign-on](30_tips__sso.md).
 
 ## Step 7. Add GoodData components
 
@@ -251,5 +251,5 @@ Here are some suggestions about what you can do after you created your first vis
 
 * Add more elements: tables, charts, custom visualizations. For more information, see [how to use visual components](10_vis__start_with_visual_components.md).
 * [Enable drilling](15_props__drillable_item.md).
-* Authenticate your users using [Single Sign-on (SSO)](sso.md) rather than sending them to a proxied GoodData login page.
+* Authenticate your users using [Single Sign-on (SSO)](30_tips__sso.md) rather than sending them to a proxied GoodData login page.
 * [Clean up your code](clean_up_your_code.md).
