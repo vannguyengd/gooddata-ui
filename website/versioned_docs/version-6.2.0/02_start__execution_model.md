@@ -345,8 +345,8 @@ equivalent to
 
 You can use the following sort items helpers:
 
-* `attributeSortItem` for creating attribute [sort items](result_specification.md#sorting)
-* `measureSortItem` for creating measure [sort items](result_specification.md#sorting)
+* `attributeSortItem` for creating attribute [sort items](50_custom__result.md#sorting)
+* `measureSortItem` for creating measure [sort items](50_custom__result.md#sorting)
 
 ### attributeSortItem helper
 

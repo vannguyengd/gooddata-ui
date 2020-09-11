@@ -16,7 +16,7 @@ The input data is specified using the component parameters \(see [Parameters](5
 | :--- | :--- | :--- |
 | afm | true | [AFM](50_custom__execution.md) |
 | projectId | true | string |
-| resultSpec | false | [Result Specification \(resultSpec\)](result_specification.md) |
+| resultSpec | false | [Result Specification \(resultSpec\)](50_custom__result.md) |
 | onError | false | function |
 | onLoadingChanged | false | function |
 

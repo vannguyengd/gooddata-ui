@@ -129,7 +129,7 @@ const rows = [
 
 ## Sorting in pivot tables
 
-You can [sort](result_specification.md#sorting) rows and attribute columns in any pivot table. Measures are always listed in the same order in which they were defined in the ```measures``` prop.
+You can [sort](50_custom__result.md#sorting) rows and attribute columns in any pivot table. Measures are always listed in the same order in which they were defined in the ```measures``` prop.
 
 **Important!** Sorting must be applied to any column attribute that is used in the pivot table. For example, in the table above, you apply sorting to both the Franchise Fees (measure) and the Date (column attribute)
 
@@ -185,7 +185,7 @@ You can display rows with aggregated measure data using the `totals` prop. For m
 | totals | false | [Total[]](30_tips__table_totals.md) | An array of total definitions |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | false | [ChartConfig](15_props__chart_config.md) | The configuration object |
-| sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
+| sortBy | false | [SortItem[]](50_custom__result.md#sorting) | An array of sort definitions |
 | locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | [DrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable. |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |

@@ -18,7 +18,7 @@ The AFM components use the [AFM](50_custom__execution.md) property instead of sp
 | :--- | :--- | :--- | :--- |
 | afm | true | [AFM](50_custom__execution.md) | A combination of attributes, measures, and filters |
 | projectId | true | string | The project ID |
-| resultSpec  | false | [ResultSpec](result_specification.md) | The structure of the result data |
+| resultSpec  | false | [ResultSpec](50_custom__result.md) | The structure of the result data |
 | config  | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 
@@ -84,7 +84,7 @@ const { BarChart } = AfmComponents;
 | :--- | :--- | :--- | :--- |
 | afm | true | [AFM](50_custom__execution.md) | A combination of attributes, measures, and filters |
 | projectId | true | string | The project ID |
-| resultSpec  | false | [ResultSpec](result_specification.md) | The structure of the result data |
+| resultSpec  | false | [ResultSpec](50_custom__result.md) | The structure of the result data |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 
 ### Structure

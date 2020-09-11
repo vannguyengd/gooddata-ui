@@ -303,7 +303,7 @@ nativeTotals: [
 
 ### Prerequisites
 
-Native total items must be in sync with [result specification \(ResultSpec\)](result_specification.md) and its dimension totals. If they are not in sync, it is treated as a bad execution request.
+Native total items must be in sync with [result specification \(ResultSpec\)](50_custom__result.md) and its dimension totals. If they are not in sync, it is treated as a bad execution request.
 
 ### Limitations
 

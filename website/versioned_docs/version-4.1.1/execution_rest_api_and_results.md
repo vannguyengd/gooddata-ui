@@ -75,7 +75,7 @@ Let's set the limit to`3,2`. The pages could be retrieved in four requests with 
 | :--- | :--- |
 | \[ 41, 42 \] | \[ 43 \] |
 
-The first dimension of the data is the "rows", the second is the "columns". For more information, see 'Dimensions' in [Result Specification \(resultSpec\)](result_specification.md).
+The first dimension of the data is the "rows", the second is the "columns". For more information, see 'Dimensions' in [Result Specification \(resultSpec\)](50_custom__result.md).
 
 For more detailed information, see [executeAfm test scenarios](https://github.com/gooddata/gooddata-js/blob/master/test/execution/execute-afm.test.js#L228)from the GoodData JavaScript SDK.
 

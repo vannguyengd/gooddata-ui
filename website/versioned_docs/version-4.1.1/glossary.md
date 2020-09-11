@@ -50,7 +50,7 @@ original_id: glossary
 
 ## R
 
-**resultSpec** is an object that defines the structure of data inside an AFM \(see**AFM**\) based on your preferences. For example, you can define a custom sorting of data. See [Result Specification \(resultSpec\)](result_specification.md).
+**resultSpec** is an object that defines the structure of data inside an AFM \(see**AFM**\) based on your preferences. For example, you can define a custom sorting of data. See [Result Specification \(resultSpec\)](50_custom__result.md).
 
 ## V
 

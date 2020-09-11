@@ -35,7 +35,7 @@ The process of creating a new visualization component comprises the following st
 
 Specify the combination of attributes, measures and filters to describe your query
 
-2. [Specify Result Data](result_specification.md)
+2. [Specify Result Data](50_custom__result.md)
 
 Define the requested structure of the result data.
 

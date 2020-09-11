@@ -22,7 +22,7 @@ The AFM components use [AFM](50_custom__execution.md) property instead of specif
 | :--- | :--- | :--- |
 | afm | true | [AFM](50_custom__execution.md) |
 | projectId | true | string |
-| resultSpec  | false | [Result Specification \(resultSpec\)](result_specification.md) |
+| resultSpec  | false | [Result Specification \(resultSpec\)](50_custom__result.md) |
 | config  | false | [ChartConfig](15_props__chart_config.md) |
 
 ### Structure
@@ -86,7 +86,7 @@ const { BarChart } = AfmComponents;
 | :--- | :--- | :--- |
 | afm | true | [AFM](50_custom__execution.md) |
 | projectId | true | string |
-| resultSpec  | false | [Result Specification \(resultSpec\)](result_specification.md) |
+| resultSpec  | false | [Result Specification \(resultSpec\)](50_custom__result.md) |
 
 ### Structure
 

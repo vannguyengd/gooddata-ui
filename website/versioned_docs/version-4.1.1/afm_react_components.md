@@ -18,7 +18,7 @@ Though you can use either object URIs or object identifiers, we recommend that y
 | :--- | :--- | :--- |
 | afm | true | [AFM](50_custom__execution.md) |
 | projectId | true | string |
-| resultSpec  | false | [Result Specification \(resultSpec\)](result_specification.md) |
+| resultSpec  | false | [Result Specification \(resultSpec\)](50_custom__result.md) |
 | config  | false | [ChartConfig](15_props__chart_config.md) |
 
 ### Structure
@@ -84,7 +84,7 @@ const { BarChart } = AfmComponents;
 | :--- | :--- | :--- |
 | afm | true | [AFM](50_custom__execution.md) |
 | projectId | true | string |
-| resultSpec  | false | [Result Specification \(resultSpec\)](result_specification.md) |
+| resultSpec  | false | [Result Specification \(resultSpec\)](50_custom__result.md) |
 
 ### Structure
 

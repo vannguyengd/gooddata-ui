@@ -110,7 +110,7 @@ import { ComboChart } from '@gooddata/react-components';
 | secondaryMeasures | false | [Measure[]](50_custom__execution.md#measure) | An array of secondary measure definitions |
 | viewBy | false | [Attribute](50_custom__execution.md#attribute) &#124; [Attribute[]](50_custom__execution.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the first attribute wraps up the second one. |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
-| sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
+| sortBy | false | [SortItem[]](50_custom__result.md#sorting) | An array of sort definitions |
 | config | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | [DrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable |
