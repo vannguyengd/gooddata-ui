@@ -274,7 +274,7 @@ columnSizing: {
 
     A change of the column width calls the provided callback function with all the current column width definitions as a parameter.
 
-**TIP:** Instead of creating `attributeColumnWidthItem` and `measureColumnWidthItem` manually, you can use the [attributeColumnWidthItem helper](model_helpers.md#attributecolumnwidthitem-helper) and the [measureColumnWidthItem helper](model_helpers.md#measurecolumnwidthitem-helper).
+**TIP:** Instead of creating `attributeColumnWidthItem` and `measureColumnWidthItem` manually, you can use the [attributeColumnWidthItem helper](02_start__execution_model.md#attributecolumnwidthitem-helper) and the [measureColumnWidthItem helper](02_start__execution_model.md#measurecolumnwidthitem-helper).
 
 ### Combining auto resizing and manual resizing
 
