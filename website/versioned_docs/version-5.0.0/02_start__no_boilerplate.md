@@ -340,6 +340,6 @@ Notice that the code in the `App.js` file still includes the hardcoded referen
 
 Here are some suggestions about what you can do after you created your first visualization:
 
-* Add more elements: tables, charts, custom visualizations. For more information, see [how to use visual components](start_with_visual_components.md).
+* Add more elements: tables, charts, custom visualizations. For more information, see [how to use visual components](10_vis__start_with_visual_components.md).
 * [Enable drilling](drillable_item.md).
 * Authenticate your users using [Single Sign-on (SSO)](sso.md) rather than sending them to a proxied GoodData login page.

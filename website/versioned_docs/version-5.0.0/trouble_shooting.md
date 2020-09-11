@@ -12,4 +12,4 @@ Include CSS files in your application. For more information, see [How to Create
 
 ## A chart legend is broken or positioned incorrectly. 
 
-Wrap all your visualization components \(except KPIs\) with the element with specified dimensions \(height and width\). For more information, see [how to use visual components](start_with_visual_components.md).
+Wrap all your visualization components \(except KPIs\) with the element with specified dimensions \(height and width\). For more information, see [how to use visual components](10_vis__start_with_visual_components.md).
