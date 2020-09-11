@@ -90,7 +90,7 @@ clearSdkCache();
 | config  | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |
 | filters | false | [FilterItem[]](filter_visual_components.md) | An array of filter definitions |
 | drillableItems | false | [DrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable. |
-| onFiredDrillEvent | false | [onFiredDrillEvent()](on_fire_drill_event.md) | The drilling event catcher. Called when drilling happens. |
+| onFiredDrillEvent | false | [onFiredDrillEvent()](15_props__on_drill.md) | The drilling event catcher. Called when drilling happens. |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 | uriResolver | false | function | A custom method for querying URIs for identifiers. Defaults to the standard Gooddata SDK. `getObjectUri()`. |
 | onError | false | function | A custom error handler. Called with the argument containing the state and original error message, for example: `{ status:ErrorStates.BAD_REQUEST,error: {...} }`. See the [full list of error states](https://github.com/gooddata/gooddata-react-components/blob/master/src/constants/errorStates.ts). Defaults to `console.error`.|
