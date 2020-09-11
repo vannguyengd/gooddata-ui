@@ -8,7 +8,7 @@ original_id: table_component
 
 Table shows data in columns and rows. In tables, you can choose to display only attributes (without any measures). Also, tables have higher limits for the number of datapoints to display than charts.
 
-**NOTE:** The table component will be deprecated in the future. Use the [pivot table](pivot_table_component.md) instead.
+**NOTE:** The table component will be deprecated in the future. Use the [pivot table](10_vis__pivot_table_component.md) instead.
 
 ![Table Component](assets/table.png "Table Component")
 

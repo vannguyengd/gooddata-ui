@@ -311,7 +311,7 @@ columnSizing: {
 }
 ```
 
-The width of the columns that are defined in the `columnWidths` prop is set according to the defined width. The other columns are [resized automatically](pivot_table_component.md#auto-resizing).
+The width of the columns that are defined in the `columnWidths` prop is set according to the defined width. The other columns are [resized automatically](10_vis__pivot_table_component.md#auto-resizing).
 
 ### Resizing a column by double-clicking its header
 

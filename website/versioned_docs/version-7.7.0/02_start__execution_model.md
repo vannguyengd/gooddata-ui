@@ -435,7 +435,7 @@ sortBy is equivalent to
 
 ## Width item helpers for pivot tables
 
-You can use the following width item helpers for setting the column width in [pivot tables](pivot_table_component.md#manual-resizing):
+You can use the following width item helpers for setting the column width in [pivot tables](10_vis__pivot_table_component.md#manual-resizing):
 
 * `attributeColumnWidthItem` for creating attribute width items
 * `measureColumnWidthItem` for creating measure width items
