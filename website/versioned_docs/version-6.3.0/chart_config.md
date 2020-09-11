@@ -303,7 +303,7 @@ import { Visualization } from '@gooddata/react-components';
 ## Configure stacking
 
 * You can configure stacking for the following types of charts:
-    * [Area charts](area_chart_component.md)
+    * [Area charts](10_vis__area_chart_component.md)
     * [Bar charts](bar_chart_component.md)
     * [Column charts](column_chart_component.md)
     * Charts with the [secondary axis](#Configure-axes)
