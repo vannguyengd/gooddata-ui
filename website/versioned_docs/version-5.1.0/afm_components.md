@@ -8,7 +8,7 @@ original_id: afm_components
 
 > **Warning!** The AFM components are legacy elements from the previous GoodData.UI version and will be deprecated. Charts added after GoodData.UI Version 5.1.0 do not support the AFM components.
 
-The AFM components use the [AFM](afm.md) property instead of specific properties such as `measures` or `viewBy` that are used in the visual components.
+The AFM components use the [AFM](50_custom__execution.md) property instead of specific properties such as `measures` or `viewBy` that are used in the visual components.
 
 ## Charts
 
@@ -16,10 +16,10 @@ The AFM components use the [AFM](afm.md) property instead of specific properties
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| afm | true | [AFM](afm.md) | A combination of attributes, measures, and filters |
+| afm | true | [AFM](50_custom__execution.md) | A combination of attributes, measures, and filters |
 | projectId | true | string | The project ID |
-| resultSpec  | false | [ResultSpec](result_specification.md) | The structure of the result data |
-| config  | false | [ChartConfig](chart_config.md) | The chart configuration object |
+| resultSpec  | false | [ResultSpec](50_custom__result.md) | The structure of the result data |
+| config  | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 
 ### Structure
@@ -82,9 +82,9 @@ const { BarChart } = AfmComponents;
 
  Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| afm | true | [AFM](afm.md) | A combination of attributes, measures, and filters |
+| afm | true | [AFM](50_custom__execution.md) | A combination of attributes, measures, and filters |
 | projectId | true | string | The project ID |
-| resultSpec  | false | [ResultSpec](result_specification.md) | The structure of the result data |
+| resultSpec  | false | [ResultSpec](50_custom__result.md) | The structure of the result data |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 
 ### Structure

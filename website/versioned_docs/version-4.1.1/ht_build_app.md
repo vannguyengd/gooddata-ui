@@ -16,9 +16,9 @@ To start using GoodData UI SDK, you must have the following:
 * \(Optional but recommended\) `yarn` [https://yarnpkg.com/](https://yarnpkg.com/)
 
 ## Build an App from Scratch
-* Using Angular 1.x - see [How to Use React Components in Angular 1.x](ht_use_react_components_in_angular_1.x.md).
-* Using Angular 2+ - see [How to Use React Components in Angular 2+](ht_use_react_components_in_angular_2.x.md).
-* Using create-react-app - see [How to Create Your First Visualization with GoodData UI SDK](ht_create_your_first_visualization.md).
+* Using Angular 1.x - see [How to Use React Components in Angular 1.x](30_tips__use_angular_1.x.md).
+* Using Angular 2+ - see [How to Use React Components in Angular 2+](30_tips__use_angular_2.x.md).
+* Using create-react-app - see [How to Create Your First Visualization with GoodData UI SDK](02_start__no_boilerplate.md).
 * Using custom React application:
   * Add the `@gooddata/react-components` package to your existing project:
     ```bash
@@ -32,7 +32,7 @@ To start using GoodData UI SDK, you must have the following:
 ## Basic Usage
 ### Authenticate Your App
 The following ways to authenticate your app are supported:
-* If you're using `create-react-app`, see [How to Create Your First Visualization with GoodData UI SDK](ht_create_your_first_visualization.md).
+* If you're using `create-react-app`, see [How to Create Your First Visualization with GoodData UI SDK](02_start__no_boilerplate.md).
 * If you are using SSO, ... **TODO**
 
 
@@ -48,7 +48,7 @@ To embed an existing visualization created in Analytical Designer, use the `Visu
         https://secure.gooddata.com/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/query/visualizationobjects
         ```
         //TODO what do next? where is identifier?
-    * Via [gdc-catalog-export](gdc-catalog-export.md) tool
+    * Via [gdc-catalog-export](02_start__catalog_export.md) tool
     
 2. Import the `Visualization` component from the `@gooddata/react-components` package into your app:
     ```javascript

@@ -185,13 +185,13 @@
         "title": "Create Predicates",
         "sidebar_label": "Create Predicates"
       },
-      "filter_visual_components": {
-        "title": "Filter Visual Components",
-        "sidebar_label": "Filter Visual Components"
-      },
       "ht_embed_visualization": {
         "title": "Embed an Insight Created in Analytical Designer",
         "sidebar_label": "Embed an Insight Created in Analytical Designer"
+      },
+      "filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
       },
       "sso": {
         "title": "Set Up Authentication and Single Sign-On",
@@ -233,9 +233,21 @@
         "title": "Specify the Result Structure",
         "sidebar_label": "Specify the Result Structure"
       },
+      "afm_components": {
+        "title": "AFM Components",
+        "sidebar_label": "AFM Components"
+      },
       "breaking_changes_8": {
         "title": "Breaking Changes in Version 8.0",
         "sidebar_label": "Breaking Changes in Version 8.0"
+      },
+      "clean_up_your_code": {
+        "title": "Clean Up Your Code",
+        "sidebar_label": "Clean Up Your Code"
+      },
+      "data_layer": {
+        "title": "Access Low Level API (DataLayer)",
+        "sidebar_label": "Access Low Level API"
       },
       "live_examples": {
         "title": "Live Examples",
@@ -253,6 +265,10 @@
         "title": "Support Options",
         "sidebar_label": "Support Options"
       },
+      "table_totals_in_execution_object": {
+        "title": "Specify Table Totals",
+        "sidebar_label": "Specify Table Totals"
+      },
       "whats_new_8": {
         "title": "What's New in Version 8.0",
         "sidebar_label": "What's New in Version 8.0"
@@ -261,41 +277,77 @@
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
       },
-      "version-4.1.1/version-4.1.1-afm_react_components": {
-        "title": "AFM React Components",
-        "sidebar_label": "AFM React Components"
+      "version-4.1.1/version-4.1.1-platform_intro": {
+        "title": "GoodData Platform Introduction",
+        "sidebar_label": "Platform Introduction"
       },
-      "version-4.1.1/version-4.1.1-afm": {
-        "title": "AFM",
-        "sidebar_label": "AFM"
+      "version-4.1.1/version-4.1.1-gdc_catalog_export": {
+        "title": "gdc-catalog-export",
+        "sidebar_label": "gdc-catalog-export"
+      },
+      "version-4.1.1/version-4.1.1-ht_create_your_first_visualization": {
+        "title": "How to Create Your First Visualization with GoodData UI SDK",
+        "sidebar_label": "How to Create Your First Visualization with GoodData UI SDK"
       },
       "version-4.1.1/version-4.1.1-chart_config": {
         "title": "Chart Config",
         "sidebar_label": "Chart Config"
       },
-      "version-4.1.1/version-4.1.1-data_layer": {
-        "title": "DataLayer",
-        "sidebar_label": "DataLayer"
-      },
       "version-4.1.1/version-4.1.1-drillable_item": {
         "title": "DrillableItem",
         "sidebar_label": "DrillableItem"
       },
-      "version-4.1.1/version-4.1.1-examples": {
-        "title": "Examples",
-        "sidebar_label": "Examples"
+      "version-4.1.1/version-4.1.1-on_fire_drill_event": {
+        "title": "OnFireDrillEvent",
+        "sidebar_label": "OnFireDrillEvent"
+      },
+      "version-4.1.1/version-4.1.1-on_legend_ready": {
+        "title": "OnLegendReady",
+        "sidebar_label": "OnLegendReady"
+      },
+      "version-4.1.1/version-4.1.1-sso": {
+        "title": "Authentication to the GoodData Platform",
+        "sidebar_label": "SSO (single sign-on)"
+      },
+      "version-4.1.1/version-4.1.1-ht_use_react_component_in_angular_1.x": {
+        "title": "How to Use React Components in Angular 1.x",
+        "sidebar_label": "How to Use React Components in Angular 1.x"
+      },
+      "version-4.1.1/version-4.1.1-ht_use_react_component_in_angular_2.x": {
+        "title": "How to Use React Components in Angular 2+",
+        "sidebar_label": "How to Use React Components in Angular 2+"
+      },
+      "version-4.1.1/version-4.1.1-ht_use_react_components_with_vanilla_js": {
+        "title": "How to Use React Components with Vanilla JavaScript",
+        "sidebar_label": "How to Use React Components with Vanilla JavaScript"
       },
       "version-4.1.1/version-4.1.1-execute_component": {
         "title": "Execute Component",
         "sidebar_label": "Execute Component"
       },
+      "version-4.1.1/version-4.1.1-afm": {
+        "title": "AFM",
+        "sidebar_label": "AFM"
+      },
+      "version-4.1.1/version-4.1.1-result_specification": {
+        "title": "Result Specification (resultSpec)",
+        "sidebar_label": "Result Specification"
+      },
+      "version-4.1.1/version-4.1.1-afm_react_components": {
+        "title": "AFM React Components",
+        "sidebar_label": "AFM React Components"
+      },
+      "version-4.1.1/version-4.1.1-data_layer": {
+        "title": "DataLayer",
+        "sidebar_label": "DataLayer"
+      },
+      "version-4.1.1/version-4.1.1-examples": {
+        "title": "Examples",
+        "sidebar_label": "Examples"
+      },
       "version-4.1.1/version-4.1.1-execution_rest_api_and_result": {
         "title": "Execution REST API and Result",
         "sidebar_label": "Execution REST API and Result"
-      },
-      "version-4.1.1/version-4.1.1-gdc_catalog_export": {
-        "title": "gdc-catalog-export",
-        "sidebar_label": "gdc-catalog-export"
       },
       "version-4.1.1/version-4.1.1-getting_started": {
         "title": "Getting Started",
@@ -317,25 +369,9 @@
         "title": "How to Configure a Webpack Proxy",
         "sidebar_label": "How to Configure a Webpack Proxy"
       },
-      "version-4.1.1/version-4.1.1-ht_create_your_first_visualization": {
-        "title": "How to Create Your First Visualization with GoodData UI SDK",
-        "sidebar_label": "How to Create Your First Visualization with GoodData UI SDK"
-      },
       "version-4.1.1/version-4.1.1-ht_set_up_loading_state_for_embedded_insights": {
         "title": "How to Set Up a Loading State for Embedded Insights",
         "sidebar_label": "How to Set Up a Loading State for Embedded Insights"
-      },
-      "version-4.1.1/version-4.1.1-ht_use_react_component_in_angular_1.x": {
-        "title": "How to Use React Components in Angular 1.x",
-        "sidebar_label": "How to Use React Components in Angular 1.x"
-      },
-      "version-4.1.1/version-4.1.1-ht_use_react_component_in_angular_2.x": {
-        "title": "How to Use React Components in Angular 2+",
-        "sidebar_label": "How to Use React Components in Angular 2+"
-      },
-      "version-4.1.1/version-4.1.1-ht_use_react_components_with_vanilla_js": {
-        "title": "How to Use React Components with Vanilla JavaScript",
-        "sidebar_label": "How to Use React Components with Vanilla JavaScript"
       },
       "version-4.1.1/version-4.1.1-legal_notices": {
         "title": "Legal Notices",
@@ -345,18 +381,6 @@
         "title": "License",
         "sidebar_label": "License"
       },
-      "version-4.1.1/version-4.1.1-on_fire_drill_event": {
-        "title": "OnFireDrillEvent",
-        "sidebar_label": "OnFireDrillEvent"
-      },
-      "version-4.1.1/version-4.1.1-on_legend_ready": {
-        "title": "OnLegendReady",
-        "sidebar_label": "OnLegendReady"
-      },
-      "version-4.1.1/version-4.1.1-platform_intro": {
-        "title": "GoodData Platform Introduction",
-        "sidebar_label": "Platform Introduction"
-      },
       "version-4.1.1/version-4.1.1-quick_start": {
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
@@ -364,14 +388,6 @@
       "version-4.1.1/version-4.1.1-react_components": {
         "title": "React Components",
         "sidebar_label": "React Components"
-      },
-      "version-4.1.1/version-4.1.1-result_specification": {
-        "title": "Result Specification (resultSpec)",
-        "sidebar_label": "Result Specification"
-      },
-      "version-4.1.1/version-4.1.1-sso": {
-        "title": "Authentication to the GoodData Platform",
-        "sidebar_label": "SSO (single sign-on)"
       },
       "version-4.1.1/version-4.1.1-support_options": {
         "title": "Support Options",
@@ -389,13 +405,21 @@
         "title": "About GoodData.UI",
         "sidebar_label": "About GoodData.UI"
       },
-      "version-5.0.0/version-5.0.0-afm_components": {
-        "title": "AFM Components",
-        "sidebar_label": "AFM Components"
+      "version-5.0.0/version-5.0.0-platform_intro": {
+        "title": "GoodData Platform Introduction",
+        "sidebar_label": "Platform Introduction"
       },
-      "version-5.0.0/version-5.0.0-afm": {
-        "title": "Set Up an AFM Query",
-        "sidebar_label": "Set Up an AFM Query"
+      "version-5.0.0/version-5.0.0-gdc_catalog_export": {
+        "title": "Get Identifiers from the Platform",
+        "sidebar_label": "Get Identifiers from the Platform"
+      },
+      "version-5.0.0/version-5.0.0-installation": {
+        "title": "Installation",
+        "sidebar_label": "Installation"
+      },
+      "version-5.0.0/version-5.0.0-ht_create_your_first_visualization": {
+        "title": "Create Your First Application",
+        "sidebar_label": "Create Your First Application"
       },
       "version-5.0.0/version-5.0.0-area_chart_component": {
         "title": "Area Chart",
@@ -409,105 +433,17 @@
         "title": "Bar Chart",
         "sidebar_label": "Bar Chart"
       },
-      "version-5.0.0/version-5.0.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-5.0.0/version-5.0.0-column_chart_component": {
         "title": "Column Chart",
         "sidebar_label": "Column Chart"
-      },
-      "version-5.0.0/version-5.0.0-cors": {
-        "title": "Deal with Cross-Origin Issues",
-        "sidebar_label": "Deal with Cross-Origin Issues"
-      },
-      "version-5.0.0/version-5.0.0-create_new_visualization": {
-        "title": "Create Custom Visualization",
-        "sidebar_label": "Create Custom Visualization"
-      },
-      "version-5.0.0/version-5.0.0-data_layer": {
-        "title": "Access Low Level API (DataLayer)",
-        "sidebar_label": "Access Low Level API"
-      },
-      "version-5.0.0/version-5.0.0-drillable_item": {
-        "title": "DrillableItems",
-        "sidebar_label": "DrillableItems"
-      },
-      "version-5.0.0/version-5.0.0-error_component": {
-        "title": "ErrorComponent",
-        "sidebar_label": "ErrorComponent"
-      },
-      "version-5.0.0/version-5.0.0-ex_global_filters": {
-        "title": "Global Filters Example",
-        "sidebar_label": "Global Filters"
-      },
-      "version-5.0.0/version-5.0.0-examples": {
-        "title": "Examples",
-        "sidebar_label": "Examples"
-      },
-      "version-5.0.0/version-5.0.0-execute_component": {
-        "title": "Execute API Call",
-        "sidebar_label": "Execute API Call"
-      },
-      "version-5.0.0/version-5.0.0-execution_rest_api_and_result": {
-        "title": "Execution REST API and Result",
-        "sidebar_label": "Execution REST API and Result"
-      },
-      "version-5.0.0/version-5.0.0-filter_visual_components": {
-        "title": "Filter Visual Components",
-        "sidebar_label": "Filter Visual Components"
-      },
-      "version-5.0.0/version-5.0.0-gdc_catalog_export": {
-        "title": "Get Identifiers from the Platform",
-        "sidebar_label": "Get Identifiers from the Platform"
-      },
-      "version-5.0.0/version-5.0.0-glossary": {
-        "title": "Glossary",
-        "sidebar_label": "Glossary"
       },
       "version-5.0.0/version-5.0.0-headline_component": {
         "title": "Headline",
         "sidebar_label": "Headline"
       },
-      "version-5.0.0/version-5.0.0-ht_build_visualization_custom_react": {
-        "title": "Build a Visualization Using a Custom React Application",
-        "sidebar_label": "Build a Visualization Using a Custom React Application"
-      },
-      "version-5.0.0/version-5.0.0-ht_configure_webpack_proxy": {
-        "title": "Configure a Webpack Proxy",
-        "sidebar_label": "Configure a Webpack Proxy"
-      },
-      "version-5.0.0/version-5.0.0-ht_create_your_first_visualization": {
-        "title": "Create Your First Application",
-        "sidebar_label": "Create Your First Application"
-      },
-      "version-5.0.0/version-5.0.0-ht_customize_visualization": {
-        "title": "Customize a Visualization",
-        "sidebar_label": "Customize a Visualization"
-      },
-      "version-5.0.0/version-5.0.0-ht_embed_visualization": {
-        "title": "Embed a Visualization",
-        "sidebar_label": "Embed a Visualization"
-      },
-      "version-5.0.0/version-5.0.0-ht_render_visualization_from_different_domain": {
-        "title": "Access Multiple Domains and Projects",
-        "sidebar_label": "Access Multiple Domains and Projects"
-      },
-      "version-5.0.0/version-5.0.0-ht_use_react_component_in_angular_1.x": {
-        "title": "Use Angular 1.x",
-        "sidebar_label": "Use Angular 1.x"
-      },
-      "version-5.0.0/version-5.0.0-ht_use_react_component_in_angular_2.x": {
-        "title": "Use Angular 2+",
-        "sidebar_label": "Use Angular 2+"
-      },
-      "version-5.0.0/version-5.0.0-ht_use_react_components_with_vanilla_js": {
-        "title": "Use Vanilla JavaScript",
-        "sidebar_label": "Use Vanilla JavaScript"
-      },
-      "version-5.0.0/version-5.0.0-installation": {
-        "title": "Installation",
-        "sidebar_label": "Installation"
+      "version-5.0.0/version-5.0.0-visualization_component": {
+        "title": "Visualization",
+        "sidebar_label": "Visualization"
       },
       "version-5.0.0/version-5.0.0-kpi_component": {
         "title": "KPI",
@@ -517,13 +453,29 @@
         "title": "Line Chart",
         "sidebar_label": "Line Chart"
       },
+      "version-5.0.0/version-5.0.0-pie_chart_component": {
+        "title": "Pie Chart",
+        "sidebar_label": "Pie Chart"
+      },
+      "version-5.0.0/version-5.0.0-start_with_visual_components": {
+        "title": "Start with Visual Components",
+        "sidebar_label": "Start with Visual Components"
+      },
+      "version-5.0.0/version-5.0.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
+      },
+      "version-5.0.0/version-5.0.0-drillable_item": {
+        "title": "DrillableItems",
+        "sidebar_label": "DrillableItems"
+      },
+      "version-5.0.0/version-5.0.0-error_component": {
+        "title": "ErrorComponent",
+        "sidebar_label": "ErrorComponent"
+      },
       "version-5.0.0/version-5.0.0-loading_component": {
         "title": "LoadingComponent",
         "sidebar_label": "LoadingComponent"
-      },
-      "version-5.0.0/version-5.0.0-migration_guide_5": {
-        "title": "Migration guide to React Components v5.x.x",
-        "sidebar_label": "Migration guide to v5.x.x"
       },
       "version-5.0.0/version-5.0.0-on_fire_drill_event": {
         "title": "OnFireDrillEvent",
@@ -533,25 +485,93 @@
         "title": "OnLegendReady",
         "sidebar_label": "OnLegendReady"
       },
-      "version-5.0.0/version-5.0.0-pie_chart_component": {
-        "title": "Pie Chart",
-        "sidebar_label": "Pie Chart"
+      "version-5.0.0/version-5.0.0-cors": {
+        "title": "Deal with Cross-Origin Issues",
+        "sidebar_label": "Deal with Cross-Origin Issues"
       },
-      "version-5.0.0/version-5.0.0-platform_intro": {
-        "title": "GoodData Platform Introduction",
-        "sidebar_label": "Platform Introduction"
+      "version-5.0.0/version-5.0.0-ht_embed_visualization": {
+        "title": "Embed a Visualization",
+        "sidebar_label": "Embed a Visualization"
       },
-      "version-5.0.0/version-5.0.0-result_specification": {
-        "title": "Specify Result Structure",
-        "sidebar_label": "Specify Result Structure"
+      "version-5.0.0/version-5.0.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
       },
       "version-5.0.0/version-5.0.0-sso": {
         "title": "Set Up Authentication and Single Sign-On",
         "sidebar_label": "Set Up Authentication and Single Sign-On"
       },
-      "version-5.0.0/version-5.0.0-start_with_visual_components": {
-        "title": "Start with Visual Components",
-        "sidebar_label": "Start with Visual Components"
+      "version-5.0.0/version-5.0.0-ht_use_react_component_in_angular_1.x": {
+        "title": "Use Angular 1.x",
+        "sidebar_label": "Use Angular 1.x"
+      },
+      "version-5.0.0/version-5.0.0-ht_use_react_component_in_angular_2.x": {
+        "title": "Use Angular 2+",
+        "sidebar_label": "Use Angular 2+"
+      },
+      "version-5.0.0/version-5.0.0-ht_render_visualization_from_different_domain": {
+        "title": "Access Multiple Domains and Projects",
+        "sidebar_label": "Access Multiple Domains and Projects"
+      },
+      "version-5.0.0/version-5.0.0-ht_use_react_components_with_vanilla_js": {
+        "title": "Use Vanilla JavaScript",
+        "sidebar_label": "Use Vanilla JavaScript"
+      },
+      "version-5.0.0/version-5.0.0-execute_component": {
+        "title": "Execute API Call",
+        "sidebar_label": "Execute API Call"
+      },
+      "version-5.0.0/version-5.0.0-create_new_visualization": {
+        "title": "Create Custom Visualization",
+        "sidebar_label": "Create Custom Visualization"
+      },
+      "version-5.0.0/version-5.0.0-afm": {
+        "title": "Set Up an AFM Query",
+        "sidebar_label": "Set Up an AFM Query"
+      },
+      "version-5.0.0/version-5.0.0-result_specification": {
+        "title": "Specify Result Structure",
+        "sidebar_label": "Specify Result Structure"
+      },
+      "version-5.0.0/version-5.0.0-afm_components": {
+        "title": "AFM Components",
+        "sidebar_label": "AFM Components"
+      },
+      "version-5.0.0/version-5.0.0-data_layer": {
+        "title": "Access Low Level API (DataLayer)",
+        "sidebar_label": "Access Low Level API"
+      },
+      "version-5.0.0/version-5.0.0-ex_global_filters": {
+        "title": "Global Filters Example",
+        "sidebar_label": "Global Filters"
+      },
+      "version-5.0.0/version-5.0.0-examples": {
+        "title": "Examples",
+        "sidebar_label": "Examples"
+      },
+      "version-5.0.0/version-5.0.0-execution_rest_api_and_result": {
+        "title": "Execution REST API and Result",
+        "sidebar_label": "Execution REST API and Result"
+      },
+      "version-5.0.0/version-5.0.0-glossary": {
+        "title": "Glossary",
+        "sidebar_label": "Glossary"
+      },
+      "version-5.0.0/version-5.0.0-ht_build_visualization_custom_react": {
+        "title": "Build a Visualization Using a Custom React Application",
+        "sidebar_label": "Build a Visualization Using a Custom React Application"
+      },
+      "version-5.0.0/version-5.0.0-ht_configure_webpack_proxy": {
+        "title": "Configure a Webpack Proxy",
+        "sidebar_label": "Configure a Webpack Proxy"
+      },
+      "version-5.0.0/version-5.0.0-ht_customize_visualization": {
+        "title": "Customize a Visualization",
+        "sidebar_label": "Customize a Visualization"
+      },
+      "version-5.0.0/version-5.0.0-migration_guide_5": {
+        "title": "Migration guide to React Components v5.x.x",
+        "sidebar_label": "Migration guide to v5.x.x"
       },
       "version-5.0.0/version-5.0.0-support_options": {
         "title": "Support Options",
@@ -569,14 +589,6 @@
         "title": "Troubleshooting",
         "sidebar_label": "Troubleshooting"
       },
-      "version-5.0.0/version-5.0.0-visualization_component": {
-        "title": "Visualization",
-        "sidebar_label": "Visualization"
-      },
-      "version-5.1.0/version-5.1.0-afm_components": {
-        "title": "AFM Components",
-        "sidebar_label": "AFM Components"
-      },
       "version-5.1.0/version-5.1.0-area_chart_component": {
         "title": "Area Chart",
         "sidebar_label": "Area Chart"
@@ -589,6 +601,22 @@
         "title": "Column Chart",
         "sidebar_label": "Column Chart"
       },
+      "version-5.1.0/version-5.1.0-donut_chart_component": {
+        "title": "Donut Chart",
+        "sidebar_label": "Donut Chart"
+      },
+      "version-5.1.0/version-5.1.0-visualization_component": {
+        "title": "Visualization",
+        "sidebar_label": "Visualization"
+      },
+      "version-5.1.0/version-5.1.0-line_chart_component": {
+        "title": "Line Chart",
+        "sidebar_label": "Line Chart"
+      },
+      "version-5.1.0/version-5.1.0-scatter_plot_component": {
+        "title": "Scatter Plot",
+        "sidebar_label": "Scatter Plot"
+      },
       "version-5.1.0/version-5.1.0-cors": {
         "title": "Deal with Cross-Origin Issues",
         "sidebar_label": "Deal with Cross-Origin Issues"
@@ -597,17 +625,13 @@
         "title": "Create a Custom Attribute Filter",
         "sidebar_label": "Create Custom Filter"
       },
-      "version-5.1.0/version-5.1.0-donut_chart_component": {
-        "title": "Donut Chart",
-        "sidebar_label": "Donut Chart"
-      },
-      "version-5.1.0/version-5.1.0-execute_component": {
-        "title": "Execute API Call",
-        "sidebar_label": "Execute API Call"
-      },
       "version-5.1.0/version-5.1.0-filter_visual_components": {
         "title": "Filter Visual Components",
         "sidebar_label": "Filter Visual Components"
+      },
+      "version-5.1.0/version-5.1.0-sso": {
+        "title": "Set Up Authentication and Single Sign-On",
+        "sidebar_label": "Set Up Authentication and Single Sign-On"
       },
       "version-5.1.0/version-5.1.0-ht_use_react_component_in_angular_1.x": {
         "title": "Use Angular 1.x",
@@ -617,73 +641,41 @@
         "title": "Use Vanilla JavaScript",
         "sidebar_label": "Use Vanilla JavaScript"
       },
-      "version-5.1.0/version-5.1.0-line_chart_component": {
-        "title": "Line Chart",
-        "sidebar_label": "Line Chart"
+      "version-5.1.0/version-5.1.0-execute_component": {
+        "title": "Execute API Call",
+        "sidebar_label": "Execute API Call"
       },
       "version-5.1.0/version-5.1.0-result_specification": {
         "title": "Specify Result Structure",
         "sidebar_label": "Specify Result Structure"
       },
-      "version-5.1.0/version-5.1.0-scatter_plot_component": {
-        "title": "Scatter Plot",
-        "sidebar_label": "Scatter Plot"
-      },
-      "version-5.1.0/version-5.1.0-sso": {
-        "title": "Set Up Authentication and Single Sign-On",
-        "sidebar_label": "Set Up Authentication and Single Sign-On"
+      "version-5.1.0/version-5.1.0-afm_components": {
+        "title": "AFM Components",
+        "sidebar_label": "AFM Components"
       },
       "version-5.1.0/version-5.1.0-table_component": {
         "title": "Table",
         "sidebar_label": "Table"
       },
-      "version-5.1.0/version-5.1.0-visualization_component": {
-        "title": "Visualization",
-        "sidebar_label": "Visualization"
-      },
       "version-5.2.0/version-5.2.0-about_gooddataui": {
         "title": "About GoodData.UI",
         "sidebar_label": "About GoodData.UI"
       },
-      "version-5.2.0/version-5.2.0-afm_components": {
-        "title": "AFM Components",
-        "sidebar_label": "AFM Components"
-      },
-      "version-5.2.0/version-5.2.0-afm": {
-        "title": "Set Up an AFM Query",
-        "sidebar_label": "Set Up an AFM Query"
+      "version-5.2.0/version-5.2.0-ht_create_your_first_visualization": {
+        "title": "Create Your First Application",
+        "sidebar_label": "Create Your First Application"
       },
       "version-5.2.0/version-5.2.0-bubble_chart_component": {
         "title": "Bubble Chart",
         "sidebar_label": "Bubble Chart"
       },
-      "version-5.2.0/version-5.2.0-clean_up_your_code": {
-        "title": "Clean Up Your Code",
-        "sidebar_label": "Clean Up Your Code"
-      },
-      "version-5.2.0/version-5.2.0-create_custom_attribute_filter": {
-        "title": "Create a Custom Attribute Filter",
-        "sidebar_label": "Create Custom Filter"
-      },
-      "version-5.2.0/version-5.2.0-data_layer": {
-        "title": "Access Low Level API (DataLayer)",
-        "sidebar_label": "Access Low Level API"
-      },
-      "version-5.2.0/version-5.2.0-execution_rest_api_and_result": {
-        "title": "Execution Response and Execution Result",
-        "sidebar_label": "Execution Response and Execution Result"
-      },
-      "version-5.2.0/version-5.2.0-filter_visual_components": {
-        "title": "Filter Visual Components",
-        "sidebar_label": "Filter Visual Components"
-      },
       "version-5.2.0/version-5.2.0-headline_component": {
         "title": "Headline",
         "sidebar_label": "Headline"
       },
-      "version-5.2.0/version-5.2.0-ht_create_your_first_visualization": {
-        "title": "Create Your First Application",
-        "sidebar_label": "Create Your First Application"
+      "version-5.2.0/version-5.2.0-visualization_component": {
+        "title": "Visualization",
+        "sidebar_label": "Visualization"
       },
       "version-5.2.0/version-5.2.0-kpi_component": {
         "title": "KPI",
@@ -693,33 +685,57 @@
         "title": "Pie Chart",
         "sidebar_label": "Pie Chart"
       },
-      "version-5.2.0/version-5.2.0-sso": {
-        "title": "Set Up Authentication and Single Sign-On",
-        "sidebar_label": "Set Up Authentication and Single Sign-On"
-      },
       "version-5.2.0/version-5.2.0-start_with_visual_components": {
         "title": "Start with Visual Components",
         "sidebar_label": "Start with Visual Components"
-      },
-      "version-5.2.0/version-5.2.0-time_over_time_comparison": {
-        "title": "Time Over Time Comparison",
-        "sidebar_label": "Time Over Time Comparison"
       },
       "version-5.2.0/version-5.2.0-treemap_component": {
         "title": "Treemap",
         "sidebar_label": "Treemap"
       },
-      "version-5.2.0/version-5.2.0-visualization_component": {
-        "title": "Visualization",
-        "sidebar_label": "Visualization"
+      "version-5.2.0/version-5.2.0-time_over_time_comparison": {
+        "title": "Time Over Time Comparison",
+        "sidebar_label": "Time Over Time Comparison"
       },
-      "version-5.3.0/version-5.3.0-heatmap_component": {
-        "title": "Heatmap",
-        "sidebar_label": "Heatmap"
+      "version-5.2.0/version-5.2.0-create_custom_attribute_filter": {
+        "title": "Create a Custom Attribute Filter",
+        "sidebar_label": "Create Custom Filter"
+      },
+      "version-5.2.0/version-5.2.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
+      },
+      "version-5.2.0/version-5.2.0-sso": {
+        "title": "Set Up Authentication and Single Sign-On",
+        "sidebar_label": "Set Up Authentication and Single Sign-On"
+      },
+      "version-5.2.0/version-5.2.0-afm": {
+        "title": "Set Up an AFM Query",
+        "sidebar_label": "Set Up an AFM Query"
+      },
+      "version-5.2.0/version-5.2.0-afm_components": {
+        "title": "AFM Components",
+        "sidebar_label": "AFM Components"
+      },
+      "version-5.2.0/version-5.2.0-clean_up_your_code": {
+        "title": "Clean Up Your Code",
+        "sidebar_label": "Clean Up Your Code"
+      },
+      "version-5.2.0/version-5.2.0-data_layer": {
+        "title": "Access Low Level API (DataLayer)",
+        "sidebar_label": "Access Low Level API"
+      },
+      "version-5.2.0/version-5.2.0-execution_rest_api_and_result": {
+        "title": "Execution Response and Execution Result",
+        "sidebar_label": "Execution Response and Execution Result"
       },
       "version-5.3.0/version-5.3.0-installation": {
         "title": "Installation",
         "sidebar_label": "Installation"
+      },
+      "version-5.3.0/version-5.3.0-heatmap_component": {
+        "title": "Heatmap",
+        "sidebar_label": "Heatmap"
       },
       "version-5.3.0/version-5.3.0-kpi_component": {
         "title": "KPI",
@@ -733,9 +749,9 @@
         "title": "About GoodData.UI",
         "sidebar_label": "About GoodData.UI"
       },
-      "version-6.0.0/version-6.0.0-afm": {
-        "title": "Set Up an AFM Query",
-        "sidebar_label": "Set Up an AFM Query"
+      "version-6.0.0/version-6.0.0-ht_create_your_first_visualization": {
+        "title": "Create Your First Application",
+        "sidebar_label": "Create Your First Application"
       },
       "version-6.0.0/version-6.0.0-area_chart_component": {
         "title": "Area Chart",
@@ -749,49 +765,25 @@
         "title": "Bubble Chart",
         "sidebar_label": "Bubble Chart"
       },
-      "version-6.0.0/version-6.0.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
-      "version-6.0.0/version-6.0.0-clean_up_your_code": {
-        "title": "Clean Up Your Code",
-        "sidebar_label": "Clean Up Your Code"
-      },
       "version-6.0.0/version-6.0.0-column_chart_component": {
         "title": "Column Chart",
         "sidebar_label": "Column Chart"
-      },
-      "version-6.0.0/version-6.0.0-cors": {
-        "title": "Deal with Cross-Origin Issues",
-        "sidebar_label": "Deal with Cross-Origin Issues"
       },
       "version-6.0.0/version-6.0.0-donut_chart_component": {
         "title": "Donut Chart",
         "sidebar_label": "Donut Chart"
       },
-      "version-6.0.0/version-6.0.0-filter_visual_components": {
-        "title": "Filter Visual Components",
-        "sidebar_label": "Filter Visual Components"
-      },
       "version-6.0.0/version-6.0.0-heatmap_component": {
         "title": "Heatmap",
         "sidebar_label": "Heatmap"
       },
-      "version-6.0.0/version-6.0.0-ht_configure_webpack_proxy": {
-        "title": "Configure a Webpack Proxy",
-        "sidebar_label": "Configure a Webpack Proxy"
-      },
-      "version-6.0.0/version-6.0.0-ht_create_your_first_visualization": {
-        "title": "Create Your First Application",
-        "sidebar_label": "Create Your First Application"
+      "version-6.0.0/version-6.0.0-visualization_component": {
+        "title": "Visualization",
+        "sidebar_label": "Visualization"
       },
       "version-6.0.0/version-6.0.0-line_chart_component": {
         "title": "Line Chart",
         "sidebar_label": "Line Chart"
-      },
-      "version-6.0.0/version-6.0.0-migration_guide_6": {
-        "title": "Migration guide to React Components v6.x.x",
-        "sidebar_label": "Migration guide to v6.x.x"
       },
       "version-6.0.0/version-6.0.0-pie_chart_component": {
         "title": "Pie Chart",
@@ -805,69 +797,89 @@
         "title": "Scatter Plot",
         "sidebar_label": "Scatter Plot"
       },
-      "version-6.0.0/version-6.0.0-sso": {
-        "title": "Set Up Authentication and Single Sign-On",
-        "sidebar_label": "Set Up Authentication and Single Sign-On"
-      },
       "version-6.0.0/version-6.0.0-start_with_visual_components": {
         "title": "Start with Visual Components",
         "sidebar_label": "Start with Visual Components"
-      },
-      "version-6.0.0/version-6.0.0-table_component": {
-        "title": "Table",
-        "sidebar_label": "Table"
       },
       "version-6.0.0/version-6.0.0-treemap_component": {
         "title": "Treemap",
         "sidebar_label": "Treemap"
       },
-      "version-6.0.0/version-6.0.0-visualization_component": {
-        "title": "Visualization",
-        "sidebar_label": "Visualization"
+      "version-6.0.0/version-6.0.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
+      },
+      "version-6.0.0/version-6.0.0-cors": {
+        "title": "Deal with Cross-Origin Issues",
+        "sidebar_label": "Deal with Cross-Origin Issues"
+      },
+      "version-6.0.0/version-6.0.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
+      },
+      "version-6.0.0/version-6.0.0-sso": {
+        "title": "Set Up Authentication and Single Sign-On",
+        "sidebar_label": "Set Up Authentication and Single Sign-On"
+      },
+      "version-6.0.0/version-6.0.0-afm": {
+        "title": "Set Up an AFM Query",
+        "sidebar_label": "Set Up an AFM Query"
+      },
+      "version-6.0.0/version-6.0.0-clean_up_your_code": {
+        "title": "Clean Up Your Code",
+        "sidebar_label": "Clean Up Your Code"
+      },
+      "version-6.0.0/version-6.0.0-ht_configure_webpack_proxy": {
+        "title": "Configure a Webpack Proxy",
+        "sidebar_label": "Configure a Webpack Proxy"
+      },
+      "version-6.0.0/version-6.0.0-migration_guide_6": {
+        "title": "Migration guide to React Components v6.x.x",
+        "sidebar_label": "Migration guide to v6.x.x"
+      },
+      "version-6.0.0/version-6.0.0-table_component": {
+        "title": "Table",
+        "sidebar_label": "Table"
       },
       "version-6.1.0/version-6.1.0-about_gooddataui": {
         "title": "About GoodData.UI",
         "sidebar_label": "About GoodData.UI"
       },
-      "version-6.1.0/version-6.1.0-afm": {
-        "title": "Set Up an AFM Query",
-        "sidebar_label": "Set Up an AFM Query"
-      },
-      "version-6.1.0/version-6.1.0-arithmetic_measure": {
-        "title": "Arithmetic Measure",
-        "sidebar_label": "Arithmetic Measure"
-      },
-      "version-6.1.0/version-6.1.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-6.1.0/version-6.1.0-ht_create_your_first_visualization": {
         "title": "Create Your First Application",
         "sidebar_label": "Create Your First Application"
-      },
-      "version-6.1.0/version-6.1.0-sso": {
-        "title": "Set Up Authentication and Single Sign-On",
-        "sidebar_label": "Set Up Authentication and Single Sign-On"
       },
       "version-6.1.0/version-6.1.0-start_with_visual_components": {
         "title": "Start with Visual Components",
         "sidebar_label": "Start with Visual Components"
       },
+      "version-6.1.0/version-6.1.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
+      },
+      "version-6.1.0/version-6.1.0-arithmetic_measure": {
+        "title": "Arithmetic Measure",
+        "sidebar_label": "Arithmetic Measure"
+      },
       "version-6.1.0/version-6.1.0-time_over_time_comparison": {
         "title": "Time Over Time Comparison",
         "sidebar_label": "Time Over Time Comparison"
       },
-      "version-6.2.0/version-6.2.0-afm": {
+      "version-6.1.0/version-6.1.0-sso": {
+        "title": "Set Up Authentication and Single Sign-On",
+        "sidebar_label": "Set Up Authentication and Single Sign-On"
+      },
+      "version-6.1.0/version-6.1.0-afm": {
         "title": "Set Up an AFM Query",
         "sidebar_label": "Set Up an AFM Query"
+      },
+      "version-6.2.0/version-6.2.0-model_helpers": {
+        "title": "Model Helpers",
+        "sidebar_label": "Model Helpers"
       },
       "version-6.2.0/version-6.2.0-area_chart_component": {
         "title": "Area Chart",
         "sidebar_label": "Area Chart"
-      },
-      "version-6.2.0/version-6.2.0-arithmetic_measure": {
-        "title": "Arithmetic Measure",
-        "sidebar_label": "Arithmetic Measure"
       },
       "version-6.2.0/version-6.2.0-bar_chart_component": {
         "title": "Bar Chart",
@@ -877,10 +889,6 @@
         "title": "Bubble Chart",
         "sidebar_label": "Bubble Chart"
       },
-      "version-6.2.0/version-6.2.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-6.2.0/version-6.2.0-column_chart_component": {
         "title": "Column Chart",
         "sidebar_label": "Column Chart"
@@ -889,25 +897,13 @@
         "title": "Donut Chart",
         "sidebar_label": "Donut Chart"
       },
-      "version-6.2.0/version-6.2.0-drillable_item": {
-        "title": "DrillableItems",
-        "sidebar_label": "DrillableItems"
-      },
-      "version-6.2.0/version-6.2.0-ht_create_predicates": {
-        "title": "Create Predicates",
-        "sidebar_label": "Create Predicates"
+      "version-6.2.0/version-6.2.0-visualization_component": {
+        "title": "Visualization",
+        "sidebar_label": "Visualization"
       },
       "version-6.2.0/version-6.2.0-line_chart_component": {
         "title": "Line Chart",
         "sidebar_label": "Line Chart"
-      },
-      "version-6.2.0/version-6.2.0-model_helpers": {
-        "title": "Model Helpers",
-        "sidebar_label": "Model Helpers"
-      },
-      "version-6.2.0/version-6.2.0-on_fire_drill_event": {
-        "title": "OnFireDrillEvent",
-        "sidebar_label": "OnFireDrillEvent"
       },
       "version-6.2.0/version-6.2.0-pie_chart_component": {
         "title": "Pie Chart",
@@ -917,45 +913,65 @@
         "title": "Pivot Table",
         "sidebar_label": "Pivot Table"
       },
-      "version-6.2.0/version-6.2.0-result_specification": {
-        "title": "Specify Result Structure",
-        "sidebar_label": "Specify Result Structure"
-      },
       "version-6.2.0/version-6.2.0-scatter_plot_component": {
         "title": "Scatter Plot",
         "sidebar_label": "Scatter Plot"
-      },
-      "version-6.2.0/version-6.2.0-sso": {
-        "title": "Set Up Authentication and Single Sign-On",
-        "sidebar_label": "Set Up Authentication and Single Sign-On"
       },
       "version-6.2.0/version-6.2.0-start_with_visual_components": {
         "title": "Start with Visual Components",
         "sidebar_label": "Start with Visual Components"
       },
-      "version-6.2.0/version-6.2.0-table_component": {
-        "title": "Table",
-        "sidebar_label": "Table"
+      "version-6.2.0/version-6.2.0-treemap_component": {
+        "title": "Treemap",
+        "sidebar_label": "Treemap"
       },
-      "version-6.2.0/version-6.2.0-table_totals": {
-        "title": "Specify Table Totals",
-        "sidebar_label": "Specify Table Totals"
+      "version-6.2.0/version-6.2.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
+      },
+      "version-6.2.0/version-6.2.0-drillable_item": {
+        "title": "DrillableItems",
+        "sidebar_label": "DrillableItems"
+      },
+      "version-6.2.0/version-6.2.0-on_fire_drill_event": {
+        "title": "OnFireDrillEvent",
+        "sidebar_label": "OnFireDrillEvent"
+      },
+      "version-6.2.0/version-6.2.0-arithmetic_measure": {
+        "title": "Arithmetic Measure",
+        "sidebar_label": "Arithmetic Measure"
       },
       "version-6.2.0/version-6.2.0-time_over_time_comparison": {
         "title": "Time Over Time Comparison",
         "sidebar_label": "Time Over Time Comparison"
       },
-      "version-6.2.0/version-6.2.0-treemap_component": {
-        "title": "Treemap",
-        "sidebar_label": "Treemap"
+      "version-6.2.0/version-6.2.0-ht_create_predicates": {
+        "title": "Create Predicates",
+        "sidebar_label": "Create Predicates"
       },
-      "version-6.2.0/version-6.2.0-visualization_component": {
-        "title": "Visualization",
-        "sidebar_label": "Visualization"
+      "version-6.2.0/version-6.2.0-sso": {
+        "title": "Set Up Authentication and Single Sign-On",
+        "sidebar_label": "Set Up Authentication and Single Sign-On"
       },
-      "version-6.3.0/version-6.3.0-afm": {
+      "version-6.2.0/version-6.2.0-table_totals": {
+        "title": "Specify Table Totals",
+        "sidebar_label": "Specify Table Totals"
+      },
+      "version-6.2.0/version-6.2.0-afm": {
         "title": "Set Up an AFM Query",
         "sidebar_label": "Set Up an AFM Query"
+      },
+      "version-6.2.0/version-6.2.0-result_specification": {
+        "title": "Specify Result Structure",
+        "sidebar_label": "Specify Result Structure"
+      },
+      "version-6.2.0/version-6.2.0-table_component": {
+        "title": "Table",
+        "sidebar_label": "Table"
+      },
+      "version-6.3.0/version-6.3.0-ht_create_your_first_visualization": {
+        "title": "Create Your First Application",
+        "sidebar_label": "Create Your First Application"
       },
       "version-6.3.0/version-6.3.0-area_chart_component": {
         "title": "Area Chart",
@@ -969,10 +985,6 @@
         "title": "Bubble Chart",
         "sidebar_label": "Bubble Chart"
       },
-      "version-6.3.0/version-6.3.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-6.3.0/version-6.3.0-column_chart_component": {
         "title": "Column Chart",
         "sidebar_label": "Column Chart"
@@ -980,10 +992,6 @@
       "version-6.3.0/version-6.3.0-donut_chart_component": {
         "title": "Donut Chart",
         "sidebar_label": "Donut Chart"
-      },
-      "version-6.3.0/version-6.3.0-filter_visual_components": {
-        "title": "Filter Visual Components",
-        "sidebar_label": "Filter Visual Components"
       },
       "version-6.3.0/version-6.3.0-headline_component": {
         "title": "Headline",
@@ -993,21 +1001,13 @@
         "title": "Heatmap",
         "sidebar_label": "Heatmap"
       },
-      "version-6.3.0/version-6.3.0-ht_create_your_first_visualization": {
-        "title": "Create Your First Application",
-        "sidebar_label": "Create Your First Application"
-      },
-      "version-6.3.0/version-6.3.0-ht_use_react_component_in_angular_2.x": {
-        "title": "Use Angular 2+",
-        "sidebar_label": "Use Angular 2+"
+      "version-6.3.0/version-6.3.0-visualization_component": {
+        "title": "Visualization",
+        "sidebar_label": "Visualization"
       },
       "version-6.3.0/version-6.3.0-line_chart_component": {
         "title": "Line Chart",
         "sidebar_label": "Line Chart"
-      },
-      "version-6.3.0/version-6.3.0-on_export_ready": {
-        "title": "OnExportReady",
-        "sidebar_label": "OnExportReady"
       },
       "version-6.3.0/version-6.3.0-pie_chart_component": {
         "title": "Pie Chart",
@@ -1021,53 +1021,65 @@
         "title": "Scatter Plot",
         "sidebar_label": "Scatter Plot"
       },
-      "version-6.3.0/version-6.3.0-sso": {
-        "title": "Set Up Authentication and Single Sign-On",
-        "sidebar_label": "Set Up Authentication and Single Sign-On"
-      },
       "version-6.3.0/version-6.3.0-start_with_visual_components": {
         "title": "Start with Visual Components",
         "sidebar_label": "Start with Visual Components"
-      },
-      "version-6.3.0/version-6.3.0-table_component": {
-        "title": "Table",
-        "sidebar_label": "Table"
-      },
-      "version-6.3.0/version-6.3.0-table_totals": {
-        "title": "Specify Table Totals",
-        "sidebar_label": "Specify Table Totals"
       },
       "version-6.3.0/version-6.3.0-treemap_component": {
         "title": "Treemap",
         "sidebar_label": "Treemap"
       },
-      "version-6.3.0/version-6.3.0-visualization_component": {
-        "title": "Visualization",
-        "sidebar_label": "Visualization"
+      "version-6.3.0/version-6.3.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
+      },
+      "version-6.3.0/version-6.3.0-on_export_ready": {
+        "title": "OnExportReady",
+        "sidebar_label": "OnExportReady"
+      },
+      "version-6.3.0/version-6.3.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
+      },
+      "version-6.3.0/version-6.3.0-sso": {
+        "title": "Set Up Authentication and Single Sign-On",
+        "sidebar_label": "Set Up Authentication and Single Sign-On"
+      },
+      "version-6.3.0/version-6.3.0-table_totals": {
+        "title": "Specify Table Totals",
+        "sidebar_label": "Specify Table Totals"
+      },
+      "version-6.3.0/version-6.3.0-ht_use_react_component_in_angular_2.x": {
+        "title": "Use Angular 2+",
+        "sidebar_label": "Use Angular 2+"
+      },
+      "version-6.3.0/version-6.3.0-afm": {
+        "title": "Set Up an AFM Query",
+        "sidebar_label": "Set Up an AFM Query"
+      },
+      "version-6.3.0/version-6.3.0-table_component": {
+        "title": "Table",
+        "sidebar_label": "Table"
       },
       "version-7.0.0/version-7.0.0-about_gooddataui": {
         "title": "About GoodData.UI",
         "sidebar_label": "About GoodData.UI"
       },
-      "version-7.0.0/version-7.0.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-7.0.0/version-7.0.0-combo_chart_component": {
         "title": "Combo Chart",
         "sidebar_label": "Combo Chart"
       },
-      "version-7.0.0/version-7.0.0-migration_guide_7": {
-        "title": "Migration guide to React Components v7.x.x",
-        "sidebar_label": "Migration guide to v7.x.x"
+      "version-7.0.0/version-7.0.0-pivot_table_component": {
+        "title": "Pivot Table",
+        "sidebar_label": "Pivot Table"
+      },
+      "version-7.0.0/version-7.0.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
       },
       "version-7.0.0/version-7.0.0-on_export_ready": {
         "title": "OnExportReady",
         "sidebar_label": "OnExportReady"
-      },
-      "version-7.0.0/version-7.0.0-pivot_table_component": {
-        "title": "Pivot Table",
-        "sidebar_label": "Pivot Table"
       },
       "version-7.0.0/version-7.0.0-sso": {
         "title": "Set Up Authentication and Single Sign-On",
@@ -1077,6 +1089,22 @@
         "title": "Specify Table Totals",
         "sidebar_label": "Specify Table Totals"
       },
+      "version-7.0.0/version-7.0.0-migration_guide_7": {
+        "title": "Migration guide to React Components v7.x.x",
+        "sidebar_label": "Migration guide to v7.x.x"
+      },
+      "version-7.1.0/version-7.1.0-model_helpers": {
+        "title": "Model Helpers",
+        "sidebar_label": "Model Helpers"
+      },
+      "version-7.1.0/version-7.1.0-ht_create_your_first_visualization": {
+        "title": "Create Your First Application from Scratch",
+        "sidebar_label": "Create Your First Application from Scratch"
+      },
+      "version-7.1.0/version-7.1.0-ht_create_your_first_visualization_toolkit": {
+        "title": "Create Your First Application Using Accelerator Toolkit",
+        "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
+      },
       "version-7.1.0/version-7.1.0-area_chart_component": {
         "title": "Area Chart",
         "sidebar_label": "Area Chart"
@@ -1085,25 +1113,13 @@
         "title": "Bar Chart",
         "sidebar_label": "Bar Chart"
       },
-      "version-7.1.0/version-7.1.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-7.1.0/version-7.1.0-column_chart_component": {
         "title": "Column Chart",
         "sidebar_label": "Column Chart"
       },
-      "version-7.1.0/version-7.1.0-ht_create_your_first_visualization_toolkit": {
-        "title": "Create Your First Application Using Accelerator Toolkit",
-        "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
-      },
-      "version-7.1.0/version-7.1.0-ht_create_your_first_visualization": {
-        "title": "Create Your First Application from Scratch",
-        "sidebar_label": "Create Your First Application from Scratch"
-      },
-      "version-7.1.0/version-7.1.0-model_helpers": {
-        "title": "Model Helpers",
-        "sidebar_label": "Model Helpers"
+      "version-7.1.0/version-7.1.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
       },
       "version-7.1.0/version-7.1.0-on_export_ready": {
         "title": "OnExportReady",
@@ -1117,41 +1133,33 @@
         "title": "Specify Table Totals",
         "sidebar_label": "Specify Table Totals"
       },
+      "version-7.2.0/version-7.2.0-ht_create_your_first_visualization": {
+        "title": "Create Your First Application from Scratch",
+        "sidebar_label": "Create Your First Application from Scratch"
+      },
       "version-7.2.0/version-7.2.0-attribute_filter_component": {
         "title": "Attribute Filter",
         "sidebar_label": "Attribute Filter"
-      },
-      "version-7.2.0/version-7.2.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
       },
       "version-7.2.0/version-7.2.0-date_filter_component": {
         "title": "DateFilter Component",
         "sidebar_label": "DateFilter Component"
       },
+      "version-7.2.0/version-7.2.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
+      },
       "version-7.2.0/version-7.2.0-date_filter_option": {
         "title": "DateFilter Component Options",
         "sidebar_label": "DateFilter Component Options"
       },
-      "version-7.2.0/version-7.2.0-filter_visual_components": {
-        "title": "Filter Visual Components",
-        "sidebar_label": "Filter Visual Components"
-      },
-      "version-7.2.0/version-7.2.0-ht_create_your_first_visualization": {
-        "title": "Create Your First Application from Scratch",
-        "sidebar_label": "Create Your First Application from Scratch"
-      },
-      "version-7.2.0/version-7.2.0-ht_use_react_component_in_angular_2.x": {
-        "title": "Use Angular 2+",
-        "sidebar_label": "Use Angular 2+"
-      },
-      "version-7.2.0/version-7.2.0-live_examples": {
-        "title": "Live Examples",
-        "sidebar_label": "Live Examples"
-      },
       "version-7.2.0/version-7.2.0-on_export_ready": {
         "title": "OnExportReady",
         "sidebar_label": "OnExportReady"
+      },
+      "version-7.2.0/version-7.2.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
       },
       "version-7.2.0/version-7.2.0-sso": {
         "title": "Set Up Authentication and Single Sign-On",
@@ -1161,13 +1169,17 @@
         "title": "Specify Table Totals",
         "sidebar_label": "Specify Table Totals"
       },
+      "version-7.2.0/version-7.2.0-ht_use_react_component_in_angular_2.x": {
+        "title": "Use Angular 2+",
+        "sidebar_label": "Use Angular 2+"
+      },
+      "version-7.2.0/version-7.2.0-live_examples": {
+        "title": "Live Examples",
+        "sidebar_label": "Live Examples"
+      },
       "version-7.3.0/version-7.3.0-attribute_filter_component": {
         "title": "Attribute Filter",
         "sidebar_label": "Attribute Filter"
-      },
-      "version-7.3.0/version-7.3.0-filter_visual_components": {
-        "title": "Filter Visual Components",
-        "sidebar_label": "Filter Visual Components"
       },
       "version-7.3.0/version-7.3.0-measure_value_filter_component": {
         "title": "Measure Value Filter",
@@ -1177,13 +1189,13 @@
         "title": "OnExportReady",
         "sidebar_label": "OnExportReady"
       },
+      "version-7.3.0/version-7.3.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
+      },
       "version-7.3.0/version-7.3.0-table_totals": {
         "title": "Specify Table Totals",
         "sidebar_label": "Specify Table Totals"
-      },
-      "version-7.4.0/version-7.4.0-afm": {
-        "title": "Set Up an AFM Query",
-        "sidebar_label": "Set Up an AFM Query"
       },
       "version-7.4.0/version-7.4.0-bullet_chart_component": {
         "title": "Bullet Chart",
@@ -1193,17 +1205,9 @@
         "title": "Pivot Table",
         "sidebar_label": "Pivot Table"
       },
-      "version-7.5.0/version-7.5.0-attribute_element_option": {
-        "title": "AttributeElements Component Options",
-        "sidebar_label": "AttributeElements Component Options"
-      },
-      "version-7.5.0/version-7.5.0-create_custom_attribute_filter": {
-        "title": "Create a Custom Attribute Filter",
-        "sidebar_label": "Create Custom Filter"
-      },
-      "version-7.5.0/version-7.5.0-filter_visual_components": {
-        "title": "Filter Visual Components",
-        "sidebar_label": "Filter Visual Components"
+      "version-7.4.0/version-7.4.0-afm": {
+        "title": "Set Up an AFM Query",
+        "sidebar_label": "Set Up an AFM Query"
       },
       "version-7.5.0/version-7.5.0-geo_pushpin_chart_component": {
         "title": "Geo Pushpin Chart",
@@ -1217,9 +1221,21 @@
         "title": "Pivot Table",
         "sidebar_label": "Pivot Table"
       },
+      "version-7.5.0/version-7.5.0-attribute_element_option": {
+        "title": "AttributeElements Component Options",
+        "sidebar_label": "AttributeElements Component Options"
+      },
       "version-7.5.0/version-7.5.0-time_over_time_comparison": {
         "title": "Time Over Time Comparison",
         "sidebar_label": "Time Over Time Comparison"
+      },
+      "version-7.5.0/version-7.5.0-create_custom_attribute_filter": {
+        "title": "Create a Custom Attribute Filter",
+        "sidebar_label": "Create Custom Filter"
+      },
+      "version-7.5.0/version-7.5.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
       },
       "version-7.7.0/version-7.7.0-model_helpers": {
         "title": "Model Helpers",
@@ -1228,14 +1244,6 @@
       "version-7.7.0/version-7.7.0-pivot_table_component": {
         "title": "Pivot Table",
         "sidebar_label": "Pivot Table"
-      },
-      "version-7.8.0/version-7.8.0-cors": {
-        "title": "Deal with Cross-Origin Issues",
-        "sidebar_label": "Deal with Cross-Origin Issues"
-      },
-      "version-7.8.0/version-7.8.0-filter_visual_components": {
-        "title": "Filter Visual Components",
-        "sidebar_label": "Filter Visual Components"
       },
       "version-7.8.0/version-7.8.0-model_helpers": {
         "title": "Model Helpers",
@@ -1248,6 +1256,14 @@
       "version-7.8.0/version-7.8.0-time_over_time_comparison": {
         "title": "Time Over Time Comparison",
         "sidebar_label": "Time Over Time Comparison"
+      },
+      "version-7.8.0/version-7.8.0-cors": {
+        "title": "Deal with Cross-Origin Issues",
+        "sidebar_label": "Deal with Cross-Origin Issues"
+      },
+      "version-7.8.0/version-7.8.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
       }
     },
     "links": {

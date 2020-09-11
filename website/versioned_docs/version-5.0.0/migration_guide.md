@@ -51,7 +51,7 @@ yarn upgrade react-dom@15.6.2
 ```
 
 ## Components with buckets interface
-[AFM React Components](http://sdk.gooddata.com/gdc-ui-sdk-doc/docs/afm_react_components.html) will be deprecated in one of the the next versions. We suggest to use components with buckets interface. E.g. [Line Chart Component](line_chart_component.md)
+[AFM React Components](http://sdk.gooddata.com/gdc-ui-sdk-doc/docs/afm_react_components.html) will be deprecated in one of the the next versions. We suggest to use components with buckets interface. E.g. [Line Chart Component](10_vis__line_chart_component.md)
 
 [Execute Component](http://sdk.gooddata.com/gdc-ui-sdk-doc/docs/execute_component.html) and [KPI and Visualization](react_components.md) are without change.
 
@@ -128,7 +128,7 @@ const activityType = {
 
 
 ### LoadingComponent and ErrorComponent properties
-`@gooddata/react-components@5.0.0` now supports [Loading Component](loading_component.md) and [Error Component](error_component.md) properties which shows GoodData loading component and GoodData error component by default. If you want disable default components, you must set `LoadingComponent={null}` and `ErrorComponent={null}` properties in your components. You probably want disable default GoodData Loading and Error components if you already have implemented your own loading and errors based on `onError` and `onLoadingChanged` callbacks.
+`@gooddata/react-components@5.0.0` now supports [Loading Component](15_props__loading_component.md) and [Error Component](15_props__error_component.md) properties which shows GoodData loading component and GoodData error component by default. If you want disable default components, you must set `LoadingComponent={null}` and `ErrorComponent={null}` properties in your components. You probably want disable default GoodData Loading and Error components if you already have implemented your own loading and errors based on `onError` and `onLoadingChanged` callbacks.
 
 ### Remove backward compatible CatalogHelper code
 With `@gooddata/react-components@4.1.1` you could have used e.g.:
@@ -159,7 +159,7 @@ yarn global upgrade gdc-catalog-export
 ```
 
 ### Structure of execution result in Execute Component
-Execution result passed down to [Execute Component](execute_component.md) is now provided without unnecessary wrappers.
+Execution result passed down to [Execute Component](50_custom__component.md) is now provided without unnecessary wrappers.
 
 Props passed to Execute child function before with `@gooddata/react-components@4.1.1`
 ```javascript

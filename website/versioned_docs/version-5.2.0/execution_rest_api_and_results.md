@@ -39,7 +39,7 @@ sdk.execution.getExecutionResponse('<project-id>', execution)
     );
 ```
 
-The `execution` parameter consists of [AFM](afm.md) and [resultSpec](result_specification.md). It can be defined as follows:
+The `execution` parameter consists of [AFM](50_custom__execution.md) and [resultSpec](50_custom__result.md). It can be defined as follows:
 
 ```javascript
 const afm = {
@@ -114,7 +114,7 @@ If you cannot or do not want to use the `gooddata-js` library, you can call the 
 POST /gdc/app/projects/<project-id>/executeAfm
 ```
 
-The request body consists of [AFM](afm.md) and [resultSpec](result_specification.md):
+The request body consists of [AFM](50_custom__execution.md) and [resultSpec](50_custom__result.md):
 
 ```javascript
 { "execution":
@@ -175,4 +175,4 @@ For example, if you set the limit to `3,2`, the pages could be retrieved in four
 | :--- | :--- |
 | [ 41, 42 ] | [ 43 ] |
 
-The first dimension of the data is the "rows", the second is the "columns". For more information, see 'Dimensions' in [Result Specification (resultSpec)](result_specification.md).
+The first dimension of the data is the "rows", the second is the "columns". For more information, see 'Dimensions' in [Result Specification (resultSpec)](50_custom__result.md).

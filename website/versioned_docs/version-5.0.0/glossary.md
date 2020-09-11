@@ -9,7 +9,7 @@ original_id: glossary
 ## A
 
 **AFM \(Attribute - Filter - Measure\)** is unified input for creating a visualization using GoodData.UI. AFM is a combination of attributes, filters, and measures that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer). 
-See [AFM](afm.md).
+See [AFM](50_custom__execution.md).
 
 **aggregation** is a general term for the process by which information is gathered and expressed in a summary form. Aggregation means:
 
@@ -21,7 +21,7 @@ See [AFM](afm.md).
 
 ## B
 
-**bar chart** is a chart that allows you to visually compare discrete categories of data. See [Bar Chart](bar_chart_component.md).
+**bar chart** is a chart that allows you to visually compare discrete categories of data. See [Bar Chart](10_vis__bar_chart_component.md).
 
 ## D
 
@@ -35,7 +35,7 @@ See [AFM](afm.md).
 
 ## G
 
-**gdc-catalog-export** is a GoodData.UI tool for exporting a list of catalog items and date datasets from a GoodData project. See [gdc-catalog-export](gdc-catalog-export.md).
+**gdc-catalog-export** is a GoodData.UI tool for exporting a list of catalog items and date datasets from a GoodData project. See [gdc-catalog-export](02_start__catalog_export.md).
 
 ## I
 
@@ -61,7 +61,7 @@ See [AFM](afm.md).
 
 ## R
 
-**resultSpec** is an object that defines the structure of data inside an AFM \(see**AFM**\) based on your preferences. For example, you can define a custom sorting of data. See [Result Specification \(resultSpec\)](result_specification.md).
+**resultSpec** is an object that defines the structure of data inside an AFM \(see**AFM**\) based on your preferences. For example, you can define a custom sorting of data. See [Result Specification \(resultSpec\)](50_custom__result.md).
 
 ## S
 

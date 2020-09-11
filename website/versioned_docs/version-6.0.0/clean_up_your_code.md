@@ -6,7 +6,7 @@ id: version-6.0.0-clean_up_your_code
 original_id: clean_up_your_code
 ---
 
-GoodData.UI provides a tool named [gdc-catalog-export](gdc-catalog-export.md) that can help you keep the list of object identifiers organized in a Javascript file within your application.
+GoodData.UI provides a tool named [gdc-catalog-export](02_start__catalog_export.md) that can help you keep the list of object identifiers organized in a Javascript file within your application.
 
 **Example:**
 In the tutorial [Create Your First Application](ht_create_your_first_visualization.html), you used the following component:
@@ -42,7 +42,7 @@ const measures = [
 
 In this component, `projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"` is a hardcoded reference to the project ID, and the measure identifier is a hardcoded reference to a measure.
 
-With the [gdc-catalog-export](gdc-catalog-export.md) tool, you can save the list of all measures, attributes and other relevant objects to a JSON file.
+With the [gdc-catalog-export](02_start__catalog_export.md) tool, you can save the list of all measures, attributes and other relevant objects to a JSON file.
 
 To install the tool, run the following command from the command line:
 ```bash

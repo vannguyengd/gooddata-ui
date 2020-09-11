@@ -135,7 +135,7 @@ Now, you can start adding your first GoodData component:
     ```javascript
     import '@gooddata/sdk-ui-charts/styles/css/main.css';
     ```
-   
+
 4. Initialize the Analytical Backend implemented by the GoodData platform:
 
     ```javascript
@@ -146,7 +146,7 @@ Now, you can start adding your first GoodData component:
 
    ```jsx
    import { BackendProvider, WorkspaceProvider } from "@gooddata/sdk-ui";
-    
+
    function App() {
        return (
            <BackendProvider backend={backend}>
@@ -154,10 +154,10 @@ Now, you can start adding your first GoodData component:
                    <div>placeholder</div>
                </WorkspaceProvider>
            </BackendProvider>
-       );   
+       );
    }
    ```
-    
+
 6. Add a simple line chart:
 
     6a. Define measures and attributes:
@@ -165,7 +165,7 @@ Now, you can start adding your first GoodData component:
     const measures = [ newMeasure('aaEGaXAEgB7U', m => m.format('#,##0') ];
     const attribute = newAttribute('date.abm81lMifn6q');
     ```
-   
+
     6b. Replace the placeholder in your `App` functional component with the following elements:
     ```jsx
     <div style={{ height: 300 }}>
@@ -190,7 +190,7 @@ Now, you can start adding your first GoodData component:
 
     import './App.css';
 
-    const backend = bearFactory().withAuthentication(new ContextDeferredAuthProvider());   
+    const backend = bearFactory().withAuthentication(new ContextDeferredAuthProvider());
     const measures = [ newMeasure('aaEGaXAEgB7U', m => m.format('#,##0') ];
     const attribute = newAttribute('date.abm81lMifn6q');
 
@@ -226,4 +226,3 @@ Here are some suggestions about what you can do after you created your first vis
 * Add more elements: tables, charts, custom visualizations. For more information, see [how to use visual components](10_vis__start_with_visual_components.md).
 * [Enable drilling](15_props__drillable_item.md).
 * Authenticate your users using [Single Sign-on (SSO)](30_tips__sso.md) rather than sending them to a proxied GoodData login page.
-* [Clean up your code](30_tips__clean_up_your_code.md).

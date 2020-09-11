@@ -8,7 +8,7 @@ original_id: data_layer
 
 DataLayer is mostly intended for advanced use cases \(for example, to write advanced custom components\).
 
-For the majority of use cases involving custom visualizations, we recommend that you try using the [Execute component](execute_component.md) first. If it does not meet your requirements, you can always go back to using DataLayer.
+For the majority of use cases involving custom visualizations, we recommend that you try using the [Execute component](50_custom__component.md) first. If it does not meet your requirements, you can always go back to using DataLayer.
 
 DataLayer obtains data from your project either using AFM+ResultSpec or Visualization URI. You can use that data, for example, to create a visualization that is not a part of GoodData.UI.
 
@@ -23,9 +23,9 @@ The parameter placeholders are:
 * &lt; measure-identifier &gt;
 * &lt; project-id &gt;
 
-For more information about AFM and resultSpec, see [AFM](afm) and [Result Specification \(resultSpec\)](result_specification.md).
+For more information about AFM and resultSpec, see [AFM](afm) and [Result Specification \(resultSpec\)](50_custom__result.md).
 
-Though you can use either object URIs or object identifiers, we recommend that you use only the **object identifiers** that are consistent across your domain regardless of the GoodData project they live in. In other words, an object used in any project within your domain should have the _same_ object identifier in _any_ of those projects. To get a list of catalog items and date datasets from a GoodData project in the form of a JavaScript object, use [gdc-catalog-export](gdc-catalog-export.md).
+Though you can use either object URIs or object identifiers, we recommend that you use only the **object identifiers** that are consistent across your domain regardless of the GoodData project they live in. In other words, an object used in any project within your domain should have the _same_ object identifier in _any_ of those projects. To get a list of catalog items and date datasets from a GoodData project in the form of a JavaScript object, use [gdc-catalog-export](02_start__catalog_export.md).
 
 ```javascript
 /*

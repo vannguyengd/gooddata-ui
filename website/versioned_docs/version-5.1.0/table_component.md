@@ -68,16 +68,16 @@ const attributes = [
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| measures | false | [Measure[]](afm.md#measure) | An array of measure definitions (either measure or attribute definition must be provided for the table to render properly) |
-| attributes | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions (either measure or attribute definition must be provided for the table to render properly) |
-| totals | false | [Total[]](table_totals.md) | An array of total definitions |
-| filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
-| sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
+| measures | false | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions (either measure or attribute definition must be provided for the table to render properly) |
+| attributes | false | [Attribute[]](50_custom__execution.md#attribute) | An array of attribute definitions (either measure or attribute definition must be provided for the table to render properly) |
+| totals | false | [Total[]](30_tips__table_totals.md) | An array of total definitions |
+| filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
+| sortBy | false | [SortItem[]](50_custom__result.md#sorting) | An array of sort definitions |
 | locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
-| drillableItems | false | [DrillableItem[]](drillable_item.md) | An array of points and attribute values to be drillable. |
+| drillableItems | false | [DrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable. |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
-| ErrorComponent | false | Component | A component to be rendered if this component is in error state. See [ErrorComponent](error_component.md).|
-| LoadingComponent | false | Component | A component to be rendered if this component is in loading state. See [LoadingComponent](loading_component.md).|
+| ErrorComponent | false | Component | A component to be rendered if this component is in error state. See [ErrorComponent](15_props__error_component.md).|
+| LoadingComponent | false | Component | A component to be rendered if this component is in loading state. See [LoadingComponent](15_props__loading_component.md).|
 | onError | false | Function | A callback when component updates its error state |
 | onLoadingChanged | false | Function | A callback when component updates its loading state |
 
