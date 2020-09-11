@@ -343,7 +343,7 @@ import { Visualization } from '@gooddata/react-components';
 * You can configure stacking for the following types of charts:
     * [Area charts](10_vis__area_chart_component.md)
     * [Bar charts](bar_chart_component.md)
-    * [Column charts](column_chart_component.md)
+    * [Column charts](10_vis__column_chart_component.md)
     * [Combo charts](10_vis__combo_chart_component.md)
     
          **NOTE:** In combo charts using column or area charts, stacking is applied only to the measures shown on the left axis.
