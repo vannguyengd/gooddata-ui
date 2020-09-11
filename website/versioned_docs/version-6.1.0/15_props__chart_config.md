@@ -91,7 +91,7 @@ import { Visualization } from '@gooddata/react-components';
 
 ### Custom color palette
 
-If you [uploaded a custom color palette](https://help.gooddata.com/display/doc/Importing+Custom+Color+Palettes) to your project, the visualizations created based on the [Visualization component](visualization_component.md) use this palette instead of the default colors.
+If you [uploaded a custom color palette](https://help.gooddata.com/display/doc/Importing+Custom+Color+Palettes) to your project, the visualizations created based on the [Visualization component](10_vis__insight_view.md) use this palette instead of the default colors.
 
 To override the uploaded custom color palette for a specific visualization, define the `colorPalette` property for this visualization. The `colorPalette` property overrides the uploaded custom palette and the `colors` property, if it has been set for this visualization.
 
