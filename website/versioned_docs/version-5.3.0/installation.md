@@ -8,7 +8,7 @@ original_id: installation
 
 This article describes how to install GoodData.UI React components and a few steps to accomplish before you can start creating your visualizations.
 
-**NOTE:** Before you install GoodData.UI, make sure that you have a GoodData account (see [About GoodData.UI](about_gooddataui.md#supported-technologies)).
+**NOTE:** Before you install GoodData.UI, make sure that you have a GoodData account (see [About GoodData.UI](01_intro__about_gooddataui.md#supported-technologies)).
 
 ## Installation
 

@@ -10,7 +10,7 @@ This tutorial will guide you through the process of creating your first analytic
 
 After you complete this tutorial, you will be able to display various measures and charts from your GoodData project within the context of your React application.
 
-**NOTE:** Before you start this tutorial, make sure that you have a GoodData account (see [About GoodData.UI](about_gooddataui.md#supported-technologies)).
+**NOTE:** Before you start this tutorial, make sure that you have a GoodData account (see [About GoodData.UI](01_intro__about_gooddataui.md#supported-technologies)).
 
 **NOTE:** We use `yarn` dependency manager in this tutorial. To install it, follow its [`documentation`](https://yarnpkg.com/lang/en/docs/install/).
 
