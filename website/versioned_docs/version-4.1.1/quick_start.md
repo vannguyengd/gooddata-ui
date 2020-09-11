@@ -35,7 +35,7 @@ The GoodData UI SDK is tested against and supports the following:
 * React 15.3.2, Angular 1, Angular 2
   * For React using Create React App, see [How to Create Your First Visualization with GoodData UI SDK](02_start__no_boilerplate.md).
   * For Angular 1, see [How to Use React Components in Angular 1.x](30_tips__use_angular_1.x.md).
-  * For Angular 2+, see [How to Use React Components in Angular 2+](ht_use_react_components_in_angular_2.x.md).
+  * For Angular 2+, see [How to Use React Components in Angular 2+](30_tips__use_angular_2.x.md).
 * TypeScript 2.3+, ES6, ES5
 
 The GoodData UI SDK may work with other platforms and operating systems but has _not_ been thoroughly tested yet and may _not_ provide all functionalities.
@@ -110,7 +110,7 @@ We have a number of tutorials to help you start your development:
 * [How to Create Your First Visualization with GoodData UI SDK](02_start__no_boilerplate.md)
 * [How to Build an App](ht_build_app.md)
 * [How to Use React Components in Angular 1.x](30_tips__use_angular_1.x.md)
-* [How to Use React Components in Angular 2+](ht_use_react_components_in_angular_2.x.md)
+* [How to Use React Components in Angular 2+](30_tips__use_angular_2.x.md)
 * [How to Access the GoodData API Directly](ht_access_gd_api_directly.md)
 * [How to Configure a Webpack Proxy](ht_configure_webpack_proxy.md)
 * [How to Set Up a Loading State for Embedded Insights](ht_set_up_loading_state_for_embeded_insight.md)

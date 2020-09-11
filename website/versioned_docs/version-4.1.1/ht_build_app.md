@@ -17,7 +17,7 @@ To start using GoodData UI SDK, you must have the following:
 
 ## Build an App from Scratch
 * Using Angular 1.x - see [How to Use React Components in Angular 1.x](30_tips__use_angular_1.x.md).
-* Using Angular 2+ - see [How to Use React Components in Angular 2+](ht_use_react_components_in_angular_2.x.md).
+* Using Angular 2+ - see [How to Use React Components in Angular 2+](30_tips__use_angular_2.x.md).
 * Using create-react-app - see [How to Create Your First Visualization with GoodData UI SDK](02_start__no_boilerplate.md).
 * Using custom React application:
   * Add the `@gooddata/react-components` package to your existing project:
