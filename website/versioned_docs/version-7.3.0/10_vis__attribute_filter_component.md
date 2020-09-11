@@ -48,7 +48,7 @@ export class AttributeFilterExample extends Component {
 ```
 ## Define the default selection of values in the filter
 
-To define the attribute values that should be selected in the filter by default, include those attribute values in the ```filter``` property. For more details about filtering, see [Filter Visual Components](filter_visual_components.md).
+To define the attribute values that should be selected in the filter by default, include those attribute values in the ```filter``` property. For more details about filtering, see [Filter Visual Components](30_tips__filter_visual_components.md).
 
 ```javascript
     render() {
@@ -104,7 +104,7 @@ Use ```onApplyWithFilterDefinition``` instead of ```onApply``` to recieve the se
 | onApply | false | Function | A callback when the selection is confirmed by a user |
 | onApplyWithFilterDefinition | false | Function | A callback when the selection is confirmed by a user. The selection of attribute values is received already transformed into an attribute filter definition, which you can then send directly to a chart. |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
-| filter | false | [Filter](filter_visual_components.md) | The attribute filter definition |
+| filter | false | [Filter](30_tips__filter_visual_components.md) | The attribute filter definition |
 | locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | fullscreenOnMobile | false | boolean | If `true`, adjusts the filter to be properly rendered on a mobile device |
 | title | false | string | A custom label to show on the dropdown icon |

@@ -235,7 +235,7 @@ const config = {
 | rows | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions that breaks measure data into rows (either measures, or rows, or columns must be provided for the pivot table to render properly) |
 | columns | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions that breaks measure data into columns (either measures, or rows, or columns must be provided for the pivot table to render properly) |
 | totals | false | [Total[]](table_totals.md) | An array of total definitions |
-| filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
+| filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | false | [ConfigObject](#configuration-menu) | The configuration object |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | groupRows | false | boolean | Specifies whether [grouping of the same values in attribute columns](#grouping) is disabled (`false`; default) or enabled (`true`). | 

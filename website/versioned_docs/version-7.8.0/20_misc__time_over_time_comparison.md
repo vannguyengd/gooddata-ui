@@ -175,7 +175,7 @@ For comparing over a period other than a day, use a [relative date filter](filte
 
 ## Time over time comparison and week date filters
 
-If you use [date filters by _weeks_](filter_visual_components.md#relative-date-filter) and compare the data to the previous period or the same period of the last year in those filters, you have to enable the GoodData platform to properly process such week filters. To do so, complete the following steps:
+If you use [date filters by _weeks_](30_tips__filter_visual_components.md#relative-date-filter) and compare the data to the previous period or the same period of the last year in those filters, you have to enable the GoodData platform to properly process such week filters. To do so, complete the following steps:
 
 1. Switch the version of the [Extensible Analytics Engine](https://help.gooddata.com/display/doc/XAE+-+Extensible+Analytics+Engine) to 3.
 

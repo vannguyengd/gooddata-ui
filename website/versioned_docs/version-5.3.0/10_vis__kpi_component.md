@@ -88,7 +88,7 @@ import { Kpi } from '@gooddata/react-components';
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
 | measure | true | string | The measure URI |
-| filters | false | [FilterItem[]](filter_visual_components.md) | An array of filter definitions |
+| filters | false | [FilterItem[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | format | false | string | The measure format. If specified, overrides the format stored with the measure. |
 | separators | false | object | The format of the thousands separator and decimal separator used in measures. The default is `{ thousand: ',', decimal: '.' }`. For more information about setting the regional number format in a GoodData account, see [Set Default Number Format for your User Account](https://help.gooddata.com/display/doc/Set+Default+Number+Format+for+your+User+Account). |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |

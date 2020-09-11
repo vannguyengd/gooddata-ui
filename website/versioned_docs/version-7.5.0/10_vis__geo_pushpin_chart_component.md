@@ -115,7 +115,7 @@ const config = {
 | segmentBy | false | [Attribute](afm.md#attribute) | An attribute definition that categorizes the pins |
 | size | false | [Measure](afm.md#measure) | A measure definition that determines the size of the pins |
 | color | false | [Measure](afm.md#measure) | A measure definition that determines color saturation of the pins |
-| filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
+| filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | true | [GeoConfig](#geo-config) | The geo chart configuration object |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |

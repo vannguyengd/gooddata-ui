@@ -72,7 +72,7 @@ const attribute = {
 | measures | true | [Measure[]](afm.md#measure) | An array of measure definitions |
 | viewBy | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions |
 | stackBy | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions |
-| filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
+| filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | config | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |

@@ -77,7 +77,7 @@ You can display rows with aggregated measure data using the `totals` prop. For m
 | measures | false | [Measure[]](afm.md#measure) | An array of measure definitions (either measure or attribute definition must be provided for the table to render properly) |
 | attributes | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions (either measure or attribute definition must be provided for the table to render properly) |
 | totals | false | [Total[]](table_totals.md) | An array of total definitions |
-| filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
+| filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | false | [ChartConfig](15_props__chart_config.md) | The configuration object |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |

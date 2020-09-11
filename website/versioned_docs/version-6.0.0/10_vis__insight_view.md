@@ -64,7 +64,7 @@ import { Visualization } from '@gooddata/react-components';
 
 ## Filters
 
-For more information, see [Filter Visual Components](filter_visual_components.md).
+For more information, see [Filter Visual Components](30_tips__filter_visual_components.md).
 
 ## Properties
 
@@ -75,7 +75,7 @@ For more information, see [Filter Visual Components](filter_visual_components.md
 | identifier | false | string | The identifier of the visualization to be rendered. Can be omitted if the visualization URI is present. |
 | locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | config  | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |
-| filters | false | [FilterItem[]](filter_visual_components.md) | An array of filter definitions |
+| filters | false | [FilterItem[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | drillableItems | false | [DrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable. |
 | onFiredDrillEvent | false | [onFiredDrillEvent()](15_props__on_drill.md) | The drilling event catcher. Called when drilling happens. |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |

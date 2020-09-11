@@ -71,7 +71,7 @@ const attribute = {
 | measures | true | [Measure[]](afm.md#measure) | An array of measure definitions |
 | viewBy | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions |
 | stackBy | false | [Attribute[]](afm.md#attribute) | An array of attribute definitions |
-| filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
+| filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | false | {} | The chart configuration object |
 | locale | false | string | The location string for translations |
 | drillableItems | false | DrillableItem[] | An array of points and attribute values to be drillable. See [DrillableItems](15_props__drillable_item.md).|

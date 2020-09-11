@@ -50,7 +50,7 @@ All attributes are defined using their `displayForm` identifiers.
 
 You can limit the execution by providing a `filters` prop to your AFM. It is an array of filters. Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...`).
 
-The structure of individual filters is identical to the `filters` prop that is used to filter visual components. For more information, see [Filter Visual Components](filter_visual_components.md).
+The structure of individual filters is identical to the `filters` prop that is used to filter visual components. For more information, see [Filter Visual Components](30_tips__filter_visual_components.md).
 
 ```javascript
 const afm = {
