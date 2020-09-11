@@ -74,7 +74,7 @@ const attribute = {
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | config | false | {} | The chart configuration object |
 | locale | false | string | The location string for translations |
-| drillableItems | false | DrillableItem[] | An array of points and attribute values to be drillable. See [DrillableItems](drillable_item.md).|
+| drillableItems | false | DrillableItem[] | An array of points and attribute values to be drillable. See [DrillableItems](15_props__drillable_item.md).|
 | ErrorComponent | false | Component | A component to be rendered if this component is in error state. See [ErrorComponent](error_component.md).|
 | LoadingComponent | false | Component | A component to be rendered if this component is in loading state. See [LoadingComponent](loading_component.md).|
 | onError | false | Function | A callback when component updates its error state |

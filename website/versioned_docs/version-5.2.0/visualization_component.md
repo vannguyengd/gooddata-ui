@@ -75,7 +75,7 @@ For more information, see [Filter Visual Components](filter_visual_components.md
 | locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | config  | false | [ChartConfig](chart_config.md) | The chart configuration object |
 | filters | false | [FilterItem[]](filter_visual_components.md) | An array of filter definitions |
-| drillableItems | false | [DrillableItem[]](drillable_item.md) | An array of points and attribute values to be drillable. |
+| drillableItems | false | [DrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable. |
 | onFiredDrillEvent | false | [onFiredDrillEvent()](on_fire_drill_event.md) | The drilling event catcher. Called when drilling happens. |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 | uriResolver | false | function | A custom method for querying URIs for identifiers. Defaults to the standard Gooddata SDK. `getObjectUri()`. |
