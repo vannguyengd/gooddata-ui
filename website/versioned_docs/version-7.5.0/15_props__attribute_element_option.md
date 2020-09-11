@@ -6,7 +6,7 @@ id: version-7.5.0-attribute_element_option
 original_id: attribute_element_option
 ---
 
-This article describes the options for configuring the [AttributeElements component](create_custom_attribute_filter.md#example).
+This article describes the options for configuring the [AttributeElements component](30_tips__create_custom_attribute_filter.md#example).
 
 The AttributeElements options define how AttributeElements values are queried.
 
