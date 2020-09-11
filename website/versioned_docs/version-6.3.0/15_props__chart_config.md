@@ -158,7 +158,7 @@ Color mapping allows you to assign colors to individual measures or attribute el
 The `colorMapping` property contains an array of objects. Each object is represented by a pair of a mapping predicate and a color (color GUID or color value).
 
 * A **mapping predicate** is a function that takes a result header as the first argument and returns a Boolean value indicating whether the color will be assigned to a particular measure or attribute element.
- For more information on how to create predicates, see [Create Predicates](ht_create_predicates.md).
+ For more information on how to create predicates, see [Create Predicates](30_tips__create_predicates.md).
 * A **color** is an object that contains two keys, `type` and `value`.
     * To assign a color from a color palette (either the custom color palette uploaded through the API or the palette defined by the `colorPalette` property), set `type` to `guid`, and set `value` to the GUID of the color from the palette.
     * To assign a custom color, set `type` to `rgb`, and set `value` to an object containing the keys `r`, `g`, and `b` with numerical values.
