@@ -159,7 +159,7 @@ yarn global upgrade gdc-catalog-export
 ```
 
 ### Structure of execution result in Execute Component
-Execution result passed down to [Execute Component](execute_component.md) is now provided without unnecessary wrappers.
+Execution result passed down to [Execute Component](50_custom__component.md) is now provided without unnecessary wrappers.
 
 Props passed to Execute child function before with `@gooddata/react-components@4.1.1`
 ```javascript

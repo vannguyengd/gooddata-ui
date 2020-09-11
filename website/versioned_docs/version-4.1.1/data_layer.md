@@ -10,7 +10,7 @@ This is the 3.0.0 version! In sync with the live doc.
 
 DataLayer is mostly intended for addressing advanced use cases \(for example, writing advanced custom components\).
 
-For the majority of use casesinvolving custom visualizations, we recommend that you try using the [Execute component](execute_component.md) first. If it does not meet your requirements, you can always go back to using DataLayer.
+For the majority of use casesinvolving custom visualizations, we recommend that you try using the [Execute component](50_custom__component.md) first. If it does not meet your requirements, you can always go back to using DataLayer.
 
 DataLayer obtains data from your project either using AFM+ResultSpec or Visualization URI. You can use that data, for example, to create a visualization that is not a part of the GoodData UI SDK.
 

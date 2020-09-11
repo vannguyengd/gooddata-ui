@@ -8,7 +8,7 @@ original_id: execute_component
 
 The Execute component allows you to execute input data and send it to the function that you have chosen to use and have implemented. You can use the Execute component, for example, to create a report using an arbitrary chart library.
 
-The input data is specified using the component parameters \(see [Parameters](execute_component.md#parameters)\). Then, the execution result is sent to the function that you specify as children in the Execution component.
+The input data is specified using the component parameters \(see [Parameters](50_custom__component.md#parameters)\). Then, the execution result is sent to the function that you specify as children in the Execution component.
 
 ## Parameters
 
