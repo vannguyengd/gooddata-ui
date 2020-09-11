@@ -8,7 +8,7 @@ original_id: afm_react_components
 
 The element where you are inserting a React component in must have the height and width set up. Otherwise, the visualization will not work correctly.
 
-Though you can use either object URIs or object identifiers, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the _same_ object identifier in_any_of those projects\). To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](gdc-catalog-export.md).
+Though you can use either object URIs or object identifiers, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the _same_ object identifier in_any_of those projects\). To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](02_start__catalog_export.md).
 
 ## Charts
 

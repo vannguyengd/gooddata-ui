@@ -251,7 +251,7 @@ Notice the KPI number that you have added.
 
 ## Step 8. Keep your code clean
 
-The GoodData UI SDK provides a tool named [gdc-catalog-export](gdc-catalog-export.md) that can help you keep the list of object identifiers organized in a Javascript file within your application.
+The GoodData UI SDK provides a tool named [gdc-catalog-export](02_start__catalog_export.md) that can help you keep the list of object identifiers organized in a Javascript file within your application.
 
 For example, let’s take a look at the following component used in this tutorial:
 

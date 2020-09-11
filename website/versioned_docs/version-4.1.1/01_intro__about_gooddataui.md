@@ -99,7 +99,7 @@ Examples in this documentation use data from the GoodSales demo project with an 
 
 ### Get resource identifiers
 
-To display visualizations, filters, and other resources, get their identifiers either via the gray pages \(see [Accessing Gray Pages for a Project](https://help.gooddata.com/display/developer/Accessing+Gray+Pages+for+a+Project)\) or using [gdc-catalog-export](gdc-catalog-export.md).
+To display visualizations, filters, and other resources, get their identifiers either via the gray pages \(see [Accessing Gray Pages for a Project](https://help.gooddata.com/display/developer/Accessing+Gray+Pages+for+a+Project)\) or using [gdc-catalog-export](02_start__catalog_export.md).
 
 ## Next Steps
 

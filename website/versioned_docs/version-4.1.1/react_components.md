@@ -18,7 +18,7 @@ Example:
 
 Server-side rendering is _not_ supported.
 
-Though you can use either object URIs or object identifiers, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the_same_object identifier in_any_of those projects\). To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](gdc-catalog-export.md).
+Though you can use either object URIs or object identifiers, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the_same_object identifier in_any_of those projects\). To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](02_start__catalog_export.md).
 
 ## KPI
 

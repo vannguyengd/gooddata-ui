@@ -34,7 +34,7 @@ original_id: glossary
 
 ## G
 
-**gdc-catalog-export** is a GoodData UI SDK tool for exporting a list of catalog items and date datasets from a GoodData project. See [gdc-catalog-export](gdc-catalog-export.md).
+**gdc-catalog-export** is a GoodData UI SDK tool for exporting a list of catalog items and date datasets from a GoodData project. See [gdc-catalog-export](02_start__catalog_export.md).
 
 ## K
 

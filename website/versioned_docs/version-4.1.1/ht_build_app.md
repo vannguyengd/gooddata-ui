@@ -48,7 +48,7 @@ To embed an existing visualization created in Analytical Designer, use the `Visu
         https://secure.gooddata.com/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/query/visualizationobjects
         ```
         //TODO what do next? where is identifier?
-    * Via [gdc-catalog-export](gdc-catalog-export.md) tool
+    * Via [gdc-catalog-export](02_start__catalog_export.md) tool
     
 2. Import the `Visualization` component from the `@gooddata/react-components` package into your app:
     ```javascript
