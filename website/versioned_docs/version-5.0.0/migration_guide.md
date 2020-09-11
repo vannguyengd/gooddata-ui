@@ -128,7 +128,7 @@ const activityType = {
 
 
 ### LoadingComponent and ErrorComponent properties
-`@gooddata/react-components@5.0.0` now supports [Loading Component](loading_component.md) and [Error Component](15_props__error_component.md) properties which shows GoodData loading component and GoodData error component by default. If you want disable default components, you must set `LoadingComponent={null}` and `ErrorComponent={null}` properties in your components. You probably want disable default GoodData Loading and Error components if you already have implemented your own loading and errors based on `onError` and `onLoadingChanged` callbacks.
+`@gooddata/react-components@5.0.0` now supports [Loading Component](15_props__loading_component.md) and [Error Component](15_props__error_component.md) properties which shows GoodData loading component and GoodData error component by default. If you want disable default components, you must set `LoadingComponent={null}` and `ErrorComponent={null}` properties in your components. You probably want disable default GoodData Loading and Error components if you already have implemented your own loading and errors based on `onError` and `onLoadingChanged` callbacks.
 
 ### Remove backward compatible CatalogHelper code
 With `@gooddata/react-components@4.1.1` you could have used e.g.:
