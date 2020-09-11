@@ -56,7 +56,7 @@ This article describes the options for configuring a chart.
     dualAxis: false // boolean
 }
 ```
-Note: `primaryChartType`, `secondaryChartType`, `dualAxis` are only available for [Combo chart](combo_chart_component.md)
+Note: `primaryChartType`, `secondaryChartType`, `dualAxis` are only available for [Combo chart](10_vis__combo_chart_component.md)
 
 ## Configure colors
 
