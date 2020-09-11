@@ -63,7 +63,7 @@ This article describes the options for configuring a chart.
 
 ## Align a chart vertically
 
-You can configure a vertical alignment for [pie charts](pie_chart.md) and [donut charts](donut_chart.md).
+You can configure a vertical alignment for [pie charts](pie_chart.md) and [donut charts](10_vis__donut_chart.md).
 
 To align a chart vertically, set `config.chart.verticalAlign` to one of the possible values: `top`, `middle`, `bottom`. If not set, it defaults to `middle`.
 
