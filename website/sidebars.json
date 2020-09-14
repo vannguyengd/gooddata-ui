@@ -43,7 +43,8 @@
       "visualization_component",
       "attribute_filter_component",
       "date_filter_component",
-      "measure_value_filter_component"
+      "measure_value_filter_component",
+      "ranking_filter_component"
     ],
     "Properties": [
       "chart_config",
