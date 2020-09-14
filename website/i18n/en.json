@@ -117,6 +117,10 @@
         "title": "Pivot Table",
         "sidebar_label": "Pivot Table"
       },
+      "ranking_filter_component": {
+        "title": "Ranking Filter",
+        "sidebar_label": "Ranking Filter"
+      },
       "scatter_plot_component": {
         "title": "Scatter Plot",
         "sidebar_label": "Scatter Plot"

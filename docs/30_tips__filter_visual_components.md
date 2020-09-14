@@ -10,8 +10,9 @@ This article provides examples of filtering visual components by attribute, date
 All visualization components can be filtered using the `filters` prop. The `filters` prop is an array of attribute 
 filters and date filters. You can make the filters dynamic with the [`AttributeFilter`](10_vis__attribute_filter_component.md), 
 [`AttributeElements`](30_tips__create_custom_attribute_filter.md), 
-[`DateFilter`](10_vis__date_filter_component.md), and 
-[`MeasureValueFilterDropdown`](10_vis__measure_value_filter_component.md) components.
+[`DateFilter`](10_vis__date_filter_component.md), 
+[`MeasureValueFilterDropdown`](10_vis__measure_value_filter_component.md), and
+[`RankingFilterDropdown`](10_vis__ranking_filter_component.md) components.
 
 Both global filters and filters set on measures are always interpreted as an intersection of all individual 
 filters \(`f1 AND f2 AND f3...)`.
@@ -225,6 +226,41 @@ This applies to the following types of measures:
 * Measures that have the percentage format set by the `format` measure property
 * Calculated measures with the percentage format set in the metadata catalog
 * Arithmetic measures with the `change` operator that has the percentage property `format` set
+
+## Ranking filter
+
+With the Ranking Filter, you can choose to display your data from the set of highest or lowest ranked values of some attribute, based on ranking criteria that you establish. You can filter only the measures that are present in the visualization, on a granularity defined by the attributes in the visualization.  
+
+> **NOTES:**
+> * A [rollup total](30_tips__table_totals.md) and measure that is shown in % (that is, the measure with `computeRatio=true` property) are not supported in visualizations with ranking filters. Such visualizations are not rendered, and the error message is shown instead.
+> * Ranking filter does not affect visualization sorting. For example, when you filter to get TOP 3 highest values of the measure, the visualization will keep its sorting order which may or may not have been applied on the filtered measure. 
+
+When you apply ranking filter to a measure, the filter shows only the data whose measure values matches the condition. Note that more records than requested can be returned when they share the same value.
+
+You can create ranking filters using with on of the following `newRankingFilter` factory functions:
+
+```javascript
+newRankingFilter(measureOrLocalId, operator, value)
+```
+
+```javascript
+newRankingFilter(measureOrLocalId, attributesOrLocalIds, operator, value)
+```
+
+where:
+
+-  `measureOrLocalId` is `localIdentifier` of the measure to filter. You can specify the localIdentifier explicitly or 
+   pass an instance of measure and the factory will extract the localIdentifier for you.
+   
+- `attributesOrLocalIds` is an array of `localIdentifier` strings of attributes that defines the ranking granularity. 
+You can specify the localIdentifier explicitly or pass an instance of attribute and the factory will extract the localIdentifier for you. 
+This parameter is not required. If it is not specified the ranking behaves as if you would enter the list of all attributes in the visualization.
+   
+-  `operator` is one of the following: 
+    * `'TOP'`: Returns records with the highest values of the filtered measure for granularity specified by the filter attributes. 
+    * `'BOTTOM'`: Returns records with the lowest values of the filtered measure for granularity specified by the filter attributes.
+
+-  `value` the number of desired ranked records. The value must be positive number greater than zero.
 
 ## Filter set on a specific measure
 
