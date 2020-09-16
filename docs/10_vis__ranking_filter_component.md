@@ -30,47 +30,68 @@ import { MeasureValueFilter } from "@gooddata/sdk-ui-filters";
 The following example shows a table displaying one measure sliced by one attribute. A user can use the Ranking Filter component to filter the displayed bars and see the relevant data only.
 
 ```jsx
-import React, { Component } from "react";
-import "@gooddata/sdk-ui-filters/styles/css/main.css";
-import "@gooddata/sdk-ui-charts/styles/css/main.css";
-import { RankingFilter } from "@gooddata/sdk-ui-filters";
-import { Ldm } from "./ldm";
+import React, { useState } from "react";
+import { PivotTable } from "@gooddata/sdk-ui-pivot";
+import { newRankingFilter, localIdRef, measureLocalId, attributeLocalId } from "@gooddata/sdk-model";
+import { RankingFilter, IMeasureDropdownItem, IAttributeDropdownItem } from "@gooddata/sdk-ui-filters"; 
+import { LdmExt } from "../../ldm";
 
-const measureTitle = "$ Total Sales";
+const measures = [LdmExt.FranchiseFees, LdmExt.FranchisedSales];
+const attributes = [LdmExt.LocationState, LdmExt.LocationName];
 
-export default class SalesByResort extends Component {
-    this.state = { filters: [ newRankingFilter(Ldm.$TotalSales, "TOP", 3) ] };
-
-    onApply = filter => {
-        this.setState({ filters: [filter] });
-    };
-
-    render() {
-        const { filters } = this.state;
-
-        return (
-            <div>
-                <RankingFilter
-                    onApply={this.onApply}
-                    filter={filters[0]}
-                    buttonTitle={measureTitle}
-                />
-                <PivotTable
-                    measures={[Ldm.$TotalSales]}
-                    rows={[Ldm.LocationResort]}
-                    filters={filters}
+const measureDropdownItems: IMeasureDropdownItem[] = [
+    {
+        title: "Franchise fees",
+        ref: localIdRef(measureLocalId(LdmExt.FranchiseFees)),
+        sequenceNumber: "M1",
+    },
+    {
+        title: "Franchised sales",
+        ref: localIdRef(measureLocalId(LdmExt.FranchisedSales)),
+        sequenceNumber: "M2",
+    },
+];
+const attributeDropdownItems: IAttributeDropdownItem[] = [
+    {
+        title: "Location state",
+        ref: localIdRef(attributeLocalId(LdmExt.LocationState)),
+        type: "ATTRIBUTE",
+    },
+    {
+        title: "Location",
+        ref: localIdRef(attributeLocalId(LdmExt.LocationName)),
+        type: "ATTRIBUTE",
+    },
+];
+export const RankingFilterExample: React.FC = () => {
+    const [filter, setFilter] = useState(newRankingFilter(LdmExt.franchiseSalesLocalId, "TOP", 3));
+    return (
+        <React.Fragment>
+            <RankingFilter
+                measureItems={measureDropdownItems}
+                attributeItems={attributeDropdownItems}
+                filter={filter}
+                onApply={(filter) => setFilter(filter)}
+                buttonTitle={"Ranking filter"}
+            />
+            <hr className="separator" />
+            <div style={{ height: 300 }} className="s-pivot-table">
+                <PivotTable 
+                    measures={measures} 
+                    rows={attributes} 
+                    filters={[filter]} 
                 />
             </div>
-        );
-    }
-}
+        </React.Fragment>
+    );
+};
 ```
 ## Properties
 
 | Name                         | Required? | Type                                                            | Default                                   | Description                                                                                                                                                                                                                                                                                                                                   |
 | :--------------------------- | :-------- | :-------------------------------------------------------------- | :---------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| measureItems                 | true      | Object with measure's `title` (string) and `localIdentifier` (string) properties.                                                                |                                           | The list of available measures from which user can choose the measure on which the filter is applied. Typically a list of measures used in the visualization filter is supposed to filter.                                                                                                    |
-| attributeItems                 | false      | Object with attribute's `title` (string), `localIdentifier` (string) properties. Optional property `type` (with possible string value `"ATTRIBUTE"` or `"DATE"`) affects rendered option's icon.                                                               |                                           | The list of available attributes from which user can choose the attribute on which the filter is applied. Typically a list of attribute used in the visualization that defines visualization granularity. When property is not provided, the filter behaves as if all the attributes were selected (visualization default granularity was set.|
+| measureItems                 | true      | Object with measure's `title` (string) and `ref` (ObjRefInScope) properties.                                                                |                                           | The list of available measures from which user can choose the measure on which the filter is applied. Typically a list of measures used in the visualization filter is supposed to filter.                                                                                                    |
+| attributeItems                 | false      | Object with attribute's `title` (string), `ref` (ObjRefInScope) properties. Optional property `type` (with possible string value `"ATTRIBUTE"` or `"DATE"`) affects rendered option's icon.                                                               |                                           | The list of available attributes from which user can choose the attribute on which the filter is applied. Typically a list of attribute used in the visualization that defines visualization granularity. When property is not provided, the filter behaves as if all the attributes were selected (visualization default granularity was set.|
 | filter                       | true      | [Filter](30_tips__filter_visual_components.md#ranking-filter) |                                           | The ranking filter definition                                                                                                                                                                                                                                                                                                           |
 | onApply                      | true      | Function                                                        |                                           | A callback when the selection is confirmed by a user. The passed configuration of the ranking filter is already transformed into a ranking filter definition, which you can then send directly to a chart.                                                                                                                        |
 | onCancel                     | false     | Function                                                        |                                           | A callback when a user clicks the Cancel button or makes the dropdown close by clicking outside of it                                                                                                                                                                                                                                        |
