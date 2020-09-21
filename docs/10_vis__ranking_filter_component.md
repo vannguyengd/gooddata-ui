@@ -13,7 +13,7 @@ The **Ranking Filter component** is a dropdown component that allows you to crea
 
 ```jsx
 import "@gooddata/sdk-ui-filters/styles/css/main.css";
-import { MeasureValueFilter } from "@gooddata/sdk-ui-filters";
+import { RankingFilter } from "@gooddata/sdk-ui-filters";
 
 <RankingFilter
   onApply={<on-apply-callback>}
