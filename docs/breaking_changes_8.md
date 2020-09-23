@@ -38,9 +38,9 @@ The only styling changes in Version 8.0 are those that were needed to reflect th
 
 To adopt this change, import the stylesheets from the respective package:
 
--  `@gooddata/sdk-ui-charts/styles/main.css`
--  `@gooddata/sdk-ui-pivot/styles/main.css`
--  `@gooddata/sdk-ui-filters/styles/main.css`
+-  `@gooddata/sdk-ui-charts/styles/css/main.css`
+-  `@gooddata/sdk-ui-pivot/styles/css/main.css`
+-  `@gooddata/sdk-ui-filters/styles/css/main.css`
 
     This imports styles for all filter components. If you are not using all the filter components in your application, 
     import only the styles for the components that you use: `attributeFilter.css`, `dateFilter.css`, or `measureValueFilter.css`.
