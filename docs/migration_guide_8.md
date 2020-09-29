@@ -45,10 +45,10 @@ you will find them in `api-model`.
 
 Instead of importing stylesheets from the react-components package, switch to using the following:
 
-* `@gooddata/sdk-ui-charts/styles/main.css`
-* `@gooddata/sdk-ui-pivot/styles/main.css`
-* `@gooddata/sdk-ui-filters/styles/main.css`
-* `@gooddata/sdk-ui-ext/styles/main.css`
+* `@gooddata/sdk-ui-charts/styles/css/main.css`
+* `@gooddata/sdk-ui-pivot/styles/css/main.css`
+* `@gooddata/sdk-ui-filters/styles/css/main.css`
+* `@gooddata/sdk-ui-ext/styles/css/main.css`
 
 Apart from their location, the styles remain the same.
 
@@ -84,10 +84,12 @@ set up the analytical backend:
 
 3.  Wrap your React application with BackendProvider:
 
-	```jsx
+	 ```jsx
+    import { BackendProvider } from "@gooddata/sdk-ui";
+
     <BackendProvider backend={backend}>
 		<YourApplicationTree />
-	</BackendProvider>
+	 </BackendProvider>
     ```
 
     If you were explicitly passing the `sdk` prop to the React components, remove the prop.
@@ -101,12 +103,14 @@ If you are using TypeScript, you can rely on the compiler to report breaking cha
     You can either manually rename all instances of the `projectId` prop to `workspace` or wrap your component tree using WorkspaceProvider:
     
     ```jsx
+   import {  WorkspaceProvider } from "@gooddata/sdk-ui";
+
     <WorkspaceProvider workspace={“yourWorkspace”}>
         <YourApplication />
     </WorkspaceProvider>
     ```
 
--   The drilling API has changed. The onFiredDrillEvent has been renamed to "onDrill", and the payload of the drill events 
+-   The drilling API has changed. The onFiredDrillEvent has been renamed to `onDrill`, and the payload of the drill events 
     has changed in a breaking way. The intersections now contain more detailed information, and the execution context has been 
     replaced with `dataView`.
 
