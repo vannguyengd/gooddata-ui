@@ -29,7 +29,6 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
     <InsightView
         uri="<visualization-uri>"
         config={<chart-config>}
-        sdk={<sdk>}
     />
 </div>
 ```
