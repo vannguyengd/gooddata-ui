@@ -60,7 +60,7 @@ class Versions extends React.Component {
     return (<td>&mdash;</td>);
   }
 
-  renderMigrationGuide(version) {
+  renderMigrationGuide(version, prerelease) {
     const semVer = version.split('.');
     const majorVersion = parseInt(semVer[0]);
     const minorVersion = parseInt(semVer[1]);
@@ -69,7 +69,7 @@ class Versions extends React.Component {
     if (minorVersion === 0 && patchVersion === 0 && majorVersion > 4) {
       return (
         <td>
-          <a href={this.docUrl(`migration_guide_${majorVersion}.html`, '')}>Migration Guide</a>
+          <a href={this.docUrl(`migration_guide_${majorVersion}.html`, prerelease ? 'next' : '')}>Migration Guide</a>
         </td>
       );
     }
@@ -170,7 +170,7 @@ class Versions extends React.Component {
                   <td>
                     <a href={this.docUrl('about_gooddataui.html', 'next')}>Documentation</a>
                   </td>
-                  { this.renderMigrationGuide("8.0.0") }
+                  { this.renderMigrationGuide("8.0.0", true) }
                 </tr>
               </tbody>
             </table>
