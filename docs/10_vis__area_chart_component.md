@@ -22,7 +22,6 @@ import { AreaChart } from '@gooddata/sdk-ui-charts';
 <AreaChart
     measures={<measures>}
     config={<chart-config>}
-    sdk={<sdk>}
     …
 />
 ```

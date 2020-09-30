@@ -23,6 +23,8 @@ import { PivotTable } from '@gooddata/sdk-ui-pivot';
 
 <PivotTable
     measures={<measures>}
+    rows={<rows>}
+    columns={<columns>}
     …
 />
 ```
@@ -75,11 +77,16 @@ You can [sort](50_custom__result.md#sorting) rows and attribute columns in any p
 ```jsx
 import '@gooddata/sdk-ui-pivot/styles/css/main.css';
 import { PivotTable } from '@gooddata/sdk-ui-pivot';
-import { newMeasureSort } from "@gooddata/sdk-model";
+import { newMeasureSort, newAttributeLocator } from "@gooddata/sdk-model";
 import { Ldm } from "./ldm";
+import { monthDateIdentifierJanuary } from "./ldm/ext";
 
 const sortBy = [
-    newMeasureSort(Ldm.$FranchiseFees, "desc", newAttributeLocator(Ldm.DateMonth.Short, monthDateIdentifierJanuary))
+    newMeasureSort(
+        Ldm.$FranchiseFees,
+        "desc",
+        [newAttributeLocator(Ldm.DateMonth.Short, monthDateIdentifierJanuary)]
+    )
 ];
 
 <div style={{ height: 300 }}>
@@ -152,10 +159,10 @@ You can create these items using the following factory functions:
 -  `newWidthForAllColumnsForMeasure` sets the width of all columns for a particular measure.
 -  `newWidthForSelectedColumns` sets the width for one or more columns specified by the locators.
 
-The factory functions are exported from the `@gooddata/sdk-ui-pivot` package. 
+The factory functions are exported from the `@gooddata/sdk-ui-pivot` package.
 
 ```jsx
-const config = { 
+const config = {
     columnSizing: {
        columnWidths: [
             newWidthForAttributeColumn(Ldm.Date, 100),
@@ -187,7 +194,7 @@ const config = {
     A change of the column width calls the provided callback function with all the current column width definitions as a parameter.
 * To set the same width for all measure columns, use the width item created by the `newWidthForAllMeasureColumns` function:
     ```jsx
-    const config = { 
+    const config = {
       columnSizing: {
         columnWidths: [
             newWidthForAllMeasureColumns(200)
