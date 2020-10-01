@@ -1,22 +1,22 @@
 ---
-title: Export Catalog 
-sidebar_label: Export Catalog 
+title: Export Catalog
+sidebar_label: Export Catalog
 copyright: (C) 2007-2018 GoodData Corporation
 id: gdc_catalog_export
 ---
 
-GoodData.UI visual components render data stored in your GoodData platform projects. Your application specifies what 
-data to render by referencing the Logical Data Model (LDM) objects: attributes, display forms, facts, and measures. 
+GoodData.UI visual components render data stored in your GoodData platform projects. Your application specifies what
+data to render by referencing the Logical Data Model (LDM) objects: attributes, display forms, facts, and measures.
 
-To simplify this task, GoodData.UI offers the `@gooddata/catalog-export` tool. `@gooddata/catalog-export` exports a 
-list of catalog items and date datasets from a GoodData project into JavaScript or TypeScript code. The generated code 
+To simplify this task, GoodData.UI offers the `@gooddata/catalog-export` tool. `@gooddata/catalog-export` exports a
+list of catalog items and date datasets from a GoodData project into JavaScript or TypeScript code. The generated code
 contains exported constant-per-LDM-object.
 
 Using this generated code, you can create charts and execution definitions in a very efficient and natural way.
 
 ## Installing @gooddata/catalog-export
 
-We recommend that you include `catalog-export` as a devDependency of your application and define an NPM script `refresh-ldm` to
+We recommend that you include `@gooddata/catalog-export` as a devDependency of your application and define an NPM script `refresh-ldm` to
 run the program.
 
 To install the stable version, run one of the following commands **depending on your package manager**:
@@ -40,7 +40,7 @@ $ npm install @gooddata/catalog-export --save-dev
 
 This is how it works:
 
-1.  The program searches the current directory for the `.gdcatalogrc` config file. If found, the program reads input parameters from this file. 
+1.  The program searches the current directory for the `.gdcatalogrc` config file. If found, the program reads input parameters from this file.
 
     The configuration file must be in the JSON format. It can contain any or all parameters that you would normally provide on the command line:
 
@@ -57,10 +57,10 @@ This is how it works:
     **NOTE:** TypeScript, JavaScript or JSON output files are generated based on the filename extension specified in the output parameter.
 
 2.  The program reads input parameters from the command line. To learn more about the available parameters, run the following command:
-    
-    `npx catalog-export --help`
 
-    Parameters provided via the command line take precedence over the corresponding parameters in the config file. 
+    `npx @gooddata/catalog-export --help`
+
+    Parameters provided via the command line take precedence over the corresponding parameters in the config file.
 
 3.  If all required parameters are entered, the program runs and exports the metadata from the workspace. If any parameter is missing, the program will prompt you to enter it.
 
@@ -106,11 +106,11 @@ In addition, the existing catalog file is renamed to `catalogue.json.bak`, and t
 
 ### Limitations
 
-`catalog-export` exports only data from a project \(production data\). 
+`@gooddata/catalog-export` exports only data from a project \(production data\).
 
-If you [uploaded data to your project from a file](https://help.gooddata.com/display/doc/Add+Data+from+a+File+to+a+Project), the data from the file is added as a separate dataset \(non-production data\), and `catalog-export` cannot retrieve it. This also includes any measures that were created using the data from that separate dataset.
+If you [uploaded data to your project from a file](https://help.gooddata.com/display/doc/Add+Data+from+a+File+to+a+Project), the data from the file is added as a separate dataset \(non-production data\), and `@gooddata/catalog-export` cannot retrieve it. This also includes any measures that were created using the data from that separate dataset.
 
-### Example 
+### Example
 
 Attributes with multiple display forms (labels) are generated into a constant such as this:
 
