@@ -44,6 +44,9 @@ This article describes the options for configuring a chart.
     dataLabels: {
         visible: 'auto' // 'auto' | true | false
     },
+    dataPoints: {
+        visible: true // 'auto' | true | false
+    },
     grid: {
         enabled: true // boolean
     },
@@ -224,7 +227,7 @@ Within one visualization, the `colorMapping` property overrides the `colorPalett
 
 ## Change legend visibility and position
 
-* To hide the legend, set the `config.legend.enabled` property to `false`.
+* To hide the legend, set `config.legend.enabled` to `false`.
 * To change the legend position, adjust the `config.legend.position` property \(`'left'`/`'right'`/`'top'`/`'bottom'`\).
 
 ```jsx
@@ -275,7 +278,7 @@ The properties listed in this section are specific to the **X** axis. To get the
 * To show measures on a secondary axis, set `config.secondary_xaxis.measures` to the measures that you want to display. If `config.secondary_xaxis.measures` is not set, all measures are displayed on the main axis by default.
 * To hide the axis name, set `config.xaxis.name.visible` to `false`. If not set, it defaults to `true` (the axis name is visible).
 * To set the axis name position, set `config.xaxis.name.position` to one of the possible values: `low`, `middle`, `high`.
-    
+
     **NOTE:** If the axis represents more than one attribute/measure, the `config.xaxis.name.visible` and `config.xaxis.name.position` properties are both ignored, and the axis name is hidden.
 
 ```jsx
@@ -312,7 +315,11 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
 
 ## Configure canvases
 
-To configure data labels, set the `config.dataLabels` property.
+* To configure data labels, set the `config.dataLabels` property.
+* To hide data points from a chart, set `config.dataPoints` to `false`. This applies to the following types of charts:
+    * [Line charts](10_vis__line_chart_component.md)
+    * [Area charts](10_vis__area_chart_component.md)
+    * [Combo charts](10_vis__combo_chart_component.md) with at least one of the combined charts being a [line chart](10_vis__line_chart_component.md) or an [area chart](10_vis__area_chart_component.md).
 
 ```jsx
 import { InsightView } from '@gooddata/sdk-ui-ext';
@@ -322,6 +329,7 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
     identifier=<InsightView-id>
     config={{
         dataLabels: true,
+        dataPoints: false,
         grid: {
             enabled: false
         }
@@ -336,7 +344,7 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
     * [Bar charts](10_vis__bar_chart_component.md)
     * [Column charts](10_vis__column_chart_component.md)
     * [Combo charts](10_vis__combo_chart_component.md)
-    
+
          **NOTE:** In combo charts using column or area charts, stacking is applied only to the measures shown on the left axis.
     * Charts with the [secondary axis](#Configure-axes)
 * To display the total contribution of each measure, enable `config.stackMeasures`.
@@ -344,7 +352,7 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
     * For bar charts, column charts, and charts with the secondary axis, `config.stackMeasures` is ignored when the chart has only one measure.
 * To display the percentage contribution of each measure, enable `config.stackMeasuresToPercent`.
     * If both `config.stackMeasuresToPercent` and `config.stackMeasures` are present, `config.stackMeasuresToPercent` overwrites `config.stackMeasures`.
-    * For charts with the secondary axis, `config.stackMeasuresToPercent` is applied only to the left axis. 
+    * For charts with the secondary axis, `config.stackMeasuresToPercent` is applied only to the left axis.
 
 ```jsx
 import { InsightView } from '@gooddata/sdk-ui-ext';
