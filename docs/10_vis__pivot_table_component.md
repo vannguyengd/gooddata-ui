@@ -40,7 +40,9 @@ import '@gooddata/sdk-ui-pivot/styles/css/main.css';
 import { PivotTable } from '@gooddata/sdk-ui-pivot';
 import { Ldm } from "./ldm";
 
-<div style={{ height: 300 }}>
+const style = { height: 300 };
+
+<div style={style}>
     <PivotTable
         measures={[Ldm.$FranchiseFees]}
         rows={[Ldm.LocationState]}
@@ -58,7 +60,9 @@ import '@gooddata/sdk-ui-pivot/styles/css/main.css';
 import { PivotTable } from '@gooddata/sdk-ui-pivot';
 import { Ldm } from "./ldm";
 
-<div style={{ height: 300 }}>
+const style = { height: 300 };
+
+<div style={style}>
     <PivotTable
         measures={[Ldm.$FranchiseFees]}
         rows={[Ldm.LocationState]}
@@ -89,7 +93,9 @@ const sortBy = [
     )
 ];
 
-<div style={{ height: 300 }}>
+const style = { height: 300 };
+
+<div style={style}>
     <PivotTable
         measures={[Ldm.$FranchiseFees]}
         rows={[Ldm.LocationState]}

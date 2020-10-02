@@ -9,7 +9,7 @@ comment: This has to be here for old versions, versions >= 8 do not link to this
 GoodData.UI provides a tool named [gdc-catalog-export](02_start__catalog_export.md) that can help you keep the list of object identifiers organized in a Javascript file within your application.
 
 **Example:**
-In the tutorial [Create Your First Application](ht_create_your_first_visualization.html), you used the following component:
+In the tutorial [Create Your First Application](02_start__no_boilerplate.md), you used the following component:
 
 ```javascript
 const measures = [
@@ -28,7 +28,9 @@ const measures = [
     }
 ];
 
-<div style={{ height: 300 }}>
+const style = { height: 300 };
+
+<div style={style}>
   <LineChart
       projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
       measures={measures}

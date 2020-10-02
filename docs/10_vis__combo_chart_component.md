@@ -34,9 +34,10 @@ import '@gooddata/sdk-ui-charts/styles/css/main.css';
 import { ComboChart } from '@gooddata/sdk-ui-charts';
 import { Ldm } from "./ldm";
 
-<div style={{ height: 300 }}>
+const style = { height: 300 };
+
+<div style={style}>
     <ComboChart
-        projectId={projectId}
         primaryMeasures={Ldm.$FranchiseFeesInitialFranchiseFee}
         secondaryMeasures={Ldm.$FranchiseFeesAdRoyalty}
         viewBy={Ldm.LocationResort}

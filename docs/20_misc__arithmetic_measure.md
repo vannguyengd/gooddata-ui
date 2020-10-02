@@ -22,9 +22,9 @@ The following arithmetic operations are supported:
 | Ratio | `ratio` |  =A÷B | = gross profit / net sales
 | Change | `change` |  =(A-B)÷B | = (this month revenue - last month revenue) / last month revenue
 
-By default, the result data of a `change` operation is returned as a percentage in the `#,##0.00%` format. The format cannot be overridden. 
+By default, the result data of a `change` operation is returned as a percentage in the `#,##0.00%` format. The format cannot be overridden.
 
-All the other operations return data in the default `#,##0.00` format. 
+All the other operations return data in the default `#,##0.00` format.
 To change the format, use the `format` attribute of the measure (see the [examples](#examples)).
 
 ## Arithmetic measure structure
@@ -67,8 +67,8 @@ const measures = [
     newMeasure('boughtProductsIdentifier', m => m.alias('Bought products from supplier')),
     newMeasure('soldProductsLocalIdentifier', m => m.alias('Sold products to customers')),
     newArithmeticMeasure(
-        ['boughtProductsLocalIdentifier', 'soldProductsLocalIdentifier'], 
-        'difference', 
+        ['boughtProductsLocalIdentifier', 'soldProductsLocalIdentifier'],
+        'difference',
         m => m.alias('Products remaining in warehouse')
     )
 ];
@@ -100,7 +100,6 @@ const measures = [
 ];
 
 <PivotTable
-    projectId={projectId}
     measures={measures}
 />
 ```

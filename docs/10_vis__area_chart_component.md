@@ -33,7 +33,9 @@ import '@gooddata/sdk-ui-charts/styles/css/main.css';
 import { AreaChart } from '@gooddata/sdk-ui-charts';
 import {Ldm} from "./ldm";
 
-<div style={{ height: 300 }}>
+const style = { height: 300 };
+
+<div style={style}>
     <AreaChart
         measures={[Ldm.$FranchiseFees]}
         viewBy={Ldm.DateMonth.Short}

@@ -16,23 +16,23 @@ You can compare data to:
 > We do not recommend that you create a derived measure from an [arithmetic measure](20_misc__arithmetic_measure.md) that refers to another derived measure. The resulting derived measure may be hard to interpret.
 
 ## Comparing to the same period (SP) previous year
- 
+
 **Time shift**: -1 year
 
 **Period**: 1 year
- 
+
 To add a SP derived measure to a visualization, use the following `newPopMeasure` factory function:
- 
+
 ```javascript
 newPopMeasure(masterMeasureOrLocalId, overPeriodAttributeId, modifications)
 ```
 
 where:
- 
+
 -  `masterMeasureOrLocalId` is the measure with data to compare; specify either the measure's `localIdentifier` or the measure itself.
 -  `overPeriodAttributeId` is the identifier of the date dimension year attribute to use for the shift.
 -  `modifications` is a function that receives an object with functions to customize `format()` and `alias()`.
- 
+
 
 ### Example
 
@@ -51,16 +51,16 @@ const measures = [
 <PivotTable
     measures={measures}
 />
-```  
- 
+```
+
 ## Comparing to the previous period (PP)
 
 **Time shift**: a specified number of periods
 
-**Period**: defined by global [date filters](filter_visual_components.html#date-filter) referenced by the date dataset URI or identifier in the derived measure definition
+**Period**: defined by global [date filters](30_tips__filter_visual_components.md#date-filter) referenced by the date dataset URI or identifier in the derived measure definition
 
-* For an [absolute date filter](filter_visual_components.html#absolute-date-filter), the period is N days.
-* For a [relative date filter](filter_visual_components.html#relative-date-filter), the period can be N days, weeks, months, quarters, or years depending on the selected granularity.
+* For an [absolute date filter](30_tips__filter_visual_components.md#absolute-date-filter), the period is N days.
+* For a [relative date filter](30_tips__filter_visual_components.md#relative-date-filter), the period can be N days, weeks, months, quarters, or years depending on the selected granularity.
 
 If no global date filter is defined, the derived measure returns the same data as the master measure.
 
@@ -90,7 +90,7 @@ const filters = [
 const masterMeasure = newMeasure('measureIdentifier', m => m.alias("Master Measure"));
 // derived - previous 7 days measure
 const previousPeriod = newPreviousPeriodMeasure(
-                            masterMeasure, 
+                            masterMeasure,
                             { dataSet: 'dateDatasetIdentifier', periodsAgo: 1},
                             m => m.alias("Previous Period Measure")
                         );
@@ -107,13 +107,13 @@ const measures = [
 ```
 ### Comparison to the PP and absolute date filters
 
-Be careful when combining comparison to the PP with an [absolute date filter](filter_visual_components.html#absolute-date-filter).
+Be careful when combining comparison to the PP with an [absolute date filter](30_tips__filter_visual_components.md#absolute-date-filter).
 For example, when filtering from March 1 to March 31, the previous period is the previous 31 days and **not** the previous month.
-For comparing over a period other than a day, use a [relative date filter](filter_visual_components.html#relative-date-filter) with the required granularity (month, quarter).
+For comparing over a period other than a day, use a [relative date filter](30_tips__filter_visual_components.md#relative-date-filter) with the required granularity (month, quarter).
 
 ## Time over time comparison and week date filters
 
-If you use [date filters by _weeks_](filter_visual_components.md#relative-date-filter) and compare the data to the previous period or the same period of the last year in those filters, you have to enable the GoodData platform to properly process such week filters. To do so, complete the following steps:
+If you use [date filters by _weeks_](30_tips__filter_visual_components.md#relative-date-filter) and compare the data to the previous period or the same period of the last year in those filters, you have to enable the GoodData platform to properly process such week filters. To do so, complete the following steps:
 
 1. Switch the version of the [Extensible Analytics Engine](https://help.gooddata.com/display/doc/XAE+-+Extensible+Analytics+Engine) to 3.
 

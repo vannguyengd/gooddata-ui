@@ -30,9 +30,10 @@ import '@gooddata/sdk-ui-charts/styles/css/main.css';
 import { Treemap } from '@gooddata/sdk-ui-charts';
 import { Ldm } from "./ldm";
 
-<div style={{ height: 300 }}>
+const style = { height: 300 };
+
+<div style={style}>
     <Treemap
-        projectId={projectId}
         measures={[Ldm.NrChecks]}
         viewBy={Ldm.LocationState}
         segmentBy={Ldm.LocationCity}
