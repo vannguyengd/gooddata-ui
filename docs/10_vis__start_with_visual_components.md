@@ -39,7 +39,9 @@ You can find more information about data props in the articles about individual 
 
 ### Example
 ```js
-<div style={{ height: 300 }}>
+const style = { height: 300 };
+
+<div style={style}>
     <AreaChart
         measures={[Ldm.$TotalSales]}
         viewBy={Ldm.TimelineMonth.Long}

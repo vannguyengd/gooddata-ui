@@ -28,10 +28,15 @@ import { DonutChart } from '@gooddata/sdk-ui-charts';
 import '@gooddata/sdk-ui-charts/styles/css/main.css';
 import { DonutChart } from '@gooddata/sdk-ui-charts';
 
-<div style={{ height: 300 }}>
+const style = { height: 300 };
+
+<div style={style}>
     <DonutChart
-        projectId={projectId}
-        measures={[Ldm.$FranchiseFeesAdRoyalty, Ldm.$FranchiseFeesInitialFranchiseFee, Ldm.$FranchiseFeesOngoingRoyalty]}
+        measures={[
+            Ldm.$FranchiseFeesAdRoyalty,
+            Ldm.$FranchiseFeesInitialFranchiseFee,
+            Ldm.$FranchiseFeesOngoingRoyalty
+        ]}
     />
 </div>
 ```
