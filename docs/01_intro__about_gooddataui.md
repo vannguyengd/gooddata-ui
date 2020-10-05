@@ -5,16 +5,16 @@ sidebar_label: About GoodData.UI
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
-GoodData.UI is a TypeScript framework for building analytical applications on top of the GoodData platform. 
+GoodData.UI is a TypeScript framework for building analytical applications on top of the GoodData platform.
 
-GoodData.UI consists of multiple libraries with clear-cut responsibilities ranging from low-level REST API 
+GoodData.UI consists of multiple libraries with clear-cut responsibilities ranging from low-level REST API
 clients up to visualization libraries that deliver React-based components to render different types of charts and tables.
 
 With GoodData.UI, you can:
 
-* Create utility programs that interact directly with the GoodData platform APIs (for example, to automate routine 
+* Create utility programs that interact directly with the GoodData platform APIs (for example, to automate routine
   maintenance and management tasks).
-   
+
 * Create visualizations of data stored on the GoodData platform using [visual components](10_vis__start_with_visual_components.md).
 
 * Embed insights created in Analytical Designer using [InsightView](10_vis__insight_view.md).
@@ -23,15 +23,13 @@ With GoodData.UI, you can:
 
 This documentation is intended for front-end software developers and requires JavaScript knowledge.
 
-## Supported technologies - TODO: UPDATE
+## Supported technologies
 
 GoodData.UI is compatible with:
 
-* React 16.5.2, [Angular 1.X](30_tips__use_angular_1.x.md), [Angular 2+](30_tips__use_angular_2.x.md)
-* TypeScript 3.3.4000+, ES6, ES5
-
-    **NOTE:** The _latest_ supported version of `@types/react-intl` used within a TypeScript project is 2.3.5. Using a later version may result in errors.
-* Node ^8.10.0 or >=9.10.0
+* React >=16.8.0, [Angular 9+](30_tips__use_angular_2.x.md)
+* TypeScript >=3.3.4000, ES6, ES5
+* Node ^12.15.0 LTS
 * [Officially supported browsers](https://help.gooddata.com/display/doc/System+Requirements+and+Supported+Browsers)
 
 **NOTE:** [Server-side rendering](https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md) is *not* supported.

@@ -210,8 +210,8 @@
         "sidebar_label": "Use Angular 1.x"
       },
       "ht_use_react_component_in_angular_2.x": {
-        "title": "Use Angular 2+",
-        "sidebar_label": "Use Angular 2+"
+        "title": "Use Angular 9+",
+        "sidebar_label": "Use Angular 9+"
       },
       "ht_render_visualization_from_different_domain": {
         "title": "Access Multiple Domains and Projects",
