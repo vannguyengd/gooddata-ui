@@ -26,61 +26,61 @@ GoodData supports SAML 2.0-based and PGP-based authentication. For more informat
 
 Setting up authentication depends on what type of SSO is implemented on your site.
 
-* If you use the [GoodData PGP SSO](https://help.gooddata.com/display/doc/GoodData+PGP+Single+Sign-On) implementation, you can use the `loginSSO` method from [GoodData Javascript SDK](https://github.com/gooddata/gooddata-js). Note that although this method requires a mandatory parameter of `targetUrl`, this parameter is used very rarely in the context of GoodData.UI, because in a typical scenario there is no need to redirect a user to any GoodData URL. But as this parameter is mandatory, set it to an arbitrary relative URL (for example, `/`).
+* If you use the [GoodData PGP SSO](https://help.gooddata.com/display/doc/GoodData+PGP+Single+Sign-On) implementation, you can use the `loginSSO` method from [`@gooddata/api-client-bear`](https://github.com/gooddata/gooddata-ui-sdk/tree/master/libs/api-client-bear). Note that although this method requires a mandatory parameter of `targetUrl`, this parameter is used very rarely in the context of GoodData.UI, because in a typical scenario there is no need to redirect a user to any GoodData URL. But as this parameter is mandatory, set it to an arbitrary relative URL (for example, `/`).
 
-        ```javascript
-        import { factory } from '@gooddata/gooddata-js';
+    ```javascript
+    import { factory } from '@gooddata/api-client-bear';
 
-        const domain = 'https://my.app.com/';
-        const sdk = factory({ domain });
-        const encryptedClaims = 'your-generated-encrypted-claims';
-        const ssoProvider = 'your-sso-provider-name';
-        const targetUrl = 'your-target-url'; // set to an arbitrary relative URL
+    const domain = 'https://my.app.com/';
+    const sdk = factory({ domain });
+    const encryptedClaims = 'your-generated-encrypted-claims';
+    const ssoProvider = 'your-sso-provider-name';
+    const targetUrl = 'your-target-url'; // set to an arbitrary relative URL
 
-        sdk.user
-         .loginSso(encryptedClaims, ssoProvider, targetUrl)
-         .then(() => {
-           // now you are logged in, and calls to GoodData will be authorized
-         })
-         .catch(error => {
-           // something went wrong, see the browser console for details
-           console.error(error);
-         });
-        ```
+    sdk.user
+      .loginSso(encryptedClaims, ssoProvider, targetUrl)
+      .then(() => {
+        // now you are logged in, and calls to GoodData will be authorized
+      })
+      .catch(error => {
+        // something went wrong, see the browser console for details
+        console.error(error);
+      });
+    ```
 
 * If you use a [SAML SSO](https://help.gooddata.com/display/doc/SAML+SSO+with+GoodData) implementation with the **Service Provider-initiated** scenario, obtain the value of the `loginUrl` parameter from `/gdc/account/samlrequest` and use this URL to get logged in.
 
     `/gdc/account/samlrequest` also contains the `relayState` parameter that should point to the URL where your application runs (the page where the user is redirected after a successful login).
 
-        ```
-        {
-          "samlRequests": {
-            "items": [ {
-              "samlRequest": {
-                "loginUrl": "https://yourIdentityProvider.com/pathToSAMLResource?SAMLRequest=encodedMessage&RelayState=https%3A%2F%2FyourRelayState.com",
-                "ssoProvider": "yourSsoProvider.com"
-              }
-            } ]
+    ```json
+    {
+      "samlRequests": {
+        "items": [ {
+          "samlRequest": {
+            "loginUrl": "https://yourIdentityProvider.com/pathToSAMLResource?SAMLRequest=encodedMessage&RelayState=https%3A%2F%2FyourRelayState.com",
+            "ssoProvider": "yourSsoProvider.com"
           }
-        }
-        ```
+        } ]
+      }
+    }
+    ```
 
     The following is an example of login code:
 
-        ```javascript
-        import sdk from '@gooddata/gooddata-js';
-        import qs from 'qs';
+    ```javascript
+    import sdk from '@gooddata/api-client-bear';
+    import qs from 'qs';
 
-        const relayState = 'https://my.app.com/';
+    const relayState = 'https://my.app.com/';
 
-        sdk.xhr
-          .get(`/gdc/account/samlrequest?${qs.stringify({ relayState })}`)
-          .then(data => data.getData())
-          .then(response => {
-            const loginUrl = response.samlRequests.items[0].samlRequest.loginUrl;
-            window.location.assign(loginUrl);
-          });
-        ```
+    sdk.xhr
+      .get(`/gdc/account/samlrequest?${qs.stringify({ relayState })}`)
+      .then(data => data.getData())
+      .then(response => {
+        const loginUrl = response.samlRequests.items[0].samlRequest.loginUrl;
+        window.location.assign(loginUrl);
+      });
+    ```
 
     **NOTE:** Service Provider-initiated SSO cannot be used if you are using a development proxy due to proxy limitations.
 
@@ -95,21 +95,21 @@ This is how authentication process works:
     `https://my.app.com/`
 2. Your application verifies whether the user is logged in. For example:
 
-        ```javascript
-        import { factory } from '@gooddata/gooddata-js';
+    ```javascript
+    import { factory } from '@gooddata/api-client-bear';
 
-        const domain = 'https://my.app.com/';
-        const sdk = factory({ domain });
+    const domain = 'https://my.app.com/';
+    const sdk = factory({ domain });
 
-        sdk.user.isLoggedIn().then((isLogged) => {
-          if (isLogged) {
-            // write your own application logic for logged-in users here
-          } else {
-            // redirect to the login page providing the URL to redirect to upon a successful login
-            window.location.replace(`${domain}/account.html?lastUrl=${encodeURIComponent(window.location)}`);
-          }
-        });
-        ```
+    sdk.user.isLoggedIn().then((isLogged) => {
+      if (isLogged) {
+        // write your own application logic for logged-in users here
+      } else {
+        // redirect to the login page providing the URL to redirect to upon a successful login
+        window.location.replace(`${domain}/account.html?lastUrl=${encodeURIComponent(window.location)}`);
+      }
+    });
+    ```
       **NOTE:** If you want to pass multiple arguments in `lastUrl`, protect them by using `encodeURIComponent`.
 3. If the user is not logged in, the application redirects the user to the GoodData login page (white-labeled with your domain name) with the appended `lastUrl` parameter that points to the URL where your analytical application runs:
 
