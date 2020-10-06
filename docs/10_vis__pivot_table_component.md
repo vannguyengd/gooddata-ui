@@ -139,15 +139,18 @@ To avoid this gap, specify the maximum height of the table using the `maxHeight`
 
 By default, the width of the columns is not set, and all columns have the same fixed width regardless of the actual content.
 
-To automatically resize the columns to fit their content, add the `columnSizing` prop and set it to `defaultWidth: "viewport"`:
+To automatically resize the columns to fit their content, add the `columnSizing` prop and set it to `defaultWidth: "autoresizeAll"`:
 ```jsx
 columnSizing: {
-    defaultWidth: "viewport"
+    defaultWidth: "autoresizeAll"
 }
 ```
+
+> Before Version 8.0, you could set up the auto resizing using `defaultWidth: "viewport"` (see [Pivot Table](https://sdk.gooddata.com/gooddata-ui/docs/pivot_table_component.html#auto-resizing) in the Version 7.8 documentation). While it is still supported, we strongly recommend that you use `defaultWidth: "autoresizeAll"` because `defaultWidth: "viewport"` will be deprecated in one of the the next versions.
+
 * The size is calculated based on the content in the header of the column that represents the lowest level of the grouped attributes (see [Grouping](#grouping)). If this is not applicable, the size is calculated based on the content in the header of the column with the measure name and the cells with the measure values.
 * The maximum column width is 500 px.
-* Only the columns that are visible during the initial rendering of the table are automatically resized to fit their content.
+* All the columns are automatically resized to fit their content.
 * New columns (that is, those that are shown after the initial render) are resized only if the table has not been vertically or horizontally scrolled. This is useful especially for responsive tables with a dynamic width.
 * A change of attributes, measures, filters, or totals in the table is handled as a new table. After the change is made, the column size is re-calculated based on the new data.
 * Scrolling horizontally or vertically and sorting values in a column do not affect the column width.
@@ -235,7 +238,7 @@ To combine auto resizing and manual resizing, add both the `defaultWidth` and `c
 ```jsx
 const config = {
     columnSizing: {
-        defaultWidth: "viewport",
+        defaultWidth: "autoresizeAll",
         columnWidths: [
             newWidthForAttributeColumn(Ldm.Date, 100),
             newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], 200),
@@ -252,7 +255,7 @@ const config = {
 ```jsx
 const config = {
     columnSizing: {
-        defaultWidth: "viewport",
+        defaultWidth: "autoresizeAll",
         columnWidths: [
             newWidthForAllMeasureColumns(200),
             newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], "auto"),
@@ -270,7 +273,7 @@ const config = {
 ```jsx
 const config = {
     columnSizing: {
-        defaultWidth: "viewport",
+        defaultWidth: "autoresizeAll",
         columnWidths: [
             newWidthForAllMeasureColumns(200),
             newWidthForAllColumnsForMeasure(Ldm.$TotalSales, 200),
@@ -287,7 +290,7 @@ To make the currently visible columns take the available screen space, add the `
 ```jsx
 const config = {
     columnSizing: {
-        defaultWidth: "viewport",
+        defaultWidth: "autoresizeAll",
         growToFit: true
     }
 }
@@ -295,7 +298,7 @@ const config = {
 
 **NOTES:**
 * This behavior is not applied to the [manually resized columns](#manual-resizing). It is applied only to the columns that are **not** inside the `columnWidths` object.
-* If [auto resizing](#auto-resizing) is enabled, the columns that are visible during the initial rendering of the table are automatically resized to fit their content. If these columns do not fit the screen, they will be resized to fill up the container.
+* If [auto resizing](#auto-resizing) is enabled, the columns are automatically resized to fit their content. If these columns do not fit the screen, they will be resized to fill up the container.
 
 ### Resizing a column to a custom width
 
@@ -334,7 +337,7 @@ const config = {
     The new column width is propagated via the `onColumnResized` callback array.
 
 **NOTES:**
-* This behavior is not applied if [auto resizing](#auto-resizing) is enabled and you double-click a column that was visible and auto-resized at the initial rendering and then its width was manually adjusted in the UI. Such column is removed from the `onColumnResized` callback array.
+* This behavior is not applied if [auto resizing](#auto-resizing) is enabled and you double-click a column that was auto-resized at the initial rendering and then its width was manually adjusted in the UI. Such column is removed from the `onColumnResized` callback array.
 * If [auto resizing](#auto-resizing) is enabled, and `columnWidths` includes the `newWidthForAllMeasureColumns` or `newWidthForAllColumnsForMeasure` items, and you double-click a measure column, the `newWidthForSelectedColumns` item with `width` set to `"auto"` is added to the `onColumnResized` callback array.
 
 ### Resizing all measure columns at once to fit their content
@@ -388,7 +391,7 @@ const config = {
         decimal: "."
     },
     columnSizing: {
-        defaultWidth: "viewport",
+        defaultWidth: "autoresizeAll",
         columnWidths: [
             newWidthForAttributeColumn(Ldm.Date, 100),
             newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], 200),
