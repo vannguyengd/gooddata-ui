@@ -133,12 +133,12 @@ GDRC.ReactContentRenderer.render(
    GDRC.Kpi,
    // props to be passed to the Kpi component
    {
-     projectId: 'kf0vsjlf9mll0osg6hmtppgm1nkjsi9r',
-     measure: 'aqyCuRZbheEx',
-     format: '#,##0'
+     projectId: "kf0vsjlf9mll0osg6hmtppgm1nkjsi9r",
+     measure: "aqyCuRZbheEx",
+     format: "#,##0"
    },
    // target DOM node
-   document.getElementById('kpi')
+   document.getElementById("kpi")
  );
 }
 

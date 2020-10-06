@@ -125,6 +125,6 @@ If you want to use your own custom button for toggling the filter dropdown, use 
 The component has all the same properties as the Measure Value Filter component (see [Properties](#Properties)) with the following exceptions:
 * The `buttonTitle` property is irrelevant for the  Measure Value Filter Dropdown component.
 * The `onCancel` property is mandatory for the  Measure Value Filter Dropdown component, because it is supposed to be used to hide the dropdown.
-* The Measure Value Filter Dropdown component has one additional property, `anchorEl`. This optional property specifies the element that the dropdown is aligned to, which is typically your toggle button. The property can be an event target or a string and defaults to `'body'`.
+* The Measure Value Filter Dropdown component has one additional property, `anchorEl`. This optional property specifies the element that the dropdown is aligned to, which is typically your toggle button. The property can be an event target or a string and defaults to `"body"`.
 
 Check out our [live examples](https://github.com/gooddata/gooddata-ui-sdk/tree/master/examples/sdk-examples) for demonstration.

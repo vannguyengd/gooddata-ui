@@ -12,8 +12,8 @@ A **line chart** shows data as line-connected dots. Line charts can display eith
 ## Structure
 
 ```jsx
-import '@gooddata/sdk-ui-charts/styles/css/main.css';
-import { LineChart } from '@gooddata/sdk-ui-charts';
+import "@gooddata/sdk-ui-charts/styles/css/main.css";
+import { LineChart } from "@gooddata/sdk-ui-charts";
 
 <LineChart
     measures={<measures>}
@@ -25,8 +25,8 @@ import { LineChart } from '@gooddata/sdk-ui-charts';
 ## Example
 
 ```jsx
-import '@gooddata/sdk-ui-charts/styles/css/main.css';
-import { LineChart } from '@gooddata/sdk-ui-charts';
+import "@gooddata/sdk-ui-charts/styles/css/main.css";
+import { LineChart } from "@gooddata/sdk-ui-charts";
 import { Ldm } from "./ldm";
 
 const style = { height: 300 };
@@ -61,16 +61,16 @@ The following example shows the supported `config` structure with sample values.
 
 ```javascript
 {
-    colors: ['rgb(195, 49, 73)', 'rgb(168, 194, 86)'],
+    colors: ["rgb(195, 49, 73)", "rgb(168, 194, 86)"],
     colorPalette: [{
-        guid: '01',
+        guid: "01",
         fill: {
             r: 195,
             g: 49,
             b: 73
         }
     }, {
-        guid: '02',
+        guid: "02",
         fill: {
             r: 168,
             g: 194,
@@ -79,38 +79,38 @@ The following example shows the supported `config` structure with sample values.
     }],
     colorMapping: [{
         predicate: (headerItem) => {
-            return headerItem.measureHeaderItem && (headerItem.measureHeaderItem.localIdentifier === 'm1_localIdentifier')
+            return headerItem.measureHeaderItem && (headerItem.measureHeaderItem.localIdentifier === "m1_localIdentifier")
         },
         color: {
-            type: 'guid',
-            value: '02'
+            type: "guid",
+            value: "02"
         }
     }],
     xaxis: {
         visible: true,
         labelsEnabled: true,
-        rotation: 'auto'
+        rotation: "auto"
     },
     yaxis: {
         visible: true,
         labelsEnabled: true,
-        rotation: 'auto',
-        min: '20',
-        max: '30'
+        rotation: "auto",
+        min: "20",
+        max: "30"
     },
     legend: {
         enabled: true,
-        position: 'top',
+        position: "top",
     },
     dataLabels: {
-        visible: 'auto'
+        visible: "auto"
     },
     grid: {
         enabled: true
     }
     separators: {
-        thousand: ',',
-        decimal: '.'
+        thousand: ",",
+        decimal: "."
     }
 }
 ```

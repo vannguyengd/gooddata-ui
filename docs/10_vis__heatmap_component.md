@@ -11,8 +11,8 @@ A **heatmap** represents data as a matrix where individual values are represente
 ## Structure
 
 ```jsx
-import '@gooddata/sdk-ui-charts/styles/css/main.css';
-import { Heatmap } from '@gooddata/sdk-ui-charts';
+import "@gooddata/sdk-ui-charts/styles/css/main.css";
+import { Heatmap } from "@gooddata/sdk-ui-charts";
 
 <Heatmap
     measure={<measure>}
@@ -29,23 +29,23 @@ The following example shows the supported `config` structure with sample values.
     xaxis: {
         visible: true,
         labelsEnabled: true,
-        rotation: 'auto'
+        rotation: "auto"
     },
     yaxis: {
         visible: true,
         labelsEnabled: true,
-        rotation: 'auto'
+        rotation: "auto"
     },
     legend: {
         enabled: true,
-        position: 'top'
+        position: "top"
     },
     dataLabels: {
-        visible: 'auto'
+        visible: "auto"
     },
     separators: {
-        thousand: ',',
-        decimal: '.'
+        thousand: ",",
+        decimal: "."
     }
 }
 ```
@@ -53,8 +53,8 @@ The following example shows the supported `config` structure with sample values.
 ## Example
 
 ```jsx
-import '@gooddata/sdk-ui-charts/styles/css/main.css';
-import { Heatmap } from '@gooddata/sdk-ui-charts';
+import "@gooddata/sdk-ui-charts/styles/css/main.css";
+import { Heatmap } from "@gooddata/sdk-ui-charts";
 
 import { Ldm } from "./ldm";
 

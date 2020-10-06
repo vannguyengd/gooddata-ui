@@ -40,8 +40,8 @@ where:
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 import { newMeasure, newPopMeasure } from "@gooddata/sdk-model";
 
-const masterMeasure = newMeasure('measureIdentifier', m => m.alias('Master Measure'));
-const popMeasure = newPopMeasure(masterMeasure, 'attributeYearIdentifier', m => m.alias("Same Period Previous Year"));
+const masterMeasure = newMeasure("measureIdentifier", m => m.alias("Master Measure"));
+const popMeasure = newPopMeasure(masterMeasure, "attributeYearIdentifier", m => m.alias("Same Period Previous Year"));
 
 const measures = [
     masterMeasure,
@@ -83,15 +83,15 @@ import { newMeasure, newPreviousPeriodMeasure, newRelativeDateFilter } from "@go
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 
 const filters = [
-    newRelativeDateFilter('dateDatasetIdentifier', 'GDC.time.date', -7, -1)
+    newRelativeDateFilter("dateDatasetIdentifier", "GDC.time.date", -7, -1)
 ];
 
 // master - last 7 days measure
-const masterMeasure = newMeasure('measureIdentifier', m => m.alias("Master Measure"));
+const masterMeasure = newMeasure("measureIdentifier", m => m.alias("Master Measure"));
 // derived - previous 7 days measure
 const previousPeriod = newPreviousPeriodMeasure(
                             masterMeasure,
-                            { dataSet: 'dateDatasetIdentifier', periodsAgo: 1},
+                            { dataSet: "dateDatasetIdentifier", periodsAgo: 1},
                             m => m.alias("Previous Period Measure")
                         );
 

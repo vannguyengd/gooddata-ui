@@ -14,9 +14,9 @@ The LoadingComponent indicator is supported by all visualization components.
 In the following example, the KPI shows neither the loading indicator nor the error message.
 
 ```jsx
-import { Kpi } from '@gooddata/sdk-ui';
+import { Kpi } from "@gooddata/sdk-ui";
 import { Ldm } from "./ldm";
- 
+
 <Kpi
     measure={Ldm.$FranchiseFees}
     format="<format>"
@@ -30,8 +30,8 @@ import { Ldm } from "./ldm";
 In the following example, the default LoadingComponent is customized with color, fixed size, indicator size, and speed of animation.
 
 ```jsx
-import React, { Component } from 'react';
-import { Kpi, LoadingComponent } from '@gooddata/sdk-ui';
+import React, { Component } from "react";
+import { Kpi, LoadingComponent } from "@gooddata/sdk-ui";
 import { Ldm } from "./ldm";
 
 export class CustomisedLoadingComponentExample extends Component {

@@ -8,7 +8,7 @@ copyright: (C) 2018-2019 GoodData Corporation
 The GoodData.UI execution model allows you to easily create different **data specification** inputs for the
 visualization components.
 
-The execution model and other smaller models are implemented in the `@gooddata/sdk-model` package. 
+The execution model and other smaller models are implemented in the `@gooddata/sdk-model` package.
 
 While you can create different inputs without the model functions, we strongly recommend using the functionality
 of the execution model, especially in conjunction with the [catalog-export](02_start__catalog_export.md) tool.
@@ -22,7 +22,7 @@ of GoodData.UI and the applications we build using the framework.
 ## Execution model concepts
 
 To simplify the creation of various types of objects that specify what data to render, the model uses a combination
-of two typical object creation patterns: factory function and builder. 
+of two typical object creation patterns: factory function and builder.
 
 ### Creating objects
 
@@ -56,8 +56,8 @@ are several conventions:
 
 ### Local identifiers and referencing objects
 
-The `localIdentifier`, or `localId` for short, is a user-assigned identifier that you have to use when referencing 
-attributes and measures in the scope of a single visualization or execution. 
+The `localIdentifier`, or `localId` for short, is a user-assigned identifier that you have to use when referencing
+attributes and measures in the scope of a single visualization or execution.
 
 The execution model automatically generates stable `localId`'s as it creates the attribute and measure objects. You can pass the attribute and measure objects by its value. However, if you want to use the same attribute or measure multiple times in the same visualization, you have to create a copy of the object and assign it a different `localId` yourself.
 
@@ -65,7 +65,7 @@ You can use the `modify<ObjectType>` functions to override the `localId` of an a
 
 -  If you call the `m => m.defaultLocalId()`, the default logic for `localId` generation will kick in **after** all
    other object modifications are applied.
-   
+
 -  If you call the `m => m.localId(customValue)`, the modified object will have your custom `localId`.
 
 -  If you do not call `defaultLocalId` or `localId`, the modification object will have the same `localId` as the
@@ -77,13 +77,13 @@ The factory function that creates an attribute is `newAttribute`, and the modifi
 usage is straightforward:
 
 ```javascript
-import { newAttribute, modifyAttribute } from '@gooddata/sdk-model';
+import { newAttribute, modifyAttribute } from "@gooddata/sdk-model";
 
 const attribute = newAttribute("displayFormIdentifier", m => m.alias("My Custom Name"));
 
 // notice the call to defaultLocalId() - this ensures the new object will have a different, generated localId
 const sameAttributeDifferentName = modifyAttribute(attribute, m => m.alias("Corrected Name").defaultLocalId());
-``` 
+```
 
 ## Measures
 
@@ -99,21 +99,21 @@ The modification function is `modifyMeasure`. It modifies measure-agnostic param
 **Example:**
 
 ```js harmony
-import { newMeasure, newArithmeticMeasure, modifyMeasure } from '@gooddata/sdk-model';
+import { newMeasure, newArithmeticMeasure, modifyMeasure } from "@gooddata/sdk-model";
 
-const measureFromMaqlMetric = newMeasure('maqlMetricIdentifier');
-const measureFromFact = newMeasure('factIdentifier', m => m.aggregation("avg").alias("Custom Name"));
-const measureWithFilter = newMeasure('factIdentifier', m => m.filters(newPositiveAttributeFilter('displayFormId', ['value'])));
+const measureFromMaqlMetric = newMeasure("maqlMetricIdentifier");
+const measureFromFact = newMeasure("factIdentifier", m => m.aggregation("avg").alias("Custom Name"));
+const measureWithFilter = newMeasure("factIdentifier", m => m.filters(newPositiveAttributeFilter("displayFormId", ["value"])));
 
 const arithmeticMeasure = newArithmeticMeasure(
-                                [measureFromFact, measureFromMaqlMetric], 
-                                "sum", 
+                                [measureFromFact, measureFromMaqlMetric],
+                                "sum",
                                 m => m.alias("Custom Name For Arithmetic Measure").format("$#,#0.0")
                           );
 
 // notice the call to defaultLocalId; this ensures that this new measure will have a different localId - one that reflects
 // that the title and the format is different.
-const modifiedArithmeticMeasure = modifyMeasure(arithmeticMeasure, 
+const modifiedArithmeticMeasure = modifyMeasure(arithmeticMeasure,
                                     m => m.alias("Different Name For Arithmetic Measure").format("$#,#0").defaultLocalId()
                                   );
 ```
@@ -139,7 +139,7 @@ The execution model provides factory functions to create sort items and the resp
 - `newAttributeSortItem` creates a new attribute sort item.
 - `newMeasureSortItem` creates a new measure value sort item.
 
-For both of these, you can specify an attribute or measure either by `localId` or by passing the actual object. 
+For both of these, you can specify an attribute or measure either by `localId` or by passing the actual object.
 
 The second parameter is always the sort direction.
 
@@ -148,21 +148,21 @@ When sorting by measures that are scoped for a particular attribute value (for e
 **Example:**
 
 ```js harmony
-import { newAttribute, newMeasure, newAttributeSort, newMeasureSort, newAttributeLocator } from '@gooddata/sdk-model';
+import { newAttribute, newMeasure, newAttributeSort, newMeasureSort, newAttributeLocator } from "@gooddata/sdk-model";
 
-const attribute = newAttribute('displayFormIdentifier', m => m.alias("Custom Dimension"));
-const measure = newMeasure('maqlMetricIdentifier', m => m.alias("My Measure").format("#0"));
+const attribute = newAttribute("displayFormIdentifier", m => m.alias("Custom Dimension"));
+const measure = newMeasure("maqlMetricIdentifier", m => m.alias("My Measure").format("#0"));
 
 const attributeSort = newAttributeSort(attribute, "asc");
 
-const measureSortWithoutAttributeLocator = newMeasureSort(measure, "asc"); 
+const measureSortWithoutAttributeLocator = newMeasureSort(measure, "asc");
 const measureSortWithAttributeLocator = newMeasureSort(measure, "asc", [newAttributeLocator(attribute, "element-uri")])
 ```
 
 ### Attribute area sorting
 
-You can specify that the attribute sort should sort attribute values based on an aggregation function applied to 
-all valid values belonging to each attribute value. This is extremely useful when sorting stacked visualizations such 
+You can specify that the attribute sort should sort attribute values based on an aggregation function applied to
+all valid values belonging to each attribute value. This is extremely useful when sorting stacked visualizations such
 as stacked bar charts or area charts.
 
 Currently, only sorting by the `sum` function is supported.
@@ -170,9 +170,9 @@ Currently, only sorting by the `sum` function is supported.
 The following example shows sorting a table with two measures and a `Year` attribute. You can set sorting based on the `Year` attribute with:
 
 ```javascript
-import { newAttribute, newAttributeAreaSort } from '@gooddata/sdk-model';
+import { newAttribute, newAttributeAreaSort } from "@gooddata/sdk-model";
 
-const attribute = newAttribute('displayFormIdentifier', m => m.alias("Custom Dimension"));
+const attribute = newAttribute("displayFormIdentifier", m => m.alias("Custom Dimension"));
 
 newAttributeAreaSort(attribute, "asc")
 ```
@@ -184,7 +184,7 @@ Consider the following original data:
 | Measures | M1 | M2 | M1 | M2 |
 | Values | 1 | 2 | 3 | 4 |
 
-The sorting function (`sum`) is applied to all attribute element values for each attribute element (`2006` and `2007`). 
+The sorting function (`sum`) is applied to all attribute element values for each attribute element (`2006` and `2007`).
 Notice that the area sort is summing up values across different measures (M1 and M2):
 
 | 2006 | 2007 |

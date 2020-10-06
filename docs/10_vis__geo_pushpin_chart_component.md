@@ -12,8 +12,8 @@ A **geo pushpin chart** visualizes data broken down by geographic region across 
 ## Structure
 
 ```jsx
-import '@gooddata/sdk-ui-geo/styles/css/main.css';
-import { GeoPushpinChart } from '@gooddata/sdk-ui-geo';
+import "@gooddata/sdk-ui-geo/styles/css/main.css";
+import { GeoPushpinChart } from "@gooddata/sdk-ui-geo";
 
 <GeoPushpinChart
     location={<attribute>}
@@ -28,12 +28,12 @@ import { GeoPushpinChart } from '@gooddata/sdk-ui-geo';
 ## Example
 
 ```jsx
-import '@gooddata/sdk-ui-geo/styles/css/main.css';
-import { GeoPushpinChart } from '@gooddata/sdk-ui-geo';
+import "@gooddata/sdk-ui-geo/styles/css/main.css";
+import { GeoPushpinChart } from "@gooddata/sdk-ui-geo";
 import { Ldm } from "./ldm";
 
 const config = {
-    mapboxToken: 'your_mapbox_token',
+    mapboxToken: "your_mapbox_token",
     tooltipText: Ldm.City.Name
 };
 
@@ -80,39 +80,39 @@ The following example shows the supported `geoConfig` structure with sample valu
 ```javascript
 {
     points: {
-        minSize: '0.5x', // '0.5x' | '0.75x' | 'normal' | '1.25x' | '1.5x'  
-        maxSize: '1.5x', // '0.5x' | '0.75x' | 'normal' | '1.25x' | '1.5x'
+        minSize: "0.5x", // "0.5x" | "0.75x" | "normal" | "1.25x" | "1.5x"
+        maxSize: "1.5x", // "0.5x" | "0.75x" | "normal" | "1.25x" | "1.5x"
         groupNearbyPoints: true
     },
     viewport: {
-        // 'auto' // default, Include all data
-        // 'continent_af' // Africa
-        // 'continent_as' // Asia
-        // 'continent_au' // Australia
-        // 'continent_eu' // Europe
-        // 'continent_na' // North America
-        // 'continent_sa' // South America
+        // "auto" // default, Include all data
+        // "continent_af" // Africa
+        // "continent_as" // Asia
+        // "continent_au" // Australia
+        // "continent_eu" // Europe
+        // "continent_na" // North America
+        // "continent_sa" // South America
         // "world";
-        area: 'world',
+        area: "world",
     },
     tooltipText: {
         visualizationAttribute: {
             displayForm: {
                 identifier: usStateNameIdentifier
             },
-            localIdentifier: 'usStateNameIdentifier'
+            localIdentifier: "usStateNameIdentifier"
         }
     },
-    colors: ['rgb(195, 49, 73)', 'rgb(168, 194, 86)'],
+    colors: ["rgb(195, 49, 73)", "rgb(168, 194, 86)"],
     colorPalette: [{
-        guid: '01',
+        guid: "01",
         fill: {
             r: 195,
             g: 49,
             b: 73
         }
     }, {
-        guid: '02',
+        guid: "02",
         fill: {
             r: 168,
             g: 194,
@@ -121,20 +121,20 @@ The following example shows the supported `geoConfig` structure with sample valu
     }],
     colorMapping: [{
         predicate: (headerItem) => {
-            return headerItem.attributeHeaderItem && (headerItem.attributeHeaderItem.name === 'adult'); // age
+            return headerItem.attributeHeaderItem && (headerItem.attributeHeaderItem.name === "adult"); // age
         },
         color: {
-            type: 'guid',
-            value: '02'
+            type: "guid",
+            value: "02"
         }
     }],
     legend: {
         enabled: true,
-        position: 'top',
+        position: "top",
     },
     separators: {
-        thousand: ',',
-        decimal: '.'
+        thousand: ",",
+        decimal: "."
     }
 }
 ```

@@ -10,8 +10,8 @@ The **InsightView component** is a generic component that renders insights creat
 ## Structure
 
 ```jsx
-import '@gooddata/sdk-ui-ext/styles/css/main.css';
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import "@gooddata/sdk-ui-ext/styles/css/main.css";
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 <div style={{ height: 400, width: 600 }}>
     <InsightView
@@ -22,8 +22,8 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
 ```
 
 ```jsx
-import '@gooddata/sdk-ui-ext/styles/css/main.css';
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import "@gooddata/sdk-ui-ext/styles/css/main.css";
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 <div style={{ height: 400, width: 600 }}>
     <InsightView
@@ -37,17 +37,17 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
 ## Example
 
 ```jsx
-import '@gooddata/sdk-ui-ext/styles/css/main.css';
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import "@gooddata/sdk-ui-ext/styles/css/main.css";
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 <div style={{ height: 400, width: 600 }}>
     <InsightView
         identifier="aoJqpe5Ib4mO"
         config={{
-            colors: ['rgb(195, 49, 73)', 'rgb(168, 194, 86)'],
+            colors: ["rgb(195, 49, 73)", "rgb(168, 194, 86)"],
             legend: {
                 enabled: true,
-                position: 'bottom'
+                position: "bottom"
             }
         }}
     />
@@ -65,7 +65,7 @@ To properly render the referenced table or chart, the InsightView component need
 The amount of the cached information does not impact performance in any way. However, you can manually clear the cache whenever needed (for example, after logging out, when switching projects or leaving a page with visualizations using the GoodData.UI components).
 
 ```javascript
-import { clearInsightViewCaches } from '@gooddata/sdk-ui-ext';
+import { clearInsightViewCaches } from "@gooddata/sdk-ui-ext";
 ...
 clearInsightViewCaches();
 ...

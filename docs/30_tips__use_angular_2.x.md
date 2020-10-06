@@ -76,10 +76,10 @@ The following examples are using a single KPI component:
 **kpi.component.ts**:
 
 ```javascript
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import * as uuid from 'uuid';
-import * as invariant from 'invariant';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import * as uuid from "uuid";
+import * as invariant from "invariant";
 
 import {
   Component,
@@ -88,11 +88,11 @@ import {
   OnDestroy,
   OnChanges,
   AfterViewInit,
-} from '@angular/core';
-import { Kpi, IKpiProps, newMeasure } from '@gooddata/sdk-ui-all';
+} from "@angular/core";
+import { Kpi, IKpiProps, newMeasure } from "@gooddata/sdk-ui-all";
 import bearFactory, {
   ContextDeferredAuthProvider,
-} from '@gooddata/sdk-backend-bear';
+} from "@gooddata/sdk-backend-bear";
 
 // Just for illustration, you would probably create this once in your app and import here
 const backend = bearFactory().withAuthentication(
@@ -100,8 +100,8 @@ const backend = bearFactory().withAuthentication(
 );
 
 @Component({
-  selector: 'app-kpi',
-  template: '<span [id]="rootDomID"></span>',
+  selector: "app-kpi",
+  template: "<span [id]="rootDomID"></span>",
 })
 export class KpiComponent
   implements OnInit, OnDestroy, OnChanges, AfterViewInit {
@@ -116,7 +116,7 @@ export class KpiComponent
 
   protected getRootDomNode() {
     const node = document.getElementById(this.rootDomID);
-    invariant(node, `Node '${this.rootDomID} not found!`);
+    invariant(node, `Node '${this.rootDomID}' not found!`);
     return node;
   }
 
@@ -180,13 +180,13 @@ If you want to render some charts, do the following:
     ```javascript
     ...
 
-    import { ColumnChart } from '@gooddata/sdk-ui-all';
+    import { ColumnChart } from "@gooddata/sdk-ui-all";
 
     ...
 
     @Component({
-      selector: 'app-column-chart',
-      template: '<div style="height: 300px" [id]="rootDomID"></div>'
+      selector: "app-column-chart",
+      template: "<div style="height: 300px" [id]="rootDomID"></div>"
     })
 
     ...

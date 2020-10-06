@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: afm
 ---
 
-An **execution** is a combination of attributes, measures, and filters that describes what data you want to calculate. 
+An **execution** is a combination of attributes, measures, and filters that describes what data you want to calculate.
 
 **NOTE:** A measure contains numeric data (for example, revenue). Measures can be sliced by selected attributes (for example, city, date in years, or both) and filtered by attribute values or date constraints. For more information, see the [main concepts](01_intro__platform_intro.md#main-concepts).
 
@@ -28,7 +28,7 @@ const firstPage = await result.readWindow([0, 0], [10, 10]);
 const allData = await result.readAll();
 ```
 
-In the above example, the code starts an execution in the workspace with `project_id`. It specifies execution for the `measuresAndAttributes` array filtered by the `filters` array. 
+In the above example, the code starts an execution in the workspace with `project_id`. It specifies execution for the `measuresAndAttributes` array filtered by the `filters` array.
 
 On top of that, it configures `sorting` of the result data and how to lay out the data into `dimensions`.
 
@@ -37,19 +37,19 @@ and dimensionality setup, see [Specify the Result Structure](50_custom__result.m
 
 ## Attribute
 
-Each attribute is defined by its `displayForm` that will be used to slice the data. You can create an attribute 
+Each attribute is defined by its `displayForm` that will be used to slice the data. You can create an attribute
 definition using the following factory function:
 
 ```javascript
-    const attribute = newAttribute('<attribute-displayForm-identifier>');
+    const attribute = newAttribute("<attribute-displayForm-identifier>");
 ```
 
-Each attribute requires a `localIdentifier` that you can use to reference the attribute in the scope of the execution (for instance, when specifying sorting). The factory function assigns a stable `localIdentifier` for you. 
+Each attribute requires a `localIdentifier` that you can use to reference the attribute in the scope of the execution (for instance, when specifying sorting). The factory function assigns a stable `localIdentifier` for you.
 
 You can optionally override the `localIdentifier` and also the title of the attribute in the factory function call:
 
 ```javascript
-    const attribute = newAttribute('<attribute-displayForm-identifier>', m => m.localId('myLocalId').alias('My Attribute'));
+    const attribute = newAttribute("<attribute-displayForm-identifier>", m => m.localId("myLocalId").alias("My Attribute"));
 ```
 
 All attributes are defined using their `displayForm` identifiers. This assures that you application can work on top of
@@ -85,26 +85,26 @@ Each measure created from a fact can specify `aggregation` of data. Aggregation 
 
 | Type | Description |
 | :--- | :--- |
-| `'sum'` | Returns a sum of all numbers in the set |
-| `'count'` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter  (ignores the measure's `format` value and uses the default value `#,##0` instead) |
-| `'avg'` | Returns the average value of all numbers in the set; null values are ignored |
-| `'min'` | Returns the minimum value of all numbers in the set |
-| `'max'` | Returns the maximum value of all numbers in the set |
-| `'median'` | Counts the statistical median - an order statistic that gives the "middle" value of a sample. If the "middle" falls between two values, the function returns average of the two middle values. Null values are ignored. |
-| `'runsum'` | Returns a sum of numbers increased by the sum from the previous value \(accumulating a sum incrementally\) |
+| `"sum"` | Returns a sum of all numbers in the set |
+| `"count"` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter  (ignores the measure's `format` value and uses the default value `#,##0` instead) |
+| `"avg"` | Returns the average value of all numbers in the set; null values are ignored |
+| `"min"` | Returns the minimum value of all numbers in the set |
+| `"max"` | Returns the maximum value of all numbers in the set |
+| `"median"` | Counts the statistical median - an order statistic that gives the "middle" value of a sample. If the "middle" falls between two values, the function returns average of the two middle values. Null values are ignored. |
+| `"runsum"` | Returns a sum of numbers increased by the sum from the previous value \(accumulating a sum incrementally\) |
 
 [catalog-export](02_start__catalog_export.md) generates measure definitions for all available aggregations for you.
 
 ### Filters in a measure definition
 
-Each measure can be filtered by attribute filters. Filters are represented by an array of `IFilter` objects. 
+Each measure can be filtered by attribute filters. Filters are represented by an array of `IFilter` objects.
 
 Only one filter of the `DateFilter` type is allowed in the measure's filter definition.
 
-* When both the measure filter of the `DateFilter` type and the global filter of the `DateFilter` type are set with 
-  the **same** date dimension, the measure date filter overrides the global date filter for this measure 
+* When both the measure filter of the `DateFilter` type and the global filter of the `DateFilter` type are set with
+  the **same** date dimension, the measure date filter overrides the global date filter for this measure
   \(global date filters are still applied to other measures that do not have a measure date filter defined\).
-* When the measure filter of the `DateFilter` type and the global filter of the `DateFilter` type are set 
+* When the measure filter of the `DateFilter` type and the global filter of the `DateFilter` type are set
   with **different** date dimensions, the filters are interpreted as an intersection of those filters (`f1 AND f2`).
 
 ### Show a measure as a percentage
@@ -129,10 +129,10 @@ When the property is enabled, the measure's `format` value is ignored. The defau
 
 ### Compare a measure over time
 
-To compare a measure over time, add one of the supported measure types described 
+To compare a measure over time, add one of the supported measure types described
 in [Time Over Time Comparison](20_misc__time_over_time_comparison.md) to execution.
 
 ### Calculated measures
 
-To create arithmetic measures (for example, when you want to subtract a measure from another measure), 
+To create arithmetic measures (for example, when you want to subtract a measure from another measure),
 add arithmetic measures described in [Arithmetic Measure](20_misc__arithmetic_measure.md) to the execution items. Then, add all the arithmetic measure operands to the execution itself.

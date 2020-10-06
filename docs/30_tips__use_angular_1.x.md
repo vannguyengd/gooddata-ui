@@ -14,61 +14,61 @@ You can use the visual components in your Angular 1._x_ app. There are several
 
 2. Inject `react` \(`ngreact`\) as a dependency into your Angular module:
     ```javascript
-    require('ngreact');
+    require("ngreact");
 
-    angular.module('app', ['react']);
+    angular.module("app", ["react"]);
     ```
 
 3. In the JS file, review the following snippet.
    This snippet uses data from example project and represents the bar chart from this project. For testing purposes, you can use this snippet as is.
    When you start creating your own visualization, you can update this snippet according to what data you have in your project \(measures, attributes, and so on\), and what visualization you want to create \(for example, a table or a KPI\).
     ```javascript
-    import angular from 'angular';
-    import 'ngreact';
-    import './styles/app.scss';
-    
-    import { BarChart } from '@gooddata/react-components'; // Importing the required components
-    
-    angular.module('gdcAngularApp', ['react']) // Injecting ngReact
-    .controller('MainPageController', function() {
+    import angular from "angular";
+    import "ngreact";
+    import "./styles/app.scss";
+
+    import { BarChart } from "@gooddata/react-components"; // Importing the required components
+
+    angular.module("gdcAngularApp", ["react"]) // Injecting ngReact
+    .controller("MainPageController", function() {
         this.barChartProps = {
           afm: {
             measures: [
               {
-                localIdentifier: 'CustomMeasureID',
+                localIdentifier: "CustomMeasureID",
                 definition: {
                   measure: {
                     item: {
-                      identifier: 'acKjadJIgZUN'
+                      identifier: "acKjadJIgZUN"
                     }
                   }
                 },
-                alias: '# of Activities'
+                alias: "# of Activities"
               }
             ],
             attributes: [
               {
-                localIdentifier: 'a1',
+                localIdentifier: "a1",
                 displayForm: {
-                  identifier: 'label.activity.type'
+                  identifier: "label.activity.type"
                 }
               }
             ]
           },
-          projectId: 'la84vcyhrq8jwbu4wpipw66q2sqeb923',
+          projectId: "la84vcyhrq8jwbu4wpipw66q2sqeb923",
           resultSpec: {}
       };
     })
     ```
 
 4. Register a React component to use in Angular.
- 
+
    To do so, use _one_ of the following methods:
    * Register the React component using the
      [react-component directive](https://github.com/ngReact/ngReact#the-react-component-directive).
      1. In JS file, add the following line under the snippet from Step 3:
         ```javascript
-        .value('BarChart', BarChart);
+        .value("BarChart", BarChart);
         ```
      2. In the HTML file, insert the following snippet:
         ```javascript
@@ -84,8 +84,8 @@ You can use the visual components in your Angular 1._x_ app. There are several
      [reactDirective service](https://github.com/ngReact/ngReact#the-reactdirective-service).
      1. In JS file, add the following lines under the snippet from Step 3:
         ```javascript
-        .directive('barChart', function(reactDirective) {
-          return reactDirective(BarChart, ['afm', 'resultSpec', 'projectId']);
+        .directive("barChart", function(reactDirective) {
+          return reactDirective(BarChart, ["afm", "resultSpec", "projectId"]);
         });
         ```
 

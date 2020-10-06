@@ -7,4 +7,4 @@ id: live_examples
 
 Visit [Live Examples](https://gooddata-examples.herokuapp.com/).
 
-<script>window.location = 'https://gooddata-examples.herokuapp.com/';</script>
+<script>window.location = "https://gooddata-examples.herokuapp.com/";</script>

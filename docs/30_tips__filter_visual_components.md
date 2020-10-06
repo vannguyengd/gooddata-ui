@@ -86,12 +86,12 @@ A **relative date filter** shows data that falls within a time range defined rel
 
 | Value | Description |
 | :--- | :--- |
-| `'GDC.time.date'` | Days |
-| `'GDC.time.week'` | Weeks starting on Monday |
-| `'GDC.time.week_us'` | Weeks starting on Sunday |
-| `'GDC.time.month'` | Months
-| `'GDC.time.quarter'` | Quarters of a year |
-| `'GDC.time.year'` | Years |
+| `"GDC.time.date"` | Days |
+| `"GDC.time.week"` | Weeks starting on Monday |
+| `"GDC.time.week_us"` | Weeks starting on Sunday |
+| `"GDC.time.month"` | Months
+| `"GDC.time.quarter"` | Quarters of a year |
+| `"GDC.time.year"` | Years |
 
 The `from` and `to` properties set the number of granularity units (for example, weeks) before or after the current date. That is, `from` and `to`  define the filter range.
 
@@ -127,19 +127,19 @@ where:
 **Last 7 days \(yesterday and 6 days before\):**
 
 ```javascript
-newRelativeDateFilter('<date-dataset-identifier>', 'GDC.time.date', -7, -1);
+newRelativeDateFilter("<date-dataset-identifier>", "GDC.time.date", -7, -1);
 ```
 
 **Last 12 months including the current month**
 
 ```javascript
-newRelativeDateFilter('<date-dataset-identifier>', 'GDC.time.month', -11, 0);
+newRelativeDateFilter("<date-dataset-identifier>", "GDC.time.month", -11, 0);
 ```
 
 **Last quarter only**
 
 ```javascript
-newRelativeDateFilter('<date-dataset-identifier>', 'GDC.time.quarter', -1, -1);
+newRelativeDateFilter("<date-dataset-identifier>", "GDC.time.quarter", -1, -1);
 ```
 
 ## Filter by a measure value
@@ -166,12 +166,12 @@ where:
    pass an instance of measure and the factory will extract the localIdentifier for you.
 
 -  `operator` is one of the following:
-    * `'GREATER_THAN'`: The measure value is greater than `value`.
-    * `'GREATER_THAN_OR_EQUAL_TO'`: The measure value is greater than `value` or equal to `value`.
-    * `'LESS_THAN'`: The measure value is less than `value`.
-    * `'LESS_THAN_OR_EQUAL_TO'`: The measure value is less than `value` or equal to `value`.
-    * `'EQUAL_TO'`: The measure value is equal to `value`.
-    * `'NOT_EQUAL_TO'`: The measure value is not equal to `value`.
+    * `"GREATER_THAN"`: The measure value is greater than `value`.
+    * `"GREATER_THAN_OR_EQUAL_TO"`: The measure value is greater than `value` or equal to `value`.
+    * `"LESS_THAN"`: The measure value is less than `value`.
+    * `"LESS_THAN_OR_EQUAL_TO"`: The measure value is less than `value` or equal to `value`.
+    * `"EQUAL_TO"`: The measure value is equal to `value`.
+    * `"NOT_EQUAL_TO"`: The measure value is not equal to `value`.
 
 -  `value` is the measure value to filter against.
 -  `treatNullValuesAs` is optional; by default, any filter condition filters out null values. If you want a filter
@@ -193,8 +193,8 @@ where:
    pass an instance of the measure, and the factory will extract `localIdentifier` for you.
 
 -  `operator` is one of the following:
-    * `'BETWEEN'`: The measure value is between the `from` and `to` values (including the boundaries).
-    * `'NOT_BETWEEN'`: The measure value is not between the `from` and `to` values (excluding the boundaries).
+    * `"BETWEEN"`: The measure value is between the `from` and `to` values (including the boundaries).
+    * `"NOT_BETWEEN"`: The measure value is not between the `from` and `to` values (excluding the boundaries).
 
 -  `from` is the start boundary.
 -  `to` is the end boundary.
@@ -257,8 +257,8 @@ You can specify `localIdentifier` explicitly or pass an instance of the attribut
 This parameter is optional. If it is not specified, the ranking behaves as if you would enter the list of all attributes in the visualization.
 
 -  `operator` is one of the following:
-    * `'TOP'` returns records with the highest values of the filtered measure for the granularity specified by the filter attributes.
-    * `'BOTTOM'` returns records with the lowest values of the filtered measure for the granularity specified by the filter attributes.
+    * `"TOP"` returns records with the highest values of the filtered measure for the granularity specified by the filter attributes.
+    * `"BOTTOM"` returns records with the lowest values of the filtered measure for the granularity specified by the filter attributes.
 
 -  `value` is the number of the ranked records to return. The number must be a positive integer (1, 2, 3, ...).
 
@@ -284,7 +284,7 @@ import { Ldm } from "./ldm";
 
 const californiaSales = modifySimpleMeasure(
                             Ldm.$TotalSales,
-                            m => m.filters(newPositiveAttributeFilter(Ldm.StateName, ['California'])).alias('California Sales')
+                            m => m.filters(newPositiveAttributeFilter(Ldm.StateName, ["California"])).alias("California Sales")
                         );
 
 const style = { height: 300 };
@@ -301,14 +301,14 @@ const style = { height: 300 };
 ### InsightView component filter
 
 ```jsx
-import '@gooddata/sdk-ui-ext/styles/css/main.css';
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import "@gooddata/sdk-ui-ext/styles/css/main.css";
+import { InsightView } from "@gooddata/sdk-ui-ext";
 import { newPositiveAttributeFilter } from "@gooddata/sdk-model";
 import { Ldm } from "./ldm";
 
 const filters = [
-    newPositiveAttributeFilter(Ldm.StateName, ['California']),
-    newPositiveAttributeFilter(Ldm.IsKidsItem, ['true'])
+    newPositiveAttributeFilter(Ldm.StateName, ["California"]),
+    newPositiveAttributeFilter(Ldm.IsKidsItem, ["true"])
 ];
 
 <div style={{ height: 400, width: 600 }}>
@@ -339,7 +339,7 @@ const style = { height: 300 };
         filters={[
             newNegativeAttributeFilter(
                 Ldm.StateName,
-                { uris: ['/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116'] })
+                { uris: ["/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116"] })
         ]}
     />
 </div>

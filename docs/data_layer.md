@@ -33,7 +33,7 @@ Importing GoodData DataLayer dependencies
 and GoodData Java Script SDK
 (https://github.com/gooddata/gooddata-js)
 */
-import {factory as SdkFactory, DataLayer} from '@gooddata/gooddata-js';
+import {factory as SdkFactory, DataLayer} from "@gooddata/gooddata-js";
 const { DataTable, ExecuteAfmAdapter } = DataLayer;
 const sdk = SdkFactory();
 
@@ -43,11 +43,11 @@ Defining AFMs and (optionally) resultSpec
 const afm = {
     measures: [
         {
-            localIdentifier: 'measure1', // An identifier which will be referenced in the execution results
+            localIdentifier: "measure1", // An identifier which will be referenced in the execution results
             definition: {
                 measure: {
                     item: {
-                        identifier: '<measure-identifier>'
+                        identifier: "<measure-identifier>"
                     }
                 }
             }
@@ -58,7 +58,7 @@ const afm = {
 const resultSpec = {
     dimensions: [
         {
-            itemIdentifiers: ['measureGroup']
+            itemIdentifiers: ["measureGroup"]
         }
     ]
 };
@@ -67,7 +67,7 @@ const resultSpec = {
 Initializing the Adapter object
 The Adapter converts the AFMs for the backend to process.
 */
-const adapter = new ExecuteAfmAdapter(sdk, '<project-id>');
+const adapter = new ExecuteAfmAdapter(sdk, "<project-id>");
 
 /*
 Initializing the Data Table object

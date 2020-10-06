@@ -12,52 +12,52 @@ This article describes the options for configuring a chart.
 ```javascript
 {
     chart: {
-        verticalAlign: 'top' // 'top' | 'middle' | 'bottom'
+        verticalAlign: "top" // "top" | "middle" | "bottom"
     },
-    colors: ['rgb(195, 49, 73)', 'rgb(168, 194, 86)'], // array of strings
+    colors: ["rgb(195, 49, 73)", "rgb(168, 194, 86)"], // array of strings
     xaxis: {
         visible: true, // boolean
         labelsEnabled: true, // boolean
-        rotation: 'auto', // 'auto' or numeral string
-        min: '10', // numeral string
-        max: '20' // numeral string
+        rotation: "auto", // "auto" or numeral string
+        min: "10", // numeral string
+        max: "20" // numeral string
     },
     yaxis: {
         visible: true, // boolean
         labelsEnabled: true, // boolean
-        rotation: 'auto', // string
-        min: '30', // numeral string
-        max: '40' // numeral string
+        rotation: "auto", // string
+        min: "30", // numeral string
+        max: "40" // numeral string
     },
     secondary_yaxis: {
         visible: true, // boolean
         labelsEnabled: true, // boolean
-        rotation: 'auto', // string
-        min: '300', // numeral string
-        max: '400', // numeral string
-        measures: ['measureLocalIdentifier']
+        rotation: "auto", // string
+        min: "300", // numeral string
+        max: "400", // numeral string
+        measures: ["measureLocalIdentifier"]
     },
     legend: {
         enabled: true, // boolean
-        position: 'bottom', // 'top' | 'left' | 'right' | 'bottom'
+        position: "bottom", // "top" | "left" | "right" | "bottom"
     },
     dataLabels: {
-        visible: 'auto' // 'auto' | true | false
+        visible: "auto" // "auto" | true | false
     },
     dataPoints: {
-        visible: true // 'auto' | true | false
+        visible: true // "auto" | true | false
     },
     grid: {
         enabled: true // boolean
     },
     separators: {
-        thousand: ',',
-        decimal: '.'
+        thousand: ",",
+        decimal: "."
     },
     stackMeasures: true, // boolean
     stackMeasuresToPercent: true, // boolean
-    primaryChartType: 'column', // string
-    secondaryChartType: 'area', // string
+    primaryChartType: "column", // string
+    secondaryChartType: "area", // string
     dualAxis: false // boolean
 }
 ```
@@ -70,14 +70,14 @@ You can configure a vertical alignment for [pie charts](10_vis__pie_chart.md) an
 To align a chart vertically, set `config.chart.verticalAlign` to one of the possible values: `top`, `middle`, `bottom`. If not set, it defaults to `middle`.
 
 ```jsx
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with a custom chart alignment
 <InsightView
     identifier=<InsightView-id>
     config={{
         chart: {
-            verticalAlign: 'bottom'
+            verticalAlign: "bottom"
         }
     }}
 />
@@ -100,19 +100,19 @@ If you have more than one option configured for a visualization, the following r
 The following are examples of a color array:
 
 ```javascript
-['rgb(195, 49, 73)', 'rgb(168, 194, 86)']
+["rgb(195, 49, 73)", "rgb(168, 194, 86)"]
 
 ```
 
 ```javascript
-['#fa0510', '#AA2030']
+["#fa0510", "#AA2030"]
 
 ```
 
 If there are fewer colors than data points, then the colors are repeated. For example, here is how colors will be used for two colors and three data points:
 
 ```javascript
-['rgb(195, 49, 73)', 'rgb(168, 194, 86)', 'rgb(195, 49, 73)']
+["rgb(195, 49, 73)", "rgb(168, 194, 86)", "rgb(195, 49, 73)"]
 ```
 
 To change colors in a chart, provide a `config` for each component where you want to change colors, or create a wrapped components with a `config` baked in.
@@ -120,13 +120,13 @@ To change colors in a chart, provide a `config` for each component where you wan
 **NOTE:** Heatmaps use only the first color from the provided colors as the base color, and generate the other colors themselves.
 
 ```jsx
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with custom colors and palette options
 <InsightView
     identifier=<InsightView-id>
     config={{
-        colors: ['rgb(195, 49, 73)', 'rgb(168, 194, 86)']
+        colors: ["rgb(195, 49, 73)", "rgb(168, 194, 86)"]
     }}
 />
 ```
@@ -142,28 +142,28 @@ If you [uploaded a custom color palette](https://help.gooddata.com/display/doc/I
 To override the uploaded custom color palette for a specific visualization, define the `colorPalette` property for this visualization.
 
 ```jsx
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with a custom palette
 <InsightView
    identifier=<InsightView-id>
    config={{
        colorPalette: [{
-            guid: '01',
+            guid: "01",
             fill: {
                 r: 195,
                 g: 49,
                 b: 73
             }
         }, {
-            guid: '02',
+            guid: "02",
             fill: {
                 r: 168,
                 g: 194,
                 b: 86
             }
         }, {
-            guid: '03',
+            guid: "03",
             fill: {
                 r: 243,
                 g: 217,
@@ -193,7 +193,7 @@ The `colorMapping` property contains an array of objects. Each object is represe
 The following example shows how to assign the color with GUID `02` to the measure with the local identifier `m1_localIdentifier`, and the black color to the measure with the local identifier `m2_localIdentifier`:
 
 ```jsx
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with custom color mapping
 <InsightView
@@ -201,18 +201,18 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
     config={{
         colorMapping: [{
             predicate: (headerItem) => {
-                return headerItem.measureHeaderItem && (headerItem.measureHeaderItem.localIdentifier === 'm1_localIdentifier')
+                return headerItem.measureHeaderItem && (headerItem.measureHeaderItem.localIdentifier === "m1_localIdentifier")
             },
             color: {
-                type: 'guid',
-                value: '02'
+                type: "guid",
+                value: "02"
             }
         }, {
             predicate: (headerItem) => {
-                return headerItem.measureHeaderItem && (headerItem.measureHeaderItem.localIdentifier === 'm2_localIdentifier')
+                return headerItem.measureHeaderItem && (headerItem.measureHeaderItem.localIdentifier === "m2_localIdentifier")
             },
             color: {
-                type: 'rgb',
+                type: "rgb",
                 value: {
                     r: 0,
                     g: 0,
@@ -228,10 +228,10 @@ Within one visualization, the `colorMapping` property overrides the `colorPalett
 ## Change legend visibility and position
 
 * To hide the legend, set `config.legend.enabled` to `false`.
-* To change the legend position, adjust the `config.legend.position` property \(`'left'`/`'right'`/`'top'`/`'bottom'`\).
+* To change the legend position, adjust the `config.legend.position` property \(`"left"`/`"right"`/`"top"`/`"bottom"`\).
 
 ```jsx
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with a custom legend position
 <InsightView
@@ -239,7 +239,7 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
     config={{
         legend: {
             enabled: true,
-            position: 'bottom' // 'left', 'right', 'top'
+            position: "bottom" // "left", "right", "top"
         }
     }}
 />
@@ -251,15 +251,15 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
 * To change the decimal separator, adjust the `config.separators.decimal` property.
 
 ```jsx
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with a custom separator in the number format
 <InsightView
     identifier=<InsightView-id>
     config={{
         separators: {
-            thousand: ',',
-            decimal: '.'
+            thousand: ",",
+            decimal: "."
         }
     }}
 />
@@ -282,7 +282,7 @@ The properties listed in this section are specific to the **X** axis. To get the
     **NOTE:** If the axis represents more than one attribute/measure, the `config.xaxis.name.visible` and `config.xaxis.name.position` properties are both ignored, and the axis name is hidden.
 
 ```jsx
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with settings for the x-axis
 <InsightView
@@ -291,23 +291,23 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
         xaxis: {
             visible: false,
             labelsEnabled: false,
-            rotation: '-90',
-            min: '150',
-            max: '440',
+            rotation: "-90",
+            min: "150",
+            max: "440",
             name: {
-                position: 'low', // 'low', 'middle', 'high'
+                position: "low", // "low", "middle", "high"
             }
         },
         secondary_xaxis: {
             visible: true,
             labelsEnabled: true,
-            rotation: '-90',
-            min: '1500',
-            max: '4400',
+            rotation: "-90",
+            min: "1500",
+            max: "4400",
             name: {
                 visible: false
             }
-            measures: ['measureLocalIdentifier1', 'measureLocalIdentifier2']
+            measures: ["measureLocalIdentifier1", "measureLocalIdentifier2"]
         }
     }}
 />
@@ -322,7 +322,7 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
     * [Combo charts](10_vis__combo_chart_component.md) with at least one of the combined charts being a [line chart](10_vis__line_chart_component.md) or an [area chart](10_vis__area_chart_component.md).
 
 ```jsx
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with settings for the canvas
 <InsightView
@@ -355,7 +355,7 @@ import { InsightView } from '@gooddata/sdk-ui-ext';
     * For charts with the secondary axis, `config.stackMeasuresToPercent` is applied only to the left axis.
 
 ```jsx
-import { InsightView } from '@gooddata/sdk-ui-ext';
+import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with stacking
 <InsightView

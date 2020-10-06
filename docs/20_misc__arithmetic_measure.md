@@ -64,12 +64,12 @@ import { PivotTable } from "@gooddata/sdk-ui-pivot";
 
 const measures = [
     // the first simple measure (operand)
-    newMeasure('boughtProductsIdentifier', m => m.alias('Bought products from supplier')),
-    newMeasure('soldProductsLocalIdentifier', m => m.alias('Sold products to customers')),
+    newMeasure("boughtProductsIdentifier", m => m.alias("Bought products from supplier")),
+    newMeasure("soldProductsLocalIdentifier", m => m.alias("Sold products to customers")),
     newArithmeticMeasure(
-        ['boughtProductsLocalIdentifier', 'soldProductsLocalIdentifier'],
-        'difference',
-        m => m.alias('Products remaining in warehouse')
+        ["boughtProductsLocalIdentifier", "soldProductsLocalIdentifier"],
+        "difference",
+        m => m.alias("Products remaining in warehouse")
     )
 ];
 
@@ -87,9 +87,9 @@ demonstrates passing measures by value to the different measure factory function
 import { newMeasure, newPopMeasure, newArithmeticMeasure } from "@gooddata/sdk-model";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 
-const currentYear = newMeasure('measureIdentifier', m => m.alias("Current Year"));
+const currentYear = newMeasure("measureIdentifier", m => m.alias("Current Year"));
 // derived - data from previous year
-const previousYear = newPopMeasure(currentYear, 'attributeDisplayFormYearIdentifier',  m => m.alias("Previous Year"));
+const previousYear = newPopMeasure(currentYear, "attributeDisplayFormYearIdentifier", m => m.alias("Previous Year"));
 // arithmetic measure with custom format
 const change = newArithmeticMeasure(previousYear, currentYear, "change", m => m.alias("Change between years").format("$#,#0.0%"));
 

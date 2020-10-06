@@ -10,7 +10,7 @@ Predicates allow you to create a match between elements (for example, a measure 
 For example, a predicate that creates a simple match based on an equation may look like the following:
 
 ```javascript
-(headerItem) => headerItem.measureHeaderItem.localIdentifier === 'm1_localIdentifier'
+(headerItem) => headerItem.measureHeaderItem.localIdentifier === "m1_localIdentifier"
 ```
 
 Here is an example of a predicate that increments the `callCounter` variable in the predicate's closure every time the predicate is called and returns `true` if `callCounter` is an even number:

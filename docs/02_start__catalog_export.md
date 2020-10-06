@@ -46,11 +46,11 @@ This is how it works:
 
     ```json
     {
-     "hostname": "your.gooddata.hostname.com",
-     "projectId": "your_gooddata_workspaceid",
-     "username": "email",
-     "password": "password",
-     "output": "desired_file_name.ts|js|json"
+        "hostname": "your.gooddata.hostname.com",
+        "projectId": "your_gooddata_workspaceid",
+        "username": "email",
+        "password": "password",
+        "output": "desired_file_name.ts|js|json"
     }
     ```
 
