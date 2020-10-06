@@ -46,7 +46,7 @@ The following procedure implements the initial setup using the providers to pass
 
 ## Authentication options
 
-There are two built-in authentication providers in `@gooddata/sdk-backend-bear`:
+`@gooddata/sdk-backend-bear` has the following built-in authentication providers:
 
 * `ContextDeferredAuthProvider`
 * `FixedLoginAndPasswordAuthProvider`
@@ -55,18 +55,18 @@ You can also create a custom provider.
 
 ### ContextDeferredAuthProvider
 
-The `ContextDeferredAuthProvider` assumes that the session is already authenticated to the GoodData platform (either by a login or SSO).
-This is useful in cases where you embed GoodData.UI elements into your app.
+`ContextDeferredAuthProvider` assumes that the session is already authenticated to the GoodData platform (either by a login or by SSO).
+This is useful when you embed GoodData.UI elements into your app.
 
-To use SSO, follow the [SSO guide](30_tips__sso.md) and in your application, use `ContextDeferredAuthProvider` as shown in the example in [Initial setup](02_start__connecting_backend.md#initial-setup).
+To use SSO, follow the [SSO guide](30_tips__sso.md) and use `ContextDeferredAuthProvider` in your application as shown in [Initial setup](02_start__connecting_backend.md#initial-setup).
 
 ### FixedLoginAndPasswordAuthProvider
 
-The `FixedLoginAndPasswordAuthProvider` allows you to explicitly specify username/password combination.
-This is useful in cases where you handle the authentication yourself (for example with custom login form),
-or for testing (so that you can "hard-code" the credentials or provide them from a build script).
+`FixedLoginAndPasswordAuthProvider` allows you to explicitly specify a username/password combination.
+This is useful when you handle the authentication yourself (for example, with a custom login form)
+or for testing (so that you can hard-code the credentials or provide them from a build script).
 
-To specify the credentials, pass them to the `FixedLoginAndPasswordAuthProvider` constructor. For example
+To specify the credentials, pass them to the `FixedLoginAndPasswordAuthProvider` constructor. For example:
 
 ```js
 import bearFactory, { FixedLoginAndPasswordAuthProvider } from "@gooddata/sdk-backend-bear";
