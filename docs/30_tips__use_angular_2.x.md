@@ -57,9 +57,9 @@ yarn add uuid invariant react@^16.8.0 react-dom@^16.8.0 @gooddata/sdk-ui-all
 yarn add --dev @types/react @types/react-dom
 ```
 
-## Step 2. Change global configuration
+## Step 2. Update the global configuration
 
-There are two small configuration changes you need to make in order to use GoodData.UI in Angular:
+Update your configuration to be able to use GoodData.UI in Angular:
 
 1. Add `(window as any).global = window;` to `polyfills.ts` due to missing `global`.
 2. Add `"skipLibCheck": true` to your `tsconfig.json` to avoid misleading errors during compilation.
