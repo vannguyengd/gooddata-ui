@@ -14,8 +14,8 @@ The data is sliced by an attribute, with each bubble (an attribute item) noted w
 ## Structure
 
 ```jsx
-import '@gooddata/sdk-ui-charts/styles/css/main.css';
-import { BubbleChart } from '@gooddata/sdk-ui-charts';
+import "@gooddata/sdk-ui-charts/styles/css/main.css";
+import { BubbleChart } from "@gooddata/sdk-ui-charts";
 
 <BubbleChart
     xAxisMeasure={<measure>}
@@ -30,8 +30,8 @@ import { BubbleChart } from '@gooddata/sdk-ui-charts';
 ## Example
 
 ```jsx
-import '@gooddata/sdk-ui-charts/styles/css/main.css';
-import { BubbleChart } from '@gooddata/sdk-ui-charts';
+import "@gooddata/sdk-ui-charts/styles/css/main.css";
+import { BubbleChart } from "@gooddata/sdk-ui-charts";
 
 import { Ldm } from "./ldm";
 
@@ -70,16 +70,16 @@ The following example shows the supported `config` structure with sample values.
 
 ```javascript
 {
-    colors: ['rgb(195, 49, 73)', 'rgb(168, 194, 86)'],
+    colors: ["rgb(195, 49, 73)", "rgb(168, 194, 86)"],
     colorPalette: [{
-        guid: '01',
+        guid: "01",
         fill: {
             r: 195,
             g: 49,
             b: 73
         }
     }, {
-        guid: '02',
+        guid: "02",
         fill: {
             r: 168,
             g: 194,
@@ -88,40 +88,40 @@ The following example shows the supported `config` structure with sample values.
     }],
     colorMapping: [{
         predicate: (headerItem) => {
-            return headerItem.measureHeaderItem && (headerItem.measureHeaderItem.localIdentifier === 'm1_localIdentifier')
+            return headerItem.measureHeaderItem && (headerItem.measureHeaderItem.localIdentifier === "m1_localIdentifier")
         },
         color: {
-            type: 'guid',
-            value: '02'
+            type: "guid",
+            value: "02"
         }
     }],
     xaxis: {
         visible: true,
         labelsEnabled: true,
-        rotation: 'auto',
-        min: '20',
-        max: '30'
+        rotation: "auto",
+        min: "20",
+        max: "30"
     },
     yaxis: {
         visible: true,
         labelsEnabled: true,
-        rotation: 'auto',
-        min: '20',
-        max: '30'
+        rotation: "auto",
+        min: "20",
+        max: "30"
     },
     legend: {
         enabled: true,
-        position: 'right',
+        position: "right",
     },
     dataLabels: {
-        visible: 'auto'
+        visible: "auto"
     },
     grid: {
         enabled: true
     }
     separators: {
-        thousand: ',',
-        decimal: '.'
+        thousand: ",",
+        decimal: "."
     }
 }
 ```

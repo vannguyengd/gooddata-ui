@@ -37,4 +37,4 @@ In the column chart:
 
 * `$ Avg Daily Total Sales` is a **measure**.
 * `Location State` is an **attribute**.
-* A **filter** apllied to the chart shows only USA-specific values of `Location State`, which represent the offices located in the USA.
+* A **filter** applied to the chart shows only USA-specific values of `Location State`, which represent the offices located in the USA.

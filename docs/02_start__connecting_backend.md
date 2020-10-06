@@ -38,7 +38,7 @@ The following procedure implements the initial setup using the providers to pass
 
     ```jsx
     <BackendProvider backend={backend}>
-        <WorkspaceProvider workspace='your-project-id'>
+        <WorkspaceProvider workspace="your-project-id">
             <YourApplicationTree />
         </WorkspaceProvider>
     </BackendProvider>

@@ -15,15 +15,15 @@ In the tutorial [Create Your First Application](02_start__no_boilerplate.md), yo
 const measures = [
     {
         measure: {
-            localIdentifier: 'franchiseFeesIdentifier',
+            localIdentifier: "franchiseFeesIdentifier",
             definition: {
                 measureDefinition: {
                     item: {
-                        identifier: 'aaEGaXAEgB7U'
+                        identifier: "aaEGaXAEgB7U"
                     }
                 }
             },
-            format: '#,##0'
+            format: "#,##0"
         }
     }
 ];
@@ -32,11 +32,11 @@ const style = { height: 300 };
 
 <div style={style}>
   <LineChart
-      projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+      projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"
       measures={measures}
       trendBy={attribute}
       config={{
-          colors: ['#14b2e2']
+          colors: ["#14b2e2"]
       }}
   />
 </div>
@@ -74,29 +74,29 @@ After you installed the tool, do the following:
 2. Import the `catalog.json` file into your `App.js` file.
    You can now reference the measure using its human-readable alias \(`$ Franchise Fees`\) instead of its identifier \(`aaEGaXAEgB7U`\). Your new `App.js` file would look like the following:
     ```javascript
-    import React, { Component } from 'react';
-    import { LineChart } from '@gooddata/react-components';
-    import '@gooddata/react-components/styles/css/main.css';
+    import React, { Component } from "react";
+    import { LineChart } from "@gooddata/react-components";
+    import "@gooddata/react-components/styles/css/main.css";
 
-    import logo from './logo.svg';
-    import './App.css';
+    import logo from "./logo.svg";
+    import "./App.css";
 
-    import { CatalogHelper } from '@gooddata/react-components';
-    import catalogJson from './catalog.json';
+    import { CatalogHelper } from "@gooddata/react-components";
+    import catalogJson from "./catalog.json";
     const C = new CatalogHelper(catalogJson);
 
     const measures = [
     {
         measure: {
-            localIdentifier: 'franchiseFeesIdentifier',
+            localIdentifier: "franchiseFeesIdentifier",
             definition: {
                 measureDefinition: {
                     item: {
-                        identifier: C.measure('$ Franchise Fees')
+                        identifier: C.measure("$ Franchise Fees")
                     }
                 }
             },
-            format: '#,##0'
+            format: "#,##0"
         }
       }
     ];
@@ -104,9 +104,9 @@ After you installed the tool, do the following:
     const attribute = {
         visualizationAttribute: {
             displayForm: {
-                identifier: 'date.abm81lMifn6q'
+                identifier: "date.abm81lMifn6q"
             },
-            localIdentifier: 'month'
+            localIdentifier: "month"
         }
     };
 
@@ -120,11 +120,11 @@ After you installed the tool, do the following:
                 </div>
                 <div style={{ height: 300 }}>
                   <LineChart
-                      projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+                      projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"
                       measures={measures}
                       trendBy={attribute}
                       config={{
-                          colors: ['#14b2e2']
+                          colors: ["#14b2e2"]
                       }}
                   />
                 </div>

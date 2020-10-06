@@ -16,15 +16,15 @@ When a user clicks a [drillable item](15_props__drillable_item.md) in a visualiz
 
 ```jsx
 import { InsightView } from "@gooddata/sdk-ui-ext";
-import { HeaderPredicates } from '@gooddata/sdk-ui';
+import { HeaderPredicates } from "@gooddata/sdk-ui";
 
 <InsightView
    identifier="<visualization-identifier>"
    config={<chart-config>}
    onDrill={(event) => { console.log(event.dataView); }}
    drillableItems={[
-        HeaderPredicates.identifierMatch('drillable-Identifier1'), 
-        HeaderPredicates.uriMatch('/drillable-Uri2')
+        HeaderPredicates.identifierMatch("drillable-Identifier1"),
+        HeaderPredicates.uriMatch("/drillable-Uri2")
    ]}
 />
 ```

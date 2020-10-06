@@ -54,7 +54,7 @@ This command adds the necessary GoodData.UI packages to the list of your project
 **Before** you start your development server, prevent cross-origin issues by [adding proxy settings](30_tips__cors.md). To set up a proxy, in your project's `/src` directory, create the `setupProxy.js` file with the following content:
 
 ```javascript
-const proxy = require('http-proxy-middleware');
+const proxy = require("http-proxy-middleware");
 
 module.exports = function (app) {
      app.use(proxy("/gdc", {
@@ -67,7 +67,7 @@ module.exports = function (app) {
              "origin": null
          },
          "onProxyReq": function(proxyReq, req, res) {
-             proxyReq.setHeader('accept-encoding', 'identity')
+             proxyReq.setHeader("accept-encoding", "identity")
          }
      }));
      app.use(proxy("/*.html", {
@@ -127,13 +127,13 @@ Now, you can start adding your first GoodData component:
 1. Open `src/App.js` in a text editor.
 2. Add the following line to the other `import`s at the beginning of the `App.js` file:
     ```javascript
-    import { LineChart } from '@gooddata/sdk-ui-charts';
-    import { newMeasure, newAttribute } from '@gooddata/sdk-model';
-    import bearFactory, {ContextDeferredAuthProvider} from '@gooddata/sdk-backend-bear';
+    import { LineChart } from "@gooddata/sdk-ui-charts";
+    import { newMeasure, newAttribute } from "@gooddata/sdk-model";
+    import bearFactory, {ContextDeferredAuthProvider} from "@gooddata/sdk-backend-bear";
     ```
 3. Add the following line to the other `import`s at the beginning of the `App.js` file to load CSS:
     ```javascript
-    import '@gooddata/sdk-ui-charts/styles/css/main.css';
+    import "@gooddata/sdk-ui-charts/styles/css/main.css";
     ```
 
 4. Initialize the Analytical Backend implemented by the GoodData platform:
@@ -150,7 +150,7 @@ Now, you can start adding your first GoodData component:
    function App() {
        return (
            <BackendProvider backend={backend}>
-               <WorkspaceProvider workspace='xms7ga4tf3g3nzucd8380o2bev8oeknp'>
+               <WorkspaceProvider workspace="xms7ga4tf3g3nzucd8380o2bev8oeknp">
                    <div>placeholder</div>
                </WorkspaceProvider>
            </BackendProvider>
@@ -162,8 +162,8 @@ Now, you can start adding your first GoodData component:
 
     6a. Define measures and attributes:
     ```javascript
-    const measures = [ newMeasure('aaEGaXAEgB7U', m => m.format('#,##0') ];
-    const attribute = newAttribute('date.abm81lMifn6q');
+    const measures = [ newMeasure("aaEGaXAEgB7U", m => m.format("#,##0") ];
+    const attribute = newAttribute("date.abm81lMifn6q");
     ```
 
     6b. Replace the placeholder in your `App` functional component with the following elements:
@@ -173,7 +173,7 @@ Now, you can start adding your first GoodData component:
           measures={measures}
           trendBy={attribute}
           config={{
-              colors: ['#14b2e2']
+              colors: ["#14b2e2"]
           }}
       />
     </div>
@@ -183,27 +183,27 @@ Now, you can start adding your first GoodData component:
 7. Save the changes. The content of your `App.js` file should now look something like the following example:
 
     ```jsx
-    import React from 'react';
-    import { newMeasure, newAttribute } from '@gooddata/sdk-model';
-    import bearFactory from '@gooddata/sdk-backend-bear';
-    import '@gooddata/sdk-ui-charts/styles/css/main.css';
+    import React from "react";
+    import { newMeasure, newAttribute } from "@gooddata/sdk-model";
+    import bearFactory from "@gooddata/sdk-backend-bear";
+    import "@gooddata/sdk-ui-charts/styles/css/main.css";
 
-    import './App.css';
+    import "./App.css";
 
     const backend = bearFactory().withAuthentication(new ContextDeferredAuthProvider());
-    const measures = [ newMeasure('aaEGaXAEgB7U', m => m.format('#,##0') ];
-    const attribute = newAttribute('date.abm81lMifn6q');
+    const measures = [ newMeasure("aaEGaXAEgB7U", m => m.format("#,##0") ];
+    const attribute = newAttribute("date.abm81lMifn6q");
 
     function App() {
         return (
             <BackendProvider backend={backend}>
-               <WorkspaceProvider workspace='xms7ga4tf3g3nzucd8380o2bev8oeknp'>
+               <WorkspaceProvider workspace="xms7ga4tf3g3nzucd8380o2bev8oeknp">
                     <div style={{ height: 300 }}>
                         <LineChart
                             measures={measures}
                             trendBy={attribute}
                             config={{
-                                colors: ['#14b2e2']
+                                colors: ["#14b2e2"]
                             }}
                         />
                     </div>

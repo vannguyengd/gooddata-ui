@@ -17,18 +17,18 @@ In the following example, attribute values are listed and the ```onApply``` call
 The `onApply` callback receives a new filter definition that you can use to filter charts.
 
 ```jsx
-import React, { Component } from 'react';
-import { AttributeFilter, Model } from '@gooddata/sdk-ui-filters';
-import { newNegativeAttributeFilter } from '@gooddata/sdk-model';
+import React, { Component } from "react";
+import { AttributeFilter, Model } from "@gooddata/sdk-ui-filters";
+import { newNegativeAttributeFilter } from "@gooddata/sdk-model";
 
-import '@gooddata/sdk-ui-filters/styles/css/main.css';
+import "@gooddata/sdk-ui-filters/styles/css/main.css";
 
 import { Ldm } from "./ldm";
 
 export class AttributeFilterExample extends Component {
     onApply(filter) {
         // eslint-disable-next-line no-console
-        console.log('AttributeFilterExample onApply', filter);
+        console.log("AttributeFilterExample onApply", filter);
     }
 
     render() {

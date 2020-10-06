@@ -23,7 +23,7 @@ You can set up a proxy to bypass the CORS restriction on a local dev machine, be
 To set up a proxy, in your project's `/src` directory, create the `setupProxy.js` file with the following content:
 
 ```javascript
-const proxy = require('http-proxy-middleware');
+const proxy = require("http-proxy-middleware");
 
 module.exports = function (app) {
      app.use(proxy("/gdc", {
@@ -36,7 +36,7 @@ module.exports = function (app) {
              "origin": null
          },
          "onProxyReq": function(proxyReq, req, res) {
-             proxyReq.setHeader('accept-encoding', 'identity')
+             proxyReq.setHeader("accept-encoding", "identity")
          }
      }));
      app.use(proxy("/*.html", {

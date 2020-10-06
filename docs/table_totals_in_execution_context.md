@@ -34,7 +34,7 @@ execution : {
         ...
         nativeTotals: [
             {
-                measureIdentifier: 'm1',
+                measureIdentifier: "m1",
                 attributeIdentifiers: []
             }
         ]
@@ -43,22 +43,22 @@ execution : {
         ...
         dimensions: [
             {
-                itemIdentifiers: ['a1', 'a2'],
+                itemIdentifiers: ["a1", "a2"],
                 totals: [
                     {
-                        measureIdentifier: 'm1',
-                        type: 'sum',
-                        attributeIdentifier: 'a1'
+                        measureIdentifier: "m1",
+                        type: "sum",
+                        attributeIdentifier: "a1"
                     },
                     {
-                        measureIdentifier: 'm1',
-                        type: 'nat',
-                        attributeIdentifier: 'a1'
+                        measureIdentifier: "m1",
+                        type: "nat",
+                        attributeIdentifier: "a1"
                     }
                 ]
             },
             {
-                itemIdentifiers: ['measureGroup'],
+                itemIdentifiers: ["measureGroup"],
                 totals: []
             }
         ]

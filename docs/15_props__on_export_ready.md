@@ -47,14 +47,14 @@ export class Example extends React.Component {
     async doExport() {
         try {
             const result = await this.getExportedData({
-                format: 'xlsx',
+                format: "xlsx",
                 includeFilterContext: true,
                 mergeHeaders: true,
-                title: 'CustomTitle'
+                title: "CustomTitle"
             });
-            console.log('Export successfully: ', result.uri);
+            console.log("Export successfully: ", result.uri);
         } catch (error) {
-            console.log('Export error: ', error);
+            console.log("Export error: ", error);
         }
     }
 

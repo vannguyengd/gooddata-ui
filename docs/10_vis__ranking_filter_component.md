@@ -23,7 +23,7 @@ import { RankingFilter } from "@gooddata/sdk-ui-filters";
   measureItems={<visualization-measures>}
   attributeItems={<visualization-attributes}
 />
-```     
+```
 
 ## Example
 
@@ -33,7 +33,7 @@ The following example shows a table displaying one measure sliced by one attribu
 import React, { useState } from "react";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 import { newRankingFilter, localIdRef, measureLocalId, attributeLocalId } from "@gooddata/sdk-model";
-import { RankingFilter, IMeasureDropdownItem, IAttributeDropdownItem } from "@gooddata/sdk-ui-filters"; 
+import { RankingFilter, IMeasureDropdownItem, IAttributeDropdownItem } from "@gooddata/sdk-ui-filters";
 import { LdmExt } from "../../ldm";
 
 const measures = [LdmExt.FranchiseFees, LdmExt.FranchisedSales];
@@ -76,10 +76,10 @@ export const RankingFilterExample: React.FC = () => {
             />
             <hr className="separator" />
             <div style={{ height: 300 }} className="s-pivot-table">
-                <PivotTable 
-                    measures={measures} 
-                    rows={attributes} 
-                    filters={[filter]} 
+                <PivotTable
+                    measures={measures}
+                    rows={attributes}
+                    filters={[filter]}
                 />
             </div>
         </React.Fragment>
@@ -110,6 +110,6 @@ If you want to use your own custom button for toggling the filter dropdown, use 
 The component has all the same properties as the Ranking Filter component (see [Properties](#Properties)) with the following exceptions:
 * The `buttonTitle` property is irrelevant for the Ranking Filter Dropdown component.
 * The `onCancel` property is mandatory for the Ranking Filter Dropdown component, because it is supposed to be used to hide the dropdown.
-* The Ranking Filter Dropdown component has one additional property, `anchorEl`. This optional property specifies the element that the dropdown is aligned to, which is typically your toggle button. The property can be an event target or a string and defaults to `'body'`.
+* The Ranking Filter Dropdown component has one additional property, `anchorEl`. This optional property specifies the element that the dropdown is aligned to, which is typically your toggle button. The property can be an event target or a string and defaults to `"body"`.
 
 Check out our [live examples](https://github.com/gooddata/gooddata-ui-sdk/tree/master/examples/sdk-examples) for demonstration.

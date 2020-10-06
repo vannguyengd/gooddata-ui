@@ -120,8 +120,8 @@ const dateFilterOptions = {
     absoluteForm: {
         localIdentifier: "90bad814-a193-429f-b88c-118cd00f2168",
         type: "absoluteForm",
-        from: dateFrom.toISOString().substr(0, 10), // 'YYYY-MM-DD'
-        to: new Date().toISOString().substr(0, 10), // 'YYYY-MM-DD'
+        from: dateFrom.toISOString().substr(0, 10), // "YYYY-MM-DD"
+        to: new Date().toISOString().substr(0, 10), // "YYYY-MM-DD"
         name: "Static period",
         visible: true,
     },

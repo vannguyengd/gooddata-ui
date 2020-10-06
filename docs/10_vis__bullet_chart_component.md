@@ -12,8 +12,8 @@ A **bullet chart** is a variation of a bar chart that displays performance of a 
 ## Structure
 
 ```jsx
-import '@gooddata/sdk-ui-charts/styles/css/main.css';
-import { BulletChart } from '@gooddata/sdk-ui-charts';
+import "@gooddata/sdk-ui-charts/styles/css/main.css";
+import { BulletChart } from "@gooddata/sdk-ui-charts";
 
 <BulletChart
     primaryMeasure={<primaryMeasure>}
@@ -27,8 +27,8 @@ import { BulletChart } from '@gooddata/sdk-ui-charts';
 ## Example
 
 ```jsx
-import '@gooddata/sdk-ui-charts/styles/css/main.css';
-import { BulletChart } from '@gooddata/sdk-ui-charts';
+import "@gooddata/sdk-ui-charts/styles/css/main.css";
+import { BulletChart } from "@gooddata/sdk-ui-charts";
 import { Ldm } from "./ldm";
 
 const style = { height: 300 };
@@ -75,9 +75,9 @@ The following example shows the supported `config` structure with sample values.
 
 ```javascript
 {
-    colors: ['rgb(195, 49, 73)'],
+    colors: ["rgb(195, 49, 73)"],
     colorPalette: [{
-        guid: '01',
+        guid: "01",
         fill: {
             r: 195,
             g: 49,
@@ -86,38 +86,38 @@ The following example shows the supported `config` structure with sample values.
     }],
     colorMapping: [{
         predicate: (headerItem) => {
-            return headerItem.measureHeaderItem && (headerItem.measureHeaderItem.localIdentifier === 'm1_localIdentifier')
+            return headerItem.measureHeaderItem && (headerItem.measureHeaderItem.localIdentifier === "m1_localIdentifier")
         },
         color: {
-            type: 'guid',
-            value: '01'
+            type: "guid",
+            value: "01"
         }
     }],
     xaxis: {
         visible: true,
         labelsEnabled: true,
-        rotation: 'auto'
+        rotation: "auto"
     },
     yaxis: {
         visible: true,
         labelsEnabled: true,
-        rotation: 'auto',
-        min: '20',
-        max: '30'
+        rotation: "auto",
+        min: "20",
+        max: "30"
     },
     legend: {
         enabled: true,
-        position: 'top',
+        position: "top",
     },
     dataLabels: {
-        visible: 'auto'
+        visible: "auto"
     },
     grid: {
         enabled: true
     }
     separators: {
-        thousand: ',',
-        decimal: '.'
+        thousand: ",",
+        decimal: "."
     }
 }
 ```

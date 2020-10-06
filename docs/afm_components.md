@@ -25,8 +25,8 @@ The AFM components use the [AFM](50_custom__execution.md) property instead of sp
 ### Structure
 
 ```javascript
-import '@gooddata/react-components/styles/css/main.css';
-import { AfmComponents } from '@gooddata/react-components';
+import "@gooddata/react-components/styles/css/main.css";
+import { AfmComponents } from "@gooddata/react-components";
 
 const { BarChart } = AfmComponents; // replace BarChart with ColumnChart, LineChart, or PieChart whenever needed
 
@@ -42,8 +42,8 @@ const { BarChart } = AfmComponents; // replace BarChart with ColumnChart, LineCh
 ### Example
 
 ```javascript
-import '@gooddata/react-components/styles/css/main.css';
-import { AfmComponents } from '@gooddata/react-components';
+import "@gooddata/react-components/styles/css/main.css";
+import { AfmComponents } from "@gooddata/react-components";
 
 const { BarChart } = AfmComponents;
 
@@ -51,22 +51,22 @@ const { BarChart } = AfmComponents;
     afm={{
         measures: [
             {
-                localIdentifier: 'CustomMeasureID',
+                localIdentifier: "CustomMeasureID",
                 definition: {
                     measure: {
                         item: {
-                            identifier: '<measure-identifier>' // can be referenced from the exported catalog
+                            identifier: "<measure-identifier>" // can be referenced from the exported catalog
                         }
                     }
                 },
-                alias: 'My Measure'
+                alias: "My Measure"
             }
         ],
         attributes: [
             {
-                localIdentifier: 'a1',
+                localIdentifier: "a1",
                 displayForm: {
-                    identifier: '<attribute-display-form-identifier>'
+                    identifier: "<attribute-display-form-identifier>"
                 }
             }
         ]
@@ -90,8 +90,8 @@ const { BarChart } = AfmComponents;
 ### Structure
 
 ```javascript
-import '@gooddata/react-components/styles/css/main.css';
-import { AfmComponents } from '@gooddata/react-components';
+import "@gooddata/react-components/styles/css/main.css";
+import { AfmComponents } from "@gooddata/react-components";
 
 const { Table } = AfmComponents;
 
@@ -106,8 +106,8 @@ const { Table } = AfmComponents;
 ### Example
 
 ```javascript
-import '@gooddata/react-components/styles/css/main.css';
-import { AfmComponents } from '@gooddata/react-components';
+import "@gooddata/react-components/styles/css/main.css";
+import { AfmComponents } from "@gooddata/react-components";
 
 const { Table } = AfmComponents;
 
@@ -115,22 +115,22 @@ const { Table } = AfmComponents;
     afm={{
         measures: [
             {
-                localIdentifier: 'CustomMeasureID',
+                localIdentifier: "CustomMeasureID",
                 definition: {
                     measure: {
                         item: {
-                            identifier: '<measure-identifier>' // can be referenced from the exported catalog
+                            identifier: "<measure-identifier>" // can be referenced from the exported catalog
                         }
                     }
                 },
-                alias: 'My Measure'
+                alias: "My Measure"
             }
         ],
         attributes: [
             {
-                localIdentifier: 'a1',
+                localIdentifier: "a1",
                 displayForm: {
-                    identifier: '<attribute-display-form-identifier>'
+                    identifier: "<attribute-display-form-identifier>"
                 }
             }
         ]

@@ -20,7 +20,7 @@ You specify the input data by using the component parameters. Then, the executio
 | onLoadingChanged | false | function |
 | onLoadingFinish | false | function |
 
-* If you specify a function in the `onError` parameter, this function will be called in case of an error. It is always executed after `onLoadingChanged`. The first parameter is an error object: `{ status: ErrorStates, error?: string }`. Status can be one of the following \(use `import { ErrorStates } from '@gooddata/react-components'`\):
+* If you specify a function in the `onError` parameter, this function will be called in case of an error. It is always executed after `onLoadingChanged`. The first parameter is an error object: `{ status: ErrorStates, error?: string }`. Status can be one of the following \(use `import { ErrorStates } from "@gooddata/react-components"`\):
 
   * `ErrorStates.DATA_TOO_LARGE_TO_COMPUTE`
   * `ErrorStates.HTTP_BAD_REQUEST`
@@ -30,14 +30,14 @@ You specify the input data by using the component parameters. Then, the executio
 
 * If you specify a function in the `onLoadingFinish` parameter, this function will be called every time a data load finishes successfully, and it will get the execution result object `{ result }` as a parameter. It is always executed after `onLoadingChanged`. `onLoadingFinish` is *not* called when an execution finishes with an error.
 
-* Empty execution results can be found by an empty data property in the result. To check if the result is empty, use `import { isEmptyResult } from '@gooddata/react-components'`.
+* Empty execution results can be found by an empty data property in the result. To check if the result is empty, use `import { isEmptyResult } from "@gooddata/react-components"`.
 
 ## Example
 
 The following example shows the function specified as a child in the Execution component that displays the execution output on the console.
 
 ```javascript
-import { Execute, isEmptyResult } from '@gooddata/react-components';
+import { Execute, isEmptyResult } from "@gooddata/react-components";
 
 <Execute afm={<afm>} projectId={<project-id>} onLoadingChanged={e=>{}} onLoadingFinish={e=>{}} onError={e=>{}}>
     {
@@ -64,7 +64,7 @@ The execution result is a data structure that is returned from the GET command o
 ```javascript
 {
   data: [
-    [ '58656.37', '33098.97', '123633.07', '75019.19' ],
+    [ "58656.37", "33098.97", "123633.07", "75019.19" ],
     ...
   ],
   paging: {
@@ -77,8 +77,8 @@ The execution result is a data structure that is returned from the GET command o
       [
         {
           attributeHeaderItem: {
-            name: 'Apparel',
-            uri: '/gdc/md/k790ohq1d8xcas9oipmwfs544tqkepku/obj/15399/elements?id=1200'
+            name: "Apparel",
+            uri: "/gdc/md/k790ohq1d8xcas9oipmwfs544tqkepku/obj/15399/elements?id=1200"
           }
         },
         ...
@@ -88,8 +88,8 @@ The execution result is a data structure that is returned from the GET command o
       [
         {
           attributeHeaderItem: {
-            name: 'Midwest',
-            uri: '/gdc/md/k790ohq1d8xcas9oipmwfs544tqkepku/obj/15386/elements?id=2052'
+            name: "Midwest",
+            uri: "/gdc/md/k790ohq1d8xcas9oipmwfs544tqkepku/obj/15386/elements?id=2052"
           }
         },
         ...
@@ -97,7 +97,7 @@ The execution result is a data structure that is returned from the GET command o
       [
         {
           measureHeaderItem: {
-            name: 'Sum of Orders',
+            name: "Sum of Orders",
             order: 0
           }
         },
@@ -137,12 +137,12 @@ The `headerItems` array lists all header items \(also called elements\) in a thr
 The following example shows how to handle the `onLoadingChanged` and `onError` callbacks within a custom component. The React `key` prop is used to force remounting of the Execute component on retry. The example fails randomly 50% of the time to showcase handling of error states.
 
 ```javascript
-import React, { Component } from 'react';
-import { Execute, isEmptyResult } from '@gooddata/react-components';
+import React, { Component } from "react";
+import { Execute, isEmptyResult } from "@gooddata/react-components";
 
-import { totalSalesIdentifier, projectId } from '../utils/fixtures';
-import { Loading } from './utils/Loading';
-import { Error } from './utils/Error';
+import { totalSalesIdentifier, projectId } from "../utils/fixtures";
+import { Loading } from "./utils/Loading";
+import { Error } from "./utils/Error";
 
 export class ExecuteExample extends Component {
     constructor(props) {
@@ -162,7 +162,7 @@ export class ExecuteExample extends Component {
 
     onLoadingChanged({ isLoading }) {
         // eslint-disable-next-line no-console
-        console.log('isLoading', isLoading);
+        console.log("isLoading", isLoading);
         // onLoadingChanged must reset the error so that we are not in error during loading
         // onError is run after onLoadingChanged so we do not have to worry about an overriding current error
         this.setState({
@@ -173,7 +173,7 @@ export class ExecuteExample extends Component {
 
     onError(error) {
         // eslint-disable-next-line no-console
-        console.log('onError', error);
+        console.log("onError", error);
         this.setState({
             error
         });
@@ -181,7 +181,7 @@ export class ExecuteExample extends Component {
 
     retry() {
         // eslint-disable-next-line no-console
-        console.log('retry');
+        console.log("retry");
         // We need to track executionNumber so that we can remount the Execute component
         // To showcase error states, here we also decide if the next execution will fail or not
         this.setState({
@@ -215,7 +215,7 @@ export class ExecuteExample extends Component {
                 `}</style>
                 <p className="kpi s-execute-kpi">{result.executionResult.data[0]}</p>
                 <p>Full execution response and result as JSON:</p>
-                <pre>{JSON.stringify({ result, isLoading, error }, null, '  ')}</pre>
+                <pre>{JSON.stringify({ result, isLoading, error }, null, "  ")}</pre>
             </div>
         );
     }
@@ -225,7 +225,7 @@ export class ExecuteExample extends Component {
         const afm = {
             measures: [
                 {
-                    localIdentifier: 'measure',
+                    localIdentifier: "measure",
                     definition: {
                         measure: {
                             item: {

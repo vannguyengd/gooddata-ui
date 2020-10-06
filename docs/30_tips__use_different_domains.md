@@ -12,22 +12,22 @@ Every GoodData.UI instance is connected to a specific domain. To use multiple do
 ## Example
 
 ```jsx
-import React, { PureComponent } from 'react';
-import bearFactory from '@gooddata/sdk-backend-bear';
-import { InsightView } from '@gooddata/sdk-ui-ext';
- 
- 
+import React, { PureComponent } from "react";
+import bearFactory from "@gooddata/sdk-backend-bear";
+import { InsightView } from "@gooddata/sdk-ui-ext";
+
+
 export default class SampleVisualizations extends PureComponent {
     constructor(props) {
         super(props);
-         
-        const domain1 = 'my-custom-domain.com';
+
+        const domain1 = "my-custom-domain.com";
         this.backend1 = bearFactory({ hostname: domain1 });
-     
-        const domain2 = 'another-custom-domain.com';
+
+        const domain2 = "another-custom-domain.com";
         this.backend2 = bearFactory({ hostname: domain2 });
     }
- 
+
     render() {
         return (
             <div>

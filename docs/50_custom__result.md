@@ -11,7 +11,7 @@ should be cross-tabulated: how the backend should lay out the data into dimensio
 ## Dimensions
 
 The dimensions communicate to the Analytical Backend how to organize data into arrays. Imagine an attribute in columns vs. rows.
- 
+
 Each dimension specifies **items**. These items could be attributes' `localIdentifier`'s or a special `measureGroup` identifier.
 The `measureGroup` identifier tells the executor to place all measures from the execution into the dimension.
 
@@ -70,12 +70,12 @@ execution()
     .forItems([Ldm.LocationState, Ldm.$FranchiseFees])
     .withDimensions([newDimension([Ldm.LocationState, MeasureGroupIdentifier])]);
 
-{  
+{
 data: [ 32000, 41000, 77000 ]
 }
 ```
 
-#### Execution with two measures and one attribute 
+#### Execution with two measures and one attribute
 
 Use case: a simple table; row per attribute value, measures are in columns
 
@@ -188,7 +188,7 @@ const executionResult = await execution().forItems(...).execute();
 const dataView = await executionResult.readAll();
 
 const facade = DataViewFacade.for(dataView);
-``` 
+```
 
 ## Dimensions: Quick reference
 
@@ -201,32 +201,32 @@ const facade = DataViewFacade.for(dataView);
 </tr>
 <tr>
 <td class="confluenceTd">One measure<br>One attribute (A)</td>
-<td class="confluenceTd">[ 'A', 'measureGroup' ]</td>
+<td class="confluenceTd">[ "A", "measureGroup" ]</td>
 <td class="confluenceTd"><pre><code>        A1    A2    A3     ← elements of attribute A<br>data: [ ... , ... , ... ]&nbsp; ←&nbsp;values of the measure</code></pre></td>
 </tr>
 <tr>
 <td class="confluenceTd">Two measures (M1, M2)</td>
-<td class="confluenceTd">[ 'measureGroup' ]</td>
+<td class="confluenceTd">[ "measureGroup" ]</td>
 <td class="confluenceTd"><pre><code>        M1    M2     ← elements of measureGroup<br>data: [ ... , ... ]</code></pre></td>
 </tr>
 <tr>
 <td class="confluenceTd">Two measures (M1, M2)<br>One attribute (A)</td>
-<td class="confluenceTd">[ 'A', 'measureGroup' ]</td>
+<td class="confluenceTd">[ "A", "measureGroup" ]</td>
 <td class="confluenceTd"><pre><code>        A1-M1  A1-M2  A2-M1  A2-M2   ← a cartesian product of<br>data: [ .... , .... , .... , .... ]    elements from A and <br>                                       measureGroup</code></pre></td>
 </tr>
 <tr>
 <td class="confluenceTd">Empty first dimension<br>Two measures (M1, M2)<br>One attribute (A)</td>
-<td class="confluenceTd">[ ],<br> [ 'A', 'measureGroup' ]</td>
+<td class="confluenceTd">[ ],<br> [ "A", "measureGroup" ]</td>
 <td class="confluenceTd"><pre><code>data: [<br>    A1    A2    A3    ← the same as above<br>  [ ... , ... , ... ]<br>]</code></pre></td>
 </tr>
 <tr>
 <td class="confluenceTd">Two measures (M1, M2)</span> <br> <span>One attribute (A)<br> <br>// typical for a viewBy chart</td>
-<td class="confluenceTd">[ 'A' ],<br>[ 'measureGroup' ]<br></td>
+<td class="confluenceTd">[ "A" ],<br>[ "measureGroup" ]<br></td>
 <td class="confluenceTd"><pre><code>data: [                  // it can be understood as data[A][M]<br>    M1    M2                aka first dimension = elements of A<br>  [ ... , ... ],  ← A1      and second = elems of measureGroup<br>  [ ... , ... ]   ← A2<br>] </code></pre></td>
 </tr>
 <tr>
 <td class="confluenceTd">Two attributes (A, B)<br>One measure (M1)<br> <br>// typical for a stackBy chart</td>
-<td class="confluenceTd">[ 'A' ],<br>[ 'B', 'measureGroup' ]</td>
+<td class="confluenceTd">[ "A" ],<br>[ "B", "measureGroup" ]</td>
 <td class="confluenceTd"><pre><code>data: [                  // notice it doesn't matter in which<br>    B1-M1  B2-M1            dimension the measureGroup is<br>  [ .... , .... ],  ← A1    placed (as it has only one measure)<br>  [ .... , .... ]   ← A2<br>] </code></pre></td>
 </tr>
 </tbody>

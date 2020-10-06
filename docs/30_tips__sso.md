@@ -29,13 +29,13 @@ Setting up authentication depends on what type of SSO is implemented on your sit
 * If you use the [GoodData PGP SSO](https://help.gooddata.com/display/doc/GoodData+PGP+Single+Sign-On) implementation, you can use the `loginSSO` method from [`@gooddata/api-client-bear`](https://github.com/gooddata/gooddata-ui-sdk/tree/master/libs/api-client-bear). Note that although this method requires a mandatory parameter of `targetUrl`, this parameter is used very rarely in the context of GoodData.UI, because in a typical scenario there is no need to redirect a user to any GoodData URL. But as this parameter is mandatory, set it to an arbitrary relative URL (for example, `/`).
 
     ```javascript
-    import { factory } from '@gooddata/api-client-bear';
+    import { factory } from "@gooddata/api-client-bear";
 
-    const domain = 'https://my.app.com/';
+    const domain = "https://my.app.com/";
     const sdk = factory({ domain });
-    const encryptedClaims = 'your-generated-encrypted-claims';
-    const ssoProvider = 'your-sso-provider-name';
-    const targetUrl = 'your-target-url'; // set to an arbitrary relative URL
+    const encryptedClaims = "your-generated-encrypted-claims";
+    const ssoProvider = "your-sso-provider-name";
+    const targetUrl = "your-target-url"; // set to an arbitrary relative URL
 
     sdk.user
       .loginSso(encryptedClaims, ssoProvider, targetUrl)
@@ -68,10 +68,10 @@ Setting up authentication depends on what type of SSO is implemented on your sit
     The following is an example of login code:
 
     ```javascript
-    import sdk from '@gooddata/api-client-bear';
-    import qs from 'qs';
+    import sdk from "@gooddata/api-client-bear";
+    import qs from "qs";
 
-    const relayState = 'https://my.app.com/';
+    const relayState = "https://my.app.com/";
 
     sdk.xhr
       .get(`/gdc/account/samlrequest?${qs.stringify({ relayState })}`)
@@ -96,9 +96,9 @@ This is how authentication process works:
 2. Your application verifies whether the user is logged in. For example:
 
     ```javascript
-    import { factory } from '@gooddata/api-client-bear';
+    import { factory } from "@gooddata/api-client-bear";
 
-    const domain = 'https://my.app.com/';
+    const domain = "https://my.app.com/";
     const sdk = factory({ domain });
 
     sdk.user.isLoggedIn().then((isLogged) => {

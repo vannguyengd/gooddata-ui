@@ -14,7 +14,7 @@ Headlines have two sections: Measure (primary) and Measure (secondary). You can 
 ## Structure
 
 ```jsx
-import { Headline } from '@gooddata/sdk-ui-charts';
+import { Headline } from "@gooddata/sdk-ui-charts";
 
 <Headline
     primaryMeasure={<measure>}
@@ -26,7 +26,7 @@ import { Headline } from '@gooddata/sdk-ui-charts';
 ### Headline with a single measure (primary measure)
 
 ```jsx
-import { Headline } from '@gooddata/sdk-ui-charts';
+import { Headline } from "@gooddata/sdk-ui-charts";
 import { Ldm } from "./ldm";
 
 <Headline
@@ -37,7 +37,7 @@ import { Ldm } from "./ldm";
 ### Headline with two measures (primary and secondary measures)
 
 ```jsx
-import { Headline } from '@gooddata/sdk-ui-charts';
+import { Headline } from "@gooddata/sdk-ui-charts";
 import { Ldm } from "./ldm";
 
 <Headline
