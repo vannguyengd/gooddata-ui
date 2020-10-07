@@ -34,7 +34,7 @@ $ npm install @gooddata/catalog-export --save-dev
 
 ## Using @gooddata/catalog-export
 
-`catalog-export` is a command-line program that loads metadata from a workspace and transforms it into TypeScript, JavaScript, or a JSON representation. The program can run in interactive, silent, or hybrid modes.
+`@gooddata/catalog-export` is a command-line program that loads metadata from a workspace and transforms it into TypeScript, JavaScript, or a JSON representation. The program can run in interactive, silent, or hybrid modes.
 
 **NOTE**: The JSON representation is deprecated. We will remove it in a future major version.
 
@@ -83,7 +83,7 @@ A catalog export maintains keys used in an existing catalog export JSON file. Yo
 * dateDataSets
 * displayForms
 
-At the next run, `catalog-export` tries to resolve the new items from the server against the existing items, and does the following:
+At the next run, `@gooddata/catalog-export` tries to resolve the new items from the server against the existing items, and does the following:
 
 * Preserves the existing keys by matching their identifier attributes
 * Removes the keys that do not exist on the server
@@ -167,7 +167,7 @@ export const $FranchiseFeesAdRoyalty = newMeasure("aabHeqImaK0d");
 export const $FranchiseFeesOngoingRoyalty = newMeasure("aaWGcgnsfxIg");
 ```
 
-For facts, `catalog-export` generates an object with keys for each supported aggregation:
+For facts, `@gooddata/catalog-export` generates an object with keys for each supported aggregation:
 
 ```javascript
 /**
@@ -214,7 +214,7 @@ export const Cost = {
 };
 ```
 
-For date datasets, `catalog-export` includes one constant per attribute. The date dimension name is the prefix of the constant name. Attributes with multiple display forms are generated as follows:
+For date datasets, `@gooddata/catalog-export` includes one constant per attribute. The date dimension name is the prefix of the constant name. Attributes with multiple display forms are generated as follows:
 
 ```javascript
 export const TimelineMonth = {
