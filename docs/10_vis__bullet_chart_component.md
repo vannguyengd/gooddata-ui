@@ -70,6 +70,7 @@ To override the default coloring scheme and set a custom color for each measure,
 | onError | false | Function | A callback when the component updates its error state |
 | onExportReady | false | Function | A callback when the component is ready for exporting its data |
 | onLoadingChanged | false | Function | A callback when the component updates its loading state |
+| onDrill | false | Function | A callback when a drill is triggered on the component |
 
 The following example shows the supported `config` structure with sample values. For the descriptions of the individual options, see [Chart Config](15_props__chart_config.md).
 
