@@ -64,6 +64,7 @@ const config = {
 | onError | false | Function | A callback when the component updates its error state |
 | onExportReady | false | Function | A callback when the component is ready for exporting its data |
 | onLoadingChanged | false | Function | A callback when the component updates its loading state |
+| onDrill | false | Function | A callback when a drill is triggered on the component |
 
 ## Geo Config
 | Name | Required? | Type | Description |
