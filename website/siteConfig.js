@@ -26,7 +26,7 @@ const siteConfig = {
     {href: 'https://developer.gooddata.com/data-integration', label: 'Data Integration'},
     {href: 'https://developer.gooddata.com/api-and-sdks', label: 'API & SDKs'},
     {href: 'https://gdui-examples.herokuapp.com/', label: 'Examples', external: true},
-    {href: 'https://github.com/gooddata/gooddata-react-components/', label: 'GitHub', external: true}
+    {href: 'https://github.com/gooddata/gooddata-ui-sdk/', label: 'GitHub', external: true}
   ],
   onPageNav: 'separate',
   users,

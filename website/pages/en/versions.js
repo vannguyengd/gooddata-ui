@@ -27,7 +27,7 @@ function getLatestStable(versions) {
 function getVersionsOfType(type, versions) {
   return versions.filter(v => {
     const versionSplit = v.split('-');
-    
+
     return versionSplit.length >= 2 && versionSplit[1] === type;
   })
 }
@@ -49,12 +49,23 @@ class Versions extends React.Component {
   renderChangelog(version) {
     const majorVersion = parseInt(version.split('.')[0]);
     const versionNumber = parseVersionToNumber(version);
-    if (majorVersion && majorVersion >= 5) {
-      return (
-        <td>
-          <a href={`https://github.com/gooddata/gooddata-react-components/blob/master/CHANGELOG.md#${versionNumber}`}>Changelog</a>
-        </td>
-      );
+
+    if (majorVersion) {
+      if (majorVersion >= 8) {
+        return (
+          <td>
+            <a href={`https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-all/CHANGELOG.md#${versionNumber}`}>Changelog</a>
+          </td>
+        );
+      }
+
+      if (majorVersion >= 5) {
+        return (
+          <td>
+            <a href={`https://github.com/gooddata/gooddata-react-components/blob/master/CHANGELOG.md#${versionNumber}`}>Changelog</a>
+          </td>
+        );
+      }
     }
 
     return (<td>&mdash;</td>);
@@ -106,7 +117,7 @@ class Versions extends React.Component {
     }
 
     return null;
-  } 
+  }
 
   renderPreReleaseVersions() {
     const preReleaseVersions = getVersionsOfType('alpha', versions);

@@ -66,7 +66,7 @@ class Footer extends React.Component {
             </ul>
           </div>
         </section>
-        <section className="nav-footer-copyright">Copyright&nbsp;©&nbsp;2007–{currentYear} GoodData&nbsp;Corporation. All&nbsp;Rights&nbsp;Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE">CC&nbsp;BY&#8209;NC&nbsp;4.0 for trial&nbsp;experience and&nbsp;GoodData.UI&nbsp;EULA for&nbsp;commercial&nbsp;use</a></section>
+        <section className="nav-footer-copyright">Copyright&nbsp;©&nbsp;2007–{currentYear} GoodData&nbsp;Corporation. All&nbsp;Rights&nbsp;Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC&nbsp;BY&#8209;NC&nbsp;4.0 for trial&nbsp;experience and&nbsp;GoodData.UI&nbsp;EULA for&nbsp;commercial&nbsp;use</a></section>
       </footer>
     );
   }
