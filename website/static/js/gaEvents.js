@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	sendGAEvent(document.querySelector(".nav-site-internal a[href*='/gooddata-ui/docs/about_gooddataui.html']"), "click", "Tab Docs");
 	sendGAEvent(document.querySelector("a.featuresLink[href*='https://gooddata-examples.herokuapp.com']"), "click", "Tab Live Examples");
 	sendGAEvent(document.querySelector(".homeContainer a.button[href*='/gooddata-ui/docs/about_gooddataui.html']"), "click on header", "Get Started");
-	sendGAEvent(document.querySelector('a[href*="https://github.com/gooddata/gooddata-react-components"]'), "click on header", "Github");
+	sendGAEvent(document.querySelector('a[href*="https://github.com/gooddata/gooddata-ui-sdk"]'), "click on header", "Github");
 
 	// BODY ACTIONS
 	sendGAEvent(document.querySelector(".homeWrapper a.button-link[href*='https://help.gooddata.com/display/doc/GoodData+Platform+Overview']"), "click", "Develop with GoodData");
@@ -27,5 +27,5 @@ document.addEventListener('DOMContentLoaded', function() {
 	sendGAEvent(document.querySelector(".social-button.github"), "click on footer", "Github");
 	sendGAEvent(document.querySelector(".social-button.twitter"), "click on footer", "Twitter Dev");
 	sendGAEvent(document.querySelector(".social-button.stackoverflow"), "click on footer", "Stack Overflow");
-	sendGAEvent(document.querySelector("a[href*='https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE']"), "click on footer", "Licence");
+	sendGAEvent(document.querySelector("a[href*='https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE']"), "click on footer", "Licence");
 });

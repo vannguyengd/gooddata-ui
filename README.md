@@ -8,13 +8,13 @@ This repository contains the source code of the [documentation](https://sdk.good
 
 - [Read the online documentation.](https://sdk.gooddata.com/gooddata-ui/docs/about_gooddataui.html)
 - [Check out the live examples](https://gdui-examples.herokuapp.com/) with extensive code documentation.
-- Use GoodData [npm package](https://github.com/gooddata/gooddata-react-components).
-- Check out the GoodData.UI source code at [react-components repository](https://github.com/gooddata/gooddata-react-components).
+- Use GoodData [npm package](https://www.npmjs.com/package/@gooddata/sdk-ui-all).
+- Check out the GoodData.UI source code at [react-components repository](https://github.com/gooddata/gooddata-ui-sdk).
 
 ## Follow the community
 
 - Ask questions at [Stack Overflow forum](https://stackoverflow.com/questions/tagged/gooddata).
-- Submit code issues/bugs on [Github](https://github.com/gooddata/gooddata-react-components/issues).
+- Submit code issues/bugs on [Github](https://github.com/gooddata/gooddata-ui-sdk/issues).
 - Follow [@gooddata_dev](https://twitter.com/gooddata_dev) on Twitter.
 
 ## Supported versions
@@ -30,7 +30,7 @@ The customers are encouraged to always use the latest version of the UI SDK.
 
 In case of using older versions, the user might face API incompatibility, performance or security issues.
 
-Please follow the installation instructions in [react-components repository](https://github.com/gooddata/gooddata-react-components) to update to the newest version.
+Please follow the installation instructions in [react-components repository](https://github.com/gooddata/gooddata-ui-sdk) to update to the newest version.
 
 ## License
 
