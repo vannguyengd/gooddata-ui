@@ -25,7 +25,7 @@ Visualization points that intersect any defined measures, attributes, or attribu
 **NOTE:** Ad-hoc measures (measures created from attribute or measures using
 [computeRatio option](https://sdk.gooddata.com/gooddata-ui/docs/afm.html#show-a-measure-as-a-percentage) are defined
 using URI or identifier in the execution. When you want set up drilling for such ad-hoc measures, use same parameter (URI or identifier)
-as you used in the execution. Keep on mind, that Analytical Designer creates such measures only using URI. When you want to
+as you used in the execution. Keep in mind, that Analytical Designer creates such measures only using URI. When you want to
 activate drilling on ad-hoc measures created by Analytical Designer, you can use only URIs to activate drill.
 
 ## Structure
@@ -42,7 +42,7 @@ a `boolean` value. This function is executed against every measure and attribute
 returns `true`, the measure or attribute is drillable. If the function returns `false`, the measure or attribute is
 not drillable.
 
-You can program any logic to determine whether a particular measure or attribute should be drillable. However, this is not required often.
+You can program any logic to determine whether a particular measure or attribute should be drillable. However, this is not required often. See [Create Header Predicates](ht_create_predicates.md) for details.
 
 ### Predicate factory helpers
 
