@@ -349,10 +349,10 @@ const style = { height: 300 };
 
 The Attribute Filter component renders a dropdown list of all values of the selected attribute. The Attribute Filter component has the `onApply` function property. This function is called when the user clicks the **Apply** button in the filter dropdown. The function receives an attribute filter with either selected attribute values (positive filter) or not selected attribute values (negative filter).
 
-See the [live example](https://gooddata-examples.herokuapp.com/attribute-filter-components).
+See the [live example](https://gdui-examples.herokuapp.com/attribute-filter-components).
 
 ### Attribute Elements component filter
 
 Pass a custom children function to the Attribute Elements component. This function will receive a parameter with a list of attribute values for the selected attribute. You can use it to render any custom attribute filter.
 
-See the [live example](https://gooddata-examples.herokuapp.com/attribute-filter-components).
+See the [live example](https://gdui-examples.herokuapp.com/attribute-filter-components).

@@ -106,4 +106,4 @@ const measures = [
 
 ## More information
 
-See the [live examples](https://gooddata-examples.herokuapp.com/arithmetic-measure).
+See the [live examples](https://gdui-examples.herokuapp.com/arithmetic-measures).

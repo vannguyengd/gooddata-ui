@@ -5,6 +5,6 @@ copyright: (C) 2007-2020 GoodData Corporation
 id: live_examples
 ---
 
-Visit [Live Examples](https://gooddata-examples.herokuapp.com/).
+Visit [Live Examples](https://gdui-examples.herokuapp.com/).
 
-<script>window.location = "https://gooddata-examples.herokuapp.com/";</script>
+<script>window.location = "https://gdui-examples.herokuapp.com/";</script>
