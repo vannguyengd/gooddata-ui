@@ -1,8 +1,9 @@
 ---
-id: date_filter_component
+id: version-8.0.0-date_filter_component
 title: Date Filter
 sidebar_label: Date Filter
 copyright: (C) 2007-2019 GoodData Corporation
+original_id: date_filter_component
 ---
 
 > **The Date Filter component is in the beta stage.**

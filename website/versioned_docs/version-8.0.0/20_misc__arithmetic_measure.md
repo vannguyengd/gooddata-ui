@@ -2,7 +2,8 @@
 title: Arithmetic Measure
 sidebar_label: Arithmetic Measure
 copyright: (C) 2007-2018 GoodData Corporation
-id: arithmetic_measure
+id: version-8.0.0-arithmetic_measure
+original_id: arithmetic_measure
 ---
 
 Arithmetic measures allow you to perform simple calculations with measures in a visualization.

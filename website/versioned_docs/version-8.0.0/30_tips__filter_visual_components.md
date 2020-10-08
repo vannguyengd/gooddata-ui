@@ -2,7 +2,8 @@
 title: Filter Visual Components
 sidebar_label: Filter Visual Components
 copyright: (C) 2007-2020 GoodData Corporation
-id: filter_visual_components
+id: version-8.0.0-filter_visual_components
+original_id: filter_visual_components
 ---
 
 This article provides examples of filtering visual components by attribute, date, and measure values.

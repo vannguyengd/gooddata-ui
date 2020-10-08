@@ -2,8 +2,9 @@
 title: Clean Up Your Code
 sidebar_label: Clean Up Your Code
 copyright: (C) 2007-2018 GoodData Corporation
-id: clean_up_your_code
+id: version-8.0.0-clean_up_your_code
 comment: This has to be here for old versions, versions >= 8 do not link to this anywhere
+original_id: clean_up_your_code
 ---
 
 GoodData.UI provides a tool named [gdc-catalog-export](02_start__catalog_export.md) that can help you keep the list of object identifiers organized in a Javascript file within your application.

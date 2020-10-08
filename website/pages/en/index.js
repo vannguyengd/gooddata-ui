@@ -95,7 +95,7 @@ class HomeSplash extends React.Component {
           <ProjectDescription />
           <PromoSection>
             <Button href={docUrl('about_gooddataui.html')}>See documentation</Button>
-            <Button href="https://gooddata-examples.herokuapp.com/" className="button button-secondary">Live examples</Button>
+            <Button href="https://gdui-examples.herokuapp.com/" className="button button-secondary">Live examples</Button>
           </PromoSection>
           <PromoSection>
             <Button href="https://help.gooddata.com/display/doc/GoodData+Platform+Overview" className="button-link">About GoodData Platform</Button>
@@ -326,7 +326,7 @@ const Features = props => (
           }]}
         </FeaturesBlockGallery>}
         linkTitle="View live examples"
-        linkUrl="https://gooddata-examples.herokuapp.com/"
+        linkUrl="https://gdui-examples.herokuapp.com/"
         textPosition="center"
         background="gray"
       />
@@ -363,13 +363,13 @@ const FeatureCallout = props => (
             InstallationExample1,
             <p className="codeNote" key="2" >Check <a href={docUrl('ht_create_your_first_visualization.html#step-4-start-the-development-server')}>how to start development server</a></p>
           ]}
-          checked="true"
+          checked={true}
         />
         <FeatureCalloutBlock
           title="Get your project ID"
           example={[
             <InstallationExample2 key="1" />,
-            <p className="codeNote" key="2" >Don't have a GoodData project? Use <a href="https://gooddata-examples.herokuapp.com/">Live Examples</a> instead.</p>
+            <p className="codeNote" key="2" >Don't have a GoodData project? Use <a href="https://gdui-examples.herokuapp.com/">Live Examples</a> instead.</p>
           ]}
         />
         <FeatureCalloutBlock

@@ -2,7 +2,8 @@
 title: Create Your First Application from Scratch
 sidebar_label: Create Your First Application from Scratch
 copyright: (C) 2007-2018 GoodData Corporation
-id: ht_create_your_first_visualization
+id: version-8.0.0-ht_create_your_first_visualization
+original_id: ht_create_your_first_visualization
 ---
 
 This tutorial will guide you through the process of creating your first analytical application from scratch, using GoodData.UI with Facebook’s `create-react-app` tool.
