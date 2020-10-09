@@ -41,7 +41,7 @@ a boolean value. This function is executed against every measure and attribute i
 returns `true`, the measure or attribute is drillable. If the function returns `false`, the measure or attribute is
 not drillable.
 
-You can program any logic to determine whether a particular measure or attribute should be drillable. However, this is not required often. For more iformation, see [Create Header Predicates](ht_create_predicates.md).
+You can program any logic to determine whether a particular measure or attribute should be drillable. However, this is not required often. For more information, see [Create Header Predicates](30_tips__create_predicates.md).
 
 ### Predicate factory helpers
 
@@ -58,10 +58,10 @@ common drill eventing use cases. You can import this factory directly from the `
     The helper builds a predicate function that matches any measure or attribute in a visualization to the provided identifier.
 * `composedFromUri("<measure-or-attribute-uri>")`
 
-    The helper builds a predicate function that matches any [arithmetic measure](20_misc__arithmetic_measure.md) in a visualization contaning measures to the provided URI in its tree of measures that the arithmetic measure is built from.
+    The helper builds a predicate function that matches any [arithmetic measure](20_misc__arithmetic_measure.md) in a visualization containing measures to the provided URI in its tree of measures that the arithmetic measure is built from.
 * `composedFromIdentifier("<measure-or-attribute-identifier>")`
 
-    The helper builds a predicate function that matches any [arithmetic measure](20_misc__arithmetic_measure.md) in a visualization contaning measures to the provided identifier in its tree of measures that the arithmetic measure is built from.
+    The helper builds a predicate function that matches any [arithmetic measure](20_misc__arithmetic_measure.md) in a visualization containing measures to the provided identifier in its tree of measures that the arithmetic measure is built from.
 
 ## Set up drilling
 
