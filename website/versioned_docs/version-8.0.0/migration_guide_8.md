@@ -227,5 +227,5 @@ To get the latest version of the generated files, check the following table and 
 | n/a | [/src/contexts/index.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/contexts/index.js) |
 | [/src/index.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/v0.7.0/bootstrap/src/index.js) | [/src/index.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/index.js) |
 | [/src/App.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/v0.7.0/bootstrap/src/App.js) | [/src/App.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/App.js) |
-| [/src/AppRouter.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/v0.7.0/bootstrap/src/AppRouter.js) | [/src/AppRouter.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/AppRouter.js) |
+| [/src/routes/AppRouter.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/v0.7.0/bootstrap/src/routes/AppRouter.js) | [/src/routes/AppRouter.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/routes/AppRouter.js) |
 | [/src/sdk.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/v0.7.0/bootstrap/src/sdk.js) | n/a (this file is no longer needed) |

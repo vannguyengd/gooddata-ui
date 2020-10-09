@@ -47,14 +47,14 @@ To be able to use the visual components in your Angular 9+ environment, wrap eac
 Install the latest dependencies using either `npm` or `yarn`. Your application must be able to render React components from `@gooddata/sdk-ui-all` using a unique ID \(`uuid`\), and you also must be able to issue an `invariant` exception if the DOM node is not available.
 
 ```bash
-npm install --save uuid invariant react@^16.8.0 react-dom@^16.8.0 @gooddata/sdk-ui-all
+npm install --save uuid invariant react@^16.8.0 react-dom@^16.8.0 @gooddata/sdk-ui-all @gooddata/sdk-backend-bear
 npm install --save-dev @types/react @types/react-dom
 ```
 
 or
 
 ```bash
-yarn add uuid invariant react@^16.8.0 react-dom@^16.8.0 @gooddata/sdk-ui-all
+yarn add uuid invariant react@^16.8.0 react-dom@^16.8.0 @gooddata/sdk-ui-all @gooddata/sdk-backend-bear
 yarn add --dev @types/react @types/react-dom
 ```
 
