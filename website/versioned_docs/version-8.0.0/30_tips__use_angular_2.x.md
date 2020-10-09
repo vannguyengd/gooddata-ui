@@ -102,7 +102,7 @@ const backend = bearFactory().withAuthentication(
 
 @Component({
   selector: "app-kpi",
-  template: "<span [id]="rootDomID"></span>",
+  template: '<span [id]="rootDomID"></span>',
 })
 export class KpiComponent
   implements OnInit, OnDestroy, OnChanges, AfterViewInit {
@@ -187,7 +187,7 @@ If you want to render some charts, do the following:
 
     @Component({
       selector: "app-column-chart",
-      template: "<div style="height: 300px" [id]="rootDomID"></div>"
+      template: '<div style="height: 300px" [id]="rootDomID"></div>'
     })
 
     ...
