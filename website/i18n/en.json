@@ -186,8 +186,8 @@
         "sidebar_label": "Create a Custom Attribute Filter"
       },
       "ht_create_predicates": {
-        "title": "Create Predicates",
-        "sidebar_label": "Create Predicates"
+        "title": "Create Header Predicates",
+        "sidebar_label": "Create Header Predicates"
       },
       "ht_embed_visualization": {
         "title": "Embed an Insight Created in Analytical Designer",
@@ -1446,8 +1446,8 @@
         "sidebar_label": "Create a Custom Attribute Filter"
       },
       "version-8.0.0/version-8.0.0-ht_create_predicates": {
-        "title": "Create Predicates",
-        "sidebar_label": "Create Predicates"
+        "title": "Create Header Predicates",
+        "sidebar_label": "Create Header Predicates"
       },
       "version-8.0.0/version-8.0.0-ht_embed_visualization": {
         "title": "Embed an Insight Created in Analytical Designer",
