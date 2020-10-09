@@ -6,23 +6,21 @@ id: ht_create_predicates
 ---
 
 Predicates allow you to create a match between elements (for example, a measure header item or an attribute header item) with an arbitrary level of complexity.
-These are used in [drilling](15_props__drillable_item.md) so that you can decide which parts of your visualization can be drilled into.
+The predicates are used in [drilling](15_props__drillable_item.md) so that you can decide which parts of your visualization can be drilled into.
 
-Header Predicate is a function returning a boolean that takes two arguments:
+A header predicate is a function returning a boolean value that takes two arguments:
 
-* **Mapping Header** - an object describing the item the match of which we are testing (see the [definition](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/headerMatching/MappingHeader.ts#L16) for more details)
+* **Mapping Header** is an object that describes the item whose match is being tested (for more details, see the [definition](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/headerMatching/MappingHeader.ts#L16)).
 
-* **Header Predicate Context** - additional data describing the context in which the match is being tested: the data view that resulted in the values passed as the first argument (see the [definition](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/headerMatching/HeaderPredicate.ts#L8) for more details)
+* **Header Predicate Context** is additional data that describes the context in which the match is being tested: the data view that resulted in the values passed as the first argument (for more details, see the [definition](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/headerMatching/HeaderPredicate.ts#L8)).
 
-If a predicate returns `true` for a given item, the item is matched.
+If the predicate returns `true` for an item, the item is matched.
 
-The most common predicates are predefined in [HeaderPredicateFactory](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/headerMatching/HeaderPredicateFactory.ts#L167-L309), however, you can write your own.
+The most common predicates are predefined in [HeaderPredicateFactory](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/headerMatching/HeaderPredicateFactory.ts#L167-L309). You can also write your own predicates.
 
-## Custom Header Predicate Examples
+## Examples of custom header predicates
 
-To illustrate the possibilities of custom predicates, here are several examples.
-
-Predicate that matches all items with names starting with a capital _A_:
+**Example:** A predicate that matches all items with the names starting with a capital `A`
 
 ```js
 import { isResultAttributeHeader } from "@gooddata/sdk-backend-spi";
@@ -32,7 +30,7 @@ const startsWithA = (header) => {
 };
 ```
 
-Predicate that matches only attribute headers and only if the visualization has no more than 3 attributes:
+**Example:** A predicate that matches only attribute headers and only if the visualization has up to three attributes
 
 ```js
 import { isAttributeDescriptor } from "@gooddata/sdk-backend-spi";
