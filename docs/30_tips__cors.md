@@ -85,22 +85,8 @@ You can white-label a brand new domain \(see [White-Label a New Domain](https://
 The domains from which you want to enable API calls must be listed as allowed origins for your white-labeled domain.
 To make those domains allowed origins, use the [API for adding domains allowed for CORS access](https://help.gooddata.com/display/API/API+Reference#/reference/white-labeling/add-domains-allowed-for-cors-access/add-domains-allowed-for-cors-access).
 
-Alternatively, you can submit a request for CORS configuration to the [GoodData Support](https://support.gooddata.com/). In your request, provide the following:
-
-* The name of your GoodData domain
-* (Optional, but recommended) URLs to enable API calls from a local machine during development, for example, `https://local.test:8443` \(you have to set up `local.test` as an alias for `localhost` because using the actual localhost is not allowed\)
-
-**Example:**
-If your white-labeled GoodData domain is `analytics.example.com` and your app is expected to be hosted at `https://smart-app.example.com/`, you can request CORS by submitting the following request:
-
-```
-To: support@gooddata.com
-
-Subject: CORS origin setup for analytics.example.com
-
-Hello GoodData Support team, could you please enable https://smart-app.example.com and https://local.test:8443 as CORS origins for the GoodData domain associated with https://analytics.example.com/ ?
-
-Thank you.
-```
+* An allowed origin URL must start with `https://` and must end with a top-level domain (such as `.com`, `.org`, and so on).
+* You can add a port number to an allowed origin URL (for example, `https://www.example.com:8080/`).
+* You can use a wildcard (`*`, `**`) to represent a domain of the third and consecutive levels.
 
 **NOTE:** If you followed the instructions from the tutorial [Create Your First Application from Scratch](02_start__no_boilerplate.md), you can now remove the `setupProxy.js` file because it is not required anymore.
