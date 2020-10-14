@@ -105,6 +105,14 @@ const style = { height: 300 };
 </div>
 ```
 
+## Totals
+
+You can display rows with aggregated measure data using the `totals` prop. For more information, see [Specify Table Totals](30_tips__table_totals.md).
+
+Alternatively, you can enable the menu through which you can turn on the totals and subtotals. For more information, see [Configuration menu](#configuration-menu).
+
+![Pivot Table Menu Totals](assets/pivot_table_menu_totals.png "Pivot Table Menu Totals")
+
 ## Grouping
 
 By default, the same row attribute values in a column are grouped across the rows, which helps improve data readability in pivot tables. The header of the grouped columns is displayed at the top of the table even when you scroll through a long group.
@@ -115,15 +123,7 @@ The grouping is applied when the following conditions are both met:
 
 ![Pivot Table Grouping](assets/pivot_table_grouping.png "Pivot Table Grouping")
 
-To disable grouping, set the `groupRows` property to `false` (see [Properties](#properties)).
-
-## Totals
-
-You can display rows with aggregated measure data using the `totals` prop. For more information, see [Specify Table Totals](30_tips__table_totals.md).
-
-Alternatively, you can enable the menu through which you can turn on the totals and subtotals. For more information, see [Configuration menu](#configuration-menu).
-
-![Pivot Table Menu Totals](assets/pivot_table_menu_totals.png "Pivot Table Menu Totals")
+To disable grouping, set the `groupRows` property to `false` (see [Configuration menu](#configuration-menu)).
 
 ## Maximum height
 
@@ -375,12 +375,14 @@ You can omit the `columnWidths` prop completely. It has the same effect as speci
 
 You can configure the following settings:
 * **Totals** and **subtotals**. If you enable the subtotals menu but disable totals, subtotals will be disabled too.
+* **Row grouping**. See [Grouping](#grouping).
 * **Separators** used when formatting numbers. See [Change a separator in the number format](15_props__chart_config.md#Change-a-separator-in-the-number-format).
 * **Maximum height**. See [Maximum height](#maximum-height).
 * **Column width resizing**. See [Column width resizing](#column-width-resizing).
 
 ```jsx
 const config = {
+    groupRows: false,
     maxHeight: 800,
     menu: {
         aggregations: true,
@@ -419,7 +421,6 @@ const config = {
 | filters | false | [IFilter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | false | [IPivotTableConfig](#configuration-menu) | The configuration object |
 | sortBy | false | [ISortItem[]](50_custom__result.md#sorting) | An array of sort definitions |
-| groupRows | false | boolean |  If `false`, [grouping of the same values in attribute columns](#grouping) is disabled. The default is `true` (grouping enabled). |
 | locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-sdk-ui-pivot/tree/master/src/translations). |
 | drillableItems | false | [IDrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable |
 | ErrorComponent | false | Component | A component to be rendered if this component is in error state (see [ErrorComponent](15_props__error_component.md)) |
