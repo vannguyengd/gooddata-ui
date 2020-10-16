@@ -34,11 +34,17 @@ GoodData.UI is compatible with:
 
 **NOTE:** [Server-side rendering](https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md) is *not* supported.
 
-### Internet Explorer and mandatory polyfill
+### Internet Explorer and mandatory polyfills
+
+#### ES6 polyfill
 
 To run a GoodData.UI application in Internet Explorer 11, you must have the ES6 polyfill. For more information, see the [compatibility table](http://kangax.github.io/compat-table/es6/) and the instructions [here](https://github.com/zloirock/core-js).
 
 If you are using Babel, you can use the [Babel polyfill](https://babeljs.io/docs/usage/polyfill/) in your index to specifically include only the needed polyfill code.
+
+#### CSS variable polyfill
+
+Because Internet Explorer 11 does not support [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var), add one of the [polyfills](https://github.com/search?q=css+variables+polyfill) to avoid styling issues. We do not recommend any specific polyfill, because you may approach this situation differently (for example, transform variables to static values at build time vs. generate and append CSS classes at runtime). Each approach has certain limitations, so choose the one that best suits your needs.
 
 ## GoodData platform account
 
