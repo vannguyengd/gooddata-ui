@@ -150,11 +150,14 @@ columnSizing: {
 
 * The size is calculated based on the content in the header of the column that represents the lowest level of the grouped attributes (see [Grouping](#grouping)). If this is not applicable, the size is calculated based on the content in the header of the column with the measure name and the cells with the measure values.
 * The maximum column width is 500 px.
-* All the columns are automatically resized to fit their content.
 * New columns (that is, those that are shown after the initial render) are resized only if the table has not been vertically or horizontally scrolled. This is useful especially for responsive tables with a dynamic width.
 * A change of attributes, measures, filters, or totals in the table is handled as a new table. After the change is made, the column size is re-calculated based on the new data.
 * Scrolling horizontally or vertically and sorting values in a column do not affect the column width.
 * If you manually adjust the column width, the adjusted width is preserved only temporarily and will be reset to the previously set value after the table is re-rendered.
+
+#### Infinite scrolling
+
+Tables that use infinite scrolling (loading content continuously as a user scrolls down the page) are resized based on the first batch of rows. Dynamically loaded rows do not modify the size of the columns after the initial data load.
 
 ### Manual resizing
 
