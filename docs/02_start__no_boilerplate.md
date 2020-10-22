@@ -191,7 +191,7 @@ Now, you can start adding your first GoodData component:
     import "./App.css";
 
     const backend = bearFactory().withAuthentication(new ContextDeferredAuthProvider());
-    const measures = [ newMeasure("aaEGaXAEgB7U", m => m.format("#,##0") ];
+    const measures = [ newMeasure("aaEGaXAEgB7U", m => m.format("#,##0")) ];
     const attribute = newAttribute("date.abm81lMifn6q");
 
     function App() {
