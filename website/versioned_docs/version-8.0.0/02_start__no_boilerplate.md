@@ -163,7 +163,7 @@ Now, you can start adding your first GoodData component:
 
     6a. Define measures and attributes:
     ```javascript
-    const measures = [ newMeasure("aaEGaXAEgB7U", m => m.format("#,##0") ];
+    const measures = [ newMeasure("aaEGaXAEgB7U", m => m.format("#,##0")) ];
     const attribute = newAttribute("date.abm81lMifn6q");
     ```
 
