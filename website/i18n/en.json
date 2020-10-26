@@ -17,6 +17,10 @@
         "title": "GoodData Platform Introduction",
         "sidebar_label": "GoodData Platform Introduction"
       },
+      "why_gdui": {
+        "title": "Why GoodData.UI?",
+        "sidebar_label": "Why GoodData.UI?"
+      },
       "api_maturity": {
         "title": "API Maturity",
         "sidebar_label": "API Maturity"
