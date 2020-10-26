@@ -167,7 +167,7 @@ A combo chart?
     viewBy={locationResort}
 />
 ```
-![bar chart](assets/combo_chart.png) 
+![bar chart](assets/combochart.png) 
 
 **A bubble chart?**
 

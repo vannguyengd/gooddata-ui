@@ -7,11 +7,12 @@
     "Introduction": [
       "about_gooddataui",
       "why_gdui",
-      "framework_overview",
+      "interactive_examples",
       "platform_intro",
       "whats_new_8",
       "breaking_changes_8",
-      "migration_guide_8"
+      "migration_guide_8",
+      "framework_overview"
     ],
     "Getting Started": [
       "installation",
