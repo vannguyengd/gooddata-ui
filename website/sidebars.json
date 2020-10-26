@@ -5,8 +5,8 @@
       "live_examples"
     ],
     "Introduction": [
-      "why_gdui",
       "about_gooddataui",
+      "why_gdui",
       "framework_overview",
       "platform_intro",
       "whats_new_8",
