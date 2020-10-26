@@ -1,9 +1,5 @@
 {
   "Docs": {
-    "Support": [
-      "support_options",
-      "live_examples"
-    ],
     "Introduction": [
       "about_gooddataui",
       "why_gdui",
@@ -80,6 +76,10 @@
       "ht_render_visualization_from_different_domain",
       "ht_use_react_component_in_angular_2.x",
       "ht_create_predicates"
+    ],
+    "Support": [
+      "support_options",
+      "live_examples"
     ]
   }
 }

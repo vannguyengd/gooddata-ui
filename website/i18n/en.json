@@ -1550,7 +1550,6 @@
       "GitHub": "GitHub"
     },
     "categories": {
-      "Support": "Support",
       "Introduction": "Introduction",
       "Getting Started": "Getting Started",
       "Visual Components": "Visual Components",
@@ -1558,6 +1557,7 @@
       "Custom Visualizations": "Custom Visualizations",
       "Miscellaneous Features": "Miscellaneous Features",
       "Development Tips": "Development Tips",
+      "Support": "Support",
       "Tutorials": "Tutorials",
       "React Components": "React Components",
       "Reference": "Reference",
