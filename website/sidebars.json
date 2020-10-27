@@ -1,16 +1,14 @@
 {
   "Docs": {
-    "Support": [
-      "support_options",
-      "live_examples"
-    ],
     "Introduction": [
       "about_gooddataui",
-      "whats_new_8",
-      "framework_overview",
+      "why_gdui",
+      "interactive_examples",
       "platform_intro",
+      "whats_new_8",
       "breaking_changes_8",
-      "migration_guide_8"
+      "migration_guide_8",
+      "framework_overview"
     ],
     "Getting Started": [
       "installation",
@@ -61,7 +59,6 @@
       "create_new_visualization",
       "afm",
       "result_specification",
-      "execute_component",
       "execution_rest_api_and_result"
     ],
     "Miscellaneous Features": [
@@ -78,6 +75,10 @@
       "ht_render_visualization_from_different_domain",
       "ht_use_react_component_in_angular_2.x",
       "ht_create_predicates"
+    ],
+    "Support": [
+      "support_options",
+      "live_examples"
     ]
   }
 }

@@ -13,9 +13,17 @@
         "title": "Architecture Overview",
         "sidebar_label": "Architecture Overview"
       },
+      "interactive_examples": {
+        "title": "Interactive Code Examples",
+        "sidebar_label": "Interactive Code Examples"
+      },
       "platform_intro": {
         "title": "GoodData Platform Introduction",
         "sidebar_label": "GoodData Platform Introduction"
+      },
+      "why_gdui": {
+        "title": "Why GoodData.UI?",
+        "sidebar_label": "Why GoodData.UI?"
       },
       "api_maturity": {
         "title": "API Maturity",
@@ -1542,7 +1550,6 @@
       "GitHub": "GitHub"
     },
     "categories": {
-      "Support": "Support",
       "Introduction": "Introduction",
       "Getting Started": "Getting Started",
       "Visual Components": "Visual Components",
@@ -1550,6 +1557,7 @@
       "Custom Visualizations": "Custom Visualizations",
       "Miscellaneous Features": "Miscellaneous Features",
       "Development Tips": "Development Tips",
+      "Support": "Support",
       "Tutorials": "Tutorials",
       "React Components": "React Components",
       "Reference": "Reference",
