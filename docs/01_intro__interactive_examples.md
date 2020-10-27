@@ -5,7 +5,7 @@ sidebar_label: Interactive Code Examples
 copyright: (C) 2007-2020 GoodData Corporation
 ---
 
-We have created a number of simple interactive examples using CodeSandbox.ui. Each example points to a CodeSandbox screen that includes a simple GoodData.UI code next to a resulting visualization.
+We have created a number of simple interactive examples using CodeSandbox.io. Each example points to a CodeSandbox screen that includes a simple GoodData.UI code next to a resulting visualization.
 
 Feel free to play with the sample code in your browser to see how the visualizations update just after changing the component properties - for your convenience, we have added hints to most of the examples.
 

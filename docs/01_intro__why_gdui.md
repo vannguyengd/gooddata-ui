@@ -68,7 +68,7 @@ It is actually not difficult to get started. If all you need is one screen with 
 
 However, there are a couple of things to think about:
 -  It is easy to create static charts with a few hard-coded SQL queries, but new requirements will keep coming. Are you sure your SQL queries won’t turn into a big ball of mud or a spaghetti monster?
--  The data model may change—not that frequently, but it happens. Are you ready to refactor all the complex analytical queries when it does?
+-  The data model may change — not that frequently, but it happens. Are you ready to refactor all the complex analytical queries when it does?
 -  How about interactivity? Think filtering by various dimensional and numeric criteria, think drilling, think dynamic charts with user-defined measures and granularity.
 
 Which way sounds more convincing to you? Buy or build?
@@ -169,7 +169,7 @@ If you think about it, the components such as `<BarChart />` or `<BubbleChart />
 1.  They pass the AFM query to the analytical backend and retrieve the result set.
 2.  They pass the result set (maybe with some on-the-fly transformation if necessary) to the actual charting component.
 
-The first step (query execution) can be naturally separated into a reusable component. Let’s call it `<Execute />`. 
+The first step (query execution) can be naturally separated into a reusable component. Let’s call it [`<Execute />`](50_custom__create_new_visualization.md). 
 
 With such a component, it’s no surprise that the `<BarChart />` component from the previous examples can be implemented like this:
 
@@ -199,7 +199,7 @@ You don’t want to type `<BarChart />` every time your UI designer creates a ba
 <InsightView identifier={id} />
 ```
 
-An interactive example is available from [here](https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-insightview?file=/src/App/index.js).
+An interactive example is available from [here](https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-insightview?file=/src/App/index.js). And here you can find more about the [InsightView](30_tips__embed_visualization.md).
 
 ## Reference implementation
 
@@ -211,7 +211,7 @@ For those of you who prefer to try something proven instead of re-inventing the 
 
 The library is called GoodData.UI, and two options are currently available from our [GitHub repository](https://github.com/gooddata/gooddata-ui-sdk):
 -  A fully open source implementation of the attributes-filters-measures querying pattern with pluggable back end.
--  An extension of the open source library that includes Highcharts-based visualizations; since Highcharts itself is not open-source, this extension is only available under a proprietary license too. However, the source code is fully available in the YYYY GitHub repository.
+-  An extension of the open source library that includes Highcharts-based visualizations; since Highcharts itself is not open-source, this extension is only available under a proprietary license too. However, the source code is fully available in the [GitHub repository](https://github.com/gooddata/gooddata-ui-sdk).
 
 Would you like to know more? Check out the following resources:
 -  [Documentation and tutorials](01_intro__about_gooddataui.md).
@@ -223,9 +223,9 @@ Would you like to know more? Check out the following resources:
 And if you just want to get started, you can do that in just three simple steps:
 1.  Get a free GoodData account at [www.gooddata.com/free](www.gooddata.com/free) (unless you are an existing GoodData customer).
 2.  Type `npx @gooddata/create-gooddata-react-app my-app` in the terminal window.
-3.  In the newly created folder, type npm start to see the automatically generated skeleton of your first analytical web application with additional instructions.
+3.  In the newly created folder, type `yarn start` to see the automatically generated skeleton of your first analytical web application with additional instructions.
 
-A complete tutorial is available from [here](02_start__using_boilerplate.md). If you prefer to use the standard create-react-app and add GoodData.UI library manually, [we have you covered too](02_start__no_boilerplate.md).
+A complete tutorial is available from [here](02_start__using_boilerplate.md). If you prefer to use the standard create-react-app and add GoodData.UI library manually, [check out this other tutorial](02_start__no_boilerplate.md).
 
 And if you have any questions about GoodData platform, GoodData.UI, or just this document, feel free to ask us in our community forums at [community.gooddata.com](community.gooddata.com).
 
