@@ -19,7 +19,7 @@ Your customers have always purchased your software because it made employees mor
 
 Traditionally, this efficiency was achieved by making users’ jobs easier through capabilities such as an effective user interface and integrations with third-party systems.
 
-This is no longer enough. Your software is expected to make them more efficient by helping them work smarter.
+This is no longer enough. Your software is expected to make them more efficient by helping them work _smarter_.
 
 This isn’t big news for you if you’re working on marketing automation or digital campaign products. 
 
@@ -27,24 +27,7 @@ Leading ad tech platforms such as Google Ads provide a user interface that seaml
 
 As more and more jobs are becoming data driven, the odds are that sooner or later, your customers will demand this kind of smart user interface. 
 
-## What is an analytical application?
-An analytical application is more than an application with a dashboard somewhere in the admin interface.
-
-In the B2C word, the most popular apps are actually examples of super simplified, “don’t make me think” style analytical applications.
-
-When checking your Facebook feed, you are not applying filters on a giant online forum to find something worth reading, an interesting content is served to you automatically.
-
-When you are hailing an Uber or Lyft, you don’t need a taxi dispatcher to ask drivers if any of them are going to pick you up.
-
-Things are a little different in the B2B world. Missing an interesting Facebook post is not a big deal, ignoring a support ticket or a job application can have consequences. This is why B2B software vendors cannot always follow the example of consumer oriented apps and turn familiar user interfaces of support or HR systems into magical AI driven “push button” apps.
-
-**TODO something about analytics at the point of work etc etc etc**
-
 ![Route Detail](assets/route_detail.jpg)
-
-**TODO**
-**More than a dashboard.**
-**Actionable insights at users’ fingertips.**
 
 ## Common solutions
 At a glance, developing an analytical application may sound like an easy task that can be solved in one of the following ways:
@@ -63,7 +46,7 @@ In an ideal world, it works like this:
 
 Even though this simplicity may be appealing, questions about flexibility and control immediately come to an engineer’s mind: 
 
-It may meet the requirements now. But what if our requirements change?
+It may meet the requirements _now_. But what if our requirements change?
 
 How much flexibility do we have if we want to change the built-in visualizations, interaction patterns, or other components?
 
@@ -93,7 +76,7 @@ Which way sounds more convincing to you? Buy or build?
 ## Building the right way
 We are developers ourselves. Our daily job is to build a platform that powers analytical applications that are used by half of Fortune 500 companies. Some of them use interactive dashboards, some of them use our data exploration tool, some of them use custom-built applications.
 
-**<TODO screenshots:AD, something non-dashboardish-interactive - Visa? GoodFlights? DV?>**
+![Route Detail](assets/DV_ano_video_ad.png)
 
 However, the point of this article is not to sell you on what we do. Instead, we would like to share some of the best practices, key principles, and tools we have developed that allow us to cover such a variety of use cases.
 
@@ -129,9 +112,7 @@ It’s a programmatic representation of the end user’s mental model. Think abo
 
 ![AD Bubble](assets/ad_bubble.png) 
 
-And it is a great fit to modern reactive web development frameworks such as React.js. 
-
-Let’s see the GoodData.UI React.js code that would generate the same bubble chart as on the screenshot above:
+The AFM approach is a great fit to modern reactive web development frameworks such as React.js: you can easily imagine that the bubble chart above is rendered by a React.js code that looks like that:
 
 ```jsx
 <BubbleChart
@@ -142,39 +123,19 @@ Let’s see the GoodData.UI React.js code that would generate the same bubble ch
 />
 ```
 
-Bar chart? 
+The following diagram shows the full flow from a visualization and the underlying React component to the REST API of the GoodData platform:
 
-**TODO: unify with the original bubble example?**
+![AD React GD](assets/AD_React_GD.png) 
 
-```jsx
-<BarChart
-    measures={[totalSales]}
-    viewBy={resort}
-    filters={[]}
-/>
-```
+The attribute-filter-measure is a relatively common querying idiom among analytics systems, so we made the architecture pluggable. So, with a bit of JavaScript code that implements the AFM contract for a different service, your version of that diagram may look like this:
 
-![bar chart](assets/bar_chart.png) 
-
-A combo chart?
-
-**TODO: unify with the original bubble example?**
-
-```jsx
-<ComboChart
-    primaryMeasures={franchiseFees}
-    secondaryMeasures={adRoyalty}
-    viewBy={locationResort}
-/>
-```
-![bar chart](assets/combochart.png) 
-
-**A bubble chart?**
-
-**TODO motivational code example + screenshot.**
-**TODO we have bubble chart already as the initial example**
+![AD React Druid](assets/AD_React_Druid.png)
 
 It’s simple, it maps well to your use cases, it works.
+
+_Note: GoodData platform, the AFM query pattern works even with non-trivial dimensional models with multiple fact tables, conformed dimensions, and even many-to-many relationships._ 
+
+_More information about our analytics engine and semantic layer is available from the [developer portal](https://developer.gooddata.com/analytics)._
 
 ### Interactivity
 
@@ -199,22 +160,46 @@ So we simply update the component with the filter component like this:
 The same approach can be done if you want to let your end users switch granularity, measures, or other parameters of the chart.
 
 ### Openness and extensibility
-In various code samples earlier in this document, we were using specific visualization components such as <BarChart /> and <BubbleChart />.
+
+In various code samples earlier in this document, we were using specific visualization components such as `<BarChart />` and `<BubbleChart />`.
+
+You can imagine that your AFM enabled React library has more visualizations like that. But no visualization framework in the world will cover all visualizations you will ever need. Unless it’s extensible by design.
+
+If you think about it, the components such as `<BarChart />` or `<BubbleChart />` do two things:
+1.  They pass the AFM query to the analytical backend and retrieve the result set.
+2.  They pass the result set (maybe with some on-the-fly transformation if necessary) to the actual charting component.
+
+The first step (query execution) can be naturally separated into a reusable component. Let’s call it `<Execute />`. 
+
+With such a component, it’s no surprise that the `<BarChart />` component from the previous examples can be implemented like this:
+
+```jsx
+<Execute measures={measures} slicesBy={viewBy}>
+  { (error, isLoading, result) } => (
+     // some error handling code
+     // some loading indicator handling code
+     <ActualBarChartFromAChartingLibrary data={tranformForMyChartingLibrary(result)} />
+  )
+</Execute>
+```
+
+And once we have this `<Execute />` component then adding it to the public API of our collection of React components is quite a natural step. You can see it in action in our [code sandbox](https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-execute?file=/src/App/index.js).
 
 ### Integrated point-and-click development
-**TODO a non-technical user can create data visualization using a point-and-click user interface. The developer can simply take it and reference it from the code.**
+
+If you are still reading, you can probably write React code and you can appreciate the flexibility of a good React.js library. 
+
+On the other hand, you usually want to start with something simple. And for quick iterations over early prototypes, writing code may look like an overkill, especially if a non-technical user can create data visualization using a point-and-click user interface.
+
+Especially if the user interface is [as easy as this](https://developer.gooddata.com/assets/Images/f13aa4ea68c25b095fd77de672e82e3e.webm).
+
+You don’t want to type `<BarChart />` every time your UI designer creates a bar chart. It is more natural to grab the identifier of whatever your point-and-click colleague created. Maybe with something like this:
 
 ```jsx
 <InsightView identifier={id} />
 ```
 
-### Developer Friendliness
-
--  Create-react-app style tool chain
--  Documentation
--  Code examples
--  Granular packaging
--  API versioning 
+An interactive example is available from [here](https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-insightview?file=/src/App/index.js).
 
 ## Reference implementation
 
@@ -228,6 +213,19 @@ The library is called GoodData.UI, and two options are currently available from 
 -  A fully open source implementation of the attributes-filters-measures querying pattern with pluggable back end.
 -  An extension of the open source library that includes Highcharts-based visualizations; since Highcharts itself is not open-source, this extension is only available under a proprietary license too. However, the source code is fully available in the YYYY GitHub repository.
 
+Would you like to know more? Check out the following resources:
+-  [Documentation and tutorials](01_intro__about_gooddataui.md).
+-  Interactive code samples.
+-  Additional examples in not so interactive but comprehensive [gallery](https://gdui-examples.herokuapp.com/).
+
 ## Getting started
 
-**TODO brief summary of a tutorial.**
+And if you just want to get started, you can do that in just three simple steps:
+1.  Get a free GoodData account at [www.gooddata.com/free](www.gooddata.com/free) (unless you are an existing GoodData customer).
+2.  Type `npx @gooddata/create-gooddata-react-app my-app` in the terminal window.
+3.  In the newly created folder, type npm start to see the automatically generated skeleton of your first analytical web application with additional instructions.
+
+A complete tutorial is available from [here](02_start__using_boilerplate.md). If you prefer to use the standard create-react-app and add GoodData.UI library manually, [we have you covered too](02_start__no_boilerplate.md).
+
+And if you have any questions about GoodData platform, GoodData.UI, or just this document, feel free to ask us in our community forums at [community.gooddata.com](community.gooddata.com).
+
