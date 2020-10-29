@@ -9,7 +9,7 @@ const React = require('react');
 const siteConfig = require(process.cwd() + '/siteConfig.js');
 
 function docUrl(doc, language) {
-  return siteConfig.baseUrl + 'docs/' + (language ? language + '/' : '') + doc;
+  return siteConfig.baseUrl + 'docs/next/' + (language ? language + '/' : '') + doc;
 }
 
 class Button extends React.Component {
@@ -405,13 +405,13 @@ const GetStarted = props => (
               imageHeight: 64,
               text: <span>Find all the details about <br className="noMobile" />GoodData.UI</span>,
               linkText: "See documentation",
-              linkHref: "https://sdk.gooddata.com/gooddata-ui/docs/next/why_gdui.html"
+              linkHref: docUrl("why_gdui.html")
             },{
               title: 'Interactive Code Samples',
               image: './img/homepage/interactive-code-samples.svg',
               text: <span>Try it yourself and play with our <br className="noMobile" />code samples</span>,
               linkText: "Try interactive code samples",
-              linkHref: "https://sdk.gooddata.com/gooddata-ui/docs/next/interactive_examples.html"
+              linkHref: docUrl("interactive_examples.html")
             },{
               title: 'Examples Gallery',
               image: './img/homepage/examples-gallery.svg',
