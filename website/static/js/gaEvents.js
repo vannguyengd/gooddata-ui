@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 	function sendGAEvent(item, action, category) {
-		item.addEventListener("click", function () {
+		item && item.addEventListener("click", function () {
 			ga('send', 'event', {
 				eventCategory: category,
 				eventAction: action,

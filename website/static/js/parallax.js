@@ -1,16 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var homeSplash = document.getElementById('homeSplashFade'),
-        homeSplashBgElem = document.getElementById('homeSplashFadeBg'),
-        homeSplashHeight = homeSplash.offsetTop + homeSplash.offsetHeight,
-        homeSplashBgOverflow = 30,
-        y, percentage;
+    var splash = document.getElementById('splash-parallax'),
+        layers = splash.childNodes,
+        height = 200,
+        scrollProgress;
+
+    parallaxTransform(layers);
 
     window.addEventListener('scroll', function() {
-        y = window.scrollY;
-
-        if(y <= homeSplashHeight) {
-            percentage = ((homeSplashBgOverflow / 2) * (-((homeSplashHeight - y) / homeSplashHeight))) * ((100 - homeSplashBgOverflow) / 100);
-            homeSplashBgElem.style.transform = 'translate3d(0, ' + percentage + '%, 0)';
-        }
+        parallaxTransform(layers);
     });
+
+    function parallaxTransform(layers) {
+        var layersArray = Array.prototype.slice.call(layers);
+        layers.forEach(function(layer, index) {
+            layer.style.transform = "translateY(" + scrollProgress(layersArray) * index + "%)";
+        });
+    }
+
+    function scrollProgress(layers) {
+        return window.scrollY <= height ? -((100 / layers.length / 5) * (1 - window.scrollY / height)) : 0;
+    }
 });

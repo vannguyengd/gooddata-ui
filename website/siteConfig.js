@@ -78,8 +78,8 @@ const siteConfig = {
     },
   },
   twitter: 'true',
-  twitterImage: 'img/metaimage.jpg',
-  ogImage: 'img/metaimage.jpg',
+  twitterImage: 'img/metaimage.png',
+  ogImage: 'img/metaimage.png',
   disableHeaderTitle: true
 };
 

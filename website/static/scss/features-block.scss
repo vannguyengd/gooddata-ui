@@ -8,6 +8,23 @@
     }
 }
 
+.featuresSubtitle {
+    color: $gd-color-dark;
+    font-size: 1.625rem;
+
+    @media #{$medium-down} {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+    }
+}
+
+.featuresBlockText-left,
+.featuresBlockText-right {
+    .featuresTitle {
+        margin-bottom: 0;
+    }
+}
+
 .featuresBlockText-right {
     .featuresText {
         @media #{$medium-up} {
@@ -51,16 +68,13 @@
 
     .buttonWrapper {
         display: inline-block;
+        text-align: inherit;
     }
 }
 
 .featuresLink {
     display: inline-block;
     margin: 2rem 0;
-}
-
-.featuresExample {
-    text-align: left;
 }
 
 .exampleCode,
@@ -75,6 +89,7 @@
     border: none;
     border-radius: 0;
     white-space: pre-wrap;
+    text-align: left;
 
     .highlighting {
         margin: 0;
@@ -112,38 +127,111 @@
 
 .featuresBlockGallery {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     padding: 0;
     list-style-type: none;
     text-align: center;
+
+    + .buttonWrapper {
+        margin-top: 3rem;
+    }
+
+    .featuresText & {
+        margin-top: 3rem;
+        margin-left: -0.625rem;
+    }
+
+    @media #{$medium-down} {
+        justify-content: center;
+    }
 }
 
 .featuresBlockGalleryItem {
-    flex: 1 1 25.5rem;
-    max-width: 25.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 25rem;
     min-width: 15rem;
-    margin: 0 0.625rem;
+    margin: 0 0.625rem 1.25rem;
+
+    &.card {
+        align-self: stretch;
+        padding: 0 1.25rem 1.25rem;
+        border-radius: 3px;
+        box-shadow: 0 0 11px 0 transparentize($gd-color-dark, 0.92);
+        background: $gd-color-text-light;
+        text-align: left;
+    }
+
+    @media #{$medium-down} {
+        width: 50%;
+        margin-bottom: 3rem;
+    }
+
+    @media #{$small-down} {
+        width: 100%;
+    }
 }
 
 .featuresBlockGalleryTitle {
     margin: 0.4rem 0;
-    color: transparentize($gd-color-dark, 0.2);
-    font-size: 1.5rem;
+    color: $gd-color-dark;
+    font-size: 1.1rem;
     font-weight: bold;
+    text-transform: uppercase;
+
+    &:first-child {
+        margin-top: 1.25rem;
+    }
 }
 
 .featuresBlockGalleryImage {
-    width: 100%;
-    padding-top: 54.545%;
-    box-shadow: 0 1px 10px 0 transparentize($gd-color-dark, 0.9);
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin: 0 0 1.25rem;
+
+    &Image {
+        position: absolute;
+        max-height: 100%;
+    }
+
+    &Hover {
+        opacity: 0;
+        transition: 0.2s all;
+    }
+
+    &:hover &Hover {
+        opacity: 1;
+    }
+
+    .featuresBlockGalleryItem.card & {
+        height: 130px;
+        margin-right: -1.25rem;
+        margin-left: -1.25rem;
+
+        &Image {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 
 .featuresBlockGalleryText,
 .featuresBlockGalleryLink {
     margin: 1rem 0;
+}
+
+.featuresBlockGalleryText {
+    flex: 1 0 auto;
+}
+
+.featuresBlockGalleryLink {
+    margin-bottom: 0;
 }
 
 .charting-lib-logo {

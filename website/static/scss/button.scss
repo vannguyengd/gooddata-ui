@@ -1,18 +1,78 @@
 .button {
-    border: none;
+    min-width: 12rem;
+    min-height: 2.875rem;
+    padding: 0.7rem 0.9rem;
+    border: 2px solid $gd-color-dark;
+    border-radius: 3px;
+    color: $gd-color-dark;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.225rem;
+    text-align: center;
     text-transform: none;
+    transition: all .3s;
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none !important;
+        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI1MCI+PGRlZnM+PHBhdGggZD0iTTAgMGgxMDAwbC0xMCA1MEgwVjB6IiBpZD0iYSIvPjwvZGVmcz48dXNlIHhsaW5rOmhyZWY9IiNhIiBmaWxsPSIjMDAwIi8+PHVzZSB4bGluazpocmVmPSIjYSIgZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMCIvPjwvc3ZnPg==);
+        background-color: transparent;
+        background-position: -1000px center;
+        background-repeat: no-repeat;
+    }
 
     &:hover,
     &:focus,
     &:active {
-        color: $gd-color-text;
-        text-decoration: underline !important;
-        background: transparent;
+        color: $gd-color-white;
+        background-position: 90% center;
+    }
+
+    &-inverted {
+        color: $gd-color-white;
+        border-color: $gd-color-white;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI1MCI+PGRlZnM+PHBhdGggZD0iTTAgMGgxMDAwbC0xMCA1MEgwVjB6IiBpZD0iYSIvPjwvZGVmcz48dXNlIHhsaW5rOmhyZWY9IiNhIiBmaWxsPSIjZmZmIi8+PHVzZSB4bGluazpocmVmPSIjYSIgZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMCIvPjwvc3ZnPg==);
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $gd-color-dark;
+        }
+    }
+
+    &.docs-prev,
+    &.docs-next {
+        min-width: 0;
+        margin: 1rem 0;
     }
 }
 
 .button-link {
+    color: $gd-color-highlight;
     text-decoration: underline;
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: #0084c9;
+    }
+
 }
 
 a {
