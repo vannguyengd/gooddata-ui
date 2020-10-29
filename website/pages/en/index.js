@@ -6,25 +6,10 @@
  */
 
 const React = require('react');
-const hljs = require('highlight.js');
-
-const CompLibrary = require('../../core/CompLibrary.js');
-const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
-const Container = CompLibrary.Container;
-const GridBlock = CompLibrary.GridBlock;
-
 const siteConfig = require(process.cwd() + '/siteConfig.js');
-
-function imgUrl(img) {
-  return siteConfig.baseUrl + 'img/' + img;
-}
 
 function docUrl(doc, language) {
   return siteConfig.baseUrl + 'docs/' + (language ? language + '/' : '') + doc;
-}
-
-function pageUrl(page, language) {
-  return siteConfig.baseUrl + (language ? language + '/' : '') + page;
 }
 
 class Button extends React.Component {
@@ -53,70 +38,62 @@ const ResponsiveImage = props => (
 
 const SplashContainer = props => (
   <section className="homeContainer">
-    <div id="homeSplashFade" className="homeSplashFade">
-      <div id="homeSplashFadeBg" className="homeSplashFadeBg" />
-      <div className="wrapper homeWrapper">{props.children}</div>
-    </div>
+    <div className="wrapper homeWrapper">{props.children}</div>
   </section>
-);
-
-const Logo = props => (
-  <div className="projectLogo">
-    <img src={props.img_src} />
-  </div>
 );
 
 const ProjectTitle = props => (
   <h1 className="projectTitle">
-    <small>Welcome to</small>
     {siteConfig.title}
   </h1>
 );
 
 const ProjectDescription = props => (
-  <p className="projectDescription">A powerful JavaScript library <br className="noMobile" />for&nbsp;building analytical applications</p>
+  <p className="projectDescription">
+    Component library for rapid <br className="noMobile" />
+    development of interactive <br className="noMobile" />
+    analytical user interfaces
+  </p>
 )
 
-const PromoSection = props => (
-  <div className="section promoSection">
-    <div className="promoRow">
-      <div className="pluginRowBlock">{props.children}</div>
-    </div>
+const SplashParallax = props => (
+  <div id="splash-parallax" className="splash-parallax">
+    {props.layers.map((layer, index) => (
+      <img
+        src={layer}
+        key={`SplashParallaxLayer${index}`}
+        className={`splash-parallax-layer splash-parallax-layer-${index}`}
+      />
+    ))}
   </div>
-);
+)
 
 class HomeSplash extends React.Component {
   render() {
-    let language = this.props.language || '';
     return (
       <SplashContainer>
-        <div className="inner">
+        <div className="left">
           <ProjectTitle />
           <ProjectDescription />
-          <PromoSection>
-            <Button href={docUrl('about_gooddataui.html')}>See documentation</Button>
-            <Button href="https://gdui-examples.herokuapp.com/" className="button button-secondary">Live examples</Button>
-          </PromoSection>
-          <PromoSection>
-            <Button href="https://help.gooddata.com/display/doc/GoodData+Platform+Overview" className="button-link">About GoodData Platform</Button>
-          </PromoSection>
+          <Button href={docUrl('about_gooddataui.html')} className="button-link">See documentation</Button>
+        </div>
+        <div className="right">
+          <SplashParallax
+            layers={[
+              "./img/homepage/splash-image-l1.svg",
+              "./img/homepage/splash-image-l2.svg",
+              "./img/homepage/splash-image-l3.svg",
+              "./img/homepage/splash-image-l4.svg"
+            ]}
+          />
         </div>
       </SplashContainer>
     );
   }
 }
 
-const Block = props => (
-  <Container
-    padding={['bottom', 'top']}
-    id={props.id}
-    background={props.background}>
-    <GridBlock align="center" contents={props.children} layout={props.layout} />
-  </Container>
-);
-
 const BackgroundBlock = props => (
-  <div className={'backgroundBlock-' + props.background}>
+  <div className={`backgroundBlock backgroundBlock-${props.background} ${props.stretch ? "backgroundBlock-stretch" : ""}`}>
     {props.children}
   </div>
 )
@@ -125,28 +102,33 @@ const FeaturesBlock = props => (
   <div className={'wrapper featuresBlock featuresBlockText-'+ props.textPosition}>
     <div className="featuresText">
       <h2 className="featuresTitle">{props.title}</h2>
-      {props.content && <p className="featuresContent">{props.content}</p>}
+      {props.subtitle && <p className="featuresSubtitle">{props.subtitle}</p>}
+      {props.content && props.content.map((content, index) => (<p className="featuresContent" key={props.title + index}>{content}</p>))}
       {props.linkTitle && <a href={props.linkUrl} className="featuresLink">{props.linkTitle}</a>}
       <div>{props.children}</div>
     </div>
-    <div className="featuresExample">
-      {props.example}
-    </div>
+    {props.example && (
+      <div className="featuresExample">
+        {props.example}
+      </div>
+    )}
   </div>
 );
 
 const FeaturesBlockGallery = props => {
   const gallery = props.children.map((item, index) => (
-    <li key={index} className="featuresBlockGalleryItem">
+    <li key={index} className={`featuresBlockGalleryItem${props.cards ? " card" : ""}`}>
+      {item.image && (
+        <div className="featuresBlockGalleryImage">
+          <img src={item.image} className="featuresBlockGalleryImageImage" width={item.imageWidth} height={item.imageHeight} alt={item.title} />
+          {item.imageHover && 
+            <img src={item.imageHover}  className="featuresBlockGalleryImageImage featuresBlockGalleryImageHover" width={item.imageWidth} height={item.imageHeight} alt={item.title} />}
+        </div>
+      )}
       <h4 className="featuresBlockGalleryTitle">{item.title}</h4>
-      <ResponsiveImage
-        className="featuresBlockGalleryImage"
-        alt={item.title}
-        src={item.image}
-      />
       {item.text && <p className="featuresBlockGalleryText">{item.text}</p>}
       {item.linkHref &&
-        <a href={item.linkHref} className="featuresBlockGalleryLink">
+        <a href={item.linkHref} className="featuresBlockGalleryLink button-link">
           {item.linkText || 'Learn more'}
         </a>
       }
@@ -156,33 +138,12 @@ const FeaturesBlockGallery = props => {
   return <ul className="featuresBlockGallery">{gallery}</ul>
 }
 
-const VisualizationsSection = (props) => {
-  const imgPath = '/static/img/vis-icons/';
-  const visualizations = ['Table', 'Pie', 'Line', 'Column', 'Headline', 'Scatter', 'Bubble', 'Bar', 'Treemap', 'Column-line', 'Funnel', 'Dual Line'];
-  const visualizationsList = visualizations.map((visualization, index) => {
-    const visClass = visualization.replace(/\s/, '-').toLowerCase();
-
-    return (
-      <li key={index} className={'visualization ' + visClass}>
-        <img src={imgPath + visClass} className="visualizationImage" alt={visualization} />
-        <span className="visualizationTitle">{visualization}</span>
-      </li>
-    );
-  });
-  return (
-    <div className="visualizationsSection">
-      <ul className="visualizationsList">{visualizationsList}</ul>
-    </div>
-  );
-};
-
 const CodeExample1 = () => (
   <pre className="exampleCode">
     <code className="hljs highlighting">
       <span className="hljs-name">&lt;LineChart</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">projectId=</span><span className="hljs-string">&#39;&lt;project-id&gt;&#39;</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;measures&#125;</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;attribute&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;[Ldm.Volume]&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;Ldm.DateMonth.Short&#125;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">config=</span><span className="hljs-string">&#123;&#123;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">colors:</span> [<span className="hljs-string">&#39;#14b2e2&#39;</span>, <span className="hljs-string">&#39;#02C18E&#39;</span>]<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-string">&#125;&#125;</span><br/>
@@ -194,11 +155,13 @@ const CodeExample1 = () => (
 const CodeExample2 = () => (
   <pre className="exampleCode">
     <code className="hljs highlighting">
-      <span className="hljs-name">&lt;Execute</span> <span className="hljs-attr">afm=</span><span className="hljs-string">&#123;&lt;afm&gt;&#125;</span> <span className="hljs-attr">projectId=</span><span className="hljs-string">&#123;&lt;project-id&gt;&#125;</span><br/>
-      <span className="hljs-attr">onLoadingChanged=</span><span className="hljs-string">&#123;function&#125;</span> <span className="hljs-attr">onError=</span><span className="hljs-string">&#123;function&#125;&gt;</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&#123;<br/>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-comment">&#47;&#47; your visualization code</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br/>
+      <span className="hljs-name">&lt;Execute</span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">seriesBy=</span><span className="hljs-string">&#123;&lt;[Ldm.Revenue]&gt;&#125;</span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">slicesBy=</span><span className="hljs-string">&#123;&lt;[Ldm.LocationCity]&gt;&#125;</span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">filters=</span><span className="hljs-string">&#123;&lt;filters&gt;&#125;</span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">onLoadingChanged=</span><span className="hljs-string">&#123;function&#125;</span>&nbsp;
+      <span className="hljs-attr">onError=</span><span className="hljs-string">&#123;function&#125;</span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">children=</span><span className="hljs-string">&#123;<span className="hljs-comment">/* your visualization component */</span>&#125;&gt;</span><br/>
       <span className="hljs-name">&lt;/Execute&gt;</span>
     </code>
   </pre>
@@ -207,50 +170,29 @@ const CodeExample2 = () => (
 const InstallationExample1 =  (
   <pre className="exampleCode" key="InstallationExample1">
     <code className="hljs highlighting">
-      <span className="hljs-comment">// optional - see <a href="https://yarnpkg.com/lang/en/docs/install/">how to install yarn</a>, or <a href="https://docs.npmjs.com/cli/install">npm</a>.</span><br/>
-      <span className="hljs-literal">$ yarn</span> global add <span className="hljs-type">create-react-app</span><br/>
-      <span className="hljs-literal">$ create-react-app</span> my-first-app<br/>
-      <br/>
-      <span className="hljs-comment">// installation</span><br/>
-      <span className="hljs-literal">$ cd</span> my-first-app<br/>
-      <span className="hljs-literal">$ yarn</span> add <span className="hljs-type">@gooddata/react-components</span><br/>
-      <span className="hljs-literal">$ yarn</span> install
+      <span className="hljs-comment">// bootstrap and configure your new application</span><br/>
+      $ npx @gooddata/create-gooddata-react-app my-app<br/>
     </code>
   </pre>
 );
 
 const InstallationExample2 = () => (
-  <ol>
-    <li>
-      Open your <strong>GoodData project</strong> in the browser.
-      <img src="./img/homepage/installation_2.png" />
-    </li>
-    <li>
-      Search for <strong>/projects/</strong> in the address bar.
-      <pre className="exampleCode">
-        <code className="hljs highlighting">
-          <span className="hljs-literal">https://</span>
-          …gooddata.com/…/projects/
-          <span className="hljs-selector-id">ProjectID</span>
-          |…
-        </code>
-      </pre>
-    </li>
-    <li>
-      Save the <span className="hljs-selector-id">Project ID</span> for later.
-    </li>
-  </ol>
+  <pre className="exampleCode">
+    <code className="hljs highlighting">
+      $ cd my-app<br/>
+      $ yarn start
+    </code>
+  </pre>
 );
 
 const InstallationExample3 = () => (
   <pre className="exampleCode">
     <code className="hljs highlighting">
-    <span className="hljs-comment">// Add this snippet to src/App.js</span><br/>
-    <span className="hljs-name">import</span> <span className="hljs-literal">&#123; LineChart &#125;</span> from <span className="hljs-string">&#39;@gooddata/react-components&#39;</span>;<br/><br/>
+      <span className="hljs-name">import</span> <span className="hljs-string">"@gooddata/sdk-ui-charts/styles/css/main.css"</span>;<br/>
+      <span className="hljs-name">import</span> <span className="hljs-literal">&#123; LineChart &#125;</span> from <span className="hljs-string">&#39;@gooddata/sdk-ui-charts&#39;</span>;<br/><br/>
       <span className="hljs-name">&lt;LineChart</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">projectId=</span><span className="hljs-string">&#39;&lt;project-id&gt;&#39;</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;measures&#125;</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;attribute&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;[Ldm.Volume]&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;Ldm.DateMonth.Short&#125;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">config=</span><span className="hljs-string">&#123;&#123;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">colors:</span> [<span className="hljs-string">&#39;#14b2e2&#39;</span>]<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-string">&#125;&#125;</span><br/>
@@ -267,32 +209,119 @@ const ExampleImage = props => (
 
 const Features = props => (
   <section className="features">
+    <BackgroundBlock background="white">
+      <FeaturesBlock
+        title="What it is for?"
+        subtitle={<span>GoodData.UI was designed to help application developers quickly create <br className="noMobile" />and evolve interactive data analytics applications that are tailored to the <br className="noMobile" />needs of your users.</span>}
+        example={<FeaturesBlockGallery>
+          {[{
+            title: 'Productivity',
+            image: './img/homepage/productivity.svg',
+            text: <span>With pre-built components that connect directly to <br className="noMobile" />the GoodData platform and query engine, your <br className="noMobile" />productivity isn’t impacted by waiting on your <br className="noMobile" />back-end engineers.</span>
+          },{
+            title: 'Free, open and extensible',
+            image: './img/homepage/free-open-extensible.svg',
+            text: <span>Free (both as in “freedom” and “free beer”) and <br className="noMobile" />extensible, the open-source library makes it easy to <br className="noMobile" />get started with the Free tier of the GoodData <br className="noMobile" />cloud platform.</span>
+          },{
+            title: 'Developer friendly',
+            image: './img/homepage/developer-friendly.svg',
+            text: <span>Get up and running quickly with a set of React.js <br className="noMobile" />components with Typescript types, granular <br className="noMobile" />packaging, detailed documentation, and interactive <br className="noMobile" />code samples.</span>,
+          }]}
+        </FeaturesBlockGallery>}
+        textPosition="center"
+        background="gray"
+      />
+    </BackgroundBlock>
     <BackgroundBlock background="gray">
       <FeaturesBlock
-        title="Use analytics visualizations as simple React components"
-        content="Build your application from ready-made and custom React components. Customize visualizations in just a few lines of code. No iframes involved."
+        title="Productivity"
+        subtitle="Designed with productivity in mind"
+        content={[
+          <span>Put pre-built components like Lego bricks together without worrying about writing any <br className="noMobile" />backend code; the GoodData analytics platform takes care of all queries and APIs calls for you.</span>,
+          "How does it work? Check out our interactive code examples at CodeSandbox."
+        ]}
+        example={[
+          <FeaturesBlockGallery cards>
+            {[{
+              title: 'Headline',
+              image: './img/homepage/headline.png',
+              imageHover: './img/homepage/headline-code.jpg',
+              text: "A simple headline report in action.",
+              linkText: "Open in Code Sandbox",
+              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-headline?file=/src/App/index.js"
+            },{
+              title: 'Combo Chart',
+              image: './img/homepage/combo-chart.png',
+              imageHover: './img/homepage/combo-chart-code.jpg',
+              text: "Try to uncomment a line to add the second series.",
+              linkText: "Open in Code Sandbox",
+              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-combochart?file=/src/App/index.js"
+            },{
+              title: 'Treemap',
+              image: './img/homepage/treemap.png',
+              imageHover: './img/homepage/treemap-code.jpg',
+              text: "Another simple visualization.",
+              linkText: "Open in Code Sandbox",
+              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-chartconfig?file=/src/App/index.js"
+            },{
+              title: 'Interactivity',
+              image: './img/homepage/interactivity.png',
+              imageHover: './img/homepage/interactivity-code.jpg',
+              text: "A simple granularity control in action.",
+              linkText: "Open in Code Sandbox",
+              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-granularity?file=/src/App/index.js"
+            }]}
+          </FeaturesBlockGallery>,
+          <Button href="https://gdui-examples.herokuapp.com/" target="_blank" className="button">Find more interactive examples</Button>
+        ]}
+        textPosition="center"
+        background="gray"
+      >
+      </FeaturesBlock>
+    </BackgroundBlock>
+    <BackgroundBlock background="white">
+      <FeaturesBlock
+        title="Developer friendliness"
+        subtitle="By developers for developers"
+        content={[
+          <span>We value simplicity, effectiveness, and good documentation, tutorials, and <br className="noMobile" />code samples. We don’t like surprises either, so our API Maturity <br className="noMobile" />annotations indicate the stability of individual APIs.</span>,
+          <span>If you are ready to get started, we recommend following our tutorial or just <br className="noMobile" />scrolling down for more information.</span>,
+          <FeaturesBlockGallery cards>
+            {[{
+              title: 'Tutorial 1',
+              text: "Get started with the accelerator toolkit",
+              linkText: "Try it yourself",
+              linkHref: docUrl("ht_create_your_first_visualization_toolkit.html")
+            },{
+              title: 'Tutorial 2',
+              text: "Get started with create-react-app",
+              linkText: "Try it yourself",
+              linkHref: docUrl("ht_create_your_first_visualization.html")
+            }]}
+          </FeaturesBlockGallery>
+        ]}
         example={[
           <CodeExample1 key="1" />,
           <ExampleImage src="./img/homepage/example_1.png" alt="Example 1" key="2" />
         ]}
-        linkTitle="View visual components"
-        linkUrl={docUrl('start_with_visual_components.html')}
         textPosition="left"
         background="gray"
       />
       {/*<VisualizationsSection />*/}
     </BackgroundBlock>
 
-    <BackgroundBlock background="white">
+    <BackgroundBlock background="gray">
       <FeaturesBlock
-        title="Create custom visualizations"
-        content="Use the GoodData React data provider component to wrap any visualization, from libraries such as D3.js, Highcharts or Chart.js, up to your own custom code."
+        title="Flexibility"
+        subtitle="Plug it any way you need."
+        content={[
+          <span>The core part of GoodData.UI is available under the MIT license and is ready to use <br className="noMobile" />with the <a href="https://www.gooddata.com/free">free tier of the GoodData cloud analytics platform</a>.</span>,
+          <span>It can be used with our pre-packaged filter components and Highcharts visualizations <br className="noMobile" />or with any of the thousands of controls and charting libraries available via npm.</span>
+        ]}
         example={[
           <CodeExample2 key="1" />,
           <ExampleImage src="./img/homepage/example_2.png" alt="Example 2" key="2" />
         ]}
-        linkTitle="View custom visualization tutorial"
-        linkUrl={docUrl('create_new_visualization.html')}
         textPosition="right"
         background="white"
       >
@@ -302,34 +331,14 @@ const Features = props => (
         <Button href="https://www.npmjs.com/search?q=charts" target="_blank" className="button-more-charts">more charts</Button>
       </FeaturesBlock>
     </BackgroundBlock>
-
-    <BackgroundBlock background="gray">
+    <BackgroundBlock background="image" stretch>
       <FeaturesBlock
-        title="Powered by the GoodData platform"
-        content="Ready-made components for ad hoc data analysis, machine learning recommendations and much more…"
-        example={<FeaturesBlockGallery>
-          {[{
-            title: 'Discover',
-            image: './img/homepage/discover.png',
-            text: <span>Discover relations in your data using Analytical&nbsp;Designer,&nbsp;our&nbsp;tool for ad hoc analysis.</span>,
-            linkHref: 'https://help.gooddata.com/display/doc/Analytical+Designer'
-          },{
-            title: 'Publish',
-            image: './img/homepage/publish.png',
-            text: <span>Publish discovered insights to&nbsp;KPI&nbsp;dashboards. No&nbsp;coding involved.</span>,
-            linkHref: 'https://help.gooddata.com/display/doc/KPI+Dashboards'
-          },{
-            title: 'Embed',
-            image: './img/homepage/embed.png',
-            text: <span>…or&nbsp;easily embed insights into your&nbsp;application using&nbsp;the&nbsp;GoodData.UI library.</span>,
-            linkHref: './docs/start_with_visual_components.html'
-          }]}
-        </FeaturesBlockGallery>}
-        linkTitle="View live examples"
-        linkUrl="https://gdui-examples.herokuapp.com/"
+        title="Examples gallery"
+        subtitle={<span>A comprehensive collection of visual GoodData.UI examples, <br className="noMobile" />from simple charts to interactive analytical mini-apps.</span>}
         textPosition="center"
-        background="gray"
-      />
+      >
+        <Button href="https://gdui-examples.herokuapp.com/" className="button button-inverted">See the gallery</Button>
+      </FeaturesBlock>
     </BackgroundBlock>
   </section>
 );
@@ -358,37 +367,68 @@ const FeatureCallout = props => (
     <div className="productShowcase wrapper">
       <div className="productShowcaseInner">
         <FeatureCalloutBlock
-          title="Install GoodData.UI"
+          title="Bootstrap your application"
           example={[
-            InstallationExample1,
-            <p className="codeNote" key="2" >Check <a href={docUrl('ht_create_your_first_visualization.html#step-4-start-the-development-server')}>how to start development server</a></p>
+            InstallationExample1
           ]}
           checked={true}
         />
         <FeatureCalloutBlock
-          title="Get your project ID"
+          title="Preview generated app"
           example={[
-            <InstallationExample2 key="1" />,
-            <p className="codeNote" key="2" >Don't have a GoodData project? Use <a href="https://gdui-examples.herokuapp.com/">Live Examples</a> instead.</p>
+            <InstallationExample2 key="1" />
           ]}
         />
         <FeatureCalloutBlock
           title="Add a visual component"
           example={[
-            <InstallationExample3 key="1" />,
-            <p className="codeNote" key="2">See <a href={docUrl('gdc_catalog_export.html')}>how to get identifiers</a> and <a href={docUrl('line_chart_component.html')}>how to define valid property structure</a>.</p>
+            <InstallationExample3 key="1" />
           ]}
         />
       </div>
     </div>
-    <a href={docUrl('ht_create_your_first_visualization.html')} className="productShowcaseLink">Continue with the complete tutorial</a>
   </section>
 );
 
 const GetStarted = props => (
   <section className="getStartedSection">
-    <h2>See the GoodData.UI library</h2>
-    <Button href={docUrl('about_gooddataui.html')}>Get Started</Button>
+    <BackgroundBlock background="gray">
+      <FeaturesBlock
+        title="Get started"
+        textPosition="center"
+        background="gray"
+      >
+        <FeaturesBlockGallery>
+            {[{
+              title: 'Documentation',
+              image: 'https://www.gooddata.com/learn-assets/img/icon-documentation-c.svg',
+              imageHeight: 64,
+              text: <span>Find all the details about <br className="noMobile" />GoodData.UI</span>,
+              linkText: "See documentation",
+              linkHref: "https://sdk.gooddata.com/gooddata-ui/docs/next/why_gdui.html"
+            },{
+              title: 'Interactive Code Samples',
+              image: './img/homepage/interactive-code-samples.svg',
+              text: <span>Try it yourself and play with our <br className="noMobile" />code samples</span>,
+              linkText: "Try interactive code samples",
+              linkHref: "https://sdk.gooddata.com/gooddata-ui/docs/next/interactive_examples.html"
+            },{
+              title: 'Examples Gallery',
+              image: './img/homepage/examples-gallery.svg',
+              text: <span>Browse our huge library full of live <br className="noMobile" />visualisation examples</span>,
+              linkText: "Browse gallery",
+              linkHref: "https://gdui-examples.herokuapp.com/"
+            },{
+              title: 'Community',
+              image: 'https://www.gooddata.com/learn-assets/img/icon-community-c.svg',
+              imageHeight: 66,
+              text: <span>Discuss, ask and learn from our <br className="noMobile" />community</span>,
+              linkText: "View community",
+              linkHref: "https://community.gooddata.com/"
+            }]}
+          </FeaturesBlockGallery>
+      </FeaturesBlock>
+    </BackgroundBlock>
   </section>
 );
 

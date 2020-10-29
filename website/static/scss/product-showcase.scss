@@ -1,6 +1,6 @@
 .productShowcaseSection {
     padding: 4.375rem;
-    background-color: $gray-1;
+    background-color: $gd-color-white;
 
     @media #{$medium-down} {
         padding-right: 1.25rem;
@@ -74,7 +74,7 @@
                     height: 18px;
                     border-top: 1px solid transparentize($gd-color-dark, 0.67);
                     border-right: 1px solid transparentize($gd-color-dark, 0.67);
-                    background-color: $gray-1;
+                    background-color: $gd-color-white;
                     transform: rotate(45deg);
                 }
             }

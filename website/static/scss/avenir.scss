@@ -24,27 +24,15 @@ Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com
 
 // Avenir LT W02 85 Heavy
 @font-face {
-    src: url($base_path + 'fonts/Avenir-LT-W02-85-Heavy.eot?#iefix');
-    src:
-        url($base_path + 'fonts/Avenir-LT-W02-85-Heavy.eot?#iefix') format('eot'),
-        url($base_path + 'fonts/Avenir-LT-W02-85-Heavy.woff') format('woff'),
-        url($base_path + 'fonts/Avenir-LT-W02-85-Heavy.ttf') format('truetype'),
-        url($base_path + 'fonts/Avenir-LT-W02-85-Heavy.svg#Avenir-LT-W02-85-Heavy') format('svg');
-    font-family: 'Avenir';
-    font-style: normal;
-    font-weight: 700;
-}
-
-// Avenir Black
-@font-face {
     src: url($base_path + 'fonts/Avenir-Black.eot?#iefix');
     src:
         url($base_path + 'fonts/Avenir-Black.eot?#iefix') format('eot'),
         url($base_path + 'fonts/Avenir-Black.woff') format('woff'),
         url($base_path + 'fonts/Avenir-Black.ttf') format('truetype'),
         url($base_path + 'fonts/Avenir-Black.svg') format('svg');
-    font-family: 'Avenir-Black';
+    font-family: 'Avenir';
     font-style: normal;
+    font-weight: 700;
 }
 
 // Smoother Rendering in Chrome
