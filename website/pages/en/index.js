@@ -128,7 +128,7 @@ const FeaturesBlockGallery = props => {
       <h4 className="featuresBlockGalleryTitle">{item.title}</h4>
       {item.text && <p className="featuresBlockGalleryText">{item.text}</p>}
       {item.linkHref &&
-        <a href={item.linkHref} className="featuresBlockGalleryLink button-link">
+        <a href={item.linkHref} className="featuresBlockGalleryLink button-link" target={item.linkTarget}>
           {item.linkText || 'Learn more'}
         </a>
       }
@@ -248,28 +248,32 @@ const Features = props => (
               imageHover: './img/homepage/headline-code.jpg',
               text: "A simple headline report in action.",
               linkText: "Open in Code Sandbox",
-              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-headline?file=/src/App/index.js"
+              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-headline?file=/src/App/index.js",
+              linkTarget: "_blank"
             },{
               title: 'Combo Chart',
               image: './img/homepage/combo-chart.png',
               imageHover: './img/homepage/combo-chart-code.jpg',
               text: "Try to uncomment a line to add the second series.",
               linkText: "Open in Code Sandbox",
-              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-combochart?file=/src/App/index.js"
+              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-combochart?file=/src/App/index.js",
+              linkTarget: "_blank"
             },{
               title: 'Treemap',
               image: './img/homepage/treemap.png',
               imageHover: './img/homepage/treemap-code.jpg',
               text: "Another simple visualization.",
               linkText: "Open in Code Sandbox",
-              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-chartconfig?file=/src/App/index.js"
+              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-chartconfig?file=/src/App/index.js",
+              linkTarget: "_blank"
             },{
               title: 'Interactivity',
               image: './img/homepage/interactivity.png',
               imageHover: './img/homepage/interactivity-code.jpg',
               text: "A simple granularity control in action.",
               linkText: "Open in Code Sandbox",
-              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-granularity?file=/src/App/index.js"
+              linkHref: "https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-granularity?file=/src/App/index.js",
+              linkTarget: "_blank"
             }]}
           </FeaturesBlockGallery>,
           <Button href="https://gdui-examples.herokuapp.com/" target="_blank" className="button">Find more interactive examples</Button>
