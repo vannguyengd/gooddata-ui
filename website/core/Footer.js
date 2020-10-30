@@ -25,15 +25,6 @@ class Footer extends React.Component {
                   Documentation
                 </a>
               </li>
-              <li className="nav-footer-links-list-item">
-                <a
-                  href="https://developer.gooddata.com/platform-trial/"
-                  id="developer-footer-platform-trial"
-                  className="nav-footer-link"
-                >
-                  Platform trial
-                </a>
-              </li>
             </ul>
           </div>
           <div className="nav-footer-links">
@@ -41,11 +32,13 @@ class Footer extends React.Component {
             <ul className="nav-footer-links-list">
               <li className="nav-footer-links-list-item">
                 <a
-                  href="https://stackoverflow.com/questions/tagged/gooddata"
-                  id="developer-footer-stackoverflow"
-                  className="nav-footer-link nav-footer-logo nav-footer-logo-stackoverflow"
+                  href="https://community.gooddata.com"
+                  id="developer-footer-community"
+                  className="nav-footer-link"
                   target="_blank"
-                />
+                >
+                  Community
+                </a>
               </li>
               <li className="nav-footer-links-list-item">
                 <a
