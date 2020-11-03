@@ -1285,9 +1285,17 @@
         "title": "Architecture Overview",
         "sidebar_label": "Architecture Overview"
       },
+      "version-8.0.0/version-8.0.0-interactive_examples": {
+        "title": "Interactive Code Examples",
+        "sidebar_label": "Interactive Code Examples"
+      },
       "version-8.0.0/version-8.0.0-platform_intro": {
         "title": "GoodData Platform Introduction",
         "sidebar_label": "GoodData Platform Introduction"
+      },
+      "version-8.0.0/version-8.0.0-why_gdui": {
+        "title": "Why GoodData.UI?",
+        "sidebar_label": "Why GoodData.UI?"
       },
       "version-8.0.0/version-8.0.0-api_maturity": {
         "title": "API Maturity",
@@ -1312,6 +1320,10 @@
       "version-8.0.0/version-8.0.0-ht_create_your_first_visualization": {
         "title": "Create Your First Application from Scratch",
         "sidebar_label": "Create Your First Application from Scratch"
+      },
+      "version-8.0.0/version-8.0.0-ht_create_your_first_visualization_toolkit": {
+        "title": "Create Your First Application Using Accelerator Toolkit",
+        "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
       },
       "version-8.0.0/version-8.0.0-area_chart_component": {
         "title": "Area Chart",

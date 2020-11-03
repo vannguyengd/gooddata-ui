@@ -1,16 +1,14 @@
 {
   "version-8.0.0-Docs": {
-    "Support": [
-      "version-8.0.0-support_options",
-      "version-8.0.0-live_examples"
-    ],
     "Introduction": [
       "version-8.0.0-about_gooddataui",
-      "version-8.0.0-whats_new_8",
-      "version-8.0.0-framework_overview",
+      "version-8.0.0-why_gdui",
+      "version-8.0.0-interactive_examples",
       "version-8.0.0-platform_intro",
+      "version-8.0.0-whats_new_8",
       "version-8.0.0-breaking_changes_8",
-      "version-8.0.0-migration_guide_8"
+      "version-8.0.0-migration_guide_8",
+      "version-8.0.0-framework_overview"
     ],
     "Getting Started": [
       "version-8.0.0-installation",
@@ -78,6 +76,10 @@
       "version-8.0.0-ht_render_visualization_from_different_domain",
       "version-8.0.0-ht_use_react_component_in_angular_2.x",
       "version-8.0.0-ht_create_predicates"
+    ],
+    "Support": [
+      "version-8.0.0-support_options",
+      "version-8.0.0-live_examples"
     ]
   }
 }
