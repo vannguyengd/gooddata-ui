@@ -24,7 +24,7 @@ Each version of GoodData.UI goes through the following phases:
 
 3. **End-of-Support** (EOS)
     * **When it starts:** The date is defined by GoodData.
-    * **What it means:** A version in EOS receives neither new features no bug fixes. Although the version is still available for use, we do not recommend that you use it.
+    * **What it means:** A version in EOS receives neither new features nor bug fixes. Although the version is still available for use, we do not recommend that you use it.
 
 4. **End-of-Life** (EOL)
     * **When it starts:** The date is defined by GoodData.
