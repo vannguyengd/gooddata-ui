@@ -21,7 +21,7 @@ This repository contains the source code of the [documentation](https://sdk.good
 
 We encourage you to always use the latest available version of GoodData.UI to make the user experience with integrating GoodData.UI as smooth and secure as possible and to ensure that GoodData.UI always uses the latest features of the GoodData platform.
 
-For more information, see [Supported Versions](supported_versions.md).
+For more information, see [Supported Versions](https://sdk.gooddata.com/gooddata-ui/docs/supported_versions.html).
 
 Please follow the installation instructions in the [gooddata-ui-sdk repository](https://github.com/gooddata/gooddata-ui-sdk) to update to the latest version.
 
