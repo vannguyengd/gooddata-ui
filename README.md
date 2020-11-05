@@ -23,7 +23,7 @@ We encourage you to always use the latest available version of GoodData.UI to ma
 
 For more information, see [Supported Versions](supported_versions.md).
 
-Please follow the installation instructions in the [react-components repository](https://github.com/gooddata/gooddata-ui-sdk) to update to the latest version.
+Please follow the installation instructions in the [gooddata-ui-sdk repository](https://github.com/gooddata/gooddata-ui-sdk) to update to the latest version.
 
 ## License
 
