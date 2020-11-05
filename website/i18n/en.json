@@ -421,6 +421,10 @@
         "title": "GoodData Platform Introduction",
         "sidebar_label": "Platform Introduction"
       },
+      "version-5.0.0/version-5.0.0-supported_versions": {
+        "title": "Supported Versions",
+        "sidebar_label": "Supported Versions"
+      },
       "version-5.0.0/version-5.0.0-gdc_catalog_export": {
         "title": "Get Identifiers from the Platform",
         "sidebar_label": "Get Identifiers from the Platform"
