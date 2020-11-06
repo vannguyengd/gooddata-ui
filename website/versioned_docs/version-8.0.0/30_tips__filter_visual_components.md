@@ -314,7 +314,7 @@ const filters = [
 
 <div style={{ height: 400, width: 600 }}>
     <InsightView
-        identifier="<visualization-identifier>"
+        insight="<visualization-identifier>"
         filters={filters}
     />
 </div>

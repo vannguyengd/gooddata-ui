@@ -19,7 +19,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 import { HeaderPredicates } from "@gooddata/sdk-ui";
 
 <InsightView
-   identifier="<visualization-identifier>"
+   insight="<visualization-identifier>"
    config={<chart-config>}
    onDrill={(event) => { console.log(event.dataView); }}
    drillableItems={[

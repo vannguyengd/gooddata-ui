@@ -28,7 +28,7 @@ The `onLegendReady` parameter allows you to get a series from charts and to ren
 import { InsightView } from "@gooddata/sdk-ui-ext";
 
 <InsightView
-    identifier="<visualization-identifier>"
+    insight="<visualization-identifier>"
     config={{
        legend: {
           enabled: false // disable the original legend implementation

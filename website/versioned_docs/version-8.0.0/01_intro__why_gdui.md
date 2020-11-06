@@ -197,7 +197,7 @@ Especially if the user interface is [as easy as this](https://developer.gooddata
 You don’t want to type `<BarChart />` every time your UI designer creates a bar chart. It is more natural to grab the identifier of whatever your point-and-click colleague created. Maybe with something like this:
 
 ```jsx
-<InsightView identifier={id} />
+<InsightView insight={id} />
 ```
 
 An interactive example is available from [here](https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-insightview?file=/src/App/index.js). And here you can find more about the [InsightView](30_tips__embed_visualization.md).

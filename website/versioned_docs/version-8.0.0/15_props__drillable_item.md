@@ -83,7 +83,7 @@ function onDrillHandler(event) {
 }
 
 <InsightView
-  identifier="aby3polcaFxy"
+  insight="aby3polcaFxy"
   drillableItems={[
     HeaderPredicates.uriMatch("/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211"),
     HeaderPredicates.identifierMatch("label.owner.department")
@@ -106,7 +106,7 @@ function onDrillHandler(event) {
 }
 
 <InsightView
-  identifier="aby3polcaFxy"
+  insight="aby3polcaFxy"
   drillableItems={[
     HeaderPredicates.composedFromUri("/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211"),
     HeaderPredicates.composedFromIdentifier("label.owner.department")

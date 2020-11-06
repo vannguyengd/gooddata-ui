@@ -23,7 +23,7 @@ To embed an existing insight created in Analytical Designer, use the [InsightVie
     import "@gooddata/sdk-ui-ext/styles/css/main.css";
 
     <InsightView
-        identifier="aby3polcaFxy"
+        insight="aby3polcaFxy"
         config={{
             colors: ["rgb(195, 49, 73)", "rgb(168, 194, 86)"],
             legend: {

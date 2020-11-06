@@ -24,7 +24,7 @@ The `exportConfig` object includes the following properties:
 import { InsightView } from "@gooddata/sdk-ui-ext";
 
 <InsightView
-    identifier="<visualization-identifier>"
+    insight="<visualization-identifier>"
     onExportReady={(getExportedData) => { /* hold onto function and call to do export as needed */ }}
 />
 ```
@@ -63,7 +63,7 @@ export class Example extends React.Component {
         return (
             <div style={{ height: 367 }}>
                 <InsightView
-                    identifier="<visualization-identifier>"
+                    insight="<visualization-identifier>"
                     onExportReady={this.onExportReady}
                 />
                 <button className="button button-secondary" onClick={this.doExport}>Export</button>

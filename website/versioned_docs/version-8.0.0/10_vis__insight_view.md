@@ -16,7 +16,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 <div style={{ height: 400, width: 600 }}>
     <InsightView
-        identifier="<visualization-identifier>"
+        insight="<visualization-identifier>"
         config={<chart-config>}
     />
 </div>
@@ -25,10 +25,11 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 ```jsx
 import "@gooddata/sdk-ui-ext/styles/css/main.css";
 import { InsightView } from "@gooddata/sdk-ui-ext";
+import { uriRef } from "@gooddata/sdk-model";
 
 <div style={{ height: 400, width: 600 }}>
     <InsightView
-        uri="<visualization-uri>"
+        insight={uriRef("<visualization-uri>")}
         config={<chart-config>}
     />
 </div>
@@ -43,7 +44,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 <div style={{ height: 400, width: 600 }}>
     <InsightView
-        identifier="aoJqpe5Ib4mO"
+        insight="aoJqpe5Ib4mO"
         config={{
             colors: ["rgb(195, 49, 73)", "rgb(168, 194, 86)"],
             legend: {
@@ -76,7 +77,7 @@ clearInsightViewCaches();
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| identifier | false | string | The identifier of the visualization to be rendered. Can be omitted if the visualization URI is present. |
+| insight | true | ObjRef or string | The reference to the visualization to be rendered or its identifier. |
 | locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | config  | false | [IChartConfig](15_props__chart_config.md) | The chart configuration object |
 | filters | false | [IFilter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
