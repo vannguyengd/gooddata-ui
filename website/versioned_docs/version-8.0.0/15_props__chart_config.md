@@ -75,7 +75,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with a custom chart alignment
 <InsightView
-    identifier=<InsightView-id>
+    insight=<InsightView-id>
     config={{
         chart: {
             verticalAlign: "bottom"
@@ -125,7 +125,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with custom colors and palette options
 <InsightView
-    identifier=<InsightView-id>
+    insight=<InsightView-id>
     config={{
         colors: ["rgb(195, 49, 73)", "rgb(168, 194, 86)"]
     }}
@@ -147,7 +147,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with a custom palette
 <InsightView
-   identifier=<InsightView-id>
+   insight=<InsightView-id>
    config={{
        colorPalette: [{
             guid: "01",
@@ -198,7 +198,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with custom color mapping
 <InsightView
-    identifier=<InsightView-id>
+    insight=<InsightView-id>
     config={{
         colorMapping: [{
             predicate: (headerItem) => {
@@ -236,7 +236,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with a custom legend position
 <InsightView
-    identifier=<InsightView-id>
+    insight=<InsightView-id>
     config={{
         legend: {
             enabled: true,
@@ -256,7 +256,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with a custom separator in the number format
 <InsightView
-    identifier=<InsightView-id>
+    insight=<InsightView-id>
     config={{
         separators: {
             thousand: ",",
@@ -287,7 +287,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with settings for the x-axis
 <InsightView
-    identifier=<InsightView-id>
+    insight=<InsightView-id>
     config={{
         xaxis: {
             visible: false,
@@ -327,7 +327,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with settings for the canvas
 <InsightView
-    identifier=<InsightView-id>
+    insight=<InsightView-id>
     config={{
         dataLabels: true,
         dataPoints: false,
@@ -360,7 +360,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 // Example of embedding a visualization with stacking
 <InsightView
-    identifier=<InsightView-id>
+    insight=<InsightView-id>
     config={{
         stackMeasures: false,
         stackMeasuresToPercent: true

@@ -25,6 +25,10 @@
         "title": "Why GoodData.UI?",
         "sidebar_label": "Why GoodData.UI?"
       },
+      "supported_versions": {
+        "title": "Supported Versions",
+        "sidebar_label": "Supported Versions"
+      },
       "api_maturity": {
         "title": "API Maturity",
         "sidebar_label": "API Maturity"

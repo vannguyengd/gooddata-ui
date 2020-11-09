@@ -5,9 +5,9 @@ copyright: (C) 2007-2020 GoodData Corporation
 id: why_gdui
 ---
 
-The purpose of this document is to describe a proven design pattern for creating a modern analytical or data exploration application. 
+The purpose of this document is to describe a proven design pattern for creating a modern analytical or data exploration application.
 
-We will also introduce an open-source reference implementation of the ideas described in this document. 
+We will also introduce an open-source reference implementation of the ideas described in this document.
 
 Before we dive deeper into the technical topics, let’s first discuss what interactive analytical applications are, and more importantly, why you should care about them.
 
@@ -21,11 +21,11 @@ Traditionally, this efficiency was achieved by making users’ jobs easier throu
 
 This is no longer enough. Your software is expected to make them more efficient by helping them work _smarter_.
 
-This isn’t big news for you if you’re working on marketing automation or digital campaign products. 
+This isn’t big news for you if you’re working on marketing automation or digital campaign products.
 
 Leading ad tech platforms such as Google Ads provide a user interface that seamlessly combines a transactional campaign management user interface with analytical capabilities.
 
-As more and more jobs are becoming data driven, the odds are that sooner or later, your customers will demand this kind of smart user interface. 
+As more and more jobs are becoming data driven, the odds are that sooner or later, your customers will demand this kind of smart user interface.
 
 ![Route Detail](assets/route_detail.jpg)
 
@@ -37,14 +37,14 @@ At a glance, developing an analytical application may sound like an easy task th
 Both solutions have their natural pros and cons.
 
 ### Business intelligence tools
-Business intelligence or dashboarding tools may be appealing as their main selling point is that they enable your team to achieve a lot with a minimal impact on your engineering backlog. 
+Business intelligence or dashboarding tools may be appealing as their main selling point is that they enable your team to achieve a lot with a minimal impact on your engineering backlog.
 
 In an ideal world, it works like this:
 -  Your data engineers prepare the data and annotate it using a tool-specific metadata language.
 -  Once this is done, users who are relatively non-technical can create visualizations and dashboards in a point-and-click user interface.
 -  An application engineer embeds the finished dashboard into the admin section of your application.
 
-Even though this simplicity may be appealing, questions about flexibility and control immediately come to an engineer’s mind: 
+Even though this simplicity may be appealing, questions about flexibility and control immediately come to an engineer’s mind:
 
 It may meet the requirements _now_. But what if our requirements change?
 
@@ -57,12 +57,12 @@ These tools typically give you a dashboard that can be embedded into the admin s
 And how much did you say it will cost us?
 
 ### SQL and charting libraries
-If flexibility and control are what your team is looking for, the most obvious option is to roll up your sleeves. 
+If flexibility and control are what your team is looking for, the most obvious option is to roll up your sleeves.
 
 The situation looks simple:
--  You have data ready in your database (an application, a read replica, or even better, in a modern cloud data warehouse such as Snowflake, Redshift, or BigQuery). 
--  There are plenty of open source charting libraries. 
--  If you can write code, it must be easy. 
+-  You have data ready in your database (an application, a read replica, or even better, in a modern cloud data warehouse such as Snowflake, Redshift, or BigQuery).
+-  There are plenty of open source charting libraries.
+-  If you can write code, it must be easy.
 
 It is actually not difficult to get started. If all you need is one screen with a few charts and there is nothing more urgent in your backlog, then this is not a bad way to start.
 
@@ -82,13 +82,13 @@ However, the point of this article is not to sell you on what we do. Instead, we
 
 Let’s start with the key principles:
 -  Productivity: Our developers must be able to move fast.
--  Flexibility and openness: Be ready for unexpected requirements. 
+-  Flexibility and openness: Be ready for unexpected requirements.
 -  Developer friendliness: Fit into existing ecosystems and have good documentation and examples.
 
 Being open and developer friendly is pretty straightforward. Let’s dive deeper into what it means to architect an interactive analytical application for developer productivity.
 
 ## Architect for productivity
-What is the ultimate productivity killer when building a modern web UI? 
+What is the ultimate productivity killer when building a modern web UI?
 
 You may have the greatest component framework in the world, but you cannot move forward until the back-end part of your project is ready. Like any other development, there are two things that take time:
 -  Building the back-end features (anticipated)
@@ -110,7 +110,7 @@ In GoodData, we have standardized the declarative query language based on three 
 
 It’s a programmatic representation of the end user’s mental model. Think about all UI tools, from pivot tables in Excel to specialized analytics and data exploration tools. By the way, this is also how an analyst defines a visualization in GoodData’s Analytical Designer:
 
-![AD Bubble](assets/ad_bubble.png) 
+![AD Bubble](assets/ad_bubble.png)
 
 The AFM approach is a great fit to modern reactive web development frameworks such as React.js: you can easily imagine that the bubble chart above is rendered by a React.js code that looks like that:
 
@@ -125,7 +125,7 @@ The AFM approach is a great fit to modern reactive web development frameworks su
 
 The following diagram shows the full flow from a visualization and the underlying React component to the REST API of the GoodData platform:
 
-![AD React GD](assets/AD_React_GD.png) 
+![AD React GD](assets/AD_React_GD.png)
 
 The attribute-filter-measure is a relatively common querying idiom among analytics systems, so we made the architecture pluggable. So, with a bit of JavaScript code that implements the AFM contract for a different service, your version of that diagram may look like this:
 
@@ -133,7 +133,7 @@ The attribute-filter-measure is a relatively common querying idiom among analyti
 
 It’s simple, it maps well to your use cases, it works.
 
-_Note: GoodData platform, the AFM query pattern works even with non-trivial dimensional models with multiple fact tables, conformed dimensions, and even many-to-many relationships._ 
+_Note: GoodData platform, the AFM query pattern works even with non-trivial dimensional models with multiple fact tables, conformed dimensions, and even many-to-many relationships._
 
 _More information about our analytics engine and semantic layer is available from the [developer portal](https://developer.gooddata.com/analytics)._
 
@@ -169,7 +169,7 @@ If you think about it, the components such as `<BarChart />` or `<BubbleChart />
 1.  They pass the AFM query to the analytical backend and retrieve the result set.
 2.  They pass the result set (maybe with some on-the-fly transformation if necessary) to the actual charting component.
 
-The first step (query execution) can be naturally separated into a reusable component. Let’s call it [`<Execute />`](50_custom__create_new_visualization.md). 
+The first step (query execution) can be naturally separated into a reusable component. Let’s call it [`<Execute />`](50_custom__create_new_visualization.md).
 
 With such a component, it’s no surprise that the `<BarChart />` component from the previous examples can be implemented like this:
 
@@ -187,7 +187,7 @@ And once we have this `<Execute />` component then adding it to the public API o
 
 ### Integrated point-and-click development
 
-If you are still reading, you can probably write React code and you can appreciate the flexibility of a good React.js library. 
+If you are still reading, you can probably write React code and you can appreciate the flexibility of a good React.js library.
 
 On the other hand, you usually want to start with something simple. And for quick iterations over early prototypes, writing code may look like an overkill, especially if a non-technical user can create data visualization using a point-and-click user interface.
 
@@ -196,14 +196,14 @@ Especially if the user interface is [as easy as this](https://developer.gooddata
 You don’t want to type `<BarChart />` every time your UI designer creates a bar chart. It is more natural to grab the identifier of whatever your point-and-click colleague created. Maybe with something like this:
 
 ```jsx
-<InsightView identifier={id} />
+<InsightView insight={id} />
 ```
 
 An interactive example is available from [here](https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-insightview?file=/src/App/index.js). And here you can find more about the [InsightView](30_tips__embed_visualization.md).
 
 ## Reference implementation
 
-We said that we don’t want to discourage you from building your interactive end-user friendly analytics yourself. 
+We said that we don’t want to discourage you from building your interactive end-user friendly analytics yourself.
 
 If you decide to go that way, our key recommendation is to think twice before designing your API contract and consider the attributes-filters-measures approach rather than any shortcuts.
 
