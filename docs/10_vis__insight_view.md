@@ -76,7 +76,7 @@ clearInsightViewCaches();
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| insight | true | ObjRef or string | The reference to the visualization to be rendered or its identifier. |
+| insight | true | ObjRef or string | The reference to or the identifier of the visualization the to be rendered |
 | locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | config  | false | [IChartConfig](15_props__chart_config.md) | The chart configuration object |
 | filters | false | [IFilter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
