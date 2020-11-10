@@ -22,6 +22,7 @@
     ],
     "Visual Components": [
       "start_with_visual_components",
+      "theme_provider",
       "area_chart_component",
       "bar_chart_component",
       "bubble_chart_component",

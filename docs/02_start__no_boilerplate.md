@@ -224,6 +224,7 @@ Now, you can start adding your first GoodData component:
 
 Here are some suggestions about what you can do after you created your first visualization:
 
-* Add more elements: tables, charts, custom visualizations. For more information, see [how to use visual components](10_vis__start_with_visual_components.md).
+* Add more elements: tables, charts, custom visualizations. For more information, see [Start with Visual Components](10_vis__start_with_visual_components.md).
 * [Enable drilling](15_props__drillable_item.md).
+* Add a [customizable theme](10_vis__theme_provider.md) to your application.
 * Authenticate your users using [Single Sign-on (SSO)](30_tips__sso.md) rather than sending them to a proxied GoodData login page.
