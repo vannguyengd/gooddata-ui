@@ -22,6 +22,10 @@ Optionally, you can define what attribute values should be selected in the filte
 
 ![DateFilter Component](assets/date_filter.png "DateFilter Component")
 
+You can also optionally specify the desired format in which dates are displayed. The format can be any [value](https://date-fns.org/docs/format) supported by date-fns library.
+
+![DateFilter Component with International Date Format](assets/date_filter_international_date_format.png "DateFilter Component with dates are displayed in desired formats")
+
 ### Example
 
 In the following example, attribute values are listed and the ```onApply``` callback function is triggered when a user clicks **Apply** to confirm the selection.
@@ -76,6 +80,7 @@ export class DateFilterComponentExample extends Component {
                     availableGranularities={availableGranularities}
                     customFilterName="Date filter name"
                     dateFilterMode="active"
+                    dateFormat="M/d/yy"
                     onApply={this.onApply}
                 />
             </div>
@@ -96,6 +101,7 @@ export class DateFilterComponentExample extends Component {
 | availableGranularities | true | [DateFilterGranularity[]](15_props__date_filter_option.md#date-filter-granularity) | An array of available types of granularity for the Relative Form  |
 | customFilterName | false | string | A custom filter label |
 | dateFilterMode | true | string | Filter mode; can be `readonly`, `hidden`, or `active` |
+| dateFormat | false | string | Desired date format. Defaults to `MM/dd/yyyy` and can be any [format](https://date-fns.org/docs/format) supported by date-fns library |
 | locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | onApply | true | Function | A callback when the selection is confirmed by the user |
 | onCancel | false | Function | A callback when the selection is canceled by the user |
