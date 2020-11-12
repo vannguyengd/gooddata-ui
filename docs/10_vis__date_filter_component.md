@@ -18,11 +18,17 @@ copyright: (C) 2007-2019 GoodData Corporation
 
 The **Date Filter component** is a dropdown component that lists [date filter options](15_props__date_filter_option.md). You can pass allowed options and a callback function, which receives a list of the selected values when a user clicks **Apply**.
 
-Optionally, you can define what attribute values should be selected in the filter by default.
-
 ![DateFilter Component](assets/date_filter.png "DateFilter Component")
 
-### Example
+In the Date Filter component, you can optionally define the following:
+
+* The attribute values that should be selected in the filter by default
+* The format in which dates should be displayed
+    
+    To define the date format, use any value supported by the [date-fns](https://date-fns.org/docs/format) library.
+    ![DateFilter Component with International Date Format](assets/date_filter_international_date_format.png "DateFilter Component with dates are displayed in desired formats")
+
+## Example
 
 In the following example, attribute values are listed and the ```onApply``` callback function is triggered when a user clicks **Apply** to confirm the selection.
 
@@ -76,6 +82,7 @@ export class DateFilterComponentExample extends Component {
                     availableGranularities={availableGranularities}
                     customFilterName="Date filter name"
                     dateFilterMode="active"
+                    dateFormat="M/d/yy"
                     onApply={this.onApply}
                 />
             </div>
@@ -96,6 +103,7 @@ export class DateFilterComponentExample extends Component {
 | availableGranularities | true | [DateFilterGranularity[]](15_props__date_filter_option.md#date-filter-granularity) | An array of available types of granularity for the Relative Form  |
 | customFilterName | false | string | A custom filter label |
 | dateFilterMode | true | string | Filter mode; can be `readonly`, `hidden`, or `active` |
+| dateFormat | false | string | Date format. Defaults to `MM/dd/yyyy`. For the supported values, see the [date-fns library](https://date-fns.org/docs/format). |
 | locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | onApply | true | Function | A callback when the selection is confirmed by the user |
 | onCancel | false | Function | A callback when the selection is canceled by the user |
