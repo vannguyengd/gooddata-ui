@@ -141,6 +141,10 @@
         "title": "Start with Visual Components",
         "sidebar_label": "Start with Visual Components"
       },
+      "theme_provider": {
+        "title": "Theme Provider",
+        "sidebar_label": "Theme Provider"
+      },
       "treemap_component": {
         "title": "Treemap",
         "sidebar_label": "Treemap"
