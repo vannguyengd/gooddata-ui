@@ -276,7 +276,7 @@ const Features = props => (
               linkTarget: "_blank"
             }]}
           </FeaturesBlockGallery>,
-          <Button href="https://gdui-examples.herokuapp.com/" target="_blank" className="button">Find more interactive examples</Button>
+          <Button href={docUrl("interactive_examples.html")} className="button">Find more interactive examples</Button>
         ]}
         textPosition="center"
         background="gray"
@@ -337,7 +337,7 @@ const Features = props => (
     </BackgroundBlock>
     <BackgroundBlock background="image" stretch>
       <FeaturesBlock
-        title="Examples gallery"
+        title="Examples Gallery"
         subtitle={<span>A comprehensive collection of visual GoodData.UI examples, <br className="noMobile" />from simple charts to interactive analytical mini-apps.</span>}
         textPosition="center"
       >
