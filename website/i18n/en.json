@@ -270,8 +270,8 @@
         "sidebar_label": "Access Low Level API"
       },
       "live_examples": {
-        "title": "Live Examples",
-        "sidebar_label": "Live Examples"
+        "title": "Examples Gallery",
+        "sidebar_label": "Examples Gallery"
       },
       "migration_guide_8": {
         "title": "Migration from Version 7.x",
