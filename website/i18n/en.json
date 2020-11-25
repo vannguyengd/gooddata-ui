@@ -1564,6 +1564,30 @@
       "version-8.0.0/version-8.0.0-whats_new_8": {
         "title": "What's New in Version 8.0",
         "sidebar_label": "What's New in Version 8.0"
+      },
+      "version-8.1.0/version-8.1.0-interactive_examples": {
+        "title": "Interactive Code Examples",
+        "sidebar_label": "Interactive Code Examples"
+      },
+      "version-8.1.0/version-8.1.0-ht_create_your_first_visualization": {
+        "title": "Create Your First Application from Scratch",
+        "sidebar_label": "Create Your First Application from Scratch"
+      },
+      "version-8.1.0/version-8.1.0-date_filter_component": {
+        "title": "Date Filter",
+        "sidebar_label": "Date Filter"
+      },
+      "version-8.1.0/version-8.1.0-pivot_table_component": {
+        "title": "Pivot Table",
+        "sidebar_label": "Pivot Table"
+      },
+      "version-8.1.0/version-8.1.0-theme_provider": {
+        "title": "Theme Provider",
+        "sidebar_label": "Theme Provider"
+      },
+      "version-8.1.0/version-8.1.0-live_examples": {
+        "title": "Examples Gallery",
+        "sidebar_label": "Examples Gallery"
       }
     },
     "links": {
