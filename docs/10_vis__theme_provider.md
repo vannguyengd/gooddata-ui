@@ -13,7 +13,24 @@ To be able to use the Theme Provider component, set up the `backend` and `worksp
 
 ### Using the Theme Provider component with backend and workspace providers
 
-When using the Theme Provider component with backend and workspace providers, you also have to set up the theme in the workspace.
+When using the Theme Provider component with backend and workspace providers, you do not need to specify any additional props for Theme Provider.
+
+```jsx
+import { BackendProvider, WorkspaceProvider } from "@gooddata/sdk-ui";
+import { ThemeProvider } from "@gooddata/sdk-ui-theme-provider";
+
+<BackendProvider backend={backend}>
+    <WorkspaceProvider workspace="your-project-id">
+        <ThemeProvider>
+            <Application {...}>
+        </ThemeProvider>
+    </WorkspaceProvider>
+</BackendProvider>
+```
+
+### Using the Theme Provider component without backend and workspace providers
+
+When using the Theme Provider component without backend and workspace providers, you have to pass the `backend` and `workspace` props to Theme Provider.
 
 ```jsx
 import { ThemeProvider } from "@gooddata/sdk-ui-theme-provider";
@@ -25,7 +42,7 @@ import { ThemeProvider } from "@gooddata/sdk-ui-theme-provider";
 
 ### Using the Theme Provider component with a custom theme
 
-You can create properties of a custom theme, and pass the theme to the `ThemeProvider` that you added to your application.
+You can create properties of a custom theme, and pass the theme to the `ThemeProvider` that you added to your application (for all available properties, see [the declaration of ITheme](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-backend-spi/src/workspace/styling/theme.ts#L178)).
 
 ```jsx
 import { ThemeProvider } from "@gooddata/sdk-ui-theme-provider";
