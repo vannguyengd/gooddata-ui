@@ -2,7 +2,8 @@
 title: Theme Provider
 sidebar_label: Theme Provider
 copyright: (C) 2007-2020 GoodData Corporation
-id: theme_provider
+id: version-8.1.0-theme_provider
+original_id: theme_provider
 ---
 
 The **Theme Provider component** allows you to customize the visual style of your dashboards by applying a theme.
