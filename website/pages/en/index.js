@@ -9,7 +9,7 @@ const React = require('react');
 const siteConfig = require(process.cwd() + '/siteConfig.js');
 
 function docUrl(doc, language) {
-  return siteConfig.baseUrl + 'docs/next/' + (language ? language + '/' : '') + doc;
+  return siteConfig.baseUrl + 'docs/' + (language ? language + '/' : '') + doc;
 }
 
 class Button extends React.Component {
