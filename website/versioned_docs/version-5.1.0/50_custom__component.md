@@ -20,6 +20,7 @@ You specify the input data by using the component parameters. Then, the executio
 | onError | false | function |
 | onLoadingChanged | false | function |
 | onLoadingFinish | false | function |
+| sdk | false | SDK |
 
 * If you specify a function in the `onError` parameter, this function will be called in case of an error. It is always executed after `onLoadingChanged`. The first parameter is an error object: `{ status: ErrorStates, error?: string }`. Status can be one of the following \(use `import { ErrorStates } from '@gooddata/react-components'`\):
 
