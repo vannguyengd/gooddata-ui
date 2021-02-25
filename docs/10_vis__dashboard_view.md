@@ -45,8 +45,8 @@ These filters will then be used for
 -   setting up [KPI Alerts](#kpi-alerts)
 -   creating [Scheduled emails](#scheduled-emails) (you can disable that by setting the `applyFiltersToScheduledMail` prop to `false`).
 
-If you want to add some filters to the filters already specified on the dashboard, you can use the `mergeFiltersWithDashboard` function
-TODO add DashboardViewWithMergedFilters link
+If you want to add some filters to the filters already specified on the dashboard, you can use the `mergeFiltersWithDashboard` function.
+See the [live example](https://gdui-examples.herokuapp.com/dashboardView/with-merged-filters).
 
 For more information about the filters themselves, see [Filter Visual Components](30_tips__filter_visual_components.md).
 Alternatively, you can pass filters specified using the [`FilterContextItem`](https://github.com/gooddata/gooddata-ui-sdk/blob/6ba2ed93163b830a6a0f03437861ac9ef1d423be/libs/sdk-backend-spi/src/workspace/dashboards/filterContext.ts#L133) type. The main difference between this and the standard filters is that FilterContextItem date filters do not specify a date dimension and so are applied on all the date dimensions (this is what the KPI Dashboards date filter is doing).
@@ -99,9 +99,7 @@ const DashboardViewWithEmails = () => {
     const [isEmailDialogOpen, setIsEmailDialogOpen] = useState(false);
     return (
         <>
-            <button onClick={() => setIsEmailDialogOpen(true)}>
-                Open Schedule Email Dialog
-            </button>
+            <button onClick={() => setIsEmailDialogOpen(true)}>Open Schedule Email Dialog</button>
             <DashboardView
                 dashboard="dashboard-id"
                 isScheduledMailDialogVisible={isEmailDialogOpen}
@@ -127,7 +125,7 @@ The Alerts will use the filters in the `filters` prop if provided (see [Filters]
 
 ## Read-only mode
 
-By default, DashboardView will allow users with appropriate permissions to create KPI Alerts and Scheduled emails. If you do not want this, you can set the `isReadonly` prop to `true` (defaults to `false`). This will completely disable the [KPI Alerts](#kpi-alerts) and [Scheduled emails](#scheduled-emails) features of DashboardView.
+By default, DashboardView will allow users with appropriate permissions to create KPI Alerts and Scheduled emails. If you do not want this, you can set the `isReadOnly` prop to `true` (defaults to `false`). This will completely disable the [KPI Alerts](#kpi-alerts) and [Scheduled emails](#scheduled-emails) features of DashboardView.
 
 ## Customizations
 
@@ -149,7 +147,7 @@ It should return a piece of JSX representing the widget. It will be called with 
 
 Ensure that your custom widgets are responsive and have height & width set to 100%.
 
-For an example see TODO link to CustomDashboardView example.
+See the [live example](https://gdui-examples.herokuapp.com/dashboardView/custom-chart).
 
 ### Predicates
 
@@ -169,7 +167,7 @@ To make implementation of the custom renderers as easy as possible, we provide s
 -   `useDashboardWidgetExecution` – creates a PreparedExecution for a given widget
 -   `useDataView` - executes a given PreparedExecution and returns the resulting data
 
-See TODO examples link for an example how to use those.
+See the [live example](https://gdui-examples.herokuapp.com/dashboardView/custom-chart).
 
 ## Layout
 
@@ -203,9 +201,7 @@ import { idRef } from "@gooddata/sdk-model";
         if (predicates.isCustomWidget()) {
             return (
                 // Render the custom widget data
-                <div style={{ height: "100%", width: "100%" }}>
-                    {customWidget}
-                </div>
+                <div style={{ height: "100%", width: "100%" }}>{customWidget}</div>
             );
         }
 
@@ -215,7 +211,7 @@ import { idRef } from "@gooddata/sdk-model";
 />;
 ```
 
-TODO: link to advanced customizations
+See the [live example](https://gdui-examples.herokuapp.com/dashboardView/advanced-customizations).
 
 ## Integration with your application
 
@@ -229,7 +225,8 @@ The `onFiltersChange` callback is called whenever a widget inside the DashboardV
 
 The `onDrill` callback can be used to detect and react to any drill events happening inside the DashboardView.
 
-The `useDashboardPdfExporter` hook can be used to perform an export of a given dashboard to PDF see TODO link to examples (note that this will not reflect any [customizations](#customizations) you may have made).
+The `useDashboardPdfExporter` hook can be used to perform an export of a given dashboard to PDF (note that this will not reflect any [customizations](#customizations) you may have made).
+See the [live example](https://gdui-examples.herokuapp.com/dashboardView/with-export).
 
 There is also an example of how to emulate edit mode in [Embed a Dashboard Created in KPI Dashboards](30_tips__embed_dashboard.md#edit-mode).
 
