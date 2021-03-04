@@ -1,7 +1,7 @@
 ---
 title: DashboardView
 sidebar_label: DashboardView
-copyright: (C) 2007-2018 GoodData Corporation
+copyright: (C) 2007-2021 GoodData Corporation
 id: dashboard_view_component
 ---
 
