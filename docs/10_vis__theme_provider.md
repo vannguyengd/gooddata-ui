@@ -5,7 +5,7 @@ copyright: (C) 2007-2020 GoodData Corporation
 id: theme_provider
 ---
 
-The **Theme Provider component** allows you to customize the visual style of your dashboards by applying a theme.
+The **Theme Provider component** allows you to customize the visual style of your dashboards by applying a theme (see [Custom Themes](https://help.gooddata.com/pages/viewpage.action?pageId=81974323)).
 
 To be able to use the Theme Provider component, set up the `backend` and `workspace` properties in your application (see [Connecting to an Analytical Backend](02_start__connecting_backend.md#initial-setup)).
 
