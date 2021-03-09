@@ -17,7 +17,7 @@ To embed an existing dashboard created in KPI Dashboards, use the [DashboardView
     import { DashboardView } from "@gooddata/sdk-ui-ext";
     ```
 
-3. Create an `DashboardView` component in your app, and provide it with the project ID and the visualization identifier that you obtained at Step 1:
+3. Create a `DashboardView` component in your app, and provide it with the project ID and the visualization identifier that you obtained at Step 1:
 
     ```jsx
     import { DashboardView } from "@gooddata/sdk-ui-ext";
@@ -28,10 +28,9 @@ To embed an existing dashboard created in KPI Dashboards, use the [DashboardView
 
 ## Edit mode
 
-The DashboardView itself does not support editing of the dashboards. However, you can use embedded KPI Dashboards application to perform the edits and then use DashboardView to view them. Below is a basic example of how you could achieve this.
+The DashboardView component itself does not support editing of the dashboards. However, you can use the Embedded KPI Dashboard application to edit the dashboards and then use DashboardView to view them.
 
-**Note:** this example will _not_ make sure that your custom filters you may have set for DashboardView will be reflected in the embedded KPI Dashboards (however you can do that using the [postMessages API](https://help.gooddata.com/doc/en/building-on-gooddata-platform/gooddata-integration-into-your-application/embed-gooddata-elements-into-your-applications/embed-a-kpi-dashboard/communication-with-embedded-kpi-dashboards)).
-Also, any customization you may have set using the [Customizations](10_vis__dashboard_view.md#customizations) will _not_ be applied in the embedded KPI Dashboards.
+**NOTE:** The following example will **not** make sure that the custom filters you may have set for DashboardView will be reflected in the embedded KPI Dashboards. To do that, use the [postMessages API](https://help.gooddata.com/pages/viewpage.action?pageId=81968283). In addition, any customization you may have set using the [customizations](10_vis__dashboard_view.md#customizations) will **not** be applied to the embedded KPI Dashboards.
 
 ```jsx
 import React, { useCallback, useEffect, useState } from "react";
@@ -43,8 +42,8 @@ const dashboardId = "<dashboard-id>";
 const backendUrl = "<backend-url>";
 
 const containerStyle = {
-    width: 1200, // set width of at least 1170px, otherwise the edit mode of KPI Dashboards will not work properly
-    height: 800, // set fixed height to prevent layout shifts when switching to and from edit mode
+    width: 1200, // set to at least 1170px, otherwise edit mode of KPI Dashboards will not work properly
+    height: 800, // set a fixed height to prevent layout shifts when switching to and from edit mode
 };
 
 const DashboardViewEditExample = () => {
@@ -55,8 +54,8 @@ const DashboardViewEditExample = () => {
         const type = e.data.gdc?.event.name;
 
         if (type === EmbeddedKpiDashboard.GdcKdEventType.DashboardSaved) {
-            // this means user has made some changes and saved them
-            // clear caches to make sure the dashboard is reloaded...
+            // this means the user has made some changes and saved them
+            // clear cache to make sure the dashboard is reloaded...
             clearDashboardViewCaches();
             // ... and switch back to view mode
             setIsEditing(false);
@@ -68,7 +67,7 @@ const DashboardViewEditExample = () => {
     }, []);
 
     useEffect(() => {
-        // when switching to edit mode, attach event listener to detect when the user is done with their edits
+        // when switching to edit mode, attach an event listener to detect when the user is done with their edits
         // and we remove the listener when switching back
         if (isEditing) {
             window.addEventListener("message", listener, false);
@@ -86,7 +85,7 @@ const DashboardViewEditExample = () => {
                 {/*
                     - we use an iframe with a special URL constructed from the dashboard data
                       (the "?mode=edit" will make sure the KPI Dashboards will open directly in edit mode)
-                    - we make sure if fills the whole parent container by setting the size to 100%
+                    - we make sure it fills the whole parent container by setting the size to 100%
                 */}
                 <iframe
                     src={`${backendUrl}/dashboards/embedded/#/project/${workspace}/dashboard/${dashboardId}?mode=edit`}
