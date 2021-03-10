@@ -49,7 +49,7 @@ See the [live example](https://gdui-examples.herokuapp.com/dashboardView/with-me
 For more information about the filters themselves, see [Filter Visual Components](30_tips__filter_visual_components.md).
 Alternatively, you can pass filters specified using the [`FilterContextItem`](https://github.com/gooddata/gooddata-ui-sdk/blob/6ba2ed93163b830a6a0f03437861ac9ef1d423be/libs/sdk-backend-spi/src/workspace/dashboards/filterContext.ts#L133) type. The main difference between FilterContextItem filters and the standard filters is that FilterContextItem date filters do not specify a date dimension and therefore are applied to all the date dimensions (this is how KPI Dashboard date filters work).
 
-> **NOTE**: To identify the attribute elements, use their URIs, not IDs.
+> **NOTE**: To identify the attributes and attribute elements, use their URIs, not IDs.
 
 ## Themes
 
@@ -58,7 +58,7 @@ The DashboardView component supports themes (see [Theme Provider](10_vis__theme_
 1. If the `theme` prop is provided, its value will be used as the theme configuration.
 1. If the DashboardView component has a Theme Provider element as one of its parents, DashboardView will use the configuration of the closest Theme Provider parent.
 1. If no Theme Provider is provided, the DashboardView component will create its own Theme Provider, and this Theme Provider will try to get the theme from its workspace.
-    
+
     **NOTE:** To disable this behavior, set the `disableThemeLoading` prop to `true` (if not set, it defaults to `false`).
 
 ## Configuration
@@ -74,7 +74,7 @@ To provide visualization-specific configuration for the visualizations rendered 
 
 The DashboardView component supports firing of drill events from drilling set up on a dashboard.
 * To listen to drilling events, provide the `onDrill` prop (see [OnDrill](15_props__on_drill.md)).
-* To specify additional drillable items, use the `drillableItems` prop (see [Drillable Items](15_props__drillable_item.md)).
+* To specify drillable items different from those set on the dashboard in KPI Dashboards, use the `drillableItems` prop (see [Drillable Items](15_props__drillable_item.md)).
 
 ## Scheduled emails
 
@@ -82,7 +82,7 @@ You can allow users to create [scheduled emails](https://help.gooddata.com/pages
 
 To allow displaying the dialog for setting up a scheduled email, setting the `isScheduledMailDialogVisible` prop to `true`.
 
-Additionaly, you can use the following props to interact with the dialog:
+Additionally, you can use the following props to interact with the dialog:
 
 -  `onScheduledMailDialogSubmit` is called when the user confirms the creation of a scheduled email. The callback will receive the scheduled email definition that the user submitted as a parameter.
 -  `onScheduledMailDialogCancel` is called when the user cancels or closes the scheduled email dialog.
@@ -136,7 +136,7 @@ By default, the DashboardView component allows users with the appropriate permis
 > **NOTE:** All the customizations described in this section are applied only to the DashboardView component itself. They will **not** affect scheduled emails, PDF exports, or emails coming from KPI alerts.
 
 To customize the way how individual dashboard widgets are rendered, provide a [render prop](https://reactjs.org/docs/render-props.html) to the `widgetRenderer` prop.
-It should return a piece of JSX representing the widget. This JSX will be called with an object containing the following properties:
+It should return a piece of JSX representing the widget. This render prop will be called with an object containing the following properties:
 
 | Name             | Type                             | Description                                                                                                                |
 | :--------------- | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
@@ -146,6 +146,7 @@ It should return a piece of JSX representing the widget. This JSX will be called
 | alert            | IWidgetAlert or undefined        | The widget alert relevant to the widget (if the widget is a KPI and the user has an alert set)                              |
 | filters          | FilterContextItem[] or undefined | Sanitized filters provided to the `filters` prop if any                                                                  |
 | predicates       | IWidgetPredicates                | A set of [predicates](#predicates) provided to help you choose widgets for custom rendering                                |
+| customWidget | any | The custom widget provided from the user (if the widget is a custom widget, see [Layout](#layout)) |
 | ErrorComponent   | Component                        | A component to be rendered if the widget is in error state (see [ErrorComponent](15_props__error_component.md))            |
 | LoadingComponent | Component                        | A component to be rendered if the widget is in loading state (see [LoadingComponent](15_props__loading_component.md))      |
 
@@ -162,7 +163,7 @@ The `predicates` property of the argument that the `widgetRenderer` prop is call
 -  `isWidgetWithInsightType(type)` to match widgets with insights with a particular visualization type
 -  `isWidgetWithKpiRef(ref)` to match widgets with a particular KPI
 -  `isWidgetWithKpiType(comparisonType)` to match widgets with KPI of a certain comparison type (for example, `Previous Period`)
--  `isCustomWidget: ()` to match widgets that are not commonly part of the dashboard (for example, your custom widgets added in the DashboardView `layoutTransform` callback)
+-  `isCustomWidget()` to match widgets that are not commonly part of the dashboard (for example, your custom widgets added in the DashboardView `transformLayout` callback)
 
 ### Auxiliary hooks
 
