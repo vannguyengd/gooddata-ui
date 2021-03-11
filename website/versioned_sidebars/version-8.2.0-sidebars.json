@@ -1,0 +1,88 @@
+{
+  "version-8.2.0-Docs": {
+    "Introduction": [
+      "version-8.2.0-about_gooddataui",
+      "version-8.2.0-why_gdui",
+      "version-8.2.0-interactive_examples",
+      "version-8.2.0-platform_intro",
+      "version-8.2.0-whats_new_8",
+      "version-8.2.0-breaking_changes_8",
+      "version-8.2.0-migration_guide_8",
+      "version-8.2.0-supported_versions",
+      "version-8.2.0-framework_overview"
+    ],
+    "Getting Started": [
+      "version-8.2.0-installation",
+      "version-8.2.0-ht_create_your_first_visualization_toolkit",
+      "version-8.2.0-ht_create_your_first_visualization",
+      "version-8.2.0-analytical_backend_integration",
+      "version-8.2.0-gdc_catalog_export",
+      "version-8.2.0-model_helpers",
+      "version-8.2.0-api_maturity"
+    ],
+    "Visual Components": [
+      "version-8.2.0-start_with_visual_components",
+      "version-8.2.0-theme_provider",
+      "version-8.2.0-area_chart_component",
+      "version-8.2.0-bar_chart_component",
+      "version-8.2.0-bubble_chart_component",
+      "version-8.2.0-bullet_chart_component",
+      "version-8.2.0-column_chart_component",
+      "version-8.2.0-combo_chart_component",
+      "version-8.2.0-donut_chart_component",
+      "version-8.2.0-geo_pushpin_chart_component",
+      "version-8.2.0-headline_component",
+      "version-8.2.0-heatmap_component",
+      "version-8.2.0-kpi_component",
+      "version-8.2.0-line_chart_component",
+      "version-8.2.0-pie_chart_component",
+      "version-8.2.0-pivot_table_component",
+      "version-8.2.0-scatter_plot_component",
+      "version-8.2.0-table_component",
+      "version-8.2.0-treemap_component",
+      "version-8.2.0-visualization_component",
+      "version-8.2.0-dashboard_view_component",
+      "version-8.2.0-attribute_filter_component",
+      "version-8.2.0-date_filter_component",
+      "version-8.2.0-measure_value_filter_component",
+      "version-8.2.0-ranking_filter_component"
+    ],
+    "Properties": [
+      "version-8.2.0-chart_config",
+      "version-8.2.0-attribute_element_option",
+      "version-8.2.0-date_filter_option",
+      "version-8.2.0-drillable_item",
+      "version-8.2.0-error_component",
+      "version-8.2.0-loading_component",
+      "version-8.2.0-on_export_ready",
+      "version-8.2.0-on_fire_drill_event",
+      "version-8.2.0-on_legend_ready"
+    ],
+    "Custom Visualizations": [
+      "version-8.2.0-create_new_visualization",
+      "version-8.2.0-afm",
+      "version-8.2.0-result_specification",
+      "version-8.2.0-execution_rest_api_and_result"
+    ],
+    "Miscellaneous Features": [
+      "version-8.2.0-time_over_time_comparison",
+      "version-8.2.0-arithmetic_measure"
+    ],
+    "Development Tips": [
+      "version-8.2.0-ht_embed_visualization",
+      "version-8.2.0-embed_dashboard",
+      "version-8.2.0-sso",
+      "version-8.2.0-cors",
+      "version-8.2.0-table_totals",
+      "version-8.2.0-filter_visual_components",
+      "version-8.2.0-create_custom_attribute_filter",
+      "version-8.2.0-ht_render_visualization_from_different_domain",
+      "version-8.2.0-ht_use_react_component_in_angular_2.x",
+      "version-8.2.0-ht_create_predicates"
+    ],
+    "Support": [
+      "version-8.2.0-support_options",
+      "version-8.2.0-live_examples"
+    ]
+  }
+}
