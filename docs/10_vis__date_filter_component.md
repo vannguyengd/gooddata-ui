@@ -12,9 +12,6 @@ copyright: (C) 2007-2019 GoodData Corporation
 > **Known issues**:
 > - `availableGranularities` in `relativeForm` is ignored. `availableGranularities` from the Date Filter component is used instead.
 >   - _This issue may be fixed in one of the future releases. The `availableGranularities` property may be removed from the Date Filter component._
-> - The `name` property in `allTime`, `absoluteForm`, and `relativeForm` is ignored.
->   - _The built-in standard label is always used regardless of the value of the `name` property. The `name` property itself may be made optional in one of the future releases, which will make this a backward incompatible change._
->
 
 The **Date Filter component** is a dropdown component that lists [date filter options](15_props__date_filter_option.md). You can pass allowed options and a callback function, which receives a list of the selected values when a user clicks **Apply**.
 
@@ -24,7 +21,7 @@ In the Date Filter component, you can optionally define the following:
 
 * The attribute values that should be selected in the filter by default
 * The format in which dates should be displayed
-    
+
     To define the date format, use any value supported by the [date-fns](https://date-fns.org/docs/format) library.
     ![DateFilter Component with International Date Format](assets/date_filter_international_date_format.png "DateFilter Component with dates are displayed in desired formats")
 
