@@ -1596,6 +1596,78 @@
       "version-8.1.0/version-8.1.0-live_examples": {
         "title": "Examples Gallery",
         "sidebar_label": "Examples Gallery"
+      },
+      "version-8.2.0/version-8.2.0-about_gooddataui": {
+        "title": "About GoodData.UI",
+        "sidebar_label": "About GoodData.UI"
+      },
+      "version-8.2.0/version-8.2.0-platform_intro": {
+        "title": "GoodData Platform Introduction",
+        "sidebar_label": "GoodData Platform Introduction"
+      },
+      "version-8.2.0/version-8.2.0-gdc_catalog_export": {
+        "title": "Export Catalog",
+        "sidebar_label": "Export Catalog"
+      },
+      "version-8.2.0/version-8.2.0-installation": {
+        "title": "Installation",
+        "sidebar_label": "Installation"
+      },
+      "version-8.2.0/version-8.2.0-ht_create_your_first_visualization": {
+        "title": "Create Your First Application from Scratch",
+        "sidebar_label": "Create Your First Application from Scratch"
+      },
+      "version-8.2.0/version-8.2.0-dashboard_view_component": {
+        "title": "DashboardView",
+        "sidebar_label": "DashboardView"
+      },
+      "version-8.2.0/version-8.2.0-kpi_component": {
+        "title": "KPI",
+        "sidebar_label": "KPI"
+      },
+      "version-8.2.0/version-8.2.0-start_with_visual_components": {
+        "title": "Start with Visual Components",
+        "sidebar_label": "Start with Visual Components"
+      },
+      "version-8.2.0/version-8.2.0-theme_provider": {
+        "title": "Theme Provider",
+        "sidebar_label": "Theme Provider"
+      },
+      "version-8.2.0/version-8.2.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
+      },
+      "version-8.2.0/version-8.2.0-drillable_item": {
+        "title": "DrillableItems",
+        "sidebar_label": "DrillableItems"
+      },
+      "version-8.2.0/version-8.2.0-time_over_time_comparison": {
+        "title": "Time-over-Time Comparison",
+        "sidebar_label": "Time-over-Time Comparison"
+      },
+      "version-8.2.0/version-8.2.0-cors": {
+        "title": "Deal with Cross-Origin Issues",
+        "sidebar_label": "Deal with Cross-Origin Issues"
+      },
+      "version-8.2.0/version-8.2.0-embed_dashboard": {
+        "title": "Embed a Dashboard Created in KPI Dashboards",
+        "sidebar_label": "Embed a Dashboard Created in KPI Dashboards"
+      },
+      "version-8.2.0/version-8.2.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
+      },
+      "version-8.2.0/version-8.2.0-sso": {
+        "title": "Set Up Authentication and Single Sign-On",
+        "sidebar_label": "Set Up Authentication and Single Sign-On"
+      },
+      "version-8.2.0/version-8.2.0-table_totals": {
+        "title": "Specify Table Totals",
+        "sidebar_label": "Specify Table Totals"
+      },
+      "version-8.2.0/version-8.2.0-afm": {
+        "title": "Custom Executions",
+        "sidebar_label": "Custom Executions"
       }
     },
     "links": {
