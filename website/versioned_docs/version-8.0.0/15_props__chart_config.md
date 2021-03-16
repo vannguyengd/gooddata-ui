@@ -370,4 +370,4 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 ## Customize tooltips and fonts
 
-To customize tooltips and fonts, [implement a custom visualization](data_layer.md).
+To customize tooltips and fonts, [implement a custom visualization](50_custom__create_new_visualization.md).
