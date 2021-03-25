@@ -187,7 +187,9 @@ Now, you can start adding your first GoodData component:
     ```jsx
     import React from "react";
     import { newMeasure, newAttribute } from "@gooddata/sdk-model";
-    import bearFactory from "@gooddata/sdk-backend-bear";
+    import { LineChart } from "@gooddata/sdk-ui-charts";
+    import bearFactory, {ContextDeferredAuthProvider} from "@gooddata/sdk-backend-bear";
+    import { BackendProvider, WorkspaceProvider } from "@gooddata/sdk-ui";
     import "@gooddata/sdk-ui-charts/styles/css/main.css";
 
     import "./App.css";
