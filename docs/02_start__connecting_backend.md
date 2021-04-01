@@ -1,6 +1,6 @@
 ---
-title: Connecting to an Analytical Backend
-sidebar_label: Connecting to an Analytical Backend
+title: Set Up an Analytical Backend
+sidebar_label: Set Up an Analytical Backend
 copyright: (C) 2007-2018 GoodData Corporation
 id: analytical_backend_integration
 ---

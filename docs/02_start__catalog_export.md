@@ -5,8 +5,9 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: gdc_catalog_export
 ---
 
-GoodData.UI visual components render data stored in your GoodData platform projects. Your application specifies what
-data to render by referencing the Logical Data Model (LDM) objects: attributes, display forms, facts, and measures.
+GoodData.UI visual components render data stored in your GoodData platform or GoodData.CN workspaces. 
+Your application specifies what data to render by referencing the Logical Data Model (LDM) objects: attributes, 
+display forms (also known as labels), facts, and measures.
 
 To simplify this task, GoodData.UI offers the `@gooddata/catalog-export` tool. `@gooddata/catalog-export` exports a
 list of catalog items and date datasets from a GoodData project into JavaScript or TypeScript code. The generated code
@@ -14,10 +15,21 @@ contains exported constant-per-LDM-object.
 
 Using this generated code, you can create charts and execution definitions in a very efficient and natural way.
 
+## Built-in integration in Accelerator Toolkit applications
+
+For your convenience the `@gooddata/catalog-export` is already installed and integrated into all applications
+bootstrapped using the `@gooddata/create-gooddata-react-app` tool. The bootstrapped application's `package.json` contains
+`refresh-ldm` script which you can call to start the catalog export with arguments derived from your application
+configuration.
+
+If you created your application using the `@gooddata/create-gooddata-react-app` then you may be interested in additional
+configuration options described further in this document.
+
 ## Installing @gooddata/catalog-export
 
-We recommend that you include `@gooddata/catalog-export` as a devDependency of your application and define an NPM script `refresh-ldm` to
-run the program.
+At the moment you have to include `@gooddata/catalog-export` as a devDependency of your application. Launching it
+through `npx` is not yet supported; you will encounter errors if you start the tool using `npx` and try to export
+catalog into a JavaScript file.
 
 To install the stable version, run one of the following commands **depending on your package manager**:
 
@@ -53,7 +65,7 @@ This is how it works:
         "output": "desired_file_name.ts|js|json"
     }
     ```
-
+    
     **NOTE:** TypeScript, JavaScript or JSON output files are generated based on the filename extension specified in the output parameter.
 
 2.  The program reads input parameters from the command line. To learn more about the available parameters, run the following command:
@@ -65,6 +77,40 @@ This is how it works:
 3.  If all required parameters are entered, the program runs and exports the metadata from the workspace. If any parameter is missing, the program will prompt you to enter it.
 
     **IMPORTANT!** The program does not accept passwords via the command line. You can either put the password into `.gdcatalogrc` or enter it interactively. Do NOT save `.gdcatalogrc` in a version control system.
+
+**NOTE**: We are planning to rename the `projectId` parameter to `workspaceId`. This will apply to both the configuration file and command line arguments. You can already use
+the `workspaceId` instead of `projectId` and the end result will be the same. If you specify both then `workspaceId` takes preference. 
+
+### Using @gooddata/catalog-export with GoodData.CN 
+
+The catalog-export tool can work on top of either GoodData platform or GoodData.CN. By default, the tool assumes it is connecting
+to the GoodData platform. You can use either `backend` argument on the command line or `backend` parameter in the `.gdcatalogrc` configuration file to
+switch to GoodData.CN:
+
+-  `--backend tiger` on the command line
+-  or in `.gdcatalogrc`: 
+   ```json
+   {
+        "hostname": "your.own.gooddata.com",
+        "workspaceId": "your_workspace_id",
+        "output": "desired_file_name.ts|js|json",
+        "backend": "tiger"
+   }
+   ```
+
+The tool will use Bearer token authentication when communicating with your GoodData.CN installation. You can consult
+the GoodData.CN documentation on [how to obtain API tokens](https://docs-dev.anywhere.gooddata.com/docs/administration/auth/user-token/). 
+Once you have a valid API Token set it into an exported `TIGER_API_TOKEN` variable:
+
+```shell
+export TIGER_API_TOKEN="<your_api_token>"
+```
+
+Or if you are using Microsoft Windows:
+
+```shell
+SET TIGER_API_TOKEN='<your_api_token>'
+```
 
 
 ### Subsequent catalog exports

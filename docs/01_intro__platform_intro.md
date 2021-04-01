@@ -1,40 +1,33 @@
 ---
 id: platform_intro
-title: GoodData Platform Introduction
-sidebar_label: GoodData Platform Introduction
+title: GoodData platform Introduction
+sidebar_label: GoodData platform Introduction
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
-**GoodData Platform** is a powerful end-to-end analytics platform as a service with multi-tenant distribution that scales to hundreds of terabytes of data and hundreds of thousands of users. Learn more about the [GoodData platform](https://help.gooddata.com/pages/viewpage.action?pageId=34341327) and how to [embed its analytics possibilities](https://help.gooddata.com/pages/viewpage.action?pageId=34340962).
+**GoodData platform** is a powerful end-to-end analytics platform as a service with multi-tenant distribution that scales to hundreds of terabytes of data and hundreds of thousands of users. Learn more about the [GoodData platform](https://help.gooddata.com/pages/viewpage.action?pageId=34341327) and how to [embed its analytics possibilities](https://help.gooddata.com/pages/viewpage.action?pageId=34340962).
 
 ## GoodData platform and GoodData.UI
 
-![GoodData Platform and GoodData.UI](assets/gooddata_platform_ui.png "GoodData Platform and GoodData.UI")
+GoodData platform comes with a comprehensive REST API that exposes all its functionality.
 
-* **GoodData REST API** is a low-level API that makes the platform features accessible to all GoodData users.
+GoodData.UI builds on top of these REST APIs and encapsulates them in the **Analytical Backend** abstraction that exposes
+the analytical capabilities to UI components. GoodData.UI provides several packages that are aimed
+for interop with GoodData platform:
 
-* **GoodData JS** is a set of JavaScript wrappers written on top of the *REST API*. Additionally, GoodData JS handles authentication, unified query request format (AFM, [Attributes-Measures-Filters](50_custom__execution.md)), and many more.
+-  `@gooddata/api-client-bear` is a low-level API client interfacing with the GoodData platform REST APIs
+-  `@gooddata/api-model-bear` is a companion library for the API client and contains TypeScript type definitions
+-  `@gooddata/sdk-backend-bear` is a library that implements the **Analytical Backend** abstraction on top of GoodData platform
 
-* **GoodData.UI** is a React-based JavaScript library for building responsive analytical applications. This library is written on top of *GoodData JS* and makes creating analytical applications even more convenient by adding visual components (listed in the left panel under **Visual Components**).
+All the React components of GoodData.UI are in packages prefixed `@gooddata/sdk-ui-`. These packages use
+exclusively the Analytical Backend abstraction and are thus separated from the implementation details the concrete
+backend.
 
-## Main concepts
+A typical GoodData.UI application creates and configures an instance of GoodData platform Analytical Backend once,
+and then uses this instance in all React components.
 
-Imagine you are an account manager for a Franchise network. You want to know the **average daily amount** of money for each **Franchise office** in the **USA**.
+## Get started with GoodData platform Freemium
 
-Let's introduce the main concepts:
-
-* A **measure** is a computational expression that aggregates one or more numerical values. In this example, you are interested in the **average daily amount**.
-* An **attribute** breaks the measure apart and provides context to the data. In this example, the measure is sliced by the **location** of the Franchise offices.
-* A **filter** is a set of conditions that removes specific values from your original data. In this example, you want to see only **USA-specific locations**.
-
-Let's display your data as a column chart:
-
-![Column Chart](assets/intro_column_chart.png "Column Chart")
-
-The chart shows the elements (measure, attribute, filter) that together work as unified input for creating a **visualization** using GoodData.UI, which is a view into a specific part of your data.
-
-In the column chart:
-
-* `$ Avg Daily Total Sales` is a **measure**.
-* `Location State` is an **attribute**.
-* A **filter** applied to the chart shows only USA-specific values of `Location State`, which represent the offices located in the USA.
+You can create GoodData platform account for free and without waiting at [https://www.gooddata.com/free](https://www.gooddata.com/free). 
+Your account will come with a demo workspace and data. You can spin up a new application on top of this workspace in under a minute using our [accelerator toolkit](02_start__using_boilerplate.md) and
+try GoodData.UI yourself.

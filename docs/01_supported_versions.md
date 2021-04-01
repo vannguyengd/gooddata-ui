@@ -35,7 +35,9 @@ The following table provides the lifecycle phases of GoodData.UI versions:
 
 | Major Version | Status | GA | EOD | EOS | EOL | Last Minor Version |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 8 | Development | October 8, 2020 | _Not yet defined_ | _Not yet defined_ | _Not yet defined_ | 8.2 |
+| 8 | Development | October 8, 2020 | _Not yet defined_ | _Not yet defined_ | _Not yet defined_ | 8.3 |
 | 7 | Maintenance | May 21, 2019 | October 8, 2020 | March 31, 2022 | _Not yet defined_ | 7.9 |
 | 6 | Not supported | November 1, 2018 | May 21, 2019 | October 8, 2020 | _Not yet defined_ | 6.3 |
 | 5 | Not supported | April 26, 2018 | November 1, 2018 | May 21, 2019 | _Not yet defined_ | 5.3 |
+
+**IMPORTANT**: The first version of GoodData.UI that supports GoodData.CN is 8.3.0.

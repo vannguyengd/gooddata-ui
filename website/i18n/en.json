@@ -18,8 +18,8 @@
         "sidebar_label": "Interactive Code Examples"
       },
       "platform_intro": {
-        "title": "GoodData Platform Introduction",
-        "sidebar_label": "GoodData Platform Introduction"
+        "title": "GoodData platform Introduction",
+        "sidebar_label": "GoodData platform Introduction"
       },
       "why_gdui": {
         "title": "Why GoodData.UI?",
@@ -38,24 +38,40 @@
         "sidebar_label": "Export Catalog"
       },
       "analytical_backend_integration": {
-        "title": "Connecting to an Analytical Backend",
-        "sidebar_label": "Connecting to an Analytical Backend"
+        "title": "Set Up an Analytical Backend",
+        "sidebar_label": "Set Up an Analytical Backend"
       },
       "model_helpers": {
-        "title": "Execution Model",
-        "sidebar_label": "Execution Model"
+        "title": "Understand the Execution Model",
+        "sidebar_label": "Understand the Execution Model"
       },
       "installation": {
         "title": "Installation",
         "sidebar_label": "Installation"
       },
       "ht_create_your_first_visualization": {
-        "title": "Create Your First Application from Scratch",
-        "sidebar_label": "Create Your First Application from Scratch"
+        "title": "Integrate into an existing application",
+        "sidebar_label": "Integrate into an existing application"
       },
       "ht_create_your_first_visualization_toolkit": {
         "title": "Create Your First Application Using Accelerator Toolkit",
         "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
+      },
+      "cloudnative_integration": {
+        "title": "Integrate into an existing application",
+        "sidebar_label": "Integrate into an existing application"
+      },
+      "cloudnative_introduction": {
+        "title": "GoodData.CN Introduction",
+        "sidebar_label": "GoodData.CN Introduction"
+      },
+      "cloudnative_limitations": {
+        "title": "Limitations",
+        "sidebar_label": "Limitations"
+      },
+      "cloudnative_local_dev": {
+        "title": "Set Up Development on Workstation",
+        "sidebar_label": "Set Up Development on Workstation"
       },
       "area_chart_component": {
         "title": "Area Chart",
@@ -193,9 +209,17 @@
         "title": "Arithmetic Measure",
         "sidebar_label": "Arithmetic Measure"
       },
+      "execution_model": {
+        "title": "Execution Model Details",
+        "sidebar_label": "Detailed Description"
+      },
       "time_over_time_comparison": {
         "title": "Time-over-Time Comparison",
         "sidebar_label": "Time-over-Time Comparison"
+      },
+      "backend_agnostic_apps": {
+        "title": "Building backend-agnostic applications",
+        "sidebar_label": "Building backend-agnostic applications"
       },
       "cors": {
         "title": "Deal with Cross-Origin Issues",
@@ -252,6 +276,10 @@
       "create_new_visualization": {
         "title": "Create a Custom Visualization",
         "sidebar_label": "Create a Custom Visualization"
+      },
+      "custom_execution": {
+        "title": "Custom Executions",
+        "sidebar_label": "Custom Executions"
       },
       "afm": {
         "title": "Custom Executions",
@@ -1683,12 +1711,15 @@
     "categories": {
       "Introduction": "Introduction",
       "Getting Started": "Getting Started",
+      "Integration with GoodData Platform": "Integration with GoodData Platform",
+      "Integration with GoodData.CN": "Integration with GoodData.CN",
       "Visual Components": "Visual Components",
       "Properties": "Properties",
+      "Execution Model": "Execution Model",
       "Custom Visualizations": "Custom Visualizations",
-      "Miscellaneous Features": "Miscellaneous Features",
       "Development Tips": "Development Tips",
       "Support": "Support",
+      "Miscellaneous Features": "Miscellaneous Features",
       "Tutorials": "Tutorials",
       "React Components": "React Components",
       "Reference": "Reference",

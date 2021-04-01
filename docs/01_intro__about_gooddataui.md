@@ -5,17 +5,17 @@ sidebar_label: About GoodData.UI
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
-GoodData.UI is a TypeScript framework for building analytical applications on top of the GoodData platform.
+GoodData.UI is a TypeScript framework for building analytical applications on top of GoodData platform or GoodData.CN.
 
 GoodData.UI consists of multiple libraries with clear-cut responsibilities ranging from low-level REST API
 clients up to visualization libraries that deliver React-based components to render different types of charts and tables.
 
 With GoodData.UI, you can:
 
-* Create utility programs that interact directly with the GoodData platform APIs (for example, to automate routine
+* Create utility programs that interact directly with the GoodData platform or GoodData.CN APIs (for example, to automate routine
   maintenance and management tasks).
 
-* Create visualizations of data stored on the GoodData platform using [visual components](10_vis__start_with_visual_components.md).
+* Create visualizations of data stored on GoodData platform or GoodData.CN using [visual components](10_vis__start_with_visual_components.md).
 
 * Embed insights created in Analytical Designer using [InsightView](10_vis__insight_view.md).
 
@@ -27,7 +27,7 @@ This documentation is intended for front-end software developers and requires Ja
 
 GoodData.UI is compatible with:
 
-* React >=16.8.0, [Angular 9+](30_tips__use_angular_2.x.md)
+* React >=16.8.0 <17.0.0, [Angular 9+](30_tips__use_angular_2.x.md)
 * TypeScript >=3.3.4000, ES6, ES5
 * Node ^12.15.0 LTS
 * [Officially supported browsers](https://help.gooddata.com/pages/viewpage.action?pageId=34340969)
@@ -46,9 +46,7 @@ If you are using Babel, you can use the [Babel polyfill](https://babeljs.io/docs
 
 Because Internet Explorer 11 does not support [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var), add one of the [polyfills](https://github.com/search?q=css+variables+polyfill) to avoid styling issues. We do not recommend any specific polyfill, because you may approach this situation differently (for example, transform variables to static values at build time vs. generate and append CSS classes at runtime). Each approach has certain limitations, so choose the one that best suits your needs.
 
-## GoodData platform account
+## Get GoodData
 
-To use GoodData.UI, you must have an account on the GoodData platform. For basic information about the GoodData platform, see [GoodData Platform Introduction](01_intro__platform_intro.md).
-
-If you want to try out GoodData.UI, we recommend that you sign up for a free account at [https://www.gooddata.com/free](https://www.gooddata.com/free).
-
+To use GoodData.UI, you must have an account on the GoodData platform or an installation of GoodData.CN. You can 
+create GoodData platform account for free at [https://www.gooddata.com/free](https://www.gooddata.com/free) or download GoodData.CN at [https://www.gooddata.com/developers](https://www.gooddata.com/developers).

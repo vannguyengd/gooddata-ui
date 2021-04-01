@@ -4,21 +4,29 @@
       "about_gooddataui",
       "why_gdui",
       "interactive_examples",
-      "platform_intro",
       "whats_new_8",
       "breaking_changes_8",
       "migration_guide_8",
       "supported_versions",
-      "framework_overview"
+      "framework_overview",
+      "api_maturity"
     ],
     "Getting Started": [
-      "installation",
       "ht_create_your_first_visualization_toolkit",
-      "ht_create_your_first_visualization",
-      "analytical_backend_integration",
-      "gdc_catalog_export",
       "model_helpers",
-      "api_maturity"
+      "gdc_catalog_export"
+    ],
+    "Integration with GoodData Platform": [
+      "platform_intro",
+      "ht_create_your_first_visualization",
+      "sso",
+      "cors"
+    ],
+    "Integration with GoodData.CN": [
+      "cloudnative_introduction",
+      "cloudnative_integration",
+      "cloudnative_local_dev",
+      "cloudnative_limitations"
     ],
     "Visual Components": [
       "start_with_visual_components",
@@ -58,27 +66,27 @@
       "on_fire_drill_event",
       "on_legend_ready"
     ],
-    "Custom Visualizations": [
-      "create_new_visualization",
-      "afm",
-      "result_specification",
-      "execution_rest_api_and_result"
-    ],
-    "Miscellaneous Features": [
+    "Execution Model": [
+      "execution_model",
       "time_over_time_comparison",
       "arithmetic_measure"
+    ],
+    "Custom Visualizations": [
+      "create_new_visualization",
+      "custom_execution",
+      "result_specification",
+      "execution_rest_api_and_result"
     ],
     "Development Tips": [
       "ht_embed_visualization",
       "embed_dashboard",
-      "sso",
-      "cors",
       "table_totals",
       "filter_visual_components",
       "create_custom_attribute_filter",
       "ht_render_visualization_from_different_domain",
       "ht_use_react_component_in_angular_2.x",
-      "ht_create_predicates"
+      "ht_create_predicates",
+      "backend_agnostic_apps"
     ],
     "Support": [
       "support_options",
