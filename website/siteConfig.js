@@ -22,9 +22,21 @@ const siteConfig = {
   baseUrl: '/gooddata-ui/' /* base url for your project */,
   projectName: 'gooddata-ui',
   headerLinks: [
+    // Breadcrumbs links
     {href: '/gooddata-ui/', label: 'GoodData.UI'},
-    {href: 'https://developer.gooddata.com/data-integration', label: 'Data Integration'},
-    {href: 'https://developer.gooddata.com/api-and-sdks', label: 'API & SDKs'},
+    {href: 'https://www.gooddata.com/developers/cloud-native/doc/', label: 'Docs & APIs'},
+
+    // Main nav links
+    {href: 'https://www.gooddata.com/developers/', label: 'Developers'},
+    {href: 'https://www.gooddata.com/developers/cloud-native/', label: 'GoodData.CN'},
+    {href: '/gooddata-ui/', label: 'GoodData.UI'},
+    {href: 'https://www.gooddata.com/developers/cloud-native/doc/', label: 'Docs & APIs'},
+
+    // Main nav button
+    {href: 'https://www.gooddata.com/developers/cloud-native-community-edition/', label: 'Get GoodData.CN Community Edition'},
+
+    // Secondary nav
+    {href: '/gooddata-ui/docs/interactive_examples.html', label: 'Code samples', external: true},
     {href: 'https://gdui-examples.herokuapp.com/', label: 'Gallery', external: true},
     {href: 'https://github.com/gooddata/gooddata-ui-sdk/', label: 'GitHub', external: true}
   ],

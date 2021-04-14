@@ -1,4 +1,8 @@
-.doc.separateOnPageNav .docsNavContainer {
+.separateOnPageNav .docsNavContainer {
+    @media #{$large-down} {
+        top: 88px;
+    }
+
     @media #{$medium-up} {
         flex: 0 0 290px;
         margin-top: 0;
@@ -147,6 +151,9 @@ nav.toc {
 
 .navBreadcrumb {
     .docsNavContainer nav.toc & {
+        right: 20px;
+        left: 20px;
+        width: auto;
         height: 50px;
         align-items: center;
         box-shadow: $shadow;

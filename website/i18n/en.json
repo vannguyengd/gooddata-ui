@@ -1672,8 +1672,11 @@
     },
     "links": {
       "GoodData.UI": "GoodData.UI",
-      "Data Integration": "Data Integration",
-      "API & SDKs": "API & SDKs",
+      "Docs & APIs": "Docs & APIs",
+      "Developers": "Developers",
+      "GoodData.CN": "GoodData.CN",
+      "Get GoodData.CN Community Edition": "Get GoodData.CN Community Edition",
+      "Code samples": "Code samples",
       "Gallery": "Gallery",
       "GitHub": "GitHub"
     },

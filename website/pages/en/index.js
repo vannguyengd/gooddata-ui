@@ -73,9 +73,13 @@ class HomeSplash extends React.Component {
     return (
       <SplashContainer>
         <div className="left">
+          <img src="./img/homepage/icon-gooddata-ui.svg" />
           <ProjectTitle />
           <ProjectDescription />
-          <Button href={docUrl('about_gooddataui.html')} className="button-link">See documentation</Button>
+          <div className="buttonWrapper">
+            <Button href={docUrl('installation.html')} className="button button-dark">Get GoodData.UI</Button>
+            <Button href={docUrl('about_gooddataui.html')} className="button">See documentation</Button>
+          </div>
         </div>
         <div className="right">
           <SplashParallax

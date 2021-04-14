@@ -9,6 +9,9 @@ body,
 
     @media #{$medium-up} {
         padding-top: 40px;
+    }
+
+    @media #{$large-up} {
         padding-left: 0;
     }
 }
