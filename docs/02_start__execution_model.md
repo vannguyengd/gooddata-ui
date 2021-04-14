@@ -1,5 +1,5 @@
 ---
-id: model_helpers
+id: understand_execution_model
 title: Understand the Execution Model
 sidebar_label: Understand the Execution Model
 copyright: (C) 2018-2019 GoodData Corporation

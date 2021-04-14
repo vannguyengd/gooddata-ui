@@ -2,7 +2,7 @@
 title: Integrate into an existing application
 sidebar_label: Integrate into an existing application
 copyright: (C) 2007-2018 GoodData Corporation
-id: ht_create_your_first_visualization
+id: platform_integration
 ---
 
 This document outlines the important steps you need to undertake if you need to integrate GoodData.UI into either an existing

@@ -2,7 +2,7 @@
 title: Export Catalog
 sidebar_label: Export Catalog
 copyright: (C) 2007-2018 GoodData Corporation
-id: gdc_catalog_export
+id: export_catalog
 ---
 
 GoodData.UI visual components render data stored in your GoodData platform or GoodData.CN workspaces. 

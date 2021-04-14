@@ -2,7 +2,7 @@
 title: Create Your First Application Using Accelerator Toolkit
 sidebar_label: Create Your First Application Using Accelerator Toolkit
 copyright: (C) 2007-2019 GoodData Corporation
-id: ht_create_your_first_visualization_toolkit
+id: create_new_application
 ---
 
 Create your first analytical application using GoodData **`@gooddata/create-gooddata-react-app`** tool. 

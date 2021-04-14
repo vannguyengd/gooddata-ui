@@ -33,7 +33,7 @@
         "title": "API Maturity",
         "sidebar_label": "API Maturity"
       },
-      "gdc_catalog_export": {
+      "export_catalog": {
         "title": "Export Catalog",
         "sidebar_label": "Export Catalog"
       },
@@ -41,7 +41,7 @@
         "title": "Set Up an Analytical Backend",
         "sidebar_label": "Set Up an Analytical Backend"
       },
-      "model_helpers": {
+      "understand_execution_model": {
         "title": "Understand the Execution Model",
         "sidebar_label": "Understand the Execution Model"
       },
@@ -49,11 +49,11 @@
         "title": "Installation",
         "sidebar_label": "Installation"
       },
-      "ht_create_your_first_visualization": {
+      "platform_integration": {
         "title": "Integrate into an existing application",
         "sidebar_label": "Integrate into an existing application"
       },
-      "ht_create_your_first_visualization_toolkit": {
+      "create_new_application": {
         "title": "Create Your First Application Using Accelerator Toolkit",
         "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
       },
@@ -221,7 +221,7 @@
         "title": "Building backend-agnostic applications",
         "sidebar_label": "Building backend-agnostic applications"
       },
-      "cors": {
+      "platform_cors": {
         "title": "Deal with Cross-Origin Issues",
         "sidebar_label": "Deal with Cross-Origin Issues"
       },
@@ -245,7 +245,7 @@
         "title": "Filter Visual Components",
         "sidebar_label": "Filter Visual Components"
       },
-      "sso": {
+      "platform_sso": {
         "title": "Set Up Authentication and Single Sign-On",
         "sidebar_label": "Set Up Authentication and Single Sign-On"
       },

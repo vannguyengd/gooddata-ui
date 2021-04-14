@@ -12,15 +12,15 @@
       "api_maturity"
     ],
     "Getting Started": [
-      "ht_create_your_first_visualization_toolkit",
-      "model_helpers",
-      "gdc_catalog_export"
+      "create_new_application",
+      "understand_execution_model",
+      "export_catalog"
     ],
     "Integration with GoodData Platform": [
       "platform_intro",
-      "ht_create_your_first_visualization",
-      "sso",
-      "cors"
+      "platform_integration",
+      "platform_sso",
+      "platform_cors"
     ],
     "Integration with GoodData.CN": [
       "cloudnative_introduction",
