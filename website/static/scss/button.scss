@@ -10,6 +10,7 @@
     line-height: 1.225rem;
     text-align: center;
     text-transform: none;
+    background-color: transparent;
     transition: all .3s;
 
     &,
@@ -17,34 +18,37 @@
     &:focus,
     &:active {
         text-decoration: none !important;
-        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI1MCI+PGRlZnM+PHBhdGggZD0iTTAgMGgxMDAwbC0xMCA1MEgwVjB6IiBpZD0iYSIvPjwvZGVmcz48dXNlIHhsaW5rOmhyZWY9IiNhIiBmaWxsPSIjMDAwIi8+PHVzZSB4bGluazpocmVmPSIjYSIgZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMCIvPjwvc3ZnPg==);
-        background-color: transparent;
-        background-position: -1000px center;
-        background-repeat: no-repeat;
     }
 
     &:hover,
     &:focus,
     &:active {
         color: $gd-color-white;
-        background-position: 90% center;
+        background-color: $gd-color-dark;
     }
 
     &-inverted {
         color: $gd-color-white;
         border-color: $gd-color-white;
 
-        &,
         &:hover,
         &:focus,
         &:active {
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI1MCI+PGRlZnM+PHBhdGggZD0iTTAgMGgxMDAwbC0xMCA1MEgwVjB6IiBpZD0iYSIvPjwvZGVmcz48dXNlIHhsaW5rOmhyZWY9IiNhIiBmaWxsPSIjZmZmIi8+PHVzZSB4bGluazpocmVmPSIjYSIgZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMCIvPjwvc3ZnPg==);
+            color: $gd-color-dark;
+            background-color: $gd-color-white;
         }
+    }
+
+    &-dark {
+        color: $gd-color-white;
+        border-color: $gd-color-dark;
+        background-color: $gd-color-dark;
 
         &:hover,
         &:focus,
         &:active {
             color: $gd-color-dark;
+            background-color: $gd-color-white;
         }
     }
 
@@ -115,5 +119,17 @@ a {
     &:active {
         border-color: $gd-color-state-blank;
         text-decoration: none;
+    }
+}
+
+.buttonWrapper {
+    display: flex;
+
+    @media #{$large-down} {
+        justify-content: center;
+    }
+
+    & & + & {
+        margin-left: 20px;
     }
 }
