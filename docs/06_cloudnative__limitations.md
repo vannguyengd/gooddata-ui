@@ -31,6 +31,7 @@ model objects seamlessly as input to the different visual components.
 -  Attribute Valid Element Query with attribute filters or with measure filters is not supported.
 -  Dashboard alerts are not supported.
 -  Dashboard exports into PDF and scheduling of dashboard exports are not supported.
+-  Customization of dashboards embedded using the [DashboardView](10_vis__dashboard_view.md) component is not possible.
 
 ### Limitations
 
