@@ -1696,6 +1696,82 @@
       "version-8.2.0/version-8.2.0-afm": {
         "title": "Custom Executions",
         "sidebar_label": "Custom Executions"
+      },
+      "version-8.3.0/version-8.3.0-about_gooddataui": {
+        "title": "About GoodData.UI",
+        "sidebar_label": "About GoodData.UI"
+      },
+      "version-8.3.0/version-8.3.0-framework_overview": {
+        "title": "Architecture Overview",
+        "sidebar_label": "Architecture Overview"
+      },
+      "version-8.3.0/version-8.3.0-interactive_examples": {
+        "title": "Interactive Code Examples",
+        "sidebar_label": "Interactive Code Examples"
+      },
+      "version-8.3.0/version-8.3.0-platform_intro": {
+        "title": "GoodData platform Introduction",
+        "sidebar_label": "GoodData platform Introduction"
+      },
+      "version-8.3.0/version-8.3.0-why_gdui": {
+        "title": "Why GoodData.UI?",
+        "sidebar_label": "Why GoodData.UI?"
+      },
+      "version-8.3.0/version-8.3.0-export_catalog": {
+        "title": "Export Catalog",
+        "sidebar_label": "Export Catalog"
+      },
+      "version-8.3.0/version-8.3.0-understand_execution_model": {
+        "title": "Understand the Execution Model",
+        "sidebar_label": "Understand the Execution Model"
+      },
+      "version-8.3.0/version-8.3.0-platform_integration": {
+        "title": "Integrate into an existing application",
+        "sidebar_label": "Integrate into an existing application"
+      },
+      "version-8.3.0/version-8.3.0-create_new_application": {
+        "title": "Create Your First Application Using Accelerator Toolkit",
+        "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
+      },
+      "version-8.3.0/version-8.3.0-cloudnative_integration": {
+        "title": "Integrate into an existing application",
+        "sidebar_label": "Integrate into an existing application"
+      },
+      "version-8.3.0/version-8.3.0-cloudnative_introduction": {
+        "title": "GoodData.CN Introduction",
+        "sidebar_label": "GoodData.CN Introduction"
+      },
+      "version-8.3.0/version-8.3.0-cloudnative_limitations": {
+        "title": "Limitations",
+        "sidebar_label": "Limitations"
+      },
+      "version-8.3.0/version-8.3.0-cloudnative_local_dev": {
+        "title": "Set Up Development on Workstation",
+        "sidebar_label": "Set Up Development on Workstation"
+      },
+      "version-8.3.0/version-8.3.0-date_filter_component": {
+        "title": "Date Filter",
+        "sidebar_label": "Date Filter"
+      },
+      "version-8.3.0/version-8.3.0-execution_model": {
+        "title": "Execution Model Details",
+        "sidebar_label": "Detailed Description"
+      },
+      "version-8.3.0/version-8.3.0-backend_agnostic_apps": {
+        "title": "Building backend-agnostic applications",
+        "sidebar_label": "Building backend-agnostic applications"
+      },
+      "version-8.3.0/version-8.3.0-platform_cors": {
+        "title": "Deal with Cross-Origin Issues",
+        "sidebar_label": "Deal with Cross-Origin Issues"
+      },
+      "version-8.3.0/version-8.3.0-platform_sso": {
+        "title": "Set Up Authentication and Single Sign-On",
+        "sidebar_label": "Set Up Authentication and Single Sign-On"
+      },
+      "version-8.3.0/version-8.3.0-custom_execution": {
+        "title": "Custom Executions",
+        "sidebar_label": "Custom Executions"
       }
     },
     "links": {
