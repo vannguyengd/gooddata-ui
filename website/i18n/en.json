@@ -1753,6 +1753,10 @@
         "title": "Date Filter",
         "sidebar_label": "Date Filter"
       },
+      "version-8.3.0/version-8.3.0-date_filter_option": {
+        "title": "DateFilter Component Options",
+        "sidebar_label": "DateFilter Component Options"
+      },
       "version-8.3.0/version-8.3.0-execution_model": {
         "title": "Execution Model Details",
         "sidebar_label": "Detailed Description"

@@ -2,7 +2,8 @@
 title: DateFilter Component Options
 sidebar_label: DateFilter Component Options
 copyright: (C) 2007-2019 GoodData Corporation
-id: date_filter_option
+id: version-8.3.0-date_filter_option
+original_id: date_filter_option
 ---
 
 This article describes the options for configuring the [DateFilter component](10_vis__date_filter_component.md).
