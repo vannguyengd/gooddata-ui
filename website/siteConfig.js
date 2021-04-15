@@ -92,7 +92,23 @@ const siteConfig = {
   twitter: 'true',
   twitterImage: 'img/metaimage.png',
   ogImage: 'img/metaimage.png',
-  disableHeaderTitle: true
+  disableHeaderTitle: true,
+  markdownPlugins: [
+    function disableLinkify(md) {
+      /*
+       * Linkify does not play well with the GoodData.CN name.. linkify "auto-magic" can convert this:
+       *
+       * `## Using @gooddata/catalog-export with GoodData.CN`
+       *
+       * So that the GoodData.CN will be hyperlink to `http://gooddata.cn`. This is unwanted behavior, we want just plaintext.
+       *
+       * Because the "auto-magic" is unknown and seems somewhat unpredictable, the code below completely disables
+       * the `linkify` rule of the Remarkable lib. Last thing we need is to worry and go through all the docs and verify
+       * and work-around the automagic so that there are no links.
+       */
+      md.core.ruler.disable(['linkify']);
+    },
+  ],
 };
 
 module.exports = siteConfig;

@@ -1,5 +1,5 @@
 ---
-id: cors
+id: platform_cors
 title: Deal with Cross-Origin Issues
 sidebar_label: Deal with Cross-Origin Issues
 copyright: (C) 2007-2018 GoodData Corporation

@@ -1,8 +1,8 @@
 ---
 title: Integrate into an existing application
 sidebar_label: Integrate into an existing application
-copyright: (C) 2007-2018 GoodData Corporation
-id: platform_integration
+copyright: (C) 2007-2021 GoodData Corporation
+id: cloudnative_integration
 ---
 
 This document outlines the important steps you need to undertake if you need to integrate GoodData.UI into either an existing
@@ -11,10 +11,10 @@ React application or for some reason you cannot use [accelerator toolkit](02_sta
 ## Step 1. Install the necessary dependencies
 
 The GoodData.UI can target multiple platforms and so it is essential to install packages for the right target platform. For
-GoodData platform, you need to install packages codenamed `bear`:
+GoodData.CN, you need to install packages codenamed `tiger`:
 
 ```bash
-yarn add @gooddata/api-client-bear @gooddata/sdk-backend-bear @gooddata/sdk-model 
+yarn add @gooddata/api-client-tiger @gooddata/sdk-backend-tiger 
 ```
 
 On top of this, you can pick and choose packages depending on which GoodData.UI components you plan to use. You can consult the table included on the [architecture overview](01_intro__framework_overview.md)
@@ -39,7 +39,7 @@ page.
    ```
 
 We also highly recommend that you use the [catalog-export](02_start__catalog_export.md) tool to generate a file with
-code representation of all available measures and attributes in your GoodData platform workspace. You can then use this
+code representation of all available measures and attributes in your GoodData.CN workspace. You can then use this
 generated code to specify what data to render in the Visual components. To add `@gooddata/catalog-export` as a dev dependency:
 
 ```bash
@@ -49,7 +49,7 @@ yarn add --dev @gooddata/catalog-export
 
 ## Step 2. Include styles
 
-GoodData.UI uses CSS to style the components. Each package whose name is prefixed with `sdk-ui` contains
+GoodData.UI uses old-fashioned CSS to style the components. Each package whose name is prefixed with `sdk-ui` contains
 CSS files that you need to include or import in your application. This listing shows all the possible imports you
 may need:
 
@@ -70,19 +70,19 @@ it cannot find these styles, it is safe to remove them.
 
 ## Step 3. Setup Analytical Backend and integrate it into your app
 
-All integration and communication of GoodData.UI React components and GoodData platform happens via the **Analytical Backend** abstraction. 
+All integration and communication of GoodData.UI React components and GoodData Platform happens via the **Analytical Backend** abstraction.
 Your application should initialize an instance of Analytical backend as soon as possible as follows:
 
 ```javascript
-import bearFactory, {ContextDeferredAuthProvider} from "@gooddata/sdk-backend-bear";
+import tigerFactory, {ContextDeferredAuthProvider, redirectToTigerAuthentication} from "@gooddata/sdk-backend-tiger";
 
-const backend = bearFactory().withAuthentication(new ContextDeferredAuthProvider());
+const backend = tigerFactory().withAuthentication(new ContextDeferredAuthProvider(redirectToTigerAuthentication));
 ```
 
 Depending on the type and style used in your application you may either store an instance of `backend` in a read-only global
 variable or use React contexts.
 
-This is how you can set contexts that hold both an instance of Analytical Backend and identifier of GoodData platform workspace
+This is how you can set contexts that hold both an instance of Analytical Backend and identifier of GoodData Platform workspace
 that you are targeting:
 
 ```jsx
@@ -104,50 +104,35 @@ are context-aware and will retrieve both `backend` and `workspace` to use.
 
 ## Step 4. Solve Cross-Origin Resource Sharing
 
-The interaction with third-party APIs and services from the browser is protected by the [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) 
-mechanism (CORS). Correct CORS setup is from a big part a server-side concern. 
+The interaction with third-party APIs and services from the browser is protected by the [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+mechanism (CORS). Correct CORS setup is from a big part a server-side concern.
 
-GoodData platform provides APIs to configure the CORS for your account. Configuring CORS on your domain is the only feasible 
-approach for production deployment and there is no way around it even during development if your application will be 
-using Single Sign-On authentication flows.
+The GoodData.CN all-in-one image is already configured to allow cross-origin requests coming from a GoodData.UI
+application running on `https://localhost:8443`.
 
-If you plan to use username and password authentication during development on your localhost you avoid the server-side CORS
-setup by using a development proxy.
-
-Both of these options are explained in-depth in the dedicated [Solving CORS](30_tips__cors.md) page.
-
+If you run into CORS and authentication issues while developing on localhost, check out the [Set Up Development on Workstation](06_cloudnative__local_dev.md)
+page for viable development setup that does not require any additional GoodData.CN reconfiguration.
 
 ## Step 5. Configure authentication
 
 You have probably noticed that the code snippet in the third step did set up authentication to use the `ContextDeferredAuthProvider`.
-This effectively tells the Analytical Backend that your application takes care of handling set up of the authenticated session to GoodData platform.
+This effectively tells the Analytical Backend that your application takes care of handling set up of the authenticated session to GoodData.CN.
 
-The implementation of backend assumes that someone else does the authentication and as part of that sets the GoodData cookies with the
-essential tokens. If the session is not set up then the Analytical Backend will raise the `NotAuthenticated` errors
+In this particular example, when the session if not authentication your application will use the built-in `redirectToTigerAuthentcation` function
+to redirect the browser window to a location where the GoodData.CN authentication flow starts.
 
-Your application can use the functions in `@gooddata/api-client-bear` to trigger the APIs to achieve either username & password
-authentication or start Single Sign-On authentication flow when needed.
+Once redirected to this location, the GoodData.CN server will start the OIDC Authentication Flow according to its
+configuration. Once the flow finishes, the server will reply with a redirect response that will take browser back to your application window.
 
-This is how you can trigger username and password login using the `@gooddata/api-client-bear`:
+The configuration listed in step 3 is the recommended configuration for the production deployment where the application is
+served either from the same origin as GoodData.CN or different origin with correct CORS and authentication cookies configuration.
 
-```javascript
-import { factory } from "@gooddata/api-client-bear";
-const bearClient = factory();
-
-await bearClient.user.login(this.username, this.password)
-```
-
-For single sign-on setup, please see the dedicated [Single Sing-On Setup](30_tips__sso.md) page.
-
-
-**NOTE**: The `ContextDeferredAuthProvider` allows to provide callback function in the constructor. This function will
-be called every time when the Analytical Backend throws a `NotAuthenticated` error. This callback function is useful to
-implement a single-point of error handling of the `NotAuthenticated` and trigger the authentication flow in your
-application.
+If you run into CORS and authentication issues while developing on localhost, check out the [Set Up Development on Workstation](06_cloudnative__local_dev.md)
+page for viable development setup that does not require any additional GoodData.CN reconfiguration.
 
 ## Step 6. Finalization
 
-At this point your application should be set to use GoodData.UI and render visualizations from GoodData platform. If you 
+At this point your application should be set to use GoodData.UI and render visualizations from GoodData Platform. If you
 also configured and run the [catalog-export](02_start__catalog_export.md) you can now start embedding visualizations
 into your application:
 
@@ -168,7 +153,7 @@ function MyVisualization() {
 }
 ```
 
-**NOTE**: The imports from `generatedLdm` are for illustration purposes. You can name and place the file with generated 
+**NOTE**: The imports from `generatedLdm` are for illustration purposes. You can name and place the file with generated
 LDM however and wherever you see fit. The names of constants in the generated file will reflect the facts, measures and
 attributes in your workspace.
 
@@ -179,4 +164,4 @@ Here are some suggestions about what you can do after you created your first vis
 * Add more elements: tables, charts, custom visualizations. For more information, see [Start with Visual Components](10_vis__start_with_visual_components.md).
 * [Enable drilling](15_props__drillable_item.md).
 * Add a [customizable theme](10_vis__theme_provider.md) to your application.
-* Authenticate your users using [Single Sign-on (SSO)](30_tips__sso.md) rather than sending them to a proxied GoodData login page.
+
