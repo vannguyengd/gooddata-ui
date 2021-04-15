@@ -77,7 +77,7 @@ class HomeSplash extends React.Component {
           <ProjectTitle />
           <ProjectDescription />
           <div className="buttonWrapper">
-            <Button href={docUrl('installation.html')} className="button button-dark">Get GoodData.UI</Button>
+            <Button href={docUrl('create_new_application.html')} className="button button-dark">Get GoodData.UI</Button>
             <Button href={docUrl('about_gooddataui.html')} className="button">See documentation</Button>
           </div>
         </div>
