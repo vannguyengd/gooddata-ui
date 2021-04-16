@@ -49,8 +49,8 @@ An Absolute Form filter restricts data based on a explicitly defined static peri
 | type | true | string | Must be set to `absoluteForm` |
 | name | true | string | The filter label |
 | visible | true | boolean | Specifies whether to display (`true`) or hide (`false`) the filter option |
-| from | false | string | The beginning of the period; the default value formatted as `YYYY-MM-DD`. This value should be specified if absolute form chosen as default filter option |
-| to | false | string | The end of the period; the default value formatted as `YYYY-MM-DD`. This value should be specified if absolute form chosen as default filter option |
+| from | false | string | The beginning of the period; the default value formatted as `YYYY-MM-DD`. This value must be specified if absolute form is chosen as the default filter option |
+| to | false | string | The end of the period; the default value formatted as `YYYY-MM-DD`. This value must be specified if absolute form is chosen as the default filter option |
 
 ### Relative Form
 A Relative Form filter restricts data based on a relative period (for example, "from 2 months ago to 1 month ago").
@@ -63,8 +63,8 @@ A Relative Form filter restricts data based on a relative period (for example, "
 | visible | true | boolean | Specifies whether to display (`true`) or hide (`false`) the filter option |
 | availableGranularities | true | [DateFilterGranularity[]](#date-filter-granularity) | Types of granularity available in the form |
 | granularity | false | [DateFilterGranularity](#date-filter-granularity) | The default granularity |
-| from | false | number | The beginning of the period; the default value that specifies the length of the period based on the granularity and is relative to today (which is always zero). This value should be specified if relative form chosen as default filter option |
-| to | false | number | The end of the period; the default value that specifies the length of the period based on the granularity and is relative to today (which is always zero). This value should be specified if relative form chosen as default filter option |
+| from | false | number | The beginning of the period; the default value that specifies the length of the period based on the granularity and is relative to today (which is always zero). This value must be specified if relative form is chosen as the default filter option |
+| to | false | number | The end of the period; the default value that specifies the length of the period based on the granularity and is relative to today (which is always zero). This value must be specified if relative form is chosen as the default filter option |
 
 ### Absolute preset
 An Absolute Preset filter is a static period filter with the preconfigured `from` and `to` dates. The period cannot be changed via the UI.
