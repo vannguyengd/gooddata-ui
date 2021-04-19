@@ -1,39 +1,38 @@
 ---
-title: Integrate into an existing application
-sidebar_label: Integrate into an existing application
+title: Integrate into an Existing Application
+sidebar_label: Integrate into an Existing Application
 copyright: (C) 2007-2018 GoodData Corporation
 id: version-8.3.0-platform_integration
 original_id: platform_integration
 ---
 
-This document outlines the important steps you need to undertake if you need to integrate GoodData.UI into either an existing
+This document outlines the important steps you need to undertake if you need to integrate GoodData.UI into an existing
 React application or for some reason you cannot use [accelerator toolkit](02_start__using_boilerplate.md) to bootstrap a new application.
 
 ## Step 1. Install the necessary dependencies
 
-The GoodData.UI can target multiple platforms and so it is essential to install packages for the right target platform. For
+GoodData.UI can target multiple platforms. Therefore, it is essential to install packages for the right target platform. For the 
 GoodData platform, you need to install packages codenamed `bear`:
 
 ```bash
 yarn add @gooddata/api-client-bear @gooddata/sdk-backend-bear @gooddata/sdk-model 
 ```
 
-On top of this, you can pick and choose packages depending on which GoodData.UI components you plan to use. You can consult the table included on the [architecture overview](01_intro__framework_overview.md)
-page.
+On top of this, you can pick and choose packages depending on which GoodData.UI components you plan to use. You can consult the table included in the [architecture overview](01_intro__framework_overview.md).
 
--  If you plan to use only headless React components and essential infrastructure then install:
+-  If you plan to use only headless React components and essential infrastructure, install:
 
    ```bash
    yarn add @gooddata/sdk-ui
    ```
 
--  If you plan to use all available GoodData.UI visualizations then install:
+-  If you plan to use all available GoodData.UI visualizations, install:
 
    ```bash
    yarn add @gooddata/sdk-ui-charts @gooddata/sdk-ui-pivot @gooddata/sdk-ui-geo @gooddata/sdk-ui-ext
    ```
 
--  If you plan to use all components of GoodData.UI then install:
+-  If you plan to use all components of GoodData.UI, install:
 
    ```bash
    yarn add @gooddata/sdk-ui-all
@@ -41,17 +40,16 @@ page.
 
 We also highly recommend that you use the [catalog-export](02_start__catalog_export.md) tool to generate a file with
 code representation of all available measures and attributes in your GoodData platform workspace. You can then use this
-generated code to specify what data to render in the Visual components. To add `@gooddata/catalog-export` as a dev dependency:
+generated code to specify what data to render in the visual components. To add `@gooddata/catalog-export` as a dev dependency, execute the following command:
 
 ```bash
 yarn add --dev @gooddata/catalog-export
 ```
 
-
 ## Step 2. Include styles
 
 GoodData.UI uses CSS to style the components. Each package whose name is prefixed with `sdk-ui` contains
-CSS files that you need to include or import in your application. This listing shows all the possible imports you
+CSS files that you need to include or import in your application. This listing shows all the possible imports that you
 may need:
 
 ```jsx
@@ -63,11 +61,9 @@ import "@gooddata/sdk-ui-kit/styles/css/main.css";
 import "@gooddata/sdk-ui-ext/styles/css/main.css";
 ```
 
-Please make sure to filter this list and only import styles from the packages which you actually use.
+Make sure to import the styles only from the packages that you actually use.
 
-**NOTE**: The `@gooddata/sdk-ui-kit` is a library of elementary components (buttons, dropdowns, overlays)
-required by the different SDK components. The best course of action is to try to import their CSS files; if the application build fails because
-it cannot find these styles, it is safe to remove them.
+**NOTE**: `@gooddata/sdk-ui-kit` is a library of elementary components (buttons, dropdowns, overlays) required by different GoodData.UI components. The best course of action is to try to import their CSS files; if the application build fails because it cannot find these styles, it is safe to remove them.
 
 ## Step 3. Setup Analytical Backend and integrate it into your app
 
