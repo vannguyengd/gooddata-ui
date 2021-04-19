@@ -6,16 +6,16 @@ id: version-8.3.0-create_new_application
 original_id: create_new_application
 ---
 
-Create your first analytical application using GoodData **`@gooddata/create-gooddata-react-app`** tool. 
+Create your first analytical application using the **`@gooddata/create-gooddata-react-app`** tool. 
 
 `@gooddata/create-gooddata-react-app` is a CLI-based tool that will guide you through the process of creating the application 
 step by step in your terminal application. 
 
-The tool can create application that will target either GoodData platform or GoodData.CN. 
-The created application is 'ready to go' with none or minimal additional configuration needed from your side. 
+The tool can create an application that will target either the GoodData platform or GoodData.CN. 
+The created application is ready for use with none or minimal additional configuration needed from your side.
 
-**Note**: By default, the tool will create a new application designated to run on top of the GoodData platform. If you are a
-GoodData.CN user, start the tool with an extra `--backend tiger` parameter. Remember: an application correctly
+**NOTE**: By default, the tool will create a new application designated to run on top of the GoodData platform. If you are a
+GoodData.CN user, start the tool with an extra `--backend tiger` parameter. Remember that an application correctly
 bootstrapped to run on top of GoodData.CN will always depend on the `@gooddata/sdk-backend-tiger`.
 
 This is what is going to happen when you run `@gooddata/create-gooddata-react-app`:
@@ -28,6 +28,6 @@ This is what is going to happen when you run `@gooddata/create-gooddata-react-ap
 To start, go to https://github.com/gooddata/gooddata-create-gooddata-react-app, and follow the instructions in the README file. 
 The created application contains its own README with further information about configuration, build and deployment options.
 
-_Note: This tutorial assumes that you already have an existing GoodData platform account, or a GoodData.CN installation. 
-You can create GoodData platform account for free at [https://www.gooddata.com/free](https://www.gooddata.com/free) or download
-GoodData.CN at [https://www.gooddata.com/developers](https://www.gooddata.com/developers)._
+**NOTE:** This tutorial assumes that you already have an existing GoodData platform account or a GoodData.CN installation. 
+You can create a GoodData platform account for free at [https://www.gooddata.com/free](https://www.gooddata.com/free) or download
+GoodData.CN at [https://www.gooddata.com/developers](https://www.gooddata.com/developers).

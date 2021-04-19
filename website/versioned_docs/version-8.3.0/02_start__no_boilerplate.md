@@ -18,7 +18,7 @@ GoodData platform, you need to install packages codenamed `bear`:
 yarn add @gooddata/api-client-bear @gooddata/sdk-backend-bear @gooddata/sdk-model 
 ```
 
-On top of this, you can pick and choose packages depending on which GoodData.UI components you plan to use. You can consult the table included in the [architecture overview](01_intro__framework_overview.md).
+On top of this, you can pick and choose packages depending on which GoodData.UI components you plan to use. For more information, see the table in the [architecture overview](01_intro__framework_overview.md).
 
 -  If you plan to use only headless React components and essential infrastructure, install:
 
@@ -65,10 +65,10 @@ Make sure to import the styles only from the packages that you actually use.
 
 **NOTE**: `@gooddata/sdk-ui-kit` is a library of elementary components (buttons, dropdowns, overlays) required by different GoodData.UI components. The best course of action is to try to import their CSS files; if the application build fails because it cannot find these styles, it is safe to remove them.
 
-## Step 3. Setup Analytical Backend and integrate it into your app
+## Step 3. Set up Analytical Backend and integrate it into your application
 
-All integration and communication of GoodData.UI React components and GoodData platform happens via the **Analytical Backend** abstraction. 
-Your application should initialize an instance of Analytical backend as soon as possible as follows:
+All integration and communication of the GoodData.UI React components and the GoodData platform happens via the **Analytical Backend** abstraction. 
+Your application should initialize an instance of the Analytical Backend as soon as possible as follows:
 
 ```javascript
 import bearFactory, {ContextDeferredAuthProvider} from "@gooddata/sdk-backend-bear";
@@ -76,11 +76,10 @@ import bearFactory, {ContextDeferredAuthProvider} from "@gooddata/sdk-backend-be
 const backend = bearFactory().withAuthentication(new ContextDeferredAuthProvider());
 ```
 
-Depending on the type and style used in your application you may either store an instance of `backend` in a read-only global
+Depending on the type and style used in your application, you may either store an instance of `backend` in a read-only global
 variable or use React contexts.
 
-This is how you can set contexts that hold both an instance of Analytical Backend and identifier of GoodData platform workspace
-that you are targeting:
+This is how you can set contexts that hold both an instance of the Analytical Backend and the identifier of the GoodData platform workspace that you are targeting:
 
 ```jsx
 import { BackendProvider, WorkspaceProvider } from "@gooddata/sdk-ui";
@@ -96,36 +95,32 @@ function App() {
 }
 ```
 
-**Note**: If you are building a React application then the contexts are the best way to go. All GoodData.UI components
+**NOTE**: If you are building a React application, the contexts are the best way to go. All GoodData.UI components
 are context-aware and will retrieve both `backend` and `workspace` to use.
 
 ## Step 4. Solve Cross-Origin Resource Sharing
 
-The interaction with third-party APIs and services from the browser is protected by the [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) 
-mechanism (CORS). Correct CORS setup is from a big part a server-side concern. 
+The interaction with third-party APIs and services from the browser is protected by the [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) mechanism (CORS). Correct CORS setup is mainly a server-side concern.
 
-GoodData platform provides APIs to configure the CORS for your account. Configuring CORS on your domain is the only feasible 
+The GoodData platform provides APIs to configure the CORS for your account. Configuring CORS on your domain is the only feasible 
 approach for production deployment and there is no way around it even during development if your application will be 
 using Single Sign-On authentication flows.
 
-If you plan to use username and password authentication during development on your localhost you avoid the server-side CORS
+If you plan to use username and password authentication during development on your localhost, you avoid the server-side CORS
 setup by using a development proxy.
 
-Both of these options are explained in-depth in the dedicated [Solving CORS](30_tips__cors.md) page.
-
+For more information about these options, see [Deal with Cross-Origin Issues](30_tips__cors.md).
 
 ## Step 5. Configure authentication
 
-You have probably noticed that the code snippet in the third step did set up authentication to use the `ContextDeferredAuthProvider`.
-This effectively tells the Analytical Backend that your application takes care of handling set up of the authenticated session to GoodData platform.
+You may have noticed that the code snippet in [Step 3](#step-3.-set-up-analytical-backend-and-integrate-it-into-your-application) set up authentication to use `ContextDeferredAuthProvider`. This effectively tells the Analytical Backend that your application takes care of handling setup of the authenticated session to the GoodData platform.
 
-The implementation of backend assumes that someone else does the authentication and as part of that sets the GoodData cookies with the
-essential tokens. If the session is not set up then the Analytical Backend will raise the `NotAuthenticated` errors
+The implementation of the backend assumes that someone else does the authentication and as part of that sets the GoodData cookies with the essential tokens. If the session is not set up, the Analytical Backend raises the `NotAuthenticated` errors.
 
 Your application can use the functions in `@gooddata/api-client-bear` to trigger the APIs to achieve either username & password
-authentication or start Single Sign-On authentication flow when needed.
+authentication or start a Single Sign-On authentication flow when needed.
 
-This is how you can trigger username and password login using the `@gooddata/api-client-bear`:
+This is how you can trigger the username and password login process using `@gooddata/api-client-bear`:
 
 ```javascript
 import { factory } from "@gooddata/api-client-bear";
@@ -134,18 +129,16 @@ const bearClient = factory();
 await bearClient.user.login(this.username, this.password)
 ```
 
-For single sign-on setup, please see the dedicated [Single Sing-On Setup](30_tips__sso.md) page.
+For single sign-on setup, see [Set Up Authentication and Single Sign-On](30_tips__sso.md).
 
-
-**NOTE**: The `ContextDeferredAuthProvider` allows to provide callback function in the constructor. This function will
+**NOTE**: `ContextDeferredAuthProvider` allows you to provide a callback function in the constructor. This function will
 be called every time when the Analytical Backend throws a `NotAuthenticated` error. This callback function is useful to
-implement a single-point of error handling of the `NotAuthenticated` and trigger the authentication flow in your
-application.
+implement a mechanism for handling a "single point of failure" of the `NotAuthenticated` error and triggering the authentication flow in your application.
 
-## Step 6. Finalization
+## Next steps
 
-At this point your application should be set to use GoodData.UI and render visualizations from GoodData platform. If you 
-also configured and run the [catalog-export](02_start__catalog_export.md) you can now start embedding visualizations
+At this point, your application should be set to use GoodData.UI and render visualizations from the GoodData platform. If you 
+also configured and run the [catalog-export](02_start__catalog_export.md) tool, you can now start embedding visualizations
 into your application:
 
 ```jsx
@@ -165,11 +158,8 @@ function MyVisualization() {
 }
 ```
 
-**NOTE**: The imports from `generatedLdm` are for illustration purposes. You can name and place the file with generated 
-LDM however and wherever you see fit. The names of constants in the generated file will reflect the facts, measures and
-attributes in your workspace.
-
-## Next steps
+**NOTE**: The imports from `generatedLdm` are for illustration purposes. You can name and store the file with the generated 
+LDM as you see fit. The names of constants in the generated file will reflect the facts, measures, and attributes in your workspace.
 
 Here are some suggestions about what you can do after you created your first visualization:
 
