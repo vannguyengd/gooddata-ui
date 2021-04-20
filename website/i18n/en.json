@@ -18,8 +18,8 @@
         "sidebar_label": "Interactive Code Examples"
       },
       "platform_intro": {
-        "title": "GoodData platform Introduction",
-        "sidebar_label": "GoodData platform Introduction"
+        "title": "GoodData Platform Introduction",
+        "sidebar_label": "GoodData Platform Introduction"
       },
       "why_gdui": {
         "title": "Why GoodData.UI?",
@@ -50,16 +50,16 @@
         "sidebar_label": "Installation"
       },
       "platform_integration": {
-        "title": "Integrate into an existing application",
-        "sidebar_label": "Integrate into an existing application"
+        "title": "Integrate into an Existing Application",
+        "sidebar_label": "Integrate into an Existing Application"
       },
       "create_new_application": {
         "title": "Create Your First Application Using Accelerator Toolkit",
         "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
       },
       "cloudnative_integration": {
-        "title": "Integrate into an existing application",
-        "sidebar_label": "Integrate into an existing application"
+        "title": "Integrate into an Existing Application",
+        "sidebar_label": "Integrate into an Existing Application"
       },
       "cloudnative_introduction": {
         "title": "GoodData.CN Introduction",
@@ -70,8 +70,8 @@
         "sidebar_label": "Limitations"
       },
       "cloudnative_local_dev": {
-        "title": "Set Up Development on Workstation",
-        "sidebar_label": "Set Up Development on Workstation"
+        "title": "Set Up Development on a Workstation",
+        "sidebar_label": "Set Up Development on a Workstation"
       },
       "area_chart_component": {
         "title": "Area Chart",
@@ -1710,8 +1710,8 @@
         "sidebar_label": "Interactive Code Examples"
       },
       "version-8.3.0/version-8.3.0-platform_intro": {
-        "title": "GoodData platform Introduction",
-        "sidebar_label": "GoodData platform Introduction"
+        "title": "GoodData Platform Introduction",
+        "sidebar_label": "GoodData Platform Introduction"
       },
       "version-8.3.0/version-8.3.0-why_gdui": {
         "title": "Why GoodData.UI?",
@@ -1726,16 +1726,16 @@
         "sidebar_label": "Understand the Execution Model"
       },
       "version-8.3.0/version-8.3.0-platform_integration": {
-        "title": "Integrate into an existing application",
-        "sidebar_label": "Integrate into an existing application"
+        "title": "Integrate into an Existing Application",
+        "sidebar_label": "Integrate into an Existing Application"
       },
       "version-8.3.0/version-8.3.0-create_new_application": {
         "title": "Create Your First Application Using Accelerator Toolkit",
         "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
       },
       "version-8.3.0/version-8.3.0-cloudnative_integration": {
-        "title": "Integrate into an existing application",
-        "sidebar_label": "Integrate into an existing application"
+        "title": "Integrate into an Existing Application",
+        "sidebar_label": "Integrate into an Existing Application"
       },
       "version-8.3.0/version-8.3.0-cloudnative_introduction": {
         "title": "GoodData.CN Introduction",
@@ -1746,8 +1746,8 @@
         "sidebar_label": "Limitations"
       },
       "version-8.3.0/version-8.3.0-cloudnative_local_dev": {
-        "title": "Set Up Development on Workstation",
-        "sidebar_label": "Set Up Development on Workstation"
+        "title": "Set Up Development on a Workstation",
+        "sidebar_label": "Set Up Development on a Workstation"
       },
       "version-8.3.0/version-8.3.0-date_filter_component": {
         "title": "Date Filter",
