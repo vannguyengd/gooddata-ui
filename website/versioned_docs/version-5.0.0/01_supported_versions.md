@@ -41,4 +41,4 @@ The following table provides the lifecycle phases of GoodData.UI versions:
 | 6 | Not supported | November 1, 2018 | May 21, 2019 | October 8, 2020 | _Not yet defined_ | 6.3 |
 | 5 | Not supported | April 26, 2018 | November 1, 2018 | May 21, 2019 | _Not yet defined_ | 5.3 |
 
-**IMPORTANT**: The first version of GoodData.UI that supports GoodData.CN is 8.3.0.
+**IMPORTANT**: The first version of GoodData.UI that supports GoodData.CN is 8.3.

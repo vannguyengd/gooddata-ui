@@ -11,7 +11,7 @@ the core concepts behind computing and rendering data using GoodData.UI.
 
 ## Overview
 
-The GoodData.UI offers a foundation that covers the entire life cycle of data to visualize:
+GoodData.UI offers a foundation that covers an entire life cycle of data to visualize:
 
 1.  Specification of what data to compute
 2.  APIs to asynchronously compute the data according to the specification
@@ -43,14 +43,14 @@ backend so that it can be visualized. We call this specification the _Execution 
 
 The execution definition captures the following:
 
--  What the **measures** to calculate are
+-  What the **measures** to calculate
 -  For which **attributes** these measures should be calculated
 -  What **filters** to apply
 -  How to **slice and dice** the result
 -  What **totals** and rollups to include in the result
 -  How to **sort** the result
 
-All the visualization components in the GoodData.UI create the execution definition, use it to start an
+All the visualization components in GoodData.UI create the execution definition, use it to start an
 execution on an Analytical Backend and then from the execution result they load views of the data to visualize.
 
 The visual components in GoodData.UI provide a convenience layer and shield you from creating
@@ -110,7 +110,7 @@ you can start building an application using GoodData.UI.
 
 The attributes, measures, filters, sorting, totals, slicing and dicing are all covered by different types of the execution model
 that is implemented in `@gooddata/sdk-model`.
-Instances of these types is what visual components accept in their props.
+Instances of these types is what the visual components accept in their props.
 
 The execution model comes with factory functions to create instances of any types that play a role in the model. For
 instance, to define a new measure that you can then use as input for the `ColumnChart` component, you would do something similar to the following:

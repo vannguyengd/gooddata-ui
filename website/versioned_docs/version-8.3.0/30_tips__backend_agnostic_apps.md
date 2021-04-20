@@ -9,10 +9,10 @@ original_id: backend_agnostic_apps
 All GoodData.UI React components use the **Analytical Backend** abstraction to interface with the backend. The purpose of this
 abstraction is to hide implementation detail from the application.
 
-We have introduced this layer of abstraction so that it is possible to reuse existing React components between the GoodData platform and GoodData.CN. We also use the Analytical Backend abstraction in our own applications: Analytical Designer and Dashboards. Thanks to this, we can have a single codebase that can run on top of either the GoodData platform or GoodData.CN.
+We have introduced this layer of abstraction so that existing React components can be reused between the GoodData platform and GoodData.CN. We also use the Analytical Backend abstraction in our own applications: Analytical Designer and Dashboards. Thanks to this, we can have a single codebase that can run on top of either the GoodData platform or GoodData.CN.
 
 This document lists recommended practices that can help you build applications that can run on both the GoodData platform
-and GoodData.CN or support one of them but can be refactored with minimum effort to run on the other.
+and GoodData.CN or support one of them but can be refactored to run on the other with minimum effort.
 
 ### Stick to using the Analytical Backend services
 
@@ -28,7 +28,7 @@ code. You can discover the capabilities by browsing the interfaces. Check out th
 In some cases, you may be forced to use an API client for the GoodData platform or GoodData.CN and make some
 calls that are not available through the Analytical Backend SPI.
 
-If you have to do this, we recommend separating and co-locating the platform-specific calls. It is also ideal to hide it behind an interface. You can approach this in several ways:
+If you have to do this, we recommend separating and co-locating the platform-specific calls and hiding it behind an interface. You can approach this in several ways:
 
 -  Create an actual interface and implementation for it using the platform-specific calls.
 -  Create a function that addresses a particular concern of your application and it does that by using the API client directly.
@@ -51,7 +51,7 @@ other entities or may be passed by reference to another service.
 The type of object stored in `ref` is fully in control of a specific Analytical Backend implementation and matches
 the object identification and referencing scheme used by the server. 
 
-The `ref` properties are of type `ObjRef`, which is a union of `UriRef` and `IdentifierRef`; one of these types will be used
+The `ref` properties are of the `ObjRef` type, which is a union of `UriRef` and `IdentifierRef`; one of these types will be used
 by the backend. If your application has to work with entity identifiers or has to reference entities, it should always do 
 so using an instance of `ObjRef`. 
 
@@ -61,8 +61,7 @@ equality with another instance of `ObjRef`.
 
 In some scenarios though (for example, if your application needs to have a reference to an object at compile time), you will need to hardcode a reference in your application.
 
-If you have to do this, we recommend defining all the `ref`s in a single file and expose them as constants that
-the rest of your application uses opaquely:
+If you have to do this, we recommend defining all the `ref`s in a single file and exposing them as constants that the rest of your application uses opaquely:
 
 -  For the GoodData platform and for applications that need to work on top of a number of different workspaces derived from the same master workspace, you must reference objects using their identifier and use the `idRef` factory function to create an instance of `ObjRef`.
 -  For the GoodData platform and applications that will always target a single workspace, you can reference objects by their URI and use the `uriRef` factory function to create an instance of `ObjRef`.

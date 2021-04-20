@@ -18,7 +18,7 @@ The robust authentication setup of GoodData.CN requires careful server-side conf
 
 ## Use a token authentication provider
 
-Switching the GoodData.CN analytical backend to use token based authentication means using a different authentication provider. We have created the `TigerTokenAuthProvider` for this purpose:
+Switching the GoodData.CN analytical backend to use token-based authentication means using a different authentication provider. We have created the `TigerTokenAuthProvider` for this purpose:
 
 ```javascript
 import tigerFactory, {TigerTokenAuthProvider} from "@gooddata/sdk-backend-tiger";

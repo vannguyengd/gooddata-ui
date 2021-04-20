@@ -49,8 +49,7 @@ yarn add --dev @gooddata/catalog-export
 ## Step 2. Include styles
 
 GoodData.UI uses CSS to style the components. Each package whose name is prefixed with `sdk-ui` contains
-CSS files that you need to include or import in your application. This listing shows all the possible imports that you
-may need:
+CSS files that you need to include or import in your application. The following list shows all the possible imports that you may need:
 
 ```jsx
 import "@gooddata/sdk-ui-filters/styles/css/main.css";
@@ -63,11 +62,11 @@ import "@gooddata/sdk-ui-ext/styles/css/main.css";
 
 Make sure to import the styles only from the packages that you actually use.
 
-**NOTE**: `@gooddata/sdk-ui-kit` is a library of elementary components (buttons, dropdowns, overlays) required by different GoodData.UI components. The best course of action is to try to import their CSS files; if the application build fails because it cannot find these styles, it is safe to remove them.
+**NOTE**: `@gooddata/sdk-ui-kit` is a library of elementary components (buttons, dropdowns, overlays) required by different GoodData.UI components. The best practice is to import all their CSS files and eventually remove those that make the application build fail.
 
 ## Step 3. Set up Analytical Backend and integrate it into your application
 
-All integration and communication of the GoodData.UI React components and the GoodData platform happens via the **Analytical Backend** abstraction. 
+All integration and communication of the GoodData.UI React components and the GoodData platform happen via the **Analytical Backend** abstraction. 
 Your application should initialize an instance of the Analytical Backend as soon as possible as follows:
 
 ```javascript
@@ -76,7 +75,7 @@ import bearFactory, {ContextDeferredAuthProvider} from "@gooddata/sdk-backend-be
 const backend = bearFactory().withAuthentication(new ContextDeferredAuthProvider());
 ```
 
-Depending on the type and style used in your application, you may either store an instance of `backend` in a read-only global
+Depending on the type and style used in your application, you can either store an instance of `backend` in a read-only global
 variable or use React contexts.
 
 This is how you can set contexts that hold both an instance of the Analytical Backend and the identifier of the GoodData platform workspace that you are targeting:
@@ -102,9 +101,8 @@ are context-aware and will retrieve both `backend` and `workspace` to use.
 
 The interaction with third-party APIs and services from the browser is protected by the [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) mechanism (CORS). Correct CORS setup is mainly a server-side concern.
 
-The GoodData platform provides APIs to configure the CORS for your account. Configuring CORS on your domain is the only feasible 
-approach for production deployment and there is no way around it even during development if your application will be 
-using Single Sign-On authentication flows.
+The GoodData platform provides APIs to configure CORS for your account. Configuring CORS on your domain is the only feasible 
+approach for production deployment. You must use it even during development if your application will be using Single Sign-On (SSO) authentication flows.
 
 If you plan to use username and password authentication during development on your localhost, you avoid the server-side CORS
 setup by using a development proxy.
@@ -117,8 +115,8 @@ You may have noticed that the code snippet in [Step 3](#step-3.-set-up-analytica
 
 The implementation of the backend assumes that someone else does the authentication and as part of that sets the GoodData cookies with the essential tokens. If the session is not set up, the Analytical Backend raises the `NotAuthenticated` errors.
 
-Your application can use the functions in `@gooddata/api-client-bear` to trigger the APIs to achieve either username & password
-authentication or start a Single Sign-On authentication flow when needed.
+Your application can use the functions in `@gooddata/api-client-bear` to trigger the APIs to achieve either username and password
+authentication or start an SSO authentication flow when needed.
 
 This is how you can trigger the username and password login process using `@gooddata/api-client-bear`:
 
@@ -129,7 +127,7 @@ const bearClient = factory();
 await bearClient.user.login(this.username, this.password)
 ```
 
-For single sign-on setup, see [Set Up Authentication and Single Sign-On](30_tips__sso.md).
+For SSO setup, see [Set Up Authentication and Single Sign-On](30_tips__sso.md).
 
 **NOTE**: `ContextDeferredAuthProvider` allows you to provide a callback function in the constructor. This function will
 be called every time when the Analytical Backend throws a `NotAuthenticated` error. This callback function is useful to
@@ -158,12 +156,12 @@ function MyVisualization() {
 }
 ```
 
-**NOTE**: The imports from `generatedLdm` are for illustration purposes. You can name and store the file with the generated 
-LDM as you see fit. The names of constants in the generated file will reflect the facts, measures, and attributes in your workspace.
+**NOTE:** The imports from `generatedLdm` are for illustration purposes. You can name the file with the generated 
+LDM as you see fit and store it in any location. The names of constants in the generated file will reflect the facts, measures, and attributes in your workspace.
 
 Here are some suggestions about what you can do after you created your first visualization:
 
 * Add more elements: tables, charts, custom visualizations. For more information, see [Start with Visual Components](10_vis__start_with_visual_components.md).
 * [Enable drilling](15_props__drillable_item.md).
 * Add a [customizable theme](10_vis__theme_provider.md) to your application.
-* Authenticate your users using [Single Sign-on (SSO)](30_tips__sso.md) rather than sending them to a proxied GoodData login page.
+* Authenticate your users using [SSO](30_tips__sso.md) rather than sending them to a proxied GoodData login page.

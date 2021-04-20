@@ -18,14 +18,14 @@ Using this generated code, you can create charts and execution definitions in a 
 
 ## Built-in integration in Accelerator Toolkit applications
 
-The `@gooddata/catalog-export` tool is installed and integrated into all applications bootstrapped using the `@gooddata/create-gooddata-react-app` tool. The bootstrapped application's `package.json` contains the `refresh-ldm` script that you can call to start the `@gooddata/catalog-export` tool with arguments derived from your application configuration.
+The `@gooddata/catalog-export` tool is installed and integrated into all applications bootstrapped using the `@gooddata/create-gooddata-react-app` tool. A bootstrapped application's `package.json` contains the `refresh-ldm` script that you can call to start the `@gooddata/catalog-export` tool with arguments derived from your application configuration.
 
 If you created your application using `@gooddata/create-gooddata-react-app`, you may be interested in additional
 configuration options described further in this document.
 
 ## Installing @gooddata/catalog-export
 
-Include `@gooddata/catalog-export` as a devDependency of your application. Launching it through `npx` is not supported; you will encounter errors if you start the tool using `npx` and try to export the catalog into a JavaScript file.
+Include `@gooddata/catalog-export` as a devDependency of your application. Launching it through `npx` is not supported. If you start the tool using `npx` and try to export the catalog into a JavaScript file, you will encounter errors.
 
 To install the stable version, run one of the following commands **depending on your package manager**:
 
@@ -94,7 +94,7 @@ The `@gooddata/catalog-export` tool can work on top of either the GoodData platf
     }
     ```
 
-The tool will use Bearer token authentication when communicating with your GoodData.CN installation. For more information about how to obtain API tokens, see the [GoodData.CN documentation](https://www.gooddata.com/developers/cloud-native/doc/1.0/administration/auth/user-token/).
+The tool uses Bearer token authentication when communicating with your GoodData.CN installation. For more information about how to obtain API tokens, see the [GoodData.CN documentation](https://www.gooddata.com/developers/cloud-native/doc/1.0/administration/auth/user-token/).
 
 Once you have a valid API token, set it into an exported `TIGER_API_TOKEN` variable:
 

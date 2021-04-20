@@ -14,9 +14,9 @@ step by step in your terminal application.
 The tool can create an application that will target either the GoodData platform or GoodData.CN. 
 The created application is ready for use with none or minimal additional configuration needed from your side.
 
-**NOTE**: By default, the tool will create a new application designated to run on top of the GoodData platform. If you are a
+**NOTE**: By default, the tool creates a new application designated to run on top of the GoodData platform. If you are a
 GoodData.CN user, start the tool with an extra `--backend tiger` parameter. Remember that an application correctly
-bootstrapped to run on top of GoodData.CN will always depend on the `@gooddata/sdk-backend-tiger`.
+bootstrapped to run on top of GoodData.CN will always depend on `@gooddata/sdk-backend-tiger`.
 
 This is what is going to happen when you run `@gooddata/create-gooddata-react-app`:
 

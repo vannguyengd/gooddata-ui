@@ -48,7 +48,7 @@ yarn add --dev @gooddata/catalog-export
 
 ## Step 2. Include styles
 
-GoodData.UI uses CSS to style the components. Each package whose name is prefixed with `sdk-ui` contains CSS files that you need to include or import in your application. This listing shows all the possible imports you may need:
+GoodData.UI uses CSS to style the components. Each package whose name is prefixed with `sdk-ui` contains CSS files that you need to include or import in your application. The following list shows all the possible imports you may need:
 
 ```jsx
 import "@gooddata/sdk-ui-filters/styles/css/main.css";
@@ -61,8 +61,7 @@ import "@gooddata/sdk-ui-ext/styles/css/main.css";
 
 Make sure to import the styles only from the packages that you actually use.
 
-**NOTE**: `@gooddata/sdk-ui-kit` is a library of elementary components (buttons, dropdowns, overlays) required by the different GoodData.UI components. The best course of action is to try to import their CSS files; if the application build fails because
-it cannot find these styles, it is safe to remove them.
+**NOTE**: `@gooddata/sdk-ui-kit` is a library of elementary components (buttons, dropdowns, overlays) required by different GoodData.UI components. The best practice is to import all their CSS files and eventually remove those that make the application build fail.
 
 ## Step 3. Set up Analytical Backend and integrate it into your application
 
@@ -74,7 +73,7 @@ import tigerFactory, {ContextDeferredAuthProvider, redirectToTigerAuthentication
 const backend = tigerFactory().withAuthentication(new ContextDeferredAuthProvider(redirectToTigerAuthentication));
 ```
 
-Depending on the type and style used in your application, you may either store an instance of `backend` in a read-only global
+Depending on the type and style used in your application, you can either store an instance of `backend` in a read-only global
 variable or use React contexts.
 
 This is how you can set contexts that hold both an instance of the Analytical Backend and the identifier of the GoodData platform workspace that you are targeting:
@@ -103,7 +102,7 @@ The interaction with third-party APIs and services from the browser is protected
 The GoodData.CN All-in-One image is already configured to allow cross-origin requests coming from a GoodData.UI
 application running on `https://localhost:8443`.
 
-If you run into CORS and authentication issues while developing on localhost, check out the [Set Up Development on Workstation](06_cloudnative__local_dev.md) for viable development setup that does not require any additional GoodData.CN reconfiguration.
+If you run into CORS and authentication issues while developing on localhost, see [Set Up Development on Workstation](06_cloudnative__local_dev.md) for viable development setup that does not require any additional GoodData.CN reconfiguration.
 
 ## Step 5. Configure authentication
 
@@ -116,7 +115,7 @@ configuration. Once the flow finishes, the server replies with a redirect respon
 
 The configuration listed in [Step 3](#step-3.-set-up-analytical-backend-and-integrate-it-into-your-application)is the recommended configuration for the production deployment where the application is served either from the same origin as GoodData.CN or from a different origin with correct CORS and authentication cookies configuration.
 
-If you run into CORS and authentication issues while developing on localhost, check out the [Set Up Development on Workstation](06_cloudnative__local_dev.md) for viable development setup that does not require any additional GoodData.CN reconfiguration.
+If you run into CORS and authentication issues while developing on localhost, see [Set Up Development on Workstation](06_cloudnative__local_dev.md) for viable development setup that does not require any additional GoodData.CN reconfiguration.
 
 ## Next steps
 
@@ -141,8 +140,7 @@ function MyVisualization() {
 }
 ```
 
-**NOTE**: The imports from `generatedLdm` are for illustration purposes. You can name and store the file with the generated
-LDM as you see fit. The names of constants in the generated file will reflect the facts, measures, and attributes in your workspace.
+**NOTE:** The imports from `generatedLdm` are for illustration purposes. You can name the file with the generated LDM as you see fit and store it in any location. The names of constants in the generated file will reflect the facts, measures, and attributes in your workspace.
 
 Here are some suggestions about what you can do after you created your first visualization:
 
