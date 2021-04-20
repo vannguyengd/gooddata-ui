@@ -1,7 +1,7 @@
 ---
 id: version-8.3.0-platform_intro
-title: GoodData platform Introduction
-sidebar_label: GoodData platform Introduction
+title: GoodData Platform Introduction
+sidebar_label: GoodData Platform Introduction
 copyright: (C) 2007-2018 GoodData Corporation
 original_id: platform_intro
 ---

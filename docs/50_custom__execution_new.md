@@ -48,10 +48,10 @@ const allData = await result.readAll();
 The structure of data that you obtain from execution result is fairly complex. GoodData.UI provides a convenience
 layer to work with the result data. It is called `DataViewFacade` and is available from the `@gooddata/sdk-ui` package. 
 
-The `DataViewFacade` wraps the data view which you obtain from the execution result using either `readWindow` or `readAll` methods 
+The `DataViewFacade` wraps the data view that you obtain from the execution result using either `readWindow` or `readAll` methods 
 and exposes the data as data series that may be further scoped for some attributes and slices by other attributes.
 
-Building on top of the previous example you can use the `DataViewFacade` as follows:
+Building on top of the previous example, you can use `DataViewFacade` as follows:
 
 ```javascript
 import { DataViewFacade } from "@gooddata/sdk-ui"
@@ -85,6 +85,5 @@ const totalSalesByState = totalSales.dataPoints().map(dataPoint => {
 });
 
 ```
-
 
 To learn more about sorting and dimensionality, see [Specify the Result Structure](50_custom__result.md).
