@@ -12,7 +12,7 @@ copyright: (C) 2007-2019 GoodData Corporation
 > **Known issues**:
 > - `availableGranularities` in `relativeForm` is ignored. `availableGranularities` from the Date Filter component is used instead.
 >   - _This issue may be fixed in one of the future releases. The `availableGranularities` property may be removed from the Date Filter component._
-> - RelativeForm values are not validated against platform dimension limits. No data are shown in case of date dimension limit overflow.
+> - Values of Relative Form filters are not validated against the [platform limits for dates](https://support.gooddata.com/hc/en-us/articles/215858108#anchor_8). If the limit is hit, no data is shown in the filter.
 >   - _This issue may be fixed in one of the future releases._ 
 
 The **Date Filter component** is a dropdown component that lists [date filter options](15_props__date_filter_option.md). You can pass allowed options and a callback function, which receives a list of the selected values when a user clicks **Apply**.
