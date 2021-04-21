@@ -10,8 +10,7 @@ copyright: (C) 2007-2019 GoodData Corporation
 > The component may be changed in future releases, even in a backward incompatible way.
 
 > **Known issues**:
-> - `availableGranularities` in `relativeForm` is ignored. `availableGranularities` from the Date Filter component is used instead.
->   - _`availableGranularities` property in `relativeForm` has been deprecated and the `availableGranularities` property form `DateFilter` should be used instead._
+> - `availableGranularities` in `relativeForm` has been deprecated. If used, `availableGranularities` is ignored. Use the `availableGranularities` from the Date Filter component instead.
 
 The **Date Filter component** is a dropdown component that lists [date filter options](15_props__date_filter_option.md). You can pass allowed options and a callback function, which receives a list of the selected values when a user clicks **Apply**.
 

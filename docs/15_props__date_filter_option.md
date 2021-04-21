@@ -14,8 +14,7 @@ The DateFilter options define the category of a date filter and a set of the dat
 > The component may be changed in future releases, even in a backward incompatible way.
 
 > **Known issues**:
-> - `availableGranularities` in `relativeForm` is ignored. `availableGranularities` from the DateFilter component is used instead.
->   - _`availableGranularities` property in `relativeForm` has been deprecated and the `availableGranularities` property form `DateFilter` should be used instead._
+> - `availableGranularities` in `relativeForm` has been deprecated. If used, `availableGranularities` is ignored. Use the `availableGranularities` from the Date Filter component instead.
 
 ## Types of DateFilter options
 
