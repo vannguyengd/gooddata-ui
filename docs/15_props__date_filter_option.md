@@ -14,12 +14,7 @@ The DateFilter options define the category of a date filter and a set of the dat
 > The component may be changed in future releases, even in a backward incompatible way.
 
 > **Known issues**:
-<<<<<<< HEAD
-> - `availableGranularities` in `relativeForm` has been deprecated. If used, `availableGranularities` is ignored. Use the `availableGranularities` from the Date Filter component instead.
-=======
-> - `availableGranularities` in `relativeForm` is ignored. `availableGranularities` from the DateFilter component is used instead.
->   - `availableGranularities` in `relativeForm` has been deprecated. Use the `availableGranularities` property from the Date Filter component instead.
->>>>>>> origin/map-RAIL-1872-documentation-update
+> - `availableGranularities` in `relativeForm` has been deprecated and will be ignored, if used. Use the `availableGranularities` from the Date Filter component instead.
 
 ## Types of DateFilter options
 
