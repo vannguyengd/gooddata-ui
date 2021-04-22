@@ -15,6 +15,8 @@ The DateFilter options define the category of a date filter and a set of the dat
 
 > **Known issues**:
 > - `availableGranularities` in `relativeForm` has been deprecated and will be ignored, if used. Use the `availableGranularities` from the Date Filter component instead.
+> - Values of Relative Form filters are not validated against the [platform limits for dates](https://support.gooddata.com/hc/en-us/articles/215858108#anchor_8). If the limit is hit, no data is shown in the filter.
+>   - _This issue may be fixed in one of the future releases._
 
 ## Types of DateFilter options
 

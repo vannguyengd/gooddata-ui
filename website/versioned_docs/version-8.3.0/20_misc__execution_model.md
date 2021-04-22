@@ -6,8 +6,8 @@ id: version-8.3.0-execution_model
 original_id: execution_model
 ---
 
-Execution model of GoodData.UI is used to specify what data to compute on an Analytical Backend. Parts of the model
-are also used as input to visual components to tell them what data to obtain and render.
+The execution model of GoodData.UI is used to specify what data to compute on an Analytical Backend. Parts of the model
+are also used as input to the visual components to tell them what data to obtain and render.
 
 This document builds up on the [execution model basics](02_start__execution_model.md) and goes into more detail about
 the available types and functions available for their creation and manipulation.
@@ -31,7 +31,7 @@ The model provides a single factory function to create each type of objects. The
 
 ### Accessing object properties
 
-The model provides accessor functions to access object properties. The naming convention for accessor function is `<objectType>Property(object)`, where the first and only parameter is the object to access.
+The model provides accessor functions to access object properties. The naming convention for an accessor function is `<objectType>Property(object)`, where the first and only parameter is the object to access.
 
 **Examples:** `attributeAlias`, `measureLocalId`, `measureFormat`, `filterAttributeElements`
 
@@ -56,10 +56,10 @@ The execution model automatically generates stable `localId`'s as it creates the
 
 You can use the `modify<ObjectType>` functions to override the `localId` of an attribute or measure. The builder instances that your modification function receives have functions to manipulate `localId`. The behavior of the modification functions in regards to `localId` is as follows:
 
--  If you call the `m => m.defaultLocalId()`, the default logic for `localId` generation will kick in **after** all
+-  If you call `m => m.defaultLocalId()`, the default logic for `localId` generation will kick in **after** all
    other object modifications are applied.
 
--  If you call the `m => m.localId(customValue)`, the modified object will have your custom `localId`.
+-  If you call `m => m.localId(customValue)`, the modified object will have your custom `localId`.
 
 -  If you do not call `defaultLocalId` or `localId`, the modification object will have the same `localId` as the
    original object.
@@ -114,7 +114,7 @@ potentially sliced as indicated by the different attributes in the execution.
 
 You can construct measures of multiple types:
 
--  Measures created by aggregating facts in your LDM
+-  Measures created by aggregating facts in your logical data model
 -  Measures created by referencing an existing, potentially complex MAQL metric
 -  Arithmetic measures constructed by combining existing measures as operands of arithmetic operations
 -  Time-over-time comparison measures constructed by "shifting" the calculation in time
@@ -252,13 +252,13 @@ Consider the following original data:
 | Values | 1 | 2 | 3 | 4 |
 
 The sorting function (`sum`) is applied to all attribute element values for each attribute element (`2006` and `2007`).
-Notice that the area sort is summing up values across different measures (M1 and M2):
+Notice that the area sort is summing up values across different measures (`M1` and `M2`):
 
 | 2006 | 2007 |
 | :--- | :--- |
 | 1 + 2 = 3 | 3 + 4 = 7 |
 
-Attribute values are then sorted by this computed value (3 and 7, respectivelly):
+Attribute values are then sorted by this computed value (`3` and `7`, respectively):
 
 | Year | 2007 | 2007 | 2006 | 2006 |
 | :--- | :--- | :--- | :--- | :--- |

@@ -133,7 +133,7 @@ The attribute-filter-measure is a relatively common querying idiom among analyti
 
 It’s simple, it maps well to your use cases, it works.
 
-_Note: On GoodData platform and GoodData.CN, the AFM query pattern works even with non-trivial dimensional models with multiple fact tables, conformed dimensions, and even many-to-many relationships._
+_Note: On the GoodData platform and GoodData.CN, the AFM query pattern works even with non-trivial dimensional models with multiple fact tables, conformed dimensions, and even many-to-many relationships._
 
 _More information about our analytics engine and semantic layer is available from the [developer portal](https://developer.gooddata.com/analytics)._
 
@@ -227,5 +227,4 @@ And if you just want to get started, you can do that in just three simple steps:
 
 A complete tutorial is available from [here](02_start__using_boilerplate.md). If you prefer to use the standard create-react-app and add GoodData.UI library manually, [check out this other tutorial](02_start__no_boilerplate.md).
 
-And if you have any questions about GoodData platform, GoodData.CN, GoodData.UI, or just this document, feel free to ask us in our community forums at [community.gooddata.com](community.gooddata.com).
-
+And if you have any questions about the GoodData platform, GoodData.CN, GoodData.UI, or just this document, feel free to ask us in our community forums at [community.gooddata.com](community.gooddata.com).
