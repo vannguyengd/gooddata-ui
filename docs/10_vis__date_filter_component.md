@@ -10,8 +10,7 @@ copyright: (C) 2007-2019 GoodData Corporation
 > The component may be changed in future releases, even in a backward incompatible way.
 
 > **Known issues**:
-> - `availableGranularities` in `relativeForm` is ignored. `availableGranularities` from the Date Filter component is used instead.
->   - _This issue may be fixed in one of the future releases. The `availableGranularities` property may be removed from the Date Filter component._
+> - `availableGranularities` in `relativeForm` has been deprecated and will be ignored, if used. Use the `availableGranularities` from the Date Filter component instead.
 > - Values of Relative Form filters are not validated against the [platform limits for dates](https://support.gooddata.com/hc/en-us/articles/215858108#anchor_8). If the limit is hit, no data is shown in the filter.
 >   - _This issue may be fixed in one of the future releases._ 
 
