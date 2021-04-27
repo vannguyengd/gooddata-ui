@@ -58,7 +58,10 @@ This article describes the options for configuring a chart.
     stackMeasuresToPercent: true, // boolean
     primaryChartType: "column", // string
     secondaryChartType: "area", // string
-    dualAxis: false // boolean
+    dualAxis: false, // boolean
+    tooltip: {
+        enabled: true // boolean    
+    }
 }
 ```
 **NOTE:** `primaryChartType`, `secondaryChartType`, and `dualAxis` are available only for [combo charts](10_vis__combo_chart_component.md).
@@ -363,6 +366,26 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
     config={{
         stackMeasures: false,
         stackMeasuresToPercent: true
+    }}
+/>
+```
+
+## Configure tooltip visibility
+
+* You can configure tooltip visibility for all cases where tooltip is available
+
+* If tooltip visibility is not explicitly configured, tooltip is shown.
+
+```jsx
+import { InsightView } from "@gooddata/sdk-ui-ext";
+
+// Example of embedding a visualization with stacking
+<InsightView
+    insight=<InsightView-id>
+    config={{
+        tooltip: {
+            enabled: true
+        }
     }}
 />
 ```
