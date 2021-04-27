@@ -60,7 +60,7 @@ This article describes the options for configuring a chart.
     secondaryChartType: "area", // string
     dualAxis: false, // boolean
     tooltip: {
-        enabled: true //boolean    
+        enabled: true // boolean    
     }
 }
 ```
@@ -374,7 +374,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 * You can configure tooltip visibility for all cases where tooltip is available
 
-* If tooltip visibility is not explicitly configured, it's defaulted to true and meant to use to disable tooltips.
+* If tooltip visibility is not explicitly configured, tooltip is shown.
 
 ```jsx
 import { InsightView } from "@gooddata/sdk-ui-ext";
