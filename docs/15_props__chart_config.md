@@ -372,9 +372,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 ## Configure tooltip visibility
 
-* You can configure tooltip visibility for all cases where tooltip is available
-
-* If tooltip visibility is not explicitly configured, tooltip is shown.
+To hide a tooltip, set `config.tooltip.enabled` to `false`.
 
 ```jsx
 import { InsightView } from "@gooddata/sdk-ui-ext";
