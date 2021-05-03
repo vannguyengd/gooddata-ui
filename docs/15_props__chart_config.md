@@ -1,7 +1,7 @@
 ---
 title: Chart Config
 sidebar_label: Chart Config
-copyright: (C) 2007-2018 GoodData Corporation
+copyright: (C) 2007-2021 GoodData Corporation
 id: chart_config
 ---
 
@@ -40,6 +40,7 @@ This article describes the options for configuring a chart.
     legend: {
         enabled: true, // boolean
         position: "bottom", // "top" | "left" | "right" | "bottom"
+        responsive: "autoPositionWithPopup" // "autoPositionWithPopup" | true | false
     },
     dataLabels: {
         visible: "auto" // "auto" | true | false
@@ -60,8 +61,9 @@ This article describes the options for configuring a chart.
     secondaryChartType: "area", // string
     dualAxis: false, // boolean
     tooltip: {
-        enabled: true // boolean    
-    }
+        enabled: true // boolean
+    },
+    enableCompactSize: true // boolean
 }
 ```
 **NOTE:** `primaryChartType`, `secondaryChartType`, and `dualAxis` are available only for [combo charts](10_vis__combo_chart_component.md).
@@ -70,7 +72,7 @@ This article describes the options for configuring a chart.
 
 You can configure a vertical alignment for [pie charts](10_vis__pie_chart.md) and [donut charts](10_vis__donut_chart.md).
 
-To align a chart vertically, set `config.chart.verticalAlign` to one of the possible values: `top`, `middle`, `bottom`. If not set, it defaults to `middle`.
+To align a chart vertically, set `config.chart.verticalAlign` to one of the possible values: `top`, `middle`, or `bottom`. If not set, it defaults to `middle`.
 
 ```jsx
 import { InsightView } from "@gooddata/sdk-ui-ext";
@@ -104,12 +106,10 @@ The following are examples of a color array:
 
 ```javascript
 ["rgb(195, 49, 73)", "rgb(168, 194, 86)"]
-
 ```
 
 ```javascript
 ["#fa0510", "#AA2030"]
-
 ```
 
 If there are fewer colors than data points, then the colors are repeated. For example, here is how colors will be used for two colors and three data points:
@@ -179,7 +179,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 Within one visualization:
 * The `colorPalette` property overrides the custom color palette uploaded through the API and the `colors` property.
-* The `colorPalette` property can be overriden by the `colorMapping` property.
+* The `colorPalette` property can be overridden by the `colorMapping` property.
 
 ### Color mapping
 
@@ -226,23 +226,33 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
     }}
 />
 ```
+
 Within one visualization, the `colorMapping` property overrides the `colorPalette` property (while still can use its colors), the `colors` property, and the custom color palette uploaded through the API.
 
-## Change legend visibility and position
+## Change legend properties
 
+* To change the legend position, set the `config.legend.position` property to one of the possible values: `"left"`, `"right"`, `"top"`, or `"bottom"`.
+* To make the legend responsive, set `config.legend.responsive` to `true`.
+* To make the legend appear as a popup in too small containers, set `config.legend.responsive` to `"autoPositionWithPopup"`.
+
+    For a better visual experience, we recommend that you [enable the compact size](#enable-a-compact-size) together with making the legend appear as a popup.
+
+    ![PopUp Legend](assets/top_legend.png "PopUp Legend Component")
+    
+    **NOTE:** When `config.legend.responsive` is set to `"autoPositionWithPopup"`, the `config.legend.position` property is ignored.
 * To hide the legend, set `config.legend.enabled` to `false`.
-* To change the legend position, adjust the `config.legend.position` property \(`"left"`/`"right"`/`"top"`/`"bottom"`\).
 
 ```jsx
 import { InsightView } from "@gooddata/sdk-ui-ext";
 
-// Example of embedding a visualization with a custom legend position
+// Example of embedding a visualization with a custom legend position and responsive legend
 <InsightView
     insight=<InsightView-id>
     config={{
         legend: {
             enabled: true,
-            position: "bottom" // "left", "right", "top"
+            position: "bottom", // "left", "right", "top"
+            responsive: true // "autoPositionWithPopup", false
         }
     }}
 />
@@ -350,10 +360,10 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
          **NOTE:** In combo charts using column or area charts, stacking is applied only to the measures shown on the left axis.
     * Charts with the [secondary axis](#configure-axes)
-* To display the total contribution of each measure, enable `config.stackMeasures`.
-    * For area charts, `config.stackMeasures` is enabled by default.
+* To display the total contribution of each measure, set `config.stackMeasures` to `true`.
+    * For area charts, `config.stackMeasures` is set to `true` by default.
     * For bar charts, column charts, and charts with the secondary axis, `config.stackMeasures` is ignored when the chart has only one measure.
-* To display the percentage contribution of each measure, enable `config.stackMeasuresToPercent`.
+* To display the percentage contribution of each measure, set `config.stackMeasuresToPercent` to `true`.
     * If both `config.stackMeasuresToPercent` and `config.stackMeasures` are present, `config.stackMeasuresToPercent` overwrites `config.stackMeasures`.
     * For charts with the secondary axis, `config.stackMeasuresToPercent` is applied only to the left axis.
 
@@ -391,3 +401,64 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 ## Customize tooltips and fonts
 
 To customize tooltips and fonts, [implement a custom visualization](50_custom__create_new_visualization.md).
+
+## Enable a compact size
+
+To allow the charts to be rendered in small containers by hiding less important parts, set `config.enableCompactSize` to `true`.
+
+```jsx
+import { InsightView } from "@gooddata/sdk-ui-ext";
+
+// Example of embedding a visualization with the enabled compact size
+<InsightView
+    insight=<InsightView-id>
+    config={{
+        enableCompactSize: {
+            true
+        }
+    }}
+/>
+```
+
+**NOTE:** For a better visual experience, we recommend that you [make the legend appear as a popup](#change-legend-properties) together with enabling the compact size.
+
+### Minimum height
+
+The following table shows the minimum height (in pixels) for each chart type:
+
+| Visualization                          | Min height (px) |
+| :------------------------------------- | :-------------- |
+| Area chart                             | 354px           |
+| Bar chart                              | 154px           |
+| Bubble chart                           | 354px           |
+| Bullet chart                           | 154px           |
+| Column chart                           | 154px           |
+| Combo chart                            | 440px           |
+| Donut chart                            | 154px           |
+| Geo pushpin chart                      | 354px           |
+| Headline (primary measure)             | 34px            |
+| Headline (primary + secondary measure) | 94px            |
+| Heatmap                                | 354px           |
+| Line chart                             | 154px           |
+| Pie chart                              | 154px           |
+| Pivot table                            | 154px           |
+| Scatter plot                           | 354px           |
+| Treemap                                | 354px           |
+
+### Chart responsiveness
+
+Small charts with a compact size disabled take on a small area and cannot identify the items properly.
+
+![Chart Compact Size off](assets/chart_responsive_off.png "Chart Component")
+
+Once `config.enableCompactSize` is set to `true`, the axis labels are hidden, and the chart becomes more readable.
+
+![Chart Compact Size on](assets/chart_responsive_on.png "Chart Component")
+
+A headline chart with `config.enableCompactSize` set to `true` adjusts its content responsively to fit small containers. Otherwise, it may not be able to fit small containers.
+
+![Headline Compact Size](assets/headline_compactSize.png "Headline Component")
+
+### Responsive legend
+
+For configuring a responsive legend, see [Change legend properties](#change-legend-properties).
