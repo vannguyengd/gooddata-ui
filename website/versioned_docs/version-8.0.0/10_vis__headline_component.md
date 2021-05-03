@@ -6,7 +6,7 @@ id: version-8.0.0-headline_component
 original_id: headline_component
 ---
 
-A **headline** shows a single number or compares two numbers. You can display both measures and attributes.
+A **headline** shows a single number or compares two numbers.
 
 Headlines have two sections: Measure (primary) and Measure (secondary). You can add one item to each section. If you add two items, the headline also displays the change in percent.
 
