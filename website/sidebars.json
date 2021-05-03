@@ -74,8 +74,7 @@
     "Custom Visualizations": [
       "create_new_visualization",
       "custom_execution",
-      "result_specification",
-      "execution_rest_api_and_result"
+      "result_specification"
     ],
     "Development Tips": [
       "ht_embed_visualization",

@@ -74,8 +74,7 @@
     "Custom Visualizations": [
       "version-8.3.0-create_new_visualization",
       "version-8.3.0-custom_execution",
-      "version-8.3.0-result_specification",
-      "version-8.3.0-execution_rest_api_and_result"
+      "version-8.3.0-result_specification"
     ],
     "Development Tips": [
       "version-8.3.0-ht_embed_visualization",

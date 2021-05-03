@@ -59,9 +59,7 @@
     "Custom Visualizations": [
       "version-8.0.0-create_new_visualization",
       "version-8.0.0-afm",
-      "version-8.0.0-result_specification",
-      "version-8.0.0-execute_component",
-      "version-8.0.0-execution_rest_api_and_result"
+      "version-8.0.0-result_specification"
     ],
     "Miscellaneous Features": [
       "version-8.0.0-time_over_time_comparison",
