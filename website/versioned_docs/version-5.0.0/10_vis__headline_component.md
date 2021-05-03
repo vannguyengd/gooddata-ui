@@ -6,7 +6,7 @@ id: version-5.0.0-headline_component
 original_id: headline_component
 ---
 
-Headline shows a single number. Use headlines to display measures and attributes.
+Headline shows a single number.
 
 ![Headline Component](assets/headline.png "Headline Component")
 
