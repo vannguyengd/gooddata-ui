@@ -60,6 +60,7 @@ const config = {
 | filters | false | [IFilter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | true | [IGeoConfig](#geo-config) | The geo chart configuration object |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
+| drillableItems | false | [IDrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable |
 | ErrorComponent | false | Component | A component to be rendered if this component is in error state |
 | LoadingComponent | false | Component | A component to be rendered if this component is in loading state |
 | onError | false | Function | A callback when the component updates its error state |
