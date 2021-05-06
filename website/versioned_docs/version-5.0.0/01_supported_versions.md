@@ -20,7 +20,7 @@ Each version of GoodData.UI goes through the following phases:
 
 2. **End-of-Development** (EOD)
     * **When it starts:** When a newer major version is publicly released.
-    * **What it means:** A version in EOD receives only security fixes and fixes for critical issues. These fixes are applied on top of the last minor version. No new features are added.
+    * **What it means:** A version in EOD receives only security fixes (unless they can be resolved by a SemVer-compatible upgrade) and fixes for critical issues. Only production dependencies receive the security fixes. These fixes are applied on top of the last minor version. No new features are added.
 
 3. **End-of-Support** (EOS)
     * **When it starts:** The date is defined by GoodData.
