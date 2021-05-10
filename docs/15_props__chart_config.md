@@ -238,7 +238,7 @@ Within one visualization, the `colorMapping` property overrides the `colorPalett
     For a better visual experience, we recommend that you [enable the compact size](#enable-a-compact-size) together with making the legend appear as a popup.
 
     ![PopUp Legend](assets/top_legend.png "PopUp Legend Component")
-    
+
     **NOTE:** When `config.legend.responsive` is set to `"autoPositionWithPopup"`, the `config.legend.position` property is ignored.
 * To hide the legend, set `config.legend.enabled` to `false`.
 
@@ -428,22 +428,22 @@ The following table shows the minimum height (in pixels) for each chart type:
 
 | Visualization                          | Min height (px) |
 | :------------------------------------- | :-------------- |
-| Area chart                             | 354px           |
-| Bar chart                              | 154px           |
-| Bubble chart                           | 354px           |
-| Bullet chart                           | 154px           |
-| Column chart                           | 154px           |
-| Combo chart                            | 440px           |
-| Donut chart                            | 154px           |
-| Geo pushpin chart                      | 354px           |
+| Area chart                             | 334px           |
+| Bar chart                              | 134px           |
+| Bubble chart                           | 334px           |
+| Bullet chart                           | 134px           |
+| Column chart                           | 134px           |
+| Combo chart                            | 334px           |
+| Donut chart                            | 134px           |
+| Geo pushpin chart                      | 334px           |
 | Headline (primary measure)             | 34px            |
 | Headline (primary + secondary measure) | 94px            |
-| Heatmap                                | 354px           |
-| Line chart                             | 154px           |
-| Pie chart                              | 154px           |
-| Pivot table                            | 154px           |
-| Scatter plot                           | 354px           |
-| Treemap                                | 354px           |
+| Heatmap                                | 334px           |
+| Line chart                             | 134px           |
+| Pie chart                              | 134px           |
+| Pivot table                            | 134px           |
+| Scatter plot                           | 334px           |
+| Treemap                                | 334px           |
 
 ### Chart responsiveness
 
