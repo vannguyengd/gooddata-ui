@@ -150,30 +150,30 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 // Example of embedding a visualization with a custom palette
 <InsightView
    insight=<InsightView-id>
-   config={{
-       colorPalette: [{
-            guid: "01",
-            fill: {
-                r: 195,
-                g: 49,
-                b: 73
-            }
-        }, {
-            guid: "02",
-            fill: {
-                r: 168,
-                g: 194,
-                b: 86
-            }
-        }, {
-            guid: "03",
-            fill: {
-                r: 243,
-                g: 217,
-                b: 177
-            }
-        }]
-    }}
+   colorPalette={[
+       {
+           guid: "01",
+           fill: {
+               r: 195,
+               g: 49,
+               b: 73
+           }
+       }, {
+           guid: "02",
+           fill: {
+               r: 168,
+               g: 194,
+               b: 86
+           }
+       }, {
+           guid: "03",
+           fill: {
+               r: 243,
+               g: 217,
+               b: 177
+           }
+       }
+   ]}
 />
 ```
 

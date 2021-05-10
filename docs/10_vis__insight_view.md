@@ -81,7 +81,13 @@ clearInsightViewCaches();
 | config  | false | [IChartConfig](15_props__chart_config.md) | The chart configuration object |
 | filters | false | [IFilter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | drillableItems | false | [IDrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable.|
+| colorPalette | false | [IColorPalette](15_props__chart_config.md#custom-color-palette) | Configure color palette to use for the chart. If you do not specify this, then the palette will be obtained from style settings stored on the backend. |
+| showTitle | false | boolean, string or Function | In case this property is boolean it indicates that the title component will be rendered if specified in components properties. In case the property is string, this string must not be empty and will be shown as insight title. In case the property is a function, it should be implemented to take the loaded insight object and return modified title in string representation. |
+| TitleComponent | false | Component | A component to be rendered if the title is supposed to render. |
+| ErrorComponent | false | Component | A component to be rendered if this component is in error state (see [ErrorComponent](15_props__error_component.md)) |
+| LoadingComponent | false | Component | A component to be rendered if this component is in loading state (see [LoadingComponent](15_props__loading_component.md)) |
 | onDrill | false | [IDrillEventCallback](15_props__on_drill.md) | The drilling event catcher. Called when drilling happens. |
 | onError | false | function | A custom error handler. Called with the argument containing the state and original error message, for example, `{ status:ErrorStates.BAD_REQUEST,error: {...} }`. See the [full list of error states](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/errors/GoodDataSdkError.ts). Defaults to `console.error`.|
 | onExportReady | false | Function | A callback when the component is ready for exporting its data |
 | onLoadingChanged | false | function | A custom loading handler. Called when a visualization changes to/from the loading state. Called with the argument denoting a valid state, for example, `{ isLoading:false}`. |
+| onInsightLoaded | false | function | A callback when the insight is loaded. |
