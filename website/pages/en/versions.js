@@ -9,35 +9,30 @@ const React = require('react');
 
 const CompLibrary = require('../../core/CompLibrary');
 const Container = CompLibrary.Container;
-const GridBlock = CompLibrary.GridBlock;
+
+const semverSatisfies = require("semver").satisfies;
+const semverMinimal = require("semver").minSatisfying;
+const semverMaximal = require("semver").maxSatisfying;
+const semverParse = require("semver").parse;
+
+// UPDATE THESE WHEN A NEW MAJOR IS RELEASED
+const currentVersionSemver = ">=8.0.0";
+const supportedVersionSemver = ">=7.0.0";
+
+const sdkUiSemver = ">=8";
+const reactComponentsSemver = ">=5 <8";
 
 const CWD = process.cwd();
 
 const siteConfig = require(CWD + '/siteConfig.js');
 const versions = require(CWD + '/versions.json');
 
-function getStableVersions(versions) {
-  return versions.filter(v => v.split('-').length === 1);
-}
-
 function getLatestStable(versions) {
-  return versions.filter(v => v.split('-').length === 1)[0];
+  return semverMaximal(versions, currentVersionSemver);
 }
 
-function getVersionsOfType(type, versions) {
-  return versions.filter(v => {
-    const versionSplit = v.split('-');
-
-    return versionSplit.length >= 2 && versionSplit[1] === type;
-  })
-}
-
-function getLatest(type, versions) {
-  return getVersionsOfType(type, versions)[0];
-}
-
-function parseVersionToNumber(version) {
-  return parseInt(version.replace(/\D/g,''));
+function getMajor(version) {
+  return semverParse(version).major
 }
 
 class Versions extends React.Component {
@@ -47,35 +42,35 @@ class Versions extends React.Component {
   }
 
   renderChangelog(version) {
-    const majorVersion = parseInt(version.split('.')[0]);
-    const versionNumber = parseVersionToNumber(version);
-
+    const majorVersion = getMajor(version)
     if (majorVersion) {
-      if (majorVersion >= 8) {
+      const versionForAnchor = version.replace(/\./g, "");
+
+      if (semverSatisfies(version, sdkUiSemver)) {
         return (
           <td>
-            <a href={`https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-all/CHANGELOG.md#${versionNumber}`}>Changelog</a>
+            <a href={`https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-all/CHANGELOG.md#${versionForAnchor}`}>Changelog</a>
           </td>
         );
       }
 
-      if (majorVersion >= 5) {
+      if (semverSatisfies(version, reactComponentsSemver)) {
         return (
           <td>
-            <a href={`https://github.com/gooddata/gooddata-react-components/blob/master/CHANGELOG.md#${versionNumber}`}>Changelog</a>
+            <a href={`https://github.com/gooddata/gooddata-react-components/blob/master/CHANGELOG.md#${versionForAnchor}`}>Changelog</a>
           </td>
         );
       }
     }
 
-    return (<td>&mdash;</td>);
+    return <td>&mdash;</td>;
   }
 
   renderMigrationGuide(version, prerelease) {
-    const semVer = version.split('.');
-    const majorVersion = parseInt(semVer[0]);
-    const minorVersion = parseInt(semVer[1]);
-    const patchVersion = parseInt(semVer[2]);
+    const semver = semverParse(version);
+    const majorVersion = semver.major;
+    const minorVersion = semver.minor;
+    const patchVersion = semver.patch;
 
     if (minorVersion === 0 && patchVersion === 0 && majorVersion > 4) {
       return (
@@ -88,8 +83,20 @@ class Versions extends React.Component {
     return (<td>&mdash;</td>);
   }
 
+  renderSupportStatus(version) {
+    if (semverSatisfies(version, currentVersionSemver)) {
+      return <td>Current</td>
+    }
+
+    if (semverSatisfies(version, supportedVersionSemver)) {
+      return <td>Supported</td>
+    }
+
+    return <td>Deprecated</td>
+  }
+
   renderStableVersions() {
-    const stableVersions = getStableVersions(versions);
+    const stableVersions = versions;
     const latestVersion = stableVersions[0];
     if (stableVersions.length > 1) {
       return (
@@ -107,6 +114,7 @@ class Versions extends React.Component {
                         </td>
                         { this.renderChangelog(version) }
                         { this.renderMigrationGuide(version) }
+                        { this.renderSupportStatus(version) }
                       </tr>
                     )
                 )}
@@ -118,38 +126,6 @@ class Versions extends React.Component {
 
     return null;
   }
-
-  renderPreReleaseVersions() {
-    const preReleaseVersions = getVersionsOfType('alpha', versions);
-
-    if (preReleaseVersions > 0) {
-      return (
-        <div>
-          <h3 id="rc">Pre-release versions</h3>
-              <table className="versions">
-                <tbody>
-                {preReleaseVersions.map(
-                    (version, i) =>
-                      version !== latestVersion && (
-                        <tr key={i}>
-                          <th>{version}</th>
-                          <td>
-                              <a href={this.docUrl('about_gooddataui.html', version)}>Documentation</a>
-                          </td>
-                          { this.renderChangelog(version) }
-                          { this.renderMigrationGuide(version) }
-                        </tr>
-                      )
-                  )}
-                </tbody>
-              </table>
-        </div>
-      )
-    }
-
-    return null;
-  }
-
 
   render() {
     const latestVersion = getLatestStable(versions);
@@ -170,6 +146,7 @@ class Versions extends React.Component {
                   </td>
                   { this.renderChangelog(latestVersion) }
                   { this.renderMigrationGuide(latestVersion) }
+                  { this.renderSupportStatus(latestVersion) }
                 </tr>
               </tbody>
             </table>
@@ -181,11 +158,10 @@ class Versions extends React.Component {
                   <td>
                     <a href={this.docUrl('about_gooddataui.html', 'next')}>Documentation</a>
                   </td>
-                  { this.renderMigrationGuide("8.0.0", true) }
+                  { this.renderMigrationGuide(semverMinimal(versions, currentVersionSemver), true) }
                 </tr>
               </tbody>
             </table>
-            {this.renderPreReleaseVersions()}
             {this.renderStableVersions()}
             <p>
               You can find past versions of this project{' '}
