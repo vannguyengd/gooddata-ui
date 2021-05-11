@@ -41,7 +41,7 @@ const availableGranularities = [
 
 // You can either provide your custom date filter options
 const dateFilterOptions = myDateFilterOptions();
-// or you can use the default we provide
+// or use the default we provide
 const dateFilterOptions = defaultDateFilterOptions;
 
 export class DateFilterComponentExample extends Component {
