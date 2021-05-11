@@ -28,7 +28,7 @@ In the following example, attribute values are listed and the ```onApply``` call
 
 ```jsx harmony
 import React, { Component } from "react";
-import { DateFilter } from "@gooddata/sdk-ui-filters";
+import { DateFilter, defaultDateFilterOptions } from "@gooddata/sdk-ui-filters";
 import { myDateFilterOptions } from "myDateFilterConfiguration";
 
 import "@gooddata/sdk-ui-filters/styles/css/main.css";
@@ -39,7 +39,10 @@ const availableGranularities = [
     "GDC.time.quarter",
     "GDC.time.date"];
 
+// You can either provide your custom date filter options
 const dateFilterOptions = myDateFilterOptions();
+// or use the default we provide
+const dateFilterOptions = defaultDateFilterOptions;
 
 export class DateFilterComponentExample extends Component {
     constructor(props) {

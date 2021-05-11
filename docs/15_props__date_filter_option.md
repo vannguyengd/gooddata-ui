@@ -16,7 +16,19 @@ The DateFilter options define the category of a date filter and a set of the dat
 
 ## Types of DateFilter options
 
-All top-level options are optional. You can use only those options that are relevant in your project.
+To use the default set of the options with no customization, use the following code:
+
+```jsx harmony
+import React from "react";
+import { DateFilter, defaultDateFilterOptions } from "@gooddata/sdk-ui-filters";
+
+<DateFilter
+    filterOptions={defaultDateFilterOptions}
+    // ... other props
+/>
+```
+
+Otherwise, customize the option as you see fit. All top-level options are optional. You can use only those options that are relevant in your project.
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
