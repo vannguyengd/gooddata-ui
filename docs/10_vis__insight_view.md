@@ -80,8 +80,14 @@ clearInsightViewCaches();
 | locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | config  | false | [IChartConfig](15_props__chart_config.md) | The chart configuration object |
 | filters | false | [IFilter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
-| drillableItems | false | [IDrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable.|
+| drillableItems | false | [IDrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable |
+| colorPalette | false | [IColorPalette](15_props__chart_config.md#custom-color-palette) | The color palette to use in the chart |
+| showTitle | false or not set | boolean, string, or function | If this property is a **boolean** and set to `true`, the title of the chart is shown as specified in the insight object itself. If this property is a **string**, set its value to the title of the chart to be shown (the string must not be empty). If this property is a **function**, implement it so that it takes the loaded insight object and return the modified title as a string to show it as the chart title. |
+| TitleComponent | false | Component | A component to be rendered if the title should be shown |
+| ErrorComponent | false | Component | A component to be rendered if this component is in error state (see [ErrorComponent](15_props__error_component.md)) |
+| LoadingComponent | false | Component | A component to be rendered if this component is in loading state (see [LoadingComponent](15_props__loading_component.md)) |
 | onDrill | false | [IDrillEventCallback](15_props__on_drill.md) | The drilling event catcher. Called when drilling happens. |
 | onError | false | function | A custom error handler. Called with the argument containing the state and original error message, for example, `{ status:ErrorStates.BAD_REQUEST,error: {...} }`. See the [full list of error states](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/errors/GoodDataSdkError.ts). Defaults to `console.error`.|
-| onExportReady | false | Function | A callback when the component is ready for exporting its data |
+| onExportReady | false | function | A callback when the component is ready for exporting its data |
 | onLoadingChanged | false | function | A custom loading handler. Called when a visualization changes to/from the loading state. Called with the argument denoting a valid state, for example, `{ isLoading:false}`. |
+| onInsightLoaded | false | function | A callback when the insight is loaded |

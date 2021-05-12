@@ -140,7 +140,7 @@ Within one visualization:
 
 ### Custom color palette
 
-If you [uploaded a custom color palette](https://help.gooddata.com/pages/viewpage.action?pageId=34341106) to your project, the visualizations created based on the [Visualization component](10_vis__insight_view.md) use this palette instead of the default colors.
+If you [uploaded a custom color palette](https://help.gooddata.com/pages/viewpage.action?pageId=86794489) to your project, the visualizations created based on the [Visualization component](10_vis__insight_view.md) use this palette instead of the default colors.
 
 To override the uploaded custom color palette for a specific visualization, define the `colorPalette` property for this visualization.
 
@@ -150,30 +150,30 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 // Example of embedding a visualization with a custom palette
 <InsightView
    insight=<InsightView-id>
-   config={{
-       colorPalette: [{
-            guid: "01",
-            fill: {
-                r: 195,
-                g: 49,
-                b: 73
-            }
-        }, {
-            guid: "02",
-            fill: {
-                r: 168,
-                g: 194,
-                b: 86
-            }
-        }, {
-            guid: "03",
-            fill: {
-                r: 243,
-                g: 217,
-                b: 177
-            }
-        }]
-    }}
+   colorPalette={[
+       {
+           guid: "01",
+           fill: {
+               r: 195,
+               g: 49,
+               b: 73
+           }
+       }, {
+           guid: "02",
+           fill: {
+               r: 168,
+               g: 194,
+               b: 86
+           }
+       }, {
+           guid: "03",
+           fill: {
+               r: 243,
+               g: 217,
+               b: 177
+           }
+       }
+   ]}
 />
 ```
 
