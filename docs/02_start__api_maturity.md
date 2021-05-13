@@ -25,14 +25,14 @@ or patch versions work seamlessly.
 
 On top of this, we strongly recommend that you use the same version of all GoodData.UI packages.
 
-## TypeScript types considerations
+## TypeScript type considerations
 
 All the TypeScript types provided with the GoodData.UI packages are compatible with TypeScript version 4.0.2 and newer.
 
-The types marked as `@public` will generally adhere to the SemVer specification,
-however there is one group of types that will not adhere to it completely: types of the React props of all the components
-in the `sdk-ui-*` packages. These types will be backwards compatible in the sense that creating objects of those
-types will work across minor versions, however we may extend them even across minor releases. An example of such change:
+The types marked as `@public` adhere to the SemVer specification except for the types of the React props of all the components
+in the `sdk-ui-*` package. These types are backward-compatible with respect to versions (that is, creating objects of those types will work across minor versions); however, we may extend them even across minor releases. We chose this approach to allow us to add new features and extend the existing ones without having to release a major version.
+
+Here is an example of such change:
 
 ```tsx
 // in an older version
@@ -51,7 +51,7 @@ export interface IExampleProps {
     sampleProp={42}
 />
 
-// however your custom functions using the type can break
+// however, your custom functions using the type can break
 function getSampleProp(props: IExampleProps): number {
     return props.sampleProp; // breaks with newer version as this is now (number | string)
 }
@@ -63,5 +63,4 @@ function getSampleProp(props: { sampleProp: number }): number {
 
 ```
 
-This will not affect 99% of the common use cases, but can be problematic if you for example use these types in your own functions (as shown in the`getSampleProp` example).
-We chose this approach to allow us to add and extend existing features without having to release a major version each time.
+This is not going to be an issue for most of the common use cases. It may become an issue if you, for example, use these types in your own functions as shown earlier in the `getSampleProp` example.
