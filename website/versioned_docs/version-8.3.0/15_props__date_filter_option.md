@@ -105,7 +105,9 @@ Granularity can be set in days, weeks, months, quarters, and years. Granularity 
 ## Example
 
 ```javascript
-let dateFrom = new Date();
+import { DateGranularity } from "@gooddata/sdk-model";
+
+const dateFrom = new Date();
 dateFrom.setMonth(dateFrom.getMonth() - 1);
 
 const dateFilterOptions = {
@@ -129,7 +131,6 @@ const dateFilterOptions = {
         granularity: "GDC.time.month",
         name: "Floating range",
         visible: true,
-        availableGranularities: ["GDC.time.date", "GDC.time.month", "GDC.time.quarter", "GDC.time.year"],
         from: 0,
         to: -1,
     },
@@ -152,11 +153,11 @@ const dateFilterOptions = {
         },
     ],
     relativePreset: {
-        "GDC.time.date": [
+        DateGranularity.date: [
             {
                 from: -6,
                 to: 0,
-                granularity: "GDC.time.date",
+                granularity: DateGranularity.date,
                 localIdentifier: "fae8aca1-6bcf-456e-8547-e10656859f4d",
                 type: "relativePreset",
                 visible: true,
@@ -165,7 +166,7 @@ const dateFilterOptions = {
             {
                 from: -29,
                 to: 0,
-                granularity: "GDC.time.date",
+                granularity: DateGranularity.date,
                 localIdentifier: "29bd0e2d-51b0-42f7-9355-70aa610ac06c",
                 type: "relativePreset",
                 visible: true,
@@ -174,18 +175,18 @@ const dateFilterOptions = {
             {
                 from: -89,
                 to: 0,
-                granularity: "GDC.time.date",
+                granularity: DateGranularity.date,
                 localIdentifier: "9370c647-8cbe-4850-82c2-0783513e4fe3",
                 type: "relativePreset",
                 visible: true,
                 name: "Last 90 days",
             },
         ],
-        "GDC.time.month": [
+        DateGranularity.month: [
             {
                 from: 0,
                 to: 0,
-                granularity: "GDC.time.month",
+                granularity: DateGranularity.month,
                 localIdentifier: "ec54d656-bbea-4559-b6b2-9de80951eb20",
                 type: "relativePreset",
                 visible: true,
@@ -194,7 +195,7 @@ const dateFilterOptions = {
             {
                 from: -1,
                 to: -1,
-                granularity: "GDC.time.month",
+                granularity: DateGranularity.month,
                 localIdentifier: "0787513c-ec02-439f-9781-7da80db91a27",
                 type: "relativePreset",
                 visible: true,
@@ -203,18 +204,18 @@ const dateFilterOptions = {
             {
                 from: -11,
                 to: 0,
-                granularity: "GDC.time.month",
+                granularity: DateGranularity.month,
                 localIdentifier: "b2790ff0-48ba-402f-a3b3-6722e325042b",
                 type: "relativePreset",
                 visible: true,
                 name: "Last 12 months",
             },
         ],
-        "GDC.time.quarter": [
+        DateGranularity.quarter: [
             {
                 from: 0,
                 to: 0,
-                granularity: "GDC.time.quarter",
+                granularity: DateGranularity.quarter,
                 localIdentifier: "cdf546a5-4394-4583-9a7d-ab35e880f54b",
                 type: "relativePreset",
                 visible: true,
@@ -223,7 +224,7 @@ const dateFilterOptions = {
             {
                 from: -1,
                 to: -1,
-                granularity: "GDC.time.quarter",
+                granularity: DateGranularity.quarter,
                 localIdentifier: "bb5364ba-0c0e-44d9-8cfc-f8ee995dcb53",
                 type: "relativePreset",
                 visible: true,
@@ -232,18 +233,18 @@ const dateFilterOptions = {
             {
                 from: -3,
                 to: 0,
-                granularity: "GDC.time.quarter",
+                granularity: DateGranularity.quarter,
                 localIdentifier: "9b838d14-c88d-4652-bf79-08b895688cd8",
                 type: "relativePreset",
                 visible: true,
                 name: "Last 4 quarters",
             },
         ],
-        "GDC.time.year": [
+        DateGranularity.year: [
             {
                 from: 0,
                 to: 0,
-                granularity: "GDC.time.year",
+                granularity: DateGranularity.year,
                 localIdentifier: "d5e444df-67f6-4034-8b80-0bb0f6c6a210",
                 type: "relativePreset",
                 visible: true,
@@ -252,7 +253,7 @@ const dateFilterOptions = {
             {
                 from: -1,
                 to: -1,
-                granularity: "GDC.time.year",
+                granularity: DateGranularity.year,
                 localIdentifier: "eecbe244-8560-466d-876c-4d3cc96ea61a",
                 type: "relativePreset",
                 visible: true,
