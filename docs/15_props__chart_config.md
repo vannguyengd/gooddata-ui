@@ -239,7 +239,7 @@ Within one visualization, the `colorMapping` property overrides the `colorPalett
 
     ![PopUp Legend](assets/top_legend.png "PopUp Legend Component")
 
-    **NOTE:** When `config.legend.responsive` is set to `"autoPositionWithPopup"`, the `config.legend.position` property is ignored.
+    **NOTE:** When `config.legend.responsive` is set to `"autoPositionWithPopup"`, the `config.legend.position` property may be ignored for containers of a smaller size, and the legend position will be automatically adjusted anyway.
 * To hide the legend, set `config.legend.enabled` to `false`.
 
 ```jsx
@@ -252,7 +252,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
         legend: {
             enabled: true,
             position: "bottom", // "left", "right", "top"
-            responsive: true // "autoPositionWithPopup", false
+            responsive: "autoPositionWithPopup", // true, false
         }
     }}
 />
