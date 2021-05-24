@@ -245,6 +245,10 @@
         "title": "Filter Visual Components",
         "sidebar_label": "Filter Visual Components"
       },
+      "placeholders": {
+        "title": "Metadata Placeholders",
+        "sidebar_label": "Metadata Placeholders"
+      },
       "platform_sso": {
         "title": "Set Up Authentication and Single Sign-On",
         "sidebar_label": "Set Up Authentication and Single Sign-On"
