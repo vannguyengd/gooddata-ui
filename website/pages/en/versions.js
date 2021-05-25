@@ -84,15 +84,11 @@ class Versions extends React.Component {
   }
 
   renderSupportStatus(version) {
-    if (semverSatisfies(version, currentVersionSemver)) {
-      return <td>Current</td>
-    }
-
     if (semverSatisfies(version, supportedVersionSemver)) {
-      return <td>Supported</td>
+      return <td>End of Development</td>
     }
 
-    return <td>Deprecated</td>
+    return <td>End of Support</td>
   }
 
   renderStableVersions() {
@@ -146,7 +142,7 @@ class Versions extends React.Component {
                   </td>
                   { this.renderChangelog(latestVersion) }
                   { this.renderMigrationGuide(latestVersion) }
-                  { this.renderSupportStatus(latestVersion) }
+                  <td>Generally available</td>
                 </tr>
               </tbody>
             </table>
