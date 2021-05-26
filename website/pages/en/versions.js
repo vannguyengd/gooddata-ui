@@ -15,17 +15,17 @@ const semverMinimal = require("semver").minSatisfying;
 const semverMaximal = require("semver").maxSatisfying;
 const semverParse = require("semver").parse;
 
-// UPDATE THESE WHEN A NEW MAJOR IS RELEASED
-const currentVersionSemver = ">=8.0.0";
-const supportedVersionSemver = ">=7.0.0";
-
-const sdkUiSemver = ">=8";
-const reactComponentsSemver = ">=5 <8";
-
 const CWD = process.cwd();
 
 const siteConfig = require(CWD + '/siteConfig.js');
 const versions = require(CWD + '/versions.json');
+
+// UPDATE THESE WHEN A NEW MAJOR IS RELEASED
+const currentVersionSemver = ">=8.0.0";
+const lastSupportedPrevious = semverMaximal(versions, "^7.0.0")
+
+const sdkUiSemver = ">=8";
+const reactComponentsSemver = ">=5 <8";
 
 function getLatestStable(versions) {
   return semverMaximal(versions, currentVersionSemver);
@@ -84,7 +84,7 @@ class Versions extends React.Component {
   }
 
   renderSupportStatus(version) {
-    if (semverSatisfies(version, supportedVersionSemver)) {
+    if (semverSatisfies(version, currentVersionSemver) || version === lastSupportedPrevious) {
       return <td>End of Development</td>
     }
 
