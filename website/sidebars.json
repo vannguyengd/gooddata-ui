@@ -85,7 +85,8 @@
       "ht_render_visualization_from_different_domain",
       "ht_use_react_component_in_angular_2.x",
       "ht_create_predicates",
-      "backend_agnostic_apps"
+      "backend_agnostic_apps",
+      "placeholders"
     ],
     "Support": [
       "support_options",
