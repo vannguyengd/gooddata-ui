@@ -1,19 +1,19 @@
 ---
-title: Metadata Placeholders
-sidebar_label: Metadata Placeholders
+title: Visualization Definition Placeholders
+sidebar_label: Visualization Definition Placeholders
 copyright: (C) 2007-2021 GoodData Corporation
 id: placeholders
 ---
 
-**Metadata placeholders** let you dynamically change the metadata coming to visualizations (such as measures and attributes) based on a specific user action.
+**Visualization definition placeholders** let you dynamically change the data coming to visualizations (such as measures and attributes) based on a specific user action.
 
-The metadata placeholders are parts of the visualization execution elements (attributes, measures, filters, sorts, or totals) that can change their value at runtime.
+The visualization definition placeholders are parts of the visualization execution elements (attributes, measures, filters, sorts, or totals) that can change their value at runtime.
 
-Using the metadata placeholders in visualizations instead of the execution elements allows you to change the visualizations by simply changing the placeholder values.
+Using the visualization definition placeholders in visualizations instead of the execution elements allows you to change the visualizations by simply changing the placeholder values.
 
-The metadata placeholders are built on top of React context and hooks.
+The visualization definition placeholders are built on top of React context and hooks.
 
-## Create and use a metadata placeholder
+## Create and use a visualization definition placeholder
 
 **Steps:**
 
@@ -29,7 +29,7 @@ The metadata placeholders are built on top of React context and hooks.
     );
     ```
 
-1. Create a metadata placeholder.
+1. Create a visualization definition placeholder.
 
     ```
     import { newPlaceholder } from '@gooddata/sdk-ui';
@@ -37,7 +37,7 @@ The metadata placeholders are built on top of React context and hooks.
     export const primaryMeasurePlaceholder = newPlaceholder();
     ```
 
-1. Use the metadata placeholder in a visualization.
+1. Use the visualization definition placeholder in a visualization.
 
     ```
     import { BarChart } from '@gooddata/sdk-ui-charts';
@@ -47,7 +47,7 @@ The metadata placeholders are built on top of React context and hooks.
     />
     ```
 
-1. Change the value of the metadata placeholder.
+1. Change the value of the visualization definition placeholder.
 
     ```
     const PrimaryMeasureSelect = () => {
@@ -80,7 +80,7 @@ The metadata placeholders are built on top of React context and hooks.
     };
     ```
 
-## Set the initial values of a metadata placeholder
+## Set the initial values of a visualization definition placeholder
 
 ```
 const Root = () =>  (
@@ -94,25 +94,25 @@ const Root = () =>  (
 );
 ```
 
-## Common metadata placeholders
+## Common visualization definition placeholders
 
-**Common metadata placeholders** can have one or multiple values (attributes, measures, filters, sorts, or totals).
+**Common visualization definition placeholders** can have one or multiple values (attributes, measures, filters, sorts, or totals).
 
-**NOTE:** Do not use the common metadata placeholders as values of another placeholder. To combine multiple metadata placeholders, use [composed placeholders](#Composed-metadata-placeholders). 
+**NOTE:** Do not use the common placeholders as values of another placeholder. To combine multiple visualization definition placeholders, use [composed placeholders](#Composed-visualization-definition-placeholders). 
 
-### Create a common metadata placeholder
+### Create a common visualization definition placeholder
 
 ```
 const measurePlaceholder = newPlaceholder();
 ```
 
-### Create a common metadata placeholder with a predefined default value
+### Create a common visualization definition placeholder with a predefined default value
 
 ```
 const measurePlaceholder = newPlaceholder(Md.Revenue);
 ```
 
-### Create a common metadata placeholder with a predefined ID and validation rules
+### Create a common visualization definition placeholder with a predefined ID and validation rules
 
 ```
 const measurePlaceholder = newPlaceholder(Md.Revenue, {
@@ -128,9 +128,9 @@ const measurePlaceholder = newPlaceholder(Md.Revenue, {
 });
 ```
 
-### Get or set a value of a common metadata placeholder
+### Get or set a value of a common visualization definition placeholder
 
-By default, a common metadata placeholder has a [`usePlaceholder`](#usePlaceholder) hook attached for convenience. Its usage is similar to using the React [`useState`](https://reactjs.org/docs/hooks-state.html) hook.
+By default, a common visualization definition placeholder has a [`usePlaceholder`](#usePlaceholder) hook attached for convenience. Its usage is similar to using the React [`useState`](https://reactjs.org/docs/hooks-state.html) hook.
 
 ```
 const MeasureSelect = () => {
@@ -154,9 +154,9 @@ const MeasureSelect = () => {
 };
 ```
 
-### Use a common metadata placeholder in a visualization
+### Use a common visualization definition placeholder in a visualization
 
-At runtime, a common metadata placeholder is replaced with either its default value or the value that has been set for it.
+At runtime, a common visualization definition placeholder is replaced with either its default value or the value that has been set for it.
 
 ```
 <BarChart
@@ -164,7 +164,7 @@ At runtime, a common metadata placeholder is replaced with either its default va
 />
 ```
 
-You can use the metadata placeholders that hold an array of values. It will be flattened during the placeholder resolution.
+You can use the visualization definition placeholders that hold an array of values. It will be flattened during the placeholder resolution.
 
 ```
 <BarChart
@@ -172,15 +172,15 @@ You can use the metadata placeholders that hold an array of values. It will be f
 />
 ```
 
-## Composed metadata placeholders
+## Composed visualization definition placeholders
 
-**Composed metadata placeholders** are placeholders with a value derived from other placeholders and/or your custom resolution context.
+**Composed visualization definition placeholders** are placeholders with a value derived from other placeholders and/or your custom resolution context.
 
-### Create a composed metadata placeholder
+### Create a composed visualization definition placeholder
 
-By default, a value of a composed metadata placeholder is resolved as a tuple of resolved input values of the metadata placeholder.
+By default, a value of a composed visualization definition placeholder is resolved as a tuple of resolved input values of the visualization definition placeholder.
 
-In the following example, it is an array of measures.
+In the following example, it is an array of measures:
 
 ```
 const combinedMeasuresPlaceholder = newComposedPlaceholder(
@@ -188,9 +188,9 @@ const combinedMeasuresPlaceholder = newComposedPlaceholder(
 );
 ```
 
-### Create a composed metadata placeholder with a computed value
+### Create a composed visualization definition placeholder with a computed value
 
-With the composed metadata placeholders, you can perform computations on top of resolved input values of a metadata placeholder. This can be useful, for example, when you want to apply filters from some metadata placeholder to a particular measure placeholder.
+With the composed visualization definition placeholders, you can perform computations on top of resolved input values of a visualization definition placeholder. This can be useful, for example, when you want to apply filters from some visualization definition placeholder to a particular measure placeholder.
 
 ```
 const computedMeasurePlaceholder = newComposedPlaceholder(
@@ -209,11 +209,11 @@ const computedMeasurePlaceholder = newComposedPlaceholder(
 );
 ```
 
-### Create a composed metadata placeholder that accepts custom resolution context
+### Create a composed visualization definition placeholder that accepts custom resolution context
 
-You can provide your own resolution context to composed metadata placeholders. This can be useful, for example, when you want to influence the resolution of a metadata placeholder's value based on some data that the placeholder does not know about.
+You can provide your own resolution context to composed visualization definition placeholders. This can be useful, for example, when you want to influence the resolution of a visualization definition placeholder's value based on some data that the placeholder does not know about.
 
-**NOTE:** When you have composed metadata placeholders that are composed of other composed placeholders, custom resolution context is shared among **all** of these placeholders.
+**NOTE:** When you have composed visualization definition placeholders that are composed of other composed placeholders, custom resolution context is shared among **all** of these placeholders.
 
 ```
 const arithmeticMeasurePlaceholder = newComposedPlaceholder(
@@ -236,9 +236,9 @@ const arithmeticMeasure = arithmeticMeasurePlaceholder.use({ operator: "sum" });
 const arithmeticMeasure = useComputedPlaceholder(arithmeticMeasurePlaceholder, { operator: "sum" });
 ```
 
-### Get a value of a composed metadata placeholder
+### Get a value of a composed visualization definition placeholder
 
-By default, a composed metadata placeholder has the [`useComposedPlaceholder`](#useComposedPlaceholder) hook attached for convenience.
+By default, a composed visualization definition placeholder has the [`useComposedPlaceholder`](#useComposedPlaceholder) hook attached for convenience.
 
 ```
 const MeasureSelect = () => {
@@ -255,9 +255,9 @@ const MeasureSelect = () => {
 };
 ```
 
-### Use a composed metadata placeholder in a visualization
+### Use a composed visualization definition placeholder in a visualization
 
-At runtime, a composed metadata placeholder is replaced with its resolved value.
+At runtime, a composed visualization definition placeholder is replaced with its resolved value.
 
 ```
 <BarChart
@@ -269,17 +269,17 @@ At runtime, a composed metadata placeholder is replaced with its resolved value.
 
 ## Hooks
 
-GoodData.UI contains React hooks that help you obtain, set, and resolve metadata placeholder values.
+GoodData.UI contains React hooks that help you obtain, set, and resolve visualization definition placeholder values.
 
-- `usePlaceholder` to get or set a value of a common metadata placeholder.
-- `usePlaceholders` to get or set multiple values of a common metadata placeholder at once.
-- `useComposedPlaceholder` to get a value of a composed metadata placeholder.
-- `useResolveValueWithPlaceholders` to resolve a value that may contain metadata placeholders to actual values.
-- `useResolveValuesWithPlaceholders` to resolve multiple values that may contain metadata placeholders to actual values at once.
+- `usePlaceholder` to get or set a value of a common visualization definition placeholder.
+- `usePlaceholders` to get or set multiple values of a common visualization definition placeholder at once.
+- `useComposedPlaceholder` to get a value of a composed visualization definition placeholder.
+- `useResolveValueWithPlaceholders` to resolve a value that may contain visualization definition placeholders to actual values.
+- `useResolveValuesWithPlaceholders` to resolve multiple values that may contain visualization definition placeholders to actual values at once.
 
 ### usePlaceholder
 
-Use the `usePlaceholder` hook to get or set a value of a common metadata placeholder.
+Use the `usePlaceholder` hook to get or set a value of a common visualization definition placeholder.
 
 ```
 const measurePlaceholder = newPlaceholder();
@@ -308,7 +308,7 @@ const Component = () => {
 
 ### usePlaceholders
 
-Use the `usePlaceholders` hook to get or set multiple values of a common metadata placeholder at once. This can be useful, for example, when you want to make an atomic change (such as setting a preset of values to multiple metadata placeholders).
+Use the `usePlaceholders` hook to get or set multiple values of a common visualization definition placeholder at once. This can be useful, for example, when you want to make an atomic change (such as setting a preset of values to multiple visualization definition placeholders).
 
 ```
 const measurePlaceholder = newPlaceholder();
@@ -338,7 +338,7 @@ const Component = () => {
 
 ### useComposedPlaceholder
 
-Use the `useComposedPlaceholder` hook to get a value of a composed metadata placeholder.
+Use the `useComposedPlaceholder` hook to get a value of a composed visualization definition placeholder.
 
 ```
 const measureGroupPlaceholder = newPlaceholder([Md.Revenue, Md.Costs]);
@@ -368,9 +368,9 @@ const Component = () => {
 
 ### useResolveValueWithPlaceholders
 
-Use the `useResolveValueWithPlaceholders` hook to resolve a value that may contain metadata placeholders to actual values.
+Use the `useResolveValueWithPlaceholders` hook to resolve a value that may contain visualization definition placeholders to actual values.
 
-When the value is an array, metadata placeholders that hold array values are flattened.
+When the value is an array, visualization definition placeholders that hold array values are flattened.
 
 Objects are not recursively traversed; placeholder nesting is not supported.
 
@@ -395,7 +395,7 @@ const Component = () => {
 
 ### useResolveValuesWithPlaceholders
 
-Use the `useResolveValuesWithPlaceholders` to resolve multiple values that may contain metadata placeholders to actual values at once.
+Use the `useResolveValuesWithPlaceholders` to resolve multiple values that may contain visualization definition placeholders to actual values at once.
 
 The resolution rules are the same as the rules for the [useResolveValueWithPlaceholders](#useResolveValueWithPlaceholders) hook.
 
@@ -414,11 +414,11 @@ const Component = () => {
 };
 ```
 
-## Use the metadata placeholders with TypeScript
+## Use the visualization definition placeholders with TypeScript
 
-The metadata placeholders have built-in first-class TypeScript support.
+The visualization definition placeholders have built-in first-class TypeScript support.
 
-### Specify the type of a common metadata placeholder
+### Specify the type of a common visualization definition placeholder
 
 ```
 // A placeholder that can hold any measure
@@ -430,7 +430,7 @@ export const attributeGroupPlaceholder = newPlaceholder<IAttribute[]>([]);
 
 ### Use type inference
 
-When you set the default value for a metadata placeholder, the placeholder type is inferred from this default value.
+When you set the default value for a visualization definition placeholder, the placeholder type is inferred from this default value.
 
 ```
 // The placeholder type is inferred from the primaryMeasure type.
