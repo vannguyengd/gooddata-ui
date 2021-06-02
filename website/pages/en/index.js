@@ -119,6 +119,12 @@ const FeaturesBlock = props => (
   </div>
 );
 
+const FeaturesBlockGalleryLink = props => (
+  <a href={props.href} className="featuresBlockGalleryLink button-link" target={props.target}>
+    {props.text || 'Learn more'}
+  </a>
+)
+
 const FeaturesBlockGallery = props => {
   const gallery = props.children.map((item, index) => (
     <li key={index} className={`featuresBlockGalleryItem${props.cards ? " card" : ""}`}>
@@ -131,11 +137,8 @@ const FeaturesBlockGallery = props => {
       )}
       <h4 className="featuresBlockGalleryTitle">{item.title}</h4>
       {item.text && <p className="featuresBlockGalleryText">{item.text}</p>}
-      {item.linkHref &&
-        <a href={item.linkHref} className="featuresBlockGalleryLink button-link" target={item.linkTarget}>
-          {item.linkText || 'Learn more'}
-        </a>
-      }
+      {item.linkHref && <FeaturesBlockGalleryLink href={item.linkHref} text={item.linkText} target={item.linkTarget} />}
+      {item.links && item.links.map((link, index) => (<FeaturesBlockGalleryLink href={link.linkHref} text={link.linkText} target={link.linkTarget} />))}
     </li>
   ));
 
@@ -299,12 +302,20 @@ const Features = props => (
               title: 'Tutorial 1',
               text: "Get started with the accelerator toolkit",
               linkText: "Try it yourself",
-              linkHref: docUrl("ht_create_your_first_visualization_toolkit.html")
+              linkHref: docUrl("create_new_application.html ")
             },{
               title: 'Tutorial 2',
               text: "Get started with create-react-app",
-              linkText: "Try it yourself",
-              linkHref: docUrl("ht_create_your_first_visualization.html")
+              links: [
+                {
+                  linkText: "GoodData platform",
+                  linkHref: docUrl("platform_integration.html")
+                },
+                {
+                  linkText: "GoodData.CN",
+                  linkHref: docUrl("cloudnative_integration.html")
+                }
+              ]
             }]}
           </FeaturesBlockGallery>
         ]}
