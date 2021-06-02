@@ -232,6 +232,10 @@
 
 .featuresBlockGalleryLink {
     margin-bottom: 0;
+
+    & + & {
+        margin-top: 0.2rem;
+    }
 }
 
 .charting-lib-logo {
