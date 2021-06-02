@@ -246,8 +246,8 @@
         "sidebar_label": "Filter Visual Components"
       },
       "placeholders": {
-        "title": "Metadata Placeholders",
-        "sidebar_label": "Metadata Placeholders"
+        "title": "Visualization Definition Placeholders",
+        "sidebar_label": "Visualization Definition Placeholders"
       },
       "platform_sso": {
         "title": "Set Up Authentication and Single Sign-On",
@@ -1780,6 +1780,42 @@
       "version-8.3.0/version-8.3.0-custom_execution": {
         "title": "Custom Executions",
         "sidebar_label": "Custom Executions"
+      },
+      "version-8.4.0/version-8.4.0-about_gooddataui": {
+        "title": "About GoodData.UI",
+        "sidebar_label": "About GoodData.UI"
+      },
+      "version-8.4.0/version-8.4.0-supported_versions": {
+        "title": "Supported Versions",
+        "sidebar_label": "Supported Versions"
+      },
+      "version-8.4.0/version-8.4.0-api_maturity": {
+        "title": "API Maturity",
+        "sidebar_label": "API Maturity"
+      },
+      "version-8.4.0/version-8.4.0-date_filter_component": {
+        "title": "Date Filter",
+        "sidebar_label": "Date Filter"
+      },
+      "version-8.4.0/version-8.4.0-visualization_component": {
+        "title": "InsightView",
+        "sidebar_label": "InsightView"
+      },
+      "version-8.4.0/version-8.4.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
+      },
+      "version-8.4.0/version-8.4.0-date_filter_option": {
+        "title": "DateFilter Component Options",
+        "sidebar_label": "DateFilter Component Options"
+      },
+      "version-8.4.0/version-8.4.0-placeholders": {
+        "title": "Visualization Definition Placeholders",
+        "sidebar_label": "Visualization Definition Placeholders"
+      },
+      "version-8.4.0/version-8.4.0-create_new_visualization": {
+        "title": "Create a Custom Visualization",
+        "sidebar_label": "Create a Custom Visualization"
       }
     },
     "links": {
