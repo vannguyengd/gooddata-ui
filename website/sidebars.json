@@ -46,7 +46,6 @@
       "pie_chart_component",
       "pivot_table_component",
       "scatter_plot_component",
-      "table_component",
       "treemap_component",
       "visualization_component",
       "dashboard_view_component",
