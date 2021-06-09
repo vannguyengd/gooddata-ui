@@ -17,6 +17,6 @@ This is what is going to happen when you run `create-gooddata-react-app`:
 3. Once you confirm your domain, the tool will install required dependencies and create the structure of your application.
 4. It will then prompt you to start your application and will open the welcome page in your browser. The welcome page refer you to Accelerator Toolkit, which will allow you to set up your home dashboard with a test widget.
 
-To start, go to https://github.com/gooddata/gooddata-create-gooddata-react-app, and follow the instructions in the README file.
+To start, go to [https://github.com/gooddata/gooddata-create-gooddata-react-app](https://github.com/gooddata/gooddata-create-gooddata-react-app), and follow the instructions in the README file.
 
 **NOTE:** You must have a GoodData account (see [About GoodData.UI](01_intro__about_gooddataui.md#supported-technologies)).
