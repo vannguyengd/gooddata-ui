@@ -139,14 +139,27 @@ To avoid this gap, specify the maximum height of the table using the `maxHeight`
 
 By default, the width of the columns is not set, and all columns have the same fixed width regardless of the actual content.
 
-To automatically resize the columns to fit their content, add the `columnSizing` prop and set it to `defaultWidth: "autoresizeAll"`:
-```jsx
-columnSizing: {
-    defaultWidth: "autoresizeAll"
-}
-```
+* To automatically resize all the columns to fit their content, add the `columnSizing` prop and set it to `defaultWidth: "autoresizeAll"`:
 
-> Before Version 8.0, you could set up the auto resizing using `defaultWidth: "viewport"` (see [Pivot Table](https://sdk.gooddata.com/gooddata-ui/docs/pivot_table_component.html#auto-resizing) in the Version 7.8 documentation). While it is still supported, we strongly recommend that you use `defaultWidth: "autoresizeAll"` because `defaultWidth: "viewport"` will be deprecated in one of the the next versions.
+    ```jsx
+    columnSizing: {
+        defaultWidth: "autoresizeAll"
+    }
+    ```
+
+* To automatically resize only the columns that are visible in the initial viewport, add the `columnSizing` prop and set it to `defaultWidth: "viewport"`:
+
+    ```jsx
+    columnSizing: {
+        defaultWidth: "viewport"
+    }
+    ```
+    
+    **TIP:** Use this option for large tables when a user cannot scroll the table content (for example, when a table is exported to PDF).
+
+> Before Version 8.5, you could set up the auto resizing using `defaultWidth: "viewport"` and it worked the same way as `defaultWidth: "autoresizeAll"`. It changed in Version 8.5, and these two options now work differently. We recommend that you prefer `defaultWidth: "autoresizeAll"` for common cases.
+
+The following considerations are applied:
 
 * The size is calculated based on the content in the header of the column that represents the lowest level of the grouped attributes (see [Grouping](#grouping)). If this is not applicable, the size is calculated based on the content in the header of the column with the measure name and the cells with the measure values.
 * The maximum column width is 500 px.
@@ -154,10 +167,7 @@ columnSizing: {
 * A change of attributes, measures, filters, or totals in the table is handled as a new table. After the change is made, the column size is re-calculated based on the new data.
 * Scrolling horizontally or vertically and sorting values in a column do not affect the column width.
 * If you manually adjust the column width, the adjusted width is preserved only temporarily and will be reset to the previously set value after the table is re-rendered.
-
-#### Infinite scrolling
-
-Tables that use infinite scrolling (loading content continuously as a user scrolls down the page) are resized based on the first batch of rows. Dynamically loaded rows do not modify the size of the columns after the initial data load.
+* Tables that use infinite scrolling (loading content continuously as a user scrolls down the page) are resized based on the first batch of rows. Dynamically loaded rows do not modify the size of the columns after the initial data load.
 
 ### Manual resizing
 
