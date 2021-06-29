@@ -29,7 +29,6 @@ import { Ldm } from "./ldm";
 
 export class AttributeFilterExample extends Component {
     onApply(filter) {
-        // eslint-disable-next-line no-console
         console.log("AttributeFilterExample onApply", filter);
     }
 
@@ -67,6 +66,8 @@ To define the attribute values that should be selected in the filter by default,
 To define parent child relationship between two filters, create two filters and hand over ```parentFilters``` and ```parentFilterOverAttribute``` properties to the one which is supposed to be child filter dependent on the another.
 
 Parent filters can be defined as a [AttributeFilter](30_tips__filter_visual_components.md) or [Placeholders](30_tips__placeholders.md).
+
+The ```parentFilterOverAttribute``` defines the relationship between parent filter and child filter. You specify this attribute in the child filter via parent filter attribute reference or reference of any other independent attribute common for the parent filter attribute as well as for the child filter attribute. In any case, this attribute must represent the way two filters are connected.
 
 ```jsx
     render() {
