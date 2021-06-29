@@ -77,6 +77,10 @@
         "title": "Area Chart",
         "sidebar_label": "Area Chart"
       },
+      "attribute_filter_button_component": {
+        "title": "Attribute Filter Button",
+        "sidebar_label": "Attribute Filter Button"
+      },
       "attribute_filter_component": {
         "title": "Attribute Filter",
         "sidebar_label": "Attribute Filter"
