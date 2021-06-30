@@ -25,6 +25,7 @@ const currentVersionSemver = ">=8.0.0";
 const lastSupportedPrevious = semverMaximal(versions, "^7.0.0")
 
 const sdkUiSemver = ">=8";
+const apiReferenceSemver = ">=8.5.0";
 const reactComponentsSemver = ">=5 <8";
 
 function getLatestStable(versions) {
@@ -61,6 +62,26 @@ class Versions extends React.Component {
           </td>
         );
       }
+    }
+
+    return <td>&mdash;</td>;
+  }
+
+  renderApiReference(version) {
+    if (!version) {
+      return (
+        <td>
+          <a href="https://sdk.gooddata.com/gooddata-ui-apidocs/vNext/index.html">API Reference</a>
+        </td>
+      );
+    }
+
+    if (semverSatisfies(version, apiReferenceSemver)) {
+      return (
+        <td>
+          <a href={`https://sdk.gooddata.com/gooddata-ui-apidocs/v${version}/index.html`}>API Reference</a>
+        </td>
+      );
     }
 
     return <td>&mdash;</td>;
@@ -110,6 +131,7 @@ class Versions extends React.Component {
                         </td>
                         { this.renderChangelog(version) }
                         { this.renderMigrationGuide(version) }
+                        { this.renderApiReference(version) }
                         { this.renderSupportStatus(version) }
                       </tr>
                     )
@@ -142,6 +164,7 @@ class Versions extends React.Component {
                   </td>
                   { this.renderChangelog(latestVersion) }
                   { this.renderMigrationGuide(latestVersion) }
+                  { this.renderApiReference(latestVersion) }
                   <td>Generally available</td>
                 </tr>
               </tbody>
@@ -155,6 +178,7 @@ class Versions extends React.Component {
                     <a href={this.docUrl('about_gooddataui.html', 'next')}>Documentation</a>
                   </td>
                   { this.renderMigrationGuide(semverMinimal(versions, currentVersionSemver), true) }
+                  { this.renderApiReference() }
                 </tr>
               </tbody>
             </table>
