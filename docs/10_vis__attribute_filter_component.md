@@ -11,7 +11,7 @@ To implement the component, choose one of the following methods:
 * You pass a callback function, which receives a list of the selected values when a user clicks **Apply**.
 * The component handles the change after calling itself via the ```connectToPlaceholder``` property.
     
-    The ```onApply``` is not needed; everything is handled automatically. Use ```onApply``` only if you need a specific callback to be fired.
+    The ```onApply``` function is not needed; everything is handled automatically. Use ```onApply``` only if you need a specific callback to be fired.
 
 Optionally, you can define what attribute values should be selected in the filter by default.
 
@@ -70,9 +70,9 @@ To define the attribute values that should be selected in the filter by default,
 
 To define a parent-child relationship between two attribute filters, hand over the ```parentFilters``` and ```parentFilterOverAttribute``` properties to the filter that should become a child filter dependent on the other attribute filter.
 
-The ```parentFilterOverAttribute``` property defines the relationship between the parent filter and the child filter. You specify this attribute in the child filter via either a reference to an attribute in the parent filter or a reference of any independent attribute common for a parent filter attribute and a child filter attribute. This attribute must represent the way how the two filters are connected.
+The ```parentFilterOverAttribute``` property defines the relationship between the parent filter and the child filter. You specify this attribute in the child filter via either a reference to an attribute in the parent filter or a reference to any independent attribute common for a parent filter attribute and a child filter attribute. This attribute must represent the way how the two filters are connected.
 
-You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_components.md) or a visualization definition [placeholder](30_tips__placeholders.md).
+You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_components.md) or a [visualization definition placeholder](30_tips__placeholders.md).
 
 ```jsx
     render() {
@@ -112,7 +112,7 @@ You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_
 | filter | false | [Filter](30_tips__filter_visual_components.md) | The attribute filter definition |
 | parentFilters | false | AttributeFiltersOrPlaceholders[] | An array of parent attribute filter definitions |
 | connectToPlaceholder | false | IPlaceholder<IAttributeFilter> | The [visualization definition placeholder](30_tips__placeholders.md) used to get and set the value of the attribute filter |
-| parentFilterOverAttribute | false | ObjRef | The reference to the parent filter attribute over which the available options are reduced. |
+| parentFilterOverAttribute | false | ObjRef | The reference to the parent filter attribute over which the available options are reduced |
 | locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | fullscreenOnMobile | false | boolean | If `true`, adjusts the filter to be properly rendered on a mobile device |
 | title | false | string | A custom label to show on the dropdown icon |
