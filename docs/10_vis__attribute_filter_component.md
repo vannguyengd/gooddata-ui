@@ -7,15 +7,15 @@ copyright: (C) 2007-2018 GoodData Corporation
 
 The **Attribute Filter component** is a dropdown component that lists attribute values.
 
+![Attribute Filter Component](assets/attribute_filter.png "Attribute Filter Component")
+
 To implement the component, choose one of the following methods:
 * You pass a callback function, which receives a list of the selected values when a user clicks **Apply**.
 * The component handles the change after calling itself via the ```connectToPlaceholder``` property.
-    
+
     The ```onApply``` function is not needed; everything is handled automatically. Use ```onApply``` only if you need a specific callback to be fired.
 
 Optionally, you can define what attribute values should be selected in the filter by default.
-
-![Attribute Filter Component](assets/attribute_filter.png "Attribute Filter Component")
 
 ## Example
 
@@ -48,6 +48,12 @@ export class AttributeFilterExample extends Component {
     }
 }
 ```
+
+## Attribute Filter component vs. Attribute Filter Button component
+
+The Attribute Filter component is functionally similar to the [Attribute Filter Button component](10_vis__attribute_filter_button_component.md). You can use either of them. The only difference is what the filter dropdown button looks like.
+
+![Filter Dropdown Button](assets/attribute_filter_top_visual.png "Filter Dropdown Button")
 
 ## Define the default selection of values in the filter
 

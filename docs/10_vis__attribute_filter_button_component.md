@@ -7,15 +7,15 @@ copyright: (C) 2021 GoodData Corporation
 
 The **Attribute Filter Button component** is a dropdown component that lists attribute values.
 
+![Attribute Filter Button Component](assets/attribute_filter_button.png "Attribute Filter Button Component")
+
 To implement the component, choose one of the following methods:
 * You pass a callback function, which receives a list of the selected values when a user clicks **Apply**.
 * The component handles the change after calling itself via the ```connectToPlaceholder``` property.
-    
+
     The ```onApply``` function is not needed. Use ```onApply``` only if you need a specific callback to be fired.
 
 Optionally, you can define what attribute values should be selected in the filter by default.
-
-![Attribute Filter Button Component](assets/attribute_filter_button.png "Attribute Filter Button Component")
 
 ## Example
 
@@ -31,7 +31,7 @@ import "@gooddata/sdk-ui-filters/styles/css/main.css";
 
 import { Ldm } from "./ldm";
 
-export class AttributeFilteButtonrExample extends Component {
+export class AttributeFilterButtonExample extends Component {
     onApply(filter) {
         console.log("AttributeFilterButtonExample onApply", filter);
     }
@@ -48,6 +48,12 @@ export class AttributeFilteButtonrExample extends Component {
     }
 }
 ```
+
+## Attribute Filter Button component vs. Attribute Filter component
+
+The Attribute Filter Button component is functionally similar to the [Attribute Filter component](10_vis__attribute_filter_component.md). You can use either of them. The only difference is what the filter dropdown button looks like.
+
+![Filter Dropdown Button](assets/attribute_filter_button_top_visual.png "Filter Dropdown Button")
 
 ## Define the default selection of values in the filter
 
