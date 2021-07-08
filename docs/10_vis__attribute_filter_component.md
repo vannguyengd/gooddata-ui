@@ -12,7 +12,7 @@ The **Attribute Filter component** is a dropdown component that lists attribute 
 To implement the component, choose one of the following methods:
 * You pass a callback function, which receives a list of the selected values when a user clicks **Apply**.
 * The component handles the change after calling itself via the ```connectToPlaceholder``` property.
-    
+
     The ```onApply``` function is not needed; everything is handled automatically. Use ```onApply``` only if you need a specific callback to be fired.
 
 Optionally, you can define what attribute values should be selected in the filter by default.
