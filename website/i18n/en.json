@@ -1820,6 +1820,22 @@
       "version-8.4.0/version-8.4.0-create_new_visualization": {
         "title": "Create a Custom Visualization",
         "sidebar_label": "Create a Custom Visualization"
+      },
+      "version-8.5.0/version-8.5.0-create_new_application": {
+        "title": "Create Your First Application Using Accelerator Toolkit",
+        "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
+      },
+      "version-8.5.0/version-8.5.0-attribute_filter_button_component": {
+        "title": "Attribute Filter Button",
+        "sidebar_label": "Attribute Filter Button"
+      },
+      "version-8.5.0/version-8.5.0-attribute_filter_component": {
+        "title": "Attribute Filter",
+        "sidebar_label": "Attribute Filter"
+      },
+      "version-8.5.0/version-8.5.0-pivot_table_component": {
+        "title": "Pivot Table",
+        "sidebar_label": "Pivot Table"
       }
     },
     "links": {
