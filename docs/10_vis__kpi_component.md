@@ -10,7 +10,7 @@ A **KPI** \(Key Performance Indicator\) renders a measure calculated by the Good
 ## Structure
 
 ```jsx
-import { Kpi } from "@gooddata/react-components";
+import { Kpi } from "@gooddata/sdk-ui";
 
 <Kpi
     measure="<measure-identifier>"
