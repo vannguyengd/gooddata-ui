@@ -11,11 +11,13 @@ A **KPI** \(Key Performance Indicator\) renders a measure calculated by the Good
 
 ```jsx
 import { Kpi } from "@gooddata/sdk-ui";
+import { newMeasure } from "@gooddata/sdk-model";
+
+const measure = newMeasure("<measure-identifier>");
 
 <Kpi
-    measure="<measure-identifier>"
+    measure={measure}
     filters={<filters>}
-    format="<format>"
     separators={<separators>}
 />
 ```
