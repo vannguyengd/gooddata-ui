@@ -19,8 +19,8 @@ const measure = newMeasure("<measure-identifier>");
 <Kpi
     measure={measure}
     filters={<filters>}
-        separators={<separators>}
-            />
+    separators={<separators>}
+/>
 ```
 
 ## Example
