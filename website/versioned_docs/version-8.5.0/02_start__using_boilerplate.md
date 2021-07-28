@@ -8,6 +8,8 @@ original_id: create_new_application
 
 Create your first analytical application using the **`@gooddata/create-gooddata-react-app`** tool.
 
+## About `@gooddata/create-gooddata-react-app`
+
 `@gooddata/create-gooddata-react-app` is a CLI-based tool that will guide you through the process of creating the application
 step by step in your terminal application.
 
@@ -24,6 +26,8 @@ This is what is going to happen when you run `@gooddata/create-gooddata-react-ap
 2. When completed, it will ask you to select your domain from the list or let you enter your domain name manually.
 3. Once you confirm your domain, the tool will install required dependencies and create the structure of your application.
 4. It will then prompt you to start your application and will open the welcome page in your browser.
+
+## How to use `@gooddata/create-gooddata-react-app`
 
 To start, go to [https://github.com/gooddata/gooddata-create-gooddata-react-app](https://github.com/gooddata/gooddata-create-gooddata-react-app), and follow the instructions in the README file.
 The created application contains its own README with further information about configuration, build and deployment options.
