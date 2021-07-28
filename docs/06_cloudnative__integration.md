@@ -14,7 +14,7 @@ GoodData.UI can target multiple platforms. Therefore, it is essential to install
 GoodData.CN, you need to install packages codenamed `tiger`:
 
 ```bash
-yarn add @gooddata/api-client-tiger @gooddata/sdk-backend-tiger 
+yarn add @gooddata/api-client-tiger @gooddata/sdk-backend-tiger
 ```
 
 On top of this, you can pick and choose packages depending on which GoodData.UI components you plan to use. For more information, see the table included in the [architecture overview](01_intro__framework_overview.md).
@@ -67,9 +67,14 @@ Make sure to import the styles only from the packages that you actually use.
 All integration and communication of GoodData.UI React components and the GoodData platform happens via the **Analytical Backend** abstraction. Your application should initialize an instance of the Analytical Backend as soon as possible as follows:
 
 ```javascript
-import tigerFactory, {ContextDeferredAuthProvider, redirectToTigerAuthentication} from "@gooddata/sdk-backend-tiger";
+import tigerFactory, { ContextDeferredAuthProvider, redirectToTigerAuthentication } from "@gooddata/sdk-backend-tiger";
 
 const backend = tigerFactory().withAuthentication(new ContextDeferredAuthProvider(redirectToTigerAuthentication));
+
+// or if your application will be hosted on a different host than the GoodData.CN backend
+const backend = tigerFactory()
+    .onHostname("https://example.com") // this should be the domain where the GoodData.CN is hosted
+    .withAuthentication(new ContextDeferredAuthProvider(redirectToTigerAuthentication));
 ```
 
 Depending on the type and style used in your application, you can either store an instance of `backend` in a read-only global
@@ -129,7 +134,7 @@ import { YourFact, YourMeasure, YourAttribute} from "./generatedLdm";
 function MyVisualization() {
     const measures = [YourFact.Sum, YourMeasure];
     const attributes = [ YourAttribute.DisplayFormName ];
-    
+
     return (
       <LineChart
           measures={measures}

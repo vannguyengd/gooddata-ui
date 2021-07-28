@@ -10,11 +10,11 @@ React application or for some reason you cannot use [accelerator toolkit](02_sta
 
 ## Step 1. Install the necessary dependencies
 
-GoodData.UI can target multiple platforms. Therefore, it is essential to install packages for the right target platform. For the 
+GoodData.UI can target multiple platforms. Therefore, it is essential to install packages for the right target platform. For the
 GoodData platform, you need to install packages codenamed `bear`:
 
 ```bash
-yarn add @gooddata/api-client-bear @gooddata/sdk-backend-bear @gooddata/sdk-model 
+yarn add @gooddata/api-client-bear @gooddata/sdk-backend-bear @gooddata/sdk-model
 ```
 
 On top of this, you can pick and choose packages depending on which GoodData.UI components you plan to use. For more information, see the table in the [architecture overview](01_intro__framework_overview.md).
@@ -65,13 +65,18 @@ Make sure to import the styles only from the packages that you actually use.
 
 ## Step 3. Set up Analytical Backend and integrate it into your application
 
-All integration and communication of the GoodData.UI React components and the GoodData platform happen via the **Analytical Backend** abstraction. 
+All integration and communication of the GoodData.UI React components and the GoodData platform happen via the **Analytical Backend** abstraction.
 Your application should initialize an instance of the Analytical Backend as soon as possible as follows:
 
 ```javascript
-import bearFactory, {ContextDeferredAuthProvider} from "@gooddata/sdk-backend-bear";
+import bearFactory, { ContextDeferredAuthProvider } from "@gooddata/sdk-backend-bear";
 
 const backend = bearFactory().withAuthentication(new ContextDeferredAuthProvider());
+
+// or if your application will be hosted on a different host than the GoodData platform
+const backend = bearFactory()
+    .onHostname("https://example.com") // this should be the domain where the GoodData platform is hosted
+    .withAuthentication(new ContextDeferredAuthProvider());
 ```
 
 Depending on the type and style used in your application, you can either store an instance of `backend` in a read-only global
@@ -100,7 +105,7 @@ are context-aware and will retrieve both `backend` and `workspace` to use.
 
 The interaction with third-party APIs and services from the browser is protected by the [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) mechanism (CORS). Correct CORS setup is mainly a server-side concern.
 
-The GoodData platform provides APIs to configure CORS for your account. Configuring CORS on your domain is the only feasible 
+The GoodData platform provides APIs to configure CORS for your account. Configuring CORS on your domain is the only feasible
 approach for production deployment. You must use it even during development if your application will be using Single Sign-On (SSO) authentication flows.
 
 If you plan to use username and password authentication during development on your localhost, you avoid the server-side CORS
@@ -121,7 +126,10 @@ This is how you can trigger the username and password login process using `@good
 
 ```javascript
 import { factory } from "@gooddata/api-client-bear";
+
 const bearClient = factory();
+// or if your application will be hosted on a different host than the GoodData platform backend
+const bearClient = factory({ domain: "https://example.com" }); // this should be the domain where the GoodData platform is hosted
 
 await bearClient.user.login(this.username, this.password)
 ```
@@ -134,7 +142,7 @@ implement a mechanism for handling a "single point of failure" of the `NotAuthen
 
 ## Next steps
 
-At this point, your application should be set to use GoodData.UI and render visualizations from the GoodData platform. If you 
+At this point, your application should be set to use GoodData.UI and render visualizations from the GoodData platform. If you
 also configured and run the [catalog-export](02_start__catalog_export.md) tool, you can now start embedding visualizations
 into your application:
 
@@ -145,7 +153,7 @@ import { YourFact, YourMeasure, YourAttribute} from "./generatedLdm";
 function MyVisualization() {
     const measures = [YourFact.Sum, YourMeasure];
     const attributes = [ YourAttribute.DisplayFormName ];
-    
+
     return (
       <LineChart
           measures={measures}
@@ -155,7 +163,7 @@ function MyVisualization() {
 }
 ```
 
-**NOTE:** The imports from `generatedLdm` are for illustration purposes. You can name the file with the generated 
+**NOTE:** The imports from `generatedLdm` are for illustration purposes. You can name the file with the generated
 LDM as you see fit and store it in any location. The names of constants in the generated file will reflect the facts, measures, and attributes in your workspace.
 
 Here are some suggestions about what you can do after you created your first visualization:
