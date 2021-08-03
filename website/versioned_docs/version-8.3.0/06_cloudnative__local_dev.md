@@ -6,7 +6,7 @@ id: version-8.3.0-cloudnative_local_dev
 original_id: cloudnative_local_dev
 ---
 
-The robust authentication setup of GoodData.CN requires careful server-side configuration in order to correctly function in cross-origin requests. The installation of the GoodData.CN All-in-One image is set up so that cross-origin requests coming from applications running on `https://localhost:8443` work correctly.
+The robust authentication setup of GoodData.CN requires careful server-side configuration in order to correctly function in cross-origin requests. The installation of the GoodData.CN All-in-One image is set up so that cross-origin requests coming from applications running on `http://localhost:8443` work correctly.
 
 * If you created your application using [accelerator toolkit](02_start__using_boilerplate.md) or followed the instructions in 
 [Integrate into an Existing Application](06_cloudnative__integration.md), the development environment on your local workstation is all set and ready for use.
