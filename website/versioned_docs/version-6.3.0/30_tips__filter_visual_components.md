@@ -185,7 +185,7 @@ To apply a filter to a specific measure, pass an array of attribute filters or d
 ```jsx
 <div style={{ height: 300 }}>
     <ColumnChart
-        projectId="<project-id>"
+        projectId="<workspace-id>"
         measures={[{
             measure: {
                 localIdentifier: 'totalSales',
@@ -235,7 +235,7 @@ import { Visualization } from '@gooddata/react-components';
 <div style={{ height: 400, width: 600 }}>
     <Visualization
         identifier="<visualization-identifier>"
-        projectId="<project-id>"
+        projectId="<workspace-id>"
         filters={[
             {
                 positiveAttributeFilter: {
@@ -271,7 +271,7 @@ If you reference a saved visualization with active filters and set the `filters`
 ```jsx
 <div style={{ height: 300 }}>
     <ColumnChart
-        projectId="<project-id>"
+        projectId="<workspace-id>"
         measures={[{
             measure: {
                 localIdentifier: 'totalSales',
@@ -347,7 +347,7 @@ export class AttributeFilterExample extends Component {
                 />
                 <div style={{ height: 300 }}>
                     <ColumnChart
-                        projectId="<project-id>"
+                        projectId="<workspace-id>"
                         measures={[{
                             measure: {
                                 localIdentifier: 'totalSales',
@@ -378,7 +378,7 @@ Pass a custom children function to `AttributeElements`. This function will recei
 ```jsx
 <AttributeElements
     identifier="<attribute-displayform-identifier>"
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     options={{ limit: 20 }}
 >
     {({ validElements, loadMore, isLoading, error }) => {
@@ -415,7 +415,7 @@ Pass a custom children function to `AttributeElements`. This function will recei
                 >More
                 </button>
                 <ColumnChart
-                    projectId="<project-id>"
+                    projectId="<workspace-id>"
                     measures={[{
                         measure: {
                             localIdentifier: 'totalSales',

@@ -22,7 +22,7 @@ The `exportConfig` object includes the following properties:
 
 ```javascript
 <Visualization
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     identifier="<visualization-identifier>"
     onExportReady={(getExportMeta) => getExportMeta()}
 />
@@ -60,7 +60,7 @@ export class Example extends React.Component {
         return (
             <div style={{ height: 367 }}>
                 <Visualization
-                    projectId="<project-id>"
+                    projectId="<workspace-id>"
                     identifier="<visualization-identifier>"
                     onExportReady={this.onExportReady}
                 />

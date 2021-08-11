@@ -119,7 +119,7 @@ where:
 
     To do so, set the `xae_version` platform setting to 3 (see [Configure Various Features via Platform Settings](https://help.gooddata.com/pages/viewpage.action?pageId=35361159)).
 
-2. Migrate the Date datasets in your project to the `urn:custom_v2:date` date dimension.
+2. Migrate the Date datasets in your workspace to the `urn:custom_v2:date` date dimension.
 
     To do so, see "Migrate from a Legacy Date Dimension to urn:custom_v2:date" in [Custom Calendars - Self Service](https://help.gooddata.com/pages/viewpage.action?pageId=34341297).
 

@@ -16,7 +16,7 @@ Headline shows a single number.
 import { Headline } from '@gooddata/react-components';
 
 <Headline
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     primaryMeasure={<measure>}
 />
 ```
@@ -47,7 +47,7 @@ const measure = {
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | primaryMeasure | true | [Measure](50_custom__execution.md#measure) | A measure definition |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |

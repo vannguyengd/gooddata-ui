@@ -11,7 +11,7 @@ If you want to execute direct API calls, here is an overview of the main parts o
 ## executeAfm Endpoint
 
 ```bash
-POST /gdc/app/projects/<project-id>/executeAfm
+POST /gdc/app/projects/<workspace-id>/executeAfm
 ```
 
 The request body consists of [AFM](50_custom__execution.md) and [resultSpec](result_spec.md):

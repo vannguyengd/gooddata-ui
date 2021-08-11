@@ -16,7 +16,7 @@ import { Visualization } from '@gooddata/react-components';
 
 <div style={{ height: 400, width: 600 }}>
     <Visualization
-        projectId="<project-id>"
+        projectId="<workspace-id>"
         identifier="<visualization-identifier>"
         config={<chart-config>}
         sdk={<sdk>}
@@ -30,7 +30,7 @@ import { Visualization } from '@gooddata/react-components';
 
 <div style={{ height: 400, width: 600 }}>
     <Visualization
-        projectId="<project-id>"
+        projectId="<workspace-id>"
         uri="<visualization-uri>"
         config={<chart-config>}
         sdk={<sdk>}
@@ -41,7 +41,7 @@ import { Visualization } from '@gooddata/react-components';
 
 ## Example
 
-<!-- This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is. -->
+<!-- This example uses data from the GoodSales // TODO REMOVE! demo workspace. For testing purposes, you can use this snippet as is. -->
 
 ```javascript
 import '@gooddata/react-components/styles/css/main.css';
@@ -70,7 +70,7 @@ For more information, see [Filter Visual Components](30_tips__filter_visual_comp
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | uri | false | string | The URI of the visualization to be rendered. Can be omitted if the visualization identifier is present. |
 | identifier | false | string | The identifier of the visualization to be rendered. Can be omitted if the visualization URI is present. |
 | locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |

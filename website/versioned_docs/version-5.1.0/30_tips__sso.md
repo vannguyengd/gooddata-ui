@@ -15,9 +15,9 @@ Before you start, verify that your site meets the following requirements:
 * Cross-Origin Resource Sharing (CORS) is set up. The URL where your analytical application runs is whitelisted in the CORS settings.
 
     If CORS is not set up, contact [GoodData Support](https://support.gooddata.com/hc/en-us/requests/new?ticket_form_id=582387) and request them to set up CORS and whitelist the URL where your analytical application runs in the CORS settings. Optionally, ask them to enable cross-origin redirects to sites allowed by your CORS settings.
-* All your users have a GoodData account and have access to your GoodData project.
+* All your users have a GoodData account and have access to your GoodData workspace.
 
-    If some users do not have a GoodData account or do not have access to the project, see [Grant users access to your project](#grant-users-access-to-your-project).
+    If some users do not have a GoodData account or do not have access to the workspace, see [Grant users access to your workspace](#grant-users-access-to-your-workspace).
 
 ## Implementing authentication
 Choose the use case depending on whether SSO is implemented on your site.
@@ -68,10 +68,10 @@ This is how authentication process works:
 
     `https://my.app.com/`
 
-### Grant users access to your project
-For authentication to work correctly, all users of your application must have a GoodData account and be able to access your GoodData project.
+### Grant users access to your workspace
+For authentication to work correctly, all users of your application must have a GoodData account and be able to access your GoodData workspace.
 
-If some users do not have a GoodData account or do not have access to your project, you have to invite them to your project and make sure that the users with no GoodData account create one.
+If some users do not have a GoodData account or do not have access to your workspace, you have to invite them to your workspace and make sure that the users with no GoodData account create one.
 
 To do so, follow these steps:
 1. Customize the link in the invitation email: set the `invitationWelcomePage` platform setting to the URL where your application runs. For example:
@@ -79,6 +79,6 @@ To do so, follow these steps:
     `"invitationWelcomePage": "https://my.app.com"`
 
     For more information, see [Platform Settings](https://help.gooddata.com/display/doc/Platform+Settings) and the [API for updating the platform settings](https://help.gooddata.com/display/doc/API+Reference#/reference/hierarchical-configuration).
-2. Invite the users to your GoodData project via the [GoodData Portal](https://help.gooddata.com/display/doc/Managing+Users+in+Projects).
+2. Invite the users to your GoodData workspace via the [GoodData Portal](https://help.gooddata.com/pages/viewpage.action?pageId=86796970).
 
     The link in the invitation email will redirect an invited user to the URL where your application runs. The users with no GoodData account will additionally be asked to  create a GoodData account.

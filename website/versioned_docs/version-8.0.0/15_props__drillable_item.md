@@ -10,7 +10,7 @@ You can enable eventing and drilling in a visualization. Drilling is the process
 
 To add drilling, use function predicates.
 
-> Before Version 6.2, you could implement drilling using a list of `drillableItems` that contained the URI or identifier of a measure or attribute (for example, `{ identifier: "label.owner.department" }`  or `{ uri: "/gdc/md/projectHash/obj/1027" }`). While we do not recommend that you use this method anymore, it is still supported. For more information, see [DrillableItems](https://sdk.gooddata.com/gooddata-ui/docs/6.1.0/drillable_item.html) in the Version 6.1 documentation.
+> Before Version 6.2, you could implement drilling using a list of `drillableItems` that contained the URI or identifier of a measure or attribute (for example, `{ identifier: "label.owner.department" }`  or `{ uri: "/gdc/md/workspaceHash/obj/1027" }`). While we do not recommend that you use this method anymore, it is still supported. For more information, see [DrillableItems](https://sdk.gooddata.com/gooddata-ui/docs/6.1.0/drillable_item.html) in the Version 6.1 documentation.
 
 To turn on eventing and drilling, specify at least one `drillableItem`.
 
@@ -75,7 +75,7 @@ attributes that should become highlighted and drillable.
 or the URI of `/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211`
 
 ```jsx
-// This is an example of event drilling on the visualization from the GoodSales demo project.
+// This is an example of event drilling on the visualization from the GoodSales demo workspace.
 import { HeaderPredicates } from "@gooddata/sdk-ui";
 
 function onDrillHandler(event) {
@@ -98,7 +98,7 @@ to `/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211` in its tree of measures t
 is built from
 
 ```jsx
-// This is an example of event drilling on the visualization from the GoodSales demo project.
+// This is an example of event drilling on the visualization from the GoodSales demo workspace.
 import { HeaderPredicates } from "@gooddata/sdk-ui";
 
 function onDrillHandler(event) {

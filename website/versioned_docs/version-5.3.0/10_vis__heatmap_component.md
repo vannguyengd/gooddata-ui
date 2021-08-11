@@ -16,7 +16,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { Heatmap } from '@gooddata/react-components';
 
 <Heatmap
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     measure={<measure>}
     trendBy={<attribute>}
     segmentBy={<attribute>}
@@ -81,7 +81,7 @@ const locationState = {
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | measure | true | [Measure](50_custom__execution.md#measure) | A measure definition |
 | trendBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |
 | segmentBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |

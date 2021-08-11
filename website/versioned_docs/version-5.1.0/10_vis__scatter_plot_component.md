@@ -18,7 +18,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { ScatterPlot } from '@gooddata/react-components';
 
 <ScatterPlot
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     xAxisMeasure={<measure>}
     yAxisMeasure={<measure>}
     attribute={<attribute>}
@@ -86,7 +86,7 @@ const attribute = {
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | xAxisMeasure | false | [Measure](50_custom__execution.md#measure) | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the scatter plot to render properly) |
 | yAxisMeasure | false | [Measure](50_custom__execution.md#measure) | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the scatter plot to render properly) |
 | attribute | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |

@@ -42,7 +42,7 @@ const style = { height: 300 };
 </div>
 ```
 
-In this component, `projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"` is a hardcoded reference to the project ID, and the measure identifier is a hardcoded reference to a measure.
+In this component, `projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"` is a hardcoded reference to the workspace ID, and the measure identifier is a hardcoded reference to a measure.
 
 With the [gdc-catalog-export](02_start__catalog_export.md) tool, you can save the list of all measures, attributes and other relevant objects to a JSON file.
 
@@ -139,4 +139,4 @@ After you installed the tool, do the following:
     export default App;
     ```
 
-Notice that the code in the `App.js` file still includes the hardcoded reference to the project \(`xms7ga4tf3g3nzucd8380o2bev8oeknp`\). In your real application, you may prefer to pass the project ID via URL or a hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.
+Notice that the code in the `App.js` file still includes the hardcoded reference to the workspace \(`xms7ga4tf3g3nzucd8380o2bev8oeknp`\). In your real application, you may prefer to pass the workspace ID via URL or a hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.

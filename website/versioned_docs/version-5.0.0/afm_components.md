@@ -35,7 +35,7 @@ const { BarChart } = AfmComponents; // replace BarChart with ColumnChart, LineCh
  
 <BarChart
     afm={<afm>}
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     resultSpec={<resultSpec>}
     config={<chart-config>}
 />
@@ -73,7 +73,7 @@ const { BarChart } = AfmComponents;
             }
         ]
     }}
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     resultSpec={}
 />
 ```
@@ -98,7 +98,7 @@ const { Table } = AfmComponents;
  
 <Table
     afm={<afm>}
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     resultSpec={<resultSpec>}
 />
 ```
@@ -135,7 +135,7 @@ const { Table } = AfmComponents;
             }
         ]
     }}
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     resultSpec={}
 />
 ```

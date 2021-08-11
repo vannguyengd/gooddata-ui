@@ -17,7 +17,7 @@ To embed an existing insight created in Analytical Designer, use the [InsightVie
     import { InsightView } from "@gooddata/sdk-ui-ext";
     ```
 
-3. Create an `InsightView` component in your app, and provide it with the project ID and the visualization identifier that you obtained at Step 1:
+3. Create an `InsightView` component in your app, and provide it with the workspace ID and the visualization identifier that you obtained at Step 1:
     ```jsx
     import { InsightView } from "@gooddata/sdk-ui-ext";
     import "@gooddata/sdk-ui-ext/styles/css/main.css";

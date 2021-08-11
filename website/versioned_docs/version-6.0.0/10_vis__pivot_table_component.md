@@ -23,7 +23,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { PivotTable } from '@gooddata/react-components';
 
 <PivotTable
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     measures={<measures>}
     sdk={<sdk>}
     …
@@ -209,7 +209,7 @@ For more information about the aggregation functions, see [Aggregate Table Data]
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | measures | false | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions (either measures, or rows, or columns must be provided for the pivot table to render properly) |
 | rows | false | [Attribute[]](50_custom__execution.md#attribute) | An array of attribute definitions that breaks measure data into rows (either measures, or rows, or columns must be provided for the pivot table to render properly) |
 | columns | false | [Attribute[]](50_custom__execution.md#attribute) | An array of attribute definitions that breaks measure data into columns (either measures, or rows, or columns must be provided for the pivot table to render properly) |

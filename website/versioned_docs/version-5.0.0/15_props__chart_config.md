@@ -39,7 +39,7 @@ To change colors in a chart, provide a `config` for each component where you wan
 ```javascript
 import { Visualization } from '@gooddata/react-components';
  
-// This is an example of embedding a visualization from the GoodSales demo project with custom colors and palette options.
+// This is an example of embedding a visualization from the GoodSales demo workspace with custom colors and palette options.
 <Visualization
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
     identifier="aby3polcaFxy"
@@ -58,7 +58,7 @@ To change the legend position, adjust the `config.legend.position` property \(`'
 ```javascript
 import { Visualization } from '@gooddata/react-components';
  
-// This is an example of embedding a visualization from the GoodSales demo project with custom colors and palette options.
+// This is an example of embedding a visualization from the GoodSales demo workspace with custom colors and palette options.
 <Visualization
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
     identifier="aby3polcaFxy"

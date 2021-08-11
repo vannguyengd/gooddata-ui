@@ -67,9 +67,9 @@ item: {
 
 Besides `uri` or `identifier`, a measure requires a `localIdentifier` string that uniquely identifies the measure in the context of the current AFM. This is used in dimension definitions, sorting, and any other places where you need to target a measure or an attribute.
 
-Though you can use either object URIs or object identifiers \(`ObjQualifier = IObjUriQualifier | IObjIdentifierQualifier`\), we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the_same_object identifier in_any_of those projects\).
+Though you can use either object URIs or object identifiers \(`ObjQualifier = IObjUriQualifier | IObjIdentifierQualifier`\), we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData workspace they live in. That is, an object used in any workspace within your domain would have the_same_object identifier in_any_of those workspaces\).
 
-To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](gdc-catolog-export.md)).
+To get a list of catalog items and date datasets from a GoodData workspace in form of a JavaScript object, use [gdc-catalog-export](gdc-catolog-export.md)).
 
 ### Aggregation inside a measure
 

@@ -13,7 +13,7 @@ Your component code must be wrapped within the Execute component.
 ```javascript
 import { Execute, isEmptyResult } from '@gooddata/react-components';
 
-<Execute afm={<afm>} projectId={<project-id>} onLoadingChanged={e=>{}} onError={e=>{}}>
+<Execute afm={<afm>} projectId={<workspace-id>} onLoadingChanged={e=>{}} onError={e=>{}}>
     {
         (execution) => {
             const { isLoading, error, result } = execution;

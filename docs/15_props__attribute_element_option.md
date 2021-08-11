@@ -11,7 +11,7 @@ The AttributeElements options define how AttributeElements values are queried.
 
 ## Types of AttributeElements options
 
-All top-level options are optional. You can use only those options that are relevant in your project.
+All top-level options are optional. You can use only those options that are relevant in your workspace.
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |

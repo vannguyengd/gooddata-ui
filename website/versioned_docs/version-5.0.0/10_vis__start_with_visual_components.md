@@ -40,7 +40,7 @@ You can find more information about data props in the articles about individual 
 ```js
 <div style={{ height: 300 }}>
     <AreaChart
-        projectId="myproject"
+        projectId="myworkspace"
         measures={[
                       {
                           measure: {
@@ -56,7 +56,7 @@ You can find more information about data props in the articles about individual 
                   ]}
         viewBy={{
                     visualizationAttribute: {
-                        displayForm: { uri: '/gdc/md/myproject/obj/851' },
+                        displayForm: { uri: '/gdc/md/myworkspace/obj/851' },
                         localIdentifier: 'month'
                     }
                 }}
@@ -73,7 +73,7 @@ When using an attribute in a data prop, specify the identifier of the attribute'
 
 To find the identifier or URI of a measure or attribute, use either of the following options:
 
-* Use [gdc-catalog-export](02_start__catalog_export.md): Download a list of attributes and measures from your project. In the downloaded list, find the measures and attributes that you need.
+* Use [gdc-catalog-export](02_start__catalog_export.md): Download a list of attributes and measures from your workspace. In the downloaded list, find the measures and attributes that you need.
 * Use [Analytical Designer](https://secure.gooddata.com/analyze).
   1. Create a visualization that uses measures and attributes that you need.
   2. Use your browser's Developer Tools and open the [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter).
@@ -81,7 +81,7 @@ To find the identifier or URI of a measure or attribute, use either of the follo
   4. Search for the [AFM](50_custom__execution.md) in the request body. It contains the required identifiers of the measures, atributes, and attribute display forms.
 
 #### Object URI vs. object identifier
-Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the **same** object identifier in **any** of those projects.
+Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData workspace they live in. That is, an object used in any workspace within your domain would have the **same** object identifier in **any** of those workspaces.
 
 #### Type definition
 You can find the TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/VisualizationObject.ts#L86-L102).
@@ -101,7 +101,7 @@ IMeasure = {
 IMeasureDefinition = {
     measureDefinition: {
         item: { uri / identifier: string }
-            // uri or identifier of specific measure from your project
+            // uri or identifier of specific measure from your workspace
         aggregation: string
             // Optional. Operation on the measure - one of sum, count, avg, min, max, median, runsum
         filters: VisualizationObjectFilter[]

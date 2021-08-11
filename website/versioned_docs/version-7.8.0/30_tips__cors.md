@@ -62,7 +62,7 @@ module.exports = function (app) {
 
 The `/gdc` prefix refers to the GoodData APIs as they are hosted under [https://secure.gooddata.com/gdc](https://secure.gooddata.com/gdc). The `"secure: false"` section allows you to set up a proxy against your localhost server that may use a self-signed certificate.
 
-If you want to connect to the [live examples](https://gooddata-examples.herokuapp.com), set all the target properties to ```https://developer.na.gooddata.com```. The ```projectId``` of the demo project is ```xms7ga4tf3g3nzucd8380o2bev8oeknp```.
+If you want to connect to the [live examples](https://gooddata-examples.herokuapp.com), set all the target properties to ```https://developer.na.gooddata.com```. The ```workspaceId``` of the demo workspace is ```xms7ga4tf3g3nzucd8380o2bev8oeknp```.
 
 In addition, proxying the `/*.html` pages allows you to easily establish a user session by logging in using the GoodData login page \(account.html\) and possibly invoke other GoodData actions that you may need during the development.
 
@@ -101,7 +101,7 @@ Add the GoodData.UI factory calls to your executable code. To keep your code cle
 import { factory as sdkFactory } from '@gooddata/gooddata-js';
 const sdk = sdkFactory({ domain: 'https://analytics.example.com' });
 export default {
-projectId: '<project-id>',
+projectId: '<workspace-id>',
 sdk
 };
 ```

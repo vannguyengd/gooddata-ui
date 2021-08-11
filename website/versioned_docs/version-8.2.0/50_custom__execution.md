@@ -18,7 +18,7 @@ You can use an instance of the Analytical Backend to conveniently construct and 
 const backend = bearFactory();
 
 const result = await backend
-   .workspace("project_id")
+   .workspace("workspace_id")
    .execution()
    .forItems(measuresAndAttributes, filters)
    .withSorting(...sorting)
@@ -29,7 +29,7 @@ const firstPage = await result.readWindow([0, 0], [10, 10]);
 const allData = await result.readAll();
 ```
 
-In the above example, the code starts an execution in the workspace with `project_id`. It specifies execution for the `measuresAndAttributes` array filtered by the `filters` array.
+In the above example, the code starts an execution in the workspace with `workspace_id`. It specifies execution for the `measuresAndAttributes` array filtered by the `filters` array.
 
 On top of that, it configures `sorting` of the result data and how to lay out the data into `dimensions`.
 

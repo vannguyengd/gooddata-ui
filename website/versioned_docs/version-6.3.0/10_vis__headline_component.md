@@ -18,7 +18,7 @@ Headlines have two sections: Measure (primary) and Measure (secondary). You can 
 import { Headline } from '@gooddata/react-components';
 
 <Headline
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     primaryMeasure={<measure>}
     sdk={<sdk>}
 />
@@ -88,7 +88,7 @@ const secondaryMeasure = {
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | primaryMeasure | true | [Measure](50_custom__execution.md#measure) | The definition of the primary measure |
 | secondaryMeasure | false | [Measure](50_custom__execution.md#measure) | The definition of the secondary measure |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |

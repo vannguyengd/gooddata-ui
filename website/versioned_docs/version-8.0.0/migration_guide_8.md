@@ -221,8 +221,8 @@ To get the latest version of the generated files, check the following table and 
 
 | Before | After |
 | :--- | :--- |
-| [/src/contexts/ProjectId.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/v0.7.0/bootstrap/src/contexts/ProjectId.js) | [/src/contexts/Workspace.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/contexts/Workspace.js) |
-| [/src/contexts/ProjectList.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/v0.7.0/bootstrap/src/contexts/ProjectList.js) | [/src/contexts/WorkspaceList.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/contexts/WorkspaceList.js) |
+| [/src/contexts/ProjectId.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/v0.7.0/bootstrap/src/contexts/ProjectId.js) | [/src/contexts/Workspace.tsx](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/contexts/Workspace.tsx) |
+| [/src/contexts/ProjectList.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/v0.7.0/bootstrap/src/contexts/ProjectList.js) | [/src/contexts/WorkspaceList.tsx](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/contexts/WorkspaceList.tsx) |
 | [/src/contexts/Auth.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/v0.7.0/bootstrap/src/contexts/Auth.js) | The whole [/src/contexts/Auth](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/contexts/Auth) folder |
 | n/a | [/src/contexts/index.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/contexts/index.js) |
 | [/src/index.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/v0.7.0/bootstrap/src/index.js) | [/src/index.js](https://github.com/gooddata/gooddata-create-gooddata-react-app/blob/master/bootstrap/src/index.js) |

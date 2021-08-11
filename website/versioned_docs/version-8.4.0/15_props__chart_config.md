@@ -141,7 +141,7 @@ Within one visualization:
 
 ### Custom color palette
 
-If you [uploaded a custom color palette](https://help.gooddata.com/pages/viewpage.action?pageId=86794489) to your project, the visualizations created based on the [Visualization component](10_vis__insight_view.md) use this palette instead of the default colors.
+If you [uploaded a custom color palette](https://help.gooddata.com/pages/viewpage.action?pageId=86794489) to your workspace, the visualizations created based on the [Visualization component](10_vis__insight_view.md) use this palette instead of the default colors.
 
 To override the uploaded custom color palette for a specific visualization, define the `colorPalette` property for this visualization.
 

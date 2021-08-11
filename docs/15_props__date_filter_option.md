@@ -28,7 +28,7 @@ import { DateFilter, defaultDateFilterOptions } from "@gooddata/sdk-ui-filters";
 />
 ```
 
-Otherwise, customize the option as you see fit. All top-level options are optional. You can use only those options that are relevant in your project.
+Otherwise, customize the option as you see fit. All top-level options are optional. You can use only those options that are relevant in your workspace.
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |

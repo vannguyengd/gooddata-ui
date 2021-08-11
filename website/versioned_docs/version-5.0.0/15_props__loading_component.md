@@ -19,7 +19,7 @@ import { Kpi } from '@gooddata/react-components';
  
 <Kpi
     measure="<measure-identifier>"
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     filters={<filters>}
     format="<format>"
     LoadingComponent={null}
@@ -52,7 +52,7 @@ export default CustomisedLoadingComponentExample;
 
 <Kpi
     measure="<measure-identifier>"
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     filters={<filters>}
     format="<format>"
     LoadingComponent={CustomisedLoadingComponentExample}

@@ -42,9 +42,9 @@ To embed an existing visualization created in Analytical Designer, use the `Visu
 
 **Steps:**
 1. Obtain the identifier of the visualization by one of the following methods:
-    * Via the gray pages ([find the ID of your project](https://help.gooddata.com/display/doc/Find+the+Project+ID), ie `la84vcyhrq8jwbu4wpipw66q2sqeb923`):
+    * Via the gray pages ([find the ID of your workspace](https://help.gooddata.com/pages/viewpage.action?pageId=86796773), ie `la84vcyhrq8jwbu4wpipw66q2sqeb923`):
         ```bash
-        https://secure.gooddata.com/gdc/md/{project-id}/query/visualizationobjects
+        https://secure.gooddata.com/gdc/md/{workspace-id}/query/visualizationobjects
         https://secure.gooddata.com/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/query/visualizationobjects
         ```
         //TODO what do next? where is identifier?
@@ -55,7 +55,7 @@ To embed an existing visualization created in Analytical Designer, use the `Visu
     import { Visualization } from '@gooddata/react-components';
     ```
     
-3. Create a `Visualization` component in your app, and provide it with the project ID and the visualization identifier that you obtained at Step 1:
+3. Create a `Visualization` component in your app, and provide it with the workspace ID and the visualization identifier that you obtained at Step 1:
     ```javascript
     // be sure to wrap the component in block-element with non-auto height
     <div style={{ height: 300 }}>
@@ -121,7 +121,7 @@ This section explains how to create a bar chart that renders `# of Activities` 
 You can choose any [supported visualization type](react_components.md), ie: `BarChart`, `ColumnChart`, `LineChart`, `PieChart`, `Table` etc.  
 
 **Steps:**
-1. [Find your project ID](https://help.gooddata.com/display/doc/Find+the+Project+ID),
+1. [Find your workspace ID](https://help.gooddata.com/pages/viewpage.action?pageId=86796773),
    we will use: `la84vcyhrq8jwbu4wpipw66q2sqeb923`.
 2. Obtain data identifiers using [gdc-catalog-export](gdc-catalog-export).
 3. Import the visualization type that you want to use.  
@@ -133,7 +133,7 @@ You can choose any [supported visualization type](react_components.md), ie: `Ba
     
     const { BarChart } = AfmComponents;
     
-    const projectId = 'la84vcyhrq8jwbu4wpipw66q2sqeb923'; // Replace with your project ID.
+    const projectId = 'la84vcyhrq8jwbu4wpipw66q2sqeb923'; // Replace with your workspace ID.
     const afm = {};
     const resultSpec = {};
     const customConfig = {};

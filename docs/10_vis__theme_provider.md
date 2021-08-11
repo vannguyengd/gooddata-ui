@@ -20,7 +20,7 @@ import { BackendProvider, WorkspaceProvider } from "@gooddata/sdk-ui";
 import { ThemeProvider } from "@gooddata/sdk-ui-theme-provider";
 
 <BackendProvider backend={backend}>
-    <WorkspaceProvider workspace="your-project-id">
+    <WorkspaceProvider workspace="your-workspace-id">
         <ThemeProvider>
             <Application {...}>
         </ThemeProvider>
@@ -35,7 +35,7 @@ When using the Theme Provider component without backend and workspace providers,
 ```jsx
 import { ThemeProvider } from "@gooddata/sdk-ui-theme-provider";
 
-<ThemeProvider backend={backend} workspace="your-project-id">
+<ThemeProvider backend={backend} workspace="your-workspace-id">
     <Application {...}>
 </ThemeProvider>
 ```

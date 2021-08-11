@@ -8,7 +8,7 @@ original_id: ht_create_your_first_visualization
 
 This tutorial will guide you through the process of creating your first analytical application using GoodData.UI with the Facebook’s `create-react-app` tool.
 
-After you complete this tutorial, you will be able to display various measures and charts from your GoodData project within the context of your React application.
+After you complete this tutorial, you will be able to display various measures and charts from your GoodData workspace within the context of your React application.
 
 **NOTE:** Before you start this tutorial, make sure that you have a GoodData account (see [About GoodData.UI](01_intro__about_gooddataui.md#supported-technologies)).
 
@@ -136,7 +136,7 @@ Now, you can start adding your first GoodData component:
       />
     </div>
     ```
-    > This example uses the project ID from the [live examples](https://gooddata-examples.herokuapp.com/). If you want to use this code in your project, replace the properties with the appropriate values from your project. For more details, see [Line Chart](10_vis__line_chart_component.md).
+    > This example uses the workspace ID from the [live examples](https://gooddata-examples.herokuapp.com/). If you want to use this code in your workspace, replace the properties with the appropriate values from your workspace. For more details, see [Line Chart](10_vis__line_chart_component.md).
 5. Save the changes. The content of your `App.js` file should now look something like the following example:
     ```javascript
     import React, { Component } from 'react';
@@ -237,7 +237,7 @@ const measures = [
 </div>
 ```
 
-In this component, `projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"` is a hardcoded reference to our project ID, and the measure identifier is a hardcoded reference to a measure.
+In this component, `projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"` is a hardcoded reference to our workspace ID, and the measure identifier is a hardcoded reference to a measure.
 
 With the [gdc-catalog-export](02_start__catalog_export.md) tool, you can save the list of all measures, attributes and other relevant objects to a JSON file.
 
@@ -334,7 +334,7 @@ After you installed the tool, do the following:
     export default App;
     ```
 
-Notice that the code in the `App.js` file still includes the hardcoded reference to the project \(`xms7ga4tf3g3nzucd8380o2bev8oeknp`\). In your real application, you may prefer to pass the project ID via URL or a hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.
+Notice that the code in the `App.js` file still includes the hardcoded reference to the workspace \(`xms7ga4tf3g3nzucd8380o2bev8oeknp`\). In your real application, you may prefer to pass the workspace ID via URL or a hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.
 
 ## Next steps
 

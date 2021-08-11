@@ -20,7 +20,7 @@ The DateFilter options define the category of a date filter and a set of the dat
 
 ## Types of DateFilter options
 
-All top-level options are optional. You can use only those options that are relevant in your project.
+All top-level options are optional. You can use only those options that are relevant in your workspace.
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |

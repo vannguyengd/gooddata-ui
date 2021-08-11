@@ -37,7 +37,7 @@ drillableItems: [
 ## Example
 
 ```javascript
-{ identifier: 'label.owner.department' } // or { uri: '/gdc/md/projectHash/obj/1027' }
+{ identifier: 'label.owner.department' } // or { uri: '/gdc/md/workspaceHash/obj/1027' }
 ```
 
 ## Set up drilling
@@ -47,7 +47,7 @@ To enable event drilling, extend the `Visualization` component with a `drillab
 In the `drillableItems` property, add an array of `uri`s and/or `identifier`s of the measures and attributes that will become highlighted and drillable.
 
 ```javascript
-// This is an example of event drilling on the visualization from the GoodSales demo project.
+// This is an example of event drilling on the visualization from the GoodSales demo workspace.
 <Visualization
   projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
   identifier="aby3polcaFxy"
