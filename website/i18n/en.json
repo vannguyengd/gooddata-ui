@@ -181,6 +181,10 @@
         "title": "Chart Config",
         "sidebar_label": "Chart Config"
       },
+      "data_sampling": {
+        "title": "Data Sampling",
+        "sidebar_label": "Data Sampling"
+      },
       "date_filter_option": {
         "title": "DateFilter Component Options",
         "sidebar_label": "DateFilter Component Options"

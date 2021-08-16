@@ -1,96 +1,94 @@
 {
-  "Docs": {
-    "Introduction": [
-      "about_gooddataui",
-      "why_gdui",
-      "interactive_examples",
-      "whats_new_8",
-      "breaking_changes_8",
-      "migration_guide_8",
-      "supported_versions",
-      "framework_overview",
-      "api_maturity"
-    ],
-    "Getting Started": [
-      "create_new_application",
-      "understand_execution_model",
-      "export_catalog"
-    ],
-    "Integration with GoodData Platform": [
-      "platform_intro",
-      "platform_integration",
-      "platform_sso",
-      "platform_cors"
-    ],
-    "Integration with GoodData.CN": [
-      "cloudnative_introduction",
-      "cloudnative_integration",
-      "cloudnative_local_dev",
-      "cloudnative_limitations"
-    ],
-    "Visual Components": [
-      "start_with_visual_components",
-      "theme_provider",
-      "area_chart_component",
-      "bar_chart_component",
-      "bubble_chart_component",
-      "bullet_chart_component",
-      "column_chart_component",
-      "combo_chart_component",
-      "donut_chart_component",
-      "geo_pushpin_chart_component",
-      "headline_component",
-      "heatmap_component",
-      "kpi_component",
-      "line_chart_component",
-      "pie_chart_component",
-      "pivot_table_component",
-      "scatter_plot_component",
-      "treemap_component",
-      "visualization_component",
-      "dashboard_view_component",
-      "attribute_filter_component",
-      "attribute_filter_button_component",
-      "date_filter_component",
-      "measure_value_filter_component",
-      "ranking_filter_component"
-    ],
-    "Properties": [
-      "chart_config",
-      "attribute_element_option",
-      "date_filter_option",
-      "drillable_item",
-      "error_component",
-      "loading_component",
-      "on_export_ready",
-      "on_fire_drill_event",
-      "on_legend_ready"
-    ],
-    "Execution Model": [
-      "execution_model",
-      "time_over_time_comparison",
-      "arithmetic_measure"
-    ],
-    "Custom Visualizations": [
-      "create_new_visualization",
-      "custom_execution",
-      "result_specification"
-    ],
-    "Development Tips": [
-      "ht_embed_visualization",
-      "embed_dashboard",
-      "table_totals",
-      "filter_visual_components",
-      "create_custom_attribute_filter",
-      "ht_render_visualization_from_different_domain",
-      "ht_use_react_component_in_angular_2.x",
-      "ht_create_predicates",
-      "backend_agnostic_apps",
-      "placeholders"
-    ],
-    "Support": [
-      "support_options",
-      "live_examples"
-    ]
-  }
+    "Docs": {
+        "Introduction": [
+            "about_gooddataui",
+            "why_gdui",
+            "interactive_examples",
+            "whats_new_8",
+            "breaking_changes_8",
+            "migration_guide_8",
+            "supported_versions",
+            "framework_overview",
+            "api_maturity"
+        ],
+        "Getting Started": [
+            "create_new_application",
+            "understand_execution_model",
+            "export_catalog"
+        ],
+        "Integration with GoodData Platform": [
+            "platform_intro",
+            "platform_integration",
+            "platform_sso",
+            "platform_cors"
+        ],
+        "Integration with GoodData.CN": [
+            "cloudnative_introduction",
+            "cloudnative_integration",
+            "cloudnative_local_dev",
+            "cloudnative_limitations"
+        ],
+        "Visual Components": [
+            "start_with_visual_components",
+            "theme_provider",
+            "area_chart_component",
+            "bar_chart_component",
+            "bubble_chart_component",
+            "bullet_chart_component",
+            "column_chart_component",
+            "combo_chart_component",
+            "donut_chart_component",
+            "geo_pushpin_chart_component",
+            "headline_component",
+            "heatmap_component",
+            "kpi_component",
+            "line_chart_component",
+            "pie_chart_component",
+            "pivot_table_component",
+            "scatter_plot_component",
+            "treemap_component",
+            "visualization_component",
+            "dashboard_view_component",
+            "attribute_filter_component",
+            "attribute_filter_button_component",
+            "date_filter_component",
+            "measure_value_filter_component",
+            "ranking_filter_component"
+        ],
+        "Properties": [
+            "chart_config",
+            "attribute_element_option",
+            "date_filter_option",
+            "drillable_item",
+            "error_component",
+            "loading_component",
+            "on_export_ready",
+            "on_fire_drill_event",
+            "on_legend_ready",
+            "data_sampling"
+        ],
+        "Execution Model": [
+            "execution_model",
+            "time_over_time_comparison",
+            "arithmetic_measure"
+        ],
+        "Custom Visualizations": [
+            "create_new_visualization",
+            "custom_execution",
+            "result_specification"
+        ],
+        "Development Tips": [
+            "ht_embed_visualization",
+            "embed_dashboard",
+            "table_totals",
+            "filter_visual_components",
+            "create_custom_attribute_filter",
+            "ht_render_visualization_from_different_domain",
+            "ht_use_react_component_in_angular_2.x",
+            "ht_create_predicates",
+            "backend_agnostic_apps",
+            "placeholders"
+        ],
+        "Support": ["support_options", "live_examples"]
+    }
 }
