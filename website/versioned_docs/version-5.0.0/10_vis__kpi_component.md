@@ -15,7 +15,7 @@ import { Kpi } from '@gooddata/react-components';
 
 <Kpi
     measure="<measure-identifier>"
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     filters={<filters>}
     format="<format>"
 />
@@ -23,7 +23,7 @@ import { Kpi } from '@gooddata/react-components';
 
 ## Example
 
-<!-- This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is. -->
+<!-- This example uses data from the GoodSales // TODO REMOVE! demo workspace. For testing purposes, you can use this snippet as is. -->
 
 ```javascript
 import { Kpi } from '@gooddata/react-components';
@@ -84,7 +84,7 @@ import { Kpi } from '@gooddata/react-components';
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | measure | true | string | The measure URI |
 | filters | false | [FilterItem[]](50_custom__execution.md#AFM-Filter) | KPI filters |
 | format | false | string | The measure format. If specified, overrides the format stored with the measure. |

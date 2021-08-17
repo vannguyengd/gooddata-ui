@@ -274,8 +274,8 @@
         "sidebar_label": "Use Angular 9+"
       },
       "ht_render_visualization_from_different_domain": {
-        "title": "Access Multiple Domains and Projects",
-        "sidebar_label": "Access Multiple Domains and Projects"
+        "title": "Access Multiple Domains and Workspaces",
+        "sidebar_label": "Access Multiple Domains and Workspaces"
       },
       "ht_use_react_components_with_vanilla_js": {
         "title": "Use Vanilla JavaScript",
@@ -582,8 +582,8 @@
         "sidebar_label": "Use Angular 2+"
       },
       "version-5.0.0/version-5.0.0-ht_render_visualization_from_different_domain": {
-        "title": "Access Multiple Domains and Projects",
-        "sidebar_label": "Access Multiple Domains and Projects"
+        "title": "Access Multiple Domains and Workspaces",
+        "sidebar_label": "Access Multiple Domains and Workspaces"
       },
       "version-5.0.0/version-5.0.0-ht_use_react_components_with_vanilla_js": {
         "title": "Use Vanilla JavaScript",
@@ -1554,8 +1554,8 @@
         "sidebar_label": "Use Angular 9+"
       },
       "version-8.0.0/version-8.0.0-ht_render_visualization_from_different_domain": {
-        "title": "Access Multiple Domains and Projects",
-        "sidebar_label": "Access Multiple Domains and Projects"
+        "title": "Access Multiple Domains and Workspaces",
+        "sidebar_label": "Access Multiple Domains and Workspaces"
       },
       "version-8.0.0/version-8.0.0-ht_use_react_components_with_vanilla_js": {
         "title": "Use Vanilla JavaScript",
@@ -1873,7 +1873,7 @@
     }
   },
   "pages-strings": {
-    "Help Translate|recruit community translators for your project": "Help Translate",
+    "Help Translate|recruit community translators for your workspace": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
     "Translate this Doc|recruitment message asking to translate the docs": "Translate"
   }

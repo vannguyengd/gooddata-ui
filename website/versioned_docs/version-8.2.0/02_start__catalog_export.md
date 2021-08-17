@@ -6,11 +6,11 @@ id: version-8.2.0-gdc_catalog_export
 original_id: gdc_catalog_export
 ---
 
-GoodData.UI visual components render data stored in your GoodData platform projects. Your application specifies what
+GoodData.UI visual components render data stored in your GoodData platform workspaces. Your application specifies what
 data to render by referencing the Logical Data Model (LDM) objects: attributes, display forms, facts, and measures.
 
 To simplify this task, GoodData.UI offers the `@gooddata/catalog-export` tool. `@gooddata/catalog-export` exports a
-list of catalog items and date datasets from a GoodData project into JavaScript or TypeScript code. The generated code
+list of catalog items and date datasets from a GoodData workspace into JavaScript or TypeScript code. The generated code
 contains exported constant-per-LDM-object.
 
 Using this generated code, you can create charts and execution definitions in a very efficient and natural way.
@@ -107,9 +107,9 @@ In addition, the existing catalog file is renamed to `catalogue.json.bak`, and t
 
 ### Limitations
 
-`@gooddata/catalog-export` exports only data from a project \(production data\).
+`@gooddata/catalog-export` exports only data from a workspace \(production data\).
 
-If you [uploaded data to your project from a file](https://help.gooddata.com/pages/viewpage.action?pageId=34341714), the data from the file is added as a separate dataset \(non-production data\), and `@gooddata/catalog-export` cannot retrieve it. This also includes any measures that were created using the data from that separate dataset.
+If you [uploaded data to your workspace from a file](https://help.gooddata.com/pages/viewpage.action?pageId=34341714), the data from the file is added as a separate dataset \(non-production data\), and `@gooddata/catalog-export` cannot retrieve it. This also includes any measures that were created using the data from that separate dataset.
 
 ### Example
 

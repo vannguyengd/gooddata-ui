@@ -14,7 +14,7 @@ To your local state, add a flag that indicates whether the GoodData component is
 
 ## Example
 
-This example uses data from the GoodSales demo project. For testing purposes, you can use this snippet as is.
+This example uses data from the GoodSales demo workspace. For testing purposes, you can use this snippet as is.
 
 ```javascript
 import React, { PureComponent } from 'react';

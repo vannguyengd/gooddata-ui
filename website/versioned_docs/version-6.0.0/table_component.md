@@ -19,7 +19,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { Table } from '@gooddata/react-components';
 
 <Table
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     measures={<measures>}
     sdk={<sdk>}
     …
@@ -69,7 +69,7 @@ const attributes = [
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | measures | false | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions (either measure or attribute definition must be provided for the table to render properly) |
 | attributes | false | [Attribute[]](50_custom__execution.md#attribute) | An array of attribute definitions (either measure or attribute definition must be provided for the table to render properly) |
 | totals | false | [Total[]](30_tips__table_totals.md) | An array of total definitions |

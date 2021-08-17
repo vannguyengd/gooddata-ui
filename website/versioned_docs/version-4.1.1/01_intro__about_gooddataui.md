@@ -49,7 +49,7 @@ To integrate the GoodData UI SDK in your application, you must meet the followi
 * Have previous experience with the GoodData platform and being familiar with its main concepts. For more information, see the [GoodData online help](https://help.gooddata.com/display/doc/GoodData+Help).
 * Have an account on the GoodData platform. If you do not have a GoodData account yet, [create a trial one](https://secure.gooddata.com/account.html?lastUrl=%252F#/registration/projectTemplate/urn%253Agooddata%253AOnboardingProductTour).
 
-Examples in this documentation use data from the GoodSales demo project that is available for trial GoodData accounts.
+Examples in this documentation use data from the GoodSales demo workspace that is available for trial GoodData accounts.
 
 ## Installation
 
@@ -89,17 +89,17 @@ Before you start building your application using the GoodData UI SDK, complete t
 
 For more details on the terminology, see [Glossary](glossary.md).
 
-### Get your project ID
+### Get your workspace ID
 
-You will need your project ID for the most components to work.
+You will need your workspace ID for the most components to work.
 
-To get your project ID, see [Find the Project ID](https://help.gooddata.com/display/doc/Find+the+Project+ID).
+To get your workspace ID, see [Find the Workspace ID](https://help.gooddata.com/pages/viewpage.action?pageId=86796773).
 
-Examples in this documentation use data from the GoodSales demo project with an ID of `la84vcyhrq8jwbu4wpipw66q2sqeb923`.
+Examples in this documentation use data from the GoodSales demo workspace with an ID of `la84vcyhrq8jwbu4wpipw66q2sqeb923`.
 
 ### Get resource identifiers
 
-To display visualizations, filters, and other resources, get their identifiers either via the gray pages \(see [Accessing Gray Pages for a Project](https://help.gooddata.com/display/developer/Accessing+Gray+Pages+for+a+Project)\) or using [gdc-catalog-export](02_start__catalog_export.md).
+To display visualizations, filters, and other resources, get their identifiers either via the gray pages \(see [Accessing Gray Pages for a Workspace](https://help.gooddata.com/pages/viewpage.action?pageId=86796807)\) or using [gdc-catalog-export](02_start__catalog_export.md).
 
 ## Next Steps
 

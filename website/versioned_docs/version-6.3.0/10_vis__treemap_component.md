@@ -16,7 +16,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { Treemap } from '@gooddata/react-components';
 
 <Treemap
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     measures={<measures>}
     viewBy={<attribute>}
     segmentBy={<attribute>}
@@ -81,7 +81,7 @@ const locationCity = {
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | measures | true | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions|
 | viewBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |
 | segmentBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |

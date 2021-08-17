@@ -21,7 +21,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { ComboChart, Model } from '@gooddata/react-components';
 
 <ComboChart
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     primaryMeasures={<primaryMeasures>}
     secondaryMeasures={<secondaryMeasures>}
     config={<chart-config>}
@@ -72,7 +72,7 @@ To change the chart type for secondary measures, set the `config.secondaryChartT
 import { ComboChart } from '@gooddata/react-components';
 
 <ComboChart
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     primaryMeasures={<primaryMeasures>}
     secondaryMeasures={<secondaryMeasures>}
     config={{
@@ -91,7 +91,7 @@ To disable the secondary axis, set the `config.dualAxis` property to `false`.
 import { ComboChart } from '@gooddata/react-components';
 
 <ComboChart
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     primaryMeasures={<primaryMeasures>}
     secondaryMeasures={<secondaryMeasures>}
     config={{
@@ -105,7 +105,7 @@ import { ComboChart } from '@gooddata/react-components';
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | primaryMeasures | false | [Measure[]](50_custom__execution.md#measure) | An array of primary measure definitions |
 | secondaryMeasures | false | [Measure[]](50_custom__execution.md#measure) | An array of secondary measure definitions |
 | viewBy | false | [Attribute](50_custom__execution.md#attribute) &#124; [Attribute[]](50_custom__execution.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the first attribute wraps up the second one. |

@@ -6,13 +6,13 @@ id: version-5.0.0-gdc_catalog_export
 original_id: gdc_catalog_export
 ---
 
-`gdc-catalog-export` is a tool for exporting a list of catalog items and date datasets from a GoodData project.
+`gdc-catalog-export` is a tool for exporting a list of catalog items and date datasets from a GoodData workspace.
 
 Using this list, you can create AFMs with human-readable object names instead of using URIs or identifiers. For example, use `gdc-catalog-export` when you are working with [DataLayer](data_layer.md).
 
-`gdc-catalog-export` exports only data from a project \(production data\). 
+`gdc-catalog-export` exports only data from a workspace \(production data\). 
 
-If you [uploaded data to your project from a file](https://help.gooddata.com/display/doc/Add+Data+from+a+File+to+a+Project), the data from the file is added as a separate dataset \(non-production data\), and `gdc-catalog-export` cannot retrieve it. This also includes any measures that were created using the data from that separate dataset.
+If you [uploaded data to your workspace from a file](https://help.gooddata.com/pages/viewpage.action?pageId=34341714), the data from the file is added as a separate dataset \(non-production data\), and `gdc-catalog-export` cannot retrieve it. This also includes any measures that were created using the data from that separate dataset.
 
 ## Installing gdc-catalog-export
 
@@ -52,7 +52,7 @@ $ gdc-catalog-export
 You are prompted to enter input information to export the catalog.
 
 1. Enter your username and password.
-2. Choose the project from which you want to export the catalog data.
+2. Choose the workspace from which you want to export the catalog data.
 3. Enter the file name to which you want to export the data \(the default file name is `catalog.json`\).
 
    If the file already exists, you are asked whether you want to overwrite it.
@@ -74,7 +74,7 @@ The structure of the `.gdcatalogrc` config file is as follows:
     "hostname": "https://secure.gooddata.com",
     "username": "john.doe@example.com",
     "password": "secret",
-    "projectId": "yourProjectId",
+    "projectId": "yourWorkspaceId",
     "output": "outputFile.json"
 }
 ```
@@ -85,7 +85,7 @@ The structure of the `.gdcatalogrc` config file is as follows:
 
 **Important!**  We do not recommend that you store the password in the config file. A more secure option is to provide it through the interactive interface or by using the `--password` parameter when running the command.
 
-* **projectId** is the ID of the project from which you want to export the data.
+* **projectId** is the ID of the workspace from which you want to export the data.
 * **output** is the name/path for the output file.
 
 To provide a custom config file, run the tool with the `--config` parameter:
@@ -99,7 +99,7 @@ $ gdc-catalog-export--config/path/to/customConfig
 You can use command line parameters to set up the configuration that you need to obtain data.
 
 ```bash
-$ gdc-catalog-export --project-id<project-id> --username <your-email> --password <your-password> --output <file-name-path> --hostname<host-url> --config </path/to/customConfig>
+$ gdc-catalog-export --project-id<workspace-id> --username <your-email> --password <your-password> --output <file-name-path> --hostname<host-url> --config </path/to/customConfig>
 ```
 
 Any parameter provided as a command line parameter has the highest priority. If you also use a config file to set up a configuration, the config file parameters are overridden and the command line parameters are used.
@@ -119,7 +119,7 @@ Usage: gdc-catalog-export [options]
 
     -h, --help          output usage information
     -V, --version       output the version number
-    --project-id <id>   Project id for which you want to export the catalog.
+    --project-id <id>   Workspace id for which you want to export the catalog.
     --username <email>  Your username that you use to log in to GoodData platform.
     --password <value>  Your password that you use to log in to GoodData platform.
     --output <value>    Output file (defaults to catalog.json). The output file will be created in current working directory

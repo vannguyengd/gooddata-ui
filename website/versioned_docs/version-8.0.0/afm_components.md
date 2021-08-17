@@ -18,7 +18,7 @@ The AFM components use the [AFM](50_custom__execution.md) property instead of sp
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | afm | true | [AFM](50_custom__execution.md) | A combination of attributes, measures, and filters |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | resultSpec  | false | [ResultSpec](50_custom__result.md) | The structure of the result data |
 | config  | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
@@ -33,7 +33,7 @@ const { BarChart } = AfmComponents; // replace BarChart with ColumnChart, LineCh
 
 <BarChart
     afm={<afm>}
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     resultSpec={<resultSpec>}
     config={<chart-config>}
     sdk={<sdk>}
@@ -72,7 +72,7 @@ const { BarChart } = AfmComponents;
             }
         ]
     }}
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     resultSpec={}
 />
 ```
@@ -84,7 +84,7 @@ const { BarChart } = AfmComponents;
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | afm | true | [AFM](50_custom__execution.md) | A combination of attributes, measures, and filters |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | resultSpec  | false | [ResultSpec](50_custom__result.md) | The structure of the result data |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 
@@ -98,7 +98,7 @@ const { Table } = AfmComponents;
 
 <Table
     afm={<afm>}
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     resultSpec={<resultSpec>}
     sdk={<sdk>}
 />
@@ -136,7 +136,7 @@ const { Table } = AfmComponents;
             }
         ]
     }}
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     resultSpec={}
 />
 ```

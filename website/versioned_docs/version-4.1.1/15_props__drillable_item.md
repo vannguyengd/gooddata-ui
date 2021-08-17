@@ -24,5 +24,5 @@ drillableItems: [
 ## Example
 
 ```javascript
-{ identifier: 'label.owner.department' } // or { uri: '/gdc/md/projectHash/obj/1027' }
+{ identifier: 'label.owner.department' } // or { uri: '/gdc/md/workspaceHash/obj/1027' }
 ```

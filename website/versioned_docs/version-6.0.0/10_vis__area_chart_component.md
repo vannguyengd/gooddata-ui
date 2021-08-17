@@ -19,7 +19,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { AreaChart } from '@gooddata/react-components';
 
 <AreaChart
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     measures={<measures>}
     config={<chart-config>}
     sdk={<sdk>}
@@ -68,7 +68,7 @@ const attribute = {
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | measures | true | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions |
 | viewBy | false | [Attribute](50_custom__execution.md#attribute) | Attribute definition |
 | stackBy | false | [Attribute](50_custom__execution.md#attribute) | Attribute definition |

@@ -17,7 +17,7 @@ To embed an existing dashboard created in KPI Dashboards, use the [DashboardView
     import { DashboardView } from "@gooddata/sdk-ui-ext";
     ```
 
-3. Create a `DashboardView` component in your app, and provide it with the project ID and the visualization identifier that you obtained at Step 1:
+3. Create a `DashboardView` component in your app, and provide it with the workspace ID and the visualization identifier that you obtained at Step 1:
 
     ```jsx
     import { DashboardView } from "@gooddata/sdk-ui-ext";
@@ -86,9 +86,20 @@ const DashboardViewEditExample = () => {
                     - we use an iframe with a special URL constructed from the dashboard data
                       (the "?mode=edit" will make sure the KPI Dashboards will open directly in edit mode)
                     - we make sure it fills the whole parent container by setting the size to 100%
+
+                    - if the FF "enableRenamingProjectToWorkspace" is true, then the iframe's src property
+                      supports urls with the word "workspace" or "project".
+                      Therefore, both of the urls below can be used to set the src property:
+                      - `${backendUrl}/dashboards/embedded/#/workspace/${workspace}/dashboard/${dashboardId}?mode=edit`
+                      - `${backendUrl}/dashboards/embedded/#/project/${workspace}/dashboard/${dashboardId}?mode=edit`
+
+                    - if the FF "enableRenamingProjectToWorkspace" is false, then the iframe's src property
+                      supports urls with the word "project" only.
+                      Therefore, the url in the sample codes below should be changed to:
+                      - `${backendUrl}/dashboards/embedded/#/project/${workspace}/dashboard/${dashboardId}?mode=edit`
                 */}
                 <iframe
-                    src={`${backendUrl}/dashboards/embedded/#/project/${workspace}/dashboard/${dashboardId}?mode=edit`}
+                    src={`${backendUrl}/dashboards/embedded/#/workspace/${workspace}/dashboard/${dashboardId}?mode=edit`}
                     width="100%"
                     height="100%"
                     frameBorder="0"

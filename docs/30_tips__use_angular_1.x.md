@@ -20,8 +20,8 @@ You can use the visual components in your Angular 1._x_ app. There are several
     ```
 
 3. In the JS file, review the following snippet.
-   This snippet uses data from example project and represents the bar chart from this project. For testing purposes, you can use this snippet as is.
-   When you start creating your own visualization, you can update this snippet according to what data you have in your project \(measures, attributes, and so on\), and what visualization you want to create \(for example, a table or a KPI\).
+   This snippet uses data from example workspace and represents the bar chart from this workspace. For testing purposes, you can use this snippet as is.
+   When you start creating your own visualization, you can update this snippet according to what data you have in your workspace \(measures, attributes, and so on\), and what visualization you want to create \(for example, a table or a KPI\).
     ```javascript
     import angular from "angular";
     import "ngreact";

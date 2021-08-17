@@ -17,7 +17,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { BulletChart } from '@gooddata/react-components';
 
 <BulletChart
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     primaryMeasure={<primaryMeasure>}
     targetMeasure={<targetMeasure>}
     comparativeMeasure={<comparativeMeasure>}
@@ -104,7 +104,7 @@ To override the default coloring scheme and set a custom color for each measure,
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | primaryMeasure | false | [Measure](50_custom__execution.md#measure) | The measure displayed as the primary measure |
 | targetMeasure | false | [Measure](50_custom__execution.md#measure) | The measure displayed as the target measure |
 | comparativeMeasure | false | [Measure](50_custom__execution.md#measure) | The measure displayed as the comparative measure |

@@ -10,7 +10,7 @@ DataLayer is mostly intended for advanced use cases \(for example, to write adva
 
 For the majority of use cases involving custom visualizations, we recommend that you try using the [Execute component](50_custom__component.md) first. If it does not meet your requirements, you can always go back to using DataLayer.
 
-DataLayer obtains data from your project either using AFM+ResultSpec or Visualization URI. You can use that data, for example, to create a visualization that is not a part of GoodData.UI.
+DataLayer obtains data from your workspace either using AFM+ResultSpec or Visualization URI. You can use that data, for example, to create a visualization that is not a part of GoodData.UI.
 
 ![Data layer](assets/data_layer_diagram.png)
 
@@ -21,11 +21,11 @@ In the following code sample, replace the parameter placeholders with your value
 The parameter placeholders are:
 
 * &lt; measure-identifier &gt;
-* &lt; project-id &gt;
+* &lt; workspace-id &gt;
 
 For more information about AFM and resultSpec, see [AFM](afm) and [Specify Result Structure](50_custom__result.md).
 
-Though you can use either object URIs or object identifiers, we recommend that you use only the **object identifiers** that are consistent across your domain regardless of the GoodData project they live in. In other words, an object used in any project within your domain should have the _same_ object identifier in _any_ of those projects. To get a list of catalog items and date datasets from a GoodData project in the form of a JavaScript object, use [gdc-catalog-export](02_start__catalog_export.md).
+Though you can use either object URIs or object identifiers, we recommend that you use only the **object identifiers** that are consistent across your domain regardless of the GoodData workspace they live in. In other words, an object used in any workspace within your domain should have the _same_ object identifier in _any_ of those workspaces. To get a list of catalog items and date datasets from a GoodData workspace in the form of a JavaScript object, use [gdc-catalog-export](02_start__catalog_export.md).
 
 ```javascript
 /*
@@ -67,7 +67,7 @@ const resultSpec = {
 Initializing the Adapter object
 The Adapter converts the AFMs for the backend to process.
 */
-const adapter = new ExecuteAfmAdapter(sdk, "<project-id>");
+const adapter = new ExecuteAfmAdapter(sdk, "<workspace-id>");
 
 /*
 Initializing the Data Table object

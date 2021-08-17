@@ -62,9 +62,9 @@ For more information, see [Filter Visual Components](30_tips__filter_visual_comp
 
 ## Caching
 
-To properly render the referenced table or chart, the InsightView component needs additional information from the GoodData platform. This information is usually static. To minimize the number of redundant requests and reduce the rendering time, some static information (such as the list of visualization classes, the color palette, or feature flags for each project) is cached for all InsightView components in the same application.
+To properly render the referenced table or chart, the InsightView component needs additional information from the GoodData platform. This information is usually static. To minimize the number of redundant requests and reduce the rendering time, some static information (such as the list of visualization classes, the color palette, or feature flags for each workspace) is cached for all InsightView components in the same application.
 
-The amount of the cached information does not impact performance in any way. However, you can manually clear the cache whenever needed (for example, after logging out, when switching projects or leaving a page with visualizations using the GoodData.UI components).
+The amount of the cached information does not impact performance in any way. However, you can manually clear the cache whenever needed (for example, after logging out, when switching workspaces or leaving a page with visualizations using the GoodData.UI components).
 
 ```javascript
 import { clearInsightViewCaches } from "@gooddata/sdk-ui-ext";

@@ -8,7 +8,7 @@ original_id: ht_create_your_first_visualization
 
 This tutorial will guide you through the process of creating your first smart application using Facebook’s `create-react-app` tool and will show you the GoodData UI SDK in action.
 
-When you complete this tutorial, you will be able to display various measures and charts from the [GoodSales demo project](https://secure.gooddata.com/#s=/gdc/projects/la84vcyhrq8jwbu4wpipw66q2sqeb923%7CprojectDashboardPage%7C/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/33807%7Caa0fb2c4d399) within the context of your React application.
+When you complete this tutorial, you will be able to display various measures and charts from the [GoodSales demo workspace](https://secure.gooddata.com/#s=/gdc/workspaces/la84vcyhrq8jwbu4wpipw66q2sqeb923%7CworkspaceDashboardPage%7C/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/33807%7Caa0fb2c4d399) within the context of your React application.
 
 ## Prerequisites
 
@@ -261,9 +261,9 @@ For example, let’s take a look at the following component used in this tutoria
    measure="atSHqCtAePe4" />
 ```
 
-In this component, `projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"` is a hardcoded reference to the GoodSales demo project ID, and `measure="atSHqCtAePe4"` is a hardcoded reference to the measure named `Avg Deal Size`.
+In this component, `projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"` is a hardcoded reference to the GoodSales demo workspace ID, and `measure="atSHqCtAePe4"` is a hardcoded reference to the measure named `Avg Deal Size`.
 
-With the [gdc-catalog-export](gdc-catalog-export) tool, you can serialize the list of all measures, attributes and other relevant objects from your project.
+With the [gdc-catalog-export](gdc-catalog-export) tool, you can serialize the list of all measures, attributes and other relevant objects from your workspace.
 
 To install the tool, run the following command from the command line:
 
@@ -332,7 +332,7 @@ class App extends Component {
 export default App;
 ```
 
-Notice that the code in the `App.js` file still includes the hardcoded reference to the project \(`la84vcyhrq8jwbu4wpipw66q2sqeb923` at line 17\). In your real application, you may prefer to pass the project ID via URL or hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.
+Notice that the code in the `App.js` file still includes the hardcoded reference to the workspace \(`la84vcyhrq8jwbu4wpipw66q2sqeb923` at line 17\). In your real application, you may prefer to pass the workspace ID via URL or hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.
 
 ## Step 9. Add more visualizations
 
@@ -344,7 +344,7 @@ You can add more different elements: tables, charts, custom visualizations. The 
 
 In a real application, you will probably do a number of things differently. For example:
 
-* Avoid hardcoding the project ID.
+* Avoid hardcoding the workspace ID.
 * Use your GoodData domain with CORS settings so you do not need to use a local proxy \(this is what you will have to do for the production deployment even if you prefer to use a proxy for local development\). For more information, see [How to Access the GoodData API Directly](ht_access_gd_api_directly.md).
 * Authenticate your users using single sign-on rather than sending them to a proxied GoodData login page.
 

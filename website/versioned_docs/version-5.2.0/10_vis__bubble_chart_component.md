@@ -19,7 +19,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { BubbleChart } from '@gooddata/react-components';
 
 <BubbleChart
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     xAxisMeasure={<measure>}
     yAxisMeasure={<measure>}
     size={<measure>}
@@ -101,7 +101,7 @@ const viewBy = {
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | false | string | The project ID |
+| projectId | false | string | The workspace ID |
 | xAxisMeasure | false | [Measure](50_custom__execution.md#measure) | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the bubble chart to render properly) |
 | yAxisMeasure | false | [Measure](50_custom__execution.md#measure) | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the bubble chart to render properly) |
 | size | false | [Measure](50_custom__execution.md#measure) | A measure definition that determines the size of the bubbles |

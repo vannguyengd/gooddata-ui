@@ -20,10 +20,10 @@ When a user clicks a [drillable item](https://confluence.intgdc.com/display/VS/D
    ....
    onFiredDrillEvent={({ drillContext, executionContext }) => {
       console.log('chart clicked!');
-      var projectId = '<project-id>';
+      var workspaceId = '<workspace-id>';
       var attributeIdentifier = executionContext.measures[0].definition.measure.item.identifier;
  
-      gooddata.md.getUrisFromIdentifiers(projectId, [ attributeIdentifier ]).then(result => {
+      gooddata.md.getUrisFromIdentifiers(workspaceId, [ attributeIdentifier ]).then(result => {
          // converting the attribute identifier into the attribute URI
          var attributeUri = result[0].uri;
  
@@ -32,7 +32,7 @@ When a user clicks a [drillable item](https://confluence.intgdc.com/display/VS/D
             var attributeDisplayFormUri = attribute.attribute.content.displayForms[0].meta.uri;
             var attributeDisplayFormId = attributeDisplayFormUri.split('/').slice(-1)[0]; // attribute's displayForm identifier
  
-            gooddata.md.getValidElements(projectId, attributeDisplayFormId).then(validElements => {
+            gooddata.md.getValidElements(workspaceId, attributeDisplayFormId).then(validElements => {
                // elements of the attribute's displayForm
                const items = validElements.validElements.items.map(item => item.element);
                console.log('data retrieved!', items);
@@ -48,7 +48,7 @@ When a user clicks a [drillable item](https://confluence.intgdc.com/display/VS/D
 
 ```javascript
 <Visualization
-   projectId="<project-id>"
+   projectId="<workspace-id>"
    identifier="<visualization-identifier>"
    config={<chart-config>}
    onFiredDrillEvent={(data) => { alert(data.executionContext); }

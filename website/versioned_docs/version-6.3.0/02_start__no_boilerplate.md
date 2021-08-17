@@ -8,7 +8,7 @@ original_id: ht_create_your_first_visualization
 
 This tutorial will guide you through the process of creating your first analytical application using GoodData.UI with the Facebook’s `create-react-app` tool.
 
-After you complete this tutorial, you will be able to display various measures and charts from your GoodData project within the context of your React application.
+After you complete this tutorial, you will be able to display various measures and charts from your GoodData workspace within the context of your React application.
 
 **NOTE:** Before you start this tutorial, make sure that you have a GoodData account (see [About GoodData.UI](01_intro__about_gooddataui.md#supported-technologies)).
 
@@ -175,7 +175,7 @@ Now, you can start adding your first GoodData component:
       />
     </div>
     ```
-    > This example uses the project ID and measure/attribute identifiers from the [live examples](https://gooddata-examples.herokuapp.com/). If you want to use this code in your project, replace the properties with the appropriate values from your project. For more details, see [Line Chart](10_vis__line_chart_component.md).
+    > This example uses the workspace ID and measure/attribute identifiers from the [live examples](https://gooddata-examples.herokuapp.com/). If you want to use this code in your workspace, replace the properties with the appropriate values from your workspace. For more details, see [Line Chart](10_vis__line_chart_component.md).
 
 5. Save the changes. The content of your `App.js` file should now look something like the following example:
 

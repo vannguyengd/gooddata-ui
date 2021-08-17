@@ -99,7 +99,7 @@ import { Visualization } from '@gooddata/react-components';
 
 // Example of embedding a visualization with custom colors and palette options
 <Visualization
-    projectId=<project-id>
+    projectId=<workspace-id>
     identifier=<visualization-id>
     config={{
         colors: ['rgb(195, 49, 73)', 'rgb(168, 194, 86)']
@@ -113,7 +113,7 @@ Within one visualization:
 
 ### Custom color palette
 
-If you [uploaded a custom color palette](https://help.gooddata.com/display/doc/Importing+Custom+Color+Palettes) to your project, the visualizations created based on the [Visualization component](10_vis__insight_view.md) use this palette instead of the default colors.
+If you [uploaded a custom color palette](https://help.gooddata.com/pages/viewpage.action?pageId=86794489) to your workspace, the visualizations created based on the [Visualization component](10_vis__insight_view.md) use this palette instead of the default colors.
 
 To override the uploaded custom color palette for a specific visualization, define the `colorPalette` property for this visualization.
 
@@ -122,7 +122,7 @@ import { Visualization } from '@gooddata/react-components';
 
 // Example of embedding a visualization with a custom palette
 <Visualization
-   projectId=<project-id>
+   projectId=<workspace-id>
    identifier=<visualization-id>
    config={{
        colorPalette: [{
@@ -174,7 +174,7 @@ import { Visualization } from '@gooddata/react-components';
 
 // Example of embedding a visualization with custom color mapping
 <Visualization
-    projectId=<project-id>
+    projectId=<workspace-id>
     identifier=<visualization-id>
     config={{
         colorMapping: [{
@@ -213,7 +213,7 @@ import { Visualization } from '@gooddata/react-components';
 
 // Example of embedding a visualization with a custom legend position
 <Visualization
-    projectId=<project-id>
+    projectId=<workspace-id>
     identifier=<visualization-id>
     config={{
         legend: {
@@ -234,7 +234,7 @@ import { Visualization } from '@gooddata/react-components';
 
 // Example of embedding a visualization with a custom separator in the number format
 <Visualization
-    projectId=<project-id>
+    projectId=<workspace-id>
     identifier=<visualization-id>
     config={{
         separators: {
@@ -262,7 +262,7 @@ import { Visualization } from '@gooddata/react-components';
 
 // Example of embedding a visualization with settings for the x-axis
 <Visualization
-    projectId=<project-id>
+    projectId=<workspace-id>
     identifier=<visualization-id>
     config={{
         xaxis: {
@@ -293,7 +293,7 @@ import { Visualization } from '@gooddata/react-components';
 
 // Example of embedding a visualization with settings for the canvas
 <Visualization
-    projectId=<project-id>
+    projectId=<workspace-id>
     identifier=<visualization-id>
     config={{
         dataLabels: true,
@@ -326,7 +326,7 @@ import { Visualization } from '@gooddata/react-components';
 
 // Example of embedding a visualization with stacking
 <Visualization
-    projectId=<project-id>
+    projectId=<workspace-id>
     identifier=<visualization-id>
     config={{
         stackMeasures: false,

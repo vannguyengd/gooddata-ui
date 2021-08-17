@@ -10,7 +10,7 @@ You can enable eventing and drilling in a visualization. Drilling is the process
 
 To add drilling, use function predicates.
 
-> Before Version 6.2, you could implement drilling using a list of `drillableItems` that contained the URI or identifier of a measure or attribute (for example, `{ identifier: 'label.owner.department' }`  or `{ uri: '/gdc/md/projectHash/obj/1027' }`). While we do not recommend that you use this method anymore, it is still supported. For more information, see [DrillableItems](https://sdk.gooddata.com/gooddata-ui/docs/6.1.0/drillable_item.html) in the Version 6.1 documentation.
+> Before Version 6.2, you could implement drilling using a list of `drillableItems` that contained the URI or identifier of a measure or attribute (for example, `{ identifier: 'label.owner.department' }`  or `{ uri: '/gdc/md/workspaceHash/obj/1027' }`). While we do not recommend that you use this method anymore, it is still supported. For more information, see [DrillableItems](https://sdk.gooddata.com/gooddata-ui/docs/6.1.0/drillable_item.html) in the Version 6.1 documentation.
 
 To turn on eventing and drilling, specify at least one drillableItem.
 
@@ -68,7 +68,7 @@ In the `drillableItems` property, add an array of `IHeaderPredicate` functions
 **Example:** Drilling in a visualization enabled for the measure with either the identifier of `label.owner.department` or the URI of `/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211`
 
 ```javascript 1.6
-// This is an example of event drilling on the visualization from the GoodSales demo project.
+// This is an example of event drilling on the visualization from the GoodSales demo workspace.
 import { HeaderPredicateFactory } from '@gooddata/react-components';
 
 <Visualization
@@ -84,7 +84,7 @@ import { HeaderPredicateFactory } from '@gooddata/react-components';
 **Example:** Drilling in a visualization enabled for every [arithmetic measure](20_misc__arithmetic_measure.md) that has a measure with either the identifier set to `label.owner.department` or the URI set to `/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211` in its tree of measures that the arithmetic measure is built from
 
 ```javascript 1.6
-// This is an example of event drilling on the visualization from the GoodSales demo project.
+// This is an example of event drilling on the visualization from the GoodSales demo workspace.
 import { HeaderPredicateFactory } from '@gooddata/react-components';
 
 <Visualization

@@ -21,7 +21,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { AreaChart } from '@gooddata/react-components';
 
 <AreaChart
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     measures={<measures>}
     config={<chart-config>}
     sdk={<sdk>}
@@ -70,7 +70,7 @@ const attribute = {
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | measures | true | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions. If `viewBy` has two attributes, only the first measure is used. |
 | viewBy | false | [Attribute](50_custom__execution.md#attribute) &#124; [Attribute[]](50_custom__execution.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the second attribute slices the measure horizontally, and the areas are always overlapped regardless of what `stackBy` is set to. |
 | stackBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition. `stackBy` is ignored if `viewBy` has two attributes. |

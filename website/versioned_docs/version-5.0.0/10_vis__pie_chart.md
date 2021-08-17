@@ -17,7 +17,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { PieChart } from '@gooddata/react-components';
 
 <PieChart
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     measures={<measures>}
     config={<chart-config>}
     …
@@ -81,7 +81,7 @@ const measures = [
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | measures | true | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions |
 | viewBy | false | [Attribute](50_custom__execution.md#attribute) | Attribute definition |
 | filters | false | [Filter[]](30_tips__filter_visual_components.md) | An array of filter definitions |

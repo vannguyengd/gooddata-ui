@@ -17,7 +17,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { GeoPushpinChart } from '@gooddata/react-components';
 
 <GeoPushpinChart
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     location={<attribute>}
     size={<measure>}
     color={<measure>}
@@ -110,7 +110,7 @@ const config = {
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | location | true | [Attribute](50_custom__execution.md#attribute) | An attribute definition that determines the longitude and latitude of the pins |
 | segmentBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition that categorizes the pins |
 | size | false | [Measure](50_custom__execution.md#measure) | A measure definition that determines the size of the pins |

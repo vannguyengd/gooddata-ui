@@ -35,7 +35,7 @@ See [AFM](50_custom__execution.md).
 
 ## G
 
-**gdc-catalog-export** is a GoodData.UI tool for exporting a list of catalog items and date datasets from a GoodData project. See [gdc-catalog-export](02_start__catalog_export.md).
+**gdc-catalog-export** is a GoodData.UI tool for exporting a list of catalog items and date datasets from a GoodData workspace. See [gdc-catalog-export](02_start__catalog_export.md).
 
 ## I
 
@@ -51,13 +51,13 @@ See [AFM](50_custom__execution.md).
 
 ## O
 
-**object identifier** is a reference to a project object (for example, attribute, measure, displayForm, visualization, filter, and so on). The identifier of an object is consistent across your domain regardless of the GoodData project it lives in. The object identifier is a text string. Example: `franchiseFeesAdRoyaltyIdentifier`
+**object identifier** is a reference to a workspace object (for example, attribute, measure, displayForm, visualization, filter, and so on). The identifier of an object is consistent across your domain regardless of the GoodData workspace it lives in. The object identifier is a text string. Example: `franchiseFeesAdRoyaltyIdentifier`
 
-**object URI** is a URI of a project object (for example, attribute, measure, displayForm, visualization, filter, and so on). The URI of an objects includes the object ID and the ID of the project that the object belongs to. Example: `/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/380`
+**object URI** is a URI of a workspace object (for example, attribute, measure, displayForm, visualization, filter, and so on). The URI of an objects includes the object ID and the ID of the workspace that the object belongs to. Example: `/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/380`
 
 ## P
 
-**project ID** is a unique 32-character identifier of your project within the GoodData platform. To get your project ID, see [Find the Project ID](https://help.gooddata.com/display/doc/Find+the+Project+ID).
+**workspace ID** is a unique 32-character identifier of your workspace within the GoodData platform. To get your workspace ID, see [Find the Workspace ID](https://help.gooddata.com/pages/viewpage.action?pageId=86796773).
 
 ## R
 

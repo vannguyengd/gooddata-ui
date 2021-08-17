@@ -11,7 +11,7 @@ This article provides an overview of the main API parts that you need to execute
 ## executeAfm Endpoint
 
 ```bash
-POST /gdc/app/projects/<project-id>/executeAfm
+POST /gdc/app/projects/<workspace-id>/executeAfm
 ```
 
 The request body consists of [AFM](50_custom__execution.md) and [resultSpec](result_spec.md):

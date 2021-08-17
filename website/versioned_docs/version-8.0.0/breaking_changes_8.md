@@ -144,7 +144,7 @@ your application:
 
     <BackendProvider backend={backend}>
         <BarChart
-            workspace="<yourProjectId>"
+            workspace="<yourWorkspaceId>"
             measures={[Ldm.Won]}
             viewBy={[Ldm.Product]}
         />
@@ -199,7 +199,7 @@ structure of drill events.
 
 ### Renamed Properties
 The `projectId` prop on the different visualizations has been renamed to `workspace`. The type and content of the prop
-remain the same: when integrating with the GoodData platform, the value represents the ID of a project.
+remain the same: when integrating with the GoodData platform, the value represents the ID of a workspace.
 
 ### Deleted Properties
 

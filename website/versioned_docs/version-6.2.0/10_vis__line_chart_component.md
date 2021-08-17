@@ -17,7 +17,7 @@ import '@gooddata/react-components/styles/css/main.css';
 import { LineChart } from '@gooddata/react-components';
 
 <LineChart
-    projectId={<project-id>}
+    projectId={<workspace-id>}
     measures={<measures>}
     config={<chart-config>}
     sdk={<sdk>}
@@ -66,7 +66,7 @@ const attribute = {
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | measures | true | [Measure[]](50_custom__execution.md#measure) | An array of measure definitions |
 | trendBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |
 | segmentBy | false | [Attribute](50_custom__execution.md#attribute) | An attribute definition |

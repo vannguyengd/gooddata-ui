@@ -37,7 +37,7 @@ The following example shows the function specified as children in the Execution
 ```javascript
 import { Execute, isEmptyResult } from '@gooddata/react-components';
  
-<Execute afm={<afm>} projectId={<project-id>}> onLoadingChanged={e=>{}} onError={e=>{}}>
+<Execute afm={<afm>} projectId={<workspace-id>}> onLoadingChanged={e=>{}} onError={e=>{}}>
     {
         (executionResult) => {
             console.log(isEmptyResult(executionResult) ? 'empty result' : executionResult);

@@ -28,7 +28,7 @@ This parameter is not available in the Table component.
 
 ```javascript
 <Visualization
-    projectId="<project-id>"
+    projectId="<workspace-id>"
     identifier="<visualization-identifier>"
     config={{
        legend: {

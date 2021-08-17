@@ -28,10 +28,10 @@ To obtain data from the server, you have to call `gooddata-js` twice. This is be
 
 The execution response informs you about the future result.  It contains dimensions with headers that show the result size and its headers. The execution response also contains a link to the execution result where your data is stored.
 
-To get the execution response, provide the project ID and the definition of the execution:
+To get the execution response, provide the workspace ID and the definition of the execution:
 
 ```javascript
-sdk.execution.getExecutionResponse('<project-id>', execution)
+sdk.execution.getExecutionResponse('<workspace-id>', execution)
     .then(
         (executionResponse) => {
             console.log(executionResponse);
@@ -111,7 +111,7 @@ If you cannot or do not want to use the `gooddata-js` library, you can call the 
 ### executeAfm endpoint
 
 ```bash
-POST /gdc/app/projects/<project-id>/executeAfm
+POST /gdc/app/projects/<workspace-id>/executeAfm
 ```
 
 The request body consists of [AFM](50_custom__execution.md) and [resultSpec](50_custom__result.md):

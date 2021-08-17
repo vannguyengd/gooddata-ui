@@ -25,7 +25,7 @@ $ npminstall@gooddata/react-components
 ```javascript
 import { Visualization } from '@gooddata/react-components';
 
-// This is an example of embedding a visualization from the GoodSales demo project.
+// This is an example of embedding a visualization from the GoodSales demo workspace.
 <Visualization
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
     identifier="aby3polcaFxy"

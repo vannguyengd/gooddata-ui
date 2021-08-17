@@ -18,10 +18,10 @@ To embed an existing visualization created in Analytical Designer, use the `Visu
 import{ Visualization } from'@gooddata/react-components';
 ```
 
-3. Create a `Visualization` component in your app, and provide it with the project ID and the visualization identifier that you obtained at Step 1:
+3. Create a `Visualization` component in your app, and provide it with the workspace ID and the visualization identifier that you obtained at Step 1:
 
 ```javascript
-// This is an example of embedding a visualization from the GoodSales demo project.
+// This is an example of embedding a visualization from the GoodSales demo workspace.
 <Visualization
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
     identifier="aby3polcaFxy"

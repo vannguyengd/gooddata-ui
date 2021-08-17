@@ -16,7 +16,7 @@ import { Visualization } from '@gooddata/react-components';
 
 <div style={{ height: 400, width: 600 }}>
     <Visualization
-        projectId="<project-id>"
+        projectId="<workspace-id>"
         identifier="<visualization-identifier>"
         config={<chart-config>}
         sdk={<sdk>}
@@ -30,7 +30,7 @@ import { Visualization } from '@gooddata/react-components';
 
 <div style={{ height: 400, width: 600 }}>
     <Visualization
-        projectId="<project-id>"
+        projectId="<workspace-id>"
         uri="<visualization-uri>"
         config={<chart-config>}
         sdk={<sdk>}
@@ -41,7 +41,7 @@ import { Visualization } from '@gooddata/react-components';
 
 ## Example
 
-<!-- This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is. -->
+<!-- This example uses data from the GoodSales // TODO REMOVE! demo workspace. For testing purposes, you can use this snippet as is. -->
 
 ```javascript
 import '@gooddata/react-components/styles/css/main.css';
@@ -68,9 +68,9 @@ For more information, see [Filter Visual Components](30_tips__filter_visual_comp
 
 ## Caching
 
-To properly render the referenced table or chart, the Visualization component needs additional information from the GoodData platform. This information is usually static. To minimize the number of redundant requests and reduce the rendering time, some static information (such as the list of visualization classes, the color palette, or feature flags for each project) is cached for all Visualization components in the same application.
+To properly render the referenced table or chart, the Visualization component needs additional information from the GoodData platform. This information is usually static. To minimize the number of redundant requests and reduce the rendering time, some static information (such as the list of visualization classes, the color palette, or feature flags for each workspace) is cached for all Visualization components in the same application.
 
-The amount of the cached information does not impact performance in any way. However, you can manually clear the cache whenever needed (for example, after logging out, when switching projects or leaving a page with visualizations using the GoodData.UI components).
+The amount of the cached information does not impact performance in any way. However, you can manually clear the cache whenever needed (for example, after logging out, when switching workspaces or leaving a page with visualizations using the GoodData.UI components).
 
 ```javascript
 import { clearSdkCache } from '@gooddata/react-components/dist/helpers/sdkCache';
@@ -83,7 +83,7 @@ clearSdkCache();
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| projectId | true | string | The project ID |
+| projectId | true | string | The workspace ID |
 | uri | false | string | The URI of the visualization to be rendered. Can be omitted if the visualization identifier is present. |
 | identifier | false | string | The identifier of the visualization to be rendered. Can be omitted if the visualization URI is present. |
 | locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
