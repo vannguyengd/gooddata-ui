@@ -181,7 +181,7 @@ export default class CustomExecute extends Component {
 
   render() {
     const { error, isLoading, executionNumber, willFail } = this.state;
-    const projectId = 'hdint8y1xvk9oyns1r0iefknwivzlb4g';
+    const workspaceId = 'hdint8y1xvk9oyns1r0iefknwivzlb4g';
     const afm = {
       measures: [
         {
@@ -190,7 +190,7 @@ export default class CustomExecute extends Component {
               measure: {
                   item: {
                       // In order to showcase the fail state, we send invalid measure uri
-                      uri: willFail ? `/gdc/md/${projectId}/obj/15415` : null
+                      uri: willFail ? `/gdc/md/${workspaceId}/obj/15415` : null
                   },
                   aggregation: 'sum'
               }
@@ -215,7 +215,7 @@ export default class CustomExecute extends Component {
       <Execute
         key={executionNumber}
         afm={afm}
-        projectId={projectId}
+        projectId={workspaceId}
         onLoadingChanged={this.onLoadingChanged}
         onError={this.onError}
         children={

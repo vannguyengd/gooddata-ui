@@ -54,7 +54,7 @@ const month = {
 
 <div style={{ height: 300 }}>
     <ColumnChart
-        projectId={projectId}
+        projectId={workspaceId}
         measures={[totalSales]}
         viewBy={month}
     />

@@ -77,7 +77,7 @@ const rows = [
 
 <div style={{ height: 300 }}>
     <PivotTable
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
         rows={rows}
         columns={columns}
@@ -119,7 +119,7 @@ const rows = [
 
 <div style={{ height: 300 }}>
     <PivotTable
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
         rows={rows}
         columns={columns}
@@ -161,7 +161,7 @@ const sortBy = [
 
 <div style={{ height: 300 }}>
     <PivotTable
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
         rows={rows}
         columns={columns}

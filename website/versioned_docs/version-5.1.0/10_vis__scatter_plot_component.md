@@ -74,7 +74,7 @@ const attribute = {
 
 <div style={{ height: 300 }}>
     <ScatterPlot
-        projectId={projectId}
+        projectId={workspaceId}
         xAxisMeasure={measures[0]}
         yAxisMeasure={measures[1]}
         attribute={attribute}

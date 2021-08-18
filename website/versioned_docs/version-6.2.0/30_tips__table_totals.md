@@ -85,7 +85,7 @@ const totals = [
 return (
     <div style={{ height: 300 }}>
         <PivotTable
-            projectId={projectId}
+            projectId={workspaceId}
             measures={measures}
             columns={columns}
             rows={rows}

@@ -283,7 +283,7 @@ export class AttributeFilterExample extends Component {
             <div>
                 <AttributeFilter
                     identifier={employeeNameIdentifier}
-                    projectId={projectId}
+                    projectId={workspaceId}
                     fullscreenOnMobile={false}
                     onApply={this.onApply}
                 />

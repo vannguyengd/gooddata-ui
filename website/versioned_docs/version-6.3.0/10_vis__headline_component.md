@@ -43,7 +43,7 @@ const measure = {
 };
 
 <Headline
-    projectId={projectId}
+    projectId={workspaceId}
     primaryMeasure={measure}
 />
 ```
@@ -78,7 +78,7 @@ const secondaryMeasure = {
 };
 
 <Headline
-    projectId={projectId}
+    projectId={workspaceId}
     primaryMeasure={measure}
     secondaryMeasure={secondaryMeasure}
 />

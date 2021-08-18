@@ -71,7 +71,7 @@ const measures = [
 ];
 
 <Table
-    projectId={projectId}
+    projectId={workspaceId}
     measures={measures}
 />
 ```  
@@ -157,7 +157,7 @@ const filters = [
 ];
 
 <Table
-    projectId={projectId}
+    projectId={workspaceId}
     measures={measures}
     filters={filters}
 />

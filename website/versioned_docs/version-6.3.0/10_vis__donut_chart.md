@@ -75,7 +75,7 @@ const measures = [
 
 <div style={{ height: 300 }}>
     <DonutChart
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
     />
 </div>

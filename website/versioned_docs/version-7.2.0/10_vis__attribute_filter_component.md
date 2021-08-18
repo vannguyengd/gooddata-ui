@@ -24,7 +24,7 @@ import { AttributeFilter, Model } from '@gooddata/react-components';
 
 import '@gooddata/react-components/styles/css/main.css';
 
-import { employeeNameIdentifier, projectId } from '../utils/fixtures';
+import { employeeNameIdentifier, workspaceId } from '../utils/fixtures';
 
 export class AttributeFilterExample extends Component {
     onApply(params) {
@@ -37,7 +37,7 @@ export class AttributeFilterExample extends Component {
             <div>
                 <AttributeFilter
                     filter={Model.negativeAttributeFilter(employeeNameIdentifier, [])}
-                    projectId={projectId}
+                    projectId={workspaceId}
                     onApply={this.onApply}
                     sdk={<sdk>}
                 />
@@ -56,7 +56,7 @@ To define the attribute values that should be selected in the filter by default,
             <div>
                 <AttributeFilter
                     filter={Model.positiveAttributeFilter(employeeNameIdentifier, ["Abbie Adams"], true)}
-                    projectId={projectId}
+                    projectId={workspaceId}
                     onApply={this.onApply}
                     sdk={<sdk>}
                 />
@@ -82,7 +82,7 @@ Use ```onApplyWithFilterDefinition``` instead of ```onApply``` to recieve the se
                 <div>
                     <AttributeFilter
                         filter={this.state.filter}
-                        projectId={projectId}
+                        projectId={workspaceId}
                         onApplyWithFilterDefinition={this.onApplyWithFilterDefinition}
                         sdk={<sdk>}
                     />

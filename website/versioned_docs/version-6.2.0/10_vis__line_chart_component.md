@@ -55,7 +55,7 @@ const attribute = {
 
 <div style={{ height: 300 }}>
     <LineChart
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
         trendBy={attribute}
     />

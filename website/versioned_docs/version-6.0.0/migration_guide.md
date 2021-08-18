@@ -53,7 +53,7 @@ const attributes = [
 ];
 
 <AreaChart
-    projectId={projectId}
+    projectId={workspaceId}
     measures={measures}
     viewBy={attributes}
     onLoadingChanged={this.onLoadingChanged}
@@ -74,7 +74,7 @@ const viewBy = {
 
 
 <AreaChart
-    projectId={projectId}
+    projectId={workspaceId}
     measures={measures}
     viewBy={viewBy}
     onLoadingChanged={this.onLoadingChanged}

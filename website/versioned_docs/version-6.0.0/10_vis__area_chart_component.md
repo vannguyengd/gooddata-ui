@@ -57,7 +57,7 @@ const attribute = {
 
 <div style={{ height: 300 }}>
     <AreaChart
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
         viewBy={attribute}
     />

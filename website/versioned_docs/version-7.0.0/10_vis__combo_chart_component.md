@@ -49,7 +49,7 @@ const attribute = Model.attribute('location_resort').alias('Location Resort');
 
 <div style={{ height: 300 }}>
     <ComboChart
-        projectId={projectId}
+        projectId={workspaceId}
         primaryMeasures={primaryMeasures}
         secondaryMeasures={secondaryMeasures}
         viewBy={attribute}

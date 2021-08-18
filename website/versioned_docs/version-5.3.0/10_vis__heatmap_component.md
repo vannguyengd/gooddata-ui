@@ -67,7 +67,7 @@ const locationState = {
 
 <div style={{ height: 300 }} className="s-heat-map">
     <Heatmap
-        projectId={projectId}
+        projectId={workspaceId}
         measure={totalSales}
         trendBy={locationState}
         segmentBy={menuCategory}

@@ -286,7 +286,7 @@ export class AttributeFilterExample extends Component {
             <div>
                 <AttributeFilter
                     identifier="<attribute-displayform-identifier>"
-                    projectId={projectId}
+                    projectId={workspaceId}
                     fullscreenOnMobile={false}
                     onApply={this.onApply}
                 />

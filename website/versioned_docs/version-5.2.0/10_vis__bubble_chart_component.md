@@ -88,7 +88,7 @@ const viewBy = {
 
 <div style={{ height: 300 }}>
     <BubbleChart
-        projectId={projectId}
+        projectId={workspaceId}
         xAxisMeasure={measures[0]}
         yAxisMeasure={measures[1]}
         size={measures[2]}

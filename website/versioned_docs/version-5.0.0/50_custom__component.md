@@ -139,7 +139,7 @@ The following example shows how to handle `onLoadingChanged` and `onError` callb
 import React, { Component } from 'react';
 import { Execute, isEmptyResult } from '@gooddata/react-components';
 
-import { totalSalesIdentifier, projectId } from '../utils/fixtures';
+import { totalSalesIdentifier, workspaceId } from '../utils/fixtures';
 import { Loading } from './utils/Loading';
 import { Error } from './utils/Error';
 
@@ -260,7 +260,7 @@ export class ExecuteExample extends Component {
                 <Execute
                     key={executionNumber}
                     afm={afm}
-                    projectId={projectId}
+                    projectId={workspaceId}
                     onLoadingChanged={this.onLoadingChanged}
                     onError={this.onError}
                 >{this.executeChildrenFunction}

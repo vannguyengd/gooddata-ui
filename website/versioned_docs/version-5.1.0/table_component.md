@@ -56,7 +56,7 @@ const attributes = [
 
 <div style={{ height: 300 }}>
     <Table
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
         attributes={attributes}
     />

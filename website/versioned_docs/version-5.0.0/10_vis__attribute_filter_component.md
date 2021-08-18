@@ -22,7 +22,7 @@ import { AttributeFilter } from '@gooddata/react-components';
 
 import '@gooddata/react-components/styles/css/main.css';
 
-import { employeeNameIdentifier, projectId } from '../utils/fixtures';
+import { employeeNameIdentifier, workspaceId } from '../utils/fixtures';
 
 export class AttributeFilterExample extends Component {
     onApply(params) {
@@ -35,7 +35,7 @@ export class AttributeFilterExample extends Component {
             <div>
                 <AttributeFilter
                     identifier={employeeNameIdentifier}
-                    projectId={projectId}
+                    projectId={workspaceId}
                     onApply={this.onApply}
                     sdk={<sdk>}
                 />
