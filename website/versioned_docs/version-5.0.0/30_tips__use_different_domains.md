@@ -35,14 +35,14 @@ export default class SampleVisualizations extends PureComponent {
                 <div style={{ height: 400, width: 600 }}>
                     <Visualization
                         identifier="<identifier-from-domain1>"
-                        projectId="<projectId-from-domain1>"
+                        projectId="<workspaceId-from-domain1>"
                         sdk={this.sdkDomain1}
                     />
                 </div>
                 <div style={{ height: 400, width: 600 }}>
                     <Visualization
                         identifier="<identifier-from-domain2>"
-                        projectId="<projectId-from-domain2>"
+                        projectId="<workspaceId-from-domain2>"
                         sdk={this.sdkDomain2}
                     />
                 </div>

@@ -184,7 +184,7 @@ features and are easier to use.
 To adopt this change, migrate all custom executions so that they use the analytical backend SPI. The new entry
 point to execution is:
 
-`backend.workspace(<projectId>).execution()`
+`backend.workspace(<workspaceId>).execution()`
 
 This is a gateway to the new execution APIs where you can set up custom execution with the same flexibility and
 more convenience than with the lower-level Execute AFM component.
