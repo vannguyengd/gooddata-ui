@@ -77,7 +77,7 @@ const rows = [
 
 <div style={{ height: 300 }}>
     <PivotTable
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
         rows={rows}
         columns={columns}
@@ -119,7 +119,7 @@ const rows = [
 
 <div style={{ height: 300 }}>
     <PivotTable
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
         rows={rows}
         columns={columns}
@@ -161,7 +161,7 @@ const sortBy = [
 
 <div style={{ height: 300 }}>
     <PivotTable
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
         rows={rows}
         columns={columns}
@@ -262,7 +262,7 @@ columnSizing: {
     To get notified about the change in the width of columns done by resizing the column manually in the UI, add the `onColumnResized` prop with a callback function to the table props:
     ```html
     <PivotTable
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
         rows={rows}
         columns={columns}
@@ -570,7 +570,7 @@ const config = {
 };
 
 <PivotTable
-    projectId={projectId}
+    projectId={workspaceId}
     measures={measures}
     rows={rows}
     columns={columns}

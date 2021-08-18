@@ -67,7 +67,7 @@ const locationCity = {
 
 <div style={{ height: 300 }}>
     <Treemap
-        projectId={projectId}
+        projectId={workspaceId}
         measures={[numberOfChecks]}
         viewBy={locationState}
         segmentBy={locationCity}

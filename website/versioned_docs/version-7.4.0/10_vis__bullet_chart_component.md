@@ -82,7 +82,7 @@ const viewBy = {
 
 <div style={{ height: 300 }}>
     <BulletChart
-        projectId={projectId}
+        projectId={workspaceId}
         primaryMeasure={primaryMeasure}
         targetMeasure={targetMeasure}
         comparativeMeasure={comparativeMeasure}

@@ -82,7 +82,7 @@ export default class SalesByResort extends Component {
                     />
                 ) : null}
                 <BarChart
-                    projectId={projectId}
+                    projectId={workspaceId}
                     measures={[totalSales]}
                     viewBy={[locationResort]}
                     filters={filters}

@@ -72,7 +72,7 @@ const measures = [
 
 <div style={{ height: 300 }}>
     <PieChart
-        projectId={projectId}
+        projectId={workspaceId}
         measures={measures}
     />
 </div>

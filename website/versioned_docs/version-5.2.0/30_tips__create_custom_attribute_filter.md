@@ -30,7 +30,7 @@ import PropTypes from 'prop-types';
 
 import '@gooddata/react-components/styles/css/main.css';
 
-import { employeeNameIdentifier, projectId } from '../utils/fixtures';
+import { employeeNameIdentifier, workspaceId } from '../utils/fixtures';
 
 export class AttributeFilterItem extends Component {
     static propTypes = {
@@ -58,7 +58,7 @@ export class AttributeElementsExample extends Component {
     render() {
         return (
             <div style={{ minHeight: 500 }}>
-                <AttributeElements identifier={employeeNameIdentifier} projectId={projectId} options={{ limit: 20 }}>
+                <AttributeElements identifier={employeeNameIdentifier} projectId={workspaceId} options={{ limit: 20 }}>
                     {({ validElements, loadMore, isLoading, error }) => {
                         const {
                             offset = null,

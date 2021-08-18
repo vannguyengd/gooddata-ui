@@ -96,7 +96,7 @@ const config = {
 
 <div style={{ height: 600, width: 900 }}>
     <GeoPushpinChart
-        projectId={projectId}
+        projectId={workspaceId}
         location={usStateLocation}
         size={population}
         color={density}

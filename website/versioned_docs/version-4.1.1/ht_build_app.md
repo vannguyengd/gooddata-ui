@@ -133,7 +133,7 @@ You can choose any [supported visualization type](react_components.md), ie: `Ba
     
     const { BarChart } = AfmComponents;
     
-    const projectId = 'la84vcyhrq8jwbu4wpipw66q2sqeb923'; // Replace with your workspace ID.
+    const workspaceId = 'la84vcyhrq8jwbu4wpipw66q2sqeb923'; // Replace with your workspace ID.
     const afm = {};
     const resultSpec = {};
     const customConfig = {};
@@ -159,7 +159,7 @@ You can choose any [supported visualization type](react_components.md), ie: `Ba
     
     const { BarChart } = AfmComponents;
     
-    const projectId = 'la84vcyhrq8jwbu4wpipw66q2sqeb923';
+    const workspaceId = 'la84vcyhrq8jwbu4wpipw66q2sqeb923';
     const afm = {
         measures: [
             {
@@ -189,7 +189,7 @@ You can choose any [supported visualization type](react_components.md), ie: `Ba
          <div style={{ height: 300 }}>
             <BarChart
                     afm={afm}
-                    projectId={projectId}
+                    projectId={workspaceId}
                     resultSpec={resultSpec}
             />
          </div>
@@ -221,7 +221,7 @@ You can choose any [supported visualization type](react_components.md), ie: `Ba
          <div style={{ height: 300 }}>
             <BarChart
                     afm={afm}
-                    projectId={projectId}
+                    projectId={workspaceId}
                     resultSpec={resultSpec}
             />
          </div>
