@@ -29,7 +29,7 @@ The sample code at https://github.com/gooddata/ui-sdk-examples/tree/master/vanil
 
 ## Step 1. Prepare the bundle
 
-Create a simplenode.jsproject with a package.json descriptor and an entry point JavaScript file.
+Create a simple node.js project with a package.json descriptor and an entry point JavaScript file.
 
 ### Webpack configuration file
 

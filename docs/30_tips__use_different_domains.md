@@ -34,14 +34,14 @@ export default class SampleVisualizations extends PureComponent {
                 <div style={{ height: 400, width: 600 }}>
                     <InsightView
                         backend={this.backend1}
-                        workspace="<projectId-from-backend1>"
+                        workspace="<workspaceId-from-backend1>"
                         insight="<identifier-from-backend1>"
                     />
                 </div>
                 <div style={{ height: 400, width: 600 }}>
                     <InsightView
                         backend={this.backend2}
-                        workspace="<projectId-from-backend2>"
+                        workspace="<workspaceId-from-backend2>"
                         insight="<identifier-from-backend2>"
                     />
                 </div>
