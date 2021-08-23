@@ -13,7 +13,6 @@ Use data sampling to quickly determine the viability of a particular insight by 
 
 ```jsx
 import { InsightView } from "@gooddata/sdk-ui-ext";
-import { HeaderPredicates } from "@gooddata/sdk-ui";
 
 <InsightView
     insight="<visualization-identifier>"
