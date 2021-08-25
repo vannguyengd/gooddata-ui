@@ -118,7 +118,7 @@ You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_
 | filter | false | [Filter](30_tips__filter_visual_components.md) | The attribute filter definition |
 | parentFilters | false | AttributeFiltersOrPlaceholders[] | An array of parent attribute filter definitions |
 | connectToPlaceholder | false | IPlaceholder<IAttributeFilter> | The [visualization definition placeholder](30_tips__placeholders.md) used to get and set the value of the attribute filter |
-| parentFilterOverAttribute | false | ObjRef | The reference to the parent filter attribute over which the available options are reduced |
+| parentFilterOverAttribute | false | ObjRef &#124; Function | The reference to the parent filter attribute over which the available options are reduced, or the function called for every parent filter that returns such reference for the given parent filter |
 | locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | title | false | string | A custom label to show on the dropdown icon |
 | FilterError | false | Component | A component to be rendered if component runs into an error |
