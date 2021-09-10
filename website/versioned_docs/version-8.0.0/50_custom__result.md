@@ -86,7 +86,7 @@ import { Ldm } from "./ldm";
 
 execution()
     .forItems([Ldm.LocationState, Ldm.$FranchiseFees, Ldm.$TotalSales])
-    .withDimensions(newTwoDimensional([Ldm.LocationState], [MeasureGroupIdentifier]));
+    .withDimensions(...newTwoDimensional([Ldm.LocationState], [MeasureGroupIdentifier]));
 
 {
     data: [
@@ -105,7 +105,7 @@ import { Ldm } from "./ldm";
 
 execution()
     .forItems([Ldm.LocationState, Ldm.$FranchiseFees, Ldm.$TotalSales])
-    .withDimensions(newTwoDimensional([MeasureGroupIdentifier], [Ldm.LocationState]));
+    .withDimensions(...newTwoDimensional([MeasureGroupIdentifier], [Ldm.LocationState]));
 
 // `executionResult` is returned with measures in the first dimension:
 {
@@ -126,7 +126,7 @@ import { Ldm } from "./ldm";
 
 execution()
     .forItems([Ldm.LocationState, Ldm.LocationCity, Ldm.$FranchiseFees])
-    .withDimensions(newTwoDimensional([Ldm.LocationState], [Ldm.LocationCity, MeasureGroupIdentifier]));
+    .withDimensions(...newTwoDimensional([Ldm.LocationState], [Ldm.LocationCity, MeasureGroupIdentifier]));
 
 {
 data: [
@@ -154,7 +154,7 @@ import { Ldm } from "./ldm";
 
 execution()
     .forItems([Ldm.LocationState, Ldm.LocationCity, Ldm.$FranchiseFees])
-    .withDimensions(newTwoDimensional([Ldm.LocationState], [Ldm.LocationCity, MeasureGroupIdentifier]))
+    .withDimensions(...newTwoDimensional([Ldm.LocationState], [Ldm.LocationCity, MeasureGroupIdentifier]))
     .withSorting(newAttributeSort(Ldm.LocationState, "desc"));
 ```
 
