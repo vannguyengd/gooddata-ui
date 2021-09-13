@@ -39,9 +39,9 @@ const CustomError = ({
     icon
 }) => (
     <p>
-        <span className={icon} ></span> <strong>{message}</strong><br />
+        <span className={icon} /> <strong>{message}</strong><br />
         {description}
-    <p>
+    </p>
 );
 
 <Kpi
