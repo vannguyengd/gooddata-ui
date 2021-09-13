@@ -38,7 +38,7 @@ function CustomVisualization() {
                             {slices.map((slice, idx) => {
                                 // for each slice (row), print the header and then the actual formatted data points
                                 return (
-                                    <div key="idx">
+                                    <div key={idx}>
                                         {slice.sliceTitles().join(">")} - {slice.dataPoints().map(dp => dp.formattedValue())}
                                     </div>)
                                 })}
