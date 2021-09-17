@@ -1840,6 +1840,30 @@
       "version-8.5.0/version-8.5.0-pivot_table_component": {
         "title": "Pivot Table",
         "sidebar_label": "Pivot Table"
+      },
+      "version-8.6.0/version-8.6.0-platform_integration": {
+        "title": "Integrate into an Existing Application",
+        "sidebar_label": "Integrate into an Existing Application"
+      },
+      "version-8.6.0/version-8.6.0-attribute_filter_button_component": {
+        "title": "Attribute Filter Button",
+        "sidebar_label": "Attribute Filter Button"
+      },
+      "version-8.6.0/version-8.6.0-attribute_filter_component": {
+        "title": "Attribute Filter",
+        "sidebar_label": "Attribute Filter"
+      },
+      "version-8.6.0/version-8.6.0-theme_provider": {
+        "title": "Theme Provider",
+        "sidebar_label": "Theme Provider"
+      },
+      "version-8.6.0/version-8.6.0-data_sampling": {
+        "title": "Data Sampling",
+        "sidebar_label": "Data Sampling"
+      },
+      "version-8.6.0/version-8.6.0-error_component": {
+        "title": "ErrorComponent",
+        "sidebar_label": "ErrorComponent"
       }
     },
     "links": {
