@@ -26,4 +26,4 @@ A typical GoodData.UI application creates and configures an instance of the Good
 
 You can learn more about and download GoodData.CN Community Edition for free at [https://www.gooddata.com/developers](https://www.gooddata.com/developers). You can get started with GoodData.CN Community Edition in minutes and then spin up a new application on top of it using our [accelerator toolkit](02_start__using_boilerplate.md).
 
-**IMPORTANT**: The first version of GoodData.UI that supports GoodData.CN is 8.3.
+**IMPORTANT**: Before you start, check how GoodData.UI supports [specific versions of GoodData.CN](01_supported_versions.md#compatibility-with-gooddatacn). The first version of GoodData.UI that supports GoodData.CN is 8.3.0.

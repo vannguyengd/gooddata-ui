@@ -26,8 +26,8 @@
         "sidebar_label": "Why GoodData.UI?"
       },
       "supported_versions": {
-        "title": "Supported Versions",
-        "sidebar_label": "Supported Versions"
+        "title": "Supported Versions and Compatibility",
+        "sidebar_label": "Supported Versions and Compatibility"
       },
       "api_maturity": {
         "title": "API Maturity",
@@ -1729,6 +1729,10 @@
         "title": "Why GoodData.UI?",
         "sidebar_label": "Why GoodData.UI?"
       },
+      "version-8.3.0/version-8.4.0-supported_versions": {
+        "title": "Supported Versions and Compatibility",
+        "sidebar_label": "Supported Versions and Compatibility"
+      },
       "version-8.3.0/version-8.3.0-export_catalog": {
         "title": "Export Catalog",
         "sidebar_label": "Export Catalog"
@@ -1765,6 +1769,10 @@
         "title": "Date Filter",
         "sidebar_label": "Date Filter"
       },
+      "version-8.3.0/version-8.3.0-theme_provider": {
+        "title": "Theme Provider",
+        "sidebar_label": "Theme Provider"
+      },
       "version-8.3.0/version-8.3.0-date_filter_option": {
         "title": "DateFilter Component Options",
         "sidebar_label": "DateFilter Component Options"
@@ -1794,8 +1802,8 @@
         "sidebar_label": "About GoodData.UI"
       },
       "version-8.4.0/version-8.4.0-supported_versions": {
-        "title": "Supported Versions",
-        "sidebar_label": "Supported Versions"
+        "title": "Supported Versions and Compatibility",
+        "sidebar_label": "Supported Versions and Compatibility"
       },
       "version-8.4.0/version-8.4.0-api_maturity": {
         "title": "API Maturity",
