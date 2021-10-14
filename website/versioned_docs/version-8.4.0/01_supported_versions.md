@@ -1,7 +1,7 @@
 ---
 id: version-8.4.0-supported_versions
-title: Supported Versions
-sidebar_label: Supported Versions
+title: Supported Versions and Compatibility
+sidebar_label: Supported Versions and Compatibility
 copyright: (C) 2007-2021 GoodData Corporation
 original_id: supported_versions
 ---
@@ -41,4 +41,18 @@ The following table provides the lifecycle phases of GoodData.UI versions:
 | 6 | End of Support | November 1, 2018 | May 21, 2019 | October 8, 2020 | _Not yet defined_ | 6.3 |
 | 5 | End of Support | April 26, 2018 | November 1, 2018 | May 21, 2019 | _Not yet defined_ | 5.3 |
 
-**IMPORTANT**: The first version of GoodData.UI that supports GoodData.CN is 8.3.0.
+## Compatibility with GoodData.CN
+
+The following table shows how GoodData.UI supports specific versions of [GoodData.CN](06_cloudnative__introduction.md).
+
+| GoodData.CN Version | GoodData.UI First Compatible Version |
+| :--- | :--- |
+| 1.0.0 | 8.3.0 |
+| 1.0.1 | 8.3.0 |
+| 1.1.0 | 8.3.1 |
+| 1.1.1 | 8.3.1 |
+| 1.2.0 | 8.3.1 |
+| 1.3.0 | 8.5.0 |
+| 1.4.0 | 8.6.0 |
+
+The versions of GoodData.UI older than 8.3.0 are not compatible with GoodData.CN.
