@@ -1,5 +1,5 @@
 ---
-id: version-8.4.0-supported_versions
+id: version-8.3.0-supported_versions
 title: Supported Versions and Compatibility
 sidebar_label: Supported Versions and Compatibility
 copyright: (C) 2007-2021 GoodData Corporation
