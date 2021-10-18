@@ -27,7 +27,8 @@ This article describes the options for configuring a chart.
         labelsEnabled: true, // boolean
         rotation: "auto", // string
         min: "30", // numeral string
-        max: "40" // numeral string
+        max: "40", // numeral string
+        format: "auto" // "auto" | "inherit"
     },
     secondary_yaxis: {
         visible: true, // boolean
@@ -35,6 +36,7 @@ This article describes the options for configuring a chart.
         rotation: "auto", // string
         min: "300", // numeral string
         max: "400", // numeral string
+        format: "inherit", // "auto" | "inherit"
         measures: ["measureLocalIdentifier"]
     },
     legend: {
