@@ -14,7 +14,7 @@ Depending on whether SSO is implemented on your site, you can use one of the fol
 Before you start, verify that your site meets the following requirements:
 * Cross-Origin Resource Sharing (CORS) is set up. The URL where your analytical application runs is whitelisted in the CORS settings.
 
-    If CORS is not set up, contact [GoodData Support](https://support.gooddata.com/hc/en-us/requests/new?ticket_form_id=582387) and request them to set up CORS and whitelist the URL where your analytical application runs in the CORS settings. Optionally, ask them to enable cross-origin redirects to sites allowed by your CORS settings.
+    If CORS is not set up, [enable it](30_tips__cors.md) on your site.
 * All your users have a GoodData account and have access to your GoodData workspace.
 
     If some users do not have a GoodData account or do not have access to the workspace, see [Grant users access to your workspace](#grant-users-access-to-your-workspace).
