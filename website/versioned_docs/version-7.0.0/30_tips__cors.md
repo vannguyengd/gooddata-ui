@@ -1,5 +1,5 @@
 ---
-id: version-7.8.0-cors
+id: version-7.0.0-cors
 title: Deal with Cross-Origin Issues
 sidebar_label: Deal with Cross-Origin Issues
 copyright: (C) 2007-2018 GoodData Corporation

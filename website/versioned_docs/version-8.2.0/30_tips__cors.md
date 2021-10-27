@@ -87,7 +87,7 @@ The domains from which you want to enable API calls must be listed as allowed or
 To make those domains allowed origins, use the [API for adding domains allowed for CORS access](https://help.gooddata.com/display/API/API+Reference#/reference/white-labeling/add-domains-allowed-for-cors-access/add-domains-allowed-for-cors-access).
 
 * An allowed origin URL must start with `https://` and must end with a top-level domain (such as `.com`, `.org`, and so on).
-* You can add a port number to an allowed origin URL (for example, `https://www.example.com:8080/`).
+* You can add a port number to an allowed origin URL (for example, `https://www.example.com:8080`).
 * You can use a wildcard (`*`, `**`) to represent a domain of the third and consecutive levels.
 
 **NOTE:** If you followed the instructions from the tutorial [Create Your First Application from Scratch](02_start__no_boilerplate.md), you can now remove the `setupProxy.js` file because it is not required anymore.
