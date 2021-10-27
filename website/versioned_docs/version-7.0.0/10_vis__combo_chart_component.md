@@ -12,7 +12,7 @@ A combo chart can have one or two axes. If a combo chart has two axes, it is oft
 
 By default, a combo chart is displayed as a combination of a column chart and a line chart, with the secondary axis enabled (you can [disable it](#disable-the-secondary-axis)).
 
-![Combo Chart Component](assets/combo_chart.png "Combo Chart Component")
+![Combo Chart Component](assets/combochart.png "Combo Chart Component")
 
 ## Structure
 

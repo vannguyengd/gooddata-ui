@@ -1153,6 +1153,10 @@
         "title": "OnExportReady",
         "sidebar_label": "OnExportReady"
       },
+      "version-7.0.0/version-7.0.0-cors": {
+        "title": "Deal with Cross-Origin Issues",
+        "sidebar_label": "Deal with Cross-Origin Issues"
+      },
       "version-7.0.0/version-7.0.0-sso": {
         "title": "Set Up Authentication and Single Sign-On",
         "sidebar_label": "Set Up Authentication and Single Sign-On"
@@ -1729,7 +1733,7 @@
         "title": "Why GoodData.UI?",
         "sidebar_label": "Why GoodData.UI?"
       },
-      "version-8.3.0/version-8.4.0-supported_versions": {
+      "version-8.3.0/version-8.3.0-supported_versions": {
         "title": "Supported Versions and Compatibility",
         "sidebar_label": "Supported Versions and Compatibility"
       },
