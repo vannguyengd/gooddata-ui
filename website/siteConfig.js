@@ -38,7 +38,8 @@ const siteConfig = {
     // Secondary nav
     {href: '/gooddata-ui/docs/interactive_examples.html', label: 'Code samples', external: true},
     {href: 'https://gdui-examples.herokuapp.com/', label: 'Gallery', external: true},
-    {href: 'https://github.com/gooddata/gooddata-ui-sdk/', label: 'GitHub', external: true}
+    {href: 'https://github.com/gooddata/gooddata-ui-sdk/', label: 'GitHub', external: true},
+    {href: '/gooddata-ui/docs/roadmap.html', label: 'Roadmap', external: true},
   ],
   onPageNav: 'separate',
   users,

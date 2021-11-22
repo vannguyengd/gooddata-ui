@@ -48,3 +48,7 @@ Because Internet Explorer 11 does not support [CSS variables](https://developer.
 ## Get GoodData
 
 To use GoodData.UI, you must have an account on the GoodData platform or an installation of GoodData.CN. You can create a GoodData platform account for free at [https://www.gooddata.com/free](https://www.gooddata.com/free) or download GoodData.CN at [https://www.gooddata.com/developers](https://www.gooddata.com/developers).
+
+## Upcoming features
+
+Take a look on our [Roadmap](01_intro__roadmap.md) to see what new features are coming to GoodData.UI.

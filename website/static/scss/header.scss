@@ -81,7 +81,7 @@
 
             @media #{$large-up} {
                 top: 85px;
-                right: 258px;
+                right: 342px;
             }
         }
 
@@ -214,7 +214,8 @@
 
                     &[href*="https://github.com/"],
                     &[href*="https://gdui-examples.herokuapp.com/"],
-                    &[href*="/gooddata-ui/docs/interactive_examples.html"] {
+                    &[href*="/gooddata-ui/docs/interactive_examples.html"],
+                    &[href*="/gooddata-ui/docs/roadmap.html"] {
                         position: absolute;
                         top: 80px;
                         right: 0;
@@ -250,6 +251,10 @@
 
                     &[href*="/gooddata-ui/docs/interactive_examples.html"] {
                         right: 141px;
+                    }
+
+                    &[href*="/gooddata-ui/docs/roadmap.html"] {
+                        right: 249px;
                     }
                 }
             }
@@ -371,7 +376,7 @@
 
             @media #{$large-up} {
                 top: 94px;
-                right: 289px;
+                right: 371px;
             }
 
             @media #{$large-down} {

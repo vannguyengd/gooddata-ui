@@ -21,6 +21,10 @@
         "title": "GoodData Platform Introduction",
         "sidebar_label": "GoodData Platform Introduction"
       },
+      "roadmap": {
+        "title": "Roadmap",
+        "sidebar_label": "Roadmap"
+      },
       "why_gdui": {
         "title": "Why GoodData.UI?",
         "sidebar_label": "Why GoodData.UI?"
@@ -1886,7 +1890,8 @@
       "Get GoodData.CN Community Edition": "Get GoodData.CN Community Edition",
       "Code samples": "Code samples",
       "Gallery": "Gallery",
-      "GitHub": "GitHub"
+      "GitHub": "GitHub",
+      "Roadmap": "Roadmap"
     },
     "categories": {
       "Introduction": "Introduction",
