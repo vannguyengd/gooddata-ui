@@ -164,12 +164,10 @@ import { useDashboardLoader } from "@gooddata/sdk-ui-loaders";
 // both __webpack-prefixed global variables are provided by Webpack
 const adaptiveLoadOptions = {
     moduleFederationIntegration: {
-        __webpack_init_sharing__: typeof __webpack_init_sharing__ !== "undefined"
-            ? __webpack_init_sharing__
-            : null,
-        __webpack_share_scopes__: typeof __webpack_share_scopes__ !== "undefined"
-            ? __webpack_share_scopes__
-            : null,
+        __webpack_init_sharing__:
+            typeof __webpack_init_sharing__ !== "undefined" ? __webpack_init_sharing__ : null,
+        __webpack_share_scopes__:
+            typeof __webpack_share_scopes__ !== "undefined" ? __webpack_share_scopes__ : null,
     },
 };
 
@@ -178,7 +176,7 @@ const dashboardRef = idRef("<dashboard-identifier>");
 export const DynamicPluginsExample = () => {
     const { status, result } = useDashboardLoader({
         dashboard: dashboardRef,
-        // indicate that both local and remote plugins should be used
+        // indicate that remote plugins should be used
         loadingMode: "adaptive",
         // provide the interop object to the loader
         adaptiveLoadOptions,
@@ -194,7 +192,7 @@ export const DynamicPluginsExample = () => {
 
     // the loader result returns the component to be used
     // and also props that need to be passed to it
-    const { DashboardComponent, props: dashboardProps } = result!;
+    const { DashboardComponent, props: dashboardProps } = result;
     return (
         <div>
             <DashboardComponent {...dashboardProps} />
@@ -203,12 +201,59 @@ export const DynamicPluginsExample = () => {
 };
 ```
 
-Note that you can also use the local plugins in addition to any linked plugins to further customize the Dashboard,
-by providing the `extraPlugins` configuration property similarly to the [local plugins only example](18_dashboard_embedding.md#local-plugins-only).
+#### Using both local and remote plugins
 
-#### Redux integration
+You can also use both local and remote plugins to further customize the Dashboard, by providing the `extraPlugins` configuration property similarly to the [local plugins only example](18_dashboard_embedding.md#local-plugins-only).
+However, to make sure that your local plugins keep working, you need to pass down a special constant to the Dashboard component called `ReactDashboardContext`:
 
-TODO
+```jsx
+import React from "react";
+
+import { idRef } from "@gooddata/sdk-model";
+import { useDashboardLoader } from "@gooddata/sdk-ui-loaders";
+// import the ReactDashboardContext constant from the package
+import { ReactDashboardContext } from "@gooddata/sdk-ui-dashboard";
+
+const adaptiveLoadOptions = {
+    // omitted for brevity
+};
+
+const dashboardRef = idRef("<dashboard-identifier>");
+
+export const MixedPluginsExample = () => {
+    const { status, result } = useDashboardLoader({
+        dashboard: dashboardRef,
+        // indicate that both local and remote plugins should be used
+        loadingMode: "adaptive",
+        // provide the interop object to the loader
+        adaptiveLoadOptions,
+        // define the extra plugins, this can also be an array
+        extraPlugins: SomeLocalPlugin, // omitted for brevity
+    });
+
+    if (status === "loading" || status === "pending") {
+        return <div>Loading dashboard...</div>;
+    }
+
+    if (error) {
+        return <div>Error loading dashboard...</div>;
+    }
+
+    // the loader result returns the component to be used
+    // and also props that need to be passed to it
+    const { DashboardComponent, props: dashboardProps } = result;
+    return (
+        <div>
+            <DashboardComponent
+                {...dashboardProps}
+                // pass the ReactDashboardContext constant this property to the Dashboard component
+                // this will ensure that local plugins will keep working even when using dynamic plugins as well
+                additionalReduxContext={ReactDashboardContext}
+            />
+        </div>
+    );
+};
+```
 
 #### Content security policy
 
