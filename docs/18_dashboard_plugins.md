@@ -38,7 +38,7 @@ The contract is fairly straightforward and specifies what are the things that yo
 -  implement `register` function; this will be called during dashboard initialization and before `Dashboard` component
    will be mounted. This is where your code has change to register customizations and enhancements
 
--  optionally implement `onPluginUnloaded` lifecycle function; this will be called when the `Dashboard` component
+-  optionally implement `onPluginUnload` lifecycle function; this will be called when the `Dashboard` component
    enhanced by your plugin is unmounted
 
 ### Build and bundling
@@ -58,6 +58,14 @@ GoodData.UI ships with [default webpack config](https://github.com/gooddata/good
 that you really should use as a starting point.
 
 ### Runtime guarantees and implications
+
+#### Lifecycle
+
+Every time your plugin is loaded to be used on a Dashboard, it will be instantiated exactly once. If implemented, your
+`onPluginLoaded`, `register` and `onPluginUnload` will be called once every time a Dashboard that links to your
+plugin is loaded.
+
+#### Dependencies
 
 When you build your plugin against a particular version of `@gooddata/sdk-ui-dashboard`, the plugin will be 'locked' to
 that version of the Dashboard component. Transitively, any dashboards that link with your plugin will be locked to
