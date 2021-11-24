@@ -51,4 +51,4 @@ To use GoodData.UI, you must have an account on the GoodData platform or an inst
 
 ## Upcoming features
 
-Take a look on our [Roadmap](01_intro__roadmap.md) to see what new features are coming to GoodData.UI.
+Take a look at our [Roadmap](01_intro__roadmap.md) to see what new features are coming to GoodData.UI.

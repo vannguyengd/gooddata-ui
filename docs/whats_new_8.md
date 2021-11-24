@@ -149,6 +149,6 @@ backend implementation included in `@gooddata/sdk-backend-mockingbird`.
 
 We are successfully using this in our own testing project `@gooddata/reference-workspace` - check it out.
 
-## Upcoming features
+## Upcoming Features
 
-Take a look on our [Roadmap](01_intro__roadmap.md) to see what new features are coming to GoodData.UI.
+Take a look at our [Roadmap](01_intro__roadmap.md) to see what new features are coming to GoodData.UI.
