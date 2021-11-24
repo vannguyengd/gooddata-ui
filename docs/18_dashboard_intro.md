@@ -27,7 +27,7 @@ time.
 In the current state the Dashboard component can render a dashboard created in GoodData KPI Dashboards application all
 the while allowing the developer to step in and customize rendering of insights or add custom content.
 
-We have way more on our [roadmap](https://roadmap.link.tbd.com) and will be enhancing and opening the `Dashboard` APIs to allow
+We have way more on our [Roadmap](01_intro__roadmap.md) and will be enhancing and opening the `Dashboard` APIs to allow
 more customizations, expand the eventing and interactivity and ultimately also allow drag and drop editing experience.
 
 ## Big Picture

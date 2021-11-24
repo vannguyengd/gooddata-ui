@@ -109,7 +109,7 @@ lead to breakage when you try to upgrade your dashboard plugin to use newer vers
 -  Hosting: at this time, GoodData does not provide hosting for your built plugins. When you build your plugin, you will have to
    host it yourself in a publicly available location that supports HTTPS.
 
-See our [roadmap](https://link.to.roadmap.tbd) to learn when we want to handle these limitations and feel free to provide
+See our [Roadmap](01_intro__roadmap.md) to learn when we want to handle these limitations and feel free to provide
 additional feedback.
 
 ## Before you start
