@@ -53,8 +53,8 @@ The plugin must be built into a bundle that is configured to inherit these depen
 
 Apart form this, plugin can depend on other packages and include custom assets as it sees fit.
 
-To build the plugin correctly is essential for successfully load of the plugin bundles by GoodData.UI Dashboard Loader
-and transitively in GoodData KPI Dashboards. The plugin template that is part of the GoodData.UI ships with [default webpack config](https://github.com/gooddata/gooddata-ui-sdk/blob/master/tools/dashboard-plugin-template/webpack.config.js)
+Correct build of the plugin is essential to have your plugin load successfully. The plugin template that is part of the
+GoodData.UI ships with [default webpack config](https://github.com/gooddata/gooddata-ui-sdk/blob/master/tools/dashboard-plugin-template/webpack.config.js)
 that you really should use as a starting point.
 
 ### Runtime guarantees and implications
@@ -67,8 +67,8 @@ What this means is that any changes and improvements that we do into KPI Dashboa
 dashboards enhanced by the plugin until you upgrade your plugin and build it against the latest version of the
 `@gooddata/sdk-ui-dashboard`.
 
-We decided to go with this strict behavior in order to give you stronger guarantees that plugins enhanced by your
-dashboard work predictably regardless of how we change the vanilla experience.
+We decided to go with this strict behavior in order to give you strong guarantees that plugins enhanced by your
+dashboard will work predictably regardless of how we change the vanilla experience.
 
 In the future, we may expand in this area and allow your plugins to automatically follow the latest stable build
 of the Dashboard component.
@@ -130,10 +130,10 @@ GoodData platform and GoodData.CN.
     goal of this setting is to give your domain admin control from where it is possible to load the plugins. This should
     be a trusted and controlled location where only privileged developers can upload plugin artifacts.
 
+    Note: there may be multiple semi-colon separated hosts in this list.
+
     **IMPORTANT**: Never put untrusted hosts into this list. Always put hosts that are under your organization's
     control and appropriate review and governance. Otherwise you run risk of malicious code leaking your data.
-
-    Note: there may be multiple semi-colon separated hosts in this list.
 
 ### Configuration on GoodData.CN
 

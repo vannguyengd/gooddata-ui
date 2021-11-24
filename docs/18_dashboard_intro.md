@@ -5,7 +5,7 @@ copyright: (C) 2007-2021 GoodData Corporation
 id: dashboard_intro
 ---
 
-TODO: add links to sub-pages, tweak formatting
+TODO: tweak formatting
 
 One way to consume analytics computed by GoodData is via dashboards. To simplify - typical dashboard contains multiple
 different insights and allows user to the filter the data shown in the insights from a single place.
@@ -115,6 +115,8 @@ customizations. When initializing engine with one or more plugins, the engine ca
 to register the customizations and passes the customization APIs. Once it does this for all plugins, it can create
 the extension and customization props for the Dashboard component.
 
+You can learn more about the plugins and how to [get started on this page](18_dashboard_plugins.md).
+
 ### Dashboard Loader
 
 On top of Dashboard Engine and Plugins sits the Dashboard Loader (loader). The responsibility of this component is to handle
@@ -131,6 +133,8 @@ fit.
 
 The entire loader is available also as a React hook which you can use in your own application to dynamically load
 a dashboard.
+
+You can learn more about the loader and embedding dashboards into your React application [on this page](18_dashboard_embedding.md).
 
 ### KPI Dashboards
 
