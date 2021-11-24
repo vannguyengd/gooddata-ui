@@ -147,6 +147,33 @@ module.exports = {
 };
 ```
 
+#### Content security policy
+
+This section is only relevant for GoodData.CN users, if you are using GoodData platform, please skip to [Using the dynamic loader](18_dashboard_embedding.md#using-the-dynamic-loader).
+
+If you want to use Remote plugins on GoodData.CN, you need to add the server that you use to host the plugin assets into your Content Security Policy configuration.
+In your ingress Helm chart, make sure the the following CSP headers have your plugin hosting endpoint included
+
+-   `script-src`
+-   `img-src`
+-   `style-src`
+-   `font-src`
+
+For example, assuming `plugins.example.com` is your plugin hosting endpoint, you need to add it like this:
+
+```yml
+controller:
+    # ...rest of your config
+    addHeaders:
+        # ...rest of your addHeaders
+        Content-Security-Policy: >
+            script-src 'self' 'unsafe-inline' 'unsafe-eval' plugins.example.com;
+            img-src 'self' data: blob: plugins.example.com;
+            style-src 'self' 'unsafe-inline' plugins.example.com;
+            font-src 'self' data: plugins.example.com;
+            ... rest of the CSP headers
+```
+
 #### Using the dynamic loader
 
 Once you have the webpack config updated according to the previous section, you can start using the dynamic plugins.
@@ -254,7 +281,3 @@ export const MixedPluginsExample = () => {
     );
 };
 ```
-
-#### Content security policy
-
-TODO
