@@ -42,16 +42,17 @@ The following table provides the lifecycle phases of GoodData.UI versions:
 
 ## Compatibility with GoodData.CN
 
-The following table shows how GoodData.UI supports specific versions of [GoodData.CN](06_cloudnative__introduction.md).
+The following table shows compatibility between GoodData.UI and [GoodData.CN](06_cloudnative__introduction.md).
 
-| GoodData.CN Version | GoodData.UI First Compatible Version |
+| GoodData.CN Version | GoodData.UI Compatible Versions |
 | :--- | :--- |
-| 1.0.0 | 8.3.0 |
-| 1.0.1 | 8.3.0 |
-| 1.1.0 | 8.3.1 |
-| 1.1.1 | 8.3.1 |
-| 1.2.0 | 8.3.1 |
-| 1.3.0 | 8.5.0 |
-| 1.4.0 | 8.6.0 |
+| 1.0.0 | 8.3.0 - 8.6.0 |
+| 1.0.1 | 8.3.0 - 8.6.0 |
+| 1.1.0 | 8.3.1 - 8.6.0 |
+| 1.1.1 | 8.3.1 - 8.6.0 |
+| 1.2.0 | 8.3.1 - 8.6.0 |
+| 1.3.0 | 8.5.0 - 8.6.0 |
+| 1.4.0 | 8.6.0 only |
+| 1.5.0 | 8.7.0 and newer |
 
 The versions of GoodData.UI older than 8.3.0 are not compatible with GoodData.CN.
