@@ -143,6 +143,10 @@ GoodData platform and GoodData.CN.
     **IMPORTANT**: Never put untrusted hosts into this list. Always put hosts that are under your organization's
     control and appropriate review and governance. Otherwise you run risk of malicious code leaking your data.
 
+**IMPORTANT LIMITATION**: The dashboard plugins will never load for a user that is a domain admin. For domain admins,
+the GoodData KPI Dashboards application will prevent load of any external scripts and assets outside of GoodData
+platform.
+
 ### Configuration on GoodData.CN
 
 Similar to GoodData platform, you need to set up hosting for your plugins. To enable loading plugins from the hosting
