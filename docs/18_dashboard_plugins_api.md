@@ -5,8 +5,6 @@ copyright: (C) 2007-2021 GoodData Corporation
 id: dashboard_plugins_api
 ---
 
-TODO: add links to reference
-
 There are several categories of APIs that your plugin can take advantage of. This document covers outlines the APIs
 available in each category and gives pointers to API Reference and code where needed.
 

@@ -5,18 +5,11 @@ copyright: (C) 2007-2021 GoodData Corporation
 id: dashboard_intro
 ---
 
-TODO: tweak formatting
+Starting with v8.7, GoodData.UI includes `@gooddata/sdk-ui-dashboard` package which contains the `Dashboard` component.
 
-One way to consume analytics computed by GoodData is via dashboards. To simplify - typical dashboard contains multiple
-different insights and allows user to the filter the data shown in the insights from a single place.
-
-GoodData.UI contains all the elementary components that you can use to construct your own dashboard using React and
-on top of that comes with its own, opinionated dashboard solution.
-
-Additionally, the `@gooddata/sdk-ui-dashboard` package contains the `Dashboard` component with which we aim to address creation
-and consumption of rich, interactive and response dashboards. We understand that the requirements for dashboards can
-vary greatly and so we created the `Dashboard` component with an API-first mindset: it is extendable and customizable
-so that developers can tweak and modify the vanilla experience using Plugins.
+Using this component, we we aim to address creation and consumption of rich, interactive and response dashboards. We understand
+that the requirements for dashboards can vary greatly and so we created the `Dashboard` component with an API-first
+mindset: it is extendable and customizable so that developers can tweak and modify the vanilla experience using Plugins.
 
 ## Status & Disclaimer
 
