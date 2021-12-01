@@ -31,7 +31,7 @@ Both the GoodData platform and GoodData.CN provide the KPI Dashboards component 
 dashboard creators and consumers. In addition, developers can modify the default consumer experience, and create dashboard plugins
 to enhance or further customize the dashboard.
 
-**NOTE:** The KPI dashboard component and the dashboards that it renders can be [embedded and integrated into third-party
+**NOTE:** The KPI Dashboards component and the dashboards that it renders can be [embedded and integrated into third-party
 applications](18_dashboard_embedding.md).
 
 ### Dashboard creators

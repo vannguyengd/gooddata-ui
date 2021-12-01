@@ -15,8 +15,8 @@ The Dashboard component is a highly customizable component that renders dashboar
 The Dashboard component:
 
 * Allows you to embed a dashboard natively in React in view mode (similarly to [InsightView](10_vis__insight_view.md) for visualizations)
-* Provides mechanisms to allow you to integrate it with the rest of your application (see [Commands](#Commands) and [Events](#Events))
-* Allows you to customize the way the dashboard is rendered: you can alter the layout and change the way particular widgets are rendered (see [Props](#Props) and [Selectors](#Selectors))
+* Provides mechanisms to allow you to integrate it with the rest of your application (see [Commands](18_dashboard_component.md#commands) and [Events](18_dashboard_component.md#events))
+* Allows you to customize the way the dashboard is rendered: you can alter the layout and change the way particular widgets are rendered (see [Props](18_dashboard_component.md#props) and [Selectors](18_dashboard_component.md#selectors))
 
 The Dashboard component is built using an architecture resembling the Model-View-Controller pattern:
 
