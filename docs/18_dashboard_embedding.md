@@ -1,16 +1,14 @@
 ---
 title: Dashboard Embedding
-sidebar_label: Embedding
+sidebar_label: Dashboard Embedding
 copyright: (C) 2007-2021 GoodData Corporation
 id: dashboard_embedding
 ---
 
-## Embedding Dashboards without plugins
+## Embedding a dashboard without plugins
 
-The simplest way of embedding a dashboard is to use the [`Dashboard` component](18_dashboard_component.md) directly.
-This approach does not provide any interop with Dashboard Plugins (see [Embedding Dashboards with plugins](18_dashboard_embedding.md#embedding-dashboards-with-plugins) section if you need to support them).
-
-### Example
+The simplest way of embedding a dashboard is to use the [Dashboard component](18_dashboard_component.md) directly.
+This approach does not provide any interoperability with the dashboard plugins (see [Embedding dashboards with plugins](18_dashboard_embedding.md#embedding-dashboards-with-plugins) if you need to support them).
 
 ```jsx
 // make sure to import styles for components you expect to be on your Dashboards
@@ -26,19 +24,17 @@ import { Dashboard } from "@gooddata/sdk-ui-dashboard";
 <Dashboard dashboard={idRef("<dashboard-identifier>")} />;
 ```
 
-## Embedding Dashboards with plugins
+## Embedding dashboards with plugins
 
-There are two main ways of embedding Dashboards with plugin support:
+To embed dashboards with plugin support, use the following methods:
 
--   [with local plugins only](18_dashboard_embedding.md#local-plugins-only)
--   [with remote plugins](18_dashboard_embedding.md#remote-plugins)
+-  [Embed with local plugins only](18_dashboard_embedding.md#embed-with-local-plugins-only)
+-  [Embed with remote plugins](18_dashboard_embedding.md#embed-with-remote-plugins)
 
-### Local plugins only
+### Embed with local plugins only
 
-Embedding a Dashboard with local plugin support allows you to customize the embedded dashboard by providing plugins directly in your application.
-You can use more than one plugin like this. This way will also ignore any plugins linked to the given dashboard and will use the local plugins only.
-
-#### Example
+Embedding a dashboard with local plugin support allows you to customize the embedded dashboard by providing plugins directly in your application.
+You can use more than one plugin. Any plugins linked to the dashboard will be ignored. Only the local plugins will be used.
 
 ```jsx
 import React from "react";
@@ -93,18 +89,17 @@ export const LocalPluginsExample = () => {
 };
 ```
 
-### Remote plugins
+### Embed with remote plugins
 
-Embedding Dashboards with remote plugin support allows you to mimic the behavior of the KPI Dashboards application
-and dynamically load plugins linked to a particular Dashboard and use them.
+Embedding a dashboard with remote plugin support allows you to mimic the behavior of the KPI Dashboards, to dynamically load plugins linked to a particular dashboard and to use them.
 
-For this to work in your application, there are some interoperability requirements that are described in the following sections.
+For this to work in your application, consider the following interoperability requirements:
 
 #### Webpack integration
 
-The dynamic plugin loading logic uses the [Webpack Module Federation](https://webpack.js.org/concepts/module-federation/) feature under the hood.
-To provide the necessary integration points needed by the Dashboard Plugins, your application must be built using Webpack 5
-(the exact version this was tested with is 5.58.0), with the following configuration added to the Webpack config file:
+The dynamic plugin loading logic uses the [Webpack Module Federation](https://webpack.js.org/concepts/module-federation/) feature underneath.
+To provide the necessary integration points that the dashboard plugins need, your application must be built using Webpack 5
+(the exact version this was tested with is 5.58.0) with the following configuration added to the Webpack config file:
 
 ```js
 const { ModuleFederationPlugin } = require("webpack").container;
@@ -149,10 +144,10 @@ module.exports = {
 
 #### Content security policy
 
-This section is only relevant for GoodData.CN users, if you are using GoodData platform, please skip to [Using the dynamic loader](18_dashboard_embedding.md#using-the-dynamic-loader).
+>This section is only relevant for GoodData.CN users. If you use the GoodData platform, skip this section and proceed to [Using the dynamic loader](18_dashboard_embedding.md#using-the-dynamic-loader).
 
-If you want to use Remote plugins on GoodData.CN, you need to add the server that you use to host the plugin assets into your Content Security Policy configuration.
-In your ingress Helm chart, make sure the the following CSP headers have your plugin hosting endpoint included
+If you want to use the remote plugins on GoodData.CN, add the server that you use to host the plugin assets into your Content Security Policy configuration.
+In your ingress Helm chart, make sure that the following CSP headers have your plugin hosting endpoint included:
 
 -   `script-src`
 -   `img-src`
@@ -176,9 +171,10 @@ controller:
 
 #### Using the dynamic loader
 
-Once you have the webpack config updated according to the previous section, you can start using the dynamic plugins.
-Using the example below, it will load the Dashboard similar to the [local plugins only example](18_dashboard_embedding.md#local-plugins-only),
-but will also load any Plugins linked to the particular Dashboard and use them.
+Once you have [updated the Webpack config](18_dashboard_embedding.md#content-security-policy), you can start using the dynamic plugins.
+
+The following example loads the dashboard similar to the dashboard [embedded with local plugins only](18_dashboard_embedding.md#embed-with-local-plugins-only),
+but will also load any plugins linked to this dashboard and use them.
 
 ```jsx
 import React from "react";
@@ -230,7 +226,7 @@ export const DynamicPluginsExample = () => {
 
 #### Using both local and remote plugins
 
-You can also use both local and remote plugins to further customize the Dashboard, by providing the `extraPlugins` configuration property similarly to the [local plugins only example](18_dashboard_embedding.md#local-plugins-only).
+To use both local and remote plugins to further customize the dashboard, provide the `extraPlugins` configuration property similarly to how it is done when [embedding a dashboard with local plugins only](18_dashboard_embedding.md#embed-with-local-plugins-only).
 However, to make sure that your local plugins keep working, you need to pass down a special constant to the Dashboard component called `ReactDashboardContext`:
 
 ```jsx

@@ -29,9 +29,9 @@ To embed an existing dashboard created in KPI Dashboards, use the [Dashboard co
 
 ## Edit mode
 
-The Dashboard component itself does not yet support editing of the dashboards. However, you can use the Embedded KPI Dashboard application to edit the dashboards and then use Dashboard to view them.
+The Dashboard component itself does not yet support editing of the dashboards. However, you can use the embedded KPI Dashboard application to edit the dashboards and then use the Dashboard component to view them.
 
-**NOTE:** Any customization you may have set using the will **not** be applied to the embedded KPI Dashboards.
+**NOTE:** Any customization you may have set will **not** be applied to the embedded KPI Dashboards.
 
 ```jsx
 import React, { useCallback, useEffect, useState } from "react";

@@ -219,23 +219,23 @@
       },
       "dashboard_component": {
         "title": "Dashboard Component",
-        "sidebar_label": "React Component"
+        "sidebar_label": "Dashboard Component"
       },
       "dashboard_embedding": {
         "title": "Dashboard Embedding",
-        "sidebar_label": "Embedding"
+        "sidebar_label": "Dashboard Embedding"
       },
       "dashboard_intro": {
-        "title": "Introduction To Dashboard",
-        "sidebar_label": "Introduction"
+        "title": "Introduction to the Dashboard Component",
+        "sidebar_label": "Introduction to the Dashboard Component"
       },
       "dashboard_plugins_api": {
         "title": "Dashboard Plugin API",
-        "sidebar_label": "Plugin API"
+        "sidebar_label": "Dashboard Plugin API"
       },
       "dashboard_plugins": {
         "title": "Dashboard Plugins",
-        "sidebar_label": "Plugins"
+        "sidebar_label": "Dashboard Plugins"
       },
       "arithmetic_measure": {
         "title": "Arithmetic Measure",

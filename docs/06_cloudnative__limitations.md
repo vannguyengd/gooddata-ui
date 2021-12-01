@@ -42,8 +42,8 @@ The following capabilities are not supported:
    
 ## Known issues
 
-In the [`Dashboard`](18_dashboard_component.md) component, specifying an attribute filter using text values produces errors. This is an API issue in the `Dashboard` component that we are aiming to address in the future releases.
-All filtering on GoodData.CN is done using text values but for `Dashboard` you have to specify those values differently. To work around this issue, create an attribute filter that uses `uris` and then specify the text values there:
+In the [Dashboard component](18_dashboard_component.md), specifying an attribute filter using text values produces errors. This is an API issue in the Dashboard component that we are aiming to address in one of the future releases.
+All filtering on GoodData.CN is done using text values, but for the Dashboard component you have to specify those values differently. To work around this issue, create an attribute filter that uses `uris` and then specify the text values there:
    
 ```javascript
 import { newPositiveAttributeFilter } from "@gooddata/sdk-model";

@@ -1,162 +1,161 @@
 ---
-title: Introduction To Dashboard
-sidebar_label: Introduction
+title: Introduction to the Dashboard Component
+sidebar_label: Introduction to the Dashboard Component
 copyright: (C) 2007-2021 GoodData Corporation
 id: dashboard_intro
 ---
 
-Starting with v8.7, GoodData.UI includes `@gooddata/sdk-ui-dashboard` package which contains the `Dashboard` component.
+Starting with Version 8.7, GoodData.UI includes the `@gooddata/sdk-ui-dashboard` package that contains the Dashboard component.
 
-Using this component, we we aim to address creation and consumption of rich, interactive and response dashboards. We understand
-that the requirements for dashboards can vary greatly and so we created the `Dashboard` component with an API-first
-mindset: it is extendable and customizable so that developers can tweak and modify the vanilla experience using Plugins.
+Using this component, we aim to address creation and consumption of rich, interactive, and responsive dashboards. We understand
+that the requirements for dashboards can vary greatly. Therefore, we created the Dashboard component with an API-first
+mindset: it is extendable and customizable so that developers can tweak and modify the default experience using plugins.
 
-## Status & Disclaimer
+## Status and disclaimer
 
-The `Dashboard` component is at this point in early stage of its life. While the goal for the component is to
-provide an end-to-and solution for creation and consumption of dashboards, it is not in that state at this point in
-time.
+Currently, the Dashboard component is at an early stage of its lifecycle. While the goal for the component is to
+provide an end-to-and solution for creation and consumption of dashboards, it has not yet reached that state.
 
-In the current state the Dashboard component can render a dashboard created in GoodData KPI Dashboards application all
-the while allowing the developer to step in and customize rendering of insights or add custom content.
+In its current state, the Dashboard component can render a dashboard created in the KPI Dashboards component of the GoodData platform and
+allows the developer to customize rendering of insights or add custom content.
 
-We have way more on our [Roadmap](01_intro__roadmap.md) and will be enhancing and opening the `Dashboard` APIs to allow
-more customizations, expand the eventing and interactivity and ultimately also allow drag and drop editing experience.
+We have many milestones on our [roadmap](01_intro__roadmap.md). We will be enhancing and opening the Dashboard component's APIs to allow
+more customizations, to expand the eventing and interactivity, and to allow a drag-and-drop editing experience.
 
-## Big Picture
+## Dashboards on the GoodData platform vs. Dashboard component
 
-Let's first take a step back and take a look at the GoodData solution for dashboards and then explain how the Dashboard
+Let's take a look at GoodData's solution for dashboards and explain how the Dashboard
 component and the infrastructure around it fit into this picture.
 
-Both the Gooddata platform and GoodData.CN provide the KPI Dashboard application that can be used by both the
-dashboard creators and the consumers. Furthermore, the vanilla consumer experience can now be modified by developers
-who can create Dashboard Plugins to enhance or further customize the dashboard.
+Both the GoodData platform and GoodData.CN provide the KPI Dashboards component that can be used by both
+dashboard creators and consumers. In addition, developers can modify the default consumer experience, and create dashboard plugins
+to enhance or further customize the dashboard.
 
-Note: the KPI dashboard application and the dashboards that it renders can be embedded and integrated into third party
-applications using several mechanisms. We describe this more in depth in [a separate article dedicated to embedding](18_dashboard_embedding.md).
+**NOTE:** The KPI Dashboards component and the dashboards that it renders can be [embedded and integrated into third-party
+applications](18_dashboard_embedding.md).
 
 ### Dashboard creators
 
-The creators build dashboards using an intuitive and friendly drag and drop experience. They place insights onto
-a dashboard, define dashboard filters that can be used to filter data rendered by the insights and customize what happens
-when the consumer interacts with the different insights on a dashboard. The interactions supported out of the box are
-various types of drills - drill down, drill in, drill to other dashboards or drill to custom locations.
+The creators build dashboards using an intuitive and friendly drag-and-drop experience. They place insights onto
+a dashboard, define dashboard filters that can be used to filter data rendered by the insights, and customize what happens
+when the consumer interacts with the different insights on the dashboard. The interactions supported out of the box are
+various types of drilling: drilling down, drilling in, drilling to other dashboards, or drilling to custom locations.
 
-In the end, creators save a dashboard - it becomes part of the workspace. Once dashboard is part of the workspace, it
+In the end, the creators save the dashboard, and it becomes part of the workspace. Once the dashboard is part of the workspace, it
 can be discovered by consumers.
 
 ### Dashboard consumers
 
-The consumers also use the KPI Dashboards application to view dashboards that are available to them. In the view mode,
-the consumer can change values of the filters and interact with the insights placed on the dashboard. By triggering
-the interactions (drills) the consumer can see more detailed data, navigate to other dashboards or even to other
+The consumers use the KPI Dashboards component to view dashboards that are available to them. In view mode,
+the consumers can change values of the filters and interact with the insights placed on the dashboard. By triggering
+the interactions (drills), the consumers can see more detailed data, navigate to other dashboards or even to other
 websites.
 
-The consumers may further export the dashboard into a PDF file or schedule a recurrent exports and delivery of the
+The consumers can also export the dashboard into a PDF file or schedule recurrent export and delivery of the
 dashboard via email.
 
 ### Developers
 
-The developers may step into this process to further enhance the dashboard with custom code that may deliver custom
-visualizations or enrich the dashboard with custom content such as text, images, videos or custom interactive
-components such as forms, links and buttons.
+The developers can step in to further enhance the dashboard with custom code that may deliver custom
+visualizations or enrich the dashboard with custom content such as text, images, videos, or custom interactive
+components (for example, forms, links, and buttons).
 
-Developers modify the hosted KPI Dashboard application using plugins. They use GoodData Plugin Development Toolkit to
-bootstrap, build, test and package the plugin. In the plugin code itself, the developers can use different customization
+The developers modify the hosted KPI Dashboards component using plugins. They use GoodData's Plugin Development Toolkit to
+bootstrap, build, test, and package the plugin. In the plugin code itself, the developers can use different customization
 APIs to integrate custom code into the dashboard.
 
-Finally the developers link the plugin to one or more dashboards - from then on the KPI Dashboard application will
-use the plugin and execute code packaged within.
+Finally, the developers link the plugin to one or more dashboards - from then on the KPI Dashboards component will
+use the plugin and execute the code packaged within.
 
-## Architecture Overview
+## Dashboard component architecture
 
-Now that you have a better idea about the big picture of the GoodData dashboard solution, we can go more in depth
-into the interesting technicalities behind it.
+Now that you have a better idea about GoodData's solution for dashboards, we can go more in depth
+into interesting technicalities behind it.
 
-While the GoodData KPI Dashboards application is proprietary application hosted by GoodData, it uses the `Dashboard`
-component implemented in `@gooddata/sdk-ui-dashboards` to render the entire dashboard. The `Dashboard` component
+While the KPI Dashboards component is a proprietary application hosted by GoodData, it uses the Dashboard
+component implemented in `@gooddata/sdk-ui-dashboards` to render the entire dashboard. The Dashboard component
 is the foundation on top of which all the GoodData dashboards stand.
 
-### Dashboard Component
+### Dashboard component
 
-The `Dashboard` component is a React component with rich (and fairly large) API through which it is possible to
+The Dashboard component is a React component with a rich (and fairly large) API through which you can
 both access the core dashboard functionality and extend the component with custom functionality.
 
-The `Dashboard` component is the largest and most complex component in GoodData.UI with a lot of domain logic
-contained in it. Internally, it is realized using an architecture resembling the Model-View-Controller:
+The Dashboard component is the largest and most complex component in GoodData.UI with a lot of domain logic
+contained in it. Internally, the Dashboard component is built using an architecture resembling the Model-View-Controller pattern:
 
--  Model part is implemented with Redux and redux-saga. Model exposes rich API - selectors to get data from
-   component's state, events to describe changes and interactions with the dashboard and finally actions to trigger
-   change
+-  The Model part is implemented with Redux and Redux-Saga. The Model part exposes rich APIs: selectors to get data from
+   the component's state, events to describe changes, interactions with the dashboard, and commands to trigger changes.
 
--  View and controller parts are implemented using React components and hooks. The top-level `Dashboard` component
-   also has a rich API - props to specify dashboard to render, configuration for rendering, customization of almost
-   all view components used on a dashboard and finally integration with the eventing.
+-  The View and Controller parts are implemented using React components and hooks. The top-level Dashboard component
+   also has rich APIs: props to specify a dashboard to render, configuration for rendering, customization of almost
+   all view components used on a dashboard, and integration with the eventing.
 
-We go more in depth about Dashboard component [on a separate page here](18_dashboard_component.md).
+For more information about the Dashboard component, see [this article](18_dashboard_component.md).
 
-### Dashboard Engine and Plugins
+### Dashboard engine and plugins
 
-The complex `Dashboard` component is wrapped in an envelope that provides convenient and controlled way to integrate
-custom code with the Dashboard component - we call this wrapper Dashboard Engine (engine).
+The complex Dashboard component is wrapped in an envelope that provides a convenient and controlled way to integrate
+custom code with the Dashboard component. This wrapper is called the dashboard engine.
 
-To put it simple, the primary responsibility of the engine is to create props for the top-level `Dashboard` component
-so that these props reflect contributions from one or more Dashboard Plugins (plugins).
+To put it simple, the primary responsibility of the engine is to create props for the top-level Dashboard component
+so that these props reflect contributions from one or more dashboard plugins.
 
-The engine exposes several curated customization APIs through which plugins can register their contributions and
-customizations. When initializing engine with one or more plugins, the engine calls out to the plugin code (your code)
-to register the customizations and passes the customization APIs. Once it does this for all plugins, it can create
+The engine exposes several curated customization APIs through which the plugins can register their contributions and
+customizations. When initializing the engine with one or more plugins, the engine calls out to the plugin code (your code)
+to register the customizations and passes the customization APIs. Once it has done this for all plugins, it can create
 the extension and customization props for the Dashboard component.
 
-You can learn more about the plugins and how to [get started on this page](18_dashboard_plugins.md).
+For more information about the plugins, see [this article](18_dashboard_plugins.md).
 
-### Dashboard Loader
+### Dashboard loader
 
-On top of Dashboard Engine and Plugins sits the Dashboard Loader (loader). The responsibility of this component is to handle
-the lifecycle of a dashboard that is possibly enhanced by one or more plugins. The loader will:
+On top of the dashboard engine and the plugins sits the dashboard loader. The responsibility of this component is to handle
+the lifecycle of a dashboard that is possibly enhanced by one or more plugins.
 
-1.  Get dashboard from workspace
-2.  Load any plugins that are linked with the dashboard
-3.  Load appropriate version of the dashboard engine needed by the plugins
-4.  Initialize engine with plugins (registering all the customizations)
-5.  Return load result that consists of `Dashboard` component and correct props to pass to it
+The loader does the following:
 
-Once the code using loader has the `Dashboard` component and props for it, it can mount the dashboard as it sees
+1.  Gets the dashboard from a workspace
+2.  Loads any plugins that are linked with the dashboard
+3.  Loads the appropriate version of the dashboard engine needed by the plugins
+4.  Initializes the engine with the plugins (registering all the customizations)
+5.  Returns the load result that consists of the Dashboard component and the correct props to pass to it
+
+Once the code using the loader has the Dashboard component and props for it, it can mount the dashboard as it sees
 fit.
 
-The entire loader is available also as a React hook which you can use in your own application to dynamically load
+The entire loader is also available as a React hook that you can use in your own application to dynamically load
 a dashboard.
 
-You can learn more about the loader and embedding dashboards into your React application [on this page](18_dashboard_embedding.md).
+For more information about the loader and embedding dashboards into your React application, see [this article](18_dashboard_embedding.md).
 
 ### KPI Dashboards
 
-The proprietary KPI Dashboards that are hosted on GoodData platform and that are also part of GoodData.CN use the
-dashboard loader to load a dashboard that is possibly enhanced with plugins and then mount the loaded `Dashboard`
+The proprietary KPI Dashboards component that is hosted on the GoodData platform and that is also part of GoodData.CN uses the
+dashboard loader to load a dashboard that is possibly enhanced with plugins and then mounts the loaded Dashboard
 component.
 
-The KPI Dashboards additionally inject several proprietary plugins during the load - for instance a plugin that
-adds a post message API for a dashboard.
+The KPI Dashboards component additionally injects several proprietary plugins during the load (for instance, a plugin that
+adds a postMessage API for a dashboard).
 
-### Wrapping up
+### Conclusion
 
-We hope that the document so far painted a good picture of the stack behind GoodData dashboard solution. With this picture
-in mind, you should be able to understand at which point you as a developer can step in. To sum up the most important
-parts:
+We hope that this article explained the stack behind GoodData's dashboard solution. You should now be able to understand
+at which point you as a developer can step in. To sum up the most important parts:
 
--   You can use the `Dashboard` component in your own application to render a dashboard from workspace and use full
-    set of API to integrate with and customize the dashboard
+-   You can use the Dashboard component in your own application to render a dashboard from a workspace and use a full
+    set of APIs to integrate with and customize the dashboard.
 
--   You can use Dashboard Plugins to build extensions that can be integrated into GoodData KPI Dashboards
+-   You can use the dashboard plugins to build extensions that can be integrated into the KPI Dashboards component.
 
--   You can use Dashboard Loader in your own application to dynamically load and render a dashboard enriched with plugins
+-   You can use the dashboard loader in your own application to dynamically load and render a dashboard enriched with plugins.
 
-## Supported Backends
+## Supported backends
 
-The entire stack described above can work on top of both GoodData platform and GoodData.CN.
+The entire stack described in this article can work on top of both the GoodData platform and GoodData.CN.
 
-Some functionality is not yet available on the GoodData.CN because of inherent limitations on the backend:
+Some functionality is not yet available in GoodData.CN because of inherent limitations on the backend, specifically:
 
 -  Exports
 -  Scheduling of exports
--  KPI Widgets and alerting
+-  KPI widgets and alerting
