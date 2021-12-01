@@ -52,7 +52,8 @@ const EmbeddedReactDashboard = () => {
 
 As every other React component, first way how to affect the Dashboard component behavior is by its props.
 
-Let's see the most important ones:
+The [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardprops.html) describes all props in detail,
+let's pin-point the most important ones:
 
 ### Base Props
 
