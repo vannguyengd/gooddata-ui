@@ -9,7 +9,7 @@ There are several categories of APIs that your plugin can take advantage of. Thi
 available in each category and gives pointers to API Reference and code where needed.
 
 All the public and most of the alpha-level APIs have detailed documentation in form of TSDoc. We generate the API
-doc website from these comments - you can find the [API Reference here](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/index.html).
+doc website from these comments - you can find the [API Reference here](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.html).
 
 ## Plugin Contract
 
@@ -92,12 +92,12 @@ Promise to resolve.
 ## Customization API
 
 This API is an entry point to all the customization and enhancement capabilities that your code can take advantage of. The
-API has thorough description in the API Reference.
+API has thorough description in the [API Reference](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardcustomizer.html).
 
 ### Customizing rendering of Insights
 
 Calling the `insightWidgets()` method on the customization API will lead you to the API through which you can customize
-how the insight widgets on your dashboard will be rendered.
+how the [insight widgets](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardinsightcustomizer.html) on your dashboard will be rendered.
 
 The main use case for this is rendering data for one or more insights using your own custom visualizations. Additional
 use case is to add additional elements on top of the insight widgets that are rendered using the built in renderers.
@@ -163,7 +163,7 @@ a method to register a 'decorator':
 ### Customizing rendering of KPIs
 
 Calling the `kpiWidgets()` method on the customization API will lead you to the API through which you can customize
-how the KPI widgets on your dashboard will be rendered.
+how the [KPI widgets](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardkpicustomizer.html) on your dashboard will be rendered.
 
 KPI widgets are special type of widgets available only on the GoodData platform. Their purpose is to render value of
 a single measure, possibly compared to the value of the measure in previous period. The KPI Widgets additionally
@@ -193,7 +193,7 @@ can check it out and try hands on right away.
 #### Registering custom widget types
 
 Calling the `customWidgets()` method on the customization API will lead you to the API through which you can
-register custom widget types.
+register [custom widget types](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardwidgetcustomizer.html).
 
 Use the `addCustomWidget()` method to register a custom widget type and provide your custom React component. The
 props for this component will be of the `IDashboardWidgetProps` type. The `widget` property will contain payload
@@ -204,8 +204,8 @@ for the custom widget.
 Now that you have a custom widget type registered, you can add instances of widgets of this type onto a dashboard. You
 can do this by using the layout manipulation API.
 
-Calling the `layout()` method on the customization API will lead you to the API through which you can customize the
-layout. To be prepared for possible different types of layouts in the future, the layout manipulation API contains
+Calling the `layout()` method on the customization API will lead you to the API through which you can [customize the
+layout](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardlayoutcustomizer.html). To be prepared for possible different types of layouts in the future, the layout manipulation API contains
 methods to customize layout of particular type.
 
 At the moment the Dashboard component supports only the fluid 12-column grid layout. To customize this layout, use
@@ -220,7 +220,7 @@ two parameters:
    to customize. Depending on your use case, you may or may not need to inspect the layout. For instance if you
    are adding a custom header on top of the dashboard, you can just do that
 
--  fluid layout customization API
+-  [fluid layout customization API](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.ifluidlayoutcustomizer.html)
 
    This API allows you to add new sections (rows) onto a dashboard or add new items (columns) into existing
    sections.
@@ -252,7 +252,7 @@ the Dashboard component to be fully observable via events and you can register h
 keep in mind that at this point API maturity of most of the events is `@alpha` - meaning they can change in the next
 version of GoodData.UI and break your plugin if you try to upgrade to it.
 
-The event handler API has several methods that can be divided into three groups:
+The [event handler API](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardeventing.html) has several methods that can be divided into three groups:
 
 -  `addEventHandler()` and `removeEventHandler()`
 
