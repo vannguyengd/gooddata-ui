@@ -1,6 +1,6 @@
 ---
 title: Dashboard Plugins
-sidebar_label: Plugins
+sidebar_label: Dashboard Plugins
 copyright: (C) 2007-2021 GoodData Corporation
 id: dashboard_plugins
 ---
