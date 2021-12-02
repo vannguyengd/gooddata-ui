@@ -137,10 +137,10 @@ The setup is different for the GoodData platform and GoodData.CN.
 
     **NOTE:** You can add multiple hosts separated by semicolon to the list.
 
-    **IMPORTANT!** Never put untrusted hosts into this list. Always put the hosts that are under your organization's
+    >**IMPORTANT!** Never put untrusted hosts into this list. Always put the hosts that are under your organization's
     control and appropriate review and governance. Otherwise, you run risk of malicious code leaking your data.
 
-**IMPORTANT LIMITATION:** The dashboard plugins will never load for a user that is a domain admin. For domain admins,
+>**IMPORTANT LIMITATION:** The dashboard plugins will never load for a user that is a domain admin. For domain admins,
 the KPI Dashboards component will prevent load of any external scripts and assets outside of the GoodData
 platform.
 

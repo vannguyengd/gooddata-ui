@@ -112,7 +112,7 @@ The events emitted during command handling will be sent to all handlers added fo
 allow for request-response semantics, each command can specify a custom correlation ID that will be included in
 all events emitted during the command processing.
 
-> **IMPORTANT:** The commands are the only valid and supported way to modify a rendered dashboard. You must not alter the
+> **IMPORTANT!** The commands are the only valid and supported way to modify a rendered dashboard. You must not alter the
 > state of the Dashboard component by directly mutating it because it may lead to undesired behavior and issues.
 
 ```jsx
