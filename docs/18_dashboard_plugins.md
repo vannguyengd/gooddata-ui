@@ -33,7 +33,7 @@ The contract is fairly straightforward and specifies the things that you as an a
 
 -  The properties through which you provide metadata about the plugin
 -  The `register` function that will be called during dashboard initialization and before the Dashboard component
-   is mounted. This is where your code has changed to register customizations and enhancements.
+   is mounted. This is where your code can register customizations and enhancements.
 -  (Optional) The `onPluginLoaded` lifecycle function that will be called as the plugin assets are loaded and
    before dashboard initialization
 -  (Optional) The `onPluginUnload` lifecycle function that will be called when the Dashboard component

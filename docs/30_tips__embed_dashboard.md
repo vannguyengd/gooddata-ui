@@ -24,7 +24,7 @@ To embed an existing dashboard created in KPI Dashboards, use the [Dashboard co
     import { Dashboard } from "@gooddata/sdk-ui-dashboard";
     import "@gooddata/sdk-ui-dashboard/styles/css/main.css";
 
-    <Dashboard dashboard={idRef(aby3polcaFxy)} />;
+    <Dashboard dashboard={idRef("aby3polcaFxy")} />;
     ```
 
 ## Edit mode
@@ -36,10 +36,11 @@ The Dashboard component itself does not yet support editing of the dashboards. H
 ```jsx
 import React, { useCallback, useEffect, useState } from "react";
 import { Dashboard } from "@gooddata/sdk-ui-dashboard";
+import { idRef } from "@gooddata/sdk-ui-model";
 import { useWorkspace } from "@gooddata/sdk-ui";
 import { EmbeddedKpiDashboard } from "@gooddata/sdk-embedding";
 
-const dashboardId = "<dashboard-id>";
+const dashboardRef = idRef("<dashboard-id>");
 const backendUrl = "<backend-url>";
 
 const containerStyle = {
@@ -107,7 +108,7 @@ const DashboardEditExample = () => {
                     <button onClick={() => setIsEditing(true)}>
                         Edit dashboard using embedded KPI Dashboards
                     </button>
-                    <Dashboard dashboard={dashboardId} />
+                    <Dashboard dashboard={dashboardRef} />
                 </React.Fragment>
             )}
         </div>
