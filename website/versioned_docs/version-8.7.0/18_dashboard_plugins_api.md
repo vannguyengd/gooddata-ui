@@ -17,7 +17,7 @@ The plugin contract is the first API that you will come in touch with. The contr
 to fill in and functions to implement, including the functions that allow you to specify code
 to run on load, during registration, and after unload.
 
-A new plugin that is bootstrapped using the [Plugin Development Toolkit](18_dashboard_plugins#getting-started) sets up
+A new plugin that is bootstrapped using the [Plugin Development Toolkit](18_dashboard_plugins.md#getting-started) sets up
 all the contract essentials and provides a template implementation of some of the functions by subclassing
 the `DashboardPluginV1`.
 
@@ -69,7 +69,7 @@ Your function is always called with the following parameters:
    during the registration phase. If you hold onto the received APIs and attempt to make changes later on, they
    will have no effect and will result in warnings in the browser console.
 
-   For more information, see [Customization API](18_dashboard_plugins_api#customization-api).
+   For more information, see [Customization API](18_dashboard_plugins_api.md#customization-api).
 
 -  Event handler API
 
@@ -77,7 +77,7 @@ Your function is always called with the following parameters:
    happening on the dashboard. If needed, you can hold onto the event handler API and use it to add or remove handlers
    at any time during the plugin lifecycle.
 
-   For more information, see [Event handler API](18_dashboard_plugins_api#event-handler-api).
+   For more information, see [Event handler API](18_dashboard_plugins_api.md#event-handler-api).
 
 ### onPluginUnload
 
@@ -165,7 +165,7 @@ Similar to the insight widget customization API, you can register your own compo
 to add extra elements on top of the widgets.
 
 The KPI customization API contains the `withCustomProvider()` and `withCustomDecorator()` methods that behave the same way
-the [insight widget methods](18_dashboard_plugins_api#customize-rendering-of-insights) do.
+the [insight widget methods](18_dashboard_plugins_api.md#customize-rendering-of-insights) do.
 
 ### Custom widgets
 
@@ -309,5 +309,4 @@ Because that code is completely out of any React tree, you need to access these 
    every time the Dashboard component's state changes. Your function can store this somewhere and
    pass it as input to the selectors.
 
-   **IMPORTANT!** Never modify the state to which you subscribe. GoodData.UI does not support this action. The only
-   supported way to modify the state is through the Model Command API.
+   >**IMPORTANT!** Never modify the state to which you subscribe. GoodData.UI does not support this action. The only supported way to modify the state is through the Model Command API.
