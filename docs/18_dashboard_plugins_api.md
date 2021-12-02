@@ -9,100 +9,99 @@ There are several categories of APIs that your plugin can take advantage of. Thi
 available in each category and gives pointers to API Reference and code where needed.
 
 All the public and most of the alpha-level APIs have detailed documentation in form of TSDoc. We generate the API
-doc website from these comments - you can find the [API Reference here](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.html).
+doc website from these comments. You can find the API reference [here](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.html).
 
-## Plugin Contract
+## Plugin contract
 
 The plugin contract is the first API that you will come in touch with. The contract defines properties that you need
-to fill in and functions to implement. Of special interest are the functions which allow you to specify code
-to run on load, during registration and after unload.
+to fill in and functions to implement, including the functions that allow you to specify code
+to run on load, during registration, and after unload.
 
-A new plugin bootstrapped using our [Plugin Development Toolkit](18_dashboard_plugins#getting-started) will set up
-all the contract essentials and provide a template implementation of some of the functions. It does so by subclassing
+A new plugin that is bootstrapped using the [Plugin Development Toolkit](18_dashboard_plugins#getting-started) sets up
+all the contract essentials and provides a template implementation of some of the functions by subclassing
 the `DashboardPluginV1`.
 
-You can modify your subclass as needed and if needed even add plugin specific internal state into this class.
+You can modify your subclass as needed. You can even add a plugin-specific internal state into this class, if needed.
 
-#### onPluginLoaded
+### onPluginLoaded
 
-If you implement this function, it will be called right after your plugin is loaded and is about to be used on a Dashboard.
+When implemented, this function is called right after your plugin is loaded and is about to be used on a dashboard.
 At this point, your code receives information about the context in which it will operate. Most notably:
 
--  Analytical Backend that is currently in use
--  Workspace that the user works with
--  Reference of dashboard that is about to be loaded
+-  The Analytical Backend that is currently in use
+-  The workspace that the user works with
+-  The reference of the dashboard that is about to be loaded
+-  The Analytical Backend setup authenticated and ready to use in case your plugin needs to read additional data from the backend
 
-The analytical backend setup, authenticated and ready to use in case your plugin needs to read additional data from
-the backend.
+This function may return a promise. In that case, the dashboard loader waits until the promise is resolved and
+then proceeds. The loader does not impose any timeout on the `onPluginLoaded` call. If you make calls over the network,
+a good practice is to consider potential failures and include timeouts and necessary fallbacks.
 
-This function may return a Promise. In that case, the Dashboard Loader will wait until the promise is resolved and
-then proceed. The loader does not impose any timeout on the onPluginLoaded call. If you make calls over the network it
-is a good thing to cater for failures and include timeouts and necessary fallbacks.
+**NOTE:** If your implementation of this function fails with an exception, the loader excludes your plugin from further processing.
 
-Note: if your implementation of this function fails with an exception, the loader will exclude your plugin from further processing.
+#### Parameterization
 
-##### Parameterization
+To allow a plugin to be reused across dashboards, you can make each link between a dashboard and your plugin specify
+additional parameters. These parameters can then be used to customize the behavior of the plugin for
+a particular dashboard.
 
-To allow for plugin reuse across dashboards, it is possible that each link between a dashboard and your plugin specifies
-additional parameters. The idea is that these parameters can then be used to customize the behavior of the plugin for
-the particular dashboard.
+Both the GoodData platform and GoodData.CN treat parameters opaquely. Only soft-size limits of 2,048 bytes for
+the length of the parameter string are imposed. Otherwise, the parameters are fully under your control and responsibility.
 
-Both the GoodData platform and GoodData.CN treat parameters opaquely. We only impose soft size limits of 2048 bytes for
-the length of the parameter string. Otherwise the parameters are fully under your control and responsibility.
+If the parameters are specified on the link between a dashboard and your plugin, the loader sends them as the
+second argument to the `onPluginLoad` function.
 
-If the parameters are specified on the link between a dashboard and your plugin, then the loader will send them as
-second argument to the `onPluginLoad`
+### register
 
-#### register
+This is a mandatory function that your plugin must implement. This function is called after the plugin is loaded. 
+In this function, you then can register customizations to the dashboard.
 
-This is the mandatory function that your plugin must implement. It is called after the plugin is loaded and it is here
-where you can register customizations to the dashboard.
+Your function is always called with the following parameters:
 
-Your function will be always called with three parameters:
+-  Dashboard context
 
--  Dashboard Context
-
-   Same as in the `onPluginLoaded`, the context contains essential information describing backend, workspace and
+   Similar to `onPluginLoaded`, the context contains essential information describing the backend, workspace, and
    dashboard.
 
 -  Customization API
 
-   The customization API allows your code to add new content onto a dashboard. Calls to these APIs are only valid
+   The customization API allows your code to add new content to a dashboard. Calls to these APIs are only valid
    during the registration phase. If you hold onto the received APIs and attempt to make changes later on, they
-   will have no effect and will result in warnings in browser console.
+   will have no effect and will result in warnings in the browser console.
 
-   We describe the customization API further on in this document.
+   For more information, see (18_dashboard_plugins_api#customization-api).
 
--  Event Handler API
+-  Event handler API
 
    The event handler API allows your code to add or remove your own custom event handlers for the different events
    happening on the dashboard. If needed, you can hold onto the event handler API and use it to add or remove handlers
    at any time during the plugin lifecycle.
 
-   We describe the event handler API further on in this document.
+   For more information, see (18_dashboard_plugins_api#event-handler-api).
 
-#### onPluginUnload
+### onPluginUnload
 
-If you implement this function, it will be called right before the dashboard that uses your plugin is unmounted. This is
-where your code can do additional teardown and cleanup specific to your plugin.
+When implemented, this function is called right before the dashboard that uses your plugin is unmounted. 
+In this function, your code can do additional teardown and cleanup specific to your plugin.
 
-Your function may be asynchronous and return a Promise. At this point, the Dashboard Loader will not wait for the returned
-Promise to resolve.
+Your function may be asynchronous and return a promise. At this point, the dashboard loader does not wait for the returned
+promise to resolve.
 
 ## Customization API
 
-This API is an entry point to all the customization and enhancement capabilities that your code can take advantage of. The
-API has thorough description in the [API Reference](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardcustomizer.html).
+The customization API is an entry point to all the customization and enhancement capabilities that your code can take advantage of. The
+API has a thorough description in the [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardcustomizer.html).
 
-### Customizing rendering of Insights
+### Customize rendering of insights
 
-Calling the `insightWidgets()` method on the customization API will lead you to the API through which you can customize
-how the [insight widgets](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardinsightcustomizer.html) on your dashboard will be rendered.
+Call the `insightWidgets()` method on the customization API leads to the API through which you can customize
+how the [insight widgets](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardinsightcustomizer.html)
+on your dashboard will be rendered.
 
-The main use case for this is rendering data for one or more insights using your own custom visualizations. Additional
-use case is to add additional elements on top of the insight widgets that are rendered using the built in renderers.
+The main use case is rendering data for one or more insights using your own custom visualizations. 
+Another use case is adding additional elements on top of the insight widgets that are rendered using the built-in renderers.
 
-To address the custom visualization use case, the insight widget customization API provides two methods:
+To address the custom visualization use case, the insight widget customization API provides the following methods:
 
 -  `withCustomProvider()`
 
@@ -160,7 +159,7 @@ a method to register a 'decorator':
      })
      ```
 
-### Customizing rendering of KPIs
+### Customize rendering of KPIs
 
 Calling the `kpiWidgets()` method on the customization API will lead you to the API through which you can customize
 how the [KPI widgets](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardkpicustomizer.html) on your dashboard will be rendered.
@@ -190,7 +189,7 @@ layout manipulation API.
 Note: the default plugin bootstrapped by the Plugin Development Toolkit defines a sample custom widget already so you
 can check it out and try hands on right away.
 
-#### Registering custom widget types
+#### Register types of custom widget
 
 Calling the `customWidgets()` method on the customization API will lead you to the API through which you can
 register [custom widget types](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardwidgetcustomizer.html).
@@ -199,7 +198,7 @@ Use the `addCustomWidget()` method to register a custom widget type and provide 
 props for this component will be of the `IDashboardWidgetProps` type. The `widget` property will contain payload
 for the custom widget.
 
-#### Adding custom widgets onto dashboard
+#### Add custom widgets to a dashboard
 
 Now that you have a custom widget type registered, you can add instances of widgets of this type onto a dashboard. You
 can do this by using the layout manipulation API.
@@ -230,7 +229,7 @@ the layout before it is stored in the Dashboard component's state. Further modif
 already rendered are not supported by this API. The Dashboard component provides alpha-level APIs that can be
 used to add, move or remove widgets once the Dashboard component is rendered._
 
-#### Creating sections, items and custom widgets
+#### Create sections, items, and custom widgets
 
 We would like to discourage you from 'manually' creating sections, item and custom widget objects. The Dashboard component
 contains convenient factory functions to create these objects:
