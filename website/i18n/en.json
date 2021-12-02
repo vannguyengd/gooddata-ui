@@ -1900,6 +1900,58 @@
       "version-8.6.0/version-8.6.0-error_component": {
         "title": "ErrorComponent",
         "sidebar_label": "ErrorComponent"
+      },
+      "version-8.7.0/version-8.7.0-about_gooddataui": {
+        "title": "About GoodData.UI",
+        "sidebar_label": "About GoodData.UI"
+      },
+      "version-8.7.0/version-8.7.0-interactive_examples": {
+        "title": "Interactive Code Examples",
+        "sidebar_label": "Interactive Code Examples"
+      },
+      "version-8.7.0/version-8.7.0-roadmap": {
+        "title": "Roadmap",
+        "sidebar_label": "Roadmap"
+      },
+      "version-8.7.0/version-8.7.0-cloudnative_limitations": {
+        "title": "Limitations",
+        "sidebar_label": "Limitations"
+      },
+      "version-8.7.0/version-8.7.0-dashboard_view_component": {
+        "title": "DashboardView",
+        "sidebar_label": "DashboardView"
+      },
+      "version-8.7.0/version-8.7.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
+      },
+      "version-8.7.0/version-8.7.0-dashboard_component": {
+        "title": "Dashboard Component",
+        "sidebar_label": "Dashboard Component"
+      },
+      "version-8.7.0/version-8.7.0-dashboard_embedding": {
+        "title": "Dashboard Embedding",
+        "sidebar_label": "Dashboard Embedding"
+      },
+      "version-8.7.0/version-8.7.0-dashboard_intro": {
+        "title": "Introduction to the Dashboard Component",
+        "sidebar_label": "Introduction to the Dashboard Component"
+      },
+      "version-8.7.0/version-8.7.0-dashboard_plugins_api": {
+        "title": "Dashboard Plugin API",
+        "sidebar_label": "Dashboard Plugin API"
+      },
+      "version-8.7.0/version-8.7.0-dashboard_plugins": {
+        "title": "Dashboard Plugins",
+        "sidebar_label": "Dashboard Plugins"
+      },
+      "version-8.7.0/version-8.7.0-embed_dashboard": {
+        "title": "Embed a Dashboard Created in KPI Dashboards",
+        "sidebar_label": "Embed a Dashboard Created in KPI Dashboards"
+      },
+      "version-8.7.0/version-8.7.0-whats_new_8": {
+        "title": "What's New in Version 8.0",
+        "sidebar_label": "What's New in Version 8.0"
       }
     },
     "links": {
