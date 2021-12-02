@@ -146,9 +146,8 @@ platform.
 
 ### Configuration on GoodData.CN
 
-1. Set up hosting for your plugins.
-
-2. Update the Content Security Policy of your GoodData.CN installation's gateway to enable loading plugins from the hosting location.
+Similar to the GoodData platform, set up hosting for your plugins. To enable loading plugins from the hosting location,
+update the Content Security Policy of your GoodData.CN installation's gateway.
 
 ## Getting started
 
