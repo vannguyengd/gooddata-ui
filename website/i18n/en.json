@@ -217,6 +217,26 @@
         "title": "OnLegendReady",
         "sidebar_label": "OnLegendReady"
       },
+      "dashboard_component": {
+        "title": "Dashboard Component",
+        "sidebar_label": "Dashboard Component"
+      },
+      "dashboard_embedding": {
+        "title": "Dashboard Embedding",
+        "sidebar_label": "Dashboard Embedding"
+      },
+      "dashboard_intro": {
+        "title": "Introduction to the Dashboard Component",
+        "sidebar_label": "Introduction to the Dashboard Component"
+      },
+      "dashboard_plugins_api": {
+        "title": "Dashboard Plugin API",
+        "sidebar_label": "Dashboard Plugin API"
+      },
+      "dashboard_plugins": {
+        "title": "Dashboard Plugins",
+        "sidebar_label": "Dashboard Plugins"
+      },
       "arithmetic_measure": {
         "title": "Arithmetic Measure",
         "sidebar_label": "Arithmetic Measure"
@@ -1900,6 +1920,7 @@
       "Integration with GoodData.CN": "Integration with GoodData.CN",
       "Visual Components": "Visual Components",
       "Properties": "Properties",
+      "Dashboard": "Dashboard",
       "Execution Model": "Execution Model",
       "Custom Visualizations": "Custom Visualizations",
       "Development Tips": "Development Tips",

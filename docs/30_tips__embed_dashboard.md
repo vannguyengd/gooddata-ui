@@ -5,40 +5,42 @@ copyright: (C) 2007-2021 GoodData Corporation
 id: embed_dashboard
 ---
 
-To embed an existing dashboard created in KPI Dashboards, use the [DashboardView component](10_vis__dashboard_view.md).
+To embed an existing dashboard created in KPI Dashboards, use the [Dashboard component](18_dashboard_component.md).
 
 **Steps:**
 
 1. Obtain the identifier of the dashboard via [catalog-export](02_start__catalog_export.md).
 
-2. Import the DashboardView component from the `@gooddata/sdk-ui-ext` package into your app:
+2. Import the Dashboard component from the `@gooddata/sdk-ui-dashboard` package into your app:
 
     ```javascript
-    import { DashboardView } from "@gooddata/sdk-ui-ext";
+    import { Dashboard } from "@gooddata/sdk-ui-dashboard";
     ```
 
-3. Create a `DashboardView` component in your app, and provide it with the workspace ID and the visualization identifier that you obtained at Step 1:
+3. Create a `Dashboard` component in your app, and provide it with the workspace ID and the visualization identifier that you obtained at Step 1:
 
     ```jsx
-    import { DashboardView } from "@gooddata/sdk-ui-ext";
-    import "@gooddata/sdk-ui-ext/styles/css/main.css";
+    import { idRef } from "@gooddata/sdk-model";
+    import { Dashboard } from "@gooddata/sdk-ui-dashboard";
+    import "@gooddata/sdk-ui-dashboard/styles/css/main.css";
 
-    <DashboardView dashboard="aby3polcaFxy" />;
+    <Dashboard dashboard={idRef("aby3polcaFxy")} />;
     ```
 
 ## Edit mode
 
-The DashboardView component itself does not support editing of the dashboards. However, you can use the Embedded KPI Dashboard application to edit the dashboards and then use DashboardView to view them.
+The Dashboard component itself does not yet support editing of the dashboards. However, you can use the embedded KPI Dashboard application to edit the dashboards and then use the Dashboard component to view them.
 
-**NOTE:** The following example will **not** make sure that the custom filters you may have set for DashboardView will be reflected in the embedded KPI Dashboards. To do that, use the [postMessages API](https://help.gooddata.com/pages/viewpage.action?pageId=81968283). In addition, any customization you may have set using the [customizations](10_vis__dashboard_view.md#customizations) will **not** be applied to the embedded KPI Dashboards.
+**NOTE:** Any customization you may have set will **not** be applied to the embedded KPI Dashboards.
 
 ```jsx
 import React, { useCallback, useEffect, useState } from "react";
-import { DashboardView, clearDashboardViewCaches } from "@gooddata/sdk-ui-ext";
+import { Dashboard } from "@gooddata/sdk-ui-dashboard";
+import { idRef } from "@gooddata/sdk-ui-model";
 import { useWorkspace } from "@gooddata/sdk-ui";
 import { EmbeddedKpiDashboard } from "@gooddata/sdk-embedding";
 
-const dashboardId = "<dashboard-id>";
+const dashboardRef = idRef("<dashboard-id>");
 const backendUrl = "<backend-url>";
 
 const containerStyle = {
@@ -46,7 +48,7 @@ const containerStyle = {
     height: 800, // set a fixed height to prevent layout shifts when switching to and from edit mode
 };
 
-const DashboardViewEditExample = () => {
+const DashboardEditExample = () => {
     const [isEditing, setIsEditing] = useState(false);
     const workspace = useWorkspace();
 
@@ -54,10 +56,7 @@ const DashboardViewEditExample = () => {
         const type = e.data.gdc?.event.name;
 
         if (type === EmbeddedKpiDashboard.GdcKdEventType.DashboardSaved) {
-            // this means the user has made some changes and saved them
-            // clear cache to make sure the dashboard is reloaded...
-            clearDashboardViewCaches();
-            // ... and switch back to view mode
+            // switch back to view mode
             setIsEditing(false);
         } else if (type === EmbeddedKpiDashboard.GdcKdEventType.SwitchedToView) {
             // this means the user did not save the changes and clicked the "Cancel" button
@@ -109,7 +108,7 @@ const DashboardViewEditExample = () => {
                     <button onClick={() => setIsEditing(true)}>
                         Edit dashboard using embedded KPI Dashboards
                     </button>
-                    <DashboardView dashboard={dashboardId} />
+                    <Dashboard dashboard={dashboardRef} />
                 </React.Fragment>
             )}
         </div>

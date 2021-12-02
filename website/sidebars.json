@@ -68,6 +68,13 @@
             "on_legend_ready",
             "data_sampling"
         ],
+        "Dashboard": [
+            "dashboard_intro",
+            "dashboard_plugins",
+            "dashboard_plugins_api",
+            "dashboard_embedding",
+            "dashboard_component"
+        ],
         "Execution Model": [
             "execution_model",
             "time_over_time_comparison",
