@@ -29,12 +29,12 @@ The following sample KPI calculates the total sales in California:
 ```jsx
 import { Kpi } from "@gooddata/sdk-ui";
 import { newPositiveAttributeFilter } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 <Kpi
-    measure={Ldm.$TotalSales}
+    measure={Md.$TotalSales}
     filters={[
-        newPositiveAttributeFilter(Ldm.StateName, ["California"])
+        newPositiveAttributeFilter(Md.StateName, ["California"])
     ]}
 />
 ```

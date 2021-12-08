@@ -30,19 +30,19 @@ import { GeoPushpinChart } from "@gooddata/sdk-ui-geo";
 ```jsx
 import "@gooddata/sdk-ui-geo/styles/css/main.css";
 import { GeoPushpinChart } from "@gooddata/sdk-ui-geo";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const config = {
     mapboxToken: "your_mapbox_token",
-    tooltipText: Ldm.City.Name
+    tooltipText: Md.City.Name
 };
 
 <div style={{ height: 600, width: 900 }}>
     <GeoPushpinChart
-        location={Ldm.City.LOcation}
-        size={Ldm.Population.Sum}
-        color={Ldm.Density.Sum}
-        segmentBy={Ldm.StateName}
+        location={Md.City.LOcation}
+        size={Md.Population.Sum}
+        color={Md.Density.Sum}
+        segmentBy={Md.StateName}
         config={config}
     />
 </div>

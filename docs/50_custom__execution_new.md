@@ -16,22 +16,22 @@ You can use an instance of the Analytical Backend to conveniently construct and 
 ```javascript
 import bearFactory from "@gooddata/sdk-backend-bear";
 import { newPositiveAttributeFilter, newMeasureSort, newTwoDimensional, MeasureGroupIdentifier } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const backend = bearFactory();
 
 // The execution will be done for single measure and on granularity of single attribute.
-const measuresAndAttributes = [Ldm.$AvgDailyTotalSales, Ldm.LocationState];
+const measuresAndAttributes = [Md.$AvgDailyTotalSales, Md.LocationState];
 
 // This filter tells backend to calculate data just for the listed states.
-const filter = newPositiveAttributeFilter(Ldm.LocationState, ["California", "Texas", "Oregon"])
+const filter = newPositiveAttributeFilter(Md.LocationState, ["California", "Texas", "Oregon"])
 
 // This sort definition tells backend to sort the result by value of the $AvgDailyTotalSales
 const sort = newMeasureSort($AvgDailyTotalSales, "desc");
 
 // The dimensions specify how to slice and dice the result. In this example the result will be two dimensional
 // and resemble a table. There will be one row for each state and in each row there will be one columns for measure.
-const dimensions = newTwoDimensional([Ldm.LocationState], [MeasureGroupIdentifier]);
+const dimensions = newTwoDimensional([Md.LocationState], [MeasureGroupIdentifier]);
 
 const result = await backend
    .workspace("workspace_id")
@@ -55,7 +55,7 @@ Building on top of the previous example, you can use `DataViewFacade` as follows
 
 ```javascript
 import { DataViewFacade } from "@gooddata/sdk-ui"
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 import first from "lodash/first"
 
 const facade = DataViewFacade.for(allData);
@@ -68,7 +68,7 @@ const allDataSeries = facade.data().series();
 // Note that if you set up the execution dimensionality so that one dimension contains both MeasureGroupIdentifier and 
 // an attribute, then the result may contain multiple data series for the $AvgDailyTotalSales. Each of the data 
 // series will be _scoped_ to a an element of the attribute for which it was calculated.
-const totalSales = allDataSeries.firstForMeasure(Ldm.$AvgDailyTotalSales);
+const totalSales = allDataSeries.firstForMeasure(Md.$AvgDailyTotalSales);
 
 // The series contains one data point per slice. There will be one slice for each attribute element in the
 // dimension opposite to the dimension that contains the MeasureGroupIdentifier. In this case that attribute

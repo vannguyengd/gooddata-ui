@@ -86,9 +86,9 @@ representing the various logical data model (LDM) objects in your workspace. You
 
 ```jsx
 <AreaChart
-	measures={[Ldm.$FranchiseFees]}
-	viewBy={[Ldm.LocationCity]}
-	stackBy={Ldm.LocationState}
+	measures={[Md.$FranchiseFees]}
+	viewBy={[Md.LocationCity]}
+	stackBy={Md.LocationState}
 />
 ```
 
@@ -109,8 +109,8 @@ For instance:
 backend
 .workspace("myWorkspace")
 .execution()
-.forItems([Ldm.Won, Ldm.Region])
-.withSorting(newAttributeSort(Ldm.Region))
+.forItems([Md.Won, Md.Region])
+.withSorting(newAttributeSort(Md.Region))
 .execute()
 ```
 

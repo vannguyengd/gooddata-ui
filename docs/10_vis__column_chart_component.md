@@ -27,14 +27,14 @@ import { ColumnChart } from "@gooddata/sdk-ui-charts";
 ```jsx
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { ColumnChart } from "@gooddata/sdk-ui-charts";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const style = { height: 300 };
 
 <div style={style}>
     <ColumnChart
-        measures={[Ldm.$TotalSales]}
-        viewBy={Ldm.DateMonth.Short}
+        measures={[Md.$TotalSales]}
+        viewBy={Md.DateMonth.Short}
     />
 </div>
 ```

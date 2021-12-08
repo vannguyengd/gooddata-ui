@@ -33,15 +33,15 @@ Totals cannot be calculated for tables without row attributes or for tables with
 ```jsx
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 import { newTotal } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
-const measures = [ Ldm.$FranchiseFees ];
-const columns = [ Ldm.DateMonth.Short ];
-const rows = [ Ldm.LocationCity ];
+const measures = [ Md.$FranchiseFees ];
+const columns = [ Md.DateMonth.Short ];
+const rows = [ Md.LocationCity ];
 
 const totals = [
-    newTotal("sum", Ldm.$FranchiseFees, Ldm.LocationCity),
-    newTotal("avg", Ldm.$FranchiseFees, Ldm.LocationCity)
+    newTotal("sum", Md.$FranchiseFees, Md.LocationCity),
+    newTotal("avg", Md.$FranchiseFees, Md.LocationCity)
 ];
 
 const style = { height: 300 };
@@ -75,15 +75,15 @@ first row attribute, and this is the default sorting for tables.
 ```jsx
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 import { newTotal } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
-const measures = [ Ldm.$FranchiseFees ];
-const columns = [ Ldm.DateMonth.Short ];
-const rows = [ Ldm.LocationState, Ldm.MenuCategory ];
+const measures = [ Md.$FranchiseFees ];
+const columns = [ Md.DateMonth.Short ];
+const rows = [ Md.LocationState, Md.MenuCategory ];
 
 const totals = [
-    newTotal("sum", Ldm.$FranchiseFees, Ldm.LocationState),
-    newTotal("sum", Ldm.$FranchiseFees, Ldm.MenuCategory)
+    newTotal("sum", Md.$FranchiseFees, Md.LocationState),
+    newTotal("sum", Md.$FranchiseFees, Md.MenuCategory)
 ];
 
 const style = { height: 300 };

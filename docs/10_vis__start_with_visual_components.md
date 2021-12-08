@@ -43,8 +43,8 @@ const style = { height: 300 };
 
 <div style={style}>
     <AreaChart
-        measures={[Ldm.$TotalSales]}
-        viewBy={Ldm.TimelineMonth.Long}
+        measures={[Md.$TotalSales]}
+        viewBy={Md.TimelineMonth.Long}
     />
 </div>
 ```

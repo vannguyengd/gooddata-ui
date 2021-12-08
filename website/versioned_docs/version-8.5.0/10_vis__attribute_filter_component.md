@@ -30,7 +30,7 @@ import { newNegativeAttributeFilter } from "@gooddata/sdk-model";
 
 import "@gooddata/sdk-ui-filters/styles/css/main.css";
 
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 export class AttributeFilterExample extends Component {
     onApply(filter) {
@@ -41,7 +41,7 @@ export class AttributeFilterExample extends Component {
         return (
             <div>
                 <AttributeFilter
-                    filter={newNegativeAttributeFilter(Ldm.EmployeeName.Default, [])}
+                    filter={newNegativeAttributeFilter(Md.EmployeeName.Default, [])}
                     onApply={this.onApply}
                 />
             </div>
@@ -65,7 +65,7 @@ To define the attribute values that should be selected in the filter by default,
         return (
             <div>
                 <AttributeFilter
-                    filter={newPositiveAttributeFilter(Ldm.EmployeeName.Default, ["Abbie Adams"])}
+                    filter={newPositiveAttributeFilter(Md.EmployeeName.Default, ["Abbie Adams"])}
                     onApply={this.onApply}
                 />
             </div>
@@ -88,7 +88,7 @@ You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_
             <AttributeFilter
                 filter={filter}
                 parentFilters={parentFilter ? [parentFilter] : []}
-                parentFilterOverAttribute={idRef(LdmExt.locationIdAttributeIdentifier)}
+                parentFilterOverAttribute={idRef("attr.restaurantlocation.locationid")}
                 fullscreenOnMobile={false}
                 onApply={setFilter}
             />
@@ -103,7 +103,7 @@ You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_
         <AttributeFilter
             connectToPlaceholder={filterPlaceholder}
             parentFilters={parentFilterPlaceholder ? [parentFilterPlaceholder] : []}
-            parentFilterOverAttribute={idRef(LdmExt.locationIdAttributeIdentifier)}
+            parentFilterOverAttribute={idRef("attr.restaurantlocation.locationid")}
             fullscreenOnMobile={false}
         />
     </div>

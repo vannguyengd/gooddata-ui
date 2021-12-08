@@ -31,14 +31,14 @@ import { AreaChart } from "@gooddata/sdk-ui-charts";
 ```jsx
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { AreaChart } from "@gooddata/sdk-ui-charts";
-import {Ldm} from "./ldm";
+import { Md } from "./md";
 
 const style = { height: 300 };
 
 <div style={style}>
     <AreaChart
-        measures={[Ldm.$FranchiseFees]}
-        viewBy={Ldm.DateMonth.Short}
+        measures={[Md.$FranchiseFees]}
+        viewBy={Md.DateMonth.Short}
     />
 </div>
 ```

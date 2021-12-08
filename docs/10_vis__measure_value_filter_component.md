@@ -34,12 +34,12 @@ import React, { Component } from "react";
 import "@gooddata/sdk-ui-filters/styles/css/main.css";
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { MeasureValueFilter } from "@gooddata/sdk-ui-filters";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const measureTitle = "$ Total Sales";
 
 export default class SalesByResort extends Component {
-    this.state = { filters: [ newMeasureValueFilter(Ldm.$TotalSales, "GREATER_THAN", 0) ] };
+    this.state = { filters: [ newMeasureValueFilter(Md.$TotalSales, "GREATER_THAN", 0) ] };
 
     onApply = filter => {
         this.setState({ filters: [filter] });
@@ -56,8 +56,8 @@ export default class SalesByResort extends Component {
                     buttonTitle={measureTitle}
                 />
                 <BarChart
-                    measures={[Ldm.$TotalSales]}
-                    viewBy={[Ldm.LocationResort]}
+                    measures={[Md.$TotalSales]}
+                    viewBy={[Md.LocationResort]}
                     filters={filters}
                 />
             </div>

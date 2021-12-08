@@ -27,13 +27,13 @@ import { PieChart } from "@gooddata/sdk-ui-charts";
 ```jsx
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { PieChart } from "@gooddata/sdk-ui-charts";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const style = { height: 300 };
 
 <div style={style}>
     <PieChart
-        measures={[Ldm.$FranchiseFeesAdRoyalty, Ldm.$FranchiseFeesInitialFranchiseFee, Ldm.$FranchiseFeesOngoingRoyalty]}
+        measures={[Md.$FranchiseFeesAdRoyalty, Md.$FranchiseFeesInitialFranchiseFee, Md.$FranchiseFeesOngoingRoyalty]}
     />
 </div>
 ```
