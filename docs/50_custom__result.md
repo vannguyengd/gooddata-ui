@@ -64,11 +64,11 @@ Use case: one data point calculated from a measure scoped for each attribute val
 
 ```javascript
 import { MeasureGroupIdentifier, newDimension } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 execution()
-    .forItems([Ldm.LocationState, Ldm.$FranchiseFees])
-    .withDimensions([newDimension([Ldm.LocationState, MeasureGroupIdentifier])]);
+    .forItems([Md.LocationState, Md.$FranchiseFees])
+    .withDimensions([newDimension([Md.LocationState, MeasureGroupIdentifier])]);
 
 {
 data: [ 32000, 41000, 77000 ]
@@ -81,11 +81,11 @@ Use case: a simple table; row per attribute value, measures are in columns
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 execution()
-    .forItems([Ldm.LocationState, Ldm.$FranchiseFees, Ldm.$TotalSales])
-    .withDimensions(...newTwoDimensional([Ldm.LocationState], [MeasureGroupIdentifier]));
+    .forItems([Md.LocationState, Md.$FranchiseFees, Md.$TotalSales])
+    .withDimensions(...newTwoDimensional([Md.LocationState], [MeasureGroupIdentifier]));
 
 {
     data: [
@@ -100,11 +100,11 @@ Alternative use case: a simple table; row per measure, one column per attribute 
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 execution()
-    .forItems([Ldm.LocationState, Ldm.$FranchiseFees, Ldm.$TotalSales])
-    .withDimensions(...newTwoDimensional([MeasureGroupIdentifier], [Ldm.LocationState]));
+    .forItems([Md.LocationState, Md.$FranchiseFees, Md.$TotalSales])
+    .withDimensions(...newTwoDimensional([MeasureGroupIdentifier], [Md.LocationState]));
 
 // `executionResult` is returned with measures in the first dimension:
 {
@@ -121,11 +121,11 @@ Use case: stacked charts, pivot tables; one attribute used to create rows; one c
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 execution()
-    .forItems([Ldm.LocationState, Ldm.LocationCity, Ldm.$FranchiseFees])
-    .withDimensions(...newTwoDimensional([Ldm.LocationState], [Ldm.LocationCity, MeasureGroupIdentifier]));
+    .forItems([Md.LocationState, Md.LocationCity, Md.$FranchiseFees])
+    .withDimensions(...newTwoDimensional([Md.LocationState], [Md.LocationCity, MeasureGroupIdentifier]));
 
 {
 data: [
@@ -149,12 +149,12 @@ When you are constructing an execution, you can optionally specify what server-s
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional, newAttributeSort } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 execution()
-    .forItems([Ldm.LocationState, Ldm.LocationCity, Ldm.$FranchiseFees])
-    .withDimensions(...newTwoDimensional([Ldm.LocationState], [Ldm.LocationCity, MeasureGroupIdentifier]))
-    .withSorting(newAttributeSort(Ldm.LocationState, "desc"));
+    .forItems([Md.LocationState, Md.LocationCity, Md.$FranchiseFees])
+    .withDimensions(...newTwoDimensional([Md.LocationState], [Md.LocationCity, MeasureGroupIdentifier]))
+    .withSorting(newAttributeSort(Md.LocationState, "desc"));
 ```
 
 For more information about how to define sorts, see [Execution Model](02_start__execution_model.md).

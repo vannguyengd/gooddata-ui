@@ -27,10 +27,10 @@ import { Headline } from "@gooddata/sdk-ui-charts";
 
 ```jsx
 import { Headline } from "@gooddata/sdk-ui-charts";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 <Headline
-    primaryMeasure={Ldm.$FranchiseFees}
+    primaryMeasure={Md.$FranchiseFees}
 />
 ```
 
@@ -38,11 +38,11 @@ import { Ldm } from "./ldm";
 
 ```jsx
 import { Headline } from "@gooddata/sdk-ui-charts";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 <Headline
-    primaryMeasure={Ldm.$FranchiseFees}
-    secondaryMeasure={Ldm.$FranchiseFeesAdRoyalty}
+    primaryMeasure={Md.$FranchiseFees}
+    secondaryMeasure={Md.$FranchiseFeesAdRoyalty}
 />
 ```
 

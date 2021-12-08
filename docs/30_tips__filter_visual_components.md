@@ -280,11 +280,11 @@ modifyMeasure(measure, modifications)
 ```jsx
 import { ColumnChart } from "@gooddata/sdk-ui-charts";
 import { modifySimpleMeasure, newPositiveAttributeFilter } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const californiaSales = modifySimpleMeasure(
-                            Ldm.$TotalSales,
-                            m => m.filters(newPositiveAttributeFilter(Ldm.StateName, ["California"])).alias("California Sales")
+                            Md.$TotalSales,
+                            m => m.filters(newPositiveAttributeFilter(Md.StateName, ["California"])).alias("California Sales")
                         );
 
 const style = { height: 300 };
@@ -304,11 +304,11 @@ const style = { height: 300 };
 import "@gooddata/sdk-ui-ext/styles/css/main.css";
 import { InsightView } from "@gooddata/sdk-ui-ext";
 import { newPositiveAttributeFilter } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const filters = [
-    newPositiveAttributeFilter(Ldm.StateName, ["California"]),
-    newPositiveAttributeFilter(Ldm.IsKidsItem, ["true"])
+    newPositiveAttributeFilter(Md.StateName, ["California"]),
+    newPositiveAttributeFilter(Md.IsKidsItem, ["true"])
 ];
 
 <div style={{ height: 400, width: 600 }}>
@@ -329,16 +329,16 @@ If you reference a saved visualization with active filters and set the `filters`
 ```jsx
 import { ColumnChart } from "@gooddata/sdk-ui-charts";
 import { newNegativeAttributeFilter } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const style = { height: 300 };
 
 <div style={style}>
     <ColumnChart
-        measures={[Ldm.$TotalSales]}
+        measures={[Md.$TotalSales]}
         filters={[
             newNegativeAttributeFilter(
-                Ldm.StateName,
+                Md.StateName,
                 { uris: ["/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116"] })
         ]}
     />

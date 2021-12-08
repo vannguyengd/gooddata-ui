@@ -33,9 +33,9 @@ const style = { height: 300 };
 <div style={style}>
     <DonutChart
         measures={[
-            Ldm.$FranchiseFeesAdRoyalty,
-            Ldm.$FranchiseFeesInitialFranchiseFee,
-            Ldm.$FranchiseFeesOngoingRoyalty
+            Md.$FranchiseFeesAdRoyalty,
+            Md.$FranchiseFeesInitialFranchiseFee,
+            Md.$FranchiseFeesOngoingRoyalty
         ]}
     />
 </div>

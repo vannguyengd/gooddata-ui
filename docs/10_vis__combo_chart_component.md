@@ -32,15 +32,15 @@ import { ComboChart } from "@gooddata/sdk-ui-charts";
 ```jsx
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { ComboChart } from "@gooddata/sdk-ui-charts";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const style = { height: 300 };
 
 <div style={style}>
     <ComboChart
-        primaryMeasures={Ldm.$FranchiseFeesInitialFranchiseFee}
-        secondaryMeasures={Ldm.$FranchiseFeesAdRoyalty}
-        viewBy={Ldm.LocationResort}
+        primaryMeasures={Md.$FranchiseFeesInitialFranchiseFee}
+        secondaryMeasures={Md.$FranchiseFeesAdRoyalty}
+        viewBy={Md.LocationResort}
     />
 </div>
 ```

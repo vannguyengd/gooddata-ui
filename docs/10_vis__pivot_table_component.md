@@ -38,15 +38,15 @@ The following code sample shows an arrangement for a typical pivot table:
 ```jsx
 import "@gooddata/sdk-ui-pivot/styles/css/main.css";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const style = { height: 300 };
 
 <div style={style}>
     <PivotTable
-        measures={[Ldm.$FranchiseFees]}
-        rows={[Ldm.LocationState]}
-        columns={[Ldm.DateMonth.Short]}
+        measures={[Md.$FranchiseFees]}
+        rows={[Md.LocationState]}
+        columns={[Md.DateMonth.Short]}
     />
 </div>
 ```
@@ -58,14 +58,14 @@ You can also use the Pivot Table component to create a regular (flat) table.
 ```jsx
 import "@gooddata/sdk-ui-pivot/styles/css/main.css";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const style = { height: 300 };
 
 <div style={style}>
     <PivotTable
-        measures={[Ldm.$FranchiseFees]}
-        rows={[Ldm.LocationState]}
+        measures={[Md.$FranchiseFees]}
+        rows={[Md.LocationState]}
     />
 </div>
 ```
@@ -82,14 +82,14 @@ You can [sort](50_custom__result.md#sorting) rows and attribute columns in any p
 import "@gooddata/sdk-ui-pivot/styles/css/main.css";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 import { newMeasureSort, newAttributeLocator } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
-import { monthDateIdentifierJanuary } from "./ldm/ext";
+import { Md } from "./md";
+import { monthDateIdentifierJanuary } from "./md/ext";
 
 const sortBy = [
     newMeasureSort(
-        Ldm.$FranchiseFees,
+        Md.$FranchiseFees,
         "desc",
-        [newAttributeLocator(Ldm.DateMonth.Short, monthDateIdentifierJanuary)]
+        [newAttributeLocator(Md.DateMonth.Short, monthDateIdentifierJanuary)]
     )
 ];
 
@@ -97,9 +97,9 @@ const style = { height: 300 };
 
 <div style={style}>
     <PivotTable
-        measures={[Ldm.$FranchiseFees]}
-        rows={[Ldm.LocationState]}
-        columns={[Ldm.DateMonth.Short]}
+        measures={[Md.$FranchiseFees]}
+        rows={[Md.LocationState]}
+        columns={[Md.DateMonth.Short]}
         sortBy={sortBy}
     />
 </div>
@@ -187,8 +187,8 @@ The factory functions are exported from the `@gooddata/sdk-ui-pivot` package.
 const config = {
     columnSizing: {
        columnWidths: [
-            newWidthForAttributeColumn(Ldm.Date, 100),
-            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], 200)
+            newWidthForAttributeColumn(Md.Date, 100),
+            newWidthForSelectedColumns(Md.$FranchiseFees, [newAttributeColumnLocator(Md.DateMonth.Short, monthDateJanuaryUri)], 200)
        ]
     }
 }
@@ -230,7 +230,7 @@ const config = {
     const config = {
       columnSizing: {
         columnWidths: [
-            newWidthForAllColumnsForMeasure(Ldm.$FranchiseFees, 200)
+            newWidthForAllColumnsForMeasure(Md.$FranchiseFees, 200)
         ]
       }
     }
@@ -253,8 +253,8 @@ const config = {
     columnSizing: {
         defaultWidth: "autoresizeAll",
         columnWidths: [
-            newWidthForAttributeColumn(Ldm.Date, 100),
-            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], 200),
+            newWidthForAttributeColumn(Md.Date, 100),
+            newWidthForSelectedColumns(Md.$FranchiseFees, [newAttributeColumnLocator(Md.DateMonth.Short, monthDateJanuaryUri)], 200),
         ]
     }
 }
@@ -271,7 +271,7 @@ const config = {
         defaultWidth: "autoresizeAll",
         columnWidths: [
             newWidthForAllMeasureColumns(200),
-            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], "auto"),
+            newWidthForSelectedColumns(Md.$FranchiseFees, [newAttributeColumnLocator(Md.DateMonth.Short, monthDateJanuaryUri)], "auto"),
         ]
     }
 }
@@ -289,8 +289,8 @@ const config = {
         defaultWidth: "autoresizeAll",
         columnWidths: [
             newWidthForAllMeasureColumns(200),
-            newWidthForAllColumnsForMeasure(Ldm.$TotalSales, 200),
-            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], "auto"),
+            newWidthForAllColumnsForMeasure(Md.$TotalSales, 200),
+            newWidthForSelectedColumns(Md.$FranchiseFees, [newAttributeColumnLocator(Md.DateMonth.Short, monthDateJanuaryUri)], "auto"),
         ]
     }
 }
@@ -408,8 +408,8 @@ const config = {
     columnSizing: {
         defaultWidth: "autoresizeAll",
         columnWidths: [
-            newWidthForAttributeColumn(Ldm.Date, 100),
-            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], 200),
+            newWidthForAttributeColumn(Md.Date, 100),
+            newWidthForSelectedColumns(Md.$FranchiseFees, [newAttributeColumnLocator(Md.DateMonth.Short, monthDateJanuaryUri)], 200),
         ]
     }
 };

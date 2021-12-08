@@ -129,8 +129,8 @@ To adopt these changes, create the backend once and then do **one** of the follo
     <BarChart
         backend={backend}
         workspace="<yourWorkspace>"
-        measures={[Ldm.Won]}
-        viewBy={[Ldm.Product]}
+        measures={[Md.Won]}
+        viewBy={[Md.Product]}
     />
     ```
 
@@ -144,8 +144,8 @@ your application:
     <BackendProvider backend={backend}>
         <BarChart
             workspace="<yourWorkspaceId>"
-            measures={[Ldm.Won]}
-            viewBy={[Ldm.Product]}
+            measures={[Md.Won]}
+            viewBy={[Md.Product]}
         />
     </BackendProvider>
     ```

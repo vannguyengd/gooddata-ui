@@ -29,16 +29,16 @@ import { BulletChart } from "@gooddata/sdk-ui-charts";
 ```jsx
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { BulletChart } from "@gooddata/sdk-ui-charts";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const style = { height: 300 };
 
 <div style={style}>
     <BulletChart
-        primaryMeasure={Ldm.$FranchiseFeesAdRoyalty}
-        targetMeasure={Ldm.$FranchiseFees}
-        comparativeMeasure={Ldm.$FranchiseFeesOngoingRoyalty}
-        viewBy={Ldm.LocationResort}
+        primaryMeasure={Md.$FranchiseFeesAdRoyalty}
+        targetMeasure={Md.$FranchiseFees}
+        comparativeMeasure={Md.$FranchiseFeesOngoingRoyalty}
+        viewBy={Md.LocationResort}
     />
 </div>
 ```

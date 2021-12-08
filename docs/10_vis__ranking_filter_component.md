@@ -34,37 +34,46 @@ import React, { useState } from "react";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 import { newRankingFilter, localIdRef, measureLocalId, attributeLocalId } from "@gooddata/sdk-model";
 import { RankingFilter, IMeasureDropdownItem, IAttributeDropdownItem } from "@gooddata/sdk-ui-filters";
-import { LdmExt } from "../../ldm";
+import { Md } from "../../md";
 
-const measures = [LdmExt.FranchiseFees, LdmExt.FranchisedSales];
-const attributes = [LdmExt.LocationState, LdmExt.LocationName];
+const FranchiseFees = modifyMeasure(Md.$FranchiseFees, (m) =>
+    m.format("#,##0").localId("franchiseFees").title("Franchise Fees"),
+);
+const FranchisedSales = modifyMeasure(Md.$FranchisedSales, (m) =>
+    m.format("#,##0").title("Franchise Sales").localId("franchiseSales"),
+);
+const LocationState = modifyAttribute(Md.LocationState, (a) => a.localId("LocationState"));
+const LocationName = modifyAttribute(Md.LocationName.Default, (a) => a.localId("locationName"));
+
+const measures = [FranchiseFees, FranchisedSales];
+const attributes = [LocationState, LocationName];
 
 const measureDropdownItems: IMeasureDropdownItem[] = [
     {
         title: "Franchise fees",
-        ref: localIdRef(measureLocalId(LdmExt.FranchiseFees)),
+        ref: localIdRef(measureLocalId(FranchiseFees)),
         sequenceNumber: "M1",
     },
     {
         title: "Franchised sales",
-        ref: localIdRef(measureLocalId(LdmExt.FranchisedSales)),
+        ref: localIdRef(measureLocalId(FranchisedSales)),
         sequenceNumber: "M2",
     },
 ];
 const attributeDropdownItems: IAttributeDropdownItem[] = [
     {
         title: "Location state",
-        ref: localIdRef(attributeLocalId(LdmExt.LocationState)),
+        ref: localIdRef(attributeLocalId(LocationState)),
         type: "ATTRIBUTE",
     },
     {
         title: "Location",
-        ref: localIdRef(attributeLocalId(LdmExt.LocationName)),
+        ref: localIdRef(attributeLocalId(LocationName)),
         type: "ATTRIBUTE",
     },
 ];
 export const RankingFilterExample: React.FC = () => {
-    const [filter, setFilter] = useState(newRankingFilter(LdmExt.franchiseSalesLocalId, "TOP", 3));
+    const [filter, setFilter] = useState(newRankingFilter(measureLocalId(franchiseSalesLocalId), "TOP", 3));
     return (
         <React.Fragment>
             <RankingFilter

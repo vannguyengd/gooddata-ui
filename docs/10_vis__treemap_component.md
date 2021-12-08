@@ -28,15 +28,15 @@ import { Treemap } from "@gooddata/sdk-ui-charts";
 ```jsx
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { Treemap } from "@gooddata/sdk-ui-charts";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const style = { height: 300 };
 
 <div style={style}>
     <Treemap
-        measures={[Ldm.NrChecks]}
-        viewBy={Ldm.LocationState}
-        segmentBy={Ldm.LocationCity}
+        measures={[Md.NrChecks]}
+        viewBy={Md.LocationState}
+        segmentBy={Md.LocationCity}
         onLoadingChanged={this.onLoadingChanged}
         onError={this.onError}
     />

@@ -17,7 +17,7 @@ Using this generated code, you can create charts and execution definitions in a 
 
 ## Built-in integration in Accelerator Toolkit applications
 
-The `@gooddata/catalog-export` tool is installed and integrated into all applications bootstrapped using the `@gooddata/create-gooddata-react-app` tool. A bootstrapped application's `package.json` contains the `refresh-ldm` script that you can call to start the `@gooddata/catalog-export` tool with arguments derived from your application configuration.
+The `@gooddata/catalog-export` tool is installed and integrated into all applications bootstrapped using the `@gooddata/create-gooddata-react-app` tool. A bootstrapped application's `package.json` contains the `refresh-md` script that you can call to start the `@gooddata/catalog-export` tool with arguments derived from your application configuration.
 
 If you created your application using `@gooddata/create-gooddata-react-app`, you may be interested in additional
 configuration options described further in this document.
@@ -133,12 +133,12 @@ In addition, the existing catalog file is renamed to `catalogue.json.bak`, and t
 
 ### Recommendations
 
--  Include `@gooddata/catalog-export` as a devDependency of your application and define an NPM script `refresh-ldm` to run the program.
+-  Include `@gooddata/catalog-export` as a devDependency of your application and define an NPM script `refresh-md` to run the program.
 -  Do not import the constants directly. Instead, wrap the constants into a namespace as follows:
 
     ```javascript
-    import * as Ldm from "./ldm/generatedFile";
-    export { Ldm };
+    import * as Md from "./md/generatedFile";
+    export { Md };
     ```
 
 -  Never modify the generated files.

@@ -15,10 +15,10 @@ In the following example, the KPI shows neither the loading indicator nor the er
 
 ```jsx
 import { Kpi } from "@gooddata/sdk-ui";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 <Kpi
-    measure={Ldm.$FranchiseFees}
+    measure={Md.$FranchiseFees}
     format="<format>"
     LoadingComponent={null}
     ErrorComponent={null}
@@ -32,7 +32,7 @@ In the following example, the default LoadingComponent is customized with color,
 ```jsx
 import React, { Component } from "react";
 import { Kpi, LoadingComponent } from "@gooddata/sdk-ui";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 export class CustomisedLoadingComponentExample extends Component {
     render() {
@@ -50,7 +50,7 @@ export class CustomisedLoadingComponentExample extends Component {
 export default CustomisedLoadingComponentExample;
 
 <Kpi
-    measure={Ldm.$FranchiseFees}
+    measure={Md.$FranchiseFees}
     LoadingComponent={CustomisedLoadingComponentExample}
 />
 ```

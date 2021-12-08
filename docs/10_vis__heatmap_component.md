@@ -56,13 +56,13 @@ The following example shows the supported `config` structure with sample values.
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { Heatmap } from "@gooddata/sdk-ui-charts";
 
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 <div style={{ height: 300 }} className="s-heat-map">
     <Heatmap
-        measure={Ldm.$TotalSales}
-        rows={Ldm.LocationState}
-        columns={Ldm.MenuCategory}
+        measure={Md.$TotalSales}
+        rows={Md.LocationState}
+        columns={Md.MenuCategory}
         onLoadingChanged={this.onLoadingChanged}
         onError={this.onError}
     />

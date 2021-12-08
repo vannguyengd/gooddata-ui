@@ -149,8 +149,8 @@ const CodeExample1 = () => (
   <pre className="exampleCode">
     <code className="hljs highlighting">
       <span className="hljs-name">&lt;LineChart</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;[Ldm.Volume]&#125;</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;Ldm.DateMonth.Short&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;[Md.Volume]&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;Md.DateMonth.Short&#125;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">config=</span><span className="hljs-string">&#123;&#123;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">colors:</span> [<span className="hljs-string">&#39;#14b2e2&#39;</span>, <span className="hljs-string">&#39;#02C18E&#39;</span>]<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-string">&#125;&#125;</span><br/>
@@ -163,8 +163,8 @@ const CodeExample2 = () => (
   <pre className="exampleCode">
     <code className="hljs highlighting">
       <span className="hljs-name">&lt;Execute</span><br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">seriesBy=</span><span className="hljs-string">&#123;&lt;[Ldm.Revenue]&gt;&#125;</span><br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">slicesBy=</span><span className="hljs-string">&#123;&lt;[Ldm.LocationCity]&gt;&#125;</span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">seriesBy=</span><span className="hljs-string">&#123;&lt;[Md.Revenue]&gt;&#125;</span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">slicesBy=</span><span className="hljs-string">&#123;&lt;[Md.LocationCity]&gt;&#125;</span><br/>
       &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">filters=</span><span className="hljs-string">&#123;&lt;filters&gt;&#125;</span><br/>
       &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">onLoadingChanged=</span><span className="hljs-string">&#123;function&#125;</span>&nbsp;
       <span className="hljs-attr">onError=</span><span className="hljs-string">&#123;function&#125;</span><br/>
@@ -198,8 +198,8 @@ const InstallationExample3 = () => (
       <span className="hljs-name">import</span> <span className="hljs-string">"@gooddata/sdk-ui-charts/styles/css/main.css"</span>;<br/>
       <span className="hljs-name">import</span> <span className="hljs-literal">&#123; LineChart &#125;</span> from <span className="hljs-string">&#39;@gooddata/sdk-ui-charts&#39;</span>;<br/><br/>
       <span className="hljs-name">&lt;LineChart</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;[Ldm.Volume]&#125;</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;Ldm.DateMonth.Short&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;[Md.Volume]&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;Md.DateMonth.Short&#125;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">config=</span><span className="hljs-string">&#123;&#123;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">colors:</span> [<span className="hljs-string">&#39;#14b2e2&#39;</span>]<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-string">&#125;&#125;</span><br/>

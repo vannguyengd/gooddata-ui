@@ -129,7 +129,7 @@ into your application:
 
 ```jsx
 import { LineChart } from "@gooddata/sdk-ui-charts";
-import { YourFact, YourMeasure, YourAttribute} from "./generatedLdm";
+import { YourFact, YourMeasure, YourAttribute} from "./generatedMd";
 
 function MyVisualization() {
     const measures = [YourFact.Sum, YourMeasure];
@@ -144,7 +144,7 @@ function MyVisualization() {
 }
 ```
 
-**NOTE:** The imports from `generatedLdm` are for illustration purposes. You can name the file with the generated LDM as you see fit and store it in any location. The names of constants in the generated file will reflect the facts, measures, and attributes in your workspace.
+**NOTE:** The imports from `generatedMd` are for illustration purposes. You can name the file with the generated LDM as you see fit and store it in any location. The names of constants in the generated file will reflect the facts, measures, and attributes in your workspace.
 
 Here are some suggestions about what you can do after you created your first visualization:
 

@@ -154,7 +154,7 @@ from this file and use them directly.
 For instance:
 
 ```jsx
-import { $AvgDailyTotalSales, LocationState } from "./generatedLdm";
+import { $AvgDailyTotalSales, LocationState } from "./generatedMd";
 import { ColumnChart } from "@gooddata/sdk-ui-charts";
 
 function MyColumnChart() {

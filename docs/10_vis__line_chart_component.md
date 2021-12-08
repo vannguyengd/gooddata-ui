@@ -27,14 +27,14 @@ import { LineChart } from "@gooddata/sdk-ui-charts";
 ```jsx
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { LineChart } from "@gooddata/sdk-ui-charts";
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const style = { height: 300 };
 
 <div style={style}>
     <LineChart
-        measures={[Ldm.$FranchiseFees]}
-        trendBy={Ldm.DateMonth.Short}
+        measures={[Md.$FranchiseFees]}
+        trendBy={Md.DateMonth.Short}
     />
 </div>
 ```

@@ -33,16 +33,16 @@ import { BubbleChart } from "@gooddata/sdk-ui-charts";
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { BubbleChart } from "@gooddata/sdk-ui-charts";
 
-import { Ldm } from "./ldm";
+import { Md } from "./md";
 
 const style = { height: 300 };
 
 <div style={style}>
     <BubbleChart
-        xAxisMeasure={Ldm.$FranchiseFees}
-        yAxisMeasure={Ldm.$FranchisedSales}
-        size={Ldm.$AvgDailyTotalSalesByServer}
-        viewBy={Ldm.LocationResort}
+        xAxisMeasure={Md.$FranchiseFees}
+        yAxisMeasure={Md.$FranchisedSales}
+        size={Md.$AvgDailyTotalSalesByServer}
+        viewBy={Md.LocationResort}
     />
 </div>
 ```
