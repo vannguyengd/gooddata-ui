@@ -121,9 +121,9 @@ user clicked.
 **Use of catalog export**
 
 `drillableItems` property can be set up via MD file acquired with the [catalog export package](02_start__catalog_export.md) via `HeaderPredicates.objMatch` function. 
-This removes the necessity to search through the exported MD file or grey pages for the metric/attribute identifier or uri.
+This removes the necessity to search through the exported MD file or grey pages for the measure/attribute identifier or uri.
 
-If the `localIdentifier` does not match, attribute or metric is checked by its objRef. If the matching is done base on the object reference, 
+If the `localIdentifier` does not match, attribute or measure is checked by its objRef. If the matching is done based on the objRef, 
 all appearances of this attribute or measure will become drillable.
 
 ```jsx
