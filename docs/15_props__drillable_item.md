@@ -118,6 +118,33 @@ Each event contains an object consisting of `dataView` and `drillContext`. `da
 to render the chart from which the drill event originates. `drillContext` contains full context of which element the
 user clicked.
 
+**Use of catalog export**
+
+`drillableItems` property can be set up via MD file acquired with the [catalog export package](02_start__catalog_export.md) via `HeaderPredicates.objMatch` function. 
+This removes the necessity to search through the exported MD file or grey pages for the metric/attribute identifier or uri.
+
+If the `localIdentifier` does not match, attribute or metric is checked by its objRef. If the matching is done base on the object reference, 
+all appearances of this attribute or measure will become drillable.
+
+```jsx
+// This is an example of event drilling on the visualization from the GoodSales demo workspace.
+import { HeaderPredicates } from "@gooddata/sdk-ui";
+import * as Md from "../md/full"
+
+function onDrillHandler(event) {
+    // handle drill
+}
+
+<InsightView
+  insight="aby3polcaFxy"
+  drillableItems={[
+    HeaderPredicates.objMatch(Md.Region),
+  ]}
+  onDrill={onDrillHandler}
+/>
+```
+
+
 ## Additional information
 
 For more information, see [Setting up Events for Drilling in Embedded Analytical Designer and KPI Dashboards](https://help.gooddata.com/pages/viewpage.action?pageId=34340938).
