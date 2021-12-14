@@ -34,7 +34,7 @@ import React, { Component } from "react";
 import "@gooddata/sdk-ui-filters/styles/css/main.css";
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { MeasureValueFilter } from "@gooddata/sdk-ui-filters";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 const measureTitle = "$ Total Sales";
 

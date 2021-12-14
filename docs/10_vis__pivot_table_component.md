@@ -38,7 +38,7 @@ The following code sample shows an arrangement for a typical pivot table:
 ```jsx
 import "@gooddata/sdk-ui-pivot/styles/css/main.css";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 const style = { height: 300 };
 
@@ -58,7 +58,7 @@ You can also use the Pivot Table component to create a regular (flat) table.
 ```jsx
 import "@gooddata/sdk-ui-pivot/styles/css/main.css";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 const style = { height: 300 };
 
@@ -82,7 +82,7 @@ You can [sort](50_custom__result.md#sorting) rows and attribute columns in any p
 import "@gooddata/sdk-ui-pivot/styles/css/main.css";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 import { newMeasureSort, newAttributeLocator } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 import { monthDateIdentifierJanuary } from "./md/ext";
 
 const sortBy = [
@@ -154,7 +154,7 @@ By default, the width of the columns is not set, and all columns have the same f
         defaultWidth: "viewport"
     }
     ```
-    
+
     **TIP:** Use this option for large tables when a user cannot scroll the table content (for example, when a table is exported to PDF).
 
 > Before Version 8.5, you could set up the auto resizing using `defaultWidth: "viewport"` and it worked the same way as `defaultWidth: "autoresizeAll"`. It changed in Version 8.5, and these two options now work differently. We recommend that you prefer `defaultWidth: "autoresizeAll"` for common cases.

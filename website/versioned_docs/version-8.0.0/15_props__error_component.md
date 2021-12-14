@@ -16,7 +16,7 @@ In the following example, the KPI shows neither the loading indicator nor the er
 
 ```jsx
 import { Kpi } from "@gooddata/sdk-ui";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 <Kpi
     measure={Ldm.$FranchiseFees}
@@ -31,7 +31,7 @@ In the following example, the default ErrorComponent is replaced by a custom com
 
 ```jsx
 import { Kpi } from "@gooddata/sdk-ui";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 const CustomError = ({
     code,

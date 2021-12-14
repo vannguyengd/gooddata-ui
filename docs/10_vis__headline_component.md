@@ -27,7 +27,7 @@ import { Headline } from "@gooddata/sdk-ui-charts";
 
 ```jsx
 import { Headline } from "@gooddata/sdk-ui-charts";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 <Headline
     primaryMeasure={Md.$FranchiseFees}
@@ -38,7 +38,7 @@ import { Md } from "./md";
 
 ```jsx
 import { Headline } from "@gooddata/sdk-ui-charts";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 <Headline
     primaryMeasure={Md.$FranchiseFees}

@@ -56,7 +56,7 @@ The following example shows the supported `config` structure with sample values.
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { Heatmap } from "@gooddata/sdk-ui-charts";
 
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 <div style={{ height: 300 }} className="s-heat-map">
     <Heatmap

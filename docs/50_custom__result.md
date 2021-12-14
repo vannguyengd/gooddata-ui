@@ -64,7 +64,7 @@ Use case: one data point calculated from a measure scoped for each attribute val
 
 ```javascript
 import { MeasureGroupIdentifier, newDimension } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 execution()
     .forItems([Md.LocationState, Md.$FranchiseFees])
@@ -81,7 +81,7 @@ Use case: a simple table; row per attribute value, measures are in columns
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 execution()
     .forItems([Md.LocationState, Md.$FranchiseFees, Md.$TotalSales])
@@ -100,7 +100,7 @@ Alternative use case: a simple table; row per measure, one column per attribute 
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 execution()
     .forItems([Md.LocationState, Md.$FranchiseFees, Md.$TotalSales])
@@ -121,7 +121,7 @@ Use case: stacked charts, pivot tables; one attribute used to create rows; one c
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 execution()
     .forItems([Md.LocationState, Md.LocationCity, Md.$FranchiseFees])
@@ -149,7 +149,7 @@ When you are constructing an execution, you can optionally specify what server-s
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional, newAttributeSort } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 execution()
     .forItems([Md.LocationState, Md.LocationCity, Md.$FranchiseFees])

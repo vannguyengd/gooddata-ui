@@ -31,7 +31,7 @@ import { GeoPushpinChart } from "@gooddata/sdk-ui-geo";
 ```jsx
 import "@gooddata/sdk-ui-geo/styles/css/main.css";
 import { GeoPushpinChart } from "@gooddata/sdk-ui-geo";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 const config = {
     mapboxToken: "your_mapbox_token",

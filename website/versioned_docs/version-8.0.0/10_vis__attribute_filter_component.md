@@ -24,7 +24,7 @@ import { newNegativeAttributeFilter } from "@gooddata/sdk-model";
 
 import "@gooddata/sdk-ui-filters/styles/css/main.css";
 
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 export class AttributeFilterExample extends Component {
     onApply(filter) {

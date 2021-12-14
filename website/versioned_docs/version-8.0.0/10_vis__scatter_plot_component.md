@@ -31,7 +31,7 @@ import { ScatterPlot } from "@gooddata/sdk-ui-charts";
 ```jsx
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { ScatterPlot } from "@gooddata/sdk-ui-charts";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 const style = { height: 300 };
 

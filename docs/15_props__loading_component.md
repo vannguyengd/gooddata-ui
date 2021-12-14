@@ -15,7 +15,7 @@ In the following example, the KPI shows neither the loading indicator nor the er
 
 ```jsx
 import { Kpi } from "@gooddata/sdk-ui";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 <Kpi
     measure={Md.$FranchiseFees}
@@ -32,7 +32,7 @@ In the following example, the default LoadingComponent is customized with color,
 ```jsx
 import React, { Component } from "react";
 import { Kpi, LoadingComponent } from "@gooddata/sdk-ui";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 export class CustomisedLoadingComponentExample extends Component {
     render() {

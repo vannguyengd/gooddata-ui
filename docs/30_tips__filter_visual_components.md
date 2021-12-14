@@ -280,7 +280,7 @@ modifyMeasure(measure, modifications)
 ```jsx
 import { ColumnChart } from "@gooddata/sdk-ui-charts";
 import { modifySimpleMeasure, newPositiveAttributeFilter } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 const californiaSales = modifySimpleMeasure(
                             Md.$TotalSales,
@@ -304,7 +304,7 @@ const style = { height: 300 };
 import "@gooddata/sdk-ui-ext/styles/css/main.css";
 import { InsightView } from "@gooddata/sdk-ui-ext";
 import { newPositiveAttributeFilter } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 const filters = [
     newPositiveAttributeFilter(Md.StateName, ["California"]),
@@ -329,7 +329,7 @@ If you reference a saved visualization with active filters and set the `filters`
 ```jsx
 import { ColumnChart } from "@gooddata/sdk-ui-charts";
 import { newNegativeAttributeFilter } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 const style = { height: 300 };
 

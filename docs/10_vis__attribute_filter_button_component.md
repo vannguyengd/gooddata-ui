@@ -29,7 +29,7 @@ import { newNegativeAttributeFilter } from "@gooddata/sdk-model";
 
 import "@gooddata/sdk-ui-filters/styles/css/main.css";
 
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 export class AttributeFilterButtonExample extends Component {
     onApply(filter) {
