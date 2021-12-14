@@ -17,13 +17,13 @@ Drillable items can consist of the following entities:
 * Measures
 * Attribute `displayForm`s that are defined by their identifier or URI
 
-    *displayForm*, or attribute label, is a different means of representing an attribute. For example, the `Name` attribute might have labels for `Firstname` and `Lastname`. For more information, see [Attributes in Logical Data Models](https://help.gooddata.com/pages/viewpage.action?pageId=71867295).
+    A `displayForm`, or attribute label, is a different means of representing an attribute. For example, the `Name` attribute might have labels for `Firstname` and `Lastname`. For more information, see [Attributes in Logical Data Models](https://help.gooddata.com/pages/viewpage.action?pageId=86795696).
 * Attribute values defined by their URI
 
 Visualization points that intersect any defined measures, attributes, or attribute values become drillable and will emit events when interacted with.
 
-**NOTE:** Ad-hoc measures (measures created from attributes or other measures using
-[computeRatio option](https://sdk.gooddata.com/gooddata-ui/docs/afm.html#show-a-measure-as-a-percentage) are defined
+**NOTE:** Ad-hoc measures (measures created from attributes or other measures using the 
+[`computeRatio` option](https://sdk.gooddata.com/gooddata-ui/docs/afm.html#show-a-measure-as-a-percentage) are defined
 using their URI or identifier in the execution. If you want to set up drilling for such ad-hoc measures, use the same parameter (URI or identifier) as you used in the execution.
 Keep in mind that Analytical Designer creates such measures using only the URI. If you want to activate drilling on ad-hoc measures created in Analytical Designer, you can use only their URIs.
 
@@ -67,7 +67,7 @@ common drill eventing use cases. You can import this factory directly from the `
 
 To enable event drilling, specify a value for the `drillableItems` property.
 
-In the `drillableItems` property, add an array of `IHeaderPredicate` functions that identifies the measures and
+In the `drillableItems` property, add an array of `IHeaderPredicate` functions that identifies the measures and
 attributes that should become highlighted and drillable.
 
 **Example:** Drilling in a visualization enabled for the measure with either the identifier of `label.owner.department`
@@ -114,10 +114,34 @@ function onDrillHandler(event) {
 />
 ```
 
-Each event contains an object consisting of `dataView` and `drillContext`. `dataView` contains the underlying data used
+Each event contains an object consisting of `dataView` and `drillContext`. `dataView` contains the underlying data used
 to render the chart from which the drill event originates. `drillContext` contains full context of which element the
 user clicked.
 
+### Using the catalog-export tool to set up drilling
+
+You can set up the `drillableItems` property via an MD file. To acquire the MD file, use the [catalog-export tool](02_start__catalog_export.md) and the `HeaderPredicates.objMatch` function. This way, you do not need to search through the exported MD file or gray pages for the measure/attribute identifier or URI.
+
+If the `localIdentifier` property of the measure/attribute does not match, the measure/attribute is checked by its `objRef`. If the matching is done based on the `objRef`, all instances of this measure/attribute will become drillable.
+
+```jsx
+// This is an example of event drilling on the visualization from the GoodSales demo workspace.
+import { HeaderPredicates } from "@gooddata/sdk-ui";
+import * as Md from "../md/full"
+
+function onDrillHandler(event) {
+    // handle drill
+}
+
+<InsightView
+  insight="aby3polcaFxy"
+  drillableItems={[
+    HeaderPredicates.objMatch(Md.Region),
+  ]}
+  onDrill={onDrillHandler}
+/>
+```
+
 ## Additional information
 
-For more information, see [Setting up Events for Drilling in Embedded Analytical Designer and KPI Dashboards](https://help.gooddata.com/pages/viewpage.action?pageId=34340938).
+For more information, see [Setting up Events for Drilling in Embedded Analytical Designer and KPI Dashboards](https://help.gooddata.com/pages/viewpage.action?pageId=86797116).
