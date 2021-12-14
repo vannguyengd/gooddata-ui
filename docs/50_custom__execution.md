@@ -116,7 +116,7 @@ of the execution model to turn on the `computeRatio` functionality:
 
 ```javascript
 import { modifySimpleMeasure } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 // This will modify an existing simple measure, turn on the computeRatio functionality and associate a new, default localId
 const ratioMeasure = modifySimpleMeasure(Md.$FranchiseFees, m => m.ratio().defaultLocalId());

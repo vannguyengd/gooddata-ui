@@ -28,7 +28,7 @@ import { Headline } from "@gooddata/sdk-ui-charts";
 
 ```jsx
 import { Headline } from "@gooddata/sdk-ui-charts";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 <Headline
     primaryMeasure={Ldm.$FranchiseFees}
@@ -39,7 +39,7 @@ import { Ldm } from "./ldm";
 
 ```jsx
 import { Headline } from "@gooddata/sdk-ui-charts";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 <Headline
     primaryMeasure={Ldm.$FranchiseFees}

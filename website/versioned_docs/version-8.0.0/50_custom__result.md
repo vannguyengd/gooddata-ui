@@ -65,7 +65,7 @@ Use case: one data point calculated from a measure scoped for each attribute val
 
 ```javascript
 import { MeasureGroupIdentifier, newDimension } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 execution()
     .forItems([Ldm.LocationState, Ldm.$FranchiseFees])
@@ -82,7 +82,7 @@ Use case: a simple table; row per attribute value, measures are in columns
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 execution()
     .forItems([Ldm.LocationState, Ldm.$FranchiseFees, Ldm.$TotalSales])
@@ -101,7 +101,7 @@ Alternative use case: a simple table; row per measure, one column per attribute 
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 execution()
     .forItems([Ldm.LocationState, Ldm.$FranchiseFees, Ldm.$TotalSales])
@@ -122,7 +122,7 @@ Use case: stacked charts, pivot tables; one attribute used to create rows; one c
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 execution()
     .forItems([Ldm.LocationState, Ldm.LocationCity, Ldm.$FranchiseFees])
@@ -150,7 +150,7 @@ When you are constructing an execution, you can optionally specify what server-s
 
 ```javascript
 import { MeasureGroupIdentifier, newTwoDimensional, newAttributeSort } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 execution()
     .forItems([Ldm.LocationState, Ldm.LocationCity, Ldm.$FranchiseFees])

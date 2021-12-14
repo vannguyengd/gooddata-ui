@@ -31,7 +31,7 @@ The following sample KPI calculates the total sales in California:
 ```jsx
 import { Kpi } from "@gooddata/sdk-ui";
 import { newPositiveAttributeFilter } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 <Kpi
     measure={Ldm.$TotalSales}

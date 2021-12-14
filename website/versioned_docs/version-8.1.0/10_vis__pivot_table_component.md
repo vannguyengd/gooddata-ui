@@ -39,7 +39,7 @@ The following code sample shows an arrangement for a typical pivot table:
 ```jsx
 import "@gooddata/sdk-ui-pivot/styles/css/main.css";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 const style = { height: 300 };
 
@@ -59,7 +59,7 @@ You can also use the Pivot Table component to create a regular (flat) table.
 ```jsx
 import "@gooddata/sdk-ui-pivot/styles/css/main.css";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 const style = { height: 300 };
 
@@ -83,7 +83,7 @@ You can [sort](50_custom__result.md#sorting) rows and attribute columns in any p
 import "@gooddata/sdk-ui-pivot/styles/css/main.css";
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 import { newMeasureSort, newAttributeLocator } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 import { monthDateIdentifierJanuary } from "./ldm/ext";
 
 const sortBy = [

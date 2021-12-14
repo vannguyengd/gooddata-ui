@@ -27,7 +27,7 @@ import { ColumnChart } from "@gooddata/sdk-ui-charts";
 ```jsx
 import "@gooddata/sdk-ui-charts/styles/css/main.css";
 import { ColumnChart } from "@gooddata/sdk-ui-charts";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 const style = { height: 300 };
 

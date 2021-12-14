@@ -17,7 +17,7 @@ You can use an instance of the Analytical Backend to conveniently construct and 
 ```javascript
 import bearFactory from "@gooddata/sdk-backend-bear";
 import { newPositiveAttributeFilter, newMeasureSort, newTwoDimensional, MeasureGroupIdentifier } from "@gooddata/sdk-model";
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 
 const backend = bearFactory();
 
@@ -47,16 +47,16 @@ const allData = await result.readAll();
 ```
 
 The structure of data that you obtain from execution result is fairly complex. GoodData.UI provides a convenience
-layer to work with the result data. It is called `DataViewFacade` and is available from the `@gooddata/sdk-ui` package. 
+layer to work with the result data. It is called `DataViewFacade` and is available from the `@gooddata/sdk-ui` package.
 
-The `DataViewFacade` wraps the data view that you obtain from the execution result using either `readWindow` or `readAll` methods 
+The `DataViewFacade` wraps the data view that you obtain from the execution result using either `readWindow` or `readAll` methods
 and exposes the data as data series that may be further scoped for some attributes and slices by other attributes.
 
 Building on top of the previous example, you can use `DataViewFacade` as follows:
 
 ```javascript
 import { DataViewFacade } from "@gooddata/sdk-ui"
-import { Ldm } from "./ldm";
+import * as Ldm from "./ldm/full";
 import first from "lodash/first"
 
 const facade = DataViewFacade.for(allData);
@@ -64,10 +64,10 @@ const facade = DataViewFacade.for(allData);
 // Gets a collection of all data series found in the data. There will be exactly one series for the $AvgDailyTotalSales
 const allDataSeries = facade.data().series();
 
-// Gets first (and in this case only) data series calculated for the $AvgDailyTotalSales measure. 
-// 
-// Note that if you set up the execution dimensionality so that one dimension contains both MeasureGroupIdentifier and 
-// an attribute, then the result may contain multiple data series for the $AvgDailyTotalSales. Each of the data 
+// Gets first (and in this case only) data series calculated for the $AvgDailyTotalSales measure.
+//
+// Note that if you set up the execution dimensionality so that one dimension contains both MeasureGroupIdentifier and
+// an attribute, then the result may contain multiple data series for the $AvgDailyTotalSales. Each of the data
 // series will be _scoped_ to a an element of the attribute for which it was calculated.
 const totalSales = allDataSeries.firstForMeasure(Ldm.$AvgDailyTotalSales);
 

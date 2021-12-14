@@ -33,7 +33,7 @@ Totals cannot be calculated for tables without row attributes or for tables with
 ```jsx
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 import { newTotal } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 const measures = [ Md.$FranchiseFees ];
 const columns = [ Md.DateMonth.Short ];
@@ -75,7 +75,7 @@ first row attribute, and this is the default sorting for tables.
 ```jsx
 import { PivotTable } from "@gooddata/sdk-ui-pivot";
 import { newTotal } from "@gooddata/sdk-model";
-import { Md } from "./md";
+import * as Md from "./md/full";
 
 const measures = [ Md.$FranchiseFees ];
 const columns = [ Md.DateMonth.Short ];
