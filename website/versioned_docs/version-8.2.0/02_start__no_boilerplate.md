@@ -20,9 +20,9 @@ _Note: This tutorial assumes that you already have an existing GoodData account.
 
 1. Run the following command from the command line:
     ```bash
-    npx create-react-app my-first-app
+    npx create-react-app@4 my-first-app
     ```
-    This command creates a directory named `my-first-app` with a functional skeleton of a React application. You can see the command output that looks something like the following:
+    This command creates a directory named `my-first-app` with a functional skeleton of a React application. We use `create-react-app` at **version 4** because it installs React **16**, which is compatible with GoodData.UI. `create-react-app` version 5 or higher is not supported. You can see the command output that looks something like the following:
     ```bash
     Success! Created my-first-app at /Users/user-name/dev/my-first-app
     ```
