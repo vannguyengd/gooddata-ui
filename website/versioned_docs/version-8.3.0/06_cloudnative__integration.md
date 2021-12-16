@@ -11,7 +11,7 @@ React application or for some reason you cannot use [accelerator toolkit](02_sta
 
 ## Before you begin
 
-If you used `create-react-app` to create your application, please make sure the `react-scripts` dependency is set to version 4.0.3. Versions 5.0.0 and newer are currently not supported by GoodData.UI.
+If you used `create-react-app` to create your application, make sure that the `react-scripts` dependency is set to version 4.0.3. Version 5.0.0 and newer is not supported.
 
 ## Step 1. Install the necessary dependencies
 
