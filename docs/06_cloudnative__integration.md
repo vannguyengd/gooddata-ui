@@ -8,6 +8,10 @@ id: cloudnative_integration
 This document outlines the important steps you need to undertake if you need to integrate GoodData.UI into an existing
 React application or for some reason you cannot use [accelerator toolkit](02_start__using_boilerplate.md) to bootstrap a new application.
 
+## Before you begin
+
+If you used `create-react-app` to create your application, please make sure the `react-scripts` dependency is set to version 4.0.3. Versions 5.0.0 and newer are currently not supported by GoodData.UI.
+
 ## Step 1. Install the necessary dependencies
 
 GoodData.UI can target multiple platforms. Therefore, it is essential to install packages for the right target platform. For
