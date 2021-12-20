@@ -45,6 +45,9 @@ If you are using Babel, you can use the [Babel polyfill](https://babeljs.io/docs
 
 Because Internet Explorer 11 does not support [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var), add one of the [polyfills](https://github.com/search?q=css+variables+polyfill) to avoid styling issues. We do not recommend any specific polyfill, because you may approach this situation differently (for example, transform variables to static values at build time vs. generate and append CSS classes at runtime). Each approach has certain limitations, so choose the one that best suits your needs.
 
+#### Geo Pushpin Chart
+With GoodData.UI SDK version >=8.8, Geo Pushpin Chart is no longer supported in Internet Explorer 11.
+
 ## Get GoodData
 
 To use GoodData.UI, you must have an account on the GoodData platform or an installation of GoodData.CN. You can create a GoodData platform account for free at [https://www.gooddata.com/free](https://www.gooddata.com/free) or download GoodData.CN at [https://www.gooddata.com/developers](https://www.gooddata.com/developers).
