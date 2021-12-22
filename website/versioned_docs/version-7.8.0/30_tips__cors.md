@@ -117,4 +117,4 @@ identifier="<some-identifier>"
 />
 ```
 
-**NOTE:** If you followed the instructions from the tutorial [How to Create Your First Application with GoodData UI SDK](02_start__no_boilerplate.md), you can now remove the `setupProxy.js` file because it is not required anymore.
+**NOTE:** If you followed the instructions from the tutorial [How to Create Your First Application with GoodData UI SDK](ht_create_your_first_visualization), you can now remove the `setupProxy.js` file because it is not required anymore.

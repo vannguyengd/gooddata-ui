@@ -59,7 +59,7 @@ You can also create a custom provider.
 `ContextDeferredAuthProvider` assumes that the session is already authenticated to the GoodData platform (either by a login or by SSO).
 This is useful when you embed GoodData.UI elements into your app.
 
-To use SSO, follow the [SSO guide](30_tips__sso.md) and use `ContextDeferredAuthProvider` in your application as shown in [Initial setup](02_start__connecting_backend.md#initial-setup).
+To use SSO, follow the [SSO guide](sso) and use `ContextDeferredAuthProvider` in your application as shown in [Initial setup](02_start__connecting_backend.md#initial-setup).
 
 ### FixedLoginAndPasswordAuthProvider
 

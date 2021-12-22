@@ -136,7 +136,7 @@ const bearClient = factory();
 await bearClient.user.login(this.username, this.password)
 ```
 
-For SSO setup, see [Set Up Authentication and Single Sign-On](30_tips__sso.md).
+For SSO setup, see [Set Up Authentication and Single Sign-On](platform_sso).
 
 **NOTE**: `ContextDeferredAuthProvider` allows you to provide a callback function in the constructor. This function will
 be called every time when the Analytical Backend throws a `NotAuthenticated` error. This callback function is useful to
@@ -173,4 +173,4 @@ Here are some suggestions about what you can do after you created your first vis
 * Add more elements: tables, charts, custom visualizations. For more information, see [Start with Visual Components](10_vis__start_with_visual_components.md).
 * [Enable drilling](15_props__drillable_item.md).
 * Add a [customizable theme](10_vis__theme_provider.md) to your application.
-* Authenticate your users using [SSO](30_tips__sso.md) rather than sending them to a proxied GoodData login page.
+* Authenticate your users using [SSO](platform_sso) rather than sending them to a proxied GoodData login page.
