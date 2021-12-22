@@ -12,7 +12,7 @@ Feel free to play with the sample code in your browser to see how the visualizat
 
 Let’s start with a simple headline widget!
 
-_Note: for the sake of simplicity, we have put a proxy in front of the GoodData platform so the sample code doesn’t need to worry about [authentication or single sign on](30_tips__sso.md)._
+_Note: for the sake of simplicity, we have put a proxy in front of the GoodData platform so the sample code doesn’t need to worry about [authentication or single sign on](sso)._
 
 |  |  |
 | :--- | :--- |

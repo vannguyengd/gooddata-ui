@@ -181,10 +181,6 @@
         "title": "AttributeElements Component Options",
         "sidebar_label": "AttributeElements Component Options"
       },
-      "chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "data_sampling": {
         "title": "Data Sampling",
         "sidebar_label": "Data Sampling"
@@ -200,6 +196,10 @@
       "error_component": {
         "title": "ErrorComponent",
         "sidebar_label": "ErrorComponent"
+      },
+      "chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
       },
       "loading_component": {
         "title": "LoadingComponent",
@@ -381,13 +381,13 @@
         "title": "How to Create Your First Visualization with GoodData UI SDK",
         "sidebar_label": "How to Create Your First Visualization with GoodData UI SDK"
       },
-      "version-4.1.1/version-4.1.1-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-4.1.1/version-4.1.1-drillable_item": {
         "title": "DrillableItem",
         "sidebar_label": "DrillableItem"
+      },
+      "version-4.1.1/version-4.1.1-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
       },
       "version-4.1.1/version-4.1.1-on_fire_drill_event": {
         "title": "OnFireDrillEvent",
@@ -557,10 +557,6 @@
         "title": "Start with Visual Components",
         "sidebar_label": "Start with Visual Components"
       },
-      "version-5.0.0/version-5.0.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-5.0.0/version-5.0.0-drillable_item": {
         "title": "DrillableItems",
         "sidebar_label": "DrillableItems"
@@ -568,6 +564,10 @@
       "version-5.0.0/version-5.0.0-error_component": {
         "title": "ErrorComponent",
         "sidebar_label": "ErrorComponent"
+      },
+      "version-5.0.0/version-5.0.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
       },
       "version-5.0.0/version-5.0.0-loading_component": {
         "title": "LoadingComponent",
@@ -1021,13 +1021,13 @@
         "title": "Treemap",
         "sidebar_label": "Treemap"
       },
-      "version-6.2.0/version-6.2.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-6.2.0/version-6.2.0-drillable_item": {
         "title": "DrillableItems",
         "sidebar_label": "DrillableItems"
+      },
+      "version-6.2.0/version-6.2.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
       },
       "version-6.2.0/version-6.2.0-on_fire_drill_event": {
         "title": "OnFireDrillEvent",
@@ -1245,13 +1245,13 @@
         "title": "DateFilter Component",
         "sidebar_label": "DateFilter Component"
       },
-      "version-7.2.0/version-7.2.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-7.2.0/version-7.2.0-date_filter_option": {
         "title": "DateFilter Component Options",
         "sidebar_label": "DateFilter Component Options"
+      },
+      "version-7.2.0/version-7.2.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
       },
       "version-7.2.0/version-7.2.0-on_export_ready": {
         "title": "OnExportReady",
@@ -1505,10 +1505,6 @@
         "title": "AttributeElements Component Options",
         "sidebar_label": "AttributeElements Component Options"
       },
-      "version-8.0.0/version-8.0.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-8.0.0/version-8.0.0-date_filter_option": {
         "title": "DateFilter Component Options",
         "sidebar_label": "DateFilter Component Options"
@@ -1520,6 +1516,10 @@
       "version-8.0.0/version-8.0.0-error_component": {
         "title": "ErrorComponent",
         "sidebar_label": "ErrorComponent"
+      },
+      "version-8.0.0/version-8.0.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
       },
       "version-8.0.0/version-8.0.0-loading_component": {
         "title": "LoadingComponent",
@@ -1701,13 +1701,13 @@
         "title": "Theme Provider",
         "sidebar_label": "Theme Provider"
       },
-      "version-8.2.0/version-8.2.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-8.2.0/version-8.2.0-drillable_item": {
         "title": "DrillableItems",
         "sidebar_label": "DrillableItems"
+      },
+      "version-8.2.0/version-8.2.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
       },
       "version-8.2.0/version-8.2.0-time_over_time_comparison": {
         "title": "Time-over-Time Comparison",
@@ -1845,13 +1845,13 @@
         "title": "InsightView",
         "sidebar_label": "InsightView"
       },
-      "version-8.4.0/version-8.4.0-chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
       "version-8.4.0/version-8.4.0-date_filter_option": {
         "title": "DateFilter Component Options",
         "sidebar_label": "DateFilter Component Options"
+      },
+      "version-8.4.0/version-8.4.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
       },
       "version-8.4.0/version-8.4.0-placeholders": {
         "title": "Visualization Definition Placeholders",

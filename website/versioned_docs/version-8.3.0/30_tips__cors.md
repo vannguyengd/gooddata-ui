@@ -90,4 +90,4 @@ To make those domains allowed origins, use the [API for adding domains allowed f
 * You can add a port number to an allowed origin URL (for example, `https://www.example.com:8080`).
 * You can use a wildcard (`*`, `**`) to represent a domain of the third and consecutive levels.
 
-**NOTE:** If you followed the instructions from the tutorial [Create Your First Application from Scratch](02_start__no_boilerplate.md), you can now remove the `setupProxy.js` file because it is not required anymore.
+**NOTE:** If you followed the instructions from the tutorial [Create Your First Application from Scratch](ht_create_your_first_visualization), you can now remove the `setupProxy.js` file because it is not required anymore.

@@ -222,11 +222,11 @@ Would you like to know more? Check out the following resources:
 ## Getting started
 
 And if you just want to get started, you can do that in just three simple steps:
-1.  Get a free GoodData account at [www.gooddata.com/free](www.gooddata.com/free) (unless you are an existing GoodData customer).
+1.  Get a free GoodData account at [www.gooddata.com/free](https://www.gooddata.com/free) (unless you are an existing GoodData customer).
 2.  Type `npx @gooddata/create-gooddata-react-app my-app` in the terminal window.
 3.  In the newly created folder, type `yarn start` to see the automatically generated skeleton of your first analytical web application with additional instructions.
 
-A complete tutorial is available from [here](02_start__using_boilerplate.md). If you prefer to use the standard create-react-app and add GoodData.UI library manually, [check out this other tutorial](02_start__no_boilerplate.md).
+A complete tutorial is available from [here](ht_create_your_first_visualization_toolkit). If you prefer to use the standard create-react-app and add GoodData.UI library manually, [check out this other tutorial](ht_create_your_first_visualization).
 
-And if you have any questions about the GoodData platform, GoodData.CN, GoodData.UI, or just this document, feel free to ask us in our community forums at [community.gooddata.com](community.gooddata.com).
+And if you have any questions about the GoodData platform, GoodData.CN, GoodData.UI, or just this document, feel free to ask us in our community forums at [community.gooddata.com](https://community.gooddata.com).
 

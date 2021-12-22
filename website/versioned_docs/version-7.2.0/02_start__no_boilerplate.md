@@ -6,6 +6,8 @@ id: version-7.2.0-ht_create_your_first_visualization
 original_id: ht_create_your_first_visualization
 ---
 
+>**IMPORTANT:** This approach no longer works. Use [accelerator toolkit](ht_create_your_first_visualization_toolkit) instead. Just ensure that you call it with proper boilerplate version (eg. @gooddata/create-gooddata-react-app@0.7.0).
+
 This tutorial will guide you through the process of creating your first analytical application from scratch, using GoodData.UI with Facebook’s `create-react-app` tool.
 
 After you complete this tutorial, you will be able to display various measures and charts from your GoodData workspace within the context of your React application.
@@ -13,7 +15,7 @@ After you complete this tutorial, you will be able to display various measures 
 * Before you start this tutorial, make sure that you have a GoodData account (see [About GoodData.UI](01_intro__about_gooddataui.md#supported-technologies)).
 * We use `yarn` dependency manager in this tutorial. To install it, review its [documentation](https://yarnpkg.com/lang/en/docs/install/).
 
-**TIP:** Instead of creating the application from scratch, you can use [GoodData `create-gooddata-react-app` and Accelerator Toolkit](02_start__using_boilerplate.md), which will guide you through the process of creating the application step by step.
+**TIP:** Instead of creating the application from scratch, you can use [GoodData `create-gooddata-react-app` and Accelerator Toolkit](ht_create_your_first_visualization_toolkit), which will guide you through the process of creating the application step by step.
 
 ## Step 1. Get create-react-app
 
@@ -116,7 +118,7 @@ Open [https://localhost:3000/account.html](https://localhost:3000/account.html)
 
 For the purpose of this tutorial, you are asked to establish a client session by simply logging in to GoodData.
 
-In your production environment, your end users may be authenticated using [single sign-on](30_tips__sso.md).
+In your production environment, your end users may be authenticated using [single sign-on](sso).
 
 ## Step 7. Add GoodData components
 
@@ -241,5 +243,5 @@ Here are some suggestions about what you can do after you created your first vis
 
 * Add more elements: tables, charts, custom visualizations. For more information, see [how to use visual components](10_vis__start_with_visual_components.md).
 * [Enable drilling](15_props__drillable_item.md).
-* Authenticate your users using [Single Sign-on (SSO)](30_tips__sso.md) rather than sending them to a proxied GoodData login page.
+* Authenticate your users using [Single Sign-on (SSO)](platform_sso) rather than sending them to a proxied GoodData login page.
 * [Clean up your code](clean_up_your_code.md).
