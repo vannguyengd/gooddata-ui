@@ -12,7 +12,7 @@ visualization components.
 The execution model and other smaller models are implemented in the `@gooddata/sdk-model` package.
 
 While you can create different inputs without the model functions, we strongly recommend using the functionality
-of the execution model, especially in conjunction with the [catalog-export](02_start__catalog_export.md) tool.
+of the execution model, especially in conjunction with the [catalog-export](gdc_catalog_export) tool.
 
 These two methods result in a very efficient developer experience, where you can spend time writing your application instead
 of focusing on constructing simple objects.

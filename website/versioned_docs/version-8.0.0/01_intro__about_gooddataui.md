@@ -33,7 +33,7 @@ GoodData.UI is compatible with:
 * Node ^12.15.0 LTS
 * [Officially supported browsers](https://help.gooddata.com/display/doc/System+Requirements+and+Supported+Browsers)
 
-**NOTE:** [Server-side rendering](https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md) is *not* supported.
+**NOTE:** [Server-side rendering](https://github.com/reduxjs/redux/blob/master/docs/usage/ServerRendering.md) is *not* supported.
 
 ### Internet Explorer and mandatory polyfills
 

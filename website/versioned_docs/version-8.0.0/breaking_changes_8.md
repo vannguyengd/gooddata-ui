@@ -169,7 +169,7 @@ To adopt this change, use the `catalog-export` tool to generate the logical data
 Unless your application works with arbitrary workspaces (where you do not know the LDM at compilation time),
 it should use the generated LDM.
 
-For more information, see [Export Catalog](02_start__catalog_export.md).
+For more information, see [Export Catalog](gdc_catalog_export).
 
 ### Execution
 The updated LDM objects feed seamlessly into the updated infrastructure and APIs that trigger executions. We have

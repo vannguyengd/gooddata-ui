@@ -131,7 +131,7 @@ The `from` and `to` properties set the number of granularity units (for example,
 
 2. Migrate the Date datasets in your workspace to the `urn:custom_v2:date` date dimension.
 
-    To do so, see "Migrate from a Legacy Date Dimension to urn:custom_v2:date" in [Custom Calendars - Self Service](https://help.gooddata.com/display/doc/Custom+Calendars+-+Self+Service).
+    To do so, see "Migrate from a Legacy Date Dimension to urn:custom_v2:date" in [Custom Calendars - Self Service](https://help.gooddata.com/pages/viewpage.action?pageId=86795635).
 
 #### Relative filter examples
 

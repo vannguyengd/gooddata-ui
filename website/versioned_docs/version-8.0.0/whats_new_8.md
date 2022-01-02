@@ -93,7 +93,7 @@ representing the various logical data model (LDM) objects in your workspace. You
 />
 ```
 
--- all without the need to write any boilerplate code. The [catalog-export](02_start__catalog_export.md) tool does all that for you.
+-- all without the need to write any boilerplate code. The [catalog-export](gdc_catalog_export) tool does all that for you.
 
 ## Improved Custom Executions
 We have made significant changes and quality-of-life improvements when it comes to triggering executions on the 

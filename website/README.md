@@ -17,3 +17,9 @@ yarn install
 yarn start
 open http://localhost:3000/
 ```
+
+Validate that there are no dead-links:
+```
+yarn start
+yarn validate-links
+```

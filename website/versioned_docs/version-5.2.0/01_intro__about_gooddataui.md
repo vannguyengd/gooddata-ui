@@ -21,7 +21,7 @@ GoodData.UI is compatible with:
 * Node 8.9.4
 * [Officially supported browsers](https://help.gooddata.com/display/doc/System+Requirements+and+Supported+Browsers)
 
-**Note:** [Server-side rendering](https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md) is *not* supported.
+**Note:** [Server-side rendering](https://github.com/reduxjs/redux/blob/master/docs/usage/ServerRendering.md) is *not* supported.
 
 ### Internet Explorer and mandatory polyfill
 To run a GoodData.UI application in Internet Explorer 11, you must have the ES6 polyfill. For more information, see the [compatibility table](http://kangax.github.io/compat-table/es6/) and the instructions [here](https://github.com/zloirock/core-js)
