@@ -10,7 +10,7 @@ To embed an existing dashboard created in KPI Dashboards, use the [DashboardView
 
 **Steps:**
 
-1. Obtain the identifier of the dashboard via [catalog-export](02_start__catalog_export.md).
+1. Obtain the identifier of the dashboard via [catalog-export](gdc_catalog_export).
 
 2. Import the DashboardView component from the `@gooddata/sdk-ui-ext` package into your app:
 

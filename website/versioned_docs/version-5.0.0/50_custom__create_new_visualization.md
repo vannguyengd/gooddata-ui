@@ -43,6 +43,6 @@ Define the requested structure of the result data.
 
 Define table totals for your visualization component.
 
-4. [Execute API Call](execution_rest_api_and_results.md)
+4. [Execute API Call](execution_rest_api_and_result)
 
 Execute input data and send it to the chosen function.

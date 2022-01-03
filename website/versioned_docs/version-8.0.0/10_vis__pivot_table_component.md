@@ -418,7 +418,7 @@ const config = {
 | config | false | [IPivotTableConfig](#configuration-menu) | The configuration object |
 | sortBy | false | [ISortItem[]](50_custom__result.md#sorting) | An array of sort definitions |
 | groupRows | false | boolean |  If `false`, [grouping of the same values in attribute columns](#grouping) is disabled. The default is `true` (grouping enabled). |
-| locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-sdk-ui-pivot/tree/master/src/translations). |
+| locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/tree/master/libs/sdk-ui/src/base/localization/bundles). |
 | drillableItems | false | [IDrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable |
 | ErrorComponent | false | Component | A component to be rendered if this component is in error state (see [ErrorComponent](15_props__error_component.md)) |
 | LoadingComponent | false | Component | A component to be rendered if this component is in loading state (see [LoadingComponent](15_props__loading_component.md)) |

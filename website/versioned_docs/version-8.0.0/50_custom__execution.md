@@ -74,10 +74,10 @@ You can construct measures of multiple types:
 -  Time-over-time comparison measures constructed by "shifting" the calculation in time
 -  Arithmetic measures constructed by combining existing measures as operands of arithmetic operations
 
-The [catalog-export](02_start__catalog_export.md) tool will automatically create measure definitions for all facts
+The [catalog-export](gdc_catalog_export) tool will automatically create measure definitions for all facts
 and MAQL metrics in your workspace.
 
-You can then use the [execution model functions](02_start__execution_model.md) to create [arithmetic measures](20_misc__arithmetic_measure.md)
+You can then use the [execution model functions](model_helpers) to create [arithmetic measures](20_misc__arithmetic_measure.md)
 and [time-over-time comparison measures](20_misc__time_over_time_comparison.md).
 
 ### Aggregation inside a measure
@@ -94,7 +94,7 @@ Each measure created from a fact can specify `aggregation` of data. Aggregation 
 | `"median"` | Counts the statistical median - an order statistic that gives the "middle" value of a sample. If the "middle" falls between two values, the function returns average of the two middle values. Null values are ignored. |
 | `"runsum"` | Returns a sum of numbers increased by the sum from the previous value \(accumulating a sum incrementally\) |
 
-[catalog-export](02_start__catalog_export.md) generates measure definitions for all available aggregations for you.
+[catalog-export](gdc_catalog_export) generates measure definitions for all available aggregations for you.
 
 ### Filters in a measure definition
 

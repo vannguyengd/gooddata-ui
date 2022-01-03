@@ -73,7 +73,7 @@ When using an attribute in a data prop, specify the identifier of the attribute'
 
 To find the identifier or URI of a measure or attribute, use either of the following options:
 
-* Use [gdc-catalog-export](02_start__catalog_export.md): Download a list of attributes and measures from your workspace. In the downloaded list, find the measures and attributes that you need.
+* Use [gdc-catalog-export](gdc_catalog_export): Download a list of attributes and measures from your workspace. In the downloaded list, find the measures and attributes that you need.
 * Use [Analytical Designer](https://secure.gooddata.com/analyze).
   1. Create a visualization that uses measures and attributes that you need.
   2. Use your browser's Developer Tools and open the [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter).

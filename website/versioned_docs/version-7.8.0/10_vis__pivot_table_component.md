@@ -306,7 +306,7 @@ columnSizing: {
     }
     ```
 
-**TIP:** Instead of creating `attributeColumnWidthItem`, `measureColumnWidthItem`, `allMeasureColumnWidthItem` or `weakMeasureColumnWidthItem` manually, you can use the [width item helpers](02_start__execution_model.md#width-item-helpers-for-pivot-tables).
+**TIP:** Instead of creating `attributeColumnWidthItem`, `measureColumnWidthItem`, `allMeasureColumnWidthItem` or `weakMeasureColumnWidthItem` manually, you can use the [width item helpers](model_helpers#width-item-helpers-for-pivot-tables).
 
 ### Priorities of column width definitions
 

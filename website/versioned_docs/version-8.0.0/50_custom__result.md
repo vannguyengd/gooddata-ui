@@ -158,7 +158,7 @@ execution()
     .withSorting(newAttributeSort(Ldm.LocationState, "desc"));
 ```
 
-For more information about how to define sorts, see [Execution Model](02_start__execution_model.md).
+For more information about how to define sorts, see [Execution Model](model_helpers).
 
 ### Execution result
 

@@ -6,7 +6,7 @@ id: version-7.4.0-afm
 original_id: afm
 ---
 
-AFM is a combination of attributes, measures and filters that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer).
+AFM is a combination of attributes, measures and filters that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/pages/viewpage.action?pageId=86794507).
 
 **NOTE:** A measure contains numeric data (for example, Revenue). Measures can be sliced by selected attributes (for example, City, Date in years, or both) and filtered by attribute values or date constraints. For more information, see the [main concepts](01_intro__platform_intro.md#main-concepts).   
 
@@ -118,7 +118,7 @@ Besides `uri` or `identifier`, a measure requires a `localIdentifier` string th
 
 Though you can use either object URIs or object identifiers \(`ObjQualifier = IObjUriQualifier | IObjIdentifierQualifier`\), we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData workspace that they live in. That means that an object that is used in any workspace within your domain, has the _same_ object identifier in _any_ of those workspaces.
 
-To get the list of catalog items and date datasets from a GoodData workspace in the form of a JavaScript object, use [gdc-catalog-export](02_start__catalog_export.md).
+To get the list of catalog items and date datasets from a GoodData workspace in the form of a JavaScript object, use [gdc-catalog-export](gdc_catalog_export).
 
 ### Aggregation inside a measure
 
