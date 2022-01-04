@@ -65,7 +65,8 @@ This article describes the options for configuring a chart.
     tooltip: {
         enabled: true // boolean
     },
-    enableCompactSize: true // boolean
+    enableCompactSize: true, // boolean
+    forceDisableDrillOnAxes: false // boolean
 }
 ```
 **NOTE:** `primaryChartType`, `secondaryChartType`, and `dualAxis` are available only for [combo charts](10_vis__combo_chart_component.md).
@@ -464,3 +465,7 @@ A headline chart with `config.enableCompactSize` set to `true` adjusts its conte
 ### Responsive legend
 
 For configuring a responsive legend, see [Change legend properties](#change-legend-properties).
+
+### Drilling on axis labels
+
+Drilling on axis labels can be disabled by setting `forceDisableDrillOnAxes` property to `true`.
