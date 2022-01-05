@@ -315,6 +315,8 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 />
 ```
 
+**NOTE:** To disable drilling on labels for the both axes, see [Disabled drilling on axis labels](#disabled-drilling-on-axis-labels).
+
 ## Configure canvases
 
 * To configure data labels, set the `config.dataLabels` property.
@@ -373,6 +375,6 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 To customize tooltips and fonts, [implement a custom visualization](50_custom__create_new_visualization.md).
 
-### Drilling on axis labels
+### Disabled drilling on axis labels
 
-Drilling on axis labels can be disabled by setting `forceDisableDrillOnAxes` property to `true`.
+To disable drilling on axis labels, set `forceDisableDrillOnAxes` to `true`.

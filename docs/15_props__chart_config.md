@@ -329,6 +329,8 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 />
 ```
 
+**NOTE:** To disable drilling on labels for the both axes, see [Disabled drilling on axis labels](#disabled-drilling-on-axis-labels).
+
 ## Configure canvases
 
 * To configure data labels, set the `config.dataLabels` property.
@@ -466,6 +468,6 @@ A headline chart with `config.enableCompactSize` set to `true` adjusts its conte
 
 For configuring a responsive legend, see [Change legend properties](#change-legend-properties).
 
-### Drilling on axis labels
+### Disabled drilling on axis labels
 
-Drilling on axis labels can be disabled by setting `forceDisableDrillOnAxes` property to `true`.
+To disable drilling on axis labels, set `forceDisableDrillOnAxes` to `true`.
