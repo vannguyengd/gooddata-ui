@@ -64,7 +64,8 @@ This article describes the options for configuring a chart.
     tooltip: {
         enabled: true // boolean
     },
-    enableCompactSize: true // boolean
+    enableCompactSize: true, // boolean
+    forceDisableDrillOnAxes: false // boolean
 }
 ```
 **NOTE:** `primaryChartType`, `secondaryChartType`, and `dualAxis` are available only for [combo charts](10_vis__combo_chart_component.md).
@@ -327,6 +328,8 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 />
 ```
 
+**NOTE:** To disable drilling on labels for the both axes, see [Disabled drilling on axis labels](#disabled-drilling-on-axis-labels).
+
 ## Configure canvases
 
 * To configure data labels, set the `config.dataLabels` property.
@@ -463,3 +466,7 @@ A headline chart with `config.enableCompactSize` set to `true` adjusts its conte
 ### Responsive legend
 
 For configuring a responsive legend, see [Change legend properties](#change-legend-properties).
+
+### Disabled drilling on axis labels
+
+To disable drilling on axis labels, set `forceDisableDrillOnAxes` to `true`.

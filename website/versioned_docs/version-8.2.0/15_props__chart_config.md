@@ -59,7 +59,8 @@ This article describes the options for configuring a chart.
     stackMeasuresToPercent: true, // boolean
     primaryChartType: "column", // string
     secondaryChartType: "area", // string
-    dualAxis: false // boolean
+    dualAxis: false, // boolean
+    forceDisableDrillOnAxes: false // boolean
 }
 ```
 **NOTE:** `primaryChartType`, `secondaryChartType`, and `dualAxis` are available only for [combo charts](10_vis__combo_chart_component.md).
@@ -313,6 +314,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
     }}
 />
 ```
+**NOTE:** To disable drilling on labels for the both axes, see [Disabled drilling on axis labels](#disabled-drilling-on-axis-labels).
 
 ## Configure canvases
 
@@ -371,3 +373,7 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 ## Customize tooltips and fonts
 
 To customize tooltips and fonts, [implement a custom visualization](50_custom__create_new_visualization.md).
+
+### Disabled drilling on axis labels
+
+To disable drilling on axis labels, set `forceDisableDrillOnAxes` to `true`.
