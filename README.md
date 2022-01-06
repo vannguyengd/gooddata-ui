@@ -27,6 +27,6 @@ Please follow the installation instructions in the [gooddata-ui-sdk repository](
 
 ## License
 
-(C) 2007-2020 GoodData Corporation
+(C) 2007-2022 GoodData Corporation
 
 For more information, please see [LICENSE](LICENSE).
