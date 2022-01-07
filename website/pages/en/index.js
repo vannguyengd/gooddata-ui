@@ -84,10 +84,10 @@ class HomeSplash extends React.Component {
         <div className="right">
           <SplashParallax
             layers={[
-              "./img/homepage/splash-image-l1.svg",
-              "./img/homepage/splash-image-l2.svg",
-              "./img/homepage/splash-image-l3.svg",
-              "./img/homepage/splash-image-l4.svg"
+              "./img/homepage/splash-image-l1.svg?v=2022",
+              "./img/homepage/splash-image-l2.svg?v=2022",
+              "./img/homepage/splash-image-l3.svg?v=2022",
+              "./img/homepage/splash-image-l4.svg?v=2022"
             ]}
           />
         </div>
@@ -131,7 +131,7 @@ const FeaturesBlockGallery = props => {
       {item.image && (
         <div className="featuresBlockGalleryImage">
           <img src={item.image} className="featuresBlockGalleryImageImage" width={item.imageWidth} height={item.imageHeight} alt={item.title} />
-          {item.imageHover && 
+          {item.imageHover &&
             <img src={item.imageHover}  className="featuresBlockGalleryImageImage featuresBlockGalleryImageHover" width={item.imageWidth} height={item.imageHeight} alt={item.title} />}
         </div>
       )}
