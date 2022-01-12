@@ -46,8 +46,8 @@ plugins at runtime.
 
 A plugin must be built into a bundle that is configured to inherit these dependencies from the context into which it is loaded:
 
--  All `@gooddata` dependencies except the `@gooddata/sdk-ui-dashboard` package
--  `react`, `react-dom`, and `react-intl`
+-  All `@gooddata` dependencies
+-  `react` and `react-dom`
 
 Apart form this, the plugin can depend on other packages and include custom assets as it sees fit.
 
@@ -70,7 +70,7 @@ that version of the Dashboard component. Transitively, any dashboards that link 
 that same version of the Dashboard component.
 
 This means that any changes and improvements that we make to the KPI Dashboards will not be available on the
-dashboards enhanced by the plugin until you upgrade your plugin and build it against the latest version of 
+dashboards enhanced by the plugin until you upgrade your plugin and build it against the latest version of
 `@gooddata/sdk-ui-dashboard`.
 
 We decided to go with this strict behavior to give you strong guarantees that the plugins enhanced by your
@@ -131,7 +131,7 @@ The setup is different for the GoodData platform and GoodData.CN.
 
 2.  Set up hosting for the plugins, and add it to the `dashboardPluginHosts` setting.
 
-    This is a security measure. Only GoodData can add hosts to the `dashboardPluginHosts` list. 
+    This is a security measure. Only GoodData can add hosts to the `dashboardPluginHosts` list.
     The goal of this setting is to allow to control from where the plugins can be loaded. This should
     be a trusted and controlled location where only privileged developers can upload plugin artifacts.
     To update the list of trusted hosts, send a [support ticket](https://support.gooddata.com/hc/en-us/requests/new?ticket_form_id=582387).
