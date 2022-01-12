@@ -26,7 +26,7 @@ This documentation is intended for front-end software developers and requires Ja
 
 GoodData.UI is compatible with:
 
-* React >=16.8.0 <17.0.0, [Angular 9+](30_tips__use_angular_2.x.md)
+* React >=16.8.0 <18.0.0, [Angular 9+](30_tips__use_angular_2.x.md)
 * [TypeScript](02_start__api_maturity.md#typescript-type-considerations) >=4.0.2, ES6, ES5
 * Node ^12.15.0 LTS
 * [Officially supported browsers](https://help.gooddata.com/pages/viewpage.action?pageId=86775029)
