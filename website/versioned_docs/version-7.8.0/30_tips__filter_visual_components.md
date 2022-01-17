@@ -125,13 +125,13 @@ The `from` and `to` properties set the number of granularity units (for example,
 
 **NOTE:** If you use date filters by _weeks_ and compare the data to the [previous period or the same period of the last year](20_misc__time_over_time_comparison.md) in those filters, you have to enable the GoodData platform to properly process such week filters. To do so, complete the following steps:
 
-1. Switch the version of the [Extensible Analytics Engine](https://help.gooddata.com/display/doc/XAE+-+Extensible+Analytics+Engine) to 3.
+1. Switch the version of the [Extensible Analytics Engine](https://help.gooddata.com/pages/viewpage.action?pageId=86795616) to 3.
 
-    To do so, set the `xae_version` platform setting to 3 (see [Configure Various Features via Platform Settings](https://help.gooddata.com/display/doc/Configure+Various+Features+via+Platform+Settings)).
+    To do so, set the `xae_version` platform setting to 3 (see [Configure Various Features via Platform Settings](https://help.gooddata.com/pages/viewpage.action?pageId=86796826).
 
 2. Migrate the Date datasets in your workspace to the `urn:custom_v2:date` date dimension.
 
-    To do so, see "Migrate from a Legacy Date Dimension to urn:custom_v2:date" in [Custom Calendars - Self Service](https://help.gooddata.com/pages/viewpage.action?pageId=86795635).
+    To do so, see "Migrate from a Legacy Date Dimension to urn:custom_v2:date" in [Manage Custom Date Dimensions](https://help.gooddata.com/pages/viewpage.action?pageId=86795635).
 
 #### Relative filter examples
 
