@@ -6,7 +6,7 @@ id: version-8.2.0-ht_create_your_first_visualization
 original_id: ht_create_your_first_visualization
 ---
 
->**IMPORTANT:** This approach no longer works. Use [accelerator toolkit](ht_create_your_first_visualization_toolkit) instead.
+>**IMPORTANT:** The solution described in this article no longer works. Use the [Accelerator Toolkit](ht_create_your_first_visualization_toolkit) instead.
 
 This tutorial will guide you through the process of creating your first analytical application from scratch, using GoodData.UI with Facebook’s `create-react-app` tool.
 
@@ -14,7 +14,7 @@ After you complete this tutorial, you will be able to display various measures a
 
 We use the `yarn` package manager in this tutorial. To install it, review its [documentation](https://yarnpkg.com/lang/en/docs/install/).
 
-_Note: This tutorial assumes that you already have an existing GoodData account. If you don’t have a GoodData account yet, you can create one for free at [https://www.gooddata.com/free](https://www.gooddata.com/free). Please make sure that you have your GoodData account ready before following this tutorial._
+**NOTE:** This tutorial assumes that you already have an existing GoodData account. If you do not have a GoodData account yet, create one for free at [https://www.gooddata.com/free](https://www.gooddata.com/free).
 
 **TIP:** Instead of creating the application from scratch, you can use [GoodData `create-gooddata-react-app` and Accelerator Toolkit](ht_create_your_first_visualization_toolkit), which will guide you through the process of creating the application step by step.
 
