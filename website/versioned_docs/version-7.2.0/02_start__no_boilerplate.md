@@ -6,7 +6,7 @@ id: version-7.2.0-ht_create_your_first_visualization
 original_id: ht_create_your_first_visualization
 ---
 
->**IMPORTANT:** This approach no longer works. Use [accelerator toolkit](ht_create_your_first_visualization_toolkit) instead. Just ensure that you call it with proper boilerplate version (eg. @gooddata/create-gooddata-react-app@0.7.0).
+>**IMPORTANT:** The solution described in this article no longer works. Use the [Accelerator Toolkit](ht_create_your_first_visualization_toolkit) instead. When using the Accelerator Toolkit, ensure that you call it with the proper boilerplate version (for example, `@gooddata/create-gooddata-react-app@0.7.0`).
 
 This tutorial will guide you through the process of creating your first analytical application from scratch, using GoodData.UI with Facebook’s `create-react-app` tool.
 

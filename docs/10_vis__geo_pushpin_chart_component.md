@@ -5,6 +5,8 @@ copyright: (C) 2020 GoodData Corporation
 id: geo_pushpin_chart_component
 ---
 
+> Starting with GoodData.UI Version 8.8, geo pushpin charts are not supported in Internet Explorer 11.
+
 A **geo pushpin chart** visualizes data broken down by geographic region across an actual map and points the latitude and longitude of locations.
 
 ![Geo Pushpin Chart Component](assets/geo_pushpin_chart.png "Geo Pushpin Chart Component")

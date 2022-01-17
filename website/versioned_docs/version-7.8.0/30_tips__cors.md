@@ -76,16 +76,16 @@ This section does **not** address authentication. The easiest way to make sure t
 
 By default, you access the GoodData Portal via `https://secure.gooddata.com`. If you white-label the GoodData Portal URL, you can have it at, for example, `https://analytics.example.com`.
 
-In general, a white-labeled domain enables you to remove branding elements from the GoodData Portal and optionally replace them with branding from your enterprise. For more information, see [White Labeling](https://help.gooddata.com/pages/viewpage.action?pageId=34340963).
+In general, a white-labeled domain enables you to remove branding elements from the GoodData Portal and optionally replace them with branding from your enterprise. For more information, see [White Label Your Domain](https://help.gooddata.com/pages/viewpage.action?pageId=86797036).
 
-White-labeling is done by the GoodData Support specialists per request submitted via the [GoodData Support Portal](https://support.gooddata.com/hc/en-us).
+White-labeling is done by the GoodData Support specialists per request submitted via the [GoodData Support Portal](https://support.gooddata.com/).
 
-You can white-label a brand new domain \(see [White-Label a New Domain](https://help.gooddata.com/display/doc/White-Label+a+New+Domain)\) or an existing domain \([White-Label an Existing Domain](https://help.gooddata.com/display/doc/White-Label+an+Existing+Domain)\).
+You can white-label a [brand new domain](https://help.gooddata.com/pages/viewpage.action?pageId=86797052) or an [existing domain](https://help.gooddata.com/pages/viewpage.action?pageId=86797053).
 
 ### Step 2. Configure CORS
 
 The domains from which you want to enable API calls must be listed as allowed origins for your white-labeled domain.
-To make those domains allowed origins, use the [API for adding domains allowed for CORS access](https://help.gooddata.com/display/API/API+Reference#/reference/white-labeling/add-domains-allowed-for-cors-access/add-domains-allowed-for-cors-access).
+To make those domains allowed origins, use the [API for adding domains allowed for CORS access](https://help.gooddata.com/doc/enterprise/en/expand-your-gooddata-platform/api-reference#tag/allowed-origins).
 
 * An allowed origin URL must start with `https://` and must end with a top-level domain (such as `.com`, `.org`, and so on).
 * You can add a port number to an allowed origin URL (for example, `https://www.example.com:8080`).
