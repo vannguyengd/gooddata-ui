@@ -130,14 +130,14 @@ The setup is different for the GoodData platform and GoodData.CN.
 1.  Ensure that the `dashboardComponentDevRollout` platform setting is set to `true` for your GoodData domain or at least
     for the workspace where you want to use the plugins.
 
-2.  Set up hosting for the plugins, and add it to the `dashboardPluginHosts` setting.
+2.  Set up hosting for the plugins, and [request GoodData Support](https://support.gooddata.com/hc/en-us/requests/new?ticket_form_id=582387)
+    to add it to the `dashboardPluginHosts` setting.
 
-    This is a security measure. Only GoodData can add hosts to the `dashboardPluginHosts` list. 
-    The goal of this setting is to allow to control from where the plugins can be loaded. This should
+    This is a security measure. Only GoodData Support can add hosts to the `dashboardPluginHosts` list.
+    The goal of this setting is to control from where the plugins can be loaded. This should
     be a trusted and controlled location where only privileged developers can upload plugin artifacts.
-    To update the list of trusted hosts, send a [support ticket](https://support.gooddata.com/hc/en-us/requests/new?ticket_form_id=582387).
-
-    **NOTE:** You can request multiple hosts to be added to the list. All hosts must run on the `https://` protocol.
+    
+    You can request multiple hosts to be added to the list. All hosts must run on the HTTPS protocol.
 
     >**IMPORTANT!** Never put untrusted hosts into this list. Always put the hosts that are under your organization's
     control and appropriate review and governance. Otherwise, you run risk of malicious code leaking your data.

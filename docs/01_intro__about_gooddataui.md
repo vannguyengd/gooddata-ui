@@ -47,7 +47,7 @@ Because Internet Explorer 11 does not support [CSS variables](https://developer.
 
 #### Geo pushpin charts
 
-Starting with Version 8.8, [geo pushpin charts](10_vis__geo_pushpin_chart_component.md) are not supported in Internet Explorer 11.
+Starting with GoodData.UI Version 8.8, [geo pushpin charts](10_vis__geo_pushpin_chart_component.md) are not supported in Internet Explorer 11.
 
 ## Get GoodData
 
