@@ -6,7 +6,7 @@ id: version-8.7.0-dashboard_plugins
 original_id: dashboard_plugins
 ---
 
-Dashboard plugins allow developers to create and integrate custom code into the KPI Dashboards component. With the plugins, you
+Dashboard plugins allow developers to create and integrate custom code into the Dashboards component. With the plugins, you
 as a developer can customize and enhance the default dashboard experience available to the dashboard consumers.
 
 The plugins are an essential part of the GoodData dashboard stack. For more information, see the
@@ -168,7 +168,7 @@ project will contain a Walking Skeleton for your plugin including scripts to cor
 The toolkit supports additional actions:
 
 -  Adding a plugin to a workspace
--  Link a dashboard with a plugin added to a workspace
+-  Linking a dashboard with a plugin added to a workspace
 -  Unlinking a dashboard from a plugin
 
 To learn more, follow the documentation in your new plugin's README file. Happy coding!
