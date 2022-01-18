@@ -5,7 +5,7 @@ copyright: (C) 2007-2021 GoodData Corporation
 id: dashboard_plugins
 ---
 
-Dashboard plugins allow developers to create and integrate custom code into the KPI Dashboards component. With the plugins, you
+Dashboard plugins allow developers to create and integrate custom code into the Dashboard component. With the plugins, you
 as a developer can customize and enhance the default dashboard experience available to the dashboard consumers.
 
 The plugins are an essential part of the GoodData dashboard stack. For more information, see the
@@ -72,6 +72,11 @@ that same version of the Dashboard component.
 This means that any changes and improvements that we make to the KPI Dashboards will not be available on the
 dashboards enhanced by the plugin until you upgrade your plugin and build it against the latest version of
 `@gooddata/sdk-ui-dashboard`.
+
+When you have more than one plugin linked to the same dashboard, all these plugins are validated with regard to the version of
+the Dashboard component they can be run with. If no version compatible with all the linked plugins on the dashboard is found,
+none of the plugins is displayed on the dashboard, and an error message is logged into the browser console. In this case,
+review the plugins and [adjust their settings](https://github.com/gooddata/gooddata-ui-sdk/blob/master/tools/dashboard-plugin-template/README.template.md#how-can-i-setup-compatibility-of-the-plugin) so that they can run on the same version of the Dashboard component.
 
 We decided to go with this strict behavior to give you strong guarantees that the plugins enhanced by your
 dashboard will work predictably regardless of how we change the default experience.
@@ -167,7 +172,7 @@ project will contain a Walking Skeleton for your plugin including scripts to cor
 The toolkit supports additional actions:
 
 -  Adding a plugin to a workspace
--  Link a dashboard with a plugin added to a workspace
+-  Linking a dashboard with a plugin added to a workspace
 -  Unlinking a dashboard from a plugin
 
 To learn more, follow the documentation in your new plugin's README file. Happy coding!
