@@ -5,7 +5,7 @@ copyright: (C) 2007-2021 GoodData Corporation
 id: dashboard_plugins
 ---
 
-Dashboard plugins allow developers to create and integrate custom code into the Dashboards component. With the plugins, you
+Dashboard plugins allow developers to create and integrate custom code into the Dashboard component. With the plugins, you
 as a developer can customize and enhance the default dashboard experience available to the dashboard consumers.
 
 The plugins are an essential part of the GoodData dashboard stack. For more information, see the
