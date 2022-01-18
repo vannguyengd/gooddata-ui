@@ -28,8 +28,8 @@ const sdkUiSemver = ">=8";
 const apiReferenceSemver = ">=8.5.0";
 const reactComponentsSemver = ">=5 <8";
 
-function getLatestStable(versions) {
-  return semverMaximal(versions, currentVersionSemver);
+function getLatestStable(versionsList) {
+  return semverMaximal(versionsList, currentVersionSemver);
 }
 
 function getMajor(version) {

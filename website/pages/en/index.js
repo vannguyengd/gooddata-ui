@@ -131,14 +131,14 @@ const FeaturesBlockGallery = props => {
       {item.image && (
         <div className="featuresBlockGalleryImage">
           <img src={item.image} className="featuresBlockGalleryImageImage" width={item.imageWidth} height={item.imageHeight} alt={item.title} />
-          {item.imageHover && 
+          {item.imageHover &&
             <img src={item.imageHover}  className="featuresBlockGalleryImageImage featuresBlockGalleryImageHover" width={item.imageWidth} height={item.imageHeight} alt={item.title} />}
         </div>
       )}
       <h4 className="featuresBlockGalleryTitle">{item.title}</h4>
       {item.text && <p className="featuresBlockGalleryText">{item.text}</p>}
       {item.linkHref && <FeaturesBlockGalleryLink href={item.linkHref} text={item.linkText} target={item.linkTarget} />}
-      {item.links && item.links.map((link, index) => (<FeaturesBlockGalleryLink href={link.linkHref} text={link.linkText} target={link.linkTarget} />))}
+      {item.links && item.links.map((link) => (<FeaturesBlockGalleryLink key={link.linkHref} href={link.linkHref} text={link.linkText} target={link.linkTarget} />))}
     </li>
   ));
 
