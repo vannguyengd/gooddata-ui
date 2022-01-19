@@ -1952,6 +1952,166 @@
       "version-8.7.0/version-8.7.0-whats_new_8": {
         "title": "What's New in Version 8.0",
         "sidebar_label": "What's New in Version 8.0"
+      },
+      "version-8.8.0/version-8.8.0-about_gooddataui": {
+        "title": "About GoodData.UI",
+        "sidebar_label": "About GoodData.UI"
+      },
+      "version-8.8.0/version-8.8.0-why_gdui": {
+        "title": "Why GoodData.UI?",
+        "sidebar_label": "Why GoodData.UI?"
+      },
+      "version-8.8.0/version-8.8.0-export_catalog": {
+        "title": "Export Catalog",
+        "sidebar_label": "Export Catalog"
+      },
+      "version-8.8.0/version-8.8.0-analytical_backend_integration": {
+        "title": "Set Up an Analytical Backend",
+        "sidebar_label": "Set Up an Analytical Backend"
+      },
+      "version-8.8.0/version-8.8.0-understand_execution_model": {
+        "title": "Understand the Execution Model",
+        "sidebar_label": "Understand the Execution Model"
+      },
+      "version-8.8.0/version-8.8.0-installation": {
+        "title": "Installation",
+        "sidebar_label": "Installation"
+      },
+      "version-8.8.0/version-8.8.0-platform_integration": {
+        "title": "Integrate into an Existing Application",
+        "sidebar_label": "Integrate into an Existing Application"
+      },
+      "version-8.8.0/version-8.8.0-cloudnative_integration": {
+        "title": "Integrate into an Existing Application",
+        "sidebar_label": "Integrate into an Existing Application"
+      },
+      "version-8.8.0/version-8.8.0-area_chart_component": {
+        "title": "Area Chart",
+        "sidebar_label": "Area Chart"
+      },
+      "version-8.8.0/version-8.8.0-bar_chart_component": {
+        "title": "Bar Chart",
+        "sidebar_label": "Bar Chart"
+      },
+      "version-8.8.0/version-8.8.0-bubble_chart_component": {
+        "title": "Bubble Chart",
+        "sidebar_label": "Bubble Chart"
+      },
+      "version-8.8.0/version-8.8.0-bullet_chart_component": {
+        "title": "Bullet Chart",
+        "sidebar_label": "Bullet Chart"
+      },
+      "version-8.8.0/version-8.8.0-column_chart_component": {
+        "title": "Column Chart",
+        "sidebar_label": "Column Chart"
+      },
+      "version-8.8.0/version-8.8.0-combo_chart_component": {
+        "title": "Combo Chart",
+        "sidebar_label": "Combo Chart"
+      },
+      "version-8.8.0/version-8.8.0-donut_chart_component": {
+        "title": "Donut Chart",
+        "sidebar_label": "Donut Chart"
+      },
+      "version-8.8.0/version-8.8.0-geo_pushpin_chart_component": {
+        "title": "Geo Pushpin Chart",
+        "sidebar_label": "Geo Pushpin Chart"
+      },
+      "version-8.8.0/version-8.8.0-headline_component": {
+        "title": "Headline",
+        "sidebar_label": "Headline"
+      },
+      "version-8.8.0/version-8.8.0-heatmap_component": {
+        "title": "Heatmap",
+        "sidebar_label": "Heatmap"
+      },
+      "version-8.8.0/version-8.8.0-kpi_component": {
+        "title": "KPI",
+        "sidebar_label": "KPI"
+      },
+      "version-8.8.0/version-8.8.0-line_chart_component": {
+        "title": "Line Chart",
+        "sidebar_label": "Line Chart"
+      },
+      "version-8.8.0/version-8.8.0-measure_value_filter_component": {
+        "title": "Measure Value Filter",
+        "sidebar_label": "Measure Value Filter"
+      },
+      "version-8.8.0/version-8.8.0-pie_chart_component": {
+        "title": "Pie Chart",
+        "sidebar_label": "Pie Chart"
+      },
+      "version-8.8.0/version-8.8.0-ranking_filter_component": {
+        "title": "Ranking Filter",
+        "sidebar_label": "Ranking Filter"
+      },
+      "version-8.8.0/version-8.8.0-scatter_plot_component": {
+        "title": "Scatter Plot",
+        "sidebar_label": "Scatter Plot"
+      },
+      "version-8.8.0/version-8.8.0-start_with_visual_components": {
+        "title": "Start with Visual Components",
+        "sidebar_label": "Start with Visual Components"
+      },
+      "version-8.8.0/version-8.8.0-treemap_component": {
+        "title": "Treemap",
+        "sidebar_label": "Treemap"
+      },
+      "version-8.8.0/version-8.8.0-drillable_item": {
+        "title": "DrillableItems",
+        "sidebar_label": "DrillableItems"
+      },
+      "version-8.8.0/version-8.8.0-loading_component": {
+        "title": "LoadingComponent",
+        "sidebar_label": "LoadingComponent"
+      },
+      "version-8.8.0/version-8.8.0-dashboard_plugins": {
+        "title": "Dashboard Plugins",
+        "sidebar_label": "Dashboard Plugins"
+      },
+      "version-8.8.0/version-8.8.0-execution_model": {
+        "title": "Execution Model Details",
+        "sidebar_label": "Detailed Description"
+      },
+      "version-8.8.0/version-8.8.0-platform_cors": {
+        "title": "Deal with Cross-Origin Issues",
+        "sidebar_label": "Deal with Cross-Origin Issues"
+      },
+      "version-8.8.0/version-8.8.0-ht_embed_visualization": {
+        "title": "Embed an Insight Created in Analytical Designer",
+        "sidebar_label": "Embed an Insight Created in Analytical Designer"
+      },
+      "version-8.8.0/version-8.8.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
+      },
+      "version-8.8.0/version-8.8.0-table_totals": {
+        "title": "Specify Table Totals",
+        "sidebar_label": "Specify Table Totals"
+      },
+      "version-8.8.0/version-8.8.0-custom_execution": {
+        "title": "Custom Executions",
+        "sidebar_label": "Custom Executions"
+      },
+      "version-8.8.0/version-8.8.0-afm": {
+        "title": "Custom Executions",
+        "sidebar_label": "Custom Executions"
+      },
+      "version-8.8.0/version-8.8.0-result_specification": {
+        "title": "Specify the Result Structure",
+        "sidebar_label": "Specify the Result Structure"
+      },
+      "version-8.8.0/version-8.8.0-breaking_changes_8": {
+        "title": "Breaking Changes in Version 8.0",
+        "sidebar_label": "Breaking Changes in Version 8.0"
+      },
+      "version-8.8.0/version-8.8.0-clean_up_your_code": {
+        "title": "Clean Up Your Code",
+        "sidebar_label": "Clean Up Your Code"
+      },
+      "version-8.8.0/version-8.8.0-data_layer": {
+        "title": "Access Low Level API (DataLayer)",
+        "sidebar_label": "Access Low Level API"
       }
     },
     "links": {
