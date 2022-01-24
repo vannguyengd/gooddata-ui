@@ -44,8 +44,8 @@ const siteConfig = {
   onPageNav: 'separate',
   users,
   /* path to images for header/footer */
-  headerIcon: 'img/gooddata.svg',
-  footerIcon: 'img/gooddata.svg',
+  headerIcon: 'img/gooddata.svg?v=2022',
+  footerIcon: 'img/gooddata.svg?v=2022',
   favicon: 'img/favicon.ico',
   /* colors for website */
   colors: {
@@ -91,8 +91,8 @@ const siteConfig = {
     },
   },
   twitter: 'true',
-  twitterImage: 'img/metaimage.png',
-  ogImage: 'img/metaimage.png',
+  twitterImage: 'img/metaimage.png?v=2022',
+  ogImage: 'img/metaimage.png?v=2022',
   disableHeaderTitle: true,
   markdownPlugins: [
     function disableLinkify(md) {
