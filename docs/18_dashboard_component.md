@@ -179,3 +179,28 @@ All configuration properties are optional. For most of them, the Dashboard compo
 | isReadOnly  | false     | boolean     | If set to `true`, the dashboard will be embedded in read-only mode disabling any user interaction that would alter any backend state (disabling creating/changing alerts, creating scheduled emails, and so on)                                                                      |
 
 See all configuration options [here](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/types/commonTypes.ts).
+
+## Development tips
+
+###Accessing Dashboard component state from outside the component
+
+User can access the Dashboard component state through [DashboardStoreAccessorRepository](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessorRepository.ts) class.
+
+DashboardStoreAccessorRepository uses map, where the value is [DashboardStoreAccessor](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessor.ts)
+for a single dashboard and the key is the dashboard's ObjRef.
+
+If there is any specific scenario not covered by the default implementation of the DashboardStoreAccessorRepository, the DashboardStoreAccessor 
+is ready to be used for your own implementation of the accessor repository.
+
+The DashboardStoreAccessorRepository provides all the functions needed to enable access to the Dashboard component state.
+
+| Function            | Description |
+| :----------------- |  :--------------------- |
+| getInstance()        |  The only possibility to get an instance of the DashboardStoreAccessorRepository object|
+| getAccessorsForDashboard(dashboard) | returns accessor object for given dashboard |
+| getOnChangeHandlerForDashboard(dashboard) | return a function which can be used as `onStateChange` callback |
+| clearAccessorForDashboard(dashboard) | removes accessors for given dashboard |
+| clearAllAccessors() | removes all accessors from the repository |
+| isAccessorInitializedForDashboard(dashboard) | returns true, if accessor is available for given dashboard, false otherwise |
+
+Check the [example](https://gdui-examples.herokuapp.com/dashboard/accessor) for reference.
