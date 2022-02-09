@@ -236,6 +236,15 @@ contains convenient factory functions to create these objects:
    The custom widget renderer that you registered previously will receive all this information so you can customize rendering
    based on the additional data.
 
+### Customize the Filter bar
+
+Call the `filterBar()` method on the customization API to get the API through which you can customize how the Filter bar on your dashboard will be rendered.
+
+To change the rendering mode of the Filter bar, call the `setRenderingMode` method with one of the following parameters:
+
+-  `"default"` shows the Filter bar as usual, this is what happens if you do not call the `setRenderingMode` method at all.
+-  `"hidden"` hides the Filter bar altogether. Note, however, that the filters are still effect, this only hides the UI for setting them.
+
 ## Event handler API
 
 The event handler API is an entry point to the event handling and subscription subsystem of the Dashboard component.
