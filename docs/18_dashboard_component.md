@@ -198,9 +198,21 @@ The DashboardStoreAccessorRepository provides all the functions needed to enable
 | :----------------- |  :--------------------- |
 | getInstance()        |  The only possibility to get an instance of the DashboardStoreAccessorRepository object|
 | getAccessorsForDashboard(dashboard) | returns accessor object for given dashboard |
-| getOnChangeHandlerForDashboard(dashboard) | return a function which can be used as `onStateChange` callback |
+| getOnChangeHandlerForDashboard(dashboard) | returns a function which can be used as `onStateChange` callback |
 | clearAccessorForDashboard(dashboard) | removes accessors for given dashboard |
 | clearAllAccessors() | removes all accessors from the repository |
 | isAccessorInitializedForDashboard(dashboard) | returns true, if accessor is available for given dashboard, false otherwise |
 
 Check the [example](https://gdui-examples.herokuapp.com/dashboard/accessor) for reference.
+
+In case there is only one dashboard whose state you want to handle externally, use SingleDashboardStoreAccessor instead. There is 
+no need to specify the dashboard whose store you want to handle.
+
+| Function            | Description |
+| :----------------- |  :--------------------- |
+| getInstance()        |  The only possibility to get an instance of the SingleDashboardStoreAccessor object|
+| getDashboardSelect() | returns a select object for current dashboard  |
+| getDashboardDispatch() | returns a dispatch object for current dashboard |
+| getOnChangeHandler() | returns a function which can be used as `onStateChange` callback for current dashboard |
+| clearAccessor() | removes the accessor from the store accessor object |
+| isAccessorInitialized() | returns true, if accessor is available for current dashboard, false otherwise |
