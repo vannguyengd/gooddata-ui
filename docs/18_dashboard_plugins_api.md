@@ -8,7 +8,7 @@ id: dashboard_plugins_api
 Your plugin can take advantage of several categories of APIs that are outlined in this article.
 
 All the public and most of the alpha-level APIs have detailed documentation in form of TSDoc. We generate the API
-doc website from these comments. You can find the API reference [here](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.html).
+doc website from these comments. You can find the API reference [here](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.html).
 
 ## Plugin contract
 
@@ -52,7 +52,7 @@ second argument to the `onPluginLoad` function.
 
 ### register
 
-This is a mandatory function that your plugin must implement. This function is called after the plugin is loaded. 
+This is a mandatory function that your plugin must implement. This function is called after the plugin is loaded.
 In this function, you then can register customizations to the dashboard.
 
 Your function is always called with the following parameters:
@@ -80,7 +80,7 @@ Your function is always called with the following parameters:
 
 ### onPluginUnload
 
-When implemented, this function is called right before the dashboard that uses your plugin is unmounted. 
+When implemented, this function is called right before the dashboard that uses your plugin is unmounted.
 In this function, your code can do additional teardown and cleanup specific to your plugin.
 
 Your function may be asynchronous and return a promise. At this point, the dashboard loader does not wait for the returned
@@ -89,17 +89,17 @@ promise to resolve.
 ## Customization API
 
 The customization API is an entry point to all the customization and enhancement capabilities that your code can take advantage of. The
-API is described in detail in the [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardcustomizer.html).
+API is described in detail in the [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardcustomizer.html).
 
 ### Customize rendering of insights
 
 Call the `insightWidgets()` method on the customization API to get to the API through which you can customize
-how the [insight widgets](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardinsightcustomizer.html)
+how the [insight widgets](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardinsightcustomizer.html)
 on your dashboard will be rendered.
 
 * To **render data for one or more insights** using your own custom visualizations, the insight widget customization API provides the following methods:
    * `withCustomProvider()`
-         
+
       When calling this method, you can register a function that will be called by the Dashboard component every time it
       wants to render an insight widget. The function will receive a widget definition and the insight to be rendered. This function
       is expected to return a React component to use for rendering that widget. If the function does not return
@@ -109,7 +109,7 @@ on your dashboard will be rendered.
       a custom component and then return the custom component. How your function determines this is up to you.
 
    * `withTag()`
-         
+
       This is a convenience method on top of the `withCustomProvider` method. To identify insight widgets to render
       using custom components, use tags. You can assign arbitrary tags to your insight objects and then use this
       method to register a renderer for the insight widgets that have this tag.
@@ -153,7 +153,7 @@ on your dashboard will be rendered.
 ### Customize rendering of KPIs
 
 Call the `kpiWidgets()` method on the customization API to get to the API through which you can customize
-how the [KPI widgets](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardkpicustomizer.html)
+how the [KPI widgets](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardkpicustomizer.html)
 on your dashboard will be rendered.
 
 The KPI widgets are a special type of widgets available only on the GoodData platform. Their purpose is to render the value of
@@ -184,7 +184,7 @@ that you can try out right away.
 #### Register types of custom widget
 
 Call the `customWidgets()` method on the customization API to get to the API through which you can
-register [custom widget types](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardwidgetcustomizer.html).
+register [custom widget types](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardwidgetcustomizer.html).
 
 Use the `addCustomWidget()` method to register a custom widget type and provide your custom React component. The
 props for this component will be of the `IDashboardWidgetProps` type. The `widget` property contains a payload
@@ -196,7 +196,7 @@ Once you have a custom widget type registered, you can add instances of the widg
 use the layout manipulation API.
 
 Call the `layout()` method on the customization API to get to the API through which you can
-[customize the layout](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardlayoutcustomizer.html).
+[customize the layout](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardlayoutcustomizer.html).
 To be prepared for different types of layouts that may be implemented in the future, the layout manipulation API contains
 methods to customize the layout of a particular type.
 
@@ -212,7 +212,7 @@ the following parameters:
    to customize if needed. Depending on your use case, you may or may not need to inspect the layout. For instance, if you
    are adding a custom header on top of the dashboard, you can just do that.
 
--  [The fluid layout customization API](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.ifluidlayoutcustomizer.html)
+-  [The fluid layout customization API](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.ifluidlayoutcustomizer.html)
 
    This API allows you to add new sections (rows) to a dashboard or add new items (columns) to existing
    sections.
@@ -238,13 +238,13 @@ contains convenient factory functions to create these objects:
 
 ## Event handler API
 
-The event handler API is an entry point to the event handling and subscription subsystem of the Dashboard component. 
+The event handler API is an entry point to the event handling and subscription subsystem of the Dashboard component.
 The Dashboard component is designed to be fully observable via events, and you can register handlers for any of these events.
 
 **NOTE:** Keep in mind that the API maturity of most of the events is `@alpha`. That means that they may change in one of the future
 versions of GoodData.UI and break your plugin if you try to upgrade to it.
 
-The [event handler API](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardeventing.html) has several methods
+The [event handler API](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardeventing.html) has several methods
 that can be divided into the following groups:
 
 -  `addEventHandler()` and `removeEventHandler()`

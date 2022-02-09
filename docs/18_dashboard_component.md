@@ -35,7 +35,7 @@ import  "@gooddata/sdk-ui-dashboard/styles/css/main.css";
 
 import  { Dashboard }  from  "@gooddata/sdk-ui-dashboard";
 import  { idRef }  from  "@gooddata/sdk-model";
-  
+
 const dashboardRef = idRef("<dashboard-identifier>");
 
 const EmbeddedReactDashboard = () => {
@@ -50,7 +50,7 @@ const EmbeddedReactDashboard = () => {
 
 Similar to any other React component, you can configure the Dashboard component by setting up its props.
 
-The [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardprops.html) describes all the props in detail.
+The [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardprops.html) describes all the props in detail.
 Here are the most important props:
 
 ### Base props
@@ -92,7 +92,7 @@ import  { useDashboardSelector, selectInsights }  from  "@gooddata/sdk-ui-dashbo
 const CustomDashboardWidget = () => {
     // Example how to obtain all insights stored on the dashboard
     const insights = useDashboardSelector(selectInsights);
-    
+
     return (
         <pre>{JSON.stringify(insights, null, 2)}</pre>
     );
@@ -121,7 +121,7 @@ import  { useDashboardSelector }  from  "@gooddata/sdk-ui-dashboard";
 const CustomDashboardWidget = () => {
     const dispatch = useDashboardDispatch();
     const correlationId = "triggeredByCustomDashboardWidget";
-	
+
     return (
         <button
             onClick={() => dispatch(changeFilterContextSelection(updatedFilters), false, correlationId)}
@@ -145,7 +145,7 @@ import  "@gooddata/sdk-ui-dashboard/styles/css/main.css";
 
 import  { Dashboard, anyEventHandler }  from  "@gooddata/sdk-ui-dashboard";
 import  { idRef }  from  "@gooddata/sdk-model";
-  
+
 const dashboardRef = idRef("<dashboard-identifier>");
 
 const EmbeddedReactDashboard = () => {
