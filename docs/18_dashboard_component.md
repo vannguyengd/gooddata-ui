@@ -180,22 +180,16 @@ All configuration properties are optional. For most of them, the Dashboard compo
 
 See all configuration options [here](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/types/commonTypes.ts).
 
-## Development tips
+## Access the state of the Dashboard component from outside the component
 
-###Accessing Dashboard component state from outside the component
+To access the state of the Dashboard component, use the [SingleDashboardStoreAccessor](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/SingleDashboardStoreAccessor.ts) class. The `SingleDashboardStoreAccessor` class provides the following functions that are needed to enable access to the Dashboard component state:
 
-User can access the Dashboard component state through [SingleDashboardStoreAccessor](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/SingleDashboardStoreAccessor.ts) class.
-
-The SingleDashboardStoreAccessor provides all the functions needed to enable access to the Dashboard component state.
-
-| Function            | Description |
-| :----------------- |  :--------------------- |
-| getInstance()        |  The only possibility to get an instance of the SingleDashboardStoreAccessor object|
-| getDashboardSelect() | returns a select object for current dashboard  |
-| getDashboardDispatch() | returns a dispatch object for current dashboard |
-| getOnChangeHandler() | returns a function which can be used as `onStateChange` callback for current dashboard |
-| clearAccessor() | removes the accessor from the store accessor object |
-| isAccessorInitialized() | returns true, if accessor is available for current dashboard, false otherwise |
+* `getInstance()` returns an instance of the `SingleDashboardStoreAccessor` object.
+* `getDashboardSelect()` returns a select object for current dashboard.
+* `getDashboardDispatch()` returns a dispatch object for current dashboard.
+* `getOnChangeHandler()` returns a function which can be used as `onStateChange` callback for current dashboard.
+* `clearAccessor()` removes the accessor from the store accessor object.
+* `isAccessorInitialized()` returns true, if accessor is available for current dashboard, false otherwise.
 
 In case you need to access more than one dashboard store, use [DashboardStoreAccessorRepository](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessorRepository.ts) class instead.
 
