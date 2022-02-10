@@ -151,8 +151,8 @@ your application:
     </BackendProvider>
     ```
 
-To learn more details about initialization, see the <link to getting started>. For more information about configuring
-important aspects such as authentication, see <link>.
+To learn more details about initialization, see [Getting started](02_start__using_boilerplate.md).
+For more information about integration into an existing application see either [GoodData platform guide](02_start__no_boilerplate.md) or [GoodData.CN guide](06_cloudnative__integration.md).
 
 ## Model Infrastructure and Execution Changes
 
