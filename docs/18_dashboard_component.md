@@ -31,10 +31,10 @@ The Dashboard component is built using an architecture resembling the Model-View
 
 ```jsx
 
-import  "@gooddata/sdk-ui-dashboard/styles/css/main.css";
+import "@gooddata/sdk-ui-dashboard/styles/css/main.css";
 
-import  { Dashboard }  from  "@gooddata/sdk-ui-dashboard";
-import  { idRef }  from  "@gooddata/sdk-model";
+import { Dashboard } from "@gooddata/sdk-ui-dashboard";
+import { idRef } from "@gooddata/sdk-model";
 
 const dashboardRef = idRef("<dashboard-identifier>");
 
@@ -87,7 +87,7 @@ it (all dashboard selectors start with the `select` prefix). The selectors have 
 a returned value should remain the same (unless the value itself changed), which is useful to avoid unnecessary React re-renders.
 
 ```jsx
-import  { useDashboardSelector, selectInsights }  from  "@gooddata/sdk-ui-dashboard";
+import { useDashboardSelector, selectInsights } from "@gooddata/sdk-ui-dashboard";
 
 const CustomDashboardWidget = () => {
     // Example how to obtain all insights stored on the dashboard
@@ -116,7 +116,7 @@ all events emitted during the command processing.
 > state of the Dashboard component by directly mutating it because it may lead to undesired behavior and issues.
 
 ```jsx
-import  { useDashboardSelector }  from  "@gooddata/sdk-ui-dashboard";
+import { useDashboardSelector } from "@gooddata/sdk-ui-dashboard";
 
 const CustomDashboardWidget = () => {
     const dispatch = useDashboardDispatch();
@@ -132,7 +132,7 @@ const CustomDashboardWidget = () => {
 }
 ```
 
-See all available commands [here](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/commands/index.ts).
+See the [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.dashboardcommands.html) for all the commands that are part of the public API.
 
 ## Events
 
@@ -141,10 +141,10 @@ Events inform you about what happened in the Dashboard component (for example, t
 The following code sample represents an example of listening to all dashboard events:
 
 ```jsx
-import  "@gooddata/sdk-ui-dashboard/styles/css/main.css";
+import "@gooddata/sdk-ui-dashboard/styles/css/main.css";
 
-import  { Dashboard, anyEventHandler }  from  "@gooddata/sdk-ui-dashboard";
-import  { idRef }  from  "@gooddata/sdk-model";
+import { Dashboard, anyEventHandler } from "@gooddata/sdk-ui-dashboard";
+import { idRef } from "@gooddata/sdk-model";
 
 const dashboardRef = idRef("<dashboard-identifier>");
 
@@ -162,7 +162,7 @@ const EmbeddedReactDashboard = () => {
 };
 ```
 
-See all available events [here](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/events/index.ts).
+See the [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.dashboardevents.html) for all the events that are part of the public API.
 
 ## Configuration
 

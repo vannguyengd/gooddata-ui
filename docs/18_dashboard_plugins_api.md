@@ -221,6 +221,8 @@ the following parameters:
 the layout before it is stored in the Dashboard component's state. This API does not support further modifications of the layout that is
 already rendered. The Dashboard component provides alpha-level APIs that can be used to add, move, or remove widgets once the Dashboard component is rendered.
 
+See the [example of a Dashboard with a plugin](https://gdui-examples.herokuapp.com/dashboard/local-plugin) that shows how to register a custom widget type, connect it to the Dashboard filters and trigger a custom execution for the custom widget to show some data in it.
+
 #### Create sections, items, and custom widgets
 
 We do not recommend that you create sections, items, and custom widget objects manually. The Dashboard component
