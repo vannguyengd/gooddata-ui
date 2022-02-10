@@ -197,8 +197,6 @@ The SingleDashboardStoreAccessor provides all the functions needed to enable acc
 | clearAccessor() | removes the accessor from the store accessor object |
 | isAccessorInitialized() | returns true, if accessor is available for current dashboard, false otherwise |
 
-Functions in the SingleDashboardStoreAccessor are all static.
-
 In case you need to access more than one dashboard store, use [DashboardStoreAccessorRepository](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessorRepository.ts) class instead.
 
 DashboardStoreAccessorRepository uses map, where the value is [DashboardStoreAccessor](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessor.ts)
@@ -215,7 +213,5 @@ is ready to be used for your own implementation of the accessor repository.
 | clearAccessorForDashboard(dashboard) | removes accessors for given dashboard |
 | clearAllAccessors() | removes all accessors from the repository |
 | isAccessorInitializedForDashboard(dashboard) | returns true, if accessor is available for given dashboard, false otherwise |
-
-Functions in the DashboardStoreAccessorRepository are all static.
 
 Check the [example](https://gdui-examples.herokuapp.com/dashboard/accessor) for reference.
