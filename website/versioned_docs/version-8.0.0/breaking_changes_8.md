@@ -152,7 +152,7 @@ your application:
     ```
 
 To learn more details about initialization, see [Getting started](02_start__using_boilerplate.md).
-For more information about integration into an existing application see either [GoodData platform guide](02_start__no_boilerplate.md) or [GoodData.CN guide](06_cloudnative__integration.md).
+For more information about integration into an existing application, see [installation guide](02_start__installation.md).
 
 ## Model Infrastructure and Execution Changes
 

@@ -1825,6 +1825,10 @@
         "title": "Custom Executions",
         "sidebar_label": "Custom Executions"
       },
+      "version-8.3.0/version-8.3.0-breaking_changes_8": {
+        "title": "Breaking Changes in Version 8.0",
+        "sidebar_label": "Breaking Changes in Version 8.0"
+      },
       "version-8.4.0/version-8.4.0-about_gooddataui": {
         "title": "About GoodData.UI",
         "sidebar_label": "About GoodData.UI"

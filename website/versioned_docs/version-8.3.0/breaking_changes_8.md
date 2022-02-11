@@ -2,7 +2,7 @@
 title: Breaking Changes in Version 8.0
 sidebar_label: Breaking Changes in Version 8.0
 copyright: (C) 2007-2019 GoodData Corporation
-id: version-8.8.0-breaking_changes_8
+id: version-8.3.0-breaking_changes_8
 original_id: breaking_changes_8
 ---
 
@@ -130,8 +130,8 @@ To adopt these changes, create the backend once and then do **one** of the follo
     <BarChart
         backend={backend}
         workspace="<yourWorkspace>"
-        measures={[Md.Won]}
-        viewBy={[Md.Product]}
+        measures={[Ldm.Won]}
+        viewBy={[Ldm.Product]}
     />
     ```
 
@@ -145,8 +145,8 @@ your application:
     <BackendProvider backend={backend}>
         <BarChart
             workspace="<yourWorkspaceId>"
-            measures={[Md.Won]}
-            viewBy={[Md.Product]}
+            measures={[Ldm.Won]}
+            viewBy={[Ldm.Product]}
         />
     </BackendProvider>
     ```
@@ -169,7 +169,7 @@ To adopt this change, use the `catalog-export` tool to generate the logical data
 Unless your application works with arbitrary workspaces (where you do not know the LDM at compilation time),
 it should use the generated LDM.
 
-For more information, see [Export Catalog](02_start__catalog_export.md).
+For more information, see [Export Catalog](gdc_catalog_export).
 
 ### Execution
 The updated LDM objects feed seamlessly into the updated infrastructure and APIs that trigger executions. We have
