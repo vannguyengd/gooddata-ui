@@ -250,6 +250,9 @@ Both hooks make sure that the computation will also respect filters set on the d
 To specify which filters your custom widget should respect and which it should ignore, use the appropriate properties when creating the widget using the `newCustomWidget()` function as shown in the example below:
 
 ```javascript
+import { attributeDisplayFormRef } from "@gooddata/sdk-model";
+import { newCustomWidget } from "@gooddata/sdk-ui-dashboard";
+
 const customWidget = newCustomWidget("myWidget1", "myCustomWidget", {
     // specify which date data set to used when applying the date filter to this widget
     // if not specified, the date filter is ignored
