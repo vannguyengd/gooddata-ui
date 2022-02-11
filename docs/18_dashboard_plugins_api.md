@@ -180,6 +180,7 @@ layout manipulation API.
 
 **NOTE:** The default plugin bootstrapped by the Plugin Development Toolkit defines a sample custom widget
 that you can try out right away.
+For a more involved example, see the [example of a Dashboard with a plugin](https://gdui-examples.herokuapp.com/dashboard/local-plugin) that shows how to register a custom widget type, connect it to the Dashboard filters and trigger a custom execution for the custom widget to show some data in it.
 
 #### Register types of custom widget
 
@@ -221,8 +222,6 @@ the following parameters:
 the layout before it is stored in the Dashboard component's state. This API does not support further modifications of the layout that is
 already rendered. The Dashboard component provides alpha-level APIs that can be used to add, move, or remove widgets once the Dashboard component is rendered.
 
-See the [example of a Dashboard with a plugin](https://gdui-examples.herokuapp.com/dashboard/local-plugin) that shows how to register a custom widget type, connect it to the Dashboard filters and trigger a custom execution for the custom widget to show some data in it.
-
 #### Create sections, items, and custom widgets
 
 We do not recommend that you create sections, items, and custom widget objects manually. The Dashboard component
@@ -237,6 +236,34 @@ contains convenient factory functions to create these objects:
 
    The custom widget renderer that you registered previously will receive all this information so you can customize rendering
    based on the additional data.
+
+#### Calculate data for the custom widget
+
+When creating a custom widget, you will often need to calculate some data for it similar to how the standard widgets do it.
+We added two convenience hooks for your custom widget to calculate the data the same way a standard widget would:
+
+-  [`useCustomWidgetExecutionDataView()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usecustomwidgetexecutiondataview.html) – this hook allows you to get the data for a free-form execution in the context of your widget.
+-  [`useCustomWidgetInsightDataView()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usecustomwidgetinsightdataview.html) – this hook allows you to get the data for a given insight in the context of your widget.
+
+Both hooks make sure that the computation will also respect filters set on the dashboard (unless your custom widget ignores some of them, see below).
+
+To specify which filters your custom widget should respect and which it should ignore, use the appropriate properties when creating the widget using the `newCustomWidget()` function as shown in the example below:
+
+```javascript
+const customWidget = newCustomWidget("myWidget1", "myCustomWidget", {
+    // specify which date data set to used when applying the date filter to this widget
+    // if not specified, the date filter is ignored
+    dateDataSet: Md.DateDatasets.Date,
+    // specify which attribute filters to ignore for this widget
+    // if empty or not specified, all attribute filters are used
+    ignoreDashboardFilters: [
+        {
+           type: "attributeFilterReference",
+           displayForm: attributeDisplayFormRef(Md.RestaurantCategory),
+        },
+    ],
+}),
+```
 
 ### Customize the Filter bar
 
