@@ -182,30 +182,24 @@ See all configuration options [here](https://github.com/gooddata/gooddata-ui-sdk
 
 ## Access the state of the Dashboard component from outside the component
 
-To access the state of the Dashboard component, use the [SingleDashboardStoreAccessor](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/SingleDashboardStoreAccessor.ts) class. The `SingleDashboardStoreAccessor` class provides the following functions that are needed to enable access to the Dashboard component state:
+To access the state of the Dashboard component, use the [SingleDashboardStoreAccessor](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/SingleDashboardStoreAccessor.ts) class. This class provides the following functions that enable access to the Dashboard component state:
 
 * `getInstance()` returns an instance of the `SingleDashboardStoreAccessor` object.
-* `getDashboardSelect()` returns a select object for current dashboard.
-* `getDashboardDispatch()` returns a dispatch object for current dashboard.
-* `getOnChangeHandler()` returns a function which can be used as `onStateChange` callback for current dashboard.
-* `clearAccessor()` removes the accessor from the store accessor object.
-* `isAccessorInitialized()` returns true, if accessor is available for current dashboard, false otherwise.
+* `getDashboardSelect()` returns a `select` object for the current dashboard.
+* `getDashboardDispatch()` returns a `dispatch` object for the current dashboard.
+* `getOnChangeHandler()` returns a function that can be used as the `onStateChange` callback for the current dashboard.
+* `clearAccessor()` removes the accessor from the `store` accessor object.
+* `isAccessorInitialized()` returns `true` if the accessor is available for the current dashboard; otherwise, returns `false`.
 
-In case you need to access more than one dashboard store, use [DashboardStoreAccessorRepository](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessorRepository.ts) class instead.
+To access more than one dashboard `store` object, use the [DashboardStoreAccessorRepository](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessorRepository.ts) class. This class uses a map where the value is [DashboardStoreAccessor](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessor.ts) for a single dashboard and the key is the dashboard's `ObjRef`.
 
-DashboardStoreAccessorRepository uses map, where the value is [DashboardStoreAccessor](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessor.ts)
-for a single dashboard and the key is the dashboard's ObjRef.
+If the default implementation of the `DashboardStoreAccessorRepository` class does not cover your specific scenario, you can use `DashboardStoreAccessor` to implement your own accessor repository:
 
-If there is any specific scenario not covered by the default implementation of the DashboardStoreAccessorRepository, the DashboardStoreAccessor 
-is ready to be used for your own implementation of the accessor repository.
+* `getInstance()` returns an instance of the `DashboardStoreAccessorRepository` object.
+* `getAccessorsForDashboard(dashboard)` returns an accessor object for a specific dashboard.
+* `getOnChangeHandlerForDashboard(dashboard)` returns a function that can be used as the `onStateChange` callback.
+* `clearAccessorForDashboard(dashboard)` removes accessors from a specific dashboard.
+* `clearAllAccessors()` removes all accessors from the repository.
+* `isAccessorInitializedForDashboard(dashboard)` returns `true` if the accessor is available for a specific dashboard; otherwise, returns `false`.
 
-| Function            | Description |
-| :----------------- |  :--------------------- |
-| getInstance()        |  The only possibility to get an instance of the DashboardStoreAccessorRepository object|
-| getAccessorsForDashboard(dashboard) | returns accessor object for given dashboard |
-| getOnChangeHandlerForDashboard(dashboard) | returns a function which can be used as `onStateChange` callback |
-| clearAccessorForDashboard(dashboard) | removes accessors for given dashboard |
-| clearAllAccessors() | removes all accessors from the repository |
-| isAccessorInitializedForDashboard(dashboard) | returns true, if accessor is available for given dashboard, false otherwise |
-
-Check the [example](https://gdui-examples.herokuapp.com/dashboard/accessor) for reference.
+For more information, check the [example](https://gdui-examples.herokuapp.com/dashboard/accessor).
