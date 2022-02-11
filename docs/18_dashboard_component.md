@@ -193,8 +193,6 @@ To access the state of the Dashboard component, use the [SingleDashboardStoreAcc
 
 To access more than one dashboard `store` object, use the [DashboardStoreAccessorRepository](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessorRepository.ts) class. This class uses a map where the value is [DashboardStoreAccessor](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessor.ts) for a single dashboard and the key is the dashboard's `ObjRef`.
 
-If the default implementation of the `DashboardStoreAccessorRepository` class does not cover your specific scenario, you can use `DashboardStoreAccessor` to implement your own accessor repository:
-
 * `getInstance()` returns an instance of the `DashboardStoreAccessorRepository` object.
 * `getAccessorsForDashboard(dashboard)` returns an accessor object for a specific dashboard.
 * `getOnChangeHandlerForDashboard(dashboard)` returns a function that can be used as the `onStateChange` callback.
@@ -203,3 +201,5 @@ If the default implementation of the `DashboardStoreAccessorRepository` class do
 * `isAccessorInitializedForDashboard(dashboard)` returns `true` if the accessor is available for a specific dashboard; otherwise, returns `false`.
 
 For more information, check the [example](https://gdui-examples.herokuapp.com/dashboard/accessor).
+
+If the default implementation of the `DashboardStoreAccessorRepository` class does not cover your specific scenario, you can use `DashboardStoreAccessor` to implement your own accessor repository.
