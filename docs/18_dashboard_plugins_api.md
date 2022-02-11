@@ -347,3 +347,5 @@ Because that code is completely out of any React tree, you need to access these 
    pass it as input to the selectors.
 
    >**IMPORTANT!** Never modify the state to which you subscribe. GoodData.UI does not support this action. The only supported way to modify the state is through the Model Command API.
+
+See also [this section](18_dashboard_component.md#access-the-state-of-the-dashboard-component-from-outside-the-component) for documentation for helpers that can make managing this easier.
