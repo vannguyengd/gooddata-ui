@@ -184,7 +184,6 @@ See all configuration options [here](https://github.com/gooddata/gooddata-ui-sdk
 
 To access the state of the Dashboard component, use the [SingleDashboardStoreAccessor](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/SingleDashboardStoreAccessor.ts) class. This class provides the following functions that enable access to the Dashboard component state:
 
-* `getInstance()` returns an instance of the `SingleDashboardStoreAccessor` object.
 * `getDashboardSelect()` returns a `select` object for the current dashboard.
 * `getDashboardDispatch()` returns a `dispatch` object for the current dashboard.
 * `getOnChangeHandler()` returns a function that can be used as the `onStateChange` callback for the current dashboard.
@@ -193,8 +192,9 @@ To access the state of the Dashboard component, use the [SingleDashboardStoreAcc
 
 To access more than one dashboard `store` object, use the [DashboardStoreAccessorRepository](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessorRepository.ts) class. This class uses a map where the value is [DashboardStoreAccessor](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/store/storeAccessors/DashboardStoreAccessor.ts) for a single dashboard and the key is the dashboard's `ObjRef`.
 
-* `getInstance()` returns an instance of the `DashboardStoreAccessorRepository` object.
 * `getAccessorsForDashboard(dashboard)` returns an accessor object for a specific dashboard.
+* `getDashboardSelectForDashboard(dashboard)` returns a dashboardSelect object for a specific dashboard.
+* `getDashboardDispatchForDashboard(dashboard)` returns a dashboardDispatch object for a specific dashboard.
 * `getOnChangeHandlerForDashboard(dashboard)` returns a function that can be used as the `onStateChange` callback.
 * `clearAccessorForDashboard(dashboard)` removes accessors from a specific dashboard.
 * `clearAllAccessors()` removes all accessors from the repository.
