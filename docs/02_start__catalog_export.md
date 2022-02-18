@@ -5,8 +5,8 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: export_catalog
 ---
 
-GoodData.UI visual components render data stored in your GoodData platform or GoodData.CN workspaces. 
-Your application specifies what data to render by referencing the Logical Data Model (LDM) objects: attributes, 
+GoodData.UI visual components render data stored in your GoodData platform or GoodData.CN workspaces.
+Your application specifies what data to render by referencing the Logical Data Model (LDM) objects: attributes,
 display forms (also known as labels), facts, and measures.
 
 To simplify this task, GoodData.UI offers the `@gooddata/catalog-export` tool. `@gooddata/catalog-export` exports a
@@ -15,12 +15,21 @@ contains exported constant-per-LDM-object.
 
 Using this generated code, you can create charts and execution definitions in a very efficient and natural way.
 
-## Built-in integration in Accelerator Toolkit applications
+## Built-in integrations
+
+### Accelerator Toolkit applications
 
 The `@gooddata/catalog-export` tool is installed and integrated into all applications bootstrapped using the `@gooddata/create-gooddata-react-app` tool. A bootstrapped application's `package.json` contains the `refresh-md` script that you can call to start the `@gooddata/catalog-export` tool with arguments derived from your application configuration.
 
 If you created your application using `@gooddata/create-gooddata-react-app`, you may be interested in additional
 configuration options described further in this document.
+
+### Dashboard plugins
+
+The `@gooddata/catalog-export` tool is installed and integrated into all dashboard plugins bootstrapped using the `@gooddata/plugin-toolkit` tool.
+A bootstrapped plugin project's `package.json` contains the `refresh-md` script that you can call to start the `@gooddata/catalog-export` tool with arguments derived from your plugin configuration.
+
+In addition to that, you may be interested in additional configuration options and recommendations described further in this document.
 
 ## Installing @gooddata/catalog-export
 
@@ -60,7 +69,7 @@ This is how it works:
         "output": "desired_file_name.ts|js|json"
     }
     ```
-    
+
     **NOTE:** TypeScript, JavaScript or JSON output files are generated based on the filename extension specified in the output parameter.
 
 2.  The program reads input parameters from the command line. To learn more about the available parameters, run the following command:
@@ -75,7 +84,7 @@ This is how it works:
 
 **NOTE**: We are planning to rename the `projectId` parameter to `workspaceId`. This will apply to both the configuration file and command line arguments. You can already use the `workspaceId` instead of `projectId`, and the end result will be the same. If you specify both, `workspaceId` takes preference.
 
-### Using @gooddata/catalog-export with GoodData.CN 
+### Using @gooddata/catalog-export with GoodData.CN
 
 The `@gooddata/catalog-export` tool can work on top of either the GoodData platform or GoodData.CN. By default, the tool assumes it is connecting to the GoodData platform. To switch to GoodData.CN, use either the `backend` argument on the command line or the `backend` parameter in the `.gdcatalogrc` configuration file:
 
@@ -83,7 +92,7 @@ The `@gooddata/catalog-export` tool can work on top of either the GoodData platf
 
     `--backend tiger`
 - `.gdcatalogrc`:
-   
+
     ```json
     {
         "hostname": "your.own.gooddata.com",
