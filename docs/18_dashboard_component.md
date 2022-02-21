@@ -31,11 +31,11 @@ The Dashboard component is built using an architecture resembling the Model-View
 
 ```jsx
 
-import  "@gooddata/sdk-ui-dashboard/styles/css/main.css";
+import "@gooddata/sdk-ui-dashboard/styles/css/main.css";
 
-import  { Dashboard }  from  "@gooddata/sdk-ui-dashboard";
-import  { idRef }  from  "@gooddata/sdk-model";
-  
+import { Dashboard } from "@gooddata/sdk-ui-dashboard";
+import { idRef } from "@gooddata/sdk-model";
+
 const dashboardRef = idRef("<dashboard-identifier>");
 
 const EmbeddedReactDashboard = () => {
@@ -50,7 +50,7 @@ const EmbeddedReactDashboard = () => {
 
 Similar to any other React component, you can configure the Dashboard component by setting up its props.
 
-The [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardprops.html) describes all the props in detail.
+The [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardprops.html) describes all the props in detail.
 Here are the most important props:
 
 ### Base props
@@ -82,17 +82,17 @@ Check the full list of the Dashboard component props [here](https://github.com/g
 
 ## Selectors
 
-To obtain the values of the current state of the Dashboard component, use the `useDashboardSelector` hook with a relevant selector passed to
+To obtain the values of the current state of the Dashboard component, use the [`useDashboardSelector`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usedashboardselector.html) hook with a relevant selector passed to
 it (all dashboard selectors start with the `select` prefix). The selectors have cache, so the reference equality of
-a returned value should remain the same (unless the value itself changed), which is useful to avoid unnecessary React re-renders.
+the returned value should remain the same (unless the value itself changed), which is useful to avoid unnecessary React re-renders.
 
 ```jsx
-import  { useDashboardSelector, selectInsights }  from  "@gooddata/sdk-ui-dashboard";
+import { useDashboardSelector, selectInsights } from "@gooddata/sdk-ui-dashboard";
 
 const CustomDashboardWidget = () => {
     // Example how to obtain all insights stored on the dashboard
     const insights = useDashboardSelector(selectInsights);
-    
+
     return (
         <pre>{JSON.stringify(insights, null, 2)}</pre>
     );
@@ -103,10 +103,10 @@ See all available selectors [here](https://github.com/gooddata/gooddata-ui-sdk/b
 
 ## Commands
 
-Commands are Redux actions that you can dispatch to the Dashboard component to initiate a change of the rendered
-dashboard. To dispatch a command, use the `useDashboardDispatch` hook. As the Dashboard component handles
-a command, it emits one or more events describing what has happened. Typically, at least one event describing
-the accomplished result will be emitted.
+Commands are Redux actions that you can dispatch to the Dashboard component to initiate a change of the rendered dashboard.
+To dispatch a command, use the [`useDispatchDashboardCommand`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usedispatchdashboardcommand.html) hook.
+As the Dashboard component handles a command, it emits one or more events describing what has happened.
+Typically, at least one event describing the accomplished result will be emitted.
 
 The events emitted during command handling will be sent to all handlers added for the respective event type. To
 allow for request-response semantics, each command can specify a custom correlation ID that will be included in
@@ -116,15 +116,15 @@ all events emitted during the command processing.
 > state of the Dashboard component by directly mutating it because it may lead to undesired behavior and issues.
 
 ```jsx
-import  { useDashboardSelector }  from  "@gooddata/sdk-ui-dashboard";
+import { changeFiltersSelection, useDispatchDashboardCommand } from "@gooddata/sdk-ui-dashboard";
 
 const CustomDashboardWidget = () => {
-    const dispatch = useDashboardDispatch();
+    const changeFiltersSelection = useDispatchDashboardCommand(changeFilterContextSelection);
     const correlationId = "triggeredByCustomDashboardWidget";
-	
+
     return (
         <button
-            onClick={() => dispatch(changeFilterContextSelection(updatedFilters), false, correlationId)}
+            onClick={() => changeFiltersSelection(updatedFilters, false, correlationId)}
         >
             Change filters
         </button>
@@ -132,7 +132,7 @@ const CustomDashboardWidget = () => {
 }
 ```
 
-See all available commands [here](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/commands/index.ts).
+See the [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.dashboardcommands.html) for all the commands that are part of the public API.
 
 ## Events
 
@@ -141,11 +141,11 @@ Events inform you about what happened in the Dashboard component (for example, t
 The following code sample represents an example of listening to all dashboard events:
 
 ```jsx
-import  "@gooddata/sdk-ui-dashboard/styles/css/main.css";
+import "@gooddata/sdk-ui-dashboard/styles/css/main.css";
 
-import  { Dashboard, anyEventHandler }  from  "@gooddata/sdk-ui-dashboard";
-import  { idRef }  from  "@gooddata/sdk-model";
-  
+import { Dashboard, anyEventHandler } from "@gooddata/sdk-ui-dashboard";
+import { idRef } from "@gooddata/sdk-model";
+
 const dashboardRef = idRef("<dashboard-identifier>");
 
 const EmbeddedReactDashboard = () => {
@@ -162,7 +162,7 @@ const EmbeddedReactDashboard = () => {
 };
 ```
 
-See all available events [here](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui-dashboard/src/model/events/index.ts).
+See the [API reference](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.dashboardevents.html) for all the events that are part of the public API.
 
 ## Configuration
 
