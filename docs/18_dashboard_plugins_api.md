@@ -268,6 +268,10 @@ const customWidget = newCustomWidget("myWidget1", "myCustomWidget", {
 }),
 ```
 
+#### Trigger commands from the custom widget
+
+To interact with the Dashboard from within your custom widget, your can [dispatch commands](18_dashboard_component.md#commands) from the Model Command API. See also the [example](https://gdui-examples.herokuapp.com/dashboard/dispatch-dashboard-command-hook) for more details.
+
 ### Customize the Filter bar
 
 Call the `filterBar()` method on the customization API to get the API through which you can customize how the Filter bar on your dashboard will be rendered.
