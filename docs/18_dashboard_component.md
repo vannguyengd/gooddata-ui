@@ -103,10 +103,10 @@ See all available selectors [here](https://github.com/gooddata/gooddata-ui-sdk/b
 
 ## Commands
 
-Commands are Redux actions that you can dispatch to the Dashboard component to initiate a change of the rendered
-dashboard. To dispatch a command, use the `useDashboardDispatch` hook. As the Dashboard component handles
-a command, it emits one or more events describing what has happened. Typically, at least one event describing
-the accomplished result will be emitted.
+Commands are Redux actions that you can dispatch to the Dashboard component to initiate a change of the rendered dashboard.
+To dispatch a command, use the [`useDispatchDashboardCommand`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usedispatchdashboardcommand.html) hook.
+As the Dashboard component handles a command, it emits one or more events describing what has happened.
+Typically, at least one event describing the accomplished result will be emitted.
 
 The events emitted during command handling will be sent to all handlers added for the respective event type. To
 allow for request-response semantics, each command can specify a custom correlation ID that will be included in
@@ -116,15 +116,15 @@ all events emitted during the command processing.
 > state of the Dashboard component by directly mutating it because it may lead to undesired behavior and issues.
 
 ```jsx
-import { useDashboardSelector } from "@gooddata/sdk-ui-dashboard";
+import { changeFiltersSelection, useDispatchDashboardCommand } from "@gooddata/sdk-ui-dashboard";
 
 const CustomDashboardWidget = () => {
-    const dispatch = useDashboardDispatch();
+    const changeFiltersSelection = useDispatchDashboardCommand(changeFilterContextSelection);
     const correlationId = "triggeredByCustomDashboardWidget";
 
     return (
         <button
-            onClick={() => dispatch(changeFilterContextSelection(updatedFilters), false, correlationId)}
+            onClick={() => changeFiltersSelection(updatedFilters, false, correlationId)}
         >
             Change filters
         </button>

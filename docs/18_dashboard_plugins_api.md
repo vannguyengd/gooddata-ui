@@ -285,10 +285,10 @@ The Dashboard component is designed to be fully observable via events, and you c
 **NOTE:** Keep in mind that the API maturity of most of the events is `@alpha`. That means that they may change in one of the future
 versions of GoodData.UI and break your plugin if you try to upgrade to it.
 
-The [event handler API](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardeventing.html) has several methods
+The [event handler API](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardeventhandling.html) has several methods
 that can be divided into the following groups:
 
--  `addEventHandler()` and `removeEventHandler()`
+-  [`addEventHandler()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardeventhandling.addcustomeventhandler.html) and [`removeEventHandler()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardeventhandling.removecustomeventhandler.html)
 
    These are convenience methods that allow you to add or remove event handlers for a single type of the event or
    for all events. You can specify a particular event type such as `"GDC.DASH/EVT.INITIALIZED"`, and add a function to
@@ -296,14 +296,14 @@ that can be divided into the following groups:
 
    For more information, see the API reference for the event handler API.
 
--  `addCustomEventHandler()` and `removeCustomEventHandler()`
+-  [`addCustomEventHandler()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardeventhandling.addcustomeventhandler.html) and [`removeCustomEventHandler()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardeventhandling.removecustomeventhandler.html)
 
    These methods allow you to customize the event handling setup. For each custom event handler,
    you can specify a function to evaluate whether the event should be dispatched to the handler function.
 
    For more information, see the API reference for the event handler API.
 
--  `subscribeToStateChanges()` and `unsubscribeFromStateChanges()`
+-  [`subscribeToStateChanges()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardeventhandling.subscribetostatechanges.html) and [`unsubscribeFromStateChanges()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardeventhandling.unsubscribefromstatechanges.html)
 
    In more advanced use cases, your non-React code may need to `select` data from the Dashboard component's state using the
    Model Selector APIs. To do that, your code needs the latest version of the Dashboard component's state. Using
@@ -327,8 +327,9 @@ to interact with the Redux-based dashboard APIs:
 
 -  The `useDashboardSelector` hook helps interact with the Model Selector API.
 -  The `useDashboardDispatch` hook helps dispatch actions from the Model Command API.
+-  The [`useDispatchDashboardCommand`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usedispatchdashboardcommand.html) hook provides a convenience wrapper for dispatching actions from the Model Command API.
 
-**NOTE:** All of the actions in the Model Command API are alpha-level APIs and will most likely change in one of the
+**NOTE:** Many of the actions in the Model Command API are alpha-level APIs and will most likely change in one of the
 future releases of the Dashboard component.
 
 ### Using the APIs from outside React components
@@ -347,8 +348,6 @@ Because that code is completely out of any React tree, you need to access these 
 -  In **all other code** that is not connected to the Dashboard component using React or using an event handler, you need to
    use the `subscribeToStateChanges()` method. The callback function that you pass to this method will be triggered
    every time the Dashboard component's state changes. Your function can store this somewhere and
-   pass it as input to the selectors.
+   pass it as input to the selectors. We provide [utilities](18_dashboard_component.md#access-the-state-of-the-dashboard-component-from-outside-the-component) that can make managing this easier.
 
    >**IMPORTANT!** Never modify the state to which you subscribe. GoodData.UI does not support this action. The only supported way to modify the state is through the Model Command API.
-
-See also [this section](18_dashboard_component.md#access-the-state-of-the-dashboard-component-from-outside-the-component) for documentation for helpers that can make managing this easier.

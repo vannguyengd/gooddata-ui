@@ -245,7 +245,7 @@ The Dashboard component is designed to be fully observable via events, and you c
 **NOTE:** Keep in mind that the API maturity of most of the events is `@alpha`. That means that they may change in one of the future
 versions of GoodData.UI and break your plugin if you try to upgrade to it.
 
-The [event handler API](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardeventing.html) has several methods
+The [event handler API](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardeventhandling.html) has several methods
 that can be divided into the following groups:
 
 -  `addEventHandler()` and `removeEventHandler()`
