@@ -282,8 +282,8 @@
         "sidebar_label": "Visualization Definition Placeholders"
       },
       "platform_sso": {
-        "title": "Set Up Authentication and Single Sign-On",
-        "sidebar_label": "Set Up Authentication and Single Sign-On"
+        "title": "Set Up Authentication and Single Sign-On (SSO)",
+        "sidebar_label": "Set Up Authentication and Single Sign-On (SSO)"
       },
       "table_totals": {
         "title": "Specify Table Totals",

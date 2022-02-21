@@ -1,6 +1,6 @@
 ---
-title: Set Up Authentication and Single Sign-On
-sidebar_label: Set Up Authentication and Single Sign-On
+title: Set Up Authentication and Single Sign-On (SSO)
+sidebar_label: Set Up Authentication and Single Sign-On (SSO)
 copyright: (C) 2007-2018 GoodData Corporation
 id: platform_sso
 ---
@@ -69,16 +69,14 @@ Setting up authentication depends on what type of SSO is implemented on your sit
 
     ```javascript
     import sdk from "@gooddata/api-client-bear";
-    import qs from "qs";
 
     const relayState = "https://my.app.com/";
 
-    sdk.xhr
-      .get(`/gdc/account/samlrequest?${qs.stringify({ relayState })}`)
-      .then(data => data.getData())
-      .then(response => {
-        const loginUrl = response.samlRequests.items[0].samlRequest.loginUrl;
-        window.location.assign(loginUrl);
+    sdk.user
+      .initiateSamlSso(relayState)
+      .catch(error => {
+        // something went wrong, see the browser console for details
+        console.error(error);
       });
     ```
 
