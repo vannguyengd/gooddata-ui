@@ -325,9 +325,8 @@ The way to interact with the Dashboard component's APIs depends on from where yo
 Your custom React components are mounted right into the dashboard's React tree from where they can use hooks
 to interact with the Redux-based dashboard APIs:
 
--  The `useDashboardSelector` hook helps interact with the Model Selector API.
--  The `useDashboardDispatch` hook helps dispatch actions from the Model Command API.
--  The [`useDispatchDashboardCommand`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usedispatchdashboardcommand.html) hook provides a convenience wrapper for dispatching actions from the Model Command API.
+-  The [`useDashboardSelector`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usedashboardselector.html) hook helps interact with the Model Selector API.
+-  The [`useDispatchDashboardCommand`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usedispatchdashboardcommand.html) hook helps dispatch actions from the Model Command API.
 
 **NOTE:** Many of the actions in the Model Command API are alpha-level APIs and will most likely change in one of the
 future releases of the Dashboard component.

@@ -82,9 +82,9 @@ Check the full list of the Dashboard component props [here](https://github.com/g
 
 ## Selectors
 
-To obtain the values of the current state of the Dashboard component, use the `useDashboardSelector` hook with a relevant selector passed to
+To obtain the values of the current state of the Dashboard component, use the [`useDashboardSelector`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usedashboardselector.html) hook with a relevant selector passed to
 it (all dashboard selectors start with the `select` prefix). The selectors have cache, so the reference equality of
-a returned value should remain the same (unless the value itself changed), which is useful to avoid unnecessary React re-renders.
+the returned value should remain the same (unless the value itself changed), which is useful to avoid unnecessary React re-renders.
 
 ```jsx
 import { useDashboardSelector, selectInsights } from "@gooddata/sdk-ui-dashboard";
