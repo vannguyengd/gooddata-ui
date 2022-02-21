@@ -66,7 +66,8 @@ This article describes the options for configuring a chart.
         enabled: true // boolean
     },
     enableCompactSize: true, // boolean
-    forceDisableDrillOnAxes: false // boolean
+    forceDisableDrillOnAxes: false, // boolean
+    enableJoinedAttributeAxisName: false // boolean
 }
 ```
 **NOTE:** `primaryChartType`, `secondaryChartType`, and `dualAxis` are available only for [combo charts](10_vis__combo_chart_component.md).
@@ -471,3 +472,23 @@ For configuring a responsive legend, see [Change legend properties](#change-lege
 ### Disabled drilling on axis labels
 
 To disable drilling on axis labels, set `forceDisableDrillOnAxes` to `true`.
+
+## Joined name for attribute axis
+
+To show the name of attribute axis for charts with two attributes on the axis, set `enableJoinedAttributeAxisName` to `true`. It will generate axis name from attribute names joined by `›`. If not set, it defaults to `false`. This property affects:
+
+* [Column charts](10_vis__column_chart_component.md)
+* [Bullet charts](10_vis__bullet_chart_component.md)
+* [Bar charts](10_vis__bar_chart_component.md)
+
+```jsx
+import { InsightView } from "@gooddata/sdk-ui-ext";
+
+// Example of embedding a visualization with visible joined attribute axis name
+<InsightView
+    insight=<InsightView-id>
+    config={{
+        enableJoinedAttributeAxisName: true
+    }}
+/>
+```
