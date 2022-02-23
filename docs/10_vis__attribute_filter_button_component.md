@@ -8,7 +8,8 @@ copyright: (C) 2021 GoodData Corporation
 > **Limitations**:
 > - The GoodData SaaS platform supports filters with attribute elements defined by their URIs only.
 > - GoodData.CN supports filters with attribute elements defined by their `primary keys` which are equal to the title of the respective element.
-
+>
+> **These limitations are relevant for filter UI components only.**
 
 The **Attribute Filter Button component** is a dropdown component that lists attribute values.
 
