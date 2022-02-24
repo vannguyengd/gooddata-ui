@@ -5,6 +5,7 @@ sidebar_label: Attribute Filter Button
 copyright: (C) 2021 GoodData Corporation
 ---
 
+
 The **Attribute Filter Button component** is a dropdown component that lists attribute values.
 
 ![Attribute Filter Button Component](assets/attribute_filter_button.png "Attribute Filter Button Component")
@@ -16,6 +17,11 @@ To implement the component, choose one of the following methods:
     The ```onApply``` function is not needed. Use ```onApply``` only if you need a specific callback to be fired.
 
 Optionally, you can define what attribute values should be selected in the filter by default.
+
+> **When implementing the Attribute Filter Button component, consider the following:**:
+> 
+> - The GoodData platform supports only filters with attribute elements defined by their URIs.
+> - GoodData.CN supports filters with attribute elements defined by their `primary key` that is equal to the title of the respective element.
 
 ## Example
 
