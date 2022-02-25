@@ -7,7 +7,7 @@ original_id: dashboard_view_component
 ---
 
 > **The DashboardView component has been superseded by the [Dashboard component](18_dashboard_intro.md) and will be
-> removed in GoodData.UI Version 8.9.**
+> removed in GoodData.UI Version 8.10.**
 >
 
 The [**Dashboard component**](18_dashboard_intro.md) builds up on the DashboardView component. We position it to handle the dashboard
