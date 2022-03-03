@@ -332,6 +332,24 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 
 **NOTE:** To disable drilling on labels for the both axes, see [Disabled drilling on axis labels](#disabled-drilling-on-axis-labels).
 
+## Display the name for an axis with two attributes
+
+In [column charts](10_vis__column_chart_component.md), [bullet charts](10_vis__bullet_chart_component.md), and [bar charts](10_vis__bar_chart_component.md), if an axis represents two attributes, the attribute names are hidden by default and the axis name is not visible. To make the axis name visible, set `config.enableJoinedAttributeAxisName` to `true`. The axis name is generated as the attribute names joined by `›` (for example, `Year › Quarter/Year`).
+
+![Chart Axis Two Attributes](assets/axis_two_attributes.png "Chart Component")
+
+```jsx
+import { InsightView } from "@gooddata/sdk-ui-ext";
+
+// Example of embedding a visualization with the name visible for an axis with two attributes
+<InsightView
+    insight=<InsightView-id>
+    config={{
+        enableJoinedAttributeAxisName: true
+    }}
+/>
+```
+
 ## Configure canvases
 
 * To configure data labels, set the `config.dataLabels` property.
@@ -472,23 +490,3 @@ For configuring a responsive legend, see [Change legend properties](#change-lege
 ### Disabled drilling on axis labels
 
 To disable drilling on axis labels, set `forceDisableDrillOnAxes` to `true`.
-
-## Joined name for attribute axis
-
-To show the name of attribute axis for charts with two attributes on the axis, set `enableJoinedAttributeAxisName` to `true`. It will generate axis name from attribute names joined by `›`. If not set, it defaults to `false`. This property affects:
-
-* [Column charts](10_vis__column_chart_component.md)
-* [Bullet charts](10_vis__bullet_chart_component.md)
-* [Bar charts](10_vis__bar_chart_component.md)
-
-```jsx
-import { InsightView } from "@gooddata/sdk-ui-ext";
-
-// Example of embedding a visualization with visible joined attribute axis name
-<InsightView
-    insight=<InsightView-id>
-    config={{
-        enableJoinedAttributeAxisName: true
-    }}
-/>
-```
