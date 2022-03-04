@@ -166,23 +166,21 @@ to add extra elements on top of the widgets.
 The KPI customization API contains the `withCustomProvider()` and `withCustomDecorator()` methods that behave the same way
 the [insight widget methods](18_dashboard_plugins_api.md#customize-rendering-of-insights) do.
 
-### Custom widgets
+### Customize widgets
 
 With custom widgets, you can enrich dashboards with arbitrary content. For example, your dashboard can use
 a built-in insight and widget renderers and then use the custom widgets to add extra content such as images,
 additional text, or forms.
 
-Your must first register a custom widget type, which is declaration of the custom widget type. The declaration
-links the custom widget type name and the React component to use for rendering.
+Your must first register a custom widget type, which is declaration of the custom widget type. The declaration links the custom widget type name and the React component to use for rendering.
 
-Once you have registered the custom widget type, you can add any number of widgets of this type to your dashboard using the
-layout manipulation API.
+Once you have registered the custom widget type, you can add any number of widgets of this type to your dashboard using the layout manipulation API.
 
 **NOTE:** The default plugin bootstrapped by the Plugin Development Toolkit defines a sample custom widget
 that you can try out right away.
-For a more involved example, see the [example of a Dashboard with a plugin](https://gdui-examples.herokuapp.com/dashboard/local-plugin) that shows how to register a custom widget type, connect it to the Dashboard filters and trigger a custom execution for the custom widget to show some data in it.
+For a more involved example, see the [example of a dashboard with a plugin](https://gdui-examples.herokuapp.com/dashboard/local-plugin) that shows how to register a custom widget type, connect it to the dashboard filters, and trigger custom execution for the custom widget to show some data in it.
 
-#### Register types of custom widget
+#### Register types of custom widgets
 
 Call the `customWidgets()` method on the customization API to get to the API through which you can
 register [custom widget types](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.idashboardwidgetcustomizer.html).
@@ -237,28 +235,26 @@ contains convenient factory functions to create these objects:
    The custom widget renderer that you registered previously will receive all this information so you can customize rendering
    based on the additional data.
 
-#### Calculate data for the custom widget
+#### Calculate data for a custom widget
 
-When creating a custom widget, you will often need to calculate some data for it similar to how the standard widgets do it.
-We added two convenience hooks for your custom widget to calculate the data the same way a standard widget would:
+When creating a custom widget, you often need to calculate some data for it similar to how the standard widgets do it.
+To calculate data for a custom widget, use the following convenient hooks:
 
--  [`useCustomWidgetExecutionDataView()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usecustomwidgetexecutiondataview.html) – this hook allows you to get the data for a free-form execution in the context of your widget.
--  [`useCustomWidgetInsightDataView()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usecustomwidgetinsightdataview.html) – this hook allows you to get the data for a given insight in the context of your widget.
+-  [`useCustomWidgetExecutionDataView()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usecustomwidgetexecutiondataview.html) allows you to get data for free-form execution in the context of the widget.
+-  [`useCustomWidgetInsightDataView()`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usecustomwidgetinsightdataview.html) allows you to get data for a specific insight in the context of the widget.
 
-Both hooks make sure that the computation will also respect filters set on the dashboard (unless your custom widget ignores some of them, see below).
-
-To specify which filters your custom widget should respect and which it should ignore, use the appropriate properties when creating the widget using the `newCustomWidget()` function as shown in the example below:
+By default, the data computation respects the filters set on the dashboard. If you want a custom widget to ignore some filters during the data computation, set it up when creating the widget using the `newCustomWidget()` function:
 
 ```javascript
 import { attributeDisplayFormRef } from "@gooddata/sdk-model";
 import { newCustomWidget } from "@gooddata/sdk-ui-dashboard";
 
 const customWidget = newCustomWidget("myWidget1", "myCustomWidget", {
-    // specify which date data set to used when applying the date filter to this widget
+    // specify which date dataset to use when applying the date filter to this widget
     // if not specified, the date filter is ignored
     dateDataSet: Md.DateDatasets.Date,
     // specify which attribute filters to ignore for this widget
-    // if empty or not specified, all attribute filters are used
+    // if empty or not specified, all attribute filters are applied
     ignoreDashboardFilters: [
         {
            type: "attributeFilterReference",
@@ -268,18 +264,20 @@ const customWidget = newCustomWidget("myWidget1", "myCustomWidget", {
 }),
 ```
 
-#### Trigger commands from the custom widget
+#### Trigger commands from a custom widget
 
-To interact with the Dashboard from within your custom widget, your can [dispatch commands](18_dashboard_component.md#commands) from the Model Command API. See also the [example](https://gdui-examples.herokuapp.com/dashboard/dispatch-dashboard-command-hook) for more details.
+To interact with the dashboard from within a custom widget, [dispatch commands](18_dashboard_component.md#commands) from the Model Command API. For more details, see the [example](https://gdui-examples.herokuapp.com/dashboard/dispatch-dashboard-command-hook).
 
 ### Customize the Filter bar
 
-Call the `filterBar()` method on the customization API to get the API through which you can customize how the Filter bar on your dashboard will be rendered.
+Call the `filterBar()` method on the customization API to get the API through which you can customize how the Filter bar will be rendered on your dashboard. 
 
 To change the rendering mode of the Filter bar, call the `setRenderingMode` method with one of the following parameters:
 
--  `"default"` shows the Filter bar as usual, this is what happens if you do not call the `setRenderingMode` method at all.
--  `"hidden"` hides the Filter bar altogether. Note, however, that the filters are still effect, this only hides the UI for setting them.
+-  `"default"` shows the Filter bar as usual. This is equal to when you do not call the `setRenderingMode` method at all.
+-  `"hidden"` hides the Filter bar.
+    
+   **NOTE:** This only hides the Filter bar from the user interface. Any set filters will still be applied.
 
 ## Event handler API
 
@@ -332,7 +330,7 @@ to interact with the Redux-based dashboard APIs:
 -  The [`useDashboardSelector`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usedashboardselector.html) hook helps interact with the Model Selector API.
 -  The [`useDispatchDashboardCommand`](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.usedispatchdashboardcommand.html) hook helps dispatch actions from the Model Command API.
 
-**NOTE:** Many of the actions in the Model Command API are alpha-level APIs and will most likely change in one of the
+**NOTE:** Many actions in the Model Command API are alpha-level APIs and will most likely change in one of the
 future releases of the Dashboard component.
 
 ### Using the APIs from outside React components
@@ -351,6 +349,6 @@ Because that code is completely out of any React tree, you need to access these 
 -  In **all other code** that is not connected to the Dashboard component using React or using an event handler, you need to
    use the `subscribeToStateChanges()` method. The callback function that you pass to this method will be triggered
    every time the Dashboard component's state changes. Your function can store this somewhere and
-   pass it as input to the selectors. We provide [utilities](18_dashboard_component.md#access-the-state-of-the-dashboard-component-from-outside-the-component) that can make managing this easier.
+   pass it as input to the selectors. To make the process of accessing the state easier, use the [utilities for accessing the state of the Dashboard component from outside](18_dashboard_component.md#access-the-state-of-the-dashboard-component-from-outside-the-component).
 
    >**IMPORTANT!** Never modify the state to which you subscribe. GoodData.UI does not support this action. The only supported way to modify the state is through the Model Command API.
