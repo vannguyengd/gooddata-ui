@@ -166,7 +166,7 @@ to add extra elements on top of the widgets.
 The KPI customization API contains the `withCustomProvider()` and `withCustomDecorator()` methods that behave the same way
 the [insight widget methods](18_dashboard_plugins_api.md#customize-rendering-of-insights) do.
 
-### Customize widgets
+### Use custom widgets
 
 With custom widgets, you can enrich dashboards with arbitrary content. For example, your dashboard can use
 a built-in insight and widget renderers and then use the custom widgets to add extra content such as images,
