@@ -6,7 +6,7 @@ id: version-8.2.0-drillable_item
 original_id: drillable_item
 ---
 
-You can enable eventing and drilling in a visualization. Drilling is the process of "zooming in" on a single measure value by filtering out all other data and breaking that value across a new attribute of interest (see [Drilling into Reports](https://help.gooddata.com/pages/viewpage.action?pageId=34341082)).
+You can enable eventing and drilling in a visualization. Drilling is the process of "zooming in" on a single measure value by filtering out all other data and breaking that value across a new attribute of interest.
 
 To add drilling, use function predicates.
 

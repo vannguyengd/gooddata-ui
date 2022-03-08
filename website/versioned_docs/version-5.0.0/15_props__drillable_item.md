@@ -6,7 +6,7 @@ id: version-5.0.0-drillable_item
 original_id: drillable_item
 ---
 
-You can enable eventing and drilling in a vizualization. Drilling is the process of 'zooming in' on a single measure value by filtering out all other data and breaking that value across a new attribute of interest. See [Drilling into Reports](https://help.gooddata.com/display/doc/Drilling+into+Reports).
+You can enable eventing and drilling in a vizualization. Drilling is the process of 'zooming in' on a single measure value by filtering out all other data and breaking that value across a new attribute of interest.
 
 To turn on eventing and drilling, specify at least one drillableItem.
 
@@ -64,6 +64,6 @@ To catch events, add a listener to `document`:
 document.addEventListener('drill',function(arg) { console.log(arg.detail); });
 ```
 
-Each event is a JSON consisting of `executionContext` and `drillableContext`. 
+Each event is a JSON consisting of `executionContext` and `drillableContext`.
 
 For more information, see [Setting up Events for Drilling in Embedded Analytical Designer and KPI Dashboards](https://help.gooddata.com/display/doc/Setting+up+Events+for+Drilling+in+Embedded+Analytical+Designer+and+KPI+Dashboards).

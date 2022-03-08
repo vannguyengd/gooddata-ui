@@ -26,7 +26,7 @@ original_id: glossary
 
 **displayForm**, or **attribute label**, is a different means of representing an attribute \(see **attribute** \). For example, the `Name` attribute might have labels for `Firstname` and `Lastname`.
 
-**drilling** is the process of 'zooming in' on a single measure value by filtering out all other data and breaking that value across a new attribute of interest. See [Drilling into Reports](https://help.gooddata.com/display/doc/Drilling+into+Reports).
+**drilling** is the process of 'zooming in' on a single measure value by filtering out all other data and breaking that value across a new attribute of interest.
 
 ## F
 
