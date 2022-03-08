@@ -66,7 +66,8 @@ This article describes the options for configuring a chart.
         enabled: true // boolean
     },
     enableCompactSize: true, // boolean
-    forceDisableDrillOnAxes: false // boolean
+    forceDisableDrillOnAxes: false, // boolean
+    enableJoinedAttributeAxisName: false // boolean
 }
 ```
 **NOTE:** `primaryChartType`, `secondaryChartType`, and `dualAxis` are available only for [combo charts](10_vis__combo_chart_component.md).
@@ -295,7 +296,7 @@ The properties listed in this section are specific to the **X** axis. To get the
 * To hide the axis name, set `config.xaxis.name.visible` to `false`. If not set, it defaults to `true` (the axis name is visible).
 * To set the axis name position, set `config.xaxis.name.position` to one of the possible values: `low`, `middle`, `high`.
 
-    **NOTE:** If the axis represents more than one attribute/measure, the `config.xaxis.name.visible` and `config.xaxis.name.position` properties are both ignored, and the axis name is hidden.
+    **NOTE:** If an axis represents more than one attribute/measure, the `config.xaxis.name.visible` and `config.xaxis.name.position` properties are both ignored, and the axis name is hidden. However, you can override this behavior for an axis that represents two attributes (see [Display the name for an axis with two attributes](#display-the-name-for-an-axis-with-two-attributes)). You cannot override this behavior for an axis that represents two measures.
 
 ```jsx
 import { InsightView } from "@gooddata/sdk-ui-ext";
@@ -329,7 +330,27 @@ import { InsightView } from "@gooddata/sdk-ui-ext";
 />
 ```
 
-**NOTE:** To disable drilling on labels for the both axes, see [Disabled drilling on axis labels](#disabled-drilling-on-axis-labels).
+### Disable drilling on axis labels
+
+To disable drilling on labels for the both axes, see [Disabled drilling on axis labels](#disabled-drilling-on-axis-labels).
+
+### Display the name for an axis with two attributes
+
+In [column charts](10_vis__column_chart_component.md), [bullet charts](10_vis__bullet_chart_component.md), and [bar charts](10_vis__bar_chart_component.md), if an axis represents two attributes, the axis name is hidden by default. To make the axis name visible, set `config.enableJoinedAttributeAxisName` to `true`. The axis name is generated as the attribute names joined by `›` (for example, `Year › Quarter/Year`).
+
+![Chart Axis Two Attributes](assets/axis_two_attributes.png "Chart Component")
+
+```jsx
+import { InsightView } from "@gooddata/sdk-ui-ext";
+
+// Example of embedding a visualization with the name visible for an axis with two attributes
+<InsightView
+    insight=<InsightView-id>
+    config={{
+        enableJoinedAttributeAxisName: true
+    }}
+/>
+```
 
 ## Configure canvases
 
@@ -470,4 +491,4 @@ For configuring a responsive legend, see [Change legend properties](#change-lege
 
 ### Disabled drilling on axis labels
 
-To disable drilling on axis labels, set `forceDisableDrillOnAxes` to `true`.
+To disable drilling on axis labels, set `config.forceDisableDrillOnAxes` to `true`.
