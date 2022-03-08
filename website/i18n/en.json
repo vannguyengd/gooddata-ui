@@ -2116,6 +2116,26 @@
       "version-8.8.0/version-8.8.0-data_layer": {
         "title": "Access Low Level API (DataLayer)",
         "sidebar_label": "Access Low Level API"
+      },
+      "version-8.9.0/version-8.9.0-export_catalog": {
+        "title": "Export Catalog",
+        "sidebar_label": "Export Catalog"
+      },
+      "version-8.9.0/version-8.9.0-attribute_filter_button_component": {
+        "title": "Attribute Filter Button",
+        "sidebar_label": "Attribute Filter Button"
+      },
+      "version-8.9.0/version-8.9.0-dashboard_component": {
+        "title": "Dashboard Component",
+        "sidebar_label": "Dashboard Component"
+      },
+      "version-8.9.0/version-8.9.0-dashboard_plugins_api": {
+        "title": "Dashboard Plugin API",
+        "sidebar_label": "Dashboard Plugin API"
+      },
+      "version-8.9.0/version-8.9.0-platform_sso": {
+        "title": "Set Up Authentication and Single Sign-On (SSO)",
+        "sidebar_label": "Set Up Authentication and Single Sign-On (SSO)"
       }
     },
     "links": {
