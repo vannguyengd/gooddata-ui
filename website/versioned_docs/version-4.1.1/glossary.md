@@ -12,7 +12,7 @@ original_id: glossary
 
 **aggregation** is a general term for the process by which information is gathered and expressed in summary form. Aggregation means:
 
-* The process of computing measures using aggregation functions applied to a set of numerical facts \(such as sum, average, minimum, maximum, and so on\). See [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data).
+* The process of computing measures using aggregation functions applied to a set of numerical facts \(such as sum, average, minimum, maximum, and so on\). See [Aggregate Table Data](https://help.gooddata.com/pages/viewpage.action?pageId=86794631#PivotTables-Tabletotals).
 
 * The process of breaking down measures by attributes and attribute values. For example, date-related attributes that are useful in these breakdowns include Day, Month, and Year.
 
