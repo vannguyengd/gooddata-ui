@@ -6,7 +6,7 @@ id: version-6.2.0-drillable_item
 original_id: drillable_item
 ---
 
-You can enable eventing and drilling in a visualization. Drilling is the process of 'zooming in' on a single measure value by filtering out all other data and breaking that value across a new attribute of interest (see [Drilling into Reports](https://help.gooddata.com/display/doc/Drilling+into+Reports)).
+You can enable eventing and drilling in a visualization. Drilling is the process of 'zooming in' on a single measure value by filtering out all other data and breaking that value across a new attribute of interest.
 
 To add drilling, use function predicates.
 
@@ -50,12 +50,12 @@ GoodData.UI SDK contains `HeaderPredicateFactory` that helps you easily build pr
 
     The helper builds a predicate function that matches any measure or attribute in a visualization to the provided URI.
 * `identifierMatch('<measure-or-attribute-identifier>')`
-    
+
     The helper builds a predicate function that matches any measure or attribute in a visualization to the provided identifier.
-* `composedFromUri('<measure-or-attribute-uri>')` 
+* `composedFromUri('<measure-or-attribute-uri>')`
 
     The helper builds a predicate function that matches any [arithmetic measure](20_misc__arithmetic_measure.md) in a visualization contaning measures to the provided URI in its tree of measures that the arithmetic measure is built from.
-* `composedFromIdentifier('<measure-or-attribute-identifier>')` 
+* `composedFromIdentifier('<measure-or-attribute-identifier>')`
 
     The helper builds a predicate function that matches any [arithmetic measure](20_misc__arithmetic_measure.md) in a visualization contaning measures to the provided identifier in its tree of measures that the arithmetic measure is built from.
 
@@ -75,8 +75,8 @@ import { HeaderPredicateFactory } from '@gooddata/react-components';
   projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
   identifier="aby3polcaFxy"
   drillableItems={[
-    HeaderPredicateFactory.uriMatch('/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211'),  
-    HeaderPredicateFactory.identifierMatch('label.owner.department') 
+    HeaderPredicateFactory.uriMatch('/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211'),
+    HeaderPredicateFactory.identifierMatch('label.owner.department')
   ]}
 />
 ```
@@ -91,8 +91,8 @@ import { HeaderPredicateFactory } from '@gooddata/react-components';
   projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
   identifier="aby3polcaFxy"
   drillableItems={[
-    HeaderPredicateFactory.composedFromUri('/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211'),  
-    HeaderPredicateFactory.composedFromIdentifier('label.owner.department')  
+    HeaderPredicateFactory.composedFromUri('/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/9211'),
+    HeaderPredicateFactory.composedFromIdentifier('label.owner.department')
   ]}
 />
 ````
@@ -103,8 +103,8 @@ To catch events, add a listener to `document`:
 document.addEventListener('drill',function(arg) { console.log(arg.detail); });
 ```
 
-Each event is a JSON consisting of `executionContext` and `drillableContext`. 
+Each event is a JSON consisting of `executionContext` and `drillableContext`.
 
 ## Additional information
 
-For more information, see [Setting up Events for Drilling in Embedded Analytical Designer and KPI Dashboards](https://help.gooddata.com/display/doc/Setting+up+Events+for+Drilling+in+Embedded+Analytical+Designer+and+KPI+Dashboards).
+For more information, see [Setting up Events for Drilling in Embedded Analytical Designer and KPI Dashboards](https://help.gooddata.com/pages/viewpage.action?pageId=86797116).

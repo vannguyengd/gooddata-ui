@@ -8,7 +8,7 @@ original_id: pivot_table_component
 
 Pivot table component expands capabilities of a regular (flat) table by allowing you to reorganize and summarize selected data beyond the typical row-column relationship.
 
-In GoodData.UI, a pivot table allows you to break measures into columns by setting attributes in the ```columns``` prop. You can also choose to display only attributes (without any measures). On the other hand, a flat table cannot display attributes in columns. 
+In GoodData.UI, a pivot table allows you to break measures into columns by setting attributes in the ```columns``` prop. You can also choose to display only attributes (without any measures). On the other hand, a flat table cannot display attributes in columns.
 
 Compared with charts, pivot tables have higher limits for the number of datapoints to display.
 
@@ -183,7 +183,7 @@ The following are the supported aggregation functions:
 * median
 * running sum
 
-For more information about the aggregation functions, see [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data).
+For more information about the aggregation functions, see [Aggregate Table Data](https://help.gooddata.com/pages/viewpage.action?pageId=86794631#PivotTables-Tabletotals).
 
 ```jsx
     // ...using Pivot Table Example

@@ -17,7 +17,7 @@ You can display rows with aggregated measure data in both Table and Pivot Table 
 | Minimum | Smallest value |
 | Average | Average value |
 | Median | Middle value |
-| Rollup | Sum (or another type of aggregation) of pre-aggregated (raw) values; see [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data) |
+| Rollup | Sum (or another type of aggregation) of pre-aggregated (raw) values; see [Aggregate Table Data](https://help.gooddata.com/pages/viewpage.action?pageId=86794631#PivotTables-Tabletotals) |
 
 ## Column grand total
 

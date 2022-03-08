@@ -8,12 +8,12 @@ original_id: glossary
 
 ## A
 
-**AFM \(Attribute - Filter - Measure\)** is unified input for creating a visualization using GoodData.UI. AFM is a combination of attributes, filters, and measures that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer). 
+**AFM \(Attribute - Filter - Measure\)** is unified input for creating a visualization using GoodData.UI. AFM is a combination of attributes, filters, and measures that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer).
 See [AFM](50_custom__execution.md).
 
 **aggregation** is a general term for the process by which information is gathered and expressed in a summary form. Aggregation means:
 
-* The process of computing measures using aggregation functions applied to a set of numerical facts \(such as sum, average, minimum, maximum, and so on\). See [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data).
+* The process of computing measures using aggregation functions applied to a set of numerical facts \(such as sum, average, minimum, maximum, and so on\). See [Aggregate Table Data](https://help.gooddata.com/pages/viewpage.action?pageId=86794631#PivotTables-Tabletotals).
 
 * The process of breaking down measures by attributes and attribute values. For example, date-related attributes that are useful in these breakdowns include Day, Month, and Year.
 
@@ -27,7 +27,7 @@ See [AFM](50_custom__execution.md).
 
 **displayForm**, or **attribute label**, is a different means of representing an attribute \(see **attribute** \). For example, the `Name` attribute might have labels for `Firstname` and `Lastname`.
 
-**drilling** is the process of 'zooming in' on a single measure value by filtering out all other data and breaking that value across a new attribute of interest. See [Drilling into Reports](https://help.gooddata.com/display/doc/Drilling+into+Reports).
+**drilling** is the process of 'zooming in' on a single measure value by filtering out all other data and breaking that value across a new attribute of interest.
 
 ## F
 

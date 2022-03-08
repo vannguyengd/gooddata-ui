@@ -6,7 +6,7 @@ id: version-8.8.0-drillable_item
 original_id: drillable_item
 ---
 
-You can enable eventing and drilling in a visualization. Drilling is the process of "zooming in" on a single measure value by filtering out all other data and breaking that value across a new attribute of interest (see [Drilling into Reports](https://help.gooddata.com/pages/viewpage.action?pageId=34341082)).
+You can enable eventing and drilling in a visualization. Drilling is the process of "zooming in" on a single measure value by filtering out all other data and breaking that value across a new attribute of interest.
 
 To add drilling, use function predicates.
 
@@ -23,7 +23,7 @@ Drillable items can consist of the following entities:
 
 Visualization points that intersect any defined measures, attributes, or attribute values become drillable and will emit events when interacted with.
 
-**NOTE:** Ad-hoc measures (measures created from attributes or other measures using the 
+**NOTE:** Ad-hoc measures (measures created from attributes or other measures using the
 [`computeRatio` option](https://sdk.gooddata.com/gooddata-ui/docs/afm.html#show-a-measure-as-a-percentage) are defined
 using their URI or identifier in the execution. If you want to set up drilling for such ad-hoc measures, use the same parameter (URI or identifier) as you used in the execution.
 Keep in mind that Analytical Designer creates such measures using only the URI. If you want to activate drilling on ad-hoc measures created in Analytical Designer, you can use only their URIs.

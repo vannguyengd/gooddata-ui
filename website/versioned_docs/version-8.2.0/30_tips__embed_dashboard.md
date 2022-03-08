@@ -31,7 +31,7 @@ To embed an existing dashboard created in KPI Dashboards, use the [DashboardView
 
 The DashboardView component itself does not support editing of the dashboards. However, you can use the Embedded KPI Dashboard application to edit the dashboards and then use DashboardView to view them.
 
-**NOTE:** The following example will **not** make sure that the custom filters you may have set for DashboardView will be reflected in the embedded KPI Dashboards. To do that, use the [postMessages API](https://help.gooddata.com/pages/viewpage.action?pageId=81968283). In addition, any customization you may have set using the [customizations](10_vis__dashboard_view.md#customizations) will **not** be applied to the embedded KPI Dashboards.
+**NOTE:** The following example will **not** make sure that the custom filters you may have set for DashboardView will be reflected in the embedded KPI Dashboards. To do that, use the [postMessages API](https://help.gooddata.com/pages/viewpage.action?pageId=86797110). In addition, any customization you may have set using the [customizations](10_vis__dashboard_view.md#customizations) will **not** be applied to the embedded KPI Dashboards.
 
 ```jsx
 import React, { useCallback, useEffect, useState } from "react";

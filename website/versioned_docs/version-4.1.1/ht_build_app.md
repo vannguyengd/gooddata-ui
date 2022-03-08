@@ -49,12 +49,12 @@ To embed an existing visualization created in Analytical Designer, use the `Visu
         ```
         //TODO what do next? where is identifier?
     * Via [gdc-catalog-export](02_start__catalog_export.md) tool
-    
+
 2. Import the `Visualization` component from the `@gooddata/react-components` package into your app:
     ```javascript
     import { Visualization } from '@gooddata/react-components';
     ```
-    
+
 3. Create a `Visualization` component in your app, and provide it with the workspace ID and the visualization identifier that you obtained at Step 1:
     ```javascript
     // be sure to wrap the component in block-element with non-auto height
@@ -118,26 +118,26 @@ To customize tooltips and fonts, [implement a custom visualization](data_layer.m
 
 ## Create a Visualization Programmatically on the Fly
 This section explains how to create a bar chart that renders `# of Activities` sliced by `Activity Type`.
-You can choose any [supported visualization type](react_components.md), ie: `BarChart`, `ColumnChart`, `LineChart`, `PieChart`, `Table` etc.  
+You can choose any [supported visualization type](react_components.md), ie: `BarChart`, `ColumnChart`, `LineChart`, `PieChart`, `Table` etc.
 
 **Steps:**
 1. [Find your workspace ID](https://help.gooddata.com/pages/viewpage.action?pageId=86796773),
    we will use: `la84vcyhrq8jwbu4wpipw66q2sqeb923`.
 2. Obtain data identifiers using [gdc-catalog-export](gdc-catalog-export).
-3. Import the visualization type that you want to use.  
+3. Import the visualization type that you want to use.
     ```javascript
     //TODO rewrite with new interface
     import { AfmComponents } from '@gooddata/react-components';
     import catalogue from './catalogue';
-    
-    
+
+
     const { BarChart } = AfmComponents;
-    
+
     const workspaceId = 'la84vcyhrq8jwbu4wpipw66q2sqeb923'; // Replace with your workspace ID.
     const afm = {};
     const resultSpec = {};
     const customConfig = {};
-    
+
     <BarChart afm={afm} resultSpec={resultSpec} config={customConfig} />
     ```
 
@@ -152,13 +152,13 @@ You can choose any [supported visualization type](react_components.md), ie: `Ba
 
     ```javascript
     //TODO rewrite with new interface
-    
+
     import { AfmComponents } from '@gooddata/react-components';
     import catalogue from './catalogue';
-    
-    
+
+
     const { BarChart } = AfmComponents;
-    
+
     const workspaceId = 'la84vcyhrq8jwbu4wpipw66q2sqeb923';
     const afm = {
         measures: [
@@ -213,9 +213,9 @@ You can choose any [supported visualization type](react_components.md), ie: `Ba
             }
         ]
     }
-    
+
     ...
-    
+
     render() {
         return (
          <div style={{ height: 300 }}>
@@ -256,7 +256,7 @@ To catch events, add a listener to `document`:
 document.addEventListener('drill', function(event) { console.log(event.detail); });
 ```
 
-Each event is a JSON consisting of `executionContext` and `drillableContext`. For more information, see [Setting up Events for Drilling in Embedded Analytical Designer and KPI Dashboards](https://help.gooddata.com/display/doc/Setting+up+Events+for+Drilling+in+Embedded+Analytical+Designer+and+KPI+Dashboards).
+Each event is a JSON consisting of `executionContext` and `drillableContext`. For more information, see [Setting up Events for Drilling in Embedded Analytical Designer and KPI Dashboards](https://help.gooddata.com/pages/viewpage.action?pageId=86797116).
 
 
 Example of `event.detail`:

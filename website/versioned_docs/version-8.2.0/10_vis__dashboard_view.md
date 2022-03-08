@@ -79,7 +79,7 @@ The DashboardView component supports firing of drill events from drilling set up
 
 ## Scheduled emails
 
-You can allow users to create [scheduled emails](https://help.gooddata.com/pages/viewpage.action?pageId=66202520) for a dashboard.
+You can allow users to create [scheduled emails](https://help.gooddata.com/pages/viewpage.action?pageId=86794820) for a dashboard.
 
 To allow displaying the dialog for setting up a scheduled email, setting the `isScheduledMailDialogVisible` prop to `true`.
 
@@ -124,7 +124,7 @@ const DashboardViewWithEmails = () => {
 
 ## KPI alerts
 
-The DashboardView component supports displaying, creating, editing, and deleting of [KPI alerts](https://help.gooddata.com/pages/viewpage.action?pageId=34341718).
+The DashboardView component supports displaying, creating, editing, and deleting of [KPI alerts](https://help.gooddata.com/pages/viewpage.action?pageId=86794815).
 
 The KPI alerts use the filters in the `filters` prop if provided (see [Filters](#filters)), or fall back to the filters set up on the dashboard in KPI Dashboards.
 
