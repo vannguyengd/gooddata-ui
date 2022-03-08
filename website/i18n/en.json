@@ -41,6 +41,10 @@
         "title": "Export Catalog",
         "sidebar_label": "Export Catalog"
       },
+      "choose_visualization_approach": {
+        "title": "Choose Appropriate Data Visualization Approach",
+        "sidebar_label": "Choose Appropriate Data Visualization Approach"
+      },
       "analytical_backend_integration": {
         "title": "Set Up an Analytical Backend",
         "sidebar_label": "Set Up an Analytical Backend"
