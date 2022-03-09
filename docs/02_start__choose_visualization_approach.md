@@ -21,6 +21,7 @@ Use `InsightView` in these situations:
 
 -   you want to embed Insights created in Analytical Designer as-is
 -   you want to be able to change the Insight your application displays without changing the application code
+    -   you can also achieve this using [Custom Visualizations](#custom-visualizations) if needed
 
 ### When not to use
 
@@ -73,5 +74,3 @@ Custom Visualizations might not be the best choice in these situations:
 
 -   when [`InsightView`](#insightview) or [Visual Components](#visual-components) satisfy your needs
     -   you might want to avoid Custom Visualizations in case one of the simpler ways of visualizing data work for you: you will have to write significantly less code
--   you want to be able to change the Insight your application displays without changing the application code
-    -   see [`InsightView`](#insightview) for a better option
