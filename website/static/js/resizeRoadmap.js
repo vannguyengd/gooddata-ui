@@ -8,8 +8,8 @@ function resizeRoadmap() {
 
     // leave some extra padding around the iframe to give it some space
     var padding = 100;
-    iframe.setAttribute(
-        "height",
-        window.innerHeight - header.scrollHeight - postHeader.scrollHeight - padding
-    );
+    // never drop below a certain height to keep the roadmap usable
+    var minHeight = 600;
+    var newDesiredHeight = window.innerHeight - header.scrollHeight - postHeader.scrollHeight - padding;
+    iframe.setAttribute("height", Math.max(newDesiredHeight, minHeight));
 }
