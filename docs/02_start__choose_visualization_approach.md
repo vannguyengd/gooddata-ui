@@ -11,7 +11,7 @@ This article should help you understand how they differ and help you decide whic
 ## InsightView
 
 The [`InsightView` component](10_vis__insight_view.md) is the simplest of the three: it needs the least amount of code to get going.
-It allows you to embed Insights created in Analytical Designer into your application as React components.
+It allows you to embed Insights created in [Analytical Designer](https://help.gooddata.com/pages/viewpage.action?pageId=86794494) into your application as React components.
 It always reflects the current state of the Insight, so if there are any changes to it made in Analytical Designer,
 `InsightView` in your application will always show the up to date version without any changes needed in your application.
 
