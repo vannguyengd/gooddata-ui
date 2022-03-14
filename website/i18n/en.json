@@ -33,6 +33,10 @@
         "title": "Supported Versions and Compatibility",
         "sidebar_label": "Supported Versions and Compatibility"
       },
+      "choose_dashboard_approach": {
+        "title": "Choose Appropriate Dashboard Approach",
+        "sidebar_label": "Choose Appropriate Dashboard Approach"
+      },
       "api_maturity": {
         "title": "API Maturity",
         "sidebar_label": "API Maturity"

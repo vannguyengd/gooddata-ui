@@ -16,7 +16,8 @@
             "create_new_application",
             "understand_execution_model",
             "export_catalog",
-            "choose_visualization_approach"
+            "choose_visualization_approach",
+            "choose_dashboard_approach"
         ],
         "Integration with GoodData Platform": [
             "platform_intro",
