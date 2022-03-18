@@ -85,7 +85,8 @@ const siteConfig = {
   /* On page navigation for the current documentation page */
   // onPageNav: 'separate',
   algolia: {
-    apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+    appId: 'WMJ16KLCLT',
+    apiKey: 'e5b1637b413b99533ae0f13f3d9d1417',
     indexName: 'gooddata',
     algoliaOptions: {
       facetFilters: ['version:VERSION'],
