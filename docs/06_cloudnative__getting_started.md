@@ -20,7 +20,7 @@ The [@gooddata/sdk-backend-tiger](https://www.npmjs.com/package/@gooddata/sdk-ba
 
 The functionality includes following:
 
-- authentication functions (setting correct authentication provider, authentication checks, authentication, de-authentication)
+- authentication functions (setting correct authentication provider, authentication checks, authentication, de-authentication), see [authentication](06_cloudnative__authentication.md).
 - telemetry settings for component usage tracking
 - getting and creating metadata objects
 - running executions
