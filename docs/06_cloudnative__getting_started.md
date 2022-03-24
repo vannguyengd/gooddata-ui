@@ -48,3 +48,10 @@ The [@gooddata/api-client-tiger](https://www.npmjs.com/package/@gooddata/api-cli
 - MetaData utilities
 
 It is highly recommended to use this API only if there is no higher-level components or abstraction convenient enough for you to use.
+
+## Where to continue
+
+- [InsightView component](10_vis__insight_view.md) 
+- [Dashboard component](18_dashboard_component.md)
+- [Catalog export](02_start__catalog_export.md)
+- [Executions](50_custom__execution.md)

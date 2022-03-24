@@ -10,7 +10,7 @@ id: cloudnative_authentication
 ## API Token authentication
 
 It's meant to be used in a GoodData.CN CLI applications. Even though it is possible to use this type of authentication 
-in the UI applications, it can lead to some security issues, such as exposing unintentionally you token to someone else.
+in the UI applications, it can lead to some security issues, such as exposing unintentionally your token to someone else.
 We strongly recommend to use [context deferred authentication](#context-deferred-authentication) for UI applications.
 
 For information about how to acquire you API Token, see [generating API Token](06_cloudnative__generating_token).
@@ -35,7 +35,7 @@ called whenever the **NotAuthenticated exception** is raised by the backend.
 
 > The **NotAuthenticatedHandler** can be called multiple times and it is a good practice to wrap it in a call guard or debounce.
 
-## Functions for authentication
+## Functions related to authentication
 Below are some functions, that will make the authentication process easier for you.
 
 ### createTigerAuthenticationUrl

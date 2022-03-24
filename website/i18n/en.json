@@ -73,6 +73,18 @@
         "title": "Create Your First Application Using Accelerator Toolkit",
         "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
       },
+      "cloudnative_authentication": {
+        "title": "GoodData.CN authentication",
+        "sidebar_label": "GoodData.CN authentication"
+      },
+      "cloudnative_generating_auth_token": {
+        "title": "Generating authentication token",
+        "sidebar_label": "Generating authentication token"
+      },
+      "cloudnative_getting_started": {
+        "title": "Getting started",
+        "sidebar_label": "Getting started"
+      },
       "cloudnative_integration": {
         "title": "Integrate into an Existing Application",
         "sidebar_label": "Integrate into an Existing Application"
