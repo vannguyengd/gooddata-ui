@@ -51,7 +51,7 @@ It is highly recommended to use this API only if there is no higher-level compon
 
 ## Where to continue
 
-- [InsightView component](10_vis__insight_view.md) 
-- [Dashboard component](18_dashboard_component.md)
-- [Catalog export](02_start__catalog_export.md)
-- [Executions](50_custom__execution.md)
+- [InsightView component](10_vis__insight_view.md) - The InsightView component is a generic component that renders insights created and saved by Analytical Designer.
+- [Dashboard component](18_dashboard_component.md) - Using this component, we aim to address creation and consumption of rich, interactive, and responsive dashboards.
+- [Catalog export](02_start__catalog_export.md) - Exports a list of catalog items and date datasets from a GoodData workspace into JavaScript or TypeScript code.
+- [Custom executions](50_custom__execution.md) - An execution is a combination of attributes, measures, and filters that describes what data you want to calculate.
