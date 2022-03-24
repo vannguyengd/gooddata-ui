@@ -27,10 +27,10 @@
             "platform_cors"
         ],
         "Integration with GoodData.CN": [
+            "cloudnative_introduction",
             "cloudnative_getting_started",
             "cloudnative_authentication",
             "cloudnative_generating_auth_token",
-            "cloudnative_introduction",
             "cloudnative_integration",
             "cloudnative_local_dev",
             "cloudnative_limitations"

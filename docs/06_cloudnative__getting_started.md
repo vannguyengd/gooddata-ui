@@ -20,24 +20,11 @@ The [@gooddata/sdk-backend-tiger](https://www.npmjs.com/package/@gooddata/sdk-ba
 
 The functionality includes following:
 
-- authentication functions (setting correct authentication provider, authentication checks, authentication, de-authentication), see [authentication](06_cloudnative__authentication.md).
-- telemetry settings for component usage tracking
+- authentication functions (setting correct authentication provider, authentication checks, authentication, de-authentication), see [authentication](06_cloudnative__authentication.md)
 - getting and creating metadata objects
 - running executions
 - getting available workspaces
 - creating new users
-
-### GoodData.CN backend capabilities
-
-| Capability                       | Description                       |
-| -------------------------------- | --------------------------------- |
-| hasTypeScopedIdentifiers         | Type scoped identifiers are unique on type level only, therefor both `identifier` as well as `type` must be provided while using `IdentifierRef` |
-| canCalculateGrandTotals          | Backend is capable to calculate and include grand totals in the resulting data view. |
-| maxDimensions                    | Can produce 2 result dimensions |
-| supportsRankingFilter            | Supports Ranging Filters |
-| supportsExplain                  | Supports downloading of files used for debugging | 
-| usesStrictAccessControl          | Access to restricted MD object is possible only with proper permissions. The object is not reachable without these permission event if you know the object's URI |
-| allowsInconsistentRelations      | Allows objects with broken references |
 
 ### api-client-tiger
 

@@ -6,7 +6,7 @@ id: cloudnative_generating_auth_token
 ---
 
 To use OpenID Connect (OIDC) Identity Provider may not be convenient if you want to use the **GoodData.CN** API from the 
-command line or some application. For these use cases, you can issue and API Token and then use it for accessing **GoodData.CN**
+command line. For this use cases, you can issue and API Token and then use it for accessing **GoodData.CN**
 resources.
 
 To generate the **GoodData.CN** API token, you can either submit a POST request to `/api/entities/users/{:userId}/apiTokens` or you can use 
@@ -15,7 +15,7 @@ the valid authenticated session.
 ### Submitting POST request
 
 In the `Authorization` header of the request described below, provide the value of a different token. You can use either another's users
-API token or the [GDC_API_TOKEN](https://www.gooddata.com/developers/cloud-native/doc/1.0/administration/auth/bootstrap-token/). Do not forget
+API token or the [GDC_API_TOKEN](https://www.gooddata.com/developers/cloud-native/doc/1.7/administration/auth/bootstrap-token/). Do not forget
 to replace the URL with the actual location with your **GoodData.CN** installation.
 
 ```
@@ -25,6 +25,8 @@ curl --request POST -H 'Content-type: application/vnd.gooddata.api+json' \
     https://analytics.alpha.example.com/api/entities/users/john.doe/apiTokens | \
   jq data.attributes.bearerToken
 ```
+
+To make this command work, you need to have [curl](https://curl.se/) and [jq](https://stedolan.github.io/jq/download/) installed on your computer.
 
 ### Using valid authenticated session
 
@@ -57,6 +59,6 @@ The generated API token looks similar to the following:
 
 ## Using generated API Token
 
-To use your new API Token, add the `Authorization: Bearer <YOUR_API_TOKEN>` header to your HTTP requests.
+To use your new API Token, add the `Authorization: Bearer <YOUR_API_TOKEN>` header to your HTTP requests. See [TigerTokenAuthProvider class](https://github.com/gooddata/gooddata-ui-sdk/blob/6c02df0d35687dc60ea0de5f3b8a2fdf62fa9760/libs/sdk-backend-tiger/src/auth.ts#L98) to learn more about API Token authentication.
 
-If you are interested in the API tokens security, check [this page](https://www.gooddata.com/developers/cloud-native/doc/1.0/administration/auth/oidc-cookies/)
+If you are interested in the API tokens security, check [this page](https://www.gooddata.com/developers/cloud-native/doc/1.7/administration/auth/oidc-cookies/)
