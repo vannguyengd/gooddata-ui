@@ -7,7 +7,7 @@ id: choose_visualization_approach
 
 GoodData.UI offers the following methods of visualizing the data in your workspaces:
 
--  Using the [InsightView component](#insightview)
+-  Using the [InsightView component](#insightview-component)
 -  Using the [visual components](#visual-components)
 -  Creating the [custom visualizations](#custom-visualizations)
 
@@ -45,14 +45,14 @@ The InsightView component may not be the best choice in the following situations
 ## Visual components
 
 GoodData.UI comes with several types of visualizations that you can use out of the box.
-They require more coding than the [InsightView component](#insightview) but at the same time offer more flexibility.
+They require more coding than the [InsightView component](#insightview-component) but at the same time offer more flexibility.
 For more information, see [Start with Visual Components](10_vis__start_with_visual_components.md).
 
 ### When to use
 
 Using the visual components is the best choice in the following situations:
 
--   You want more control over the visualization than the [InsightView component](#insightview) can provide.
+-   You want more control over the visualization than the [InsightView component](#insightview-component) can provide.
     
      **TIP:** Use the [visualization definition placeholders](30_tips__placeholders.md) to be able to dynamically change the visualization easier. 
 -   You want to define the visualization only in your application and not in Analytical Designer.
@@ -65,14 +65,14 @@ The visual components may not be the best choice in the following situations:
 
 -   You want to be able to change the insight that your application displays without changing the application code.
     
-     In this case, use the [InsightView component](#insightview).
+     In this case, use the [InsightView component](#insightview-component).
 -   You need a visualization type that is not available in Analytical Designer or GoodData.UI.
     
      In this case, create a [custom visualization](#custom-visualizations).
 
 ## Custom visualizations
 
-If neither the [InsightView component](#insightview) nor the [visual components](#visual-components) satisfy your needs, GoodData.UI allows you to create your own visualization relatively easy.
+If neither the [InsightView component](#insightview-component) nor the [visual components](#visual-components) satisfy your needs, GoodData.UI allows you to create your own visualization relatively easy.
 This is the most involved method of data visualization, but it offers the most flexibility. To get started, see [Create a Custom Visualization](50_custom__create_new_visualization.md).
 
 ### When to use
@@ -84,4 +84,4 @@ Creating a custom visualization is the best choice in the following situations:
 
 ### When not to use
 
-Do not use the custom visualizations if the [InsightView component](#insightview) or the [visual components](#visual-components) are sufficient for satisfying your needs. Whenever possible, choose one of the simpler methods because they require significantly less code.
+Do not use the custom visualizations if the [InsightView component](#insightview-component) or the [visual components](#visual-components) are sufficient for satisfying your needs. Whenever possible, choose one of the simpler methods because they require significantly less code.
