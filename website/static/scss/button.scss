@@ -1,16 +1,13 @@
 .button {
-    min-width: 12rem;
-    min-height: 2.875rem;
-    padding: 0.7rem 0.9rem;
+    padding: 10px 26px;
     border: 2px solid $gd-color-dark;
-    border-radius: 3px;
+    border-radius: 82px;
     color: $gd-color-dark;
+    font-family: $gdfont-demibold;
     font-size: 1.1rem;
-    font-weight: bold;
-    line-height: 1.225rem;
+    line-height: 27px;
     text-align: center;
     text-transform: none;
-    background-color: transparent;
     transition: all .3s;
 
     &,
@@ -18,13 +15,14 @@
     &:focus,
     &:active {
         text-decoration: none !important;
+        background-color: transparent;
     }
 
     &:hover,
     &:focus,
     &:active {
-        color: $gd-color-white;
-        background-color: $gd-color-dark;
+        color: desaturate(lighten($color-deep-purple, 30%), 40%);
+        border-color: desaturate(lighten($color-deep-purple, 30%), 40%);
     }
 
     &-inverted {
@@ -34,21 +32,26 @@
         &:hover,
         &:focus,
         &:active {
-            color: $gd-color-dark;
-            background-color: $gd-color-white;
+            color: #ccc;
+            background-color: #ccc;
         }
     }
 
     &-dark {
-        color: $gd-color-white;
-        border-color: $gd-color-dark;
-        background-color: $gd-color-dark;
+        background-color: $color-shocking-pink;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            color: $gd-color-white;
+            border-color: transparent;
+        }
 
         &:hover,
         &:focus,
         &:active {
-            color: $gd-color-dark;
-            background-color: $gd-color-white;
+            background-color: darken($color-shocking-pink, 10%);
         }
     }
 
@@ -60,7 +63,7 @@
 }
 
 .button-link {
-    color: $gd-color-highlight;
+    font-family: $gdfont-demibold;
     text-decoration: underline;
 
     &,
@@ -68,25 +71,17 @@
     &:focus,
     &:active {
         font-size: 18px;
-        font-weight: bold;
     }
-
-    &:hover,
-    &:focus,
-    &:active {
-        color: #0084c9;
-    }
-
 }
 
 a {
-    color: $gd-color-highlight;
+    color: $color-shocking-pink;
     transition: all 0.2s;
 
     &:hover,
     &:focus,
     &:active {
-        color: $gd-color-text;
+        color: darken($color-shocking-pink, 10%);
         text-decoration: underline;
     }
 }
@@ -126,6 +121,10 @@ a {
     display: flex;
 
     @media #{$large-down} {
+        justify-content: center;
+    }
+
+    &__center {
         justify-content: center;
     }
 

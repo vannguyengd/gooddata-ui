@@ -1,0 +1,28 @@
+// (C) 2007-2018 GoodData Corporation
+$base_path: '../';
+
+// stylelint-disable function-url-quotes
+
+@font-face {
+    font-family: "dc8ebcd096d8d65d80200bbe8e045d86";
+    src: url($base_path + "fonts/3b0b43206ff82b5e0ccd8bfb1bcaac76.woff2") format("woff2"),
+         url($base_path + "fonts/dc8ebcd096d8d65d80200bbe8e045d86.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "bca6d3310b5c9dae1dae416e8abc8405";
+    src: url($base_path + "fonts/11c42aac24b0c1dea0b6c3fd9a9d359e.woff2") format("woff2"),
+         url($base_path + "fonts/bca6d3310b5c9dae1dae416e8abc8405.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ae2e11957f2c90bcba60dd109b5379f5";
+    src: url($base_path + "fonts/8072c81499658513a0f702db8a9ace34.woff2") format("woff2"),
+         url($base_path + "fonts/ae2e11957f2c90bcba60dd109b5379f5.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}

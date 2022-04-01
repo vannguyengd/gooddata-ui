@@ -15,7 +15,7 @@ function docUrl(doc, language) {
 class Button extends React.Component {
   render() {
     return (
-      <div className="pluginWrapper buttonWrapper">
+      <div className={'pluginWrapper buttonWrapper' + (this.props.position ? ' buttonWrapper__' + this.props.position : '')}>
         <a className={this.props.className || 'button'} href={this.props.href} target={this.props.target}>
           {this.props.children}
         </a>
@@ -50,9 +50,7 @@ const ProjectTitle = props => (
 
 const ProjectDescription = props => (
   <p className="projectDescription">
-    Component library for rapid <br className="noMobile" />
-    development of interactive <br className="noMobile" />
-    analytical user interfaces
+    Component library for rapid development of interactive analytical user interfaces
   </p>
 )
 
@@ -60,9 +58,12 @@ const SplashParallax = props => (
   <div id="splash-parallax" className="splash-parallax">
     {props.layers.map((layer, index) => (
       <img
-        src={layer}
+        src={layer.src}
         key={`SplashParallaxLayer${index}`}
         className={`splash-parallax-layer splash-parallax-layer-${index}`}
+        initialposition={layer.initialPosition}
+        finalposition={layer.finalPosition}
+        style={{transform: `translateY(${layer.initialPosition}%)`}}
       />
     ))}
   </div>
@@ -73,7 +74,6 @@ class HomeSplash extends React.Component {
     return (
       <SplashContainer>
         <div className="left">
-          <img src="./img/homepage/icon-gooddata-ui.svg" />
           <ProjectTitle />
           <ProjectDescription />
           <div className="buttonWrapper">
@@ -84,10 +84,11 @@ class HomeSplash extends React.Component {
         <div className="right">
           <SplashParallax
             layers={[
-              "./img/homepage/splash-image-l1.svg?v=2022",
-              "./img/homepage/splash-image-l2.svg?v=2022",
-              "./img/homepage/splash-image-l3.svg?v=2022",
-              "./img/homepage/splash-image-l4.svg?v=2022"
+              { src: "./img/homepage/splash-image-l1.svg?v=2022", initialPosition: 0, finalPosition: 0 },
+              { src: "./img/homepage/splash-image-l2.svg?v=2022", initialPosition: -16, finalPosition: -8 },
+              { src: "./img/homepage/splash-image-l3.svg?v=2022", initialPosition: -17, finalPosition: -5 },
+              { src: "./img/homepage/splash-image-l4.svg?v=2022", initialPosition: -14, finalPosition: -1 },
+              { src: "./img/homepage/splash-image-l5.svg?v=2022", initialPosition: 0, finalPosition: 0 },
             ]}
           />
         </div>
@@ -109,8 +110,10 @@ const FeaturesBlock = props => (
       {props.subtitle && <p className="featuresSubtitle">{props.subtitle}</p>}
       {props.content && props.content.map((content, index) => (<p className="featuresContent" key={props.title + index}>{content}</p>))}
       {props.linkTitle && <a href={props.linkUrl} className="featuresLink">{props.linkTitle}</a>}
-      <div>{props.children}</div>
     </div>
+    {props.children && (
+      <div className="featuresWrapper">{props.children}</div>)
+    }
     {props.example && (
       <div className="featuresExample">
         {props.example}
@@ -219,20 +222,20 @@ const Features = props => (
     <BackgroundBlock background="white">
       <FeaturesBlock
         title="What it is for?"
-        subtitle={<span>GoodData.UI was designed to help application developers quickly create <br className="noMobile" />and evolve interactive data analytics applications that are tailored to the <br className="noMobile" />needs of your users.</span>}
+        subtitle={<span>GoodData.UI was designed to help application developers quickly create and evolve interactive data analytics applications that are tailored to the needs of your users.</span>}
         example={<FeaturesBlockGallery>
           {[{
             title: 'Productivity',
             image: './img/homepage/productivity.svg',
-            text: <span>With pre-built components that connect directly to <br className="noMobile" />the GoodData platform and query engine, your <br className="noMobile" />productivity isn’t impacted by waiting on your <br className="noMobile" />back-end engineers.</span>
+            text: <span>With pre-built components that connect directly to the GoodData platform and query engine, your productivity isn’t impacted by waiting on your back-end engineers.</span>
           },{
             title: 'Free, open and extensible',
             image: './img/homepage/free-open-extensible.svg',
-            text: <span>Free (both as in “freedom” and “free beer”) and <br className="noMobile" />extensible, the open-source library makes it easy to <br className="noMobile" />get started with the Free tier of the GoodData <br className="noMobile" />cloud platform.</span>
+            text: <span>Free (both as in “freedom” and “free beer”) and extensible, the open-source library makes it easy to get started with the Free tier of the GoodData cloud platform.</span>
           },{
             title: 'Developer friendly',
             image: './img/homepage/developer-friendly.svg',
-            text: <span>Get up and running quickly with a set of React.js <br className="noMobile" />components with Typescript types, granular <br className="noMobile" />packaging, detailed documentation, and interactive <br className="noMobile" />code samples.</span>,
+            text: <span>Get up and running quickly with a set of React.js components with Typescript types, granular packaging, detailed documentation, and interactive code samples.</span>,
           }]}
         </FeaturesBlockGallery>}
         textPosition="center"
@@ -244,7 +247,7 @@ const Features = props => (
         title="Productivity"
         subtitle="Designed with productivity in mind"
         content={[
-          <span>Put pre-built components like Lego bricks together without worrying about writing any <br className="noMobile" />backend code; the GoodData analytics platform takes care of all queries and APIs calls for you.</span>,
+          <span>Put pre-built components like Lego bricks together without worrying about writing any backend code; the GoodData analytics platform takes care of all queries and APIs calls for you.</span>,
           "How does it work? Check out our interactive code examples at CodeSandbox."
         ]}
         example={[
@@ -283,7 +286,7 @@ const Features = props => (
               linkTarget: "_blank"
             }]}
           </FeaturesBlockGallery>,
-          <Button href={docUrl("interactive_examples.html")} className="button">Find more interactive examples</Button>
+          <Button href={docUrl("interactive_examples.html")} className="button" position="center">Find more interactive examples</Button>
         ]}
         textPosition="center"
         background="gray"
@@ -295,8 +298,8 @@ const Features = props => (
         title="Developer friendliness"
         subtitle="By developers for developers"
         content={[
-          <span>We value simplicity, effectiveness, and good documentation, tutorials, and <br className="noMobile" />code samples. We don’t like surprises either, so our API Maturity <br className="noMobile" />annotations indicate the stability of individual APIs.</span>,
-          <span>If you are ready to get started, we recommend following our tutorial or just <br className="noMobile" />scrolling down for more information.</span>,
+          <span>We value simplicity, effectiveness, and good documentation, tutorials, and code samples. We don’t like surprises either, so our API Maturity annotations indicate the stability of individual APIs.</span>,
+          <span>If you are ready to get started, we recommend following our tutorial or just scrolling down for more information.</span>,
           <FeaturesBlockGallery cards>
             {[{
               title: 'Tutorial 1',
@@ -334,8 +337,14 @@ const Features = props => (
         title="Flexibility"
         subtitle="Plug it any way you need."
         content={[
-          <span>The core part of GoodData.UI is available under the MIT license and is ready to use <br className="noMobile" />with the <a href="https://www.gooddata.com/free">free tier of the GoodData cloud analytics platform</a>.</span>,
-          <span>It can be used with our pre-packaged filter components and Highcharts visualizations <br className="noMobile" />or with any of the thousands of controls and charting libraries available via npm.</span>
+          <span>The core part of GoodData.UI is available under the MIT license and is ready to use with the <a href="https://www.gooddata.com/free">free tier of the GoodData cloud analytics platform</a>.</span>,
+          <span>It can be used with our pre-packaged filter components and Highcharts visualizations or with any of the thousands of controls and charting libraries available via npm.</span>,
+          <div>
+            <ResponsiveImage src="./img/homepage/d3_logo.png" alt="D3.js" className="charting-lib-logo d3-logo" />
+            <ResponsiveImage src="./img/homepage/highcharts_logo.png" alt="Highcharts" className="charting-lib-logo highcharts-logo" />
+            <ResponsiveImage src="./img/homepage/chartjs_logo.png" alt="Chart.js" className="charting-lib-logo chartjs-logo" />
+            <Button href="https://www.npmjs.com/search?q=charts" target="_blank" className="button-more-charts">more charts</Button>
+          </div>
         ]}
         example={[
           <CodeExample2 key="1" />,
@@ -344,19 +353,15 @@ const Features = props => (
         textPosition="right"
         background="white"
       >
-        <ResponsiveImage src="./img/homepage/d3_logo.png" alt="D3.js" className="charting-lib-logo d3-logo" />
-        <ResponsiveImage src="./img/homepage/highcharts_logo.png" alt="Highcharts" className="charting-lib-logo highcharts-logo" />
-        <ResponsiveImage src="./img/homepage/chartjs_logo.png" alt="Chart.js" className="charting-lib-logo chartjs-logo" />
-        <Button href="https://www.npmjs.com/search?q=charts" target="_blank" className="button-more-charts">more charts</Button>
       </FeaturesBlock>
     </BackgroundBlock>
     <BackgroundBlock background="image" stretch>
       <FeaturesBlock
         title="Examples Gallery"
-        subtitle={<span>A comprehensive collection of visual GoodData.UI examples, <br className="noMobile" />from simple charts to interactive analytical mini-apps.</span>}
+        subtitle={<span>A comprehensive collection of visual GoodData.UI examples, from simple charts to interactive analytical mini-apps.</span>}
         textPosition="center"
       >
-        <Button href="https://gdui-examples.herokuapp.com/" className="button button-inverted">See the gallery</Button>
+        <Button href="https://gdui-examples.herokuapp.com/" className="button button-inverted" position="center">See the gallery</Button>
       </FeaturesBlock>
     </BackgroundBlock>
   </section>
@@ -414,38 +419,39 @@ const GetStarted = props => (
     <BackgroundBlock background="gray">
       <FeaturesBlock
         title="Get started"
+        subtitle="There is many ways how you can start your journey with our GoodData.UI. You can play with our interactice code samples, browse our huge gallery of live examples, discover all the possibilities in the documentation or discuss in our community."
         textPosition="center"
         background="gray"
       >
         <FeaturesBlockGallery>
-            {[{
-              title: 'Documentation',
-              image: 'https://www.gooddata.com/learn-assets/img/icon-documentation-c.svg',
-              imageHeight: 64,
-              text: <span>Find all the details about <br className="noMobile" />GoodData.UI</span>,
-              linkText: "See documentation",
-              linkHref: docUrl("why_gdui.html")
-            },{
-              title: 'Interactive Code Samples',
-              image: './img/homepage/interactive-code-samples.svg',
-              text: <span>Try it yourself and play with our <br className="noMobile" />code samples</span>,
-              linkText: "Try interactive code samples",
-              linkHref: docUrl("interactive_examples.html")
-            },{
-              title: 'Examples Gallery',
-              image: './img/homepage/examples-gallery.svg',
-              text: <span>Browse our huge library full of live <br className="noMobile" />visualisation examples</span>,
-              linkText: "Browse gallery",
-              linkHref: "https://gdui-examples.herokuapp.com/"
-            },{
-              title: 'Community',
-              image: 'https://www.gooddata.com/learn-assets/img/icon-community-c.svg',
-              imageHeight: 66,
-              text: <span>Discuss, ask and learn from our <br className="noMobile" />community</span>,
-              linkText: "View community",
-              linkHref: "https://community.gooddata.com/"
-            }]}
-          </FeaturesBlockGallery>
+          {[{
+            title: 'Documentation',
+            image: 'https://www.gooddata.com/learn-assets/img/icon-documentation-c.svg',
+            imageHeight: 64,
+            text: <span>Find all the details about GoodData.UI</span>,
+            linkText: "See documentation",
+            linkHref: docUrl("why_gdui.html")
+          },{
+            title: 'Interactive Code Samples',
+            image: './img/homepage/interactive-code-samples.svg',
+            text: <span>Try it yourself and play with our code samples</span>,
+            linkText: "Try interactive code samples",
+            linkHref: docUrl("interactive_examples.html")
+          },{
+            title: 'Examples Gallery',
+            image: './img/homepage/examples-gallery.svg',
+            text: <span>Browse our huge library full of live visualisation examples</span>,
+            linkText: "Browse gallery",
+            linkHref: "https://gdui-examples.herokuapp.com/"
+          },{
+            title: 'Community',
+            image: 'https://www.gooddata.com/learn-assets/img/icon-community-c.svg',
+            imageHeight: 66,
+            text: <span>Discuss, ask and learn from our community</span>,
+            linkText: "View community",
+            linkHref: "https://community.gooddata.com/"
+          }]}
+        </FeaturesBlockGallery>
       </FeaturesBlock>
     </BackgroundBlock>
   </section>

@@ -3,28 +3,33 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: $gd-font-primary;
+    font-family: $gdfont-regular;
+    font-weight: normal;
+    line-height: 1.25;
 }
 
 body,
 .mainContainer {
-    color: $gd-color-text;
+    color: $color-deep-purple;
     font-size: 16px;
 }
 
-h1, .mainContainer .wrapper .post .postHeader h1,
-h2, .mainContainer .wrapper .post h2, .productShowcaseSection h2,
-h3, .mainContainer .wrapper .post h3,
+h1, .container.mainContainer .wrapper .post .postHeader h1,
+h2, .container.mainContainer .wrapper .post h2, .productShowcaseSection h2,
+h3, .container.mainContainer .wrapper .post h3,
 h4 {
     padding: 0;
-    color: $gd-color-dark;
+    color: $color-deep-purple;
 }
 
-h1,
-.mainContainer .wrapper .post .postHeader h1 {
-    margin: 1rem 0 3rem 0;
-    font-size: 3.125rem;
-    font-weight: bold;
+h1 {
+    margin-bottom: 30px;
+    font-size: $h1-xs;
+    font-weight: normal;
+
+    @media #{$large-up} {
+        font-size: $h1-xl;
+    }
 
     small {
         margin: 0;
@@ -35,26 +40,43 @@ h1,
 }
 
 h2,
-.mainContainer .wrapper .post h2,
+.mainContainer .wrapper .post h1,
 .productShowcaseSection h2 {
-    margin: 2rem 0;
-    font-size: 2.5rem;
-    line-height: 3.4375rem;
+    margin-bottom: 24px;
+    font-size: $h2-xs;
 }
 
 h3,
+.mainContainer .wrapper .post h2 {
+    margin-bottom: 12px;
+    font-family: $gdfont-demibold;
+    font-size: $h3-xs;
+    font-weight: normal;
+}
+
+h4,
 .mainContainer .wrapper .post h3 {
-    margin: 1.9rem 0;
-    font-size: 1.5rem;
-    font-weight: bold;
+    margin-bottom: 12px;
+    font-family: $gdfont-demibold;
+    font-size: $h4-xs;
+    font-weight: normal;
+}
+
+.mainContainer .wrapper .post h4 {
+    font-family: $gdfont-demibold;
+    font-size: 17px;
+    font-weight: normal;
 }
 
 .mainContainer .wrapper p,
 .blockElement p {
     margin: 0.7rem 0;
     padding: 0;
+    font-size: 17px;
+    line-height: 1.5;
 }
 
 strong {
-    font-weight: bold;
+    font-family: $gdfont-extrabold;
+    font-weight: normal;
 }

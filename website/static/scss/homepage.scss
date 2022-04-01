@@ -1,16 +1,14 @@
 .projectTitle {
     color: inherit;
-    font-weight: bold;
+    line-height: inherit;
 }
 
 .projectDescription {
     margin: 1.25rem 1.25rem 1.25rem 0;
-    font-size: 2rem;
-    line-height: 2.75rem;
+    font-size: $text-huge-xl;
 
     @media #{$medium-down} {
-        font-size: 1.5rem;
-        line-height: 1.8rem;
+        font-size: $text-huge-xs;
     }
 }
 
@@ -18,7 +16,6 @@
     position: relative;
     display: flex;
     align-items: center;
-    color: $gd-color-dark;
 
     @media #{$large-down} {
         flex-direction: column;
@@ -58,6 +55,11 @@
     }
 }
 
+.homeContainer {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
 .splash-parallax {
     position: relative;
     margin-top: 15%;
@@ -70,6 +72,11 @@
 
         &-0 {
             position: static;
+        }
+
+        &-4 {
+            top: 21%;
+            left: 5%;
         }
     }
 }
@@ -103,5 +110,11 @@
         .featuresSubtitle {
             color: $gd-color-white;
         }
+    }
+}
+
+.getStartedSection {
+    .backgroundBlock {
+        padding-bottom: 100px;
     }
 }

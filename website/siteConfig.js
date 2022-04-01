@@ -49,7 +49,7 @@ const siteConfig = {
   favicon: 'img/favicon.ico',
   /* colors for website */
   colors: {
-    primaryColor: '#14B2E2',
+    primaryColor: '#ED26B7',
     secondaryColor: '#205C3B',
   },
   /* custom fonts for website */
@@ -76,7 +76,13 @@ const siteConfig = {
   scripts: [
     'https://buttons.github.io/buttons.js',
     '/gooddata-ui/js/toggleNav.js',
-    '/gooddata-ui/js/resizeRoadmap.js'
+    '/gooddata-ui/js/resizeRoadmap.js',
+    'https://www.gooddata.com/js/vendors/jquery.min.js',
+    'https://www.gooddata.com/learn-assets/js/footer-plugin.js',
+    '/gooddata-ui/js/footer.js'
+  ],
+  stylesheets: [
+    'https://www.gooddata.com/learn-assets/css/Footer.css'
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/gooddata/gooddata-ui-sdk',
