@@ -3,6 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
         layers = splash.childNodes,
         height = 200;
 
+    var layersPositions = Array.prototype.slice.call(layers).map(function(layer) {
+        return {
+            initial: parseInt(layer.getAttribute("initialposition")),
+            final: parseInt(layer.getAttribute("finalposition"))
+        }
+    });
+
     parallaxTransform(layers);
 
     window.addEventListener("scroll", function () {
@@ -10,15 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function parallaxTransform(parallaxLayers) {
-        var layersArray = Array.prototype.slice.call(parallaxLayers);
         parallaxLayers.forEach(function (layer, index) {
-            layer.style.transform = "translateY(" + scrollProgress(layersArray) * index + "%)";
+            layer.style.transform = "translateY(" + (layersPositions[index].final - (layersPositions[index].final - layersPositions[index].initial) * scrollProgress()) + "%)";
         });
     }
 
-    function scrollProgress(parallaxLayers) {
-        return window.scrollY <= height
-            ? -((100 / parallaxLayers.length / 5) * (1 - window.scrollY / height))
-            : 0;
+    function scrollProgress() {
+        return window.scrollY <= height ? 1 - window.scrollY / height : 0;
     }
 });

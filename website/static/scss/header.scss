@@ -3,13 +3,13 @@
     background: $gd-color-white;
 
     @media #{$large-up} {
-        height: 124px;
+        height: 140px;
     }
 
     &::after {
         content: "";
         position: absolute;
-        top: 65px;
+        top: 81px;
         right: 0;
         bottom: 0;
         left: 0;
@@ -24,7 +24,7 @@
 
     header img,
     .logo {
-        width: 122px;
+        width: 127px;
         height: 35px;
 
         @media only screen and (min-width: 1400px) {
@@ -35,6 +35,10 @@
     header {
         height: 65px;
         align-items: center;
+
+        @media #{$large-up} {
+            height: 81px;
+        }
 
         > a {
             flex: 0 0 auto;
@@ -70,7 +74,7 @@
             display: none;
             margin: 0;
             color: $gd-color-text;
-            font-family: $gd-font-primary;
+            font-family: $gdfont-regular;
             font-weight: lighter;
             font-size: 0.9rem;
             text-decoration: none;
@@ -80,13 +84,9 @@
             }
 
             @media #{$large-up} {
-                top: 85px;
-                right: 342px;
+                top: 101px;
+                right: 471px;
             }
-        }
-
-        @media #{$large-down} {
-            height: 65px;
         }
     }
 }
@@ -125,18 +125,24 @@
             a {
                 margin: 0;
                 padding: 20px 20px 16px;
-                border-bottom: 2px solid transparent;
-                color: transparentize($gd-color-dark, 0.3);
+                border-bottom: 3px solid transparent;
                 line-height: 24px;
-                font-size: 14px;
-                font-weight: bold;
+                font-family: $gdfont-extrabold;
+                font-size: 15px;
                 text-decoration: none;
                 transition: all 0.2s;
+
+                &,
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color-deep-purple;
+                }
 
                 &:hover,
                 &:focus,
                 &:active {
-                    color: $gd-color-dark;
+                    border-color: $color-shocking-pink;
                     background-color: transparent;
                 }
 
@@ -155,7 +161,7 @@
                             display: inline-block;
                             position: absolute;
                             left: 0;
-                            top: 19px;
+                            top: 28px;
                             width: 24px;
                             height: 24px;
                             background: url(https://www.gooddata.com/learn-assets/img/navicon-learn.svg) center no-repeat;
@@ -167,38 +173,16 @@
                             display: inline-block;
                             position: absolute;
                             right: -9px;
-                            top: 24px;
+                            top: 30px;
                             width: 2px;
-                            height: 18px;
+                            height: 22px;
                             background: $gd-color-dark;
                         }
                     }
                 }
 
                 &[href="/gooddata-ui/"] {
-                    border-bottom-color: $gd-color-dark;
-
-                    @media #{$large-down} {
-                        color: $gd-color-dark;
-                    }
-
-                    .separateOnPageNav & {
-                        border-bottom-color: transparent;
-
-                        @media #{$large-down} {
-                            color: transparentize($gd-color-dark, 0.3);
-                        }
-                    }
-                }
-
-                &[href="https://www.gooddata.com/developers/cloud-native/doc/"] {
-                    .separateOnPageNav & {
-                        border-bottom-color: $gd-color-dark;
-
-                        @media #{$large-down} {
-                            color: $gd-color-dark;
-                        }
-                    }
+                    border-bottom-color: $color-shocking-pink;
                 }
 
                 @media #{$large-down} {
@@ -208,32 +192,32 @@
                 }
 
                 @media #{$large-up} {
-                    height: 65px;
-                    line-height: 65px;
-                    border-bottom-width: 4px;
+                    height: 81px;
+                    line-height: 81px;
 
                     &[href*="https://github.com/"],
                     &[href*="https://gdui-examples.herokuapp.com/"],
                     &[href*="/gooddata-ui/docs/interactive_examples.html"],
                     &[href*="/gooddata-ui/docs/roadmap.html"] {
                         position: absolute;
-                        top: 80px;
+                        top: 97px;
                         right: 0;
                         display: none;
-                        height: 1.75rem;
+                        height: 26px;
                         margin: 0;
-                        padding: 5px 10px;
-                        border: 1px solid transparentize($gd-color-dark, 0.5);
+                        padding: 5px 20px;
+                        border: 1px solid transparentize($gd-color-text, 0.5);
                         border-radius: 100px;
-                        color: $gd-color-dark;
-                        font-size: 0.75rem;
+                        color: $gd-color-text;
+                        font-family: $gdfont-regular;
+                        font-size: 14px;
                         font-weight: normal;
-                        line-height: 1.75rem;
+                        line-height: 19px;
 
                         &:hover,
                         &:focus,
                         &:active {
-                            border-color: $gd-color-dark;
+                            border-color: $gd-color-text;
                         }
 
                         .separateOnPageNav & {
@@ -246,15 +230,15 @@
                     }
 
                     &[href*="https://gdui-examples.herokuapp.com/"] {
-                        right: 71px;
+                        right: 100px;
                     }
 
                     &[href*="/gooddata-ui/docs/interactive_examples.html"] {
-                        right: 141px;
+                        right: 198px;
                     }
 
                     &[href*="/gooddata-ui/docs/roadmap.html"] {
-                        right: 249px;
+                        right: 345px;
                     }
                 }
             }
@@ -262,16 +246,17 @@
             &:nth-child(1) a[href="/gooddata-ui/"],
             &:nth-child(2) a[href="https://www.gooddata.com/developers/cloud-native/doc/"] {
                 position: absolute;
-                top: 82px;
-                left: -132px;
+                top: 98px;
+                left: -137px;
                 height: 24px;
                 margin: 0;
                 padding: 0;
                 border: none;
+                font-family: $gdfont-regular;
                 font-size: 14px;
                 font-weight: normal;
                 line-height: 24px;
-                color: $gd-color-highlight;
+                color: $color-shocking-pink;
 
                 @media only screen and (min-width: 1400px) {
                     left: -380px;
@@ -329,23 +314,24 @@
 
             a[href="https://www.gooddata.com/developers/cloud-native-community-edition/"] {
                 position: absolute;
-                top: 17px;
+                top: 25px;
                 right: 0;
-                height: 30px;
+                height: 28px;
                 margin: 0;
-                padding: 5px 18px;
-                border: 2px solid $gd-color-dark;
-                border-radius: 4px;
-                font-size: 13px;
+                padding: 5px 20px;
+                border: none;
+                border-radius: 14px;
+                font-family: $gdfont-demibold;
+                font-size: 12px;
                 line-height: 18px;
-                color: $gd-color-dark;
+                color: $color-white;
+                background-color: $color-shocking-pink;
                 transition: 0.15s ease-in-out;
 
                 &:hover,
                 &:focus,
                 &:active {
-                    color: $gd-color-white;
-                    background-color: $gd-color-dark;
+                    background-color: darken($color-shocking-pink, 10%);
                 }
 
                 @media #{$large-down} {
@@ -375,8 +361,8 @@
             }
 
             @media #{$large-up} {
-                top: 94px;
-                right: 371px;
+                top: 110px;
+                right: 505px;
             }
 
             @media #{$large-down} {
@@ -434,7 +420,7 @@
     padding-top: 88px;
 
     @media #{$large-up} {
-        padding-top: 124px;
+        padding-top: 140px;
     }
 }
 

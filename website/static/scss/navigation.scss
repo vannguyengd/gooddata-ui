@@ -1,4 +1,6 @@
 .separateOnPageNav .docsNavContainer {
+    overflow: visible;
+
     @media #{$large-down} {
         top: 88px;
     }
@@ -7,6 +9,22 @@
         flex: 0 0 290px;
         margin-top: 0;
         margin-right: 1rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            z-index: -1;
+            background-color: $color-mist-gray;
+        }
+
+        .toc {
+            height: 100%;
+            overflow-y: auto;
+        }
     }
 }
 
@@ -21,6 +39,7 @@
 
 nav.toc {
     width: auto;
+    padding-top: 0;
 
     &:last-child {
         padding-bottom: 0;
@@ -33,6 +52,31 @@ nav.toc {
             padding: 1.25rem;
         }
 
+        .navGroup {
+            padding-left: 18px;
+        }
+
+        .navGroup .navGroupCategoryTitle,
+        ul li a {
+            color: $color-deep-purple;
+            font-family: $gdfont-regular;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        ul {
+            padding: 0 0 0 18px;
+
+            li a {
+                &:hover,
+                &:active,
+                &:focus {
+                    color: $color-deep-purple;
+                }
+            }
+
+        }
+
         .navGroup.navGroupActive {
             margin-bottom: 1.25rem;
             box-shadow: 0 1px 2px 0 transparentize($gd-color-dark, 0.8);
@@ -40,9 +84,9 @@ nav.toc {
 
             h3 {
                 padding: 1.25rem 1.25rem 0;
-                color: $gd-color-dark;
-                font-size: 18px;
-                font-weight: bold;
+                color: inherit;
+                font-size: 16px;
+                font-weight: normal;
                 background: transparent;
             }
 
@@ -76,7 +120,7 @@ nav.toc {
                     &.navItemActive {
                         &::before {
                             width: 100%;
-                            border-bottom-color: $gd-color-highlight;
+                            border-bottom-color: $gd-color-dark;
                         }
                     }
                 }
@@ -171,34 +215,32 @@ nav.toc {
         display: block;
         position: -webkit-sticky;
         position: sticky;
-        top: 104px;
+        top: 140px;
         flex: 0 0 290px;
         overflow-y: auto;
-        max-height: calc(100vh - 104px);
+        max-height: calc(100vh - 140px);
         padding-top: 1.25rem;
 
-        > ul {
+        > ul.toc-headings {
             padding: 10px 0 2px 15px;
-            border-left: 1px solid transparentize($gd-color-dark, 0.8);
+            border-left: 1px solid $color-gray-divider;
         }
 
         a {
-            color: $gd-color-text;
+            color: $color-deep-purple;
         }
 
         ul {
             li {
-                padding-bottom: 12px;
-                font-size: 12px;
-                line-height: 14px;
+                margin: 3px 0;
+                padding-bottom: 5px;
+                color: $gd-color-text;
+                font-size: 15px;
+                line-height: 26px;
             }
 
             ul {
-                padding: 8px 0 0 20px;
-
-                li {
-                    padding-bottom: 8px;
-                }
+                padding-left: 20px;
             }
         }
     }

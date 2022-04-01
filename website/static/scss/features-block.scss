@@ -1,7 +1,7 @@
 .featuresBlock {
     display: flex;
     align-items: center;
-    color: $gd-color-text;
+    color: inherit;
 
     @media #{$medium-down} {
         flex-wrap: wrap;
@@ -9,12 +9,11 @@
 }
 
 .featuresSubtitle {
-    color: $gd-color-dark;
-    font-size: 1.625rem;
+    color: inherit;
+    font-size: $text-huge-xl;
 
     @media #{$medium-down} {
-        font-size: 1.5rem;
-        line-height: 1.8rem;
+        font-size: $text-huge-xs;
     }
 }
 
@@ -34,7 +33,9 @@
 }
 
 .featuresBlockText-center {
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     &,
     .featuresText {
@@ -43,7 +44,12 @@
 
     .featuresText,
     .featuresExample {
-        flex: 1 1 100%;
+        flex: 0 0 auto;
+    }
+
+    .featuresText {
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     .featuresExample {
@@ -77,10 +83,13 @@
     margin: 2rem 0;
 }
 
+.featuresWrapper {
+    width: 100%;
+}
+
 .exampleCode,
 .exampleImageImage {
     box-shadow: $shadow;
-    background-color: $gd-color-white;
 }
 
 .exampleCode {
@@ -90,6 +99,7 @@
     border-radius: 0;
     white-space: pre-wrap;
     text-align: left;
+    background-color: $color-deep-purple;
 
     .highlighting {
         margin: 0;
@@ -115,7 +125,7 @@
             margin-top: -3.5rem;
             margin-left: -1.57rem;
             box-shadow: $shadow;
-            background-color: $gd-color-white;
+            background-color: $color-deep-purple;
             transform: rotate(45deg);
         }
     }
@@ -123,11 +133,12 @@
 
 .exampleImageImage {
     width: 100%;
+    background-color: transparent;
 }
 
 .featuresBlockGallery {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 0;
     list-style-type: none;
@@ -176,9 +187,7 @@
 
 .featuresBlockGalleryTitle {
     margin: 0.4rem 0;
-    color: $gd-color-dark;
-    font-size: 1.1rem;
-    font-weight: bold;
+    color: inherit;
     text-transform: uppercase;
 
     &:first-child {

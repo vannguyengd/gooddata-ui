@@ -28,8 +28,65 @@ $gd-color-warning-dimmed: mix($gd-color-warning, $gd-color-text-light, 20%);
 $gd-color-warning-label-dimmed: mix($gd-color-warning, $gd-color-text, 40%);
 $gd-color-warning-label: mix($gd-color-warning, $gd-color-text, 20%);
 
+// -------------------------------------
+// Colors
+// -------------------------------------
+
+// Brand
+$color-deep-purple:     #1C0D3F;
+$color-indigo:          #1B127D;
+$color-cobalt-blue:	    #2637EF;
+$color-shocking-pink:   #ED26B7;
+$color-violet:          #8104CA;
+$color-jade-green:      #A3FFB0;
+$color-emerald-green:   #20CA8B;
+
+// Brand grays
+$color-dove-gray:       #BFC9D1;
+$color-cloud-gray:      #DFE4E8;
+$color-mist-gray:       #F2F4F6;
+
+// Black & White
+$color-black:           #000000;
+$color-white:           #ffffff;
+
+// Error
+$color-red:             #ED2654;
+
+// OLD Brand
+$color-blue-light: 		#14b2e2;
+$color-green:           #00C18D;
+$color-orange:          #E26300;
+
+// OLD Brand grays
+$color-p-opacity-07:      rgba($color-black, .7);
+$color-gray-c4:         #c4c4c4;
+$color-gray-fa:         #fafafa;
+$color-gray-97:         #979797;
+$color-gray-f5:         #f5f5f5;
+
+// Layout
+$color-gray-background: #4f4f4f;
+$color-gray-steel:      #4A6172;
+$color-gray-white:      #F6F6F6;
+$color-gray-bone:       #F0F2F5;
+$color-gray-chalk:      #D7DFE5;
+$color-gray-free:       #F8FAFB;
+$color-gray-tag:        #94A1AD;
+$color-gray-divider:    #979797;
+
+// Gradients
+$color-blue-steel:      #213345;
+
+// Backgrounds
+$color-bg-gray:         $color-mist-gray;
+
+
 // font and typo
-$gd-font-primary: avenir, 'Helvetica Neue', arial, sans-serif;
+$gdfont-regular: ("dc8ebcd096d8d65d80200bbe8e045d86", "Helvetica", "Arial", sans-serif);
+$gdfont-demibold: ("bca6d3310b5c9dae1dae416e8abc8405", "Helvetica", "Arial", sans-serif);
+$gdfont-extrabold: ("ae2e11957f2c90bcba60dd109b5379f5", "Helvetica", "Arial", sans-serif);
+$monospace: ("PT Mono Bold", monospace);
 
 $gray-1: #f0f0f0;
 $gray-2: #fafafa;
@@ -37,6 +94,28 @@ $gray-3: #fdfdfd;
 $gray-4: #404040;
 
 $shadow: 0 1px 3px 0 transparentize($gd-color-dark, 0.8);
+
+// H1
+$h1-xl:                68px;
+$h1-xl-long:           58px;
+$h1-xs:                48px;
+$h1-xs-long:           40px;
+
+// H2
+$h2-xl:                52px;
+$h2-xs:                38px;
+
+// H3
+$h3-xl:                32px;
+$h3-xs:                23px;
+
+// H4
+$h4-xl:                21px;
+$h4-xs:                18px;
+
+// Text
+$text-huge-xl:         24px;
+$text-huge-xs:         21px;
 
 $breakpoint-small: 360px;
 $breakpoint-medium: 735px;
