@@ -5,26 +5,29 @@ copyright: (C) 2022 GoodData Corporation
 id: choose_dashboard_approach
 ---
 
-GoodData.UI offers multiple ways to build or embed your dashboard solution each with their advantages and disadvantages.
-This article should help you understand how they differ and help you decide which of them is appropriate for your particular use case.
+GoodData.UI offers the following methods of building and embedding dashboards:
+
+- Using KPI Dashboards
+- Using the Dashboard component
+- Building custom dashboards
+
+Each method has its advantages and disadvantages.
+
+This article explains how these methods differ and helps you decide which method is the most appropriate for your particular use case.
 
 ## KPI Dashboards
 
-KPI Dashboards is a GoodData end-to-end dashboarding solution and covers both creation and consumption of the dashboards.
-Creators can build or edit existing dashboards with a friendly drag and drop experience.
-It offers lot of features out of the box (filtering, drilling, sharing, responsive layout, theming, e-mail schedules, exports, embedding).
-You can embed these dashboards in you application with [iframe](#kpi-dashboards---iframe-embedding) and also extend the functionality of the dashboard with [Dashboard Plugins](#kpi-dashboards---dashboard-plugins).
+KPI Dashboards is a GoodData end-to-end dashboard solution that covers both creation and consumption of dashboards. KPI Dashboards offer many features out of the box such as filtering, drilling, sharing, responsive layout, theming, email scheduling, export, and embedding.
 
-Pros:
-- Friendly drag and drop UI.
-- Lot of built-in features.
-- [Iframe embedding](#kpi-dashboards---iframe-embedding) with basic customization and [postMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) support.
-- Customizations with [Dashboard Plugins](#kpi-dashboards---dashboard-plugins).
+Users can build new dashboards and edit the existing ones in a friendly drag-and-drop user interface.
 
-Cons:
-- Customization possibilities are limited.
+With KPI Dashboards, you can:
 
-### KPI Dashboards - Iframe Embedding
+- Embed KPI Dashboards in your application via [iframe](#embed-a-kpi-dashboard-via-iframe). Embedded KPI Dashboards provide basic customization options and support the [postMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+
+- Extend the default functionality with the [dashboard plugins](#add-dashboard-plugins-to-a-kpi-dashboard).
+
+### Embed a KPI Dashboard via iframe
 
 Kpi Dashboards iframe embedding allows you to easily integrate dashboards created with [Kpi Dashboard](#kpi-dashboards) in you application(s).
 It allows communication with the Kpi Dashboard via [postMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
@@ -42,7 +45,7 @@ Pros:
 Cons:
 - Customization possibilities are limited.
 
-### KPI Dashboards - Dashboard Plugins
+### Add dashboard plugins to a KPI Dashboard
 
 Dashboard Plugins allow you to enhance [Kpi Dashboards](#kpi-dashboards) experience with custom visualizations, 3rd party libraries and custom behavior.
 With Dashboard Plugins, you can run your own code within Kpi Dashboards. Read more details about [Dashboard Plugins](dashboard_plugins).
@@ -58,7 +61,7 @@ Cons:
 - Plugins are currently supported in view mode only.
 - Plugins api is still a bit limited in comparison with full [Dashboard Component](#dashboard-component) capabilities.
 
-## Dashboard Component
+## Dashboard component
 
 Dashboard component is highly customizable React component, with lot of built-in features, that displays dashboards created with [Kpi Dashboards](#kpi-dashboards) - it's an engine, that [Kpi Dashboards](#kpi-dashboards) use under the hood.
 Read more details about [Dashboard Component](dashboard_intro).
@@ -75,7 +78,7 @@ Cons:
 - Some customization possibilities are still alpha or beta.
 - Styling or layout customizations are limited in comparison with fully [custom dashboard](#custom-dashboard) approach.
 
-## Custom Dashboard
+## Custom dashboards
 
 When you need very custom UI for your dashboards, that existing [Kpi Dashboards](#kpi-dashboards), [Dashboard Plugins](#kpi-dashboards---dashboard-plugins) or [Dashboard Component](#dashboard-component) cannot cover,
 then you can build your own solution with GoodData.UI SDK components.
