@@ -7,93 +7,85 @@ id: choose_dashboard_approach
 
 GoodData.UI offers the following methods of building and embedding dashboards:
 
-- Using KPI Dashboards
-- Using the Dashboard component
-- Building custom dashboards
+- Using the [KPI Dashboards](#kpi-dashboards)
+- Using the [Dashboard component](#dashboard-component)
+- Building [custom dashboards](#custom-dashboards)
 
 Each method has its advantages and disadvantages.
 
 This article explains how these methods differ and helps you decide which method is the most appropriate for your particular use case.
 
+The methods are described from the simplest to the most complex. As a general rule, whenever possible, choose a simpler method this is sufficient for satisfying your needs over a more complex method that may require more code or special skills to implement.
+
 ## KPI Dashboards
 
-KPI Dashboards is a GoodData end-to-end dashboard solution that covers both creation and consumption of dashboards. KPI Dashboards offer many features out of the box such as filtering, drilling, sharing, responsive layout, theming, email scheduling, export, and embedding.
+KPI Dashboards is an end-to-end dashboard solution that covers both creation and consumption of dashboards. KPI Dashboards offer many features out of the box such as filtering, drilling, sharing, responsive layout, theming, email scheduling, export, and embedding.
 
 Users can build new dashboards and edit the existing ones in a friendly drag-and-drop user interface.
 
-With KPI Dashboards, you can:
+With the KPI Dashboards, you have the following options:
 
-- Embed KPI Dashboards in your application via [iframe](#embed-a-kpi-dashboard-via-iframe). Embedded KPI Dashboards provide basic customization options and support the [postMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+- Embed KPI Dashboards in your application via an [iframe](#embed-a-kpi-dashboard-via-an-iframe).
 
-- Extend the default functionality with the [dashboard plugins](#add-dashboard-plugins-to-a-kpi-dashboard).
+- Extend the default functionality with the [dashboard plugins](#add-the-dashboard-plugins-to-a-kpi-dashboard).
 
-### Embed a KPI Dashboard via iframe
+### Embed a KPI Dashboard via an iframe
 
-Kpi Dashboards iframe embedding allows you to easily integrate dashboards created with [Kpi Dashboard](#kpi-dashboards) in you application(s).
-It allows communication with the Kpi Dashboard via [postMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
-You can also achieve basic customizations via query parameters (eg hiding the filter bar).
-Dashboard Plugins are supported as well.
+Embedding a KPI Dashboard via an iframe allows you to easily integrate the KPI Dashboard in your application or an HTML page.
 
-Use this approach, when you don't need heavy customization possibilities, and when post messages API is covering your needs. 
+**Advantages:**
+- Basic customization options via query parameters (for example, hide the filter bar)
+- Support for the [dashboard plugins](#add-the-dashboard-plugins-to-a-kpi-dashboard)
+- Communication via the [postMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
 
-Pros:
-- Seamless integration with any application or html page.
-- [Postmessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
-- Basic customizations via query parameters.
-- [Dashboard Plugins](#kpi-dashboards---dashboard-plugins) support.
+**Disadvantages:**
+- Limited customization options comparing to the [Dashboard component](#dashboard-component)
 
-Cons:
-- Customization possibilities are limited.
+### Add the dashboard plugins to a KPI Dashboard
 
-### Add dashboard plugins to a KPI Dashboard
+The dashboard plugins allow you to enhance the KPI Dashboards experience with third-party libraries, and custom visualizations and behavior.
+With the dashboard plugins, you can run your own code within the KPI Dashboards. For more information, see [Dashboard Plugins](dashboard_plugins).
 
-Dashboard Plugins allow you to enhance [Kpi Dashboards](#kpi-dashboards) experience with custom visualizations, 3rd party libraries and custom behavior.
-With Dashboard Plugins, you can run your own code within Kpi Dashboards. Read more details about [Dashboard Plugins](dashboard_plugins).
+**Advantages:**
+- Stable APIs that support both the GoodData platform and GoodData.CN
+- A [CLI tool](dashboard_plugins#getting-started) available as part of the Plugin Development Toolkit
+- Support for TypeScript
 
-Pros:
-- Integration with existing [Kpi Dashboards](#kpi-dashboards).
-- [Dashboard Plugins cli](dashboard_plugins#getting-started).
-- Stable API.
-- Agnostic API that supports both Enterprise and GoodData.CN editions.
-- TypeScript, documented interfaces and API(s).
-
-Cons:
-- Plugins are currently supported in view mode only.
-- Plugins api is still a bit limited in comparison with full [Dashboard Component](#dashboard-component) capabilities.
+**Disadvantages:**
+- Support for view mode only (the plugins are not loaded in edit mode)
+- Limited customization options comparing to the [Dashboard component](#dashboard-component)
 
 ## Dashboard component
 
-Dashboard component is highly customizable React component, with lot of built-in features, that displays dashboards created with [Kpi Dashboards](#kpi-dashboards) - it's an engine, that [Kpi Dashboards](#kpi-dashboards) use under the hood.
-Read more details about [Dashboard Component](dashboard_intro).
+The Dashboard component is a highly customizable React component that renders dashboards created and saved by KPI Dashboards. In essence, the Dashboard component is an engine that the KPI Dashboards use in the background.
 
-Pros:
-- Extensive customization possibilities (custom visualization types, integration of 3rd party libraries, [Dashboard Plugins](#kpi-dashboards---dashboard-plugins), etc...)
-- Seamless integration with React application(s).
-- Allows deep integration with your application(s), with lot of possibilities (eventing API, customizations)
-- Backend agnostic API that supports both Enterprise and GoodData.CN editions.
-- TypeScript, documented interfaces and API(s).
+The Dashboard component provides many built-in features. For more information, see [Introduction to the Dashboard Component](dashboard_intro).
 
-Cons:
-- Currently supports view mode only.
-- Some customization possibilities are still alpha or beta.
-- Styling or layout customizations are limited in comparison with fully [custom dashboard](#custom-dashboard) approach.
+**Advantages:**
+- Seamless and deep integration with React applications with a wide range of options (eventing API, customizations)
+- Extensive customization options such as custom visualization types, integration of third-party libraries, [dashboard plugins](#add-the-dashboard-plugins-to-a-kpi-dashboard) and so on
+- APIs that support both the GoodData platform and GoodData.CN
+- Support for TypeScript
+
+**Disadvantages:**
+- Support for view mode only (the Dashboard component is not loaded in edit mode)
+- Some customization options at alpha or beta stage
+- Limited styling or layout customization options comparing to the [custom dashboards](#custom-dashboards)
 
 ## Custom dashboards
 
-When you need very custom UI for your dashboards, that existing [Kpi Dashboards](#kpi-dashboards), [Dashboard Plugins](#kpi-dashboards---dashboard-plugins) or [Dashboard Component](#dashboard-component) cannot cover,
-then you can build your own solution with GoodData.UI SDK components.
+If none of the methods described in this article satisfies your needs, GoodData.UI allows you to create your own dashboard.
+This is the most involved method of building dashboards, but it offers the most flexibility.
 
-Pros:
-- Totally under your control - custom visualization types, custom layout, styling, etc...
-- Core sdk-model and sdk-backend-* packages can be used with any JS/TS framework
-- Huge amount of SDK React components and hooks ready to use (both high and low level - [charts](#start_with_visual_components), [execution](#create_new_visualization), [placeholders](#placeholders), contexts)
-- [Accelerator Toolkit](#create_new_application)
-- [Catalog Export](#export_catalog)
-- Allows deepest integration with your application(s), with huge amount of possibilities.
-- Backend agnostic API that supports both Enterprise and GoodData.CN editions.
-- TypeScript, documented interfaces and API(s).
+**Advantages:**
+- Everything under your control (custom visualization types, custom layout, styling and so on)
+- The core `sdk-model` and `sdk-backend-*` packages compatible with any JavaScript/TypeScript framework
+- Multiple ready-to-use React components and hooks, both high- and low-level: [charts](start_with_visual_components), [execution](create_new_visualization), [placeholders](placeholders), contexts
+- Support for the [Accelerator Toolkit](create_new_application) and the [Export Catalog tool](export_catalog)
+- The deepest integration with your application with a wide range of options
+- APIs that support both the GoodData platform and GoodData.CN
 
-Cons:
-- Requires most development and maintenance time in comparison with the other approaches.
-- Requires better knowledge of the GoodData platform than the other approaches.
-- Harder integration (but not impossible) with applications without React.
+**Disadvantages:**
+- More time needed for development and maintenance comparing to the other methods
+- Deeper knowledge of the GoodData platform required comparing to the other methods
+- More complex (but not impossible) integration with applications without React
