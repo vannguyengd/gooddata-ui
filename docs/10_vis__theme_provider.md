@@ -54,7 +54,7 @@ import { ThemeProvider } from "@gooddata/sdk-ui-theme-provider";
 ```
 
 ```jsx
-import { ITheme } from "@gooddata/sdk-backend-spi";
+import { ITheme } from "@gooddata/sdk-model";
 
 export const customTheme: ITheme = {
   button: {

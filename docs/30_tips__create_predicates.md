@@ -23,7 +23,7 @@ The most common predicates are predefined in [HeaderPredicateFactory](https://gi
 **Example:** A predicate that matches all items with the names starting with a capital `A`
 
 ```js
-import { isResultAttributeHeader } from "@gooddata/sdk-backend-spi";
+import { isResultAttributeHeader } from "@gooddata/sdk-model";
 
 const startsWithA = (header) => {
     return isResultAttributeHeader(header) && header.attributeHeaderItem.name.startsWith("A");
@@ -33,7 +33,7 @@ const startsWithA = (header) => {
 **Example:** A predicate that matches only attribute headers and only if the visualization has up to three attributes
 
 ```js
-import { isAttributeDescriptor } from "@gooddata/sdk-backend-spi";
+import { isAttributeDescriptor } from "@gooddata/sdk-model";
 
 const attributesIfNoMoreThanThree = (header, context) => {
     if (context.dv.def().attributes().length > 3) {
