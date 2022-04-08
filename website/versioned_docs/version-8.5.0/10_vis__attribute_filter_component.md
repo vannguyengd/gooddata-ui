@@ -120,6 +120,8 @@ You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_
 | parentFilters | false | AttributeFiltersOrPlaceholders[] | An array of parent attribute filter definitions |
 | connectToPlaceholder | false | IPlaceholder<IAttributeFilter> | The [visualization definition placeholder](30_tips__placeholders.md) used to get and set the value of the attribute filter |
 | parentFilterOverAttribute | false | ObjRef | The reference to the parent filter attribute over which the available options are reduced |
+| backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
+| workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
 | locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | fullscreenOnMobile | false | boolean | If `true`, adjusts the filter to be properly rendered on a mobile device |
 | title | false | string | A custom label to show on the dropdown icon |

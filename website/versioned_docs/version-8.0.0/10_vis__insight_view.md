@@ -81,6 +81,8 @@ clearInsightViewCaches();
 | locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | config  | false | [IChartConfig](15_props__chart_config.md) | The chart configuration object |
 | filters | false | [IFilter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
+| backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
+| workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
 | drillableItems | false | [IDrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable.|
 | onDrill | false | [IDrillEventCallback](15_props__on_drill.md) | The drilling event catcher. Called when drilling happens. |
 | onError | false | function | A custom error handler. Called with the argument containing the state and original error message, for example, `{ status:ErrorStates.BAD_REQUEST,error: {...} }`. See the [full list of error states](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/errors/GoodDataSdkError.ts). Defaults to `console.error`.|

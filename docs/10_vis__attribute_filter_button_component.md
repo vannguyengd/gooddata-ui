@@ -19,7 +19,7 @@ To implement the component, choose one of the following methods:
 Optionally, you can define what attribute values should be selected in the filter by default.
 
 > **When implementing the Attribute Filter Button component, consider the following:**:
-> 
+>
 > - The GoodData platform supports only filters with attribute elements defined by their URIs.
 > - GoodData.CN supports filters with attribute elements defined by their `primary key` that is equal to the title of the respective element.
 
@@ -125,6 +125,8 @@ You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_
 | parentFilters | false | AttributeFiltersOrPlaceholders[] | An array of parent attribute filter definitions |
 | connectToPlaceholder | false | IPlaceholder<IAttributeFilter> | The [visualization definition placeholder](30_tips__placeholders.md) used to get and set the value of the attribute filter |
 | parentFilterOverAttribute | false | ObjRef &#124; Function | The reference to the parent filter attribute over which the available options are reduced, or the function called for every parent filter that returns such reference for the given parent filter |
+| backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
+| workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
 | locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | title | false | string | A custom label to show on the dropdown icon |
 | FilterError | false | Component | A component to be rendered if component runs into an error |

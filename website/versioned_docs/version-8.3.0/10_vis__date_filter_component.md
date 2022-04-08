@@ -102,6 +102,8 @@ export class DateFilterComponentExample extends Component {
 | customFilterName | false | string | A custom filter label |
 | dateFilterMode | true | string | Filter mode; can be `readonly`, `hidden`, or `active` |
 | dateFormat | false | string | Date format. Defaults to `MM/dd/yyyy`. For the supported values, see the [date-fns library](https://date-fns.org/docs/format). |
+| backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
+| workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
 | locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | onApply | true | Function | A callback when the selection is confirmed by the user |
 | onCancel | false | Function | A callback when the selection is canceled by the user |
