@@ -59,6 +59,8 @@ const config = {
 | color | false | [IMeasure](50_custom__execution.md#measure) | The measure definition that determines color saturation of the pins |
 | filters | false | [IFilter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | config | true | [IGeoConfig](#geo-config) | The geo chart configuration object |
+| backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
+| workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | drillableItems | false | [IDrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable |
 | ErrorComponent | false | Component | A component to be rendered if this component is in error state |

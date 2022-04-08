@@ -81,6 +81,8 @@ clearInsightViewCaches();
 | locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | config  | false | [IChartConfig](15_props__chart_config.md) | The chart configuration object |
 | filters | false | [IFilter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
+| backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
+| workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
 | drillableItems | false | [IDrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable |
 | colorPalette | false | [IColorPalette](15_props__chart_config.md#custom-color-palette) | The color palette to use in the chart |
 | showTitle | false or not set | boolean, string, or function | If this property is a **boolean** and set to `true`, the title of the chart is shown as specified in the insight object itself. If this property is a **string**, set its value to the title of the chart to be shown (the string must not be empty). If this property is a **function**, implement it so that it takes the loaded insight object and return the modified title as a string to show it as the chart title. |

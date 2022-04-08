@@ -418,6 +418,8 @@ const config = {
 | config | false | [IPivotTableConfig](#configuration-menu) | The configuration object |
 | sortBy | false | [ISortItem[]](50_custom__result.md#sorting) | An array of sort definitions |
 | groupRows | false | boolean |  If `false`, [grouping of the same values in attribute columns](#grouping) is disabled. The default is `true` (grouping enabled). |
+| backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
+| workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
 | locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/tree/master/libs/sdk-ui/src/base/localization/bundles). |
 | drillableItems | false | [IDrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable |
 | ErrorComponent | false | Component | A component to be rendered if this component is in error state (see [ErrorComponent](15_props__error_component.md)) |
