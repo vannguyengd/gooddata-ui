@@ -8,6 +8,7 @@ id: support_options
 Feeling stuck? There are several ways to get help with building your app.
 
 ## Follow the community
+* Ask questions on our [Slack](https://www.gooddata.com/slack/) in `gooddata-ui` channel.
 * Ask questions at the [Stack Overflow](https://stackoverflow.com/questions/tagged/gooddata) forum.
 * Submit issues on [Github](https://github.com/gooddata/gooddata-ui-sdk).
 * Follow [@gooddata_dev](https://twitter.com/gooddata_dev) on Twitter.
