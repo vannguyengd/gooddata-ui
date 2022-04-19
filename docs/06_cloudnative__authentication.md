@@ -14,7 +14,7 @@ possible to use this type of authentication in the UI applications, it can lead 
 unintentionally your token to someone else. We strongly recommend to use [context deferred authentication](#context-deferred-authentication) 
 for UI applications.
 
-For information about how to acquire you API Token, see [generating API Token](06_cloudnative__generating_token).
+To create and manage your tokens, navigate to `<your-gooddata-cn-domain>/tokens`.
 
 ## Context deferred authentication
 
