@@ -268,6 +268,62 @@ const customWidget = newCustomWidget("myWidget1", "myCustomWidget", {
 
 To interact with the dashboard from within a custom widget, [dispatch commands](18_dashboard_component.md#commands) from the Model Command API. For more details, see the [example](https://gdui-examples.herokuapp.com/dashboard/dispatch-dashboard-command-hook).
 
+#### Prepare custom widget for PDF exports
+
+If you are loading some asynchronous data for your custom widget / visualization (either via the [hooks mentioned above](#calculate-data-for-a-custom-widget) or your own HTTP requests),
+then you must inform the dashboard via the `useDashboardAsyncRender` hook to ensure that the widget renders correctly during the export to PDF.
+Please note that it may take up to 1 minute for additional data to load. After this time, the dashboard will be exported anyway.
+The following example demonstrates how to do it with a custom insight widget.
+
+```javascript
+import React from "react";
+import { LoadingComponent, ErrorComponent } from "@gooddata/sdk-ui";
+import {
+    IDashboardInsightProps,
+    useDashboardAsyncRender,
+    useInsightWidgetDataView,
+} from "@gooddata/sdk-ui-dashboard";
+
+function MyCustomInsight(props: IDashboardInsightProps): JSX.Element {
+    // Note that the "myCustomWidget" identifier must be unique for each single rendered component
+    const { onRequestAsyncRender, onResolveAsyncRender } = useDashboardAsyncRender("myCustomWidget");
+
+    const { result, status } = useInsightWidgetDataView({
+        insightWidget: props.widget,
+        onLoading: () => {
+            // Register widget for asynchronous rendering
+            onRequestAsyncRender();
+        },
+        onSuccess: () => {
+            // Inform the dashboard, that the widget is rendered
+            onResolveAsyncRender()
+        },
+        onError: () => {
+            // Inform the dashboard, that the widget is rendered
+            onResolveAsyncRender();
+        }
+    })
+
+    if (status === "loading" || status === "pending") {
+        return <LoadingComponent />
+    }
+
+    if (status === "error") {
+        return <ErrorComponent />
+    }
+
+    return (
+        // Do something with the data
+        <pre>
+            {JSON.stringify(result!.data().series().toArray(), null, 4)}
+        </pre>
+    )
+}
+
+```
+
+This mechanism is important not only for exports, but also to ensure that the `GDC.DASH/EVT.RENDER.RESOLVED` event is fired at the right time (after the dashboard is fully rendered). 
+
 ### Customize the Filter bar
 
 Call the `filterBar()` method on the customization API to get the API through which you can customize how the Filter bar will be rendered on your dashboard. 
