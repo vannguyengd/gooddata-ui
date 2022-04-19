@@ -102,7 +102,7 @@ The `@gooddata/catalog-export` tool can work on top of either the GoodData platf
     }
     ```
 
-The tool uses Bearer token authentication when communicating with your GoodData.CN installation. For more information about how to obtain API tokens, see the [GoodData.CN documentation](https://www.gooddata.com/developers/cloud-native/doc/1.7/administration/auth/user-token/).
+The tool uses Bearer token authentication when communicating with your GoodData.CN installation. For more information about how to obtain API tokens, see the [GoodData.CN authentication page](06_cloudnative__authentication.md#api-token-authentication).
 
 Once you have a valid API token, set it into an exported `TIGER_API_TOKEN` variable:
 

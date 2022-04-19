@@ -77,10 +77,6 @@
         "title": "GoodData.CN authentication",
         "sidebar_label": "GoodData.CN authentication"
       },
-      "cloudnative_generating_auth_token": {
-        "title": "Generating authentication token",
-        "sidebar_label": "Generating authentication token"
-      },
       "cloudnative_getting_started": {
         "title": "Getting started",
         "sidebar_label": "Getting started"
