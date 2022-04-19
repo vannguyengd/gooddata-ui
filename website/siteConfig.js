@@ -79,7 +79,8 @@ const siteConfig = {
     '/gooddata-ui/js/resizeRoadmap.js',
     'https://www.gooddata.com/js/vendors/jquery.min.js',
     'https://www.gooddata.com/learn-assets/js/footer-plugin.js',
-    '/gooddata-ui/js/footer.js'
+    '/gooddata-ui/js/footer.js',
+    '/gooddata-ui/js/scrollToSelected.js'
   ],
   stylesheets: [
     'https://www.gooddata.com/learn-assets/css/Footer.css'
