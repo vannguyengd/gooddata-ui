@@ -270,10 +270,10 @@ To interact with the dashboard from within a custom widget, [dispatch commands](
 
 #### Prepare custom widget for PDF exports
 
-If you are loading some asynchronous data for your custom widget / visualization (either via [hooks mentioned above](#calculate-data-for-a-custom-widget) or your own HTTP requests),
-then you must inform the dashboard about it via `useDashboardAsyncRender` hook to ensure that the widget renders correctly during export to PDF.
-Please note that it may take a maximum of 1 minute for additional data to load, after this time, dashboard will be exported anyway.
-The following example demonstrates how to do it in implementation of the custom insight widget.
+If you are loading some asynchronous data for your custom widget / visualization (either via the [hooks mentioned above](#calculate-data-for-a-custom-widget) or your own HTTP requests),
+then you must inform the dashboard via the `useDashboardAsyncRender` hook to ensure that the widget renders correctly during the export to PDF.
+Please note that it may take up to 1 minute for additional data to load. After this time, the dashboard will be exported anyway.
+The following example demonstrates how to do it with a custom insight widget.
 
 ```javascript
 import React from "react";
@@ -322,7 +322,7 @@ function MyCustomInsight(props: IDashboardInsightProps): JSX.Element {
 
 ```
 
-This mechanism is important not only for exports, but also for ensuring that the `GDC.DASH/EVT.RENDER.RESOLVED` event is fired at the right time (when the dashboard is fully rendered). 
+This mechanism is important not only for exports, but also to ensure that the `GDC.DASH/EVT.RENDER.RESOLVED` event is fired at the right time (after the dashboard is fully rendered). 
 
 ### Customize the Filter bar
 
