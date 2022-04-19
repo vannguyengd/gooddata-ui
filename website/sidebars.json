@@ -13,6 +13,7 @@
             "roadmap"
         ],
         "Getting Started": [
+            "quickstart",
             "create_new_application",
             "understand_execution_model",
             "export_catalog",

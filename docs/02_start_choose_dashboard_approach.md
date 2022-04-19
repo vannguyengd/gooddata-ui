@@ -32,6 +32,7 @@ With the KPI Dashboards, you have the following options:
 ### Embed a KPI Dashboard via an iframe
 
 Embedding a KPI Dashboard via an iframe allows you to easily integrate the KPI Dashboard in your application or an HTML page.
+For more information, see [Embed Dashboards](https://help.gooddata.com/pages/viewpage.action?pageId=81962320).
 
 **Advantages:**
 - Basic customization options via query parameters (for example, hide the filter bar)

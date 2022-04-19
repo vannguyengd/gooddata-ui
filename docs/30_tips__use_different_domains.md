@@ -7,7 +7,7 @@ id: ht_render_visualization_from_different_domain
 
 Sometimes, you need to render visualizations from different workspaces and different domains on one page. For example, you might be creating a dashboard with a sales overview for different products, or you want to use a product from a different domain to benchmark products in your current domain.
 
-Every GoodData.UI instance is connected to a specific domain. To use multiple domains in the same application, create multiple GoodData.UI instances and pass them to your components. Every component imported from `@gooddata/react-components` contains an optional `sdk` property, by which you can specify the component that will fetch data.
+Every GoodData.UI backend instance is connected to a specific domain. To use multiple domains in the same application, create multiple GoodData.UI backend instances and pass them to your components. Every component imported from `@gooddata/sdk-ui-*` contains an optional `backend` property, by which you can specify the component that will fetch data.
 
 ## Example
 

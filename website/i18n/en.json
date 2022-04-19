@@ -65,6 +65,10 @@
         "title": "Integrate into an Existing Application",
         "sidebar_label": "Integrate into an Existing Application"
       },
+      "quickstart": {
+        "title": "Start with GoodData.UI",
+        "sidebar_label": "Start with GoodData.UI"
+      },
       "create_new_application": {
         "title": "Create Your First Application Using Accelerator Toolkit",
         "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
