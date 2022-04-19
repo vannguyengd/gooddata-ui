@@ -73,7 +73,8 @@
       "version-8.7.0-dashboard_plugins",
       "version-8.7.0-dashboard_plugins_api",
       "version-8.7.0-dashboard_embedding",
-      "version-8.7.0-dashboard_component"
+      "version-8.7.0-dashboard_component",
+      "version-8.7.0-upgrade_dashboard_plugins"
     ],
     "Execution Model": [
       "version-8.7.0-execution_model",

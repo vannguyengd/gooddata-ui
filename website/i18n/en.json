@@ -1953,6 +1953,10 @@
         "title": "Dashboard Plugin API",
         "sidebar_label": "Dashboard Plugin API"
       },
+      "version-8.7.0/version-8.7.0-upgrade_dashboard_plugins": {
+        "title": "Upgrade Dashboard Plugins",
+        "sidebar_label": "Upgrade Dashboard Plugins"
+      },
       "version-8.7.0/version-8.7.0-dashboard_plugins": {
         "title": "Dashboard Plugins",
         "sidebar_label": "Dashboard Plugins"
