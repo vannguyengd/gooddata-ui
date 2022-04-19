@@ -322,8 +322,8 @@
         "sidebar_label": "Execute an API Call"
       },
       "create_new_visualization": {
-        "title": "Create a Custom Visualization",
-        "sidebar_label": "Create a Custom Visualization"
+        "title": "Start With Custom Visualizations",
+        "sidebar_label": "Start With Custom Visualizations"
       },
       "custom_execution": {
         "title": "Custom Executions",
@@ -2172,9 +2172,9 @@
       "Integration with GoodData.CN": "Integration with GoodData.CN",
       "Visual Components": "Visual Components",
       "Properties": "Properties",
-      "Dashboard": "Dashboard",
-      "Execution Model": "Execution Model",
       "Custom Visualizations": "Custom Visualizations",
+      "Execution Model": "Execution Model",
+      "Dashboard": "Dashboard",
       "Development Tips": "Development Tips",
       "Support": "Support",
       "Miscellaneous Features": "Miscellaneous Features",

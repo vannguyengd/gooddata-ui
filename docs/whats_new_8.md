@@ -134,7 +134,7 @@ There is way more in the data series and slices than the example shows. The impo
 can iterate through the data in any direction and that all the essential metadata about each data point is
 readily available.
 
-For more information, see [Create a Custom Visualization](50_custom__create_new_visualization.md).
+For more information, see [Start With Custom Visualizations](50_custom__create_new_visualization.md).
 
 ## Improved React Integration
 We have created a couple of React Context implementations that allow you to easily set a backend and workspace

@@ -71,6 +71,16 @@
             "on_legend_ready",
             "data_sampling"
         ],
+        "Custom Visualizations": [
+            "create_new_visualization",
+            "custom_execution",
+            "result_specification"
+        ],
+        "Execution Model": [
+            "execution_model",
+            "time_over_time_comparison",
+            "arithmetic_measure"
+        ],
         "Dashboard": [
             "dashboard_intro",
             "dashboard_plugins",
@@ -78,16 +88,6 @@
             "dashboard_embedding",
             "dashboard_component",
             "upgrade_dashboard_plugins"
-        ],
-        "Execution Model": [
-            "execution_model",
-            "time_over_time_comparison",
-            "arithmetic_measure"
-        ],
-        "Custom Visualizations": [
-            "create_new_visualization",
-            "custom_execution",
-            "result_specification"
         ],
         "Development Tips": [
             "ht_embed_visualization",
