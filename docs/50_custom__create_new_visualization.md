@@ -1,65 +1,55 @@
 ---
-title: Create a Custom Visualization
-sidebar_label: Create a Custom Visualization
+title: Start With Custom Visualizations
+sidebar_label: Start With Custom Visualizations
 copyright: (C) 2007-2018 GoodData Corporation
 id: create_new_visualization
 ---
 
 With GoodData.UI, you can create a new, customized visual components to address your specific analytics needs.
 
-Your component code must be wrapped within the Execute component. This component lets you conveniently specify
-the data to render and then access the results:
+> Before you start with creation of the custom visualizations, ensure that you are already familiar with the [execution model](understand_execution_model).
+> We also recommend to use the [export catalog](export_catalog) tool for more natural and readable way to specify the result data.
 
-```jsx
-import { Execute } from "@gooddata/sdk-ui";
+## Get custom visualization data
+To specify and obtain the custom visualization data, you can use the following React [hooks](#react-hooks) and [components](#react-components), or [execution API](#execution-api).
 
-function LoadingComponent() {
-    return <div>Loading data...</div>;
-}
+Components and hooks have similar API(s) and capabilities, so use your preferred approach.
+However, for more complex scenarios (for example, when one execution depends on another), we recommend using hooks to avoid unnecessary nesting of the components.
 
-function ErrorComponent() {
-    return <div>There was an error</div>;
-}
+### React hooks
 
-function CustomVisualization() {
-    return (
-        <Execute
-            seriesBy={measuresAndAttributes}
-            slicesBy={attributes}
-            onLoadingChanged={(e) => {}}
-            onError={(e) => {}}
-            LoadingComponent={LoadingComponent}
-            ErrorComponent={ErrorComponent}
-        >
-            {(execution) => {
-                const { result } = execution;
-                // access result by slices (rows);
-                const slices = result?.data().slices().toArray();
+- `useExecutionDataView` hook allows you to specify and obtain the result data for your custom visualizations with convenient API.
+    You can specify data to obtain with [series and slices](#access-custom-visualization-data) (recommended) or [custom execution](custom_execution).
+    It fetches the result data for you and informs you about the loading status or error if there are any.
+    See example usage of this hook in the [live examples](https://gdui-examples.herokuapp.com/execute/use-execution-data-view-hook) gallery.
 
-                return (
-                    <div>
-                        {slices?.map((slice, idx) => {
-                            // for each slice (row), print the header and then the actual formatted data points
-                            return (
-                                <div key={idx}>
-                                    {slice.sliceTitles().join(">")} -{" "}
-                                    {slice
-                                        .dataPoints()
-                                        .map((dp) => dp.formattedValue())}
-                                </div>
-                            );
-                        })}
-                    </div>
-                );
-            }}
-        </Execute>
-    );
-}
-```
+- `useInsightDataView` hook allows you to fetch data for an existing insight created in [Analytical Designer](https://help.gooddata.com/pages/viewpage.action?pageId=86794494) and render it with your custom visualization.
+    It fetches the result data for you and informs you about the loading status or error if there are any.
+    It is basically [InsightView](insight-view), but without the view part.
+    See example usage of this hook in the [live examples](https://gdui-examples.herokuapp.com/execute/use-insight-data-view-hook) gallery.
 
-## Data series and data slices
+### React components
+- `Execute` is a component alternative to the `useExecutionDataView` hook. You can specify data to obtain with [series and slices](#access-custom-visualization-data). 
+    It fetches the result data for you and informs you about the loading status or error if there are any.
+    See example usage of this component in the [live examples](https://gdui-examples.herokuapp.com/execute/execute-component) gallery.
 
-The concept of data series and data slices used by the Execute component is best explained on a couple of real-life examples.
+- `RawExecute` is a component alternative to `useExecutionDataView` hook. You can specify data to obtain with [custom execution](custom_execution).
+    It fetches the result data for you and informs you about the loading status or error if there are any.
+    See example usage of this component in the [live examples](https://gdui-examples.herokuapp.com/execute/raw-execute-component) gallery.
+
+- `ExecuteInsight` is a component alternative to `useInsightDataView` hook.
+    It allows you to fetch data for an existing insight created in [Analytical Designer](https://help.gooddata.com/pages/viewpage.action?pageId=86794494) and render it with your custom visualization.
+    It fetches the result data for you and informs you about the loading status or error if there are any.
+    It is basically [InsightView](insight-view), but without the view part.
+    See example usage of this component in the [live examples](https://gdui-examples.herokuapp.com/execute/execute-insight-component) gallery.
+
+### Execution API
+
+If you cannot or do not want to use hooks and components mentioned above, you can obtain visualization data directly from the `@gooddata/sdk-backend-*` instance. Read more details about [custom executions](custom_execution).
+
+## Access custom visualization data
+
+The concept of data series and data slices used by the execution hooks and components is best explained in some real-life examples.
 
 ### Tabular data
 
@@ -82,7 +72,6 @@ In this scenario, the data series are the measures `M1`, `M2`, and `M3`, and the
 
 ## Working with the results
 
-Once the Execute component reads the results from the Analytical Backend, it will pass the result to your custom function.
 The instance of the result contains several methods for convenient data access.
 
 -   You can access the result by data series by calling the `result.data().series()`.

@@ -73,7 +73,7 @@ The visual components may not be the best choice in the following situations:
 ## Custom visualizations
 
 If neither the [InsightView component](#insightview-component) nor the [visual components](#visual-components) satisfy your needs, GoodData.UI allows you to create your own visualization relatively easy.
-This is the most involved method of data visualization, but it offers the most flexibility. To get started, see [Create a Custom Visualization](50_custom__create_new_visualization.md).
+This is the most involved method of data visualization that offers the most flexibility. To get started, see [Start With Custom Visualizations](50_custom__create_new_visualization.md).
 
 ### When to use
 
