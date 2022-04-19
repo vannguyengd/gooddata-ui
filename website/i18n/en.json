@@ -237,9 +237,9 @@
         "title": "Dashboard Plugin API",
         "sidebar_label": "Dashboard Plugin API"
       },
-      "dashboard_plugins_upgrade": {
-        "title": "Dashboard Plugins upgrade guide",
-        "sidebar_label": "Dashboard Plugins upgrade guide"
+      "upgrade_dashboard_plugins": {
+        "title": "Upgrade Dashboard Plugins",
+        "sidebar_label": "Upgrade Dashboard Plugins"
       },
       "dashboard_plugins": {
         "title": "Dashboard Plugins",

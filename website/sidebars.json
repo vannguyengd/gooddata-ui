@@ -76,7 +76,7 @@
             "dashboard_plugins_api",
             "dashboard_embedding",
             "dashboard_component",
-            "dashboard_plugins_upgrade"
+            "upgrade_dashboard_plugins"
         ],
         "Execution Model": [
             "execution_model",
