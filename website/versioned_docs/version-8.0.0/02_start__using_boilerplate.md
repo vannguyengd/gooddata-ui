@@ -23,4 +23,4 @@ This is what is going to happen when you run `create-gooddata-react-app`:
 
 To start, go to [https://github.com/gooddata/gooddata-create-gooddata-react-app](https://github.com/gooddata/gooddata-create-gooddata-react-app), and follow the instructions in the README file.
 
-_Note: This tutorial assumes that you already have an existing GoodData account. If you don’t have a GoodData account yet, you can create one for free at [https://www.gooddata.com/free](https://www.gooddata.com/free). Please make sure that you have your GoodData account ready before following this tutorial._
+_Note: This tutorial assumes that you already have an existing GoodData account. If you don’t have a GoodData account yet, you can create one for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/). Please make sure that you have your GoodData account ready before following this tutorial._

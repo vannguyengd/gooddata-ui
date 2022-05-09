@@ -25,4 +25,4 @@ A typical GoodData.UI application creates and configures an instance of the Good
 
 ## Get started with the GoodData platform Freemium plan
 
-You can create a GoodData platform account for free at [https://www.gooddata.com/free](https://www.gooddata.com/free). Your account will come with a demo workspace and data. You can spin up a new application on top of this workspace in less than a minute using our [accelerator toolkit](02_start__using_boilerplate.md), and try GoodData.UI yourself.
+You can create a GoodData platform account for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/). Your account will come with a demo workspace and data. You can spin up a new application on top of this workspace in less than a minute using our [accelerator toolkit](02_start__using_boilerplate.md), and try GoodData.UI yourself.

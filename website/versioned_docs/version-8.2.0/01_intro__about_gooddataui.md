@@ -51,5 +51,5 @@ Because Internet Explorer 11 does not support [CSS variables](https://developer.
 
 To use GoodData.UI, you must have an account on the GoodData platform. For basic information about the GoodData platform, see [GoodData Platform Introduction](01_intro__platform_intro.md).
 
-If you want to try out GoodData.UI, we recommend that you sign up for a free account at [https://www.gooddata.com/free](https://www.gooddata.com/free).
+If you want to try out GoodData.UI, we recommend that you sign up for a free account at [https://www.gooddata.com/free/](https://www.gooddata.com/free/).
 

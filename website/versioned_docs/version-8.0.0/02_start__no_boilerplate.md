@@ -14,7 +14,7 @@ After you complete this tutorial, you will be able to display various measures a
 
 We use the `yarn` package manager in this tutorial. To install it, review its [documentation](https://yarnpkg.com/lang/en/docs/install/).
 
-**NOTE:** This tutorial assumes that you already have an existing GoodData account. If you do not have a GoodData account yet, create one for free at [https://www.gooddata.com/free](https://www.gooddata.com/free).
+**NOTE:** This tutorial assumes that you already have an existing GoodData account. If you do not have a GoodData account yet, create one for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/).
 
 **TIP:** Instead of creating the application from scratch, you can use [GoodData `create-gooddata-react-app` and Accelerator Toolkit](ht_create_your_first_visualization_toolkit), which will guide you through the process of creating the application step by step.
 
