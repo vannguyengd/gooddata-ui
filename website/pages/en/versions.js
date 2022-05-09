@@ -22,7 +22,7 @@ const versions = require(CWD + '/versions.json');
 
 // UPDATE THESE WHEN A NEW MAJOR IS RELEASED
 const currentVersionSemver = ">=8.0.0";
-const lastSupportedPrevious = semverMaximal(versions, "^7.0.0")
+const lastSupportedPrevious = "none"; // replace by semverMaximal(versions, "^8.0.0"); when SDK9 is released
 
 const sdkUiSemver = ">=8";
 const apiReferenceSemver = ">=8.5.0";

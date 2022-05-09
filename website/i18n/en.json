@@ -33,10 +33,6 @@
         "title": "Supported Versions and Compatibility",
         "sidebar_label": "Supported Versions and Compatibility"
       },
-      "choose_dashboard_approach": {
-        "title": "Choose the Most Appropriate Method for Building or Embedding Dashboards",
-        "sidebar_label": "Choose the Most Appropriate Method for Building or Embedding Dashboards"
-      },
       "api_maturity": {
         "title": "API Maturity",
         "sidebar_label": "API Maturity"
@@ -72,6 +68,10 @@
       "create_new_application": {
         "title": "Create Your First Application Using Accelerator Toolkit",
         "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
+      },
+      "choose_dashboard_approach": {
+        "title": "Choose the Most Appropriate Method for Building or Embedding Dashboards",
+        "sidebar_label": "Choose the Most Appropriate Method for Building or Embedding Dashboards"
       },
       "cloudnative_authentication": {
         "title": "GoodData.CN authentication",
