@@ -222,7 +222,7 @@ Would you like to know more? Check out the following resources:
 ## Getting started
 
 And if you just want to get started, you can do that in just three simple steps:
-1.  Get a free GoodData account at [www.gooddata.com/free](https://www.gooddata.com/free) (unless you are an existing GoodData customer).
+1.  Get a free GoodData account at [www.gooddata.com/free](https://www.gooddata.com/free/) (unless you are an existing GoodData customer).
 2.  Type `npx @gooddata/create-gooddata-react-app my-app` in the terminal window.
 3.  In the newly created folder, type `yarn start` to see the automatically generated skeleton of your first analytical web application with additional instructions.
 
