@@ -13,6 +13,10 @@ The DateFilter options define the category of a date filter and a set of the dat
 > - `availableGranularities` in `relativeForm` has been removed. Use the `availableGranularities` from the Date Filter component instead.
 > - Values of Relative Form filters are not validated against the [platform limits for dates](https://support.gooddata.com/hc/en-us/articles/215858108#anchor_8). If the limit is hit, no data is shown in the filter.
 >   - _This issue may be fixed in one of the future releases._
+                                              
+> The GoodData platform supports filtering by date only. This applies to [absolute form](#absolute-form), [relative form](#relative-form), [absolute preset](#absolute-preset), and [relative preset](#relative-preset).
+> 
+> GoodData.CN supports also filtering by hours and minutes. 
 
 ## Types of DateFilter options
 
@@ -52,14 +56,14 @@ An All time filter does not filter any dates.
 ### Absolute Form
 An Absolute Form filter restricts data based on a explicitly defined static period (for example, "from 2019-08-10 to 2019-08-15").
 
-| Name | Required? | Type | Description |
-| :--- | :--- | :--- | :--- |
-| localIdentifier | true | string | The unique identifier of the filter option |
-| type | true | string | Must be set to `absoluteForm` |
-| name | true | string | The filter label |
-| visible | true | boolean | Specifies whether to display (`true`) or hide (`false`) the filter option |
-| from | false | string | The beginning of the period; the default value formatted as `YYYY-MM-DD`; must be specified if the Absolute Form filter is set as the default filter option |
-| to | false | string | The end of the period; the default value formatted as `YYYY-MM-DD`; must be specified if the Absolute Form filter is set as the default filter option |
+| Name | Required? | Type | Description                                                                                                                                                                                                                |
+| :--- | :--- | :--- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| localIdentifier | true | string | The unique identifier of the filter option                                                                                                                                                                                 |
+| type | true | string | Must be set to `absoluteForm`                                                                                                                                                                                              |
+| name | true | string | The filter label                                                                                                                                                                                                           |
+| visible | true | boolean | Specifies whether to display (`true`) or hide (`false`) the filter option                                                                                                                                                  |
+| from | false | string | The beginning of the period; the default value formatted as `YYYY-MM-DD` (or `YYYY-MM-DD HH:mm` if the platform supports filtering by time); must be specified if the Absolute Form filter is set as the default filter option |
+| to | false | string | The end of the period; the default value formatted as `YYYY-MM-DD` (or `YYYY-MM-DD HH:mm` if the platform supports filtering by time); must be specified if the Absolute Form filter is set as the default filter option                                                                      |
 
 ### Relative Form
 A Relative Form filter restricts data based on a relative period (for example, "from 2 months ago to 1 month ago").
@@ -83,8 +87,8 @@ An Absolute Preset filter is a static period filter with the preconfigured `from
 | type | true | string | Must be set to `absolutePreset` |
 | name | true | string | The filter label |
 | visible | true | boolean | Specifies whether to display (`true`) or hide (`false`) the filter option |
-| from | true | string | The beginning of the period formatted as `YYYY-MM-DD` |
-| to | true | string | The end of the period formatted as `YYYY-MM-DD` |
+| from | true | string | The beginning of the period formatted as `YYYY-MM-DD` (or `YYYY-MM-DD HH:mm` if the platform supports filtering by time) |
+| to | true | string | The end of the period formatted as `YYYY-MM-DD` (or `YYYY-MM-DD HH:mm` if the platform supports filtering by time) |
 
 ### Relative Preset
 A Relative Preset filter is a relative period filter with a preconfigured `from` and `to` range. The range cannot be changed via the UI.
@@ -103,6 +107,8 @@ A Relative Preset filter is a relative period filter with a preconfigured `from`
 Date filter granularity define periods in relative date filters.
 
 Granularity can be set in days, weeks, months, quarters, and years. Granularity is defined as a `string` value in the following format:
+- `"GDC.time.minute" // usable only if the target platform supports filtering by time`
+- `"GDC.time.hour" // usable only if the target platform supports filtering by time`
 - `"GDC.time.date"`
  - `"GDC.time.week_us"`
  - `"GDC.time.month"`
