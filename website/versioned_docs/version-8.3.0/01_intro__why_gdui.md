@@ -136,8 +136,6 @@ It’s simple, it maps well to your use cases, it works.
 
 _Note: On the GoodData platform and GoodData.CN, the AFM query pattern works even with non-trivial dimensional models with multiple fact tables, conformed dimensions, and even many-to-many relationships._
 
-_More information about our analytics engine and semantic layer is available from the [developer portal](https://developer.gooddata.com/analytics)._
-
 ### Interactivity
 
 When you think about interactivity, the AFM interface plays with React.js even better.
@@ -191,8 +189,6 @@ And once we have this `<Execute />` component then adding it to the public API o
 If you are still reading, you can probably write React code and you can appreciate the flexibility of a good React.js library.
 
 On the other hand, you usually want to start with something simple. And for quick iterations over early prototypes, writing code may look like an overkill, especially if a non-technical user can create data visualization using a point-and-click user interface.
-
-Especially if the user interface is [as easy as this](https://developer.gooddata.com/assets/Images/f13aa4ea68c25b095fd77de672e82e3e.webm).
 
 You don’t want to type `<BarChart />` every time your UI designer creates a bar chart. It is more natural to grab the identifier of whatever your point-and-click colleague created. Maybe with something like this:
 
