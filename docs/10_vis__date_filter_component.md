@@ -22,6 +22,13 @@ In the Date Filter component, you can optionally define the following:
     To define the date format, use any value supported by the [date-fns](https://date-fns.org/docs/format) library.
     ![DateFilter Component with International Date Format](assets/date_filter_international_date_format.png "DateFilter Component with dates are displayed in desired formats")
 
+* Support for time filtering.
+
+    Only available for the GoodData.CN platform.
+
+
+![DateFilter Component](assets/date_filter_time.png "DateFilter Component with time support")
+
 ## Example
 
 In the following example, attribute values are listed and the ```onApply``` callback function is triggered when a user clicks **Apply** to confirm the selection.
@@ -103,6 +110,7 @@ export class DateFilterComponentExample extends Component {
 | dateFormat | false | string | Date format. Defaults to `MM/dd/yyyy`. For the supported values, see the [date-fns library](https://date-fns.org/docs/format). |
 | backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
 | workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
+| isTimeForAbsoluteRangeEnabled | false | boolean | Determine whether the static period form allows the user to set also the time of the date range or only the date.                                                                                                                          |
 | locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | onApply | true | Function | A callback when the selection is confirmed by the user |
 | onCancel | false | Function | A callback when the selection is canceled by the user |
