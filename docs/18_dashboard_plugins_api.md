@@ -133,10 +133,12 @@ on your dashboard will be rendered.
              if (some_condition_to_prevent_decoration) {
                  return undefined;
              }
+             
+             // Make sure you call this outside the component render function,
+             // otherwise a new instance of the decorated component is created on each re-render.
+             const Decorated = next(insight, widget);
 
              function MyCustomDecorator(props) {
-                  const Decorated = next(insight, widget);
-
                   return (
                       <div>
                           <p>My Custom Decoration</p>
