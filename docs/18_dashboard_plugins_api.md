@@ -274,7 +274,7 @@ To interact with the dashboard from within a custom widget, [dispatch commands](
 
 If you are loading some asynchronous data for your custom widget / visualization (either via the [hooks mentioned above](#calculate-data-for-a-custom-widget) or your own HTTP requests),
 then you must inform the dashboard via the `useDashboardAsyncRender` hook to ensure that the widget renders correctly during the export to PDF.
-Please note that it may take up to 1 minute for additional data to load. After this time, the dashboard will be exported anyway.
+Please note that it may take up to 20 minutes for additional data to load. After this time, the dashboard will be exported anyway.
 The following example demonstrates how to do it with a custom insight widget.
 
 ```javascript
