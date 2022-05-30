@@ -54,9 +54,9 @@ npm install
 yarn install
 ```
 
-### Step 2. Check for updates in the config files
+### Step 2. Check for updates in the config and harness files
 
-There may also be some changes needed in some of the configuration files. To get the appropriate version of the files, use the following URL where the `vX.Y.Z` is the version you are upgrading to:
+There may also be some changes needed in some of the configuration files and files in the harness folder. To get the appropriate version of the files, use the following URL where the `vX.Y.Z` is the version you are upgrading to:
 
 ```bash
 https://github.com/gooddata/gooddata-ui-sdk/blob/vX.Y.Z/tools/dashboard-plugin-template
