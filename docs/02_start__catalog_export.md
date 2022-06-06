@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: export_catalog
 ---
 
-GoodData.UI visual components render data stored in your GoodData platform, GoodData.CN or GoodData Cloud workspaces.
+GoodData.UI visual components render data stored in your GoodData platform, GoodData Cloud or GoodData.CN workspaces.
 Your application specifies what data to render by referencing the Logical Data Model (LDM) objects: attributes,
 display forms (also known as labels), facts, and measures.
 
@@ -86,7 +86,7 @@ This is how it works:
 
 ### Using @gooddata/catalog-export with GoodData Cloud and GoodData.CN
 
-The `@gooddata/catalog-export` tool can work on top of either the GoodData platform, GoodData.CN or GoodData Cloud. By default, the tool assumes it is connecting to the GoodData platform. To switch to GoodData.CN or GoodData Cloud, use either the `backend` argument on the command line or the `backend` parameter in the `.gdcatalogrc` configuration file:
+The `@gooddata/catalog-export` tool can work on top of either the GoodData platform, GoodData Cloud or GoodData.CN. By default, the tool assumes it is connecting to the GoodData platform. To switch to GoodData Cloud or GoodData.CN, use either the `backend` argument on the command line or the `backend` parameter in the `.gdcatalogrc` configuration file:
 
 - Command line:
 
@@ -102,7 +102,7 @@ The `@gooddata/catalog-export` tool can work on top of either the GoodData platf
     }
     ```
 
-The tool uses Bearer token authentication when communicating with your GoodData.CN installation or your GoodData Cloud instance. For more information about how to obtain API tokens, see the [GoodData Cloud and GoodData.CN authentication page](06_cloudnative__authentication.md#api-token-authentication).
+The tool uses Bearer token authentication when communicating with your GoodData Cloud instance or your GoodData.CN installation. For more information about how to obtain API tokens, see the [GoodData Cloud and GoodData.CN authentication page](06_cloudnative__authentication.md#api-token-authentication).
 
 Once you have a valid API token, set it into an exported `TIGER_API_TOKEN` variable:
 

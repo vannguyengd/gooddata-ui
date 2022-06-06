@@ -85,7 +85,7 @@ In the column chart:
 
 ### Where do measures and attributes come from?
 
-The GoodData platform, GoodData.CN and GoodData Cloud all implement a concept of workspaces. A workspace defines a **logical data model** (LDM)
+The GoodData platform, GoodData Cloud and GoodData.CN all implement a concept of workspaces. A workspace defines a **logical data model** (LDM)
 and is linked to the data source that contains data conforming to this LDM.
 
 The workspace LDM consists of datasets that are composed of facts and attributes. Additionally, the workspace may define
@@ -104,7 +104,7 @@ top of it.
 
 ## Attributes and measures in your application
 
-Once you have a GoodData platform, GoodData.CN or GoodData Cloud workspace that has the LDM and potentially complex MAQL measures,
+Once you have a GoodData platform, GoodData Cloud or GoodData.CN workspace that has the LDM and potentially complex MAQL measures,
 you can start building an application using GoodData.UI.
 
 The attributes, measures, filters, sorting, totals, slicing and dicing are all covered by different types of the execution model
@@ -144,7 +144,7 @@ function MyColumnChart() {
 Manually creating measures and attributes can be time-consuming, especially when your LDM is large.
 
 We have created the [`catalog-export`](02_start__catalog_export.md) tool to help with this. The tool can connect to
-either the GoodData platform, GoodData.CN or GoodData Cloud and transform the entities in the semantic layer of your
+either the GoodData platform, GoodData Cloud or GoodData.CN and transform the entities in the semantic layer of your
 workspace into code representation.
 
 The tool retrieves the LDM and complex MAQL measures from your workspace and generates a file in either JavaScript or
