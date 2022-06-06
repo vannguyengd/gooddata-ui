@@ -115,8 +115,8 @@ lead to breakage when you try to upgrade your dashboard plugin to use a newer ve
 
 ### Current limitations
 
+-  The plugins are currently not supported on GoodData Cloud.
 -  The plugins are only in effect for consumers in view mode. The plugins are not loaded in edit mode.
-
 -  GoodData does not provide hosting for your built plugins. When you build your plugin, you will have to
    host it yourself in a publicly available location that supports HTTPS.
 
@@ -140,7 +140,7 @@ The setup is different for the GoodData platform and GoodData.CN.
     This is a security measure. Only GoodData Support can add hosts to the `dashboardPluginHosts` list.
     The goal of this setting is to control from where the plugins can be loaded. This should
     be a trusted and controlled location where only privileged developers can upload plugin artifacts.
-    
+
     You can request multiple hosts to be added to the list. All hosts must run on the HTTPS protocol.
 
     >**IMPORTANT!** Never put untrusted hosts into this list. Always put the hosts that are under your organization's

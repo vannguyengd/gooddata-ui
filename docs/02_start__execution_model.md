@@ -6,7 +6,7 @@ copyright: (C) 2018-2019 GoodData Corporation
 ---
 
 Before you start building your first analytical application with GoodData.UI, take a few more minutes to understand
-the core concepts behind computing and rendering data using GoodData.UI. 
+the core concepts behind computing and rendering data using GoodData.UI.
 
 ## Overview
 
@@ -37,8 +37,8 @@ You can learn more about the lower level, non-React APIs in [Custom Executions](
 
 ### How to specify data to render
 
-At the lowest level of every data visualization in GoodData.UI is the specification of what data to calculate on the 
-backend so that it can be visualized. We call this specification the _Execution Definition_. 
+At the lowest level of every data visualization in GoodData.UI is the specification of what data to calculate on the
+backend so that it can be visualized. We call this specification the _Execution Definition_.
 
 The execution definition captures the following:
 
@@ -56,13 +56,13 @@ The visual components in GoodData.UI provide a convenience layer and shield you 
 a potentially complex execution definitions. You do not have to carefully craft the full execution definition for, let's say,
 `ColumnChart` that you place into your application.
 
-Instead, you specify what measures you are interested in, what attribute should be used to create columns and what 
-attribute should be used to stack the columns. Given this input, the visualization will craft the full execution definition 
+Instead, you specify what measures you are interested in, what attribute should be used to create columns and what
+attribute should be used to stack the columns. Given this input, the visualization will craft the full execution definition
 and drive it to obtain the data to visualize.
 
 ### Measures, attributes, and filters
 
-These are best described with an example. Imagine you are an account manager for a Franchise network. 
+These are best described with an example. Imagine you are an account manager for a Franchise network.
 You want to know the **average daily amount** of money for each **Franchise office** in the **USA**.
 
 Let's introduce the main concepts:
@@ -85,26 +85,26 @@ In the column chart:
 
 ### Where do measures and attributes come from?
 
-Both the GoodData platform and GoodData.CN implement a concept of workspaces. A workspace defines a **logical data model** (LDM)
-and is linked to the data source that contains data conforming to this LDM. 
+The GoodData platform, GoodData.CN and GoodData Cloud all implement a concept of workspaces. A workspace defines a **logical data model** (LDM)
+and is linked to the data source that contains data conforming to this LDM.
 
 The workspace LDM consists of datasets that are composed of facts and attributes. Additionally, the workspace may define
 complex measures using the powerful **Multi-Dimensional Analytical Query Language** (MAQL). These complex measures work on top
 of the facts and attributes in your LDM.
 
 The LDM and complex MAQL measures essentially form a semantic layer on top of your data. This semantic layer hides a
-lot of complexity that you may typically encounter when directly constructing SQL queries. 
+lot of complexity that you may typically encounter when directly constructing SQL queries.
 
 The semantic layer then exposes the available datasets, attributes, facts, and complex MAQL measures that you can
 use in your application to specify what data to visualize.
 
 Each of the semantic layer entities has their own identifier. When your application renders visual components, the props
-that specify measures and attributes always reference the semantic layer entity and provide additional information on 
+that specify measures and attributes always reference the semantic layer entity and provide additional information on
 top of it.
 
-## Attributes and measures in your application 
+## Attributes and measures in your application
 
-Once you have a GoodData platform or GoodData.CN workspace that has the LDM and potentially complex MAQL measures,
+Once you have a GoodData platform, GoodData.CN or GoodData Cloud workspace that has the LDM and potentially complex MAQL measures,
 you can start building an application using GoodData.UI.
 
 The attributes, measures, filters, sorting, totals, slicing and dicing are all covered by different types of the execution model
@@ -121,10 +121,10 @@ const myMeasure = newMeasure("measureIdentifier");
 const myAttribute = newAttribute("attributeDisplayFormIdentifier");
 ```
 
-Where: 
+Where:
 
 -  `measureIdentifier` is the identifier of either a fact in your LDM or a complex MAQL measure defined on top of the LDM.
-   
+
 -  `attributeLabelIdentifier` is the identifier of a display form (label) of an attribute in your LDM.
 
 Once you have an instance of the measure defined, you can use it to create a visual component:
@@ -144,12 +144,12 @@ function MyColumnChart() {
 Manually creating measures and attributes can be time-consuming, especially when your LDM is large.
 
 We have created the [`catalog-export`](02_start__catalog_export.md) tool to help with this. The tool can connect to
-either the GoodData platform or GoodData.CN and transform the entities in the semantic layer of your
+either the GoodData platform, GoodData.CN or GoodData Cloud and transform the entities in the semantic layer of your
 workspace into code representation.
 
-The tool retrieves the LDM and complex MAQL measures from your workspace and generates a file in either JavaScript or 
+The tool retrieves the LDM and complex MAQL measures from your workspace and generates a file in either JavaScript or
 TypeScript that will contain code constants for all the semantic layer entities. You can then import the definitions
-from this file and use them directly. 
+from this file and use them directly.
 
 For instance:
 

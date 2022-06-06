@@ -7,7 +7,7 @@ id: theme_provider
 
 The **Theme Provider component** allows you to customize the visual style of your dashboards by applying a theme (see [Create Custom Themes](https://help.gooddata.com/pages/viewpage.action?pageId=86794481)).
 
-To be able to use the Theme Provider component, set up the `backend` and `workspace` properties in your application (see [Connecting to a GoodData platform Analytical Backend](02_start__no_boilerplate.md#Step-3.-Set-up-Analytical-Backend-and-integrate-it-into-your-application) or [Connecting to a GoodData.CN Analytical Backend](06_cloudnative__integration.md#Step-3.-Set-up-Analytical-Backend-and-integrate-it-into-your-application)).
+To be able to use the Theme Provider component, set up the `backend` and `workspace` properties in your application (see [Connecting to a GoodData platform Analytical Backend](02_start__no_boilerplate.md#Step-3.-Set-up-Analytical-Backend-and-integrate-it-into-your-application) or [Connecting to a GoodData Cloud or GoodData.CN Analytical Backend](06_cloudnative__integration.md#Step-3.-Set-up-Analytical-Backend-and-integrate-it-into-your-application)).
 
 **NOTE:** Always use the Theme Provider component in the root of your application. A theme is applied globally to everything on a page. When you wrap one visual component with a `ThemeProvider` element, everything else will also be themed despite not being wrapped with the `ThemeProvider` element.
 

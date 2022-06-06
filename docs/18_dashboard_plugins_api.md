@@ -44,7 +44,7 @@ To allow a plugin to be reused across dashboards, you can make each link between
 additional parameters. These parameters can then be used to customize the behavior of the plugin for
 a particular dashboard.
 
-Both the GoodData platform and GoodData.CN treat parameters opaquely. Only soft-size limits of 2,048 bytes for
+The GoodData platform and GoodData.CN all treat parameters opaquely. Only soft-size limits of 2,048 bytes for
 the length of the parameter string are imposed. Otherwise, the parameters are fully under your control and responsibility.
 
 If the parameters are specified on the link between a dashboard and your plugin, the loader sends them as the
@@ -133,7 +133,7 @@ on your dashboard will be rendered.
              if (some_condition_to_prevent_decoration) {
                  return undefined;
              }
-             
+
              // Make sure you call this outside the component render function,
              // otherwise a new instance of the decorated component is created on each re-render.
              const Decorated = next(insight, widget);
@@ -324,17 +324,17 @@ function MyCustomInsight(props: IDashboardInsightProps): JSX.Element {
 
 ```
 
-This mechanism is important not only for exports, but also to ensure that the `GDC.DASH/EVT.RENDER.RESOLVED` event is fired at the right time (after the dashboard is fully rendered). 
+This mechanism is important not only for exports, but also to ensure that the `GDC.DASH/EVT.RENDER.RESOLVED` event is fired at the right time (after the dashboard is fully rendered).
 
 ### Customize the Filter bar
 
-Call the `filterBar()` method on the customization API to get the API through which you can customize how the Filter bar will be rendered on your dashboard. 
+Call the `filterBar()` method on the customization API to get the API through which you can customize how the Filter bar will be rendered on your dashboard.
 
 To change the rendering mode of the Filter bar, call the `setRenderingMode` method with one of the following parameters:
 
 -  `"default"` shows the Filter bar as usual. This is equal to when you do not call the `setRenderingMode` method at all.
 -  `"hidden"` hides the Filter bar.
-    
+
    **NOTE:** This only hides the Filter bar from the user interface. Any set filters will still be applied.
 
 ## Event handler API

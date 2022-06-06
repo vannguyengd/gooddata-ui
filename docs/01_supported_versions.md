@@ -40,6 +40,10 @@ The following table provides the lifecycle phases of GoodData.UI versions:
 | 6 | End-of-Support | November 1, 2018 | May 21, 2019 | October 8, 2020 | _Not yet defined_ | 6.3 |
 | 5 | End-of-Support | April 26, 2018 | November 1, 2018 | May 21, 2019 | _Not yet defined_ | 5.3 |
 
+## Compatibility with GoodData Cloud
+
+The first version of GoodData.UI compatible with GoodData Cloud is 8.10.0, previous versions are not compatible with GoodData Cloud.
+
 ## Compatibility with GoodData.CN
 
 The following table shows compatibility between GoodData.UI and [GoodData.CN](06_cloudnative__introduction.md).

@@ -26,7 +26,8 @@
             "platform_sso",
             "platform_cors"
         ],
-        "Integration with GoodData.CN": [
+        "Integration with GoodData Cloud and GoodData.CN": [
+            "cloud_introduction",
             "cloudnative_introduction",
             "cloudnative_getting_started",
             "cloudnative_authentication",

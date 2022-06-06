@@ -27,7 +27,7 @@ more customizations, to expand the eventing and interactivity, and to allow a dr
 Let's take a look at GoodData's solution for dashboards and explain how the Dashboard
 component and the infrastructure around it fit into this picture.
 
-Both the GoodData platform and GoodData.CN provide the KPI Dashboards component that can be used by both
+The GoodData platform, GoodData Cloud and GoodData.CN all provide the KPI Dashboards component that can be used by both
 dashboard creators and consumers. In addition, developers can modify the default consumer experience, and create dashboard plugins
 to enhance or further customize the dashboard.
 
@@ -131,7 +131,7 @@ For more information about the loader and embedding dashboards into your React a
 
 ### KPI Dashboards
 
-The proprietary KPI Dashboards component that is hosted on the GoodData platform and that is also part of GoodData.CN uses the
+The proprietary KPI Dashboards component that is hosted on the GoodData platform and GoodData Cloud and that is also part of GoodData.CN uses the
 dashboard loader to load a dashboard that is possibly enhanced with plugins and then mounts the loaded Dashboard
 component.
 
@@ -154,7 +154,7 @@ at which point you as a developer can step in. To sum up the most important part
 
 The entire stack described in this article can work on top of both the GoodData platform and GoodData.CN.
 
-Some functionality is not yet available in GoodData.CN because of inherent limitations on the backend, specifically:
+Some functionality is not yet available in GoodData Cloud and GoodData.CN because of inherent limitations on the backend, specifically:
 
 -  Exports
 -  Scheduling of exports

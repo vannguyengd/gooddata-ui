@@ -16,8 +16,8 @@ The tool can create an application that will target either the GoodData platform
 The created application is ready for use with none or minimal additional configuration needed from your side.
 
 **NOTE**: By default, the tool creates a new application designated to run on top of the GoodData platform. If you are a
-GoodData.CN user, start the tool with an extra `--backend tiger` parameter. Remember that an application correctly
-bootstrapped to run on top of GoodData.CN will always depend on `@gooddata/sdk-backend-tiger`.
+GoodData Cloud or GoodData.CN user, start the tool with an extra `--backend tiger` parameter. Remember that an application correctly
+bootstrapped to run on top of GoodData Cloud or GoodData.CN will always depend on `@gooddata/sdk-backend-tiger`.
 
 This is what is going to happen when you run `@gooddata/create-gooddata-react-app`:
 
@@ -31,6 +31,6 @@ This is what is going to happen when you run `@gooddata/create-gooddata-react-ap
 To start, go to [https://github.com/gooddata/gooddata-create-gooddata-react-app](https://github.com/gooddata/gooddata-create-gooddata-react-app), and follow the instructions in the README file.
 The created application contains its own README with further information about configuration, build and deployment options.
 
-**NOTE:** This tutorial assumes that you already have an existing GoodData platform account or a GoodData.CN installation.
-You can create a GoodData platform account for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/) or download
+**NOTE:** This tutorial assumes that you already have an existing GoodData platform or GoodData Cloud account or a GoodData.CN installation.
+You can create a GoodData platform account for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/), a GoodData Cloud account for free at TODO LINK!!! [https://www.gooddata.com/free/](https://www.gooddata.com/free/) or download
 GoodData.CN at [https://www.gooddata.com/developers/](https://www.gooddata.com/developers/).

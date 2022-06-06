@@ -5,9 +5,15 @@ copyright: (C) 2007-2021 GoodData Corporation
 id: cloudnative_local_dev
 ---
 
-The robust authentication setup of GoodData.CN requires careful server-side configuration in order to correctly function in cross-origin requests. The installation of the GoodData.CN All-in-One image is set up so that cross-origin requests coming from applications running on `http://localhost:8443` work correctly.
+The robust authentication setup of GoodData Cloud and GoodData.CN require careful server-side configuration in order to correctly function in cross-origin requests.
 
-* If you created your application using [accelerator toolkit](02_start__using_boilerplate.md) or followed the instructions in 
+For GoodData Cloud, you can modify these settings in the Settings UI: for example, if your GoodData Cloud instance is on `https://example.com`, the Settings UI is on `https://example.com/settings`. You can also reach this page from the home page of your GoodData Cloud instance.
+
+The installation of the GoodData.CN All-in-One image is set up so that cross-origin requests coming from applications running on `http://localhost:8443` work correctly.
+
+The development setup depends on how you created the application:
+
+* If you created your application using [accelerator toolkit](02_start__using_boilerplate.md) or followed the instructions in
 [Integrate into an Existing Application](06_cloudnative__integration.md), the development environment on your local workstation is all set and ready for use.
 * If for some reason you had to deviate from this setup and cannot reconfigure the server to get everything aligned, do the following:
     1. [Use a token authentication provider](#use-a-token-authentication-provider).
@@ -17,24 +23,24 @@ The robust authentication setup of GoodData.CN requires careful server-side conf
 
 ## Use a token authentication provider
 
-Switching the GoodData.CN analytical backend to use token-based authentication means using a different authentication provider. We have created the `TigerTokenAuthProvider` for this purpose:
+Switching the GoodData Cloud or GoodData.CN analytical backend to use token-based authentication means using a different authentication provider. We have created the `TigerTokenAuthProvider` for this purpose:
 
 ```javascript
-import tigerFactory, {TigerTokenAuthProvider} from "@gooddata/sdk-backend-tiger";
+import tigerFactory, { TigerTokenAuthProvider } from "@gooddata/sdk-backend-tiger";
 
 const backend = tigerFactory().withAuthentication(new TigerTokenAuthProvider(process.env.ENV_VARIABLE_WITH_TOKEN));
 ```
 
 This ensures that all API calls triggered by the Analytical Backend will send the `Authorization` header with the `Bearer` token coming from the `ENV_VARIABLE_WITH_TOKEN` environment variable.
 
-**HINT:** Your application can detect whether it runs in development mode or in production mode and then configure the Analytical Backend's authentication provider to be `TigerTokenAuthProvider` in development or `ContextDeferredAuthProvider` in production. 
+**HINT:** Your application can detect whether it runs in development mode or in production mode and then configure the Analytical Backend's authentication provider to be `TigerTokenAuthProvider` in development or `ContextDeferredAuthProvider` in production.
 
 ## Set up a development proxy
- 
+
 An often used tactic to overcome CORS is to use a development proxy running on the same origin as the development server. The proxy
 will forward all calls to the actual backend servers.
 
-This is the proxy configuration that uses `http-proxy-middleware`: 
+This is the proxy configuration that uses `http-proxy-middleware`:
 
 ```javascript
 const proxy = require("http-proxy-middleware");
