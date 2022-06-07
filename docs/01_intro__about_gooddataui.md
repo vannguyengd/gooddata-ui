@@ -5,16 +5,16 @@ sidebar_label: About GoodData.UI
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
-GoodData.UI is a TypeScript framework for building analytical applications on top of the GoodData platform or GoodData.CN.
+GoodData.UI is a TypeScript framework for building analytical applications on top of the GoodData platform, GoodData Cloud or GoodData.CN.
 
 GoodData.UI consists of multiple libraries with clear-cut responsibilities ranging from low-level REST API clients up to visualization libraries that deliver React-based components to render different types of charts and tables.
 
 With GoodData.UI, you can:
 
-* Create utility programs that interact directly with the GoodData platform or GoodData.CN APIs (for example, to automate routine
+* Create utility programs that interact directly with the GoodData platform, GoodData Cloud or GoodData.CN APIs (for example, to automate routine
   maintenance and management tasks).
 
-* Create visualizations of data stored on the GoodData platform or GoodData.CN using [visual components](10_vis__start_with_visual_components.md).
+* Create visualizations of data stored on the GoodData platform, GoodData Cloud or GoodData.CN using [visual components](10_vis__start_with_visual_components.md).
 
 * Embed insights created in Analytical Designer using [InsightView](10_vis__insight_view.md).
 
@@ -51,7 +51,7 @@ Starting with GoodData.UI Version 8.8, [geo pushpin charts](10_vis__geo_pushpin_
 
 ## Get GoodData
 
-To use GoodData.UI, you must have an account on the GoodData platform or an installation of GoodData.CN. You can create a GoodData platform account for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/) or download GoodData.CN at [https://www.gooddata.com/developers/](https://www.gooddata.com/developers/).
+To use GoodData.UI, you must have an account on the GoodData platform or GoodData Cloud, or an installation of GoodData.CN. You can create a GoodData platform account for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/), a GoodData Cloud account for free at [https://www.gooddata.com/trial/](https://www.gooddata.com/trial/) or download GoodData.CN at [https://www.gooddata.com/developers/](https://www.gooddata.com/developers/).
 
 ## Upcoming features
 

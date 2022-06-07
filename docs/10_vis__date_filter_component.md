@@ -24,7 +24,7 @@ In the Date Filter component, you can optionally define the following:
 
 * Support for time filtering.
 
-    Only available for the GoodData.CN platform.
+    Only available for GoodData Cloud and GoodData.CN.
 
 
 ![DateFilter Component](assets/date_filter_time.png "DateFilter Component with time support")

@@ -14,7 +14,7 @@ With the [@gooddata/create-gooddata-react-app](create_new_application) CLI-based
 
 ### Integrate GoodData.UI into existing application
 If you already have a JavaScript or a TypeScript application, the following articles will help you to integrate GoodData.UI into it:
-- [Integrate GoodData.UI into existing application for GoodData.CN](cloudnative_integration)
+- [Integrate GoodData.UI into existing application for GoodData Cloud or GoodData.CN](cloudnative_integration)
 - [Integrate GoodData.UI into existing application for GoodData Platform](platform_integration)
 - [Integrate GoodData.UI into Angular application](30_tips__use_angular_2.x.md)
 
@@ -27,7 +27,7 @@ Understanding the [execution model](understand_execution_model) is essential for
 With the [exporting the catalog](export_catalog), you get all the necessary objects of the Logical Data Model. This will allow you to specify your visualizations in a very efficient and natural way.
 
 ### Build and embed data visualizations
-GoodData.UI offers multiple ways to build or embed visualizations. [Choose the appropriate approach](choose_visualization_approach) that fulfills your needs and requirements. 
+GoodData.UI offers multiple ways to build or embed visualizations. [Choose the appropriate approach](choose_visualization_approach) that fulfills your needs and requirements.
 
 ### Build and embed dashboards
 GoodData.UI offers multiple ways to build or embed dashboards. You can also extend the existing GoodData dashboards functionality.  [Choose the appropriate approach](choose_dashboard_approach) that fulfills your needs and requirements.

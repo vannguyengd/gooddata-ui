@@ -14,8 +14,8 @@ If you used `create-react-app` to create your application, make sure that the `r
 
 ## Step 1. Install the necessary dependencies
 
-GoodData.UI can target multiple platforms. Therefore, it is essential to install packages for the right target platform. For
-GoodData.CN, you need to install packages codenamed `tiger`:
+GoodData.UI can target multiple platforms. Therefore, it is essential to install packages for the right target platform.
+For GoodData Cloud and GoodData.CN, you need to install packages codenamed `tiger`:
 
 ```bash
 yarn add @gooddata/api-client-tiger @gooddata/sdk-backend-tiger
@@ -42,7 +42,7 @@ On top of this, you can pick and choose packages depending on which GoodData.UI 
    ```
 
 We also highly recommend that you use the [catalog-export](02_start__catalog_export.md) tool to generate a file with
-code representation of all available measures and attributes in your GoodData.CN workspace. You can then use this
+code representation of all available measures and attributes in your GoodData Cloud or GoodData.CN workspace. You can then use this
 generated code to specify what data to render in the visual components. To add `@gooddata/catalog-export` as a dev dependency, execute the following command:
 
 ```bash
@@ -75,9 +75,9 @@ import tigerFactory, { ContextDeferredAuthProvider, redirectToTigerAuthenticatio
 
 const backend = tigerFactory().withAuthentication(new ContextDeferredAuthProvider(redirectToTigerAuthentication));
 
-// or if your application will be hosted on a different host than the GoodData.CN backend
+// or if your application will be hosted on a different host than the GoodData Cloud or GoodData.CN backend
 const backend = tigerFactory()
-    .onHostname("https://example.com") // this should be the domain where the GoodData.CN is hosted
+    .onHostname("https://example.com") // this should be the domain where the GoodData Cloud or GoodData.CN is hosted
     .withAuthentication(new ContextDeferredAuthProvider(redirectToTigerAuthentication));
 ```
 
@@ -107,23 +107,28 @@ are context-aware and will retrieve both `backend` and `workspace` to use.
 
 The interaction with third-party APIs and services from the browser is protected by the [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) mechanism (CORS). Correct CORS setup is mainly a server-side concern.
 
+### GoodData Cloud
+To configure the CORS settings, use the UI on your GoodData Cloud instance. For example, if your GoodData Cloud instance is on `https://example.com`, the UI for CORS configuration is on `https://example.com/settings`. You can also reach this page from the home page of your GoodData Cloud instance.
+
+### GoodData.CN
 The GoodData.CN All-in-One image is already configured to allow cross-origin requests coming from a GoodData.UI
 application running on `https://localhost:8443`.
 
-If you run into CORS and authentication issues while developing on localhost, see [Set Up Development on Workstation](06_cloudnative__local_dev.md) for viable development setup that does not require any additional GoodData.CN reconfiguration.
+### Development on localhost
+If you run into CORS and authentication issues while developing on localhost, see [Set Up Development on Workstation](06_cloudnative__local_dev.md) for viable development setup that does not require any additional GoodData Cloud or GoodData.CN reconfiguration.
 
 ## Step 5. Configure authentication
 
-You may have noticed that the code snippet in [Step 3](#step-3.-set-up-analytical-backend-and-integrate-it-into-your-application) set up authentication to use `ContextDeferredAuthProvider`. This effectively tells the Analytical Backend that your application takes care of handling setup of the authenticated session to GoodData.CN.
+You may have noticed that the code snippet in [Step 3](#step-3.-set-up-analytical-backend-and-integrate-it-into-your-application) set up authentication to use `ContextDeferredAuthProvider`. This effectively tells the Analytical Backend that your application takes care of handling setup of the authenticated session to GoodData Cloud or GoodData.CN.
 
-In this particular example, when the session is not authenticated, your application uses the built-in `redirectToTigerAuthentcation` function to redirect the browser window to a location where the GoodData.CN authentication flow starts.
+In this particular example, when the session is not authenticated, your application uses the built-in `redirectToTigerAuthentication` function to redirect the browser window to a location where the GoodData Cloud or GoodData.CN authentication flow starts.
 
-Once redirected to this location, the GoodData.CN server starts the OpenID Connect (OIDC) authentication flow according to its
+Once redirected to this location, the GoodData Cloud or GoodData.CN server starts the OpenID Connect (OIDC) authentication flow according to its
 configuration. Once the flow finishes, the server replies with a redirect response that will take the browser back to your application window.
 
-The configuration listed in [Step 3](#step-3.-set-up-analytical-backend-and-integrate-it-into-your-application)is the recommended configuration for the production deployment where the application is served either from the same origin as GoodData.CN or from a different origin with correct CORS and authentication cookies configuration.
+The configuration listed in [Step 3](#step-3.-set-up-analytical-backend-and-integrate-it-into-your-application) is the recommended configuration for the production deployment where the application is served either from the same origin as GoodData Cloud or GoodData.CN or from a different origin with correct CORS and authentication cookies configuration.
 
-If you run into CORS and authentication issues while developing on localhost, see [Set Up Development on Workstation](06_cloudnative__local_dev.md) for viable development setup that does not require any additional GoodData.CN reconfiguration.
+If you run into CORS and authentication issues while developing on localhost, see [Set Up Development on Workstation](06_cloudnative__local_dev.md) for viable development setup that does not require any additional GoodData Cloud or GoodData.CN reconfiguration.
 
 ## Next steps
 

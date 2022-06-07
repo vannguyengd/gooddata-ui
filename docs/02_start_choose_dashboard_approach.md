@@ -48,7 +48,7 @@ The dashboard plugins allow you to enhance the KPI Dashboards experience with th
 With the dashboard plugins, you can run your own code within the KPI Dashboards. For more information, see [Dashboard Plugins](dashboard_plugins).
 
 **Advantages:**
-- Stable APIs that support both the GoodData platform and GoodData.CN
+- Stable APIs that support the GoodData platform, GoodData Cloud and GoodData.CN
 - A [CLI tool](dashboard_plugins#getting-started) available as part of the Plugin Development Toolkit
 - Support for TypeScript
 
@@ -65,7 +65,7 @@ The Dashboard component provides many built-in features. For more information, s
 **Advantages:**
 - Seamless and deep integration with React applications with a wide range of options (eventing API, customizations)
 - Extensive customization options such as custom visualization types, integration of third-party libraries, [dashboard plugins](#add-the-dashboard-plugins-to-a-kpi-dashboard) and so on
-- APIs that support both the GoodData platform and GoodData.CN
+- APIs that support the GoodData platform, GoodData Cloud and GoodData.CN
 - Support for TypeScript
 
 **Disadvantages:**
@@ -84,7 +84,7 @@ This is the most involved method of building dashboards, but it offers the most 
 - Multiple ready-to-use React components and hooks, both high- and low-level: [charts](start_with_visual_components), [execution](create_new_visualization), [placeholders](placeholders), contexts
 - Support for the [Accelerator Toolkit](create_new_application) and the [Export Catalog tool](export_catalog)
 - The deepest integration with your application with a wide range of options
-- APIs that support both the GoodData platform and GoodData.CN
+- APIs that support the GoodData platform, GoodData Cloud and GoodData.CN
 
 **Disadvantages:**
 - More time needed for development and maintenance comparing to the other methods

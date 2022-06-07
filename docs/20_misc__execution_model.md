@@ -65,7 +65,7 @@ You can use the `modify<ObjectType>` functions to override the `localId` of an a
 
 ## Attribute
 
-Each attribute is defined by its `displayForm` - also known as `label` in GoodData.CN - that will be used to
+Each attribute is defined by its `displayForm` - also known as `label` in GoodData Cloud and GoodData.CN - that will be used to
 slice the data. You can create an attribute definition using the following factory function:
 
 ```javascript

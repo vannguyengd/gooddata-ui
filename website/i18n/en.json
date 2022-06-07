@@ -73,9 +73,13 @@
         "title": "Choose the Most Appropriate Method for Building or Embedding Dashboards",
         "sidebar_label": "Choose the Most Appropriate Method for Building or Embedding Dashboards"
       },
+      "cloud_introduction": {
+        "title": "GoodData Cloud Introduction",
+        "sidebar_label": "GoodData Cloud Introduction"
+      },
       "cloudnative_authentication": {
-        "title": "GoodData.CN authentication",
-        "sidebar_label": "GoodData.CN authentication"
+        "title": "GoodData Cloud and GoodData.CN authentication",
+        "sidebar_label": "GoodData Cloud and GoodData.CN authentication"
       },
       "cloudnative_getting_started": {
         "title": "Getting started",
@@ -2177,7 +2181,7 @@
       "Introduction": "Introduction",
       "Getting Started": "Getting Started",
       "Integration with GoodData Platform": "Integration with GoodData Platform",
-      "Integration with GoodData.CN": "Integration with GoodData.CN",
+      "Integration with GoodData Cloud and GoodData.CN": "Integration with GoodData Cloud and GoodData.CN",
       "Visual Components": "Visual Components",
       "Properties": "Properties",
       "Custom Visualizations": "Custom Visualizations",
@@ -2185,6 +2189,7 @@
       "Dashboard": "Dashboard",
       "Development Tips": "Development Tips",
       "Support": "Support",
+      "Integration with GoodData.CN": "Integration with GoodData.CN",
       "Miscellaneous Features": "Miscellaneous Features",
       "Tutorials": "Tutorials",
       "React Components": "React Components",
