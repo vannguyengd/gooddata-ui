@@ -51,7 +51,7 @@ Starting with GoodData.UI Version 8.8, [geo pushpin charts](10_vis__geo_pushpin_
 
 ## Get GoodData
 
-To use GoodData.UI, you must have an account on the GoodData platform or GoodData Cloud, or an installation of GoodData.CN. You can create a GoodData platform account for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/), a GoodData Cloud account for free at TODO LINK!!! [https://www.gooddata.com/free/](https://www.gooddata.com/free/) or download GoodData.CN at [https://www.gooddata.com/developers/](https://www.gooddata.com/developers/).
+To use GoodData.UI, you must have an account on the GoodData platform or GoodData Cloud, or an installation of GoodData.CN. You can create a GoodData platform account for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/), a GoodData Cloud account for free at [https://www.gooddata.com/trial/](https://www.gooddata.com/trial/) or download GoodData.CN at [https://www.gooddata.com/developers/](https://www.gooddata.com/developers/).
 
 ## Upcoming features
 

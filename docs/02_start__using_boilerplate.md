@@ -32,5 +32,5 @@ To start, go to [https://github.com/gooddata/gooddata-create-gooddata-react-app]
 The created application contains its own README with further information about configuration, build and deployment options.
 
 **NOTE:** This tutorial assumes that you already have an existing GoodData platform or GoodData Cloud account or a GoodData.CN installation.
-You can create a GoodData platform account for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/), a GoodData Cloud account for free at TODO LINK!!! [https://www.gooddata.com/free/](https://www.gooddata.com/free/) or download
+You can create a GoodData platform account for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/), a GoodData Cloud account for free at [https://www.gooddata.com/trial/](https://www.gooddata.com/trial/) or download
 GoodData.CN at [https://www.gooddata.com/developers/](https://www.gooddata.com/developers/).

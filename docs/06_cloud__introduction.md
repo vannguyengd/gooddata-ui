@@ -24,6 +24,6 @@ A typical GoodData.UI application creates and configures an instance of the Good
 
 ## Get started with GoodData Cloud
 
-TODO!!! You can learn more about and download GoodData.CN Community Edition for free at [https://www.gooddata.com/developers/](https://www.gooddata.com/developers/). You can get started with GoodData.CN Community Edition in minutes and then spin up a new application on top of it using our [accelerator toolkit](02_start__using_boilerplate.md).
+You can create a GoodData Cloud account for free at [https://www.gooddata.com/trial/](https://www.gooddata.com/trial/). Your account will come with a demo workspace and data. You can spin up a new application on top of this workspace in less than a minute using our [accelerator toolkit](02_start__using_boilerplate.md), and try GoodData.UI yourself.
 
 **IMPORTANT**: Before you start, check how GoodData.UI supports [specific versions of GoodData Cloud](01_supported_versions.md#compatibility-with-gooddata-cloud). The first version of GoodData.UI that supports GoodData Cloud is 8.10.0.
