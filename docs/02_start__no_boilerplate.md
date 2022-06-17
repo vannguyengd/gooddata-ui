@@ -144,6 +144,29 @@ For SSO setup, see [Set Up Authentication and Single Sign-On](30_tips__sso.md).
 be called every time when the Analytical Backend throws a `NotAuthenticated` error. This callback function is useful to
 implement a mechanism for handling a "single point of failure" of the `NotAuthenticated` error and triggering the authentication flow in your application.
 
+## Step 6. Update package.json
+This step is currently optional and you need it only in case that you are going to use GoodData.UI geo charts.
+
+Update browserslist property in `package.json` with the following configuration:
+```
+"browserslist": {
+    "production": [
+        ">0.2%",
+        "not dead",
+        "not ie 11",
+        "not chrome < 51",
+        "not safari < 10",
+        "not android < 51"
+    ],
+    "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+    ]
+},
+```
+
+
 ## Next steps
 
 At this point, your application should be set to use GoodData.UI and render visualizations from the GoodData platform. If you
