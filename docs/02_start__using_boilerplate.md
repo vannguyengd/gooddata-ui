@@ -26,6 +26,9 @@ This is what is going to happen when you run `@gooddata/create-gooddata-react-ap
 3. Once you confirm your domain, the tool will install required dependencies and create the structure of your application.
 4. It will then prompt you to start your application and will open the welcome page in your browser.
 
+### Internet Explorer
+Internet Explorer 11 is [no longer supported](https://help.gooddata.com/pages/viewpage.action?pageId=86775029).
+
 ## How to use `@gooddata/create-gooddata-react-app`
 
 To start, go to [https://github.com/gooddata/gooddata-create-gooddata-react-app](https://github.com/gooddata/gooddata-create-gooddata-react-app), and follow the instructions in the README file.
