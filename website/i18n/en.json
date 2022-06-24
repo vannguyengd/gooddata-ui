@@ -133,6 +133,9 @@
         "title": "Combo Chart",
         "sidebar_label": "Combo Chart"
       },
+      "10_vis__dashboard_view": {
+        "title": "10_vis__dashboard_view"
+      },
       "date_filter_component": {
         "title": "Date Filter",
         "sidebar_label": "Date Filter"

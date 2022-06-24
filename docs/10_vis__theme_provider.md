@@ -42,7 +42,7 @@ import { ThemeProvider } from "@gooddata/sdk-ui-theme-provider";
 
 ## Using the Theme Provider component with a custom theme
 
-You can create properties of a custom theme and pass the theme to the `ThemeProvider` element that you added to your application (for all available properties, see the [declaration of ITheme](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-backend-spi/src/workspace/styling/theme.ts#L178)).
+You can create properties of a custom theme and pass the theme to the `ThemeProvider` element that you added to your application (for all available properties, see the [declaration of ITheme](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-model/src/theme/index.ts#L765)).
 
 ```jsx
 import { ThemeProvider } from "@gooddata/sdk-ui-theme-provider";
