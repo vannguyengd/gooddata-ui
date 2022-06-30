@@ -32,9 +32,6 @@ const siteConfig = {
     {href: '/gooddata-ui/', label: 'GoodData.UI'},
     {href: 'https://www.gooddata.com/developers/cloud-native/doc/', label: 'Docs & APIs'},
 
-    // Main nav button
-    {href: 'https://www.gooddata.com/developers/cloud-native-community-edition/', label: 'Get GoodData.CN Community Edition'},
-
     // Secondary nav
     {href: '/gooddata-ui/docs/interactive_examples.html', label: 'Code samples', external: true},
     {href: 'https://gdui-examples.herokuapp.com/', label: 'Gallery', external: true},
