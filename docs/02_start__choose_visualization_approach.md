@@ -22,6 +22,8 @@ The InsightView component allows you to embed insights created in [Analytical De
 It always reflects the current state of an insight: if any changes are made to the insight in Analytical Designer,
 the InsightView component in your application will pick them up and show the up-to-date version of the insight without any actions needed from your side.
 
+You can [generate the code](https://help.gooddata.com/pages/viewpage.action?pageId=86793524#EmbedInsights-Embedasaliveinsight) for a particular InsightView directly in Analytical Designer.
+
 ### When to use
 
 Using the InsightView component is the best choice in the following situations:
@@ -47,6 +49,8 @@ The InsightView component may not be the best choice in the following situations
 GoodData.UI comes with several types of visualizations that you can use out of the box.
 They require more coding than the [InsightView component](#insightview-component) but at the same time offer more flexibility.
 For more information, see [Start with Visual Components](10_vis__start_with_visual_components.md).
+
+You can [generate the code](https://help.gooddata.com/pages/viewpage.action?pageId=86793524#EmbedInsights-Embedasapermanentinsight) for a particular visual component directly in Analytical Designer.
 
 ### When to use
 
