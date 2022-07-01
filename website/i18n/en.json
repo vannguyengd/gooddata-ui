@@ -1692,6 +1692,166 @@
         "title": "Examples Gallery",
         "sidebar_label": "Examples Gallery"
       },
+      "version-8.10.0/version-8.10.0-about_gooddataui": {
+        "title": "About GoodData.UI",
+        "sidebar_label": "About GoodData.UI"
+      },
+      "version-8.10.0/version-8.10.0-framework_overview": {
+        "title": "Architecture Overview",
+        "sidebar_label": "Architecture Overview"
+      },
+      "version-8.10.0/version-8.10.0-why_gdui": {
+        "title": "Why GoodData.UI?",
+        "sidebar_label": "Why GoodData.UI?"
+      },
+      "version-8.10.0/version-8.10.0-supported_versions": {
+        "title": "Supported Versions and Compatibility",
+        "sidebar_label": "Supported Versions and Compatibility"
+      },
+      "version-8.10.0/version-8.10.0-export_catalog": {
+        "title": "Export Catalog",
+        "sidebar_label": "Export Catalog"
+      },
+      "version-8.10.0/version-8.10.0-choose_visualization_approach": {
+        "title": "Choose the Most Appropriate Method for Data Visualization",
+        "sidebar_label": "Choose the Most Appropriate Method for Data Visualization"
+      },
+      "version-8.10.0/version-8.10.0-understand_execution_model": {
+        "title": "Understand the Execution Model",
+        "sidebar_label": "Understand the Execution Model"
+      },
+      "version-8.10.0/version-8.10.0-platform_integration": {
+        "title": "Integrate into an Existing Application",
+        "sidebar_label": "Integrate into an Existing Application"
+      },
+      "version-8.10.0/version-8.10.0-quickstart": {
+        "title": "Start with GoodData.UI",
+        "sidebar_label": "Start with GoodData.UI"
+      },
+      "version-8.10.0/version-8.10.0-create_new_application": {
+        "title": "Create Your First Application Using Accelerator Toolkit",
+        "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
+      },
+      "version-8.10.0/version-8.10.0-choose_dashboard_approach": {
+        "title": "Choose the Most Appropriate Method for Building or Embedding Dashboards",
+        "sidebar_label": "Choose the Most Appropriate Method for Building or Embedding Dashboards"
+      },
+      "version-8.10.0/version-8.10.0-cloud_introduction": {
+        "title": "GoodData Cloud Introduction",
+        "sidebar_label": "GoodData Cloud Introduction"
+      },
+      "version-8.10.0/version-8.10.0-cloudnative_authentication": {
+        "title": "GoodData Cloud and GoodData.CN authentication",
+        "sidebar_label": "GoodData Cloud and GoodData.CN authentication"
+      },
+      "version-8.10.0/version-8.10.0-cloudnative_getting_started": {
+        "title": "Getting started",
+        "sidebar_label": "Getting started"
+      },
+      "version-8.10.0/version-8.10.0-cloudnative_integration": {
+        "title": "Integrate into an Existing Application",
+        "sidebar_label": "Integrate into an Existing Application"
+      },
+      "version-8.10.0/version-8.10.0-cloudnative_limitations": {
+        "title": "Limitations",
+        "sidebar_label": "Limitations"
+      },
+      "version-8.10.0/version-8.10.0-cloudnative_local_dev": {
+        "title": "Set Up Development on a Workstation",
+        "sidebar_label": "Set Up Development on a Workstation"
+      },
+      "version-8.10.0/version-8.10.0-attribute_filter_button_component": {
+        "title": "Attribute Filter Button",
+        "sidebar_label": "Attribute Filter Button"
+      },
+      "version-8.10.0/version-8.10.0-date_filter_component": {
+        "title": "Date Filter",
+        "sidebar_label": "Date Filter"
+      },
+      "version-8.10.0/version-8.10.0-measure_value_filter_component": {
+        "title": "Measure Value Filter",
+        "sidebar_label": "Measure Value Filter"
+      },
+      "version-8.10.0/version-8.10.0-ranking_filter_component": {
+        "title": "Ranking Filter",
+        "sidebar_label": "Ranking Filter"
+      },
+      "version-8.10.0/version-8.10.0-theme_provider": {
+        "title": "Theme Provider",
+        "sidebar_label": "Theme Provider"
+      },
+      "version-8.10.0/version-8.10.0-chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
+      },
+      "version-8.10.0/version-8.10.0-data_sampling": {
+        "title": "Data Sampling",
+        "sidebar_label": "Data Sampling"
+      },
+      "version-8.10.0/version-8.10.0-date_filter_option": {
+        "title": "DateFilter Component Options",
+        "sidebar_label": "DateFilter Component Options"
+      },
+      "version-8.10.0/version-8.10.0-dashboard_intro": {
+        "title": "Introduction to the Dashboard Component",
+        "sidebar_label": "Introduction to the Dashboard Component"
+      },
+      "version-8.10.0/version-8.10.0-dashboard_plugins_api": {
+        "title": "Dashboard Plugin API",
+        "sidebar_label": "Dashboard Plugin API"
+      },
+      "version-8.10.0/version-8.10.0-upgrade_dashboard_plugins": {
+        "title": "Upgrade Dashboard Plugins",
+        "sidebar_label": "Upgrade Dashboard Plugins"
+      },
+      "version-8.10.0/version-8.10.0-dashboard_plugins": {
+        "title": "Dashboard Plugins",
+        "sidebar_label": "Dashboard Plugins"
+      },
+      "version-8.10.0/version-8.10.0-execution_model": {
+        "title": "Execution Model Details",
+        "sidebar_label": "Detailed Description"
+      },
+      "version-8.10.0/version-8.10.0-backend_agnostic_apps": {
+        "title": "Building backend-agnostic applications",
+        "sidebar_label": "Building backend-agnostic applications"
+      },
+      "version-8.10.0/version-8.10.0-ht_create_predicates": {
+        "title": "Create Header Predicates",
+        "sidebar_label": "Create Header Predicates"
+      },
+      "version-8.10.0/version-8.10.0-ht_render_visualization_from_different_domain": {
+        "title": "Access Multiple Domains and Workspaces",
+        "sidebar_label": "Access Multiple Domains and Workspaces"
+      },
+      "version-8.10.0/version-8.10.0-create_new_visualization": {
+        "title": "Start With Custom Visualizations",
+        "sidebar_label": "Start With Custom Visualizations"
+      },
+      "version-8.10.0/version-8.10.0-breaking_changes_8": {
+        "title": "Breaking Changes in Version 8.0",
+        "sidebar_label": "Breaking Changes in Version 8.0"
+      },
+      "version-8.10.0/version-8.10.0-clean_up_your_code": {
+        "title": "Clean Up Your Code",
+        "sidebar_label": "Clean Up Your Code"
+      },
+      "version-8.10.0/version-8.10.0-data_layer": {
+        "title": "Access Low Level API (DataLayer)",
+        "sidebar_label": "Access Low Level API"
+      },
+      "version-8.10.0/version-8.10.0-support_options": {
+        "title": "Support Options",
+        "sidebar_label": "Support Options"
+      },
+      "version-8.10.0/version-8.10.0-table_totals_in_execution_object": {
+        "title": "Specify Table Totals",
+        "sidebar_label": "Specify Table Totals"
+      },
+      "version-8.10.0/version-8.10.0-whats_new_8": {
+        "title": "What's New in Version 8.0",
+        "sidebar_label": "What's New in Version 8.0"
+      },
       "version-8.2.0/version-8.2.0-about_gooddataui": {
         "title": "About GoodData.UI",
         "sidebar_label": "About GoodData.UI"
@@ -2174,7 +2334,6 @@
       "Docs & APIs": "Docs & APIs",
       "Developers": "Developers",
       "GoodData.CN": "GoodData.CN",
-      "Get GoodData.CN Community Edition": "Get GoodData.CN Community Edition",
       "Code samples": "Code samples",
       "Gallery": "Gallery",
       "GitHub": "GitHub",
