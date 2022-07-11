@@ -69,7 +69,7 @@ To define the attribute values that should be selected in the filter by default,
 | onApplyWithFilterDefinition | false | Function | A callback when the selection is confirmed by a user. The selection of attribute values is received already transformed into an attribute filter definition, which you can then send directly to a chart. |
 | filter | false | [Filter](30_tips__filter_visual_components.md) | The attribute filter definition |
 | backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
-| workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
+| workspace | false | string | The [workspace](model_helpers) ID |
 | locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
 | fullscreenOnMobile | false | boolean | If `true`, adjusts the filter to be properly rendered on a mobile device |
 | title | false | string | A custom label to show on the dropdown icon |

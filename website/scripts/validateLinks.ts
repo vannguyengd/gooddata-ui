@@ -16,6 +16,7 @@ const EXCLUDE_ERRORS = [
 // Reason to list here all the unsupported versions is that broken-link-checker does not support regular expressions very well
 const EXCLUDE_VERSIONS = [
     // Skip versions that are out of support
+    "7.9.0",
     "7.8.0",
     "7.7.0",
     "7.6.0",

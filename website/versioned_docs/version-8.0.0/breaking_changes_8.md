@@ -151,7 +151,7 @@ your application:
     </BackendProvider>
     ```
 
-To learn more details about initialization, see [Getting started](02_start__using_boilerplate.md).
+To learn more details about initialization, see [Getting started](ht_create_your_first_visualization_toolkit).
 For more information about integration into an existing application, see [installation guide](02_start__installation.md).
 
 ## Model Infrastructure and Execution Changes

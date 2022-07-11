@@ -55,7 +55,6 @@
             "scatter_plot_component",
             "treemap_component",
             "visualization_component",
-            "dashboard_view_component",
             "attribute_filter_component",
             "attribute_filter_button_component",
             "date_filter_component",
