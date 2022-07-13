@@ -59,6 +59,7 @@ The following table shows compatibility between GoodData.UI and [GoodData.CN](06
 | 1.4.0 | 8.6.0 only |
 | 1.5.0 | 8.7.0 - 8.8.0 |
 | 1.6.0 | 8.7.0 - 8.8.0 |
-| 1.7.0 | 8.9.0 and newer |
+| 1.7.0 | 8.9.0 only |
+| 2.0.0 | 8.10.0 and newer |
 
 The versions of GoodData.UI older than 8.3.0 are not compatible with GoodData.CN.

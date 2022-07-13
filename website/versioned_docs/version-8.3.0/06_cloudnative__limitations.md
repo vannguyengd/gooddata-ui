@@ -32,7 +32,7 @@ The following capabilities are not supported:
 -  Attribute valid element queries with attribute filters or measure filters
 -  Dashboard alerts
 -  Dashboard exports to PDF and scheduling of dashboard exports
--  Customization of dashboards embedded using the [DashboardView](10_vis__dashboard_view.md) component
+-  Customization of dashboards embedded using the [DashboardView](dashboard_view_component) component
 
 ## Limitations
 
@@ -44,7 +44,7 @@ The following capabilities are not supported:
    
 ## Known issues
 
-In the [`DashboardView`](10_vis__dashboard_view.md) component, specifying an attribute filter using text values produces errors. This is an API issue in the `DashboardView` component that we are aiming to address in the next minor release. All filtering on GoodData.CN is done using text values but for `DashboardView` you have to specify those values differently.
+In the [`DashboardView`](dashboard_view_component) component, specifying an attribute filter using text values produces errors. This is an API issue in the `DashboardView` component that we are aiming to address in the next minor release. All filtering on GoodData.CN is done using text values but for `DashboardView` you have to specify those values differently.
 
 To work around this issue, create an attribute filter that uses `uris` and then specify the text values there:
    
