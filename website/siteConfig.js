@@ -69,6 +69,7 @@ const siteConfig = {
       "clean_up_your_code",
       "data_layer",
       "execution_rest_api_and_result",
+      "execute_component",
       "table_component"
     ],
     "8.10.0": [
