@@ -91,6 +91,12 @@
             "dashboard_component",
             "upgrade_dashboard_plugins"
         ],
+        "Web Components": [
+            "webcomponents_intro",
+            "webcomponents_authentication",
+            "webcomponents_dashboard",
+            "webcomponents_insight"
+        ],
         "Development Tips": [
             "ht_embed_visualization",
             "embed_dashboard",

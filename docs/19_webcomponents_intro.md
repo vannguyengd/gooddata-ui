@@ -1,0 +1,99 @@
+---
+title: Introduction to GoodData Web Components
+sidebar_label: Introduction to GoodData Web Components
+copyright: (C) 2007-2022 GoodData Corporation
+id: webcomponents_intro
+---
+
+Starting version 2.1, GoodData.CN includes a Web Components library that you can import into your application
+to embed dashboards or individual insights. The library is also hosted at GoodData Cloud and Platform.
+
+The Web Components library is a thin wrapper around [InsightView] and [Dashboard] components. It is meant
+to make embedding super easy, yet keep high level of integration with the host application. In the simplest form,
+the integration could look something like this:
+
+```html
+<script type="module" src="https://example.gooddata.com/components/my-workspace-id.js?auth=sso"></script>
+
+<gd-dashboard dashboard="my-dashboard-id"></gd-dashboard>
+<gd-insight insight="my-insight-id"></gd-insight>
+```
+
+> **Web Components** library is using **GoodData.UI** under the hood. It is still loading React and all
+> the necessary dependencies. However, it runs in the isolated scope that will not conflict with other JavaScript
+> running in your app.
+
+## Choosing the right embedding option
+
+GoodData provides several options for embedding, such as **iframe embedding** for dashboards or **GoodData.UI React
+library** for dashboards and insights. Web Components library is the middle ground between those two options. It's
+more flexible than iframe embedding, yet simpler to integrate comparing to the React library. 
+
+### When to use Web Components library?
+
+* You do not want to use **iframe embedding** to avoid an overhead it creates or due to security and compliance requirements of your company.
+* You want to embed **a single insight**, but the iframe embedding only works for a complete dashboard.
+* You are using **Angular**, **Vue** or any other non-React framework for the host application.
+* You are using **a specific version of React** in your application, that is not compatible with GoodData.UI.
+
+### When to use an iframe instead?
+
+If you want the simplest possible dashboard embedding and do not require deep integration between host application
+and the dashboard, consider using iframe instead of Web Components.
+
+### When to use GoodData.UI React library instead? 
+
+If the host application is already written in React, consider using GoodData.UI instead of Web Components. It is way more
+flexible and provides much better developer experience. Plus, you will avoid loading two instances of React and ReactDOM.
+
+## Integration
+
+### Prerequisites
+
+Since Web Components is a relatively new technology, the library will not work in older browsers, such as
+**Internet Explorer**. To be precise, refer to
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry#browser_compatibility" target="_blank">Custom Elements</a> and
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot#browser_compatibility" target="_blank">Shadow DOM</a> browser compatibility sections on MDN.
+
+You will also need to set up **CORS configuration** on the GoodData server instance to allow the script from your application
+domain to make network requests to the GoodData server. Refer to the CORS configuration sections in [GoodData.CN and
+GoodData Cloud setup docs](06_cloudnative__integration.md#step-4-solve-cross-origin-resource-sharing) and in [GoodData
+platform setup docs](30_tips__cors.md#enable-cors).
+
+### Load the library
+
+To integrate the library into your app, you need to add a script tag with the correct URL to the `<head>`
+section of your web page.
+
+```html
+<script type="module" src="https://{your-gd-server-url}/components/{workspace-id}.js?auth=sso"></script>
+
+<!-- for example -->
+<script type="module" src="https://example.gooddata.com/components/my-workspace.js?auth=sso"></script>
+```
+
+The script **must be** of type `module`, as we are using JavaScript modules for this distribution.
+
+The library will parse its own URL to pre-configure and allow you to skip the boilerplate code:
+* The domain name `your-gd-server-url` must be the domain of you GoodData.CN server, GoodData Cloud or platform instance.
+    This is not only the domain where the script will be loaded from, but also the domain that will be used to load your
+    insight and dashboard data. I.e. you can't load the script from one instance to use it with data from another instance.
+    **At the moment it's not possible to connect to several GoodData instances from a single runtime.**
+* The `workspace-id` is the ID of the default workspace from where the library will be loading your insights and dashboards.
+    It is possible to override this value for a specific insight or dashboard.
+* An `auth` query parameter is optional. When provided, the library will authenticate the user automatically.
+    See [Web Components Authentication] for more details.
+
+### Embed insights and dashboards
+
+Once the library is loaded to the application runtime, it will register two custom elements that you can use anywhere
+on the page:
+
+* `<gd-dashboard />` for [dashboard embedding].
+* `<gd-insight />` for [insight embedding].
+
+[InsightView]:10_vis__insight_view.md
+[Dashboard]:18_dashboard_component.md
+[Web Components Authentication]:19_webcomponents_authentication.md
+[dashboard embedding]:19_webcomponents_dashboard.md
+[insight embedding]:19_webcomponents_insight.md
