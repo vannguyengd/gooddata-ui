@@ -78,7 +78,7 @@ clearInsightViewCaches();
 | :--- | :--- | :--- | :--- |
 | insight | true | ObjRef or string | The reference to or the identifier of the visualization the to be rendered |
 | locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
-| config  | false | [IChartConfig](15_props__chart_config.md) | The chart configuration object |
+| config  | false | [IChartConfig](15_props__chart_config.md) &#124; [IGeoConfig](10_vis__geo_pushpin_chart_component.md#geo-config) &#124; [IPivotTableConfig](10_vis__pivot_table_component.md#configuration-menu) | The configuration object |
 | filters | false | [IFilter[]](30_tips__filter_visual_components.md) | An array of filter definitions |
 | backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
 | workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
