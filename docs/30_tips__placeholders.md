@@ -67,7 +67,6 @@ The visualization definition placeholders are built on top of React context and 
                         : "No primary measure"
                 }
                 <button
-                    
                     onClick={() => {
                         // Set the value of the placeholder.
                         setPrimaryMeasure(Md.Revenue);
@@ -98,7 +97,7 @@ const Root = () =>  (
 
 **Common visualization definition placeholders** can have one or multiple values (attributes, measures, filters, sorts, or totals).
 
-**NOTE:** Do not use the common placeholders as values of another placeholder. To combine multiple visualization definition placeholders, use [composed placeholders](#Composed-visualization-definition-placeholders). 
+**NOTE:** Do not use the common placeholders as values of another placeholder. To combine multiple visualization definition placeholders, use [composed placeholders](#composed-visualization-definition-placeholders).
 
 ### Create a common visualization definition placeholder
 
