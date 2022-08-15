@@ -22,6 +22,8 @@ facilitate plugin reuse across dashboards, you can parameterize the link between
 
 **NOTE:** GoodData.UI provides a CLI tool that handles all the essential boilerplate [to get started](18_dashboard_plugins.md#getting-started).
 
+>You can find plugin examples in [GoodData Dashboard Plugin examples gallery](https://github.com/gooddata/gooddata-plugin-examples).
+
 ### Plugin contract and lifecycle
 
 The plugin contract is described by an interface defined in the `@gooddata/sdk-ui-dashboard` package. You can see the code
