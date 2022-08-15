@@ -64,7 +64,7 @@ To define the attribute values that should be selected in the filter by default,
     render() {
         return (
             <div>
-                <AttributeFilterButon
+                <AttributeFilterButton
                     filter={newPositiveAttributeFilter(Md.EmployeeName.Default, ["Abbie Adams"])}
                     onApply={this.onApply}
                 />
