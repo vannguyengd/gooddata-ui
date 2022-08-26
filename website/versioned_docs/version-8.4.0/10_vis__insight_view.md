@@ -34,6 +34,8 @@ import { uriRef } from "@gooddata/sdk-model";
     />
 </div>
 ```
+**NOTE**: Make sure to also include CSS styles for the visualizations you expect to appear in the InsightView. See the [integration guide](06_cloudnative__integration.md#step-2-include-styles) for more information.
+
 **NOTE**: A set of options in `config` is different for each type of visualization. The type expected on InsightView is the same as the type of the configuration expected on the respective React component.
 
 ## Example
