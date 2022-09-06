@@ -50,16 +50,17 @@ The following table shows compatibility between GoodData.UI and [GoodData.CN](06
 
 | GoodData.CN Version | GoodData.UI Compatible Versions |
 | :--- | :--- |
-| 1.0.0 | 8.3.0 - 8.6.0 |
-| 1.0.1 | 8.3.0 - 8.6.0 |
-| 1.1.0 | 8.3.1 - 8.6.0 |
-| 1.1.1 | 8.3.1 - 8.6.0 |
-| 1.2.0 | 8.3.1 - 8.6.0 |
-| 1.3.0 | 8.5.0 - 8.6.0 |
-| 1.4.0 | 8.6.0 only |
-| 1.5.0 | 8.7.0 - 8.8.0 |
-| 1.6.0 | 8.7.0 - 8.8.0 |
-| 1.7.0 | 8.9.0 only |
+| 2.1.0 | 8.10.0 and newer |
 | 2.0.0 | 8.10.0 and newer |
+| 1.7.0 | 8.9.0 only |
+| 1.6.0 | 8.7.0 - 8.8.0 |
+| 1.5.0 | 8.7.0 - 8.8.0 |
+| 1.4.0 | 8.6.0 only |
+| 1.3.0 | 8.5.0 - 8.6.0 |
+| 1.2.0 | 8.3.1 - 8.6.0 |
+| 1.1.1 | 8.3.1 - 8.6.0 |
+| 1.1.0 | 8.3.1 - 8.6.0 |
+| 1.0.1 | 8.3.0 - 8.6.0 |
+| 1.0.0 | 8.3.0 - 8.6.0 |
 
 The versions of GoodData.UI older than 8.3.0 are not compatible with GoodData.CN.
