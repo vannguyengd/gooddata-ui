@@ -44,6 +44,8 @@ In addition to the items mentioned above, GoodData Cloud currently does not supp
 
 ## Known issues
 
+### Dashboard component attribute filters
+
 In the [Dashboard component](18_dashboard_component.md), specifying an attribute filter using text values produces errors. This is an API issue in the Dashboard component that we are aiming to address in one of the future releases.
 All filtering on GoodData Cloud and GoodData.CN is done using text values, but for the Dashboard component you have to specify those values differently. To work around this issue, create an attribute filter that uses `uris` and then specify the text values there:
 
@@ -52,3 +54,10 @@ import { newPositiveAttributeFilter } from "@gooddata/sdk-model";
 
 const dashboardFilter = newPositiveAttributeFilter("<attribute-identifier>", { uris: [ "textValue1", "textValue2" ]})
 ```
+
+### Some properties can be null
+
+Some properties related to attribute element values marked as `string` can be `null` if your data contains NULL values.
+We will remedy that in the next major version of GoodData.UI.
+In the meantime, make sure your application code can handle those fields being `null` if you expect data in your workspaces to contain NULL values.
+To see which fields were affected, check [the commit marking them as such](https://github.com/gooddata/gooddata-ui-sdk/commit/c841cfe9a250fbe2a4114ce5c76129adfb72ea21).
