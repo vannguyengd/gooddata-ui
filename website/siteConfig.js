@@ -71,6 +71,9 @@ const siteConfig = {
     ],
     "8.10.0": [
       "dashboard_view_component"
+    ],
+    "8.11.0": [
+      "attribute_element_option"
     ]
   },
   /* path to images for header/footer */
