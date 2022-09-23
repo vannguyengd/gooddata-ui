@@ -89,7 +89,8 @@
             "dashboard_plugins_api",
             "dashboard_embedding",
             "dashboard_component",
-            "upgrade_dashboard_plugins"
+            "upgrade_dashboard_plugins",
+            "improve_performance"
         ],
         "Development Tips": [
             "ht_embed_visualization",

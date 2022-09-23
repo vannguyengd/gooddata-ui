@@ -264,6 +264,10 @@
         "title": "Dashboard Plugins",
         "sidebar_label": "Dashboard Plugins"
       },
+      "improve_performance": {
+        "title": "Improve Dashboard component's performance",
+        "sidebar_label": "Improve Dashboard component's performance"
+      },
       "arithmetic_measure": {
         "title": "Arithmetic Measure",
         "sidebar_label": "Arithmetic Measure"
