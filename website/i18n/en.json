@@ -264,10 +264,6 @@
         "title": "Dashboard Plugins",
         "sidebar_label": "Dashboard Plugins"
       },
-      "improve_performance": {
-        "title": "Improve Dashboard component's performance",
-        "sidebar_label": "Improve Dashboard component's performance"
-      },
       "arithmetic_measure": {
         "title": "Arithmetic Measure",
         "sidebar_label": "Arithmetic Measure"
@@ -307,6 +303,10 @@
       "filter_visual_components": {
         "title": "Filter Visual Components",
         "sidebar_label": "Filter Visual Components"
+      },
+      "improve_performance": {
+        "title": "Improve Dashboard component's performance",
+        "sidebar_label": "Improve Dashboard component's performance"
       },
       "placeholders": {
         "title": "Visualization Definition Placeholders",
