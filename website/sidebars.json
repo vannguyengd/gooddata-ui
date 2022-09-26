@@ -101,7 +101,8 @@
             "ht_use_react_component_in_angular_2.x",
             "ht_create_predicates",
             "backend_agnostic_apps",
-            "placeholders"
+            "placeholders",
+            "improve_performance"
         ],
         "Support": ["support_options", "live_examples"]
     }

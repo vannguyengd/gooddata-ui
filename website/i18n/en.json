@@ -304,6 +304,10 @@
         "title": "Filter Visual Components",
         "sidebar_label": "Filter Visual Components"
       },
+      "improve_performance": {
+        "title": "Improve Dashboard component performance",
+        "sidebar_label": "Improve Dashboard component performance"
+      },
       "placeholders": {
         "title": "Visualization Definition Placeholders",
         "sidebar_label": "Visualization Definition Placeholders"
