@@ -10,7 +10,7 @@ While using the SDK.UI ([Dashboard component](18_dashboard_component.md), [Embed
 The decorator needs settings object to be handed over as a parameter to configure where the cache should be applied and to what size should the cache grow. 
 Once the max size of the cache is reached, the items are removed using LRU policy.
 
-We have provided the recommended caching options (see `RecommendedCachingConfiguration` within the `@gooddata/sdk-backend-base` package.
+You can find the recommended caching options in `RecommendedCachingConfiguration` within the `@gooddata/sdk-backend-base` package.
 
 
 ### Caching backend configuration options
@@ -19,12 +19,12 @@ We have provided the recommended caching options (see `RecommendedCachingConfigu
 | :--- | :--- | :--- |
 | maxExecutions | Maximum number of executions which will have their results cached. | 10 |
 | maxResultWindows | Maximum number of execution result's pages to cache PER result. | 5 |
-| maxCatalogs | Maximum number of workspaces for which to cache catalogs. | 1 |
+| maxCatalogs | Maximum number of workspaces for which to cache the catalogs. | 1 |
 | maxCatalogOptions | Catalog can be viewed in many different ways - determined by the options specified during load. | 50 |
-| maxSecuritySettingsOrgs | Maximum number of organizations that will have its security settings cached. | 3 |
-| maxSecuritySettingsOrgUrls | Maximum number of URLs per organization that will have its validation result cached. | 100 |
+| maxSecuritySettingsOrgs | Maximum number of organizations that will have their security settings cached. | 3 |
+| maxSecuritySettingsOrgUrls | Maximum number of URLs per organization that will have their validation result cached. | 100 |
 | maxSecuritySettingsOrgUrlsAge | Maximum age of cached organization's URL validation results. The value is in milliseconds. | 300 000 |
-| maxAttributeWorkspaces | Maximum number of workspaces for which to cache selected workspace attribute service calls. | 1 |
+| maxAttributeWorkspaces | Maximum number of workspaces for which to cache the selected workspace attribute service calls. | 1 |
 | maxAttributeDisplayFormsPerWorkspace | Maximum number of attribute display forms to cache per workspace. | 100 |
 | maxWorkspaceSettings | Maximum number of settings for a workspace and for a user to cache per workspace. | 1 |
 

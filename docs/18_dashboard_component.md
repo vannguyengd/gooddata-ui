@@ -206,4 +206,4 @@ If the default implementation of the `DashboardStoreAccessorRepository` class do
 
 ## Improving performance
 
-To find out more about how to improve performance of the Dashboard component, visit [Tips on performance improvements](30_tips__improve_performance.md).
+To find out more about how to improve the performance of the Dashboard component, visit [Tips on performance improvements](30_tips__improve_performance.md).
