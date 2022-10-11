@@ -6,8 +6,8 @@ copyright: (C) 2022 GoodData Corporation
 ---
 
 ## Caching the backend responses
-While using the SDK.UI ([Dashboard component](18_dashboard_component.md), [Embedded insights](30_tips__embed_visualization.md), etc.), it's recommended to wrap the backend instance with the `withCaching` decorator for better performance. 
-The decorator needs settings object to be handed over as a parameter to configure where the cache should be applied and to what size should the cache grow. 
+While using the SDK.UI ([Dashboard component](18_dashboard_component.md), [Embedded insights](30_tips__embed_visualization.md), etc.), it's recommended to wrap the backend instance with the `withCaching` decorator for better performance.
+The decorator needs settings object to be handed over as a parameter to configure where the cache should be applied and to what size should the cache grow.
 Once the max size of the cache is reached, the items are removed using LRU policy.
 
 You can find the recommended caching options in `RecommendedCachingConfiguration` within the `@gooddata/sdk-backend-base` package.
@@ -26,6 +26,8 @@ You can find the recommended caching options in `RecommendedCachingConfiguration
 | maxSecuritySettingsOrgUrlsAge | Maximum age of cached organization's URL validation results. The value is in milliseconds. | 300 000 |
 | maxAttributeWorkspaces | Maximum number of workspaces for which to cache the selected workspace attribute service calls. | 1 |
 | maxAttributeDisplayFormsPerWorkspace | Maximum number of attribute display forms to cache per workspace. | 100 |
+| maxAttributesPerWorkspace | Maximum number of attributes to cache per workspace. | 100 |
+| maxAttributeElementResultsPerWorkspace | Maximum number of attributes element results to cache per workspace. Note that not all the queries are cached (e.g. queries with `filter` value). | 100 |
 | maxWorkspaceSettings | Maximum number of settings for a workspace and for a user to cache per workspace. | 1 |
 
 ### Example on how to use the caching backend
