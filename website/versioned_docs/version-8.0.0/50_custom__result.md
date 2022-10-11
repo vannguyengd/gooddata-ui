@@ -69,7 +69,7 @@ import * as Ldm from "./ldm/full";
 
 execution()
     .forItems([Ldm.LocationState, Ldm.$FranchiseFees])
-    .withDimensions([newDimension([Ldm.LocationState, MeasureGroupIdentifier])]);
+    .withDimensions(newDimension([Ldm.LocationState, MeasureGroupIdentifier]));
 
 {
 data: [ 32000, 41000, 77000 ]

@@ -69,7 +69,7 @@ import * as Md from "./md/full";
 
 execution()
     .forItems([Md.LocationState, Md.$FranchiseFees])
-    .withDimensions([newDimension([Md.LocationState, MeasureGroupIdentifier])]);
+    .withDimensions(newDimension([Md.LocationState, MeasureGroupIdentifier]));
 
 {
 data: [ 32000, 41000, 77000 ]
