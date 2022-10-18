@@ -113,19 +113,19 @@ You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| onApply | false | [OnApplyCallbackType](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-filters.onapplycallbacktype.html) | A callback that contains updated filter when the selection change is confirmed by a user |
+| onApply | false | [OnApplyCallbackType](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-filters.onapplycallbacktype.html) | A callback that contains the updated filter when the selection change is confirmed by a user |
 | onError | false | (error: [GoodDataSdkError](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.gooddatasdkerror.html)) => void; | A callback that is triggered when the component runs into an error |
 | filter | false | [IAttributeFilter](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-model.iattributefilter.html) | The attribute filter definition |
 | parentFilters | false | [AttributeFiltersOrPlaceholders](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.attributefiltersorplaceholders.html) | An array of parent attribute filter definitions. This feature is not yet supported by GoodData.CN and GoodData Cloud. |
 | connectToPlaceholder | false | [IPlaceholder&lt;IAttributeFilter&gt;](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.iplaceholder.html) | The [visualization definition placeholder](30_tips__placeholders.md) used to get and set the value of the attribute filter |
-| parentFilterOverAttribute | false | [ParentFilterOverAttributeType](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-filters.parentfilteroverattributetype.html) | The reference to the parent filter attribute over which the available options are reduced, or the function called for every parent filter that returns such reference for the given parent filter |
-| backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
+| parentFilterOverAttribute | false | [ParentFilterOverAttributeType](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-filters.parentfilteroverattributetype.html) | A reference to the parent filter attribute over which the available options are reduced, or the function called for every parent filter that returns such reference for the given parent filter |
+| backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to the communication with the backend and the access to analytical workspaces |
 | workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
 | locale | false | [ILocale](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.ilocale.html) | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
-| fullscreenOnMobile | false | boolean | If `true`, adjusts the filter to be properly rendered on a mobile device |
+| fullscreenOnMobile | false | boolean | If `true`, adjusts the filter to be properly rendered on mobile devices |
 | title | false | string | A custom label to show on the dropdown button |
-| titleWithSelection | false | string | Should the dropdown button reflect also the applied selection, or display only the attribute title? This option won't be applied, if `title` property is set. |
-| hiddenElements | false | string[] | Specify elements that will be exluded from the selection list. Currently, elements can be specified only by their uris. This feature is not yet supported by GoodData.CN and GoodData Cloud. |
+| titleWithSelection | false | string | The label displays the attribute title and also the applied selection. This option is not applied, if `title` property is set. |
+| hiddenElements | false | string[] | Specify elements that will be exluded from the selection list. Currently, elements can be specified only by their URIs. This feature is not yet supported by GoodData.CN and GoodData Cloud. |
 | staticElements | false | string[] | Provide elements to show in the selection list instead of loading them from the backend. |
 
 
@@ -133,10 +133,10 @@ You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_
 To define an attribute, use the ```filter``` or ```connectToPlaceholder``` property.
 
 ## Customize AttributeFilterButton components
-> AttributeFilterButton component customizations are still in beta stage.
-> We appreciate any [feedback and experiences](support_options) that can help us to improve this feature in the future.
+> AttributeFilterButton component customizations are still in a beta stage.
+> We appreciate any [feedback and experiences](support_options) that can help us improve this feature in the future.
 
-If you want to customize the look of the AttributeFilterButton, it's possible to provide your own components for rendering of its specific parts.
+If you want to customize the look of the AttributeFilterButton, you can provide your own components for rendering of its specific parts.
 
 ```jsx
     <AttributeFilterButton
@@ -149,22 +149,22 @@ If you want to customize the look of the AttributeFilterButton, it's possible to
     />
 ```
 
-See the table below with [customization properties](#customization-properties) to check all the customization possibilities, or see the [live example]().
+See the table below with the [customization properties](#customization-properties) to check all the customization possibilities, or see the [live example]().
 
 ### Accessing internal AttributeFilterButton context
-In some cases, properties provided to the custom components may not be sufficient for you. In this case, you can use `useAttributeFilterContext` hook, to obtain full internal state of the component, and obtain the data and callbacks you need.
+In some cases, properties provided to the custom components may not be sufficient for you. In this case, you can use `useAttributeFilterContext` hook to obtain the full internal state of the component, and obtain the data and callbacks you need.
 ```jsx
     const { attribute } = useAttributeFilterContext();
 ```
 
-Currently, we recommend to use component customizations mainly for smaller tweaks of the AttributeFilter UI. In case you need really specific custom UI that differs a lot from the AttributeFilter component, see how to implement [fully custom attribute filter](create_custom_attribute_filter).
+Currently, we recommend to use the component customizations mainly for smaller tweaks of the AttributeFilter UI. In case you need a really specific custom UI that differs a lot from the AttributeFilter component, see how to implement [fully custom attribute filter](create_custom_attribute_filter).
 
 ## Customization Properties
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| ErrorComponent | false | Component | A component to be rendered if initialization of the attribute filter fails. |
-| LoadingComponent | false | Component | A component to be rendered if initialization of the attribute filter is running. |
+| ErrorComponent | false | Component | A component to be rendered if the initialization of the attribute filter fails. |
+| LoadingComponent | false | Component | A component to be rendered if the initialization of the attribute filter is running. |
 | DropdownButtonComponent | false | Component | A component to be rendered instead of the default dropdown button. ![Dropdown Button](assets/attribute_filter_button_dropdown_button.png "Dropdown Button") |
 | DropdownBodyComponent | false | Component | A component to be rendered instead of the default dropdown body. ![Dropdown Body](assets/attribute_filter_dropdown_body.png "Dropdown Body") |
 | DropdownActionsComponent | false | Component | A component to be rendered instead of the default dropdown actions. ![Dropdown Actions](assets/attribute_filter_dropdown_actions.png "Dropdown Actions")  |
