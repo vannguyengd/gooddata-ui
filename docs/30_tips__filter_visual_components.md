@@ -9,7 +9,6 @@ This article provides examples of filtering visual components by attribute, date
 
 All visualization components can be filtered using the `filters` prop. The `filters` prop is an array of attribute
 filters and date filters. You can make the filters dynamic with the [`AttributeFilter`](10_vis__attribute_filter_component.md),
-[`AttributeElements`](30_tips__create_custom_attribute_filter.md),
 [`DateFilter`](10_vis__date_filter_component.md),
 [`MeasureValueFilterDropdown`](10_vis__measure_value_filter_component.md), and
 [`RankingFilterDropdown`](10_vis__ranking_filter_component.md) components.
@@ -351,8 +350,3 @@ The Attribute Filter component renders a dropdown list of all values of the sele
 
 See the [live example](https://gdui-examples.herokuapp.com/attribute-filter-components).
 
-### Attribute Elements component filter
-
-Pass a custom children function to the Attribute Elements component. This function will receive a parameter with a list of attribute values for the selected attribute. You can use it to render any custom attribute filter.
-
-See the [live example](https://gdui-examples.herokuapp.com/attribute-filter-components).

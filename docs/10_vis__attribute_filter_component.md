@@ -7,15 +7,20 @@ copyright: (C) 2007-2018 GoodData Corporation
 
 The **Attribute Filter component** is a dropdown component that lists attribute values.
 
-![Attribute Filter Component](assets/attribute_filter.png "Attribute Filter Component")
+![Attribute Filter Component](assets/attribute_filter_new.png "Attribute Filter Component")
 
 To implement the component, choose one of the following methods:
-* You pass a callback function, which receives a list of the selected values when a user clicks **Apply**.
+* You pass a callback function, which receives an updated filter with selected values when a user clicks **Apply**.
 * The component handles the change after calling itself via the ```connectToPlaceholder``` property.
 
     The ```onApply``` function is not needed; everything is handled automatically. Use ```onApply``` only if you need a specific callback to be fired.
 
 Optionally, you can define what attribute values should be selected in the filter by default.
+
+> **When implementing the Attribute Filter Button component, consider the following:**:
+>
+> - The GoodData platform supports only filters with attribute elements defined by their URIs.
+> - GoodData Cloud and GoodData.CN support filters with attribute elements defined by their `primary key` that is equal to the title of the respective element.
 
 ## Example
 
@@ -23,7 +28,7 @@ In the following example, attribute values are listed and the ```onApply``` call
 The `onApply` callback receives a new filter definition that you can use to filter charts.
 
 ```jsx
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { AttributeFilter, Model } from "@gooddata/sdk-ui-filters";
 import { newNegativeAttributeFilter } from "@gooddata/sdk-model";
 
@@ -31,21 +36,20 @@ import "@gooddata/sdk-ui-filters/styles/css/main.css";
 
 import * as Md from "./md/full";
 
-export class AttributeFilterExample extends Component {
-    onApply(filter) {
-        console.log("AttributeFilterExample onApply", filter);
-    }
+const defaultFilter = newNegativeAttributeFilter(Md.EmployeeName.Default, []);
 
-    render() {
-        return (
-            <div>
-                <AttributeFilter
-                    filter={newNegativeAttributeFilter(Md.EmployeeName.Default, [])}
-                    onApply={this.onApply}
-                />
-            </div>
-        );
-    }
+export const AttributeFilterExample = () => {
+    const [filter, setFilter] = useState(defaultFilter);
+
+    return (
+        <AttributeFilter
+            filter={filter}
+            onApply={(updatedFilter) => {
+                console.log("Applying updated filter:", updatedFilter);
+                setFilter(updatedFilter);
+            }}
+        />
+    );
 }
 ```
 
@@ -53,23 +57,20 @@ export class AttributeFilterExample extends Component {
 
 The Attribute Filter component is functionally similar to the [Attribute Filter Button component](10_vis__attribute_filter_button_component.md). You can use either of them. The only difference is what the filter dropdown button looks like.
 
-![Filter Dropdown Button](assets/attribute_filter_top_visual.png "Filter Dropdown Button")
+![Filter Dropdown Button](assets/attribute_filter_new_top_visual.png "Filter Dropdown Button")
 
 ## Define the default selection of values in the filter
 
 To define the attribute values that should be selected in the filter by default, include those attribute values in the ```filter``` property. For more details about filtering, see [Filter Visual Components](30_tips__filter_visual_components.md).
 
 ```jsx
-    render() {
-        return (
-            <div>
-                <AttributeFilter
-                    filter={newPositiveAttributeFilter(Md.EmployeeName.Default, ["Abbie Adams"])}
-                    onApply={this.onApply}
-                />
-            </div>
-        );
-    }
+    <AttributeFilter
+        filter={newPositiveAttributeFilter(
+            Md.EmployeeName.Default,
+            ["Abbie Adams"]
+        )}
+        onApply={this.onApply}
+    />
 ```
 
 ## Define a parent-child relationship between two attribute filters
@@ -81,51 +82,96 @@ The ```parentFilterOverAttribute``` property defines the relationship between th
 You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_components.md) or a [visualization definition placeholder](30_tips__placeholders.md).
 
 ```jsx
-    render() {
-        <div>
-            <AttributeFilter filter={parentFilter} fullscreenOnMobile={false} onApply={setParentFilter} />
-            <AttributeFilter
-                filter={filter}
-                parentFilters={parentFilter ? [parentFilter] : []}
-                parentFilterOverAttribute={idRef("attr.restaurantlocation.locationid")}
-                fullscreenOnMobile={false}
-                onApply={setFilter}
-            />
-        </div>
-    }
+    <div>
+        <AttributeFilter
+            filter={parentFilter}
+            onApply={setParentFilter}
+        />
+        <AttributeFilter
+            filter={filter}
+            parentFilters={parentFilter ? [parentFilter] : []}
+            parentFilterOverAttribute={idRef("attr.restaurantlocation.locationid")}
+            onApply={setFilter}
+        />
+    </div>
 ```
 
 ```jsx
-    render() {
     <div>
-        <AttributeFilter connectToPlaceholder={parentFilterPlaceholder} fullscreenOnMobile={false} />
+        <AttributeFilter
+            connectToPlaceholder={parentFilterPlaceholder}
+        />
         <AttributeFilter
             connectToPlaceholder={filterPlaceholder}
             parentFilters={parentFilterPlaceholder ? [parentFilterPlaceholder] : []}
             parentFilterOverAttribute={idRef("attr.restaurantlocation.locationid")}
-            fullscreenOnMobile={false}
         />
     </div>
-}
 ```
 
 ## Properties
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| onApply | false | Function | A callback when the selection is confirmed by a user |
-| onApplyWithFilterDefinition | false | Function | A callback when the selection is confirmed by a user. The selection of attribute values is received already transformed into an attribute filter definition, which you can then send directly to a chart. |
-| filter | false | [Filter](30_tips__filter_visual_components.md) | The attribute filter definition |
-| parentFilters | false | AttributeFiltersOrPlaceholders[] | An array of parent attribute filter definitions |
-| connectToPlaceholder | false | IPlaceholder<IAttributeFilter> | The [visualization definition placeholder](30_tips__placeholders.md) used to get and set the value of the attribute filter |
-| parentFilterOverAttribute | false | ObjRef &#124; Function | The reference to the parent filter attribute over which the available options are reduced, or the function called for every parent filter that returns such reference for the given parent filter |
-| backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces |
-| workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID |
-| locale | false | string | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
-| fullscreenOnMobile | false | boolean | If `true`, adjusts the filter to be properly rendered on a mobile device |
-| title | false | string | A custom label to show on the dropdown icon |
-| FilterLoading | false | Component | A component to be rendered if attribute elements are loading |
-| FilterError | false | Component | A component to be rendered if attribute elements loading fails |
+| onApply | false | [OnApplyCallbackType](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-filters.onapplycallbacktype.html) | A callback that contains updated filter when the selection change is confirmed by a user. |
+| onError | false | (error: [GoodDataSdkError](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.gooddatasdkerror.html)) => void; | A callback that is triggered when the component runs into an error. |
+| filter | false | [IAttributeFilter](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-model.iattributefilter.html) | The attribute filter definition. |
+| parentFilters | false | [AttributeFiltersOrPlaceholders](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.attributefiltersorplaceholders.html) | An array of parent attribute filter definitions. This feature is not yet supported by GoodData.CN and GoodData Cloud. |
+| connectToPlaceholder | false | [IPlaceholder&lt;IAttributeFilter&gt;](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.iplaceholder.html) | The [visualization definition placeholder](30_tips__placeholders.md) used to get and set the value of the attribute filter. |
+| parentFilterOverAttribute | false | [ParentFilterOverAttributeType](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-filters.parentfilteroverattributetype.html) | The reference to the parent filter attribute over which the available options are reduced, or the function called for every parent filter that returns such reference for the given parent filter. |
+| backend | false | [IAnalyticalBackend](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-backend-spi.ianalyticalbackend.html) | The object with the configuration related to communication with the backend and access to analytical workspaces. |
+| workspace | false | string | The [workspace](02_start__execution_model.md#where-do-measures-and-attributes-come-from) ID. |
+| locale | false | [ILocale](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.ilocale.html) | The localization of the component. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
+| fullscreenOnMobile | false | boolean | If `true`, adjusts the filter to be properly rendered on a mobile device. |
+| title | false | string | A custom label to show on the dropdown button. |
+| titleWithSelection | false | string | Should the dropdown button reflect also the applied selection, or display only the attribute title? This option won't be applied, if `title` property is set. |
+| hiddenElements | false | string[] | Specify elements that will be exluded from the selection list. Currently, elements can be specified only by their uris. This feature is not yet supported by GoodData.CN and GoodData Cloud. |
+| staticElements | false | string[] | Provide elements to show in the selection list instead of loading them from the backend. |
 
 **NOTE:** The ```uri``` property (the URI of the attribute displayForm used in the filter) and the ```identifier``` property (the identifier of the attribute displayForm used in the filter) are **deprecated**. Do not use them.
 To define an attribute, use the ```filter``` property.
+
+## Customize AttributeFilter components
+> AttributeFilter component customizations are still in beta stage.
+> We appreciate any [feedback and experiences](support_options) that can help us to improve this feature in the future.
+
+If you want to customize the look of the AttributeFilter, it's possible to provide your own components for rendering of its specific parts.
+
+```jsx
+    <AttributeFilter
+        filter={newNegativeAttributeFilter(Md.EmployeeName.Default, [])}
+        onApply={setFilter}
+        // Provide your own component for rendering "Apply" and "Cancel" buttons
+        DropdownActionsComponent={CustomActions}
+        // Provide your own component for rendering of the attribute element
+        ElementsSelectItemComponent={CustomItem}
+    />
+```
+
+See the table below with [customization properties](#customization-properties) to check all the customization possibilities, or see the [live example]().
+
+### Accessing internal AttributeFilter context
+In some cases, properties provided to the custom components may not be sufficient for you. In this case, you can use `useAttributeFilterContext` hook, to obtain full internal state of the component, and obtain the data and callbacks you need.
+```jsx
+    const { attribute } = useAttributeFilterContext();
+```
+
+Currently, we recommend to use component customizations mainly for smaller tweaks of the AttributeFilter UI. In case you need really specific custom UI that differs a lot from the AttributeFilter component, see how to implement [fully custom attribute filter](create_custom_attribute_filter).
+
+## Customization Properties
+
+| Name | Required? | Type | Description |
+| :--- | :--- | :--- | :--- |
+| ErrorComponent | false | Component | A component to be rendered if initialization of the attribute filter fails. |
+| LoadingComponent | false | Component | A component to be rendered if initialization of the attribute filter is running. |
+| DropdownButtonComponent | false | Component | A component to be rendered instead of the default dropdown button. ![Dropdown Button](assets/attribute_filter_dropdown_button.png "Dropdown Button") |
+| DropdownBodyComponent | false | Component | A component to be rendered instead of the default dropdown body. ![Dropdown Body](assets/attribute_filter_dropdown_body.png "Dropdown Body") |
+| DropdownActionsComponent | false | Component | A component to be rendered instead of the default dropdown actions. ![Dropdown Actions](assets/attribute_filter_dropdown_actions.png "Dropdown Actions")  |
+| ElementsSearchBarComponent | false | Component | A component to be rendered instead of the default elements search bar. ![Elements Search Bar](assets/attribute_filter_elements_search_bar.png "Elements Search Bar") |
+| ElementsSelectComponent | false | Component | A component to be rendered instead of the default elements select. ![Elements Select](assets/attribute_filter_elements_select.png "Elements Select") |
+| ElementsSelectLoadingComponent | false | Component | A component to be rendered instead of the default elements select loading. ![Elements Select Loading](assets/attribute_filter_elements_select_loading.png "Elements Select Loading") |
+| ElementsSelectItemComponent | false | Component | A component to be rendered instead of the default elements select item. ![Elements Select Item](assets/attribute_filter_elements_select_item.png "Elements Select Item")  |
+| ElementsSelectActionsComponent | false | Component | A component to be rendered instead of the default elements select actions. ![Elements Select Actions](assets/attribute_filter_elements_select_actions.png "Elements Select Actions") |
+| ElementsSelectErrorComponent | false | Component | A component to be rendered instead of the default elements select error. ![Elements Select Error](assets/attribute_filter_elements_select_error.png "Elements Select Error")  |
+| EmptyResultComponent | false | Component | A component to be rendered instead of the default empty result. ![Empty Result](assets/attribute_filter_empty_result.png "Empty Result") |
+| StatusBarComponent | false | Component | A component to be rendered instead of the default status bar. ![Status Bar](assets/attribute_filter_status_bar.png "Status Bar") |
