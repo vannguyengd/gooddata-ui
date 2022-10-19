@@ -152,6 +152,12 @@ The setup is different for the GoodData platform and GoodData.CN.
 the KPI Dashboards component will prevent load of any external scripts and assets outside of the GoodData
 platform.
 
+### Configuration on GoodData Cloud
+
+1. Set up hosting for your plugins.
+
+2. Update the Content Security Policy of your GoodData Cloud instance's gateway to enable loading plugins from the hosting location.
+
 ### Configuration on GoodData.CN
 
 1. Set up hosting for your plugins.
