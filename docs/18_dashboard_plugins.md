@@ -156,7 +156,7 @@ platform.
 
 1. Set up hosting for your plugins.
 
-2. Update the Content Security Policy of your GoodData Cloud installation's gateway to enable loading plugins from the hosting location.
+2. Update the Content Security Policy of your GoodData Cloud instance's gateway to enable loading plugins from the hosting location.
 
 ### Configuration on GoodData.CN
 
