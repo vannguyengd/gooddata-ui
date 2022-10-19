@@ -337,6 +337,25 @@ To change the rendering mode of the Filter bar, call the `setRenderingMode` meth
 
    **NOTE:** This only hides the Filter bar from the user interface. Any set filters will still be applied.
 
+### Customize Attribute Filters and Date Filter
+Call the `filters()` method on the customization API to get the API through which you can customize how the attribute or date filters will be rendered on your dashboard.
+
+* To **render one or more attribute filters** using your custom components, the attribute filters customization API provides `withCustomProvider()` method [similar to insight widgets](#customize-rendering-of-insights).
+
+    When calling this method, you can register a function that will be called by the Dashboard component every time it
+    wants to render an attribute filter. The function will receive a filter definition to be rendered. This function
+    is expected to return a React component to use for rendering that attribute filter. If the function does not return
+    a custom component, the Dashboard component falls back and uses the built-in component.
+
+    Your function must determine that a particular attribute filter should be rendered using
+    a custom component and then return the custom component. How your function determines this is up to you.
+
+    **TIP:** GoodData.UI contains API that will help you to [customize default AttributeFilter component or implement you own](create_custom_attribute_filter).
+
+* To **render date filter** using your custom component, the date filter customization API provides `withCustomProvider()` method. It works in the exact same way as the attribute filter one.
+
+See the [live code example]() of the filter customization API.
+
 ## Event handler API
 
 The event handler API is an entry point to the event handling and subscription subsystem of the Dashboard component.

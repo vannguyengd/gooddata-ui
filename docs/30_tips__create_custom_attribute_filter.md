@@ -17,7 +17,7 @@ This is the best option if you need to implement a fully custom UI for the attri
 
 It has the identical convenient API as the [AttributeFilter](attribute_filter_component) component - the same input props and the same output props that are available in the [internal context](attribute_filter_component#accessing-internal-attributefilter-context) of the AttributeFilter component.
 
-It works out of the box with other UI.SDK things - [BackendProvider](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.backendprovider.html), [WorkspaceProvider](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.workspaceprovider.html) and [visualization definition placeholders](placeholders).
+It works out of the box with other GoodData.UI things - [BackendProvider](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.backendprovider.html), [WorkspaceProvider](https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui.workspaceprovider.html) and [visualization definition placeholders](placeholders).
 
 See the [live code example]().
 
