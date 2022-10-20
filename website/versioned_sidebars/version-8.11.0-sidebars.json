@@ -1,0 +1,111 @@
+{
+  "version-8.11.0-Docs": {
+    "Introduction": [
+      "version-8.11.0-about_gooddataui",
+      "version-8.11.0-why_gdui",
+      "version-8.11.0-interactive_examples",
+      "version-8.11.0-whats_new_8",
+      "version-8.11.0-breaking_changes_8",
+      "version-8.11.0-migration_guide_8",
+      "version-8.11.0-supported_versions",
+      "version-8.11.0-framework_overview",
+      "version-8.11.0-api_maturity",
+      "version-8.11.0-roadmap"
+    ],
+    "Getting Started": [
+      "version-8.11.0-quickstart",
+      "version-8.11.0-create_new_application",
+      "version-8.11.0-understand_execution_model",
+      "version-8.11.0-export_catalog",
+      "version-8.11.0-choose_visualization_approach",
+      "version-8.11.0-choose_dashboard_approach"
+    ],
+    "Integration with GoodData Platform": [
+      "version-8.11.0-platform_intro",
+      "version-8.11.0-platform_integration",
+      "version-8.11.0-platform_sso",
+      "version-8.11.0-platform_cors"
+    ],
+    "Integration with GoodData Cloud and GoodData.CN": [
+      "version-8.11.0-cloud_introduction",
+      "version-8.11.0-cloudnative_introduction",
+      "version-8.11.0-cloudnative_getting_started",
+      "version-8.11.0-cloudnative_authentication",
+      "version-8.11.0-cloudnative_integration",
+      "version-8.11.0-cloudnative_local_dev",
+      "version-8.11.0-cloudnative_limitations"
+    ],
+    "Visual Components": [
+      "version-8.11.0-start_with_visual_components",
+      "version-8.11.0-theme_provider",
+      "version-8.11.0-area_chart_component",
+      "version-8.11.0-bar_chart_component",
+      "version-8.11.0-bubble_chart_component",
+      "version-8.11.0-bullet_chart_component",
+      "version-8.11.0-column_chart_component",
+      "version-8.11.0-combo_chart_component",
+      "version-8.11.0-donut_chart_component",
+      "version-8.11.0-geo_pushpin_chart_component",
+      "version-8.11.0-headline_component",
+      "version-8.11.0-heatmap_component",
+      "version-8.11.0-kpi_component",
+      "version-8.11.0-line_chart_component",
+      "version-8.11.0-pie_chart_component",
+      "version-8.11.0-pivot_table_component",
+      "version-8.11.0-scatter_plot_component",
+      "version-8.11.0-treemap_component",
+      "version-8.11.0-visualization_component",
+      "version-8.11.0-attribute_filter_component",
+      "version-8.11.0-attribute_filter_button_component",
+      "version-8.11.0-date_filter_component",
+      "version-8.11.0-measure_value_filter_component",
+      "version-8.11.0-ranking_filter_component"
+    ],
+    "Properties": [
+      "version-8.11.0-chart_config",
+      "version-8.11.0-date_filter_option",
+      "version-8.11.0-drillable_item",
+      "version-8.11.0-error_component",
+      "version-8.11.0-loading_component",
+      "version-8.11.0-on_export_ready",
+      "version-8.11.0-on_fire_drill_event",
+      "version-8.11.0-on_legend_ready",
+      "version-8.11.0-data_sampling"
+    ],
+    "Custom Visualizations": [
+      "version-8.11.0-create_new_visualization",
+      "version-8.11.0-custom_execution",
+      "version-8.11.0-result_specification"
+    ],
+    "Execution Model": [
+      "version-8.11.0-execution_model",
+      "version-8.11.0-time_over_time_comparison",
+      "version-8.11.0-arithmetic_measure"
+    ],
+    "Dashboard": [
+      "version-8.11.0-dashboard_intro",
+      "version-8.11.0-dashboard_plugins",
+      "version-8.11.0-dashboard_plugins_api",
+      "version-8.11.0-dashboard_embedding",
+      "version-8.11.0-dashboard_component",
+      "version-8.11.0-upgrade_dashboard_plugins"
+    ],
+    "Development Tips": [
+      "version-8.11.0-ht_embed_visualization",
+      "version-8.11.0-embed_dashboard",
+      "version-8.11.0-table_totals",
+      "version-8.11.0-filter_visual_components",
+      "version-8.11.0-create_custom_attribute_filter",
+      "version-8.11.0-ht_render_visualization_from_different_domain",
+      "version-8.11.0-ht_use_react_component_in_angular_2.x",
+      "version-8.11.0-ht_create_predicates",
+      "version-8.11.0-backend_agnostic_apps",
+      "version-8.11.0-placeholders",
+      "version-8.11.0-improve_performance"
+    ],
+    "Support": [
+      "version-8.11.0-support_options",
+      "version-8.11.0-live_examples"
+    ]
+  }
+}

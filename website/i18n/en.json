@@ -1856,6 +1856,62 @@
         "title": "What's New in Version 8.0",
         "sidebar_label": "What's New in Version 8.0"
       },
+      "version-8.11.0/version-8.11.0-supported_versions": {
+        "title": "Supported Versions and Compatibility",
+        "sidebar_label": "Supported Versions and Compatibility"
+      },
+      "version-8.11.0/version-8.11.0-cloudnative_limitations": {
+        "title": "Limitations",
+        "sidebar_label": "Limitations"
+      },
+      "version-8.11.0/version-8.11.0-attribute_filter_button_component": {
+        "title": "Attribute Filter Button",
+        "sidebar_label": "Attribute Filter Button"
+      },
+      "version-8.11.0/version-8.11.0-attribute_filter_component": {
+        "title": "Attribute Filter",
+        "sidebar_label": "Attribute Filter"
+      },
+      "version-8.11.0/version-8.11.0-dashboard_component": {
+        "title": "Dashboard Component",
+        "sidebar_label": "Dashboard Component"
+      },
+      "version-8.11.0/version-8.11.0-dashboard_plugins_api": {
+        "title": "Dashboard Plugin API",
+        "sidebar_label": "Dashboard Plugin API"
+      },
+      "version-8.11.0/version-8.11.0-dashboard_plugins": {
+        "title": "Dashboard Plugins",
+        "sidebar_label": "Dashboard Plugins"
+      },
+      "version-8.11.0/version-8.11.0-create_custom_attribute_filter": {
+        "title": "Create a Custom Attribute Filter",
+        "sidebar_label": "Create a Custom Attribute Filter"
+      },
+      "version-8.11.0/version-8.11.0-filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
+      },
+      "version-8.11.0/version-8.11.0-improve_performance": {
+        "title": "Improve Dashboard component's performance",
+        "sidebar_label": "Improve Dashboard component's performance"
+      },
+      "version-8.11.0/version-8.11.0-execute_component": {
+        "title": "Execute an API Call",
+        "sidebar_label": "Execute an API Call"
+      },
+      "version-8.11.0/version-8.11.0-clean_up_your_code": {
+        "title": "Clean Up Your Code",
+        "sidebar_label": "Clean Up Your Code"
+      },
+      "version-8.11.0/version-8.11.0-data_layer": {
+        "title": "Access Low Level API (DataLayer)",
+        "sidebar_label": "Access Low Level API"
+      },
+      "version-8.11.0/version-8.11.0-table_totals_in_execution_object": {
+        "title": "Specify Table Totals",
+        "sidebar_label": "Specify Table Totals"
+      },
       "version-8.2.0/version-8.2.0-about_gooddataui": {
         "title": "About GoodData.UI",
         "sidebar_label": "About GoodData.UI"
