@@ -354,8 +354,6 @@ Call the `filters()` method on the customization API to get the API through whic
 
 * To **render a date filter** using your custom component, the date filter customization API provides the `withCustomProvider()` method. It works in the same way as the attribute filter method.
 
-See the [live code example]() of the filter customization API.
-
 ## Event handler API
 
 The event handler API is an entry point to the event handling and subscription subsystem of the Dashboard component.
