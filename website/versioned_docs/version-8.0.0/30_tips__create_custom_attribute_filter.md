@@ -16,7 +16,3 @@ The child function receives the following arguments:
 * A callback to load more values
 * Loading status
 * An optional error object
-
-### Example
-
-For the latest up-to-date examples, see the [live examples](https://github.com/gooddata/gooddata-ui-sdk/blob/master/examples/sdk-examples/src/examples/attributeFilter/AttributeElementsExample.tsx) in the GoodData.UI repository.
