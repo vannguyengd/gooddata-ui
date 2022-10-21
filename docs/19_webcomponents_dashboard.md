@@ -27,7 +27,7 @@ You can embed view-only GoodData dashboard into your application using `gd-dashb
 * `dashboard` - mandatory, an ID of the dashboard to embed.
 * `workspace` - optional, an ID of the workspace for this dashboard. By default, it's taken from the context
     (e.g. from the script URL).
-* `locale` - optional, defaults to `en_US`. The localization of the visualization. For available languages,
+* `locale` - optional, defaults to `en-US`. The localization of the visualization. For available languages,
     see [the full list of available localizations].
 * `readonly` - optional, if enabled, the dashboard will be embedded in read-only mode disabling any user interaction
   that would alter any backend state (disabling creating/changing alerts, creating scheduled emails, and so on).
