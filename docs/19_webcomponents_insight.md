@@ -20,7 +20,6 @@ You can embed a single insight into your application using `gd-insight` custom e
     insight="my-insight-id"
     workspace="my-workspace-id"
     locale="en_US"
-    mapbox="my-mapbox-token"
     title="Custom insight title"
 ></gd-insight>
 ```
@@ -30,7 +29,6 @@ You can embed a single insight into your application using `gd-insight` custom e
   (e.g. from the script URL).
 * `locale` - optional, defaults to `en_US`. The localization of the visualization. For available languages,
     see [the full list of available localizations].
-* `mapbox` - optional, the map access token to be used by [geo pushpin charts].
 * `title` - optional, if provided as a boolean shortcut attribute, will render the insight title. If provided as a string,
     will override the default value and render the visualization with that string.
 
@@ -45,8 +43,8 @@ You can embed a single insight into your application using `gd-insight` custom e
 <gd-insight insight="my-insight" title="My custom attribute title"></gd-insight>
 ```
 
-You can also provide a workspace id and a Mapbox token on the context level instead of passing it
-as attributes to every dashboard. See a code example of the [Web Components authentication] article.
+You can also provide a workspace id on the context level instead of passing it
+as an attribute to every dashboard. See a code example of the [Web Components authentication] article.
 
 Note, that locale property affects only the UI elements and not your data or metadata language.
 
@@ -77,6 +75,5 @@ You can subscribe to the events same way as to any other DOM event:
 ```
 
 [the full list of available localizations]:https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts
-[geo pushpin charts]:https://sdk.gooddata.com/gooddata-ui/docs/geo_pushpin_chart_component.html#geo-config
 [the InsightView component]:https://sdk.gooddata.com/gooddata-ui/docs/visualization_component.html#properties
 [Web Components authentication]:19_webcomponents_authentication.md#programmatic-authentication

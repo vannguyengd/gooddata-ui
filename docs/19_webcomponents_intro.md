@@ -5,8 +5,10 @@ copyright: (C) 2007-2022 GoodData Corporation
 id: webcomponents_intro
 ---
 
-Starting version 2.1, GoodData.CN includes a Web Components library that you can import into your application
-to embed dashboards or individual insights. The library is also hosted at GoodData Cloud and Platform.
+Starting version 2.2, GoodData.CN includes a Web Components library that you can import into your application
+to embed dashboards or individual insights. The library is also hosted at GoodData Cloud.
+
+> Note, at the moment we do not provide WebComponents library for GoodData Platform (code name `bear`).
 
 The Web Components library is a thin wrapper around [InsightView] and [Dashboard] components. It is meant
 to make embedding super easy, yet keep high level of integration with the host application. In the simplest form,
@@ -57,8 +59,7 @@ Since Web Components is a relatively new technology, the library will not work i
 
 You will also need to set up **CORS configuration** on the GoodData server instance to allow the script from your application
 domain to make network requests to the GoodData server. Refer to the CORS configuration sections in [GoodData.CN and
-GoodData Cloud setup docs](06_cloudnative__integration.md#step-4-solve-cross-origin-resource-sharing) and in [GoodData
-platform setup docs](30_tips__cors.md#enable-cors).
+GoodData Cloud setup docs].
 
 ### Load the library
 
@@ -75,11 +76,11 @@ section of your web page.
 The script **must be** of type `module`, as we are using JavaScript modules for this distribution.
 
 The library will parse its own URL to pre-configure and allow you to skip the boilerplate code:
-* The domain name `your-gd-server-url` must be the domain of you GoodData.CN server, GoodData Cloud or platform instance.
+* The domain name `{your-gd-server-url}` must be the domain of you GoodData.CN server or GoodData Cloud instance.
     This is not only the domain where the script will be loaded from, but also the domain that will be used to load your
     insight and dashboard data. I.e. you can't load the script from one instance to use it with data from another instance.
     **At the moment it's not possible to connect to several GoodData instances from a single runtime.**
-* The `workspace-id` is the ID of the default workspace from where the library will be loading your insights and dashboards.
+* The `{workspace-id}` is the ID of the default workspace from where the library will be loading your insights and dashboards.
     It is possible to override this value for a specific insight or dashboard.
 * An `auth` query parameter is optional. When provided, the library will authenticate the user automatically.
     See [Web Components Authentication] for more details.
@@ -94,6 +95,7 @@ on the page:
 
 [InsightView]:10_vis__insight_view.md
 [Dashboard]:18_dashboard_component.md
+[GoodData.CN and GoodData Cloud setup docs]:06_cloudnative__integration.md#step-4-solve-cross-origin-resource-sharing
 [Web Components Authentication]:19_webcomponents_authentication.md
 [dashboard embedding]:19_webcomponents_dashboard.md
 [insight embedding]:19_webcomponents_insight.md
