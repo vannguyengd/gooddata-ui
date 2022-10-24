@@ -37,3 +37,12 @@ The created application contains its own README with further information about c
 **NOTE:** This tutorial assumes that you already have an existing GoodData platform or GoodData Cloud account or a GoodData.CN installation.
 You can create a GoodData platform account for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/), a GoodData Cloud account for free at [https://www.gooddata.com/trial/](https://www.gooddata.com/trial/) or download
 GoodData.CN at [https://www.gooddata.com/developers/](https://www.gooddata.com/developers/).
+
+## 3rd party cookies protection
+
+When you're using create gooddata react app, its necessary to turn of 3rd party cookies protections. This is necessary for authentication
+work as expected. Authentication cookie in this case can be recognized by browser as a 3rd party (which is basically true, because this cookie
+is intended for host that is target for proxying requests). For developing scenarios, this feature needs to be **turned off**.
+
+Every browser has some special name for this feature. For Chrome this feature is named like "Block third-arty cookies", for Firefox is called "Enhanced
+tracking protection". There will be some similar names also in another browsers.

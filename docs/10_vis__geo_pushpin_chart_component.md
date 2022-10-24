@@ -72,12 +72,11 @@ const config = {
 | onDrill | false | Function | A callback when a drill is triggered on the component |
 
 ## Geo Config
-| Name | Required? | Type | Description |
+| Name | Required? | Type | Description                                                                                                                                                                                                                                                                                                                        |
 | :--- | :--- | :--- | :--- |
-| mapboxToken | true | string | A map access token that the chart uses to render the map requiring such a token. To create a Mapbox account and an access token, see [this guide](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/). |
-| points | false | GeoPointsConfig | A configuration object where you can define clustering and the minimum and maximum sizes of the pins |
-| viewport | false | GeoConfigViewport | The region that the viewport should focus on after the chart is rendered |
-| tooltipText | false | [Attribute](50_custom__execution.md#attribute) | An additional item that shows a user-friendly label for the location attribute instead of the longitude and latitude |
+| points | false | GeoPointsConfig | A configuration object where you can define clustering and the minimum and maximum sizes of the pins                                                                                                                                                                                                                               |
+| viewport | false | GeoConfigViewport | The region that the viewport should focus on after the chart is rendered                                                                                                                                                                                                                                                           |
+| tooltipText | false | [Attribute](50_custom__execution.md#attribute) | An additional item that shows a user-friendly label for the location attribute instead of the longitude and latitude                                                                                                                                                                                                               |
 
 For the common chart configuration options such as colors, separators, or legend visibility, see [Chart Config](15_props__chart_config.md).
 
@@ -144,3 +143,45 @@ The following example shows the supported `geoConfig` structure with sample valu
     }
 }
 ```
+
+## Mapbox token provider
+
+Token provider allows to set Mapbox token for whole app or part of app. It is not necessary to provide token into every chart, insight or dashboard.
+
+## Structure
+
+```jsx
+import "@gooddata/sdk-ui-geo/styles/css/main.css";
+import { MapboxTokenProvider } from "@gooddata/sdk-ui-geo";
+
+<MapboxTokenProvider
+    token={<token>}
+>
+    ...
+</MapboxTokenProvider>
+```
+
+## Example
+
+```jsx
+import "@gooddata/sdk-ui-geo/styles/css/main.css";
+import { GeoPushpinChart } from "@gooddata/sdk-ui-geo";
+import * as Md from "./md/full";
+
+<div style={{ height: 600, width: 900 }}>
+    <MapboxTokenProvider token="your_mapbox_token">
+        <GeoPushpinChart
+            location={Md.City.LOcation}
+            size={Md.Population.Sum}
+            color={Md.Density.Sum}
+            segmentBy={Md.StateName}
+        />
+    </MapboxTokenProvider>
+</div>
+```
+
+## Properties
+
+| Name | Required? | Type | Description                                                                                                                                                                                                                                                                                                                        |
+| :--- | :--- | :--- | :--- |
+| mapboxToken | true | string | A map access token that the chart uses to render the map requiring such a token. To create a Mapbox account and an access token, see [this guide](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/). |
