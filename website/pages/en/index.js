@@ -181,7 +181,7 @@ const InstallationExample1 =  (
   <pre className="exampleCode" key="InstallationExample1">
     <code className="hljs highlighting">
       <span className="hljs-comment">// bootstrap and configure your new application</span><br/>
-      $ npx @gooddata/create-gooddata-react-app my-app<br/>
+      $ npx @gooddata/create-gooddata-react-app@latest my-app<br/>
     </code>
   </pre>
 );
