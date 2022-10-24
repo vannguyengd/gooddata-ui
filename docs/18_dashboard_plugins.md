@@ -117,7 +117,6 @@ lead to breakage when you try to upgrade your dashboard plugin to use a newer ve
 
 ### Current limitations
 
--  The plugins are currently not supported on GoodData Cloud.
 -  The plugins are only in effect for consumers in view mode. The plugins are not loaded in edit mode.
 -  GoodData does not provide hosting for your built plugins. When you build your plugin, you will have to
    host it yourself in a publicly available location that supports HTTPS.
