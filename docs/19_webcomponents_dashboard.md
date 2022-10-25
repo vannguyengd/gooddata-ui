@@ -5,7 +5,7 @@ copyright: (C) 2007-2022 GoodData Corporation
 id: webcomponents_dashboard
 ---
 
-You can embed view-only GoodData dashboard into your application using `gd-dashboard` custom element, like so:
+You can embed a view-only GoodData dashboard into your application using the `gd-dashboard` custom element with the following:
 
 ```html
 <!-- minimal setup -->
@@ -24,22 +24,19 @@ You can embed view-only GoodData dashboard into your application using `gd-dashb
 ></gd-dashboard>
 ```
 
-* `dashboard` - mandatory, an ID of the dashboard to embed.
-* `workspace` - optional, an ID of the workspace for this dashboard. By default, it's taken from the context
-    (e.g. from the script URL).
-* `locale` - optional, defaults to `en-US`. The localization of the visualization. For available languages,
-    see [the full list of available localizations].
-* `readonly` - optional, if enabled, the dashboard will be embedded in read-only mode disabling any user interaction
-  that would alter any backend state (disabling creating/changing alerts, creating scheduled emails, and so on).
+* `dashboard` - Mandatory, the ID of the dashboard to embed.
+* `workspace` - optional, the ID of the workspace for this dashboard. By default, it is taken from the context (e.g., from the script URL).
+* `locale` - optional, defaults to `en-US`. The localization of the visualization. For all available languages, see [the full list of available localizations].
+* `readonly` - optional. If enabled, the dashboard will be embedded in the read-only mode and all user interaction that would alter any backend state will be disabled (e.g., creating/changing alerts, creating scheduled emails, and so on).
 
-You can also provide a workspace id on the context level instead of passing it
-as an attribute to every dashboard. See a code example of the [Web Components authentication] article.
+You can also provide a workspace id on the context level instead of passing it as an attribute to every dashboard. See the code example of the [Web Components authentication] article.
 
-Note, that locale property affects only the UI elements and not your data or metadata language.
+> The locale property affects only the UI elements and not your data or the metadata language.
 
 ## Supported events
 
 `gd-dashboard` emits [the same events as the Dashboard component].
+
 Events **do not bubble** and **are not cancelable**. Here is how you can subscribe to one from your code:
 
 ```html
@@ -53,6 +50,6 @@ Events **do not bubble** and **are not cancelable**. Here is how you can subscri
 </script>
 ```
 
-[the full list of available localizations]:https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts
-[Web Components authentication]:19_webcomponents_authentication.md#programmatic-authentication
-[the same events as the Dashboard component]:https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.dashboardeventtype.html
+[The full list of available localizations]:https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts
+[The Web Components authentication]:19_webcomponents_authentication.md#programmatic-authentication
+[The same events as the Dashboard component]:https://sdk.gooddata.com/gooddata-ui-apidocs/docs/sdk-ui-dashboard.dashboardeventtype.html

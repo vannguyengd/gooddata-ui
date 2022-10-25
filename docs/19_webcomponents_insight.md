@@ -5,16 +5,18 @@ copyright: (C) 2007-2022 GoodData Corporation
 id: webcomponents_insight
 ---
 
-You can embed a single insight into your application using `gd-insight` custom element, like so:
+You can embed a single insight into your application using the `gd-insight` custom element with the following:
 
 ```html
 <!-- minimal setup -->
 <gd-insight insight="my-insight-id"></gd-insight>
 ```
 
-> Note, the `gd-insight` element is using flex layout and will adjust to the size of its container. If the container
-> does not have `display` property set to `flex`, the widget will have a zero height. You can also define the element
-> height explicitly with CSS, for example using inline `style` attribute: `style="height:500px"`.
+> The `gd-insight` element is using the flex layout that adjusts to the size of its container. 
+>
+>If the container does not have the `display` property set to `flex`, the widget will have zero height. 
+>
+>You can also define the element height explicitly with CSS, for example, using the inline `style` attribute: `style="height:500px"`.
 
 ## Supported attributes
 
@@ -28,13 +30,10 @@ You can embed a single insight into your application using `gd-insight` custom e
 ></gd-insight>
 ```
 
-* `insight` - mandatory, an ID of the insight to embed.
-* `workspace` - optional, an ID of the workspace for this dashboard. By default, it's taken from the context
-  (e.g. from the script URL).
-* `locale` - optional, defaults to `en-US`. The localization of the visualization. For available languages,
-    see [the full list of available localizations].
-* `title` - optional, if provided as a boolean shortcut attribute, will render the insight title. If provided as a string,
-    will override the default value and render the visualization with that string.
+* `insight` - mandatory, the ID of the insight to embed.
+* `workspace` - optional, the ID of the workspace for this dashboard. By default, it is taken from the context (e.g., from the script URL).
+* `locale` - optional, defaults to `en-US`. The localization of the visualization. For all available languages, see [the full list of available localizations].
+* `title` - optional. If provided as a boolean shortcut attribute, it will render the insight title. If provided as a string, it will override the default value and render the visualization with that string.
 
 ```html
 <!-- with no `title` attribute, the title will not be rendered -->
@@ -47,25 +46,24 @@ You can embed a single insight into your application using `gd-insight` custom e
 <gd-insight insight="my-insight" title="My custom attribute title"></gd-insight>
 ```
 
-You can also provide a workspace id on the context level instead of passing it
-as an attribute to every dashboard. See a code example of the [Web Components authentication] article.
+You can also provide a workspace id on the context level instead of passing it as an attribute to every dashboard. See the code example of the [Web Components authentication] article.
 
-Note, that locale property affects only the UI elements and not your data or metadata language.
+> The locale property affects only the UI elements and not your data or the metadata language.
 
 ## Supported events
 
 `gd-insight` emits the following events:
 
-* `drill` - when drill is initiated by the user.
+* `drill` - a drill is initiated by the user.
 * `error` - an error occurred while evaluating the data for the insight.
-* `exportReady` - user requested the export, and it's now ready.
+* `exportReady` - a user requested the export and it is ready.
 * `loadingChanged` - loading state of the insight has changed.
 * `insightLoaded` - insight data is fully loaded.
 
-Events **do not bubble** and **are not cancelable**. For more info on the event payload, see callback description of
+Events **do not bubble** and **are not cancelable**. For more info on the event payload, see the callback description of
 [the InsightView component].
 
-You can subscribe to the events same way as to any other DOM event:
+You can subscribe to the events the same way as to any other DOM event:
 
 ```html
 <gd-insight insight="my-insight" id="some-dom-id"></gd-insight>
@@ -78,6 +76,6 @@ You can subscribe to the events same way as to any other DOM event:
 </script>
 ```
 
-[the full list of available localizations]:https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts
-[the InsightView component]:https://sdk.gooddata.com/gooddata-ui/docs/visualization_component.html#properties
-[Web Components authentication]:19_webcomponents_authentication.md#programmatic-authentication
+[The full list of available localizations]:https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts
+[The InsightView component]:https://sdk.gooddata.com/gooddata-ui/docs/visualization_component.html#properties
+[The Web Components authentication]:19_webcomponents_authentication.md#programmatic-authentication
