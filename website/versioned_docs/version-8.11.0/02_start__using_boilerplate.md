@@ -1,8 +1,9 @@
 ---
+id: version-8.11.0-create_new_application
 title: Create Your First Application Using Accelerator Toolkit
 sidebar_label: Create Your First Application Using Accelerator Toolkit
-copyright: (C) 2007-2019 GoodData Corporation
-id: create_new_application
+copyright: (C) 2007-2021 GoodData Corporation
+original_id: create_new_application
 ---
 
 Create your first analytical application using the **`@gooddata/create-gooddata-react-app`** tool.
@@ -40,8 +41,8 @@ GoodData.CN at [https://www.gooddata.com/developers/](https://www.gooddata.com/d
 
 ## Third party cookie protection
 
-When you use the `create-gooddata-react-app`, you must **turn off** any 3rd party cookie protections in your browser. 
+When you use the `create-gooddata-react-app`, you must **turn off** any 3rd party cookie protections in your browser.
 
-This is necessary for authentication to work as expected. Some browsers may consider the authentication cookie as a third party cookie (which is basically true, because this cookie is intended for the host that is the target for the proxying requests). 
+This is necessary for authentication to work as expected. Some browsers may consider the authentication cookie as a third party cookie (which is basically true, because this cookie is intended for the host that is the target for the proxying requests).
 
 >Every browser has a special name for this feature. Chrome names this feature *Block third-party cookies*; Firefox names it *Enhanced tracking protection*.
