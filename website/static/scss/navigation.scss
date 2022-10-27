@@ -2,7 +2,7 @@
     overflow: visible;
 
     @media #{$large-down} {
-        top: 88px;
+        top: 120px;
     }
 
     @media #{$medium-up} {
@@ -211,6 +211,11 @@ nav.toc {
 }
 
 .onPageNav {
+
+    .tocActive & {
+        top: 170px;
+    }
+
     @media #{$large-up} {
         display: block;
         position: -webkit-sticky;

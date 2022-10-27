@@ -14,6 +14,4 @@ document.addEventListener('DOMContentLoaded', function() {
     		}
 	    });
     }
-
-    document.querySelector('header .logo').parentNode.href = "https://www.gooddata.com/";
 });
