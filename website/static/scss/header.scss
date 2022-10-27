@@ -15,7 +15,7 @@
         left: 0;
         border-top: 1px solid rgba(0,0,0,.2);
         border-bottom: 1px solid rgba(0,0,0,.2);
-        background-color: $gray-2;
+        background-color: $color-mist-gray;
 
         @media #{$large-down} {
             display: none;
@@ -24,20 +24,36 @@
 
     header img,
     .logo {
-        width: 127px;
-        height: 35px;
-
-        @media only screen and (min-width: 1400px) {
-            margin-right: 258px;
-        }
+        width: 182px;
+        height: 40px;
+        margin-right: 0;
     }
 
     header {
-        height: 65px;
+        height: 81px;
         align-items: center;
 
-        @media #{$large-up} {
-            height: 81px;
+        &::before {
+            content: "Learn";
+            order: 1;
+            display: none;
+            align-self: center;
+            margin-left: 16px;
+            padding: 10px 16px;
+            border-left: 1px solid $color-dove-gray;
+            color: $color-deep-purple;
+            font-family: $gdfont-demibold;
+            font-size: 18px;
+            line-height: 1.25;
+
+            @media #{$large-up} {
+                display: block;
+            }
+
+            @media only screen and (min-width: 1400px) {
+                position: absolute;
+                left: 182px;
+            }
         }
 
         > a {
@@ -50,13 +66,18 @@
                     text-decoration: underline;
                 }
             }
+
+            &:first-child {
+                @media only screen and (min-width: 1400px) {
+                    position: absolute;
+                }
+            }
         }
 
         a {
             .logo {
                 display: block;
                 opacity: 0.9;
-                margin-top: -4px;
             }
 
             &:hover .logo {
@@ -92,29 +113,26 @@
 }
 
 .navigationSlider {
-    position: relative;
+    position: static;
     flex: 1 1 auto;
+    order: 1;
 
     .slidingNav {
         padding: 0;
 
         ul {
+            position: static;
             background-color: transparent;
 
             @media #{$large-down} {
                 width: auto;
                 margin-left: 10px;
                 margin-right: 10px;
-                margin-top: 65px;
+                margin-top: 81px;
             }
 
             @media #{$large-up} {
                 justify-content: center;
-                margin-right: 250px;
-            }
-
-            @media only screen and (min-width: 1400px) {
-                margin-right: 380px;
             }
         }
 
@@ -127,8 +145,8 @@
                 padding: 20px 20px 16px;
                 border-bottom: 3px solid transparent;
                 line-height: 24px;
-                font-family: $gdfont-extrabold;
-                font-size: 15px;
+                font-family: $gdfont-demibold;
+                font-size: 18px;
                 text-decoration: none;
                 transition: all 0.2s;
 
@@ -181,7 +199,7 @@
                     }
                 }
 
-                &[href="/gooddata-ui/"] {
+                &[href="https://www.gooddata.com/developers/cloud-native/doc/cloud/"] {
                     border-bottom-color: $color-shocking-pink;
                 }
 
@@ -243,11 +261,11 @@
                 }
             }
 
-            &:nth-child(1) a[href="/gooddata-ui/"],
-            &:nth-child(2) a[href="https://www.gooddata.com/developers/cloud-native/doc/"] {
+            &:nth-child(1) a[href="/gooddata-ui/docs/about_gooddataui.html"],
+            &:nth-child(2) a[href="https://www.gooddata.com/developers/cloud-native/doc/cloud/"] {
                 position: absolute;
                 top: 98px;
-                left: -137px;
+                left: 0;
                 height: 24px;
                 margin: 0;
                 padding: 0;
@@ -256,10 +274,14 @@
                 font-size: 14px;
                 font-weight: normal;
                 line-height: 24px;
-                color: $color-shocking-pink;
+                color: $color-deep-purple;
+
+                @media #{$large-down} {
+                    display: none;
+                }
 
                 @media only screen and (min-width: 1400px) {
-                    left: -380px;
+                    left: 0;
                 }
 
                 &:hover,
@@ -267,20 +289,9 @@
                 &:active {
                     text-decoration: underline;
                 }
-
-                &::before {
-                    content: "";
-                    display: inline-block;
-                    width: 24px;
-                    height: 24px;
-                    margin-right: 10px;
-                    background-image: url('../img/header/icon-gdui.svg');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                }
             }
 
-            &:nth-child(1) a[href="/gooddata-ui/"] {
+            &:nth-child(1) a[href="/gooddata-ui/docs/about_gooddataui.html"] {
                 .separateOnPageNav & {
                     display: none;
                 }
@@ -290,18 +301,14 @@
                 }
             }
 
-            &:nth-child(2) a[href="https://www.gooddata.com/developers/cloud-native/doc/"] {
+            &:nth-child(2) a[href="https://www.gooddata.com/developers/cloud-native/doc/cloud/"] {
                 display: none;
 
                 &::after {
-                    content: "GoodData.UI";
+                    content: " / GoodData.UI";
                     position: absolute;
                     left: 100%;
-                    padding-left: 19px;
-                    color: $gd-color-state-blank;
-                    background-image: url('../img/header/chevron.svg');
-                    background-repeat: no-repeat;
-                    background-position: 6px 4px;
+                    padding-left: 4px;
                     pointer-events: none;
                 }
 
@@ -366,7 +373,7 @@
             }
 
             @media #{$large-down} {
-                height: 65px;
+                height: 80px;
             }
 
             @media #{$medium-down} {
@@ -396,7 +403,7 @@
         @media #{$large-up} {
             background: none;
             height: auto;
-            position: relative;
+            position: static;
             right: auto;
             top: auto;
             width: auto;
@@ -417,7 +424,7 @@
 .navPusher {
     display: flex;
     flex-direction: column;
-    padding-top: 88px;
+    padding-top: 170px;
 
     @media #{$large-up} {
         padding-top: 140px;
