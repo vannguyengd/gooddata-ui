@@ -10,7 +10,7 @@ to embed dashboards or individual insights. The library is also hosted at GoodDa
 
 > Currently, we do not provide the WebComponents library for GoodData Platform.
 
-The Web Components library is a thin wrapper around the [InsightView] and [Dashboard] components. While keeping the embedding easy, it allows a high level of integration with the host application. 
+The Web Components library is a thin wrapper around the [InsightView][1] and [Dashboard][2] components. While keeping the embedding easy, it allows a high level of integration with the host application. 
 
 In the simplest form, the integration could look something like this:
 
@@ -57,8 +57,8 @@ Since Web Components is a relatively new technology, the library will not work i
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot#browser_compatibility" target="_blank">Shadow DOM</a> browser compatibility sections on MDN.
 
 You will also need to set up a **CORS configuration** on the GoodData server instance to allow the script from your application
-domain to make network requests to the GoodData server. Refer to the CORS configuration sections in [GoodData.CN](https://www.gooddata.com/developers/cloud-native/doc/latest/manage-deployment/set-up-organizations/set-up-cors-for-organization/) and
-[GoodData Cloud](https://www.gooddata.com/developers/cloud-native/doc/cloud/manage-deployment/set-up-organizations/set-up-cors-for-organization/) documentation.
+domain to make network requests to the GoodData server. Refer to the CORS configuration sections in [GoodData.CN][3] and
+[GoodData Cloud][4] documentation.
 
 ### Load the library
 
@@ -81,19 +81,20 @@ The library will parse its own URL to pre-configure and allow you to skip the bo
 * The `{workspace-id}` is the ID of the default workspace from where the library will be loading your insights and dashboards.
     It is possible to override this value for a specific insight or dashboard.
 * The `auth` query parameter is optional. When provided, the library will authenticate the user automatically.
-    See [Web Components Authentication] for more details.
+    See [Web Components Authentication][5] for more details.
 
 ### Embed insights and dashboards
 
 Once the library is loaded to the application runtime, it will register two custom elements that you can use anywhere
 on the page:
 
-* `<gd-dashboard />` for [dashboard embedding].
-* `<gd-insight />` for [insight embedding].
+* `<gd-dashboard />` for [dashboard embedding][6].
+* `<gd-insight />` for [insight embedding][7].
 
-[InsightView]:10_vis__insight_view.md
-[Dashboard]:18_dashboard_component.md
-[GoodData.CN and GoodData Cloud setup docs]:06_cloudnative__integration.md#step-4-solve-cross-origin-resource-sharing
-[Web Components Authentication]:19_webcomponents_authentication.md
-[dashboard embedding]:19_webcomponents_dashboard.md
-[insight embedding]:19_webcomponents_insight.md
+[1]:10_vis__insight_view.md
+[2]:18_dashboard_component.md
+[3]:https://www.gooddata.com/developers/cloud-native/doc/latest/manage-deployment/set-up-organizations/set-up-cors-for-organization/
+[4]:https://www.gooddata.com/developers/cloud-native/doc/cloud/manage-deployment/set-up-organizations/set-up-cors-for-organization/
+[5]:19_webcomponents_authentication.md
+[6]:19_webcomponents_dashboard.md
+[7]:19_webcomponents_insight.md

@@ -11,13 +11,13 @@ You can configure the Web Components library to automatically attempt user authe
 If you need more control over the authentication flow, you can also [authenticate the user programmatically](#programmatic-authentication).
 
 Currently, the only valid value for the `auth` parameter is `sso`. When set, the script will check the authentication
-status and, if needed, the script will redirect the user to the SSO login page. See more about [`?auth=sso` below](#gooddatacn-and-gooddata-cloud-sso).
+status and, if needed, the script will redirect the user to the SSO login page. See more about [`?auth=sso` below](#automatic-authentication).
 
 If the `auth` parameter is not provided or has a value other than `sso`, the library will not
 run the auto-authentication and will expect you to run the [programmatic authentication](#programmatic-authentication).
 Meanwhile, all custom elements present on the page will render a loading animation.
 
-> All your users must have a GoodData account and have access to your GoodData workspace. Ifs users do not have a GoodData account or do not have access to the workspace, see [Grant users access to your workspace].
+> All your users must have a GoodData account and have access to your GoodData workspace. Ifs users do not have a GoodData account or do not have access to the workspace, see [Grant users access to your workspace][1].
 
 ## Programmatic authentication
 
@@ -48,7 +48,7 @@ The custom authentication would look like this:
 </script>
 ```
 
-See our documentation for more information on [GoodData.CN authentication].
+See our documentation for more information on [GoodData.CN authentication][2].
 
 ## Automatic authentication
 
@@ -78,5 +78,5 @@ Whenever a user is not authenticated with the GoodData server, the library will 
 SSO provider that you configured at GoodData. Once the user is logged in, the SSO provider will redirect the browser window
 back to the exact same page it was before the first redirect.
 
-[Grant users access to your workspace]:30_tips__sso.md#grant-users-access-to-your-workspace
-[GoodData.CN authentication]:06_cloudnative__authentication.md
+[1]:30_tips__sso.md#grant-users-access-to-your-workspace
+[2]:06_cloudnative__authentication.md

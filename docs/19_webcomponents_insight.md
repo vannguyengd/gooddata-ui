@@ -32,7 +32,7 @@ You can embed a single insight into your application using the `gd-insight` cust
 
 * `insight` - mandatory, the ID of the insight to embed.
 * `workspace` - optional, the ID of the workspace for this dashboard. By default, it is taken from the context (e.g., from the script URL).
-* `locale` - optional, defaults to `en-US`. The localization of the visualization. For all available languages, see [the full list of available localizations].
+* `locale` - optional, defaults to `en-US`. The localization of the visualization. For all available languages, see [the full list of available localizations][1].
 * `title` - optional. If provided as a boolean shortcut attribute, it will render the insight title. If provided as a string, it will override the default value and render the visualization with that string.
 
 ```html
@@ -46,7 +46,7 @@ You can embed a single insight into your application using the `gd-insight` cust
 <gd-insight insight="my-insight" title="My custom attribute title"></gd-insight>
 ```
 
-You can also provide a workspace id on the context level instead of passing it as an attribute to every dashboard. See the code example of the [Web Components authentication] article.
+You can also provide a workspace id on the context level instead of passing it as an attribute to every dashboard. See the code example of the [Web Components authentication][2] article.
 
 > The locale property affects only the UI elements and not your data or the metadata language.
 
@@ -61,7 +61,7 @@ You can also provide a workspace id on the context level instead of passing it a
 * `insightLoaded` - insight data is fully loaded.
 
 Events **do not bubble** and **are not cancelable**. For more info on the event payload, see the callback description of
-[the InsightView component].
+[the InsightView component][3].
 
 You can subscribe to the events the same way as to any other DOM event:
 
@@ -76,6 +76,6 @@ You can subscribe to the events the same way as to any other DOM event:
 </script>
 ```
 
-[The full list of available localizations]:https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts
-[The InsightView component]:https://sdk.gooddata.com/gooddata-ui/docs/visualization_component.html#properties
-[The Web Components authentication]:19_webcomponents_authentication.md#programmatic-authentication
+[1]:https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts
+[2]:https://sdk.gooddata.com/gooddata-ui/docs/visualization_component.html#properties
+[3]:19_webcomponents_authentication.md#programmatic-authentication
