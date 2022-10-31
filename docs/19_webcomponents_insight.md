@@ -54,7 +54,6 @@ You can also provide a workspace id on the context level instead of passing it a
 
 `gd-insight` emits the following events:
 
-* `drill` - a drill is initiated by the user.
 * `error` - an error occurred while evaluating the data for the insight.
 * `exportReady` - a user requested the export and it is ready.
 * `loadingChanged` - loading state of the insight has changed.
@@ -69,7 +68,7 @@ You can subscribe to the events the same way as to any other DOM event:
 <gd-insight insight="my-insight" id="some-dom-id"></gd-insight>
 <script>
     const insightEl = document.getElementById("some-dom-id");
-    insightEl.addEventListener("drill", (event) => {
+    insightEl.addEventListener("insightLoaded", (event) => {
         // See what's in the event payload
         console.log(event.detail);
     });
