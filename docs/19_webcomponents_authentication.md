@@ -23,7 +23,7 @@ Meanwhile, all custom elements present on the page will render a loading animati
 
 To customize the authentication flow, you must provide the authenticated backend by yourself.
 The Web Components library hosts several files that you can import to your browser runtime and expose
-a backend factory for GoodData.CN and GoodData Cloud (platform code name `tiger`).
+a backend factory for GoodData.CN and GoodData Cloud (code name `tiger`).
 
 The custom authentication would look like this:
 
