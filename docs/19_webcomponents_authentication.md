@@ -17,7 +17,7 @@ If the `auth` parameter is not provided or has a value other than `sso`, the lib
 run the auto-authentication and will expect you to run the [programmatic authentication](#programmatic-authentication).
 Meanwhile, all custom elements present on the page will render a loading animation.
 
-> All your users must have a GoodData account and have access to your GoodData workspace. Ifs users do not have a GoodData account or do not have access to the workspace, see [Grant users access to your workspace][1].
+> All your users must have a GoodData account and have access to your GoodData workspace. If users do not have a GoodData account or do not have access to the workspace, see [Grant users access to your workspace][1].
 
 ## Programmatic authentication
 
