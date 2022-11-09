@@ -264,6 +264,22 @@
         "title": "Dashboard Plugins",
         "sidebar_label": "Dashboard Plugins"
       },
+      "webcomponents_authentication": {
+        "title": "Web Components authentication",
+        "sidebar_label": "Web Components authentication"
+      },
+      "webcomponents_dashboard": {
+        "title": "Dashboard custom element",
+        "sidebar_label": "Dashboard custom element"
+      },
+      "webcomponents_insight": {
+        "title": "Insight custom element",
+        "sidebar_label": "Insight custom element"
+      },
+      "webcomponents_intro": {
+        "title": "Introduction to GoodData Web Components",
+        "sidebar_label": "Introduction to GoodData Web Components"
+      },
       "arithmetic_measure": {
         "title": "Arithmetic Measure",
         "sidebar_label": "Arithmetic Measure"
@@ -2411,6 +2427,7 @@
       "Custom Visualizations": "Custom Visualizations",
       "Execution Model": "Execution Model",
       "Dashboard": "Dashboard",
+      "Web Components": "Web Components",
       "Development Tips": "Development Tips",
       "Support": "Support",
       "Integration with GoodData.CN": "Integration with GoodData.CN",
