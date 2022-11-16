@@ -1876,6 +1876,10 @@
         "title": "Supported Versions and Compatibility",
         "sidebar_label": "Supported Versions and Compatibility"
       },
+      "version-8.11.0/version-8.11.0-create_new_application": {
+        "title": "Create Your First Application Using Accelerator Toolkit",
+        "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
+      },
       "version-8.11.0/version-8.11.0-cloudnative_limitations": {
         "title": "Limitations",
         "sidebar_label": "Limitations"
@@ -1887,6 +1891,10 @@
       "version-8.11.0/version-8.11.0-attribute_filter_component": {
         "title": "Attribute Filter",
         "sidebar_label": "Attribute Filter"
+      },
+      "version-8.11.0/version-8.11.0-geo_pushpin_chart_component": {
+        "title": "Geo Pushpin Chart",
+        "sidebar_label": "Geo Pushpin Chart"
       },
       "version-8.11.0/version-8.11.0-dashboard_component": {
         "title": "Dashboard Component",
