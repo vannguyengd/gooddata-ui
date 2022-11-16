@@ -62,7 +62,7 @@ const LocalExtraPlugin = {
 const dashboardRef = idRef("<dashboard-identifier>");
 
 export const LocalPluginsExample = () => {
-    const { status, result, error } = useDashboardLoader({
+    const { status, result } = useDashboardLoader({
         dashboard: dashboardRef,
         // indicate that only local plugins should be used
         loadingMode: "staticOnly",
@@ -74,7 +74,7 @@ export const LocalPluginsExample = () => {
         return <div>Loading dashboard...</div>;
     }
 
-    if (error) {
+    if (status === "error") {
         return <div>Error loading dashboard...</div>;
     }
 
@@ -210,7 +210,7 @@ export const DynamicPluginsExample = () => {
         return <div>Loading dashboard...</div>;
     }
 
-    if (error) {
+    if (status === "error") {
         return <div>Error loading dashboard...</div>;
     }
 
@@ -259,7 +259,7 @@ export const MixedPluginsExample = () => {
         return <div>Loading dashboard...</div>;
     }
 
-    if (error) {
+    if (status === "error") {
         return <div>Error loading dashboard...</div>;
     }
 
