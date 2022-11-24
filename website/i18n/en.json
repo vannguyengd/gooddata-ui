@@ -1908,6 +1908,22 @@
         "title": "Dashboard Plugins",
         "sidebar_label": "Dashboard Plugins"
       },
+      "version-8.11.0/version-8.11.0-webcomponents_authentication": {
+        "title": "Web Components authentication",
+        "sidebar_label": "Web Components authentication"
+      },
+      "version-8.11.0/version-8.11.0-webcomponents_dashboard": {
+        "title": "Dashboard custom element",
+        "sidebar_label": "Dashboard custom element"
+      },
+      "version-8.11.0/version-8.11.0-webcomponents_insight": {
+        "title": "Insight custom element",
+        "sidebar_label": "Insight custom element"
+      },
+      "version-8.11.0/version-8.11.0-webcomponents_intro": {
+        "title": "Introduction to GoodData Web Components",
+        "sidebar_label": "Introduction to GoodData Web Components"
+      },
       "version-8.11.0/version-8.11.0-create_custom_attribute_filter": {
         "title": "Create a Custom Attribute Filter",
         "sidebar_label": "Create a Custom Attribute Filter"
