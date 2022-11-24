@@ -77,5 +77,5 @@ You can subscribe to the events the same way as to any other DOM event:
 ```
 
 [1]:https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts
-[2]:https://sdk.gooddata.com/gooddata-ui/docs/visualization_component.html#properties
-[3]:19_webcomponents_authentication.md#programmatic-authentication
+[2]:19_webcomponents_authentication.md#programmatic-authentication
+[3]:https://sdk.gooddata.com/gooddata-ui/docs/visualization_component.html#properties
