@@ -53,12 +53,22 @@ flexible and provides a much better developer experience. You also avoid loading
 
 Since Web Components is a relatively new technology, the library will not work in older browsers, such as
 **Internet Explorer**. To be precise, refer to the
-<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry#browser_compatibility" target="_blank">Custom Elements</a> and
-<a href="https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot#browser_compatibility" target="_blank">Shadow DOM</a> browser compatibility sections on MDN.
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry#browser_compatibility" target="_blank">Custom Elements</a> browser compatibility sections on MDN.
 
 You will also need to set up a **CORS configuration** on the GoodData server instance to allow the script from your application
 domain to make network requests to the GoodData server. Refer to the CORS configuration sections in [GoodData.CN][3] and
 [GoodData Cloud][4] documentation.
+
+You might need to adjust <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank">Content Security Policy (CSP)</a> headers of your server, if you are using this technology.
+Specifically, you will need to add `script-src`, `style-src`, `font-src` and `img-src` policies for GoodData host.
+
+Given your GoodData server is hosted at `example.gooddata.com`, the CSP policy could look something like this:
+```
+script-src 'self' 'unsafe-inline' 'unsafe-eval' example.gooddata.com;
+img-src 'self' data: blob: example.gooddata.com;
+style-src 'self' 'unsafe-inline' example.gooddata.com;
+font-src 'self' data: example.gooddata.com;
+```
 
 ### Load the library
 
