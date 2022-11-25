@@ -42,12 +42,48 @@ more flexible than iframe embedding, yet simpler to integrate comparing to the R
 If you want the simplest possible dashboard embedding and do not require deep integration between the host application
 and the dashboard, consider using iframe instead of Web Components.
 
+Iframe can also be a good option if you want to use [Dashboard plugins][8], as `gd-dashboard` elements does not support
+plugins at the moment.
+
 ### When to use GoodData.UI React library instead? 
 
 If the host application is already written in React, consider using GoodData.UI instead of Web Components. It is more
 flexible and provides a much better developer experience. You also avoid loading two instances of React and ReactDOM.
 
 ## Integration
+
+### Load the library
+
+To integrate the library into your app, add a script tag with the correct URL to the `<head>`
+section of your web page.
+
+```html
+<script type="module" src="https://{your-gd-server-url}/components/{workspace-id}.js?auth=sso"></script>
+
+<!-- for example -->
+<script type="module" src="https://example.gooddata.com/components/my-workspace.js?auth=sso"></script>
+```
+
+The script **must be** of the type `module`, as we are using JavaScript modules for this distribution.
+
+The library will parse its own URL to pre-configure and allow you to skip the boilerplate code:
+* The domain name `{your-gd-server-url}` must be the domain of your GoodData.CN server or the GoodData Cloud instance.
+  This is the domain where the script will be loaded from as well as the domain that will be used to load your insight and dashboard data. You cannot load the script from one instance to use it with data from another instance.
+  **At the moment it's not possible to connect to several GoodData instances from a single runtime.**
+* The `{workspace-id}` is the ID of the default workspace from where the library will be loading your insights and dashboards.
+  It is possible to override this value for a specific insight or dashboard.
+* The `auth` query parameter is optional. When provided, the library will authenticate the user automatically.
+  See [Web Components Authentication][5] for more details.
+
+### Embed insights and dashboards
+
+Once the library is loaded to the application runtime, it will register two custom elements that you can use anywhere
+on the page:
+
+* `<gd-dashboard />` for [dashboard embedding][6].
+* `<gd-insight />` for [insight embedding][7].
+
+## Prerequisites and limitations
 
 ### Supported web browsers
 
@@ -86,36 +122,10 @@ To prevent this, your GoodData server instance should be available on the same s
 For example, if your app lives at `https://yourcompany.com`, you could make GoodData server available on a subdomain,
 like `https://analytics.yourcompany.com`.
 
-### Load the library
+### Dashboard plugins support
 
-To integrate the library into your app, add a script tag with the correct URL to the `<head>`
-section of your web page.
-
-```html
-<script type="module" src="https://{your-gd-server-url}/components/{workspace-id}.js?auth=sso"></script>
-
-<!-- for example -->
-<script type="module" src="https://example.gooddata.com/components/my-workspace.js?auth=sso"></script>
-```
-
-The script **must be** of the type `module`, as we are using JavaScript modules for this distribution.
-
-The library will parse its own URL to pre-configure and allow you to skip the boilerplate code:
-* The domain name `{your-gd-server-url}` must be the domain of your GoodData.CN server or the GoodData Cloud instance. 
-    This is the domain where the script will be loaded from as well as the domain that will be used to load your insight and dashboard data. You cannot load the script from one instance to use it with data from another instance.
-    **At the moment it's not possible to connect to several GoodData instances from a single runtime.**
-* The `{workspace-id}` is the ID of the default workspace from where the library will be loading your insights and dashboards.
-    It is possible to override this value for a specific insight or dashboard.
-* The `auth` query parameter is optional. When provided, the library will authenticate the user automatically.
-    See [Web Components Authentication][5] for more details.
-
-### Embed insights and dashboards
-
-Once the library is loaded to the application runtime, it will register two custom elements that you can use anywhere
-on the page:
-
-* `<gd-dashboard />` for [dashboard embedding][6].
-* `<gd-insight />` for [insight embedding][7].
+At the moment, [Dashboard plugins][8] will not be loaded when embedding with `gd-dashboard` custom element. If you
+need to use plugins, consider embedding your dashboard with an [iframe][10] or [React component][9].
 
 [1]:10_vis__insight_view.md
 [2]:18_dashboard_component.md
@@ -124,3 +134,6 @@ on the page:
 [5]:19_webcomponents_authentication.md
 [6]:19_webcomponents_dashboard.md
 [7]:19_webcomponents_insight.md
+[8]:18_dashboard_plugins.md
+[9]:18_dashboard_component.md
+[10]:https://www.gooddata.com/developers/cloud-native/doc/cloud/embed-visualizations/embed-dashboard/#embed-a-dashboard-using-iframe
