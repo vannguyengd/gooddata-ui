@@ -127,6 +127,12 @@ like `https://analytics.yourcompany.com`.
 At the moment, [Dashboard plugins][8] will not be loaded when embedding with `gd-dashboard` custom element. If you
 need to use plugins, consider embedding your dashboard with an [iframe][10] or [React component][9].
 
+### CSS class names collisions
+
+WebComponents script will inject a CSS `<link>` to the `<head>` of your HTML page upon load. While unlikely, it is
+possible that CSS class names may collide with the class names used by your own code. If this happens, please consider
+<a target="_blank" href="https://github.com/gooddata/gooddata-ui-sdk/issues/new">opening a GitHub issue</a>.
+
 [1]:10_vis__insight_view.md
 [2]:18_dashboard_component.md
 [3]:https://www.gooddata.com/developers/cloud-native/doc/latest/manage-deployment/set-up-organizations/set-up-cors-for-organization/
