@@ -5,8 +5,8 @@ copyright: (C) 2007-2022 GoodData Corporation
 id: webcomponents_vue
 ---
 
-Vue supports Web Components out of box. There are few steps that you need to do to integrate GoodData visualizations
-into Vue app using WebComponents.
+Vue supports Web Components out of the box. There are a few steps that you need to do to integrate the GoodData visualizations
+into the Vue app using WebComponents.
 
 ## Load WebComponents library
 
@@ -29,7 +29,7 @@ Add a new `<script>` tag to your main HTML file (`index.html` in the project roo
     </html>
 ```
 
-See [Load the library][1] section on the WebComponents introduction page. Make sure to go through
+See the [Load the library][1] section on the WebComponents introduction page. Make sure to go through the
 [Prerequisites and limitations](19_webcomponents_intro#prerequisites-and-limitations) section.
 
 ## Configure Custom Elements
@@ -76,11 +76,11 @@ For example, in `src/App.vue` file.
 </template>
 ```
 
-You can copy the insight id and dashboard id from the URL bar of your web browser,
-from Analyze and Dashboards pages respectively. At this point you should see an insight and a dashboard rendering
+You can copy the *insight id* and *dashboard id* from the URL bar of your web browser,
+from the Analyze and Dashboards pages respectively. At this point you should see an insight and a dashboard rendering
 on the screen.
 
-We set height of the `gd-insight` to a static value as it's expecting a flex layout and would collapse to a 0 height
+We set the height of the `gd-insight` to a static value as it's expecting a flex layout and would collapse to a `0` height
 otherwise.
 
 ## Define dashboardId and insightId dynamically
@@ -107,7 +107,7 @@ Both `gd-insight` and `gd-dashboard` are dispatching custom events.
 
 ### Insight event listener
 
-In case of `gd-insight` you can use Vue event binding syntax.
+In case of `gd-insight` you can use the Vue event binding syntax.
 
 ```diff
     <script setup>
@@ -127,9 +127,9 @@ In case of `gd-insight` you can use Vue event binding syntax.
 
 ### Dashboard event listener
 
-The setup for `gd-dashboard` is more complicated, as our event names do not follow Vue naming convention. You would
+The setup for `gd-dashboard` is more complicated, as our event names do not follow the Vue naming convention. You would
 need to obtain a reference to the DOM object and add event listeners directly. Keep in mind that you
-also need to remove the listeners on component unmount.
+also need to remove the listeners on the component unmount.
 
 ```diff
     <script setup>

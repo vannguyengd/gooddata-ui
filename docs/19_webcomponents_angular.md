@@ -5,8 +5,8 @@ copyright: (C) 2007-2022 GoodData Corporation
 id: webcomponents_angular
 ---
 
-Angular has good interoperability with WebComponents and Custom Elements specifically. There are few steps that
-you need to do in order to integrate GoodData dashboards or insights with Angular app.
+Angular has good interoperability with WebComponents and, specifically, Custom Elements. There are a few steps that
+you need to do in order to integrate the GoodData dashboards or insights with the Angular app.
 
 The guide below is based on the Angular template workspace generated using `ng new my-app`, but you should be
 able to adopt it to existing Angular projects easily.
@@ -32,7 +32,7 @@ Add a new `<script>` tag to your main HTML file (`src/index.html`).
     </html>
 ```
 
-See [Load the library][1] section on the WebComponents introduction page. Make sure to go through
+See the [Load the library][1] section on the WebComponents introduction page. Make sure to go through the
 [Prerequisites and limitations](19_webcomponents_intro#prerequisites-and-limitations) section.
 
 ## Add custom elements schema
@@ -72,11 +72,11 @@ You can now use `gd-insight` and `gd-dashboard` elements anywhere in your `src/a
 <gd-dashboard dashboard="my-dashboard-id"></gd-dashboard>
 ```
 
-You can copy the insight id and dashboard id from the URL bar of your web browser,
-from Analyze and Dashboards pages respectively. At this point you should see an insight and a dashboard rendering
+You can copy the *insight id* and *dashboard id* from the URL bar of your web browser,
+from the Analyze and Dashboards pages respectively. At this point you should see an insight and a dashboard rendering
 on the screen. 
 
-We set height of the `gd-insight` to a static value as it's expecting a flex layout and would collapse to a 0 height
+We set the height of the `gd-insight` to a static value as it's expecting a flex layout and would collapse to a `0` height
 otherwise.
 
 ## Define dashboardId and insightId dynamically
@@ -112,7 +112,7 @@ Both `gd-insight` and `gd-dashboard` are dispatching custom events.
 
 ### Insight event listener
 
-In case of `gd-insight` you can use Angular event binding syntax. Define an event listener function in
+In case of `gd-insight` you can use the Angular event binding syntax. Define an event listener function in
 your component code (`src/app/app.component.ts`):
 
 ```diff
@@ -147,14 +147,14 @@ Attach the event listener to the insight at `src/app/app.component.html`:
 The setup for `gd-dashboard` is more complicated, as event names do not follow Angular naming convention. You would
 need to obtain a reference to the DOM object and add event listeners directly.
 
-First, use template reference variable to mark the dashboard element in `src/app/app.component.html`:
+First, use the template reference variable to mark the dashboard element in `src/app/app.component.html`:
 
 ```html
 <gd-dashboard [attr.dashboard]="dashboardId" #dashboard></gd-dashboard>
 ```
 
 Now you can obtain the element and attach event listeners in `src/app/app.component.ts`. Keep in mind that you
-also need to remove the listeners on component unmount.
+also need to remove the listeners on the component unmount.
 
 ```diff
 -   import { Component } from "@angular/core";

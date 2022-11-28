@@ -42,7 +42,7 @@ more flexible than iframe embedding, yet simpler to integrate comparing to the R
 If you want the simplest possible dashboard embedding and do not require deep integration between the host application
 and the dashboard, consider using iframe instead of Web Components.
 
-Iframe can also be a good option if you want to use [Dashboard plugins][8], as `gd-dashboard` elements does not support
+Iframe can also be a good option if you want to use [Dashboard plugins][8], as the `gd-dashboard` elements does not support
 plugins at the moment.
 
 ### When to use GoodData.UI React library instead? 
@@ -69,7 +69,7 @@ The script **must be** of the type `module`, as we are using JavaScript modules 
 The library will parse its own URL to pre-configure and allow you to skip the boilerplate code:
 * The domain name `{your-gd-server-url}` must be the domain of your GoodData.CN server or the GoodData Cloud instance.
   This is the domain where the script will be loaded from as well as the domain that will be used to load your insight and dashboard data. You cannot load the script from one instance to use it with data from another instance.
-  **At the moment it's not possible to connect to several GoodData instances from a single runtime.**
+  **At the moment it's not possible to connect to multiple GoodData instances from a single runtime.**
 * The `{workspace-id}` is the ID of the default workspace from where the library will be loading your insights and dashboards.
   It is possible to override this value for a specific insight or dashboard.
 * The `auth` query parameter is optional. When provided, the library will authenticate the user automatically.
@@ -88,7 +88,7 @@ on the page:
 ### Supported web browsers
 
 Since Web Components is a relatively new technology, the library will not work in older browsers, such as
-**Internet Explorer**. To be precise, refer to the
+**Internet Explorer**. For details, refer to the
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry#browser_compatibility" target="_blank">Custom Elements</a> browser compatibility sections on MDN.
 
 ### Cross-Origin Resource Sharing (CORS) configuration 
@@ -99,10 +99,10 @@ domain to make network requests to the GoodData server. Refer to the CORS config
 
 ### Content Security Policy (CSP) configuration
 
-You might need to adjust <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank">CSP</a> headers of your server, if you are using this technology.
-Specifically, you will need to add `script-src`, `style-src`, `font-src` and `img-src` policies for GoodData host.
+You might need to adjust the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank">CSP</a> headers of your server, if you are using this technology.
+Specifically, you will need to add `script-src`, `style-src`, `font-src` and `img-src` policies for the GoodData host.
 
-Given your GoodData server is hosted at `example.gooddata.com`, the CSP policy could look something like this:
+For example, if your GoodData server is hosted at `example.gooddata.com`, the CSP policy could look something like this:
 ```
 script-src 'self' 'unsafe-inline' 'unsafe-eval' example.gooddata.com;
 img-src 'self' data: blob: example.gooddata.com;
@@ -113,7 +113,7 @@ font-src 'self' data: example.gooddata.com;
 ### Third party cookies blocking
 
 Some browsers might block 3rd party cookies when JavaScript is making a network request to another site. This is
-a privacy feature that was designed to prevent cross-site user tracking. However, it also affects some legitimate
+a privacy feature that was designed to prevent a cross-site user tracking. However, it also affects some legitimate
 cases when 3rd party cookies should be used, namely authentication. In our case, the WebComponents script needs
 to make authenticated requests to the GoodData server to fetch the data. If GoodData cookies are blocked by
 the browser, such requests will fail even if user session was established correctly.
@@ -125,7 +125,7 @@ like `https://analytics.yourcompany.com`.
 ### Dashboard plugins support
 
 At the moment, [Dashboard plugins][8] will not be loaded when embedding with `gd-dashboard` custom element. If you
-need to use plugins, consider embedding your dashboard with an [iframe][10] or [React component][9].
+need to use plugins, consider embedding your dashboard with an [iframe][10] or a [React component][9].
 
 ### CSS class names collisions
 
