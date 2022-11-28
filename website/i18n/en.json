@@ -264,6 +264,10 @@
         "title": "Dashboard Plugins",
         "sidebar_label": "Dashboard Plugins"
       },
+      "webcomponents_angular": {
+        "title": "Using WebComponents with Angular app",
+        "sidebar_label": "Angular integration"
+      },
       "webcomponents_authentication": {
         "title": "Web Components authentication",
         "sidebar_label": "Web Components authentication"
@@ -279,6 +283,10 @@
       "webcomponents_intro": {
         "title": "Introduction to GoodData Web Components",
         "sidebar_label": "Introduction to GoodData Web Components"
+      },
+      "webcomponents_vue": {
+        "title": "Use WebComponents with Vue app",
+        "sidebar_label": "Vue integration"
       },
       "arithmetic_measure": {
         "title": "Arithmetic Measure",
