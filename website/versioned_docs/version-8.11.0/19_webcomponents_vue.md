@@ -2,7 +2,8 @@
 title: Using WebComponents with Vue app
 sidebar_label: Vue integration
 copyright: (C) 2007-2022 GoodData Corporation
-id: webcomponents_vue
+id: version-8.11.0-webcomponents_vue
+original_id: webcomponents_vue
 ---
 
 Vue supports Web Components out of the box. There are a few steps that you need to do to integrate the GoodData visualizations
