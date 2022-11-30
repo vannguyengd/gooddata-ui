@@ -67,7 +67,7 @@ section of your web page.
 The script **must be** of the type `module`, as we are using JavaScript modules for this distribution.
 
 The library will parse its own URL to pre-configure and allow you to skip the boilerplate code:
-* The domain name `{your-gd-server-url}` must be the domain of your GoodData.CN server or the GoodData Cloud instance.
+* The domain name `{your-gd-server-url}` must be the domain of your GoodData Cloud or GoodData.CN instance.
   This is the domain where the script will be loaded from as well as the domain that will be used to load your insight and dashboard data. You cannot load the script from one instance to use it with data from another instance.
   **At the moment it's not possible to connect to multiple GoodData instances from a single runtime.**
 * The `{workspace-id}` is the ID of the default workspace from where the library will be loading your insights and dashboards.
@@ -89,7 +89,7 @@ on the page:
 
 Since Web Components is a relatively new technology, the library will not work in older browsers, such as
 **Internet Explorer**. For details, refer to the
-<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry#browser_compatibility" target="_blank">Custom Elements</a> browser compatibility sections on MDN.
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry#browser_compatibility" target="_blank" rel="noopener noreferrer">Custom Elements</a> browser compatibility sections on MDN.
 
 ### Cross-Origin Resource Sharing (CORS) configuration 
 
@@ -99,7 +99,7 @@ domain to make network requests to the GoodData server. Refer to the CORS config
 
 ### Content Security Policy (CSP) configuration
 
-You might need to adjust the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank">CSP</a> headers of your server, if you are using this technology.
+You might need to adjust the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank" rel="noopener noreferrer">CSP</a> headers of your server, if you are using this technology.
 Specifically, you will need to add `script-src`, `style-src`, `font-src` and `img-src` policies for the GoodData host.
 
 For example, if your GoodData server is hosted at `example.gooddata.com`, the CSP policy could look something like this:
@@ -131,7 +131,7 @@ need to use plugins, consider embedding your dashboard with an [iframe][10] or a
 
 WebComponents script will inject a CSS `<link>` to the `<head>` of your HTML page upon load. While unlikely, it is
 possible that CSS class names may collide with the class names used by your own code. If this happens, please consider
-<a target="_blank" href="https://github.com/gooddata/gooddata-ui-sdk/issues/new">opening a GitHub issue</a>.
+<a target="_blank" href="https://github.com/gooddata/gooddata-ui-sdk/issues/new" rel="noopener noreferrer">opening a GitHub issue</a>.
 
 [1]:10_vis__insight_view.md
 [2]:18_dashboard_component.md
