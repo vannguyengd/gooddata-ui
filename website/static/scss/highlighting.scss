@@ -32,8 +32,7 @@ code,
 .hljs-selector-id,
 .hljs-selector-class,
 .hljs-quote,
-.hljs-template-tag,
-.hljs-deletion {
+.hljs-template-tag {
     color: #a6e22e;
 }
 
@@ -52,7 +51,6 @@ code,
 .hljs-built_in,
 .hljs-bullet,
 .hljs-code,
-.hljs-addition,
 .hljs-function {
     color: #e6db74;
 }
@@ -70,4 +68,12 @@ code,
 
 .hljs-literal {
     color: #ae81ff;
+}
+
+.hljs-deletion {
+    color: $color-red;
+}
+
+.hljs-addition {
+    color: $color-emerald-green;
 }

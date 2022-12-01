@@ -58,7 +58,7 @@ Automatic GoodData.CN SSO will run if you add `?auth=sso` parameter to the scrip
 <script type="module" src="https://example.gooddata.com/components/my-workspace.js?auth=sso"></script>
 ```
 
-You can also run he following programmatic setup:
+You can also run the following programmatic setup:
 
 ```html
 <script type="module">

@@ -94,7 +94,9 @@
       "version-8.11.0-webcomponents_intro",
       "version-8.11.0-webcomponents_authentication",
       "version-8.11.0-webcomponents_dashboard",
-      "version-8.11.0-webcomponents_insight"
+      "version-8.11.0-webcomponents_insight",
+      "version-8.11.0-webcomponents_angular",
+      "version-8.11.0-webcomponents_vue"
     ],
     "Development Tips": [
       "version-8.11.0-ht_embed_visualization",

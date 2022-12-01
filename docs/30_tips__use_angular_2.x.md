@@ -7,6 +7,8 @@ id: ht_use_react_component_in_angular_2.x
 
 To be able to use the visual components in your Angular 9+ environment, wrap each component into an Angular component, and then render the React component using `ReactDom.render` inside.
 
+Depending on your use case, it might be easier to integrate our [WebComponents library](19_webcomponents_intro.md) with your Angular app.
+
 ## Step 1. Install dependencies.
 
 <!--

@@ -94,7 +94,9 @@
             "webcomponents_intro",
             "webcomponents_authentication",
             "webcomponents_dashboard",
-            "webcomponents_insight"
+            "webcomponents_insight",
+            "webcomponents_angular",
+            "webcomponents_vue"
         ],
         "Development Tips": [
             "ht_embed_visualization",

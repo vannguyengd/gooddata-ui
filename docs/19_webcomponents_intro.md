@@ -42,23 +42,15 @@ more flexible than iframe embedding, yet simpler to integrate comparing to the R
 If you want the simplest possible dashboard embedding and do not require deep integration between the host application
 and the dashboard, consider using iframe instead of Web Components.
 
+Iframe can also be a good option if you want to use [Dashboard plugins][8], as the `gd-dashboard` elements does not support
+plugins at the moment.
+
 ### When to use GoodData.UI React library instead? 
 
 If the host application is already written in React, consider using GoodData.UI instead of Web Components. It is more
 flexible and provides a much better developer experience. You also avoid loading two instances of React and ReactDOM.
 
 ## Integration
-
-### Prerequisites
-
-Since Web Components is a relatively new technology, the library will not work in older browsers, such as
-**Internet Explorer**. To be precise, refer to the
-<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry#browser_compatibility" target="_blank">Custom Elements</a> and
-<a href="https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot#browser_compatibility" target="_blank">Shadow DOM</a> browser compatibility sections on MDN.
-
-You will also need to set up a **CORS configuration** on the GoodData server instance to allow the script from your application
-domain to make network requests to the GoodData server. Refer to the CORS configuration sections in [GoodData.CN][3] and
-[GoodData Cloud][4] documentation.
 
 ### Load the library
 
@@ -75,13 +67,13 @@ section of your web page.
 The script **must be** of the type `module`, as we are using JavaScript modules for this distribution.
 
 The library will parse its own URL to pre-configure and allow you to skip the boilerplate code:
-* The domain name `{your-gd-server-url}` must be the domain of your GoodData.CN server or the GoodData Cloud instance. 
-    This is the domain where the script will be loaded from as well as the domain that will be used to load your insight and dashboard data. You cannot load the script from one instance to use it with data from another instance.
-    **At the moment it's not possible to connect to several GoodData instances from a single runtime.**
+* The domain name `{your-gd-server-url}` must be the domain of your GoodData Cloud or GoodData.CN instance.
+  This is the domain where the script will be loaded from as well as the domain that will be used to load your insight and dashboard data. You cannot load the script from one instance to use it with data from another instance.
+  **At the moment it's not possible to connect to multiple GoodData instances from a single runtime.**
 * The `{workspace-id}` is the ID of the default workspace from where the library will be loading your insights and dashboards.
-    It is possible to override this value for a specific insight or dashboard.
+  It is possible to override this value for a specific insight or dashboard.
 * The `auth` query parameter is optional. When provided, the library will authenticate the user automatically.
-    See [Web Components Authentication][5] for more details.
+  See [Web Components Authentication][5] for more details.
 
 ### Embed insights and dashboards
 
@@ -91,6 +83,56 @@ on the page:
 * `<gd-dashboard />` for [dashboard embedding][6].
 * `<gd-insight />` for [insight embedding][7].
 
+## Prerequisites and limitations
+
+### Supported web browsers
+
+Since Web Components is a relatively new technology, the library will not work in older browsers, such as
+**Internet Explorer**. For details, refer to the
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry#browser_compatibility" target="_blank" rel="noopener noreferrer">Custom Elements</a> browser compatibility sections on MDN.
+
+### Cross-Origin Resource Sharing (CORS) configuration 
+
+You will also need to set up a **CORS configuration** on the GoodData server instance to allow the script from your application
+domain to make network requests to the GoodData server. Refer to the CORS configuration sections in [GoodData.CN][3] and
+[GoodData Cloud][4] documentation.
+
+### Content Security Policy (CSP) configuration
+
+You might need to adjust the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank" rel="noopener noreferrer">CSP</a> headers of your server, if you are using this technology.
+Specifically, you will need to add `script-src`, `style-src`, `font-src` and `img-src` policies for the GoodData host.
+
+For example, if your GoodData server is hosted at `example.gooddata.com`, the CSP policy could look something like this:
+```
+script-src 'self' 'unsafe-inline' 'unsafe-eval' example.gooddata.com;
+img-src 'self' data: blob: example.gooddata.com;
+style-src 'self' 'unsafe-inline' example.gooddata.com;
+font-src 'self' data: example.gooddata.com;
+```
+
+### Third party cookies blocking
+
+Some browsers might block 3rd party cookies when JavaScript is making a network request to another site. This is
+a privacy feature that was designed to prevent a cross-site user tracking. However, it also affects some legitimate
+cases when 3rd party cookies should be used, namely authentication. In our case, the WebComponents script needs
+to make authenticated requests to the GoodData server to fetch the data. If GoodData cookies are blocked by
+the browser, such requests will fail even if user session was established correctly.
+
+To prevent this, your GoodData server instance should be available on the same site as your host application.
+For example, if your app lives at `https://yourcompany.com`, you could make GoodData server available on a subdomain,
+like `https://analytics.yourcompany.com`.
+
+### Dashboard plugins support
+
+At the moment, [Dashboard plugins][8] will not be loaded when embedding with `gd-dashboard` custom element. If you
+need to use plugins, consider embedding your dashboard with an [iframe][10] or a [React component][9].
+
+### CSS class names collisions
+
+WebComponents script will inject a CSS `<link>` to the `<head>` of your HTML page upon load. While unlikely, it is
+possible that CSS class names may collide with the class names used by your own code. If this happens, please consider
+<a target="_blank" href="https://github.com/gooddata/gooddata-ui-sdk/issues/new" rel="noopener noreferrer">opening a GitHub issue</a>.
+
 [1]:10_vis__insight_view.md
 [2]:18_dashboard_component.md
 [3]:https://www.gooddata.com/developers/cloud-native/doc/latest/manage-deployment/set-up-organizations/set-up-cors-for-organization/
@@ -98,3 +140,6 @@ on the page:
 [5]:19_webcomponents_authentication.md
 [6]:19_webcomponents_dashboard.md
 [7]:19_webcomponents_insight.md
+[8]:18_dashboard_plugins.md
+[9]:18_dashboard_component.md
+[10]:https://www.gooddata.com/developers/cloud-native/doc/cloud/embed-visualizations/embed-dashboard/#embed-a-dashboard-using-iframe
