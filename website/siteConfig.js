@@ -55,14 +55,17 @@ const siteConfig = {
       "react_components"
     ],
     "6.0.0": [
+      "migration_guide_5",
       "glossary",
       "ht_build_visualization_custom_react",
       "trouble_shooting"
     ],
     "7.0.0": [
+      "migration_guide_6",
       "table_totals_in_execution_object"
     ],
     "8.0.0": [
+      "migration_guide_7",
       "clean_up_your_code",
       "data_layer",
       "execution_rest_api_and_result",

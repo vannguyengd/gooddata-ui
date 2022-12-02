@@ -404,10 +404,6 @@
         "title": "Migration from Version 7.x",
         "sidebar_label": "Migration from Version 7.x"
       },
-      "migration_guide_7": {
-        "title": "Migration Guide to React Components Version 7.x",
-        "sidebar_label": "Migration Guide to React Components Version 7.x"
-      },
       "support_options": {
         "title": "Support Options",
         "sidebar_label": "Support Options"
@@ -427,6 +423,10 @@
       "version-4.1.1/version-4.1.1-platform_intro": {
         "title": "GoodData Platform Introduction",
         "sidebar_label": "Platform Introduction"
+      },
+      "version-4.1.1/version-4.1.1-supported_versions": {
+        "title": "Supported Versions and Compatibility",
+        "sidebar_label": "Supported Versions and Compatibility"
       },
       "version-4.1.1/version-4.1.1-gdc_catalog_export": {
         "title": "gdc-catalog-export",
@@ -555,10 +555,6 @@
       "version-5.0.0/version-5.0.0-platform_intro": {
         "title": "GoodData Platform Introduction",
         "sidebar_label": "Platform Introduction"
-      },
-      "version-5.0.0/version-5.0.0-supported_versions": {
-        "title": "Supported Versions",
-        "sidebar_label": "Supported Versions"
       },
       "version-5.0.0/version-5.0.0-gdc_catalog_export": {
         "title": "Get Identifiers from the Platform",
@@ -1732,10 +1728,6 @@
         "title": "Why GoodData.UI?",
         "sidebar_label": "Why GoodData.UI?"
       },
-      "version-8.10.0/version-8.10.0-supported_versions": {
-        "title": "Supported Versions and Compatibility",
-        "sidebar_label": "Supported Versions and Compatibility"
-      },
       "version-8.10.0/version-8.10.0-export_catalog": {
         "title": "Export Catalog",
         "sidebar_label": "Export Catalog"
@@ -1879,10 +1871,6 @@
       "version-8.10.0/version-8.10.0-whats_new_8": {
         "title": "What's New in Version 8.0",
         "sidebar_label": "What's New in Version 8.0"
-      },
-      "version-8.11.0/version-8.11.0-supported_versions": {
-        "title": "Supported Versions and Compatibility",
-        "sidebar_label": "Supported Versions and Compatibility"
       },
       "version-8.11.0/version-8.11.0-create_new_application": {
         "title": "Create Your First Application Using Accelerator Toolkit",
@@ -2135,10 +2123,6 @@
       "version-8.4.0/version-8.4.0-about_gooddataui": {
         "title": "About GoodData.UI",
         "sidebar_label": "About GoodData.UI"
-      },
-      "version-8.4.0/version-8.4.0-supported_versions": {
-        "title": "Supported Versions and Compatibility",
-        "sidebar_label": "Supported Versions and Compatibility"
       },
       "version-8.4.0/version-8.4.0-api_maturity": {
         "title": "API Maturity",

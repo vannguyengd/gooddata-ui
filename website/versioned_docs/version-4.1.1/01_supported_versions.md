@@ -1,7 +1,7 @@
 ---
-id: version-5.0.0-supported_versions
-title: Supported Versions
-sidebar_label: Supported Versions
+id: version-4.1.1-supported_versions
+title: Supported Versions and Compatibility
+sidebar_label: Supported Versions and Compatibility
 copyright: (C) 2007-2021 GoodData Corporation
 original_id: supported_versions
 ---
@@ -24,21 +24,22 @@ Each version of GoodData.UI goes through the following phases:
 
 3. **End-of-Support** (EOS)
     * **When it starts:** The date is defined by GoodData.
-    * **What it means:** A version in EOS receives neither new features nor bug fixes. No technical support is provided. Although the version is still available for use, we do not recommend that you use it.
-
-4. **End-of-Life** (EOL)
-    * **When it starts:** The date is defined by GoodData.
-    * **What it means:** A version in EOL is removed from the GoodData platform and is not available for use.
+    * **What it means:** A version in EOS receives neither new features nor bug fixes. No technical support is provided. Although the version is still available on NPM, we do not recommend that you use it.
 
 ## Status of GoodData.UI versions
 
 The following table provides the lifecycle phases of GoodData.UI versions:
 
-| Major Version | Status | GA | EOD | EOS | EOL | Last Minor Version |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 8 | Generally available | October 8, 2020 | _Not yet defined_ | _Not yet defined_ | _Not yet defined_ | 8.11 |
-| 7 | End-of-Support | May 21, 2019 | October 8, 2020 | March 31, 2022 | _Not yet defined_ | 7.9 |
-| 6 | End-of-Support | November 1, 2018 | May 21, 2019 | October 8, 2020 | _Not yet defined_ | 6.3 |
-| 5 | End-of-Support | April 26, 2018 | November 1, 2018 | May 21, 2019 | _Not yet defined_ | 5.3 |
+| Major Version | Status              | GA               | EOD               | EOS               | Last Minor Version |
+|:--------------|:--------------------|:-----------------|:------------------|:------------------|:-------------------|
+| 8             | Generally available | October 8, 2020  | _Not yet defined_ | _Not yet defined_ | 8.11               |
+| 7             | End-of-Support      | May 21, 2019     | October 8, 2020   | March 31, 2022    | 7.9                |
+| 6             | End-of-Support      | November 1, 2018 | May 21, 2019      | October 8, 2020   | 6.3                |
 
-**IMPORTANT**: The first version of GoodData.UI that supports GoodData.CN is 8.3.
+## Compatibility with GoodData Cloud
+
+The first version of GoodData.UI compatible with GoodData Cloud is 8.10.0, previous versions are not compatible with GoodData Cloud.
+
+## Compatibility with GoodData.CN
+
+The versions of GoodData.UI older than 8.3.0 are not compatible with GoodData.CN.
