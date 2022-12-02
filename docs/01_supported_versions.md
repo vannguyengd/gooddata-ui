@@ -40,6 +40,14 @@ The following table provides the lifecycle phases of GoodData.UI versions:
 | 6 | End-of-Support | November 1, 2018 | May 21, 2019 | October 8, 2020 | _Not yet defined_ | 6.3 |
 | 5 | End-of-Support | April 26, 2018 | November 1, 2018 | May 21, 2019 | _Not yet defined_ | 5.3 |
 
+## Migration from v7 to v8
+
+Here are a few articles useful for v7 to v8 migration:
+
+* [What's New in Version 8.0](whats_new_8.md)
+* [Breaking Changes in Version 8.0](breaking_changes_8.md)
+* [Migration from Version 7.x](migration_guide_8.md)
+
 ## Compatibility with GoodData Cloud
 
 The first version of GoodData.UI compatible with GoodData Cloud is 8.10.0, previous versions are not compatible with GoodData Cloud.
