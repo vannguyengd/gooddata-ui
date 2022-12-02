@@ -42,24 +42,6 @@ const siteConfig = {
   users,
   // specify old items to hide in newer versions, see https://v1.docusaurus.io/docs/en/site-config#deleteddocs-object
   deletedDocs: {
-    "5.0.0": [
-      "afm_react_components",
-      "ex_global_filters",
-      "getting_started",
-      "ht_access_gd_api_directly",
-      "ht_build_app",
-      "ht_configure_webpack_proxy",
-      "ht_set_up_loading_state_for_embedded_insights",
-      "legal_notices",
-      "quick_start",
-      "react_components"
-    ],
-    "6.0.0": [
-      "migration_guide_5",
-      "glossary",
-      "ht_build_visualization_custom_react",
-      "trouble_shooting"
-    ],
     "7.0.0": [
       "migration_guide_6",
       "table_totals_in_execution_object"
