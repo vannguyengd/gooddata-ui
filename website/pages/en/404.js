@@ -20,6 +20,11 @@ class NotFound extends React.Component {
     return baseUrl + 'docs/' + doc;
   }
 
+  imgUrl(img) {
+    const baseUrl = siteConfig.baseUrl;
+    return baseUrl + 'img/' + img;
+  }
+
   render() {
     return (
       <div className="docMainWrapper wrapper">
@@ -37,7 +42,7 @@ class NotFound extends React.Component {
               </ul>
             </div>
             <div>
-              <img style={styles.img} src="https://www.gooddata.com/img/pages/error/error-404_animation.svg" alt="Where did it go?" />
+              <img style={styles.img} src={this.imgUrl('404.svg')} alt="Where did it go?" />
             </div>
           </div>
         </Container>
