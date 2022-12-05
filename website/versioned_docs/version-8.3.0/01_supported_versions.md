@@ -24,22 +24,29 @@ Each version of GoodData.UI goes through the following phases:
 
 3. **End-of-Support** (EOS)
     * **When it starts:** The date is defined by GoodData.
-    * **What it means:** A version in EOS receives neither new features nor bug fixes. No technical support is provided. Although the version is still available for use, we do not recommend that you use it.
-
-4. **End-of-Life** (EOL)
-    * **When it starts:** The date is defined by GoodData.
-    * **What it means:** A version in EOL is removed from the GoodData platform and is not available for use.
+    * **What it means:** A version in EOS receives neither new features nor bug fixes. No technical support is provided. Although the version is still available on NPM, we do not recommend that you use it.
 
 ## Status of GoodData.UI versions
 
 The following table provides the lifecycle phases of GoodData.UI versions:
 
-| Major Version | Status | GA | EOD | EOS | EOL | Last Minor Version |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 8 | Generally available | October 8, 2020 | _Not yet defined_ | _Not yet defined_ | _Not yet defined_ | 8.11 |
-| 7 | End-of-Support | May 21, 2019 | October 8, 2020 | March 31, 2022 | _Not yet defined_ | 7.9 |
-| 6 | End-of-Support | November 1, 2018 | May 21, 2019 | October 8, 2020 | _Not yet defined_ | 6.3 |
-| 5 | End-of-Support | April 26, 2018 | November 1, 2018 | May 21, 2019 | _Not yet defined_ | 5.3 |
+| Major Version | Status              | GA               | EOD               | EOS               | Last Minor Version |
+|:--------------|:--------------------|:-----------------|:------------------|:------------------|:-------------------|
+| 8             | Generally available | October 8, 2020  | _Not yet defined_ | _Not yet defined_ | 8.11               |
+| 7             | End-of-Support      | May 21, 2019     | October 8, 2020   | March 31, 2022    | 7.9                |
+| 6             | End-of-Support      | November 1, 2018 | May 21, 2019      | October 8, 2020   | 6.3                |
+
+## Migration from v7 to v8
+
+Here are a few articles useful for v7 to v8 migration:
+
+* [What's New in Version 8.0](whats_new_8.md)
+* [Breaking Changes in Version 8.0](breaking_changes_8.md)
+* [Migration from Version 7.x](migration_guide_8.md)
+
+## Compatibility with GoodData Cloud
+
+The first version of GoodData.UI compatible with GoodData Cloud is 8.10.0, previous versions are not compatible with GoodData Cloud.
 
 ## Compatibility with GoodData.CN
 
@@ -48,7 +55,7 @@ The following table shows compatibility between GoodData.UI and [GoodData.CN](06
 <style type="text/css">
 table tr th, table tr td {min-width:unset;}
 
-.tg  {border-collapse:collapse;border-spacing:10;}
+.tg  {border-collapse:collapse;border-spacing:10px;}
 .tg td{ border-color:black;border-style:solid;border-width:1px;font-size:14px;
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-size:12px;
@@ -226,6 +233,5 @@ table tr th, table tr td {min-width:unset;}
   </tr>
 </tbody>
 </table>
-
 
 The versions of GoodData.UI older than 8.3.0 are not compatible with GoodData.CN.

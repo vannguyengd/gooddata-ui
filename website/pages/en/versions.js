@@ -96,7 +96,7 @@ class Versions extends React.Component {
     if (minorVersion === 0 && patchVersion === 0 && majorVersion > 4) {
       return (
         <td>
-          <a href={this.docUrl(`migration_guide_${majorVersion}.html`, prerelease ? 'next' : '')}>Migration Guide</a>
+          <a href={this.docUrl(`migration_guide_${majorVersion}.html`, prerelease ? 'next' : version)}>Migration Guide</a>
         </td>
       );
     }
