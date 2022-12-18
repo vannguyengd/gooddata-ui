@@ -1,8 +1,9 @@
 ---
-id: about_gooddataui
+id: version-8.11.0-about_gooddataui
 title: About GoodData.UI
 sidebar_label: About GoodData.UI
 copyright: (C) 2007-2018 GoodData Corporation
+original_id: about_gooddataui
 ---
 
 GoodData.UI is a TypeScript framework for building analytical web applications on top of [GoodData Cloud](https://www.gooddata.com/developers/cloud-native/doc/cloud/) and [GoodData Platform](https://help.gooddata.com/doc/enterprise/en).

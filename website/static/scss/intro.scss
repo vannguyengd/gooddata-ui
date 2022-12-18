@@ -1,0 +1,33 @@
+.intro__wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  container-type: inline-size;
+
+  .intro__tile {
+    width: 30%;
+    background: #F2F4F6;
+    border-radius: 1em;
+    min-width: 215px;
+    padding: 1.5em;
+    margin: 0 .5em 1em;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    h2 {
+      margin-top: 1em;
+    }
+
+    p {
+      font-size: .8em;
+    }
+
+    @container (max-width: 692px) {
+      width: 100%;
+    }
+  }
+}

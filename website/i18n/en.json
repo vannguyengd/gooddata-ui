@@ -1496,6 +1496,14 @@
         "title": "What's New in Version 8.0",
         "sidebar_label": "What's New in Version 8.0"
       },
+      "version-8.11.0/version-8.11.0-about_gooddataui": {
+        "title": "About GoodData.UI",
+        "sidebar_label": "About GoodData.UI"
+      },
+      "version-8.11.0/version-8.11.0-supported_versions": {
+        "title": "Supported Versions and Compatibility",
+        "sidebar_label": "Supported Versions and Compatibility"
+      },
       "version-8.11.0/version-8.11.0-create_new_application": {
         "title": "Create Your First Application Using Accelerator Toolkit",
         "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
