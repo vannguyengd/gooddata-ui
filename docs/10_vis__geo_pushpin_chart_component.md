@@ -18,7 +18,11 @@ import "@gooddata/sdk-ui-geo/styles/css/main.css";
 import { GeoPushpinChart } from "@gooddata/sdk-ui-geo";
 
 <GeoPushpinChart
-    location={<attribute>}
+    location={<attribute>} // both latitude and longitude defined in single attribute
+OR
+    latitude={<attribute>} // latitude and longitude split to two different attributes
+    longitude={<attribute>}
+
     size={<measure>}
     color={<measure>}
     segmentBy={<attribute>}
@@ -50,11 +54,23 @@ const config = {
 </div>
 ```
 
-## Properties
+## Properties of location definition
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | location | true | [IAttribute](50_custom__execution.md#attribute) | The attribute definition that determines the longitude and latitude of the pins |
+
+OR
+
+| Name | Required? | Type | Description |
+| :--- | :--- | :--- | :--- |
+| latitude | true | [IAttribute](50_custom__execution.md#attribute) | The attribute definition that determines the latitude of the pins |
+| longitude | true | [IAttribute](50_custom__execution.md#attribute) | The attribute definition that determines the longitude of the pins |
+
+## Other properties
+
+| Name | Required? | Type | Description |
+| :--- | :--- | :--- | :--- |
 | segmentBy | false | [IAttribute](50_custom__execution.md#attribute) | The attribute definition that categorizes the pins |
 | size | false | [IMeasure](50_custom__execution.md#measure) | The measure definition that determines the size of the pins |
 | color | false | [IMeasure](50_custom__execution.md#measure) | The measure definition that determines color saturation of the pins |
