@@ -97,11 +97,14 @@ const siteConfig = {
     '/gooddata-ui/js/resizeRoadmap.js',
     'https://www.gooddata.com/js/vendors/jquery.min.js',
     'https://www.gooddata.com/learn-assets/js/footer-plugin.js',
+    'https://www.gooddata.com/location/location.js',
+    'https://www.gooddata.com/js/modules/cookies.js',
     '/gooddata-ui/js/footer.js',
     '/gooddata-ui/js/scrollToSelected.js'
   ],
   stylesheets: [
-    'https://www.gooddata.com/learn-assets/css/Footer.css'
+    'https://www.gooddata.com/learn-assets/css/Footer.css',
+    'https://www.gooddata.com/learn-assets/css/CookiesBanner.css'
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/gooddata/gooddata-ui-sdk',
