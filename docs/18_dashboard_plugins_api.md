@@ -326,6 +326,87 @@ function MyCustomInsight(props: IDashboardInsightProps): JSX.Element {
 
 This mechanism is important not only for exports, but also to ensure that the `GDC.DASH/EVT.RENDER.RESOLVED` event is fired at the right time (after the dashboard is fully rendered).
 
+---
+
+To utilize GoodData.UI charts within your personalized widgets, it's reccommended to make them compatible with PDF Export functionality.
+
+Example usage:
+
+```javascript
+import React from "react";
+import {
+    IDashboardInsightProps,
+    useDashboardAsyncRender,
+    useInsightWidgetDataView,
+    useDashboardSelector,
+    selectIsExport,
+} from "@gooddata/sdk-ui-dashboard";
+
+function MyCustomInsight(props: IDashboardInsightProps): JSX.Element {
+    // Note that the "myCustomWidget" identifier must be unique for each single rendered component
+    const { onRequestAsyncRender, onResolveAsyncRender } = useDashboardAsyncRender("myCustomWidget");
+    const isExportMode = useDashboardSelector(selectIsExport);
+
+    return (
+        <InsightView
+            insight="<your-insight-id>"
+            onLoadingChanged={({ isLoading }) => {
+                if (isLoading) {
+                    onRequestAsyncRender();
+                } else {
+                    onResolveAsyncRender();
+                }
+            }}
+            onError={() => {
+                onResolveAsyncRender();
+            }}
+            config={{
+                // Be sure to specify this in the chart config,
+                // otherwise some charts may not be rendered.
+                isExportMode,
+            }}
+        />
+    )
+}
+
+```
+
+It can be advantageous to render your custom chart differently during the export mode.
+
+You can utilize isExportMode to determine the rendering mode.
+
+Example usage:
+
+```javascript
+import React from "react";
+import {
+    IDashboardInsightProps,
+    useDashboardSelector,
+    selectIsExport,
+} from "@gooddata/sdk-ui-dashboard";
+
+function MyCustomInsight(props: IDashboardInsightProps): JSX.Element {
+    const isExportMode = useDashboardSelector(selectIsExport);
+
+    if (isExportMode) {
+        return (
+            // Code to render the chart in the PDF export
+        )
+    }
+
+    return (
+        // Code to render the chart in a common way
+    )
+}
+
+```
+
+It's important to note that PDF export functionality does not capture a screenshot of the current dashboard. Rather, it reloads the entire dashboard in the background.
+
+Therefore, if you plan to incorporate any interactive features in your custom widget, keep in mind that any changes may not appear in the export.
+
+You may need to implement your own logic to ensure the widget renders correctly during the export process.
+
 ### Customize the Filter bar
 
 Call the `filterBar()` method on the customization API to get the API through which you can customize how the Filter bar will be rendered on your dashboard.
