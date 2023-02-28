@@ -117,12 +117,8 @@ lead to breakage when you try to upgrade your dashboard plugin to use a newer ve
 
 ### Current limitations
 
--  The plugins are only in effect for consumers in view mode. The plugins are not loaded in edit mode.
 -  GoodData does not provide hosting for your built plugins. When you build your plugin, you will have to
    host it yourself in a publicly available location that supports HTTPS.
-
-See our [roadmap](01_intro__roadmap.md) to learn when we want to handle these limitations, and feel free to provide
-additional feedback.
 
 ## Before you start
 
@@ -132,20 +128,17 @@ The setup is different for the GoodData platform and GoodData.CN.
 
 ### Configuration on the GoodData platform
 
-1.  Ensure that the `dashboardComponentDevRollout` platform setting is set to `true` for your GoodData domain or at least
-    for the workspace where you want to use the plugins.
+Set up hosting for the plugins, and [request GoodData Support](https://support.gooddata.com/hc/en-us/requests/new?ticket_form_id=582387)
+to add it to the `dashboardPluginHosts` setting.
 
-2.  Set up hosting for the plugins, and [request GoodData Support](https://support.gooddata.com/hc/en-us/requests/new?ticket_form_id=582387)
-    to add it to the `dashboardPluginHosts` setting.
+This is a security measure. Only GoodData Support can add hosts to the `dashboardPluginHosts` list.
+The goal of this setting is to control from where the plugins can be loaded. This should
+be a trusted and controlled location where only privileged developers can upload plugin artifacts.
 
-    This is a security measure. Only GoodData Support can add hosts to the `dashboardPluginHosts` list.
-    The goal of this setting is to control from where the plugins can be loaded. This should
-    be a trusted and controlled location where only privileged developers can upload plugin artifacts.
+You can request multiple hosts to be added to the list. All hosts must run on the HTTPS protocol.
 
-    You can request multiple hosts to be added to the list. All hosts must run on the HTTPS protocol.
-
-    >**IMPORTANT!** Never put untrusted hosts into this list. Always put the hosts that are under your organization's
-    control and appropriate review and governance. Otherwise, you run risk of malicious code leaking your data.
+>**IMPORTANT!** Never put untrusted hosts into this list. Always put the hosts that are under your organization's
+control and appropriate review and governance. Otherwise, you run risk of malicious code leaking your data.
 
 >**IMPORTANT LIMITATION:** The dashboard plugins will never load for a user that is a domain admin. For domain admins,
 the KPI Dashboards component will prevent load of any external scripts and assets outside of the GoodData

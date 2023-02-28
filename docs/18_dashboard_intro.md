@@ -12,26 +12,27 @@ that the requirements for dashboards can vary greatly. Therefore, we created the
 mindset: it is extendable and customizable so that developers can tweak and modify the default experience using plugins.
 
 ## Status and disclaimer
+Currently, the Dashboard component is at an early stage of its lifecycle, some parts are still in beta stage so users should use them carefully.
 
-Currently, the Dashboard component is at an early stage of its lifecycle. While the goal for the component is to
-provide an end-to-and solution for creation and consumption of dashboards, it has not yet reached that state.
+Dashboard component provide end-to-and solution for creation and consumption of dashboards with full drag-and-drop editing experience.
+It provide APIs to allow customization to expand the eventing and interactivity. 
 
-In its current state, the Dashboard component can render a dashboard created in the KPI Dashboards component of the GoodData platform and
+Dashboard component can render a dashboard created in the KPI Dashboards component of the GoodData platform and
 allows the developer to customize rendering of insights or add custom content.
 
-We have many milestones on our [roadmap](01_intro__roadmap.md). We will be enhancing and opening the Dashboard component's APIs to allow
-more customizations, to expand the eventing and interactivity, and to allow a drag-and-drop editing experience.
+In addition, developers can modify the default consumer experience, and create dashboard plugins
+to enhance or further customize the dashboard.
 
+We have many milestones on our [roadmap](01_intro__roadmap.md) to improve Dashboard component. 
 ## Dashboards on the GoodData platform vs. Dashboard component
 
 Let's take a look at GoodData's solution for dashboards and explain how the Dashboard
 component and the infrastructure around it fit into this picture.
 
 The GoodData platform, GoodData Cloud and GoodData.CN all provide the KPI Dashboards component that can be used by both
-dashboard creators and consumers. In addition, developers can modify the default consumer experience, and create dashboard plugins
-to enhance or further customize the dashboard.
+dashboard creators and consumers.  
 
-**NOTE:** The KPI Dashboards component and the dashboards that it renders can be [embedded and integrated into third-party
+**NOTE:** The Dashboard component and the dashboards that it renders can be [embedded and integrated into third-party
 applications](18_dashboard_embedding.md).
 
 ### Dashboard creators
@@ -89,9 +90,15 @@ contained in it. Internally, the Dashboard component is built using an architect
 
 -  The View and Controller parts are implemented using React components and hooks. The top-level Dashboard component
    also has rich APIs: props to specify a dashboard to render, configuration for rendering, customization of almost
-   all view components used on a dashboard, and integration with the eventing.
+   all view components used on a dashboard, and integration with the eventing. It also support creation of new dashboard and also editing existing dashboard via full drag-and-drop editing experience. 
 
 For more information about the Dashboard component, see [this article](18_dashboard_component.md).
+
+### Dashboard component limitations 
+
+- Dashboard component does not provide creation and edit of insights. (The proprietary KPI Dashboards component that is hosted on the GoodData platform and GoodData Cloud and GoodData.CN provide this out of box)
+
+- Dashboard component does not provide handling of some drill types, like Drill to URL or Drill to Dashboard see [example](https://gdui-examples.herokuapp.com/dashboard/drill-to-dashboard) how to handle this drill types. (The proprietary KPI Dashboards component that is hosted on the GoodData platform and GoodData Cloud and GoodData.CN provide this out of box)
 
 ### Dashboard engine and plugins
 
