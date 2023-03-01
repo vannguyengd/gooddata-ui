@@ -67,9 +67,9 @@ See [Introduction to GoodData Web Components](19_webcomponents_intro.md) to get 
 
 Embed visualizations directly into your web application as live components, or build custom permanent components which give you a more granular control over the data flow management and the level of integration with the rest of your application.
 
-### InsightView and DashboardView Components
+### InsightView and Dashboard Components
 
-GoodData.UI includes `InsightView` and `DashboardView` components that allow you to directly embed insights and dashboards that are created and stored in GoodData by referencing their id.
+GoodData.UI includes `InsightView` and `Dashboard` components that allow you to directly embed insights and dashboards that are created and stored in GoodData by referencing their id.
 
 Any changes you make to the embedded insight or dashboard in your GoodData deployment will be reflected in your application:
 
@@ -93,7 +93,7 @@ The result may look like this:
 
 ![react live insight](assets/intro-react-live-visualization.png)
 
-See [InsightView](10_vis__insight_view.md) and [Introduction to the Dashboard Component](18_dashboard_intro.md) to learn more about `InsightView` and `DashboardView` components.
+See [InsightView](10_vis__insight_view.md) and [Introduction to the Dashboard Component](18_dashboard_intro.md) to learn more about `InsightView` and `Dashboard` components.
 
 ### Visual Components
 
