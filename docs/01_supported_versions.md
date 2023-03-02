@@ -70,9 +70,10 @@ table tr th, table tr td {min-width:unset;}
 <thead>
   <tr>
     <th class="tg-0lax" colspan="2" rowspan="2" style="background-color:#fff;border-top-color:#fff;border-left-color:#fff"></th>
-    <th class="tg-0lax2" colspan="10">GoodData.UI</th>
+    <th class="tg-0lax2" colspan="11">GoodData.UI</th>
   </tr>
   <tr style="background-color:#fff">
+    <th class="tg-kftd">8.12.0</th>
     <th class="tg-kftd">8.11.0</th>
     <th class="tg-kftd">8.10.0</th>
     <th class="tg-kftd">8.9.0</th>
@@ -87,8 +88,23 @@ table tr th, table tr td {min-width:unset;}
 </thead>
 <tbody>
   <tr>
-    <td class="tg-cly1" rowspan="11" >GoodData.CN</td>
+    <td class="tg-cly1" rowspan="12" >GoodData.CN</td>
+    <td class="tg-kftd" style="background-color:#fff">2.3</td>
+    <td class="tg-0lax">✓</td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
     <td class="tg-kftd" style="background-color:#fff">2.2</td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax"></td>
@@ -102,6 +118,7 @@ table tr th, table tr td {min-width:unset;}
   </tr>
   <tr>
     <td class="tg-kftd" style="background-color:#fff">2.1</td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax"></td>
@@ -116,6 +133,7 @@ table tr th, table tr td {min-width:unset;}
   <tr>
     <td class="tg-kftd" style="background-color:#fff">2.0</td>
     <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax"></td>
@@ -128,6 +146,7 @@ table tr th, table tr td {min-width:unset;}
   </tr>
   <tr>
     <td class="tg-kftd" style="background-color:#fff">1.7</td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax">✓</td>
@@ -144,6 +163,7 @@ table tr th, table tr td {min-width:unset;}
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax"></td>
@@ -154,6 +174,7 @@ table tr th, table tr td {min-width:unset;}
   </tr>
   <tr>
     <td class="tg-kftd" style="background-color:#fff">1.5</td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
@@ -172,6 +193,7 @@ table tr th, table tr td {min-width:unset;}
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
@@ -180,6 +202,7 @@ table tr th, table tr td {min-width:unset;}
   </tr>
   <tr>
     <td class="tg-kftd" style="background-color:#fff">1.3</td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
@@ -198,6 +221,7 @@ table tr th, table tr td {min-width:unset;}
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax">✓</td>
@@ -211,6 +235,7 @@ table tr th, table tr td {min-width:unset;}
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax">✓</td>
     <td class="tg-0lax">✓</td>
@@ -219,6 +244,7 @@ table tr th, table tr td {min-width:unset;}
   </tr>
   <tr>
     <td class="tg-kftd" style="background-color:#fff">1.0</td>
+    <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>
     <td class="tg-0lax"></td>

@@ -37,6 +37,7 @@ The created application contains its own README with further information about c
 You can create a GoodData platform account for free at [https://www.gooddata.com/free/](https://www.gooddata.com/free/), a GoodData Cloud account for free at [https://www.gooddata.com/trial/](https://www.gooddata.com/trial/) or download
 GoodData.CN at [https://www.gooddata.com/developers/](https://www.gooddata.com/developers/).
 
+>GoodData.CN 2.2 is not compatible with @gooddata/create-gooddata-react-app@0.21.0
 ## Third party cookie protection
 
 When you use the `create-gooddata-react-app`, you must **turn off** any 3rd party cookie protections in your browser. 

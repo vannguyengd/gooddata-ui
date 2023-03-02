@@ -14,7 +14,7 @@ The Dashboard component is a highly customizable component that renders dashboar
 
 The Dashboard component:
 
-* Allows you to embed a dashboard natively in React in view mode (similarly to [InsightView](10_vis__insight_view.md) for visualizations)
+* Allows you to embed a dashboard natively in React (similarly to [InsightView](10_vis__insight_view.md) for visualizations)
 * Provides mechanisms to allow you to integrate it with the rest of your application (see [Commands](18_dashboard_component.md#commands) and [Events](18_dashboard_component.md#events))
 * Allows you to customize the way the dashboard is rendered: you can alter the layout and change the way particular widgets are rendered (see [Props](18_dashboard_component.md#props) and [Selectors](18_dashboard_component.md#selectors))
 
@@ -46,6 +46,37 @@ const EmbeddedReactDashboard = () => {
 
 ```
 
+You can specify initial render mode of dashboard component via config prop. 
+View mode is default. 
+
+```jsx
+const dashboardRef = idRef("<dashboard-identifier>");
+
+const EmbeddedReactDashboard = () => {
+    return (
+        <Dashboard dashboard={dashboardRef} 
+            config={{
+                initialRenderMode:"edit",          
+            }}
+        />
+    );
+};
+```
+
+For creation of new dashboard its necessary specify initial render mode as "edit" and simply not define dashboard prop. 
+
+```jsx
+const EmbeddedReactDashboard = () => {
+    return (
+        <Dashboard
+            config={{
+                initialRenderMode:"edit",          
+            }}
+        />
+    );
+};
+```
+
 ## Props
 
 Similar to any other React component, you can configure the Dashboard component by setting up its props.
@@ -59,7 +90,7 @@ Here are the most important props:
 | :--------------- | :-------- | :------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | dashboard        | true      | ObjRef or IDashboard | The reference to the dashboard to render, or the loaded dashboard                                                                                                                                                                                                                                                                                     |
 | filterContextRef | false     | ObjRef               | The reference to the filter context that should be used instead of the default, built-in filter context. **NOTE:** This property is valid only when you specify the `dashboard` prop by reference. If you specify `dashboard` by value, the component assumes that the value also contains the desired filter context and will use it as is. |
-| config           | false     | DashboardConfig      | Configuration that can be used to modify dashboard features, capabilities, and behavior. If not specified, the dashboard will retrieve and use the essential configuration from the backend.                                                                                                                                                      |
+| config           | false     | DashboardConfig      | Configuration that can be used to modify dashboard initialRenderMode, features, capabilities, and behavior. If not specified, the dashboard will retrieve and use the essential configuration from the backend.                                                                                                                                                      |
 
 ### Customizations props
 
