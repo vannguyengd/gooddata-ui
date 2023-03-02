@@ -12,9 +12,9 @@ that the requirements for dashboards can vary greatly. Therefore, we created the
 mindset: it is extendable and customizable so that developers can tweak and modify the default experience using plugins.
 
 ## Status and disclaimer
-Currently, the Dashboard component is at an early stage of its lifecycle, some parts are still in beta stage so users should use them carefully.
+Dashboard component should be used with caution as it is still in an early stage of its lifecycle and some parts are still in beta.
 
-Dashboard component provide end-to-and solution for creation and consumption of dashboards with full drag-and-drop editing experience.
+Dashboard component provide end-to-end solution for creation and consumption of dashboards with full drag-and-drop editing experience.
 It provide APIs to allow customization to expand the eventing and interactivity. 
 
 Dashboard component can render a dashboard created in the KPI Dashboards component of the GoodData platform and
@@ -90,7 +90,7 @@ contained in it. Internally, the Dashboard component is built using an architect
 
 -  The View and Controller parts are implemented using React components and hooks. The top-level Dashboard component
    also has rich APIs: props to specify a dashboard to render, configuration for rendering, customization of almost
-   all view components used on a dashboard, and integration with the eventing. It also support creation of new dashboard and also editing existing dashboard via full drag-and-drop editing experience. 
+   all view components used on a dashboard, and integration with the eventing. It also supports a full drag-and-drop experience for creating and editing existing dashboards.
 
 For more information about the Dashboard component, see [this article](18_dashboard_component.md).
 
@@ -98,7 +98,7 @@ For more information about the Dashboard component, see [this article](18_dashbo
 
 - Dashboard component does not provide creation and edit of insights. (The proprietary KPI Dashboards component that is hosted on the GoodData platform and GoodData Cloud and GoodData.CN provide this out of box)
 
-- Dashboard component does not provide handling of some drill types, like Drill to URL or Drill to Dashboard see [example](https://gdui-examples.herokuapp.com/dashboard/drill-to-dashboard) how to handle this drill types. (The proprietary KPI Dashboards component that is hosted on the GoodData platform and GoodData Cloud and GoodData.CN provide this out of box)
+- Dashboard component does not provide handling of some drill types;for example, Drill to URL or Drill to Dashboard. Here is an [example](https://gdui-examples.herokuapp.com/dashboard/drill-to-dashboard) how to handle these drill types. (The proprietary KPI Dashboards component that is hosted on the GoodData platform and GoodData Cloud and GoodData.CN provide this out of box)
 
 ### Dashboard engine and plugins
 
