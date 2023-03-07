@@ -141,4 +141,4 @@ possible that CSS class names may collide with the class names used by your own 
 [7]:19_webcomponents_insight.md
 [8]:18_dashboard_plugins.md
 [9]:18_dashboard_component.md
-[10]:https://www.gooddata.com/developers/cloud-native/doc/cloud/embed-visualizations/embed-dashboard/#embed-a-dashboard-using-iframe
+[10]:https://www.gooddata.com/developers/cloud-native/doc/cloud/embed-visualizations/iframes/

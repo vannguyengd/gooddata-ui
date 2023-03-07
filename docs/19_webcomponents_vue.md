@@ -123,7 +123,7 @@ In case of `gd-insight` you can use the Vue event binding syntax.
     </template>
 ```
 
-[Read more about Insight events](19_webcomponents_insight#supported-events).
+[Read more about Insight events](webcomponents_intro##supported-events).
 
 ### Dashboard event listener
 
@@ -158,6 +158,6 @@ also need to remove the listeners on the component unmount.
     </template>
 ```
 
-[Read more about Dashboard events](19_webcomponents_dashboard#supported-events).
+[Read more about Dashboard events]webcomponents_dashboard#supported-events.
 
-[1]:19_webcomponents_intro.md#load-the-library
+[1]:webcomponents_dashboard#load-the-library

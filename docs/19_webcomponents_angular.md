@@ -33,7 +33,7 @@ Add a new `<script>` tag to your main HTML file (`src/index.html`).
 ```
 
 See the [Load the library][1] section on the WebComponents introduction page. Make sure to go through the
-[Prerequisites and limitations](19_webcomponents_intro#prerequisites-and-limitations) section.
+[Prerequisites and limitations](webcomponents_intro#prerequisites-and-limitations) section.
 
 ## Add custom elements schema
 
@@ -140,7 +140,7 @@ Attach the event listener to the insight at `src/app/app.component.html`:
 <gd-insight [attr.insight]="insightId" style="height:500px" (insightLoaded)="onInsightLoaded($event)"></gd-insight>
 ```
 
-[Read more about Insight events](19_webcomponents_insight#supported-events).
+[Read more about Insight events](webcomponents_intro##supported-events).
 
 ### Dashboard event listener
 
@@ -193,6 +193,6 @@ also need to remove the listeners on the component unmount.
     }
 ```
 
-[Read more about Dashboard events](19_webcomponents_dashboard#supported-events).
+[Read more about Dashboard events]webcomponents_dashboard#supported-events.
 
-[1]:19_webcomponents_intro.md#load-the-library
+[1]:webcomponents_dashboard#load-the-library
