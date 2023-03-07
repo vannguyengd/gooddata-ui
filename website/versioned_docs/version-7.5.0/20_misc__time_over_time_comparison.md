@@ -175,4 +175,4 @@ For comparing over a period other than a day, use a [relative date filter](filte
 
 ## More examples
 
-See the [live examples](https://gooddata-examples.herokuapp.com/time-over-time-comparison).
+See the [live examples](https://gdui-examples.herokuapp.com/time-over-time-comparison).

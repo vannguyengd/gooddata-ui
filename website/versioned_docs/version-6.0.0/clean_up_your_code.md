@@ -55,7 +55,7 @@ After you installed the tool, do the following:
     $ gdc-catalog-export --output src/catalog.json
     ```
 
-    > When working with the [live examples](https://gooddata-examples.herokuapp.com/), add `--hostname https://developer.na.gooddata.com`.
+    > When working with the [live examples](https://gdui-examples.herokuapp.com/), add `--hostname https://developer.na.gooddata.com`.
 
     The `src/catalog.json` file becomes a JSON file in your application.
     ```javascript

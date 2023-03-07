@@ -87,7 +87,7 @@ export class DateFilterComponentExample extends Component {
 }
 ```
 
-**NOTE:** For the complete source code, see [Live Examples](https://gooddata-examples.herokuapp.com/).
+**NOTE:** For the complete source code, see [Live Examples](https://gdui-examples.herokuapp.com/).
 
 ## Properties
 

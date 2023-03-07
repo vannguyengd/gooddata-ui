@@ -485,7 +485,7 @@ export class AttributeFilterExample extends Component {
 }
 ```
 
-See the [live example](https://gooddata-examples.herokuapp.com/attribute-filter-components).
+See the [live example](https://gdui-examples.herokuapp.com/attribute-filter-components).
 
 ### AttributeElements
 
@@ -552,4 +552,4 @@ Pass a custom children function to `AttributeElements`. This function will recei
 </AttributeElements>
 ```
 
-See the [live example](https://gooddata-examples.herokuapp.com/attribute-filter-components).
+See the [live example](https://gdui-examples.herokuapp.com/attribute-filter-components).
