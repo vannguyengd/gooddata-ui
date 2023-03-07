@@ -30,7 +30,7 @@ Add a new `<script>` tag to your main HTML file (`index.html` in the project roo
 ```
 
 See the [Load the library][1] section on the WebComponents introduction page. Make sure to go through the
-[Prerequisites and limitations](19_webcomponents_intro#prerequisites-and-limitations) section.
+[Prerequisites and limitations](webcomponents_intro#prerequisites-and-limitations) section.
 
 ## Configure Custom Elements
 

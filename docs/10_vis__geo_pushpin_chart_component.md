@@ -163,7 +163,7 @@ The following example shows the supported `geoConfig` structure with sample valu
 
 ## Mapbox token provider
 
-The token provider allows setting of the Mapbox token for whole app or for a part of the app. It is not necessary to provide the token for every chart, insight or dashboard.
+The token provider allows setting of the Mapbox token for the whole app or for a part of the app. It is not necessary to provide the token for every chart, insight or dashboard.
 
 ## Structure
 

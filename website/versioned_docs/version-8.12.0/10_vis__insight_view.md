@@ -36,7 +36,7 @@ import { uriRef } from "@gooddata/sdk-model";
 ```
 **NOTE**: Make sure to also include CSS styles for the visualizations you expect to appear in the InsightView. See the [integration guide](06_cloudnative__integration.md#step-2-include-styles) for more information.
 
-**NOTE**: A set of options in `config` is different for each type of visualization. The type expected on InsightView is the same as the type of the configuration expected on the respective React component.
+**NOTE**: The options in `config` are different for each visualization type. The type expected in InsightView is the same as the expected configuration type in the respective React component.
 
 ## Example
 
@@ -66,7 +66,7 @@ For more information, see [Filter Visual Components](30_tips__filter_visual_comp
 
 To properly render the referenced table or chart, the InsightView component needs additional information from the GoodData platform. This information is usually static. To minimize the number of redundant requests and reduce the rendering time, some static information (such as the list of visualization classes, the color palette, or feature flags for each workspace) is cached for all InsightView components in the same application.
 
-The amount of the cached information does not impact performance in any way. However, you can manually clear the cache whenever needed (for example, after logging out, when switching workspaces or leaving a page with visualizations using the GoodData.UI components).
+The amount of cached information does not impact performance in any way. However, you can manually clear the cache whenever needed (for example, after logging out, when switching workspaces or leaving a page with visualizations using the GoodData.UI components).
 
 ```javascript
 import { clearInsightViewCaches } from "@gooddata/sdk-ui-ext";

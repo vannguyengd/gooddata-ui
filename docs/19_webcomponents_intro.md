@@ -27,8 +27,7 @@ In the simplest form, the integration could look something like this:
 
 ## Choosing the right embedding option
 
-GoodData provides several options for embedding, such as **iframe embedding** for dashboards or the  **GoodData.UI React library** for dashboards and insights. The Web Components library is the middle ground between those two options. It is
-more flexible than iframe embedding, yet simpler to integrate comparing to the React library. 
+GoodData provides several options for embedding, such as **iframe embedding** for dashboards or the  **GoodData.UI React library** for dashboards and insights. The Web Components library is the middle ground between those two options. It is more flexible than iframe embedding, yet simpler to integrate comparing to the React library. 
 
 ### When to use Web Components library?
 
