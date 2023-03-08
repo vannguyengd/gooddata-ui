@@ -2,7 +2,8 @@
 title: Geo Pushpin Chart
 sidebar_label: Geo Pushpin Chart
 copyright: (C) 2020 GoodData Corporation
-id: geo_pushpin_chart_component
+id: version-8.12.0-geo_pushpin_chart_component
+original_id: geo_pushpin_chart_component
 ---
 
 > Starting with GoodData.UI Version 8.8, geo pushpin charts are not supported in Internet Explorer 11.

@@ -2,7 +2,8 @@
 title: Introduction to GoodData Web Components
 sidebar_label: Introduction to GoodData Web Components
 copyright: (C) 2007-2022 GoodData Corporation
-id: webcomponents_intro
+id: version-8.12.0-webcomponents_intro
+original_id: webcomponents_intro
 ---
 
 Starting from version 2.2.0, GoodData.CN includes a Web Components library that you can import into your application

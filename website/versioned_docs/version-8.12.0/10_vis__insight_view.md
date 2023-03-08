@@ -2,7 +2,8 @@
 title: InsightView
 sidebar_label: InsightView
 copyright: (C) 2007-2018 GoodData Corporation
-id: visualization_component
+id: version-8.12.0-visualization_component
+original_id: visualization_component
 ---
 
 The **InsightView component** is a generic component that renders insights created and saved by Analytical Designer.

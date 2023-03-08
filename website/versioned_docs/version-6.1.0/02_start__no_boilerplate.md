@@ -172,7 +172,7 @@ Now, you can start adding your first GoodData component:
       />
     </div>
     ```
-    > This example uses the workspace ID and measure/attribute identifiers from the [live examples](https://gooddata-examples.herokuapp.com/). If you want to use this code in your workspace, replace the properties with the appropriate values from your workspace. For more details, see [Line Chart](10_vis__line_chart_component.md).
+    > This example uses the workspace ID and measure/attribute identifiers from the [live examples](https://gdui-examples.herokuapp.com/). If you want to use this code in your workspace, replace the properties with the appropriate values from your workspace. For more details, see [Line Chart](10_vis__line_chart_component.md).
 
 5. Save the changes. The content of your `App.js` file should now look something like the following example:
 

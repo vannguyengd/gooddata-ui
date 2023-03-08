@@ -1588,6 +1588,66 @@
         "title": "Specify Table Totals",
         "sidebar_label": "Specify Table Totals"
       },
+      "version-8.12.0/version-8.12.0-about_gooddataui": {
+        "title": "About GoodData.UI",
+        "sidebar_label": "About GoodData.UI"
+      },
+      "version-8.12.0/version-8.12.0-create_new_application": {
+        "title": "Create Your First Application Using Accelerator Toolkit",
+        "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
+      },
+      "version-8.12.0/version-8.12.0-geo_pushpin_chart_component": {
+        "title": "Geo Pushpin Chart",
+        "sidebar_label": "Geo Pushpin Chart"
+      },
+      "version-8.12.0/version-8.12.0-visualization_component": {
+        "title": "InsightView",
+        "sidebar_label": "InsightView"
+      },
+      "version-8.12.0/version-8.12.0-attribute_element_option": {
+        "title": "AttributeElements Component Options",
+        "sidebar_label": "AttributeElements Component Options"
+      },
+      "version-8.12.0/version-8.12.0-dashboard_component": {
+        "title": "Dashboard Component",
+        "sidebar_label": "Dashboard Component"
+      },
+      "version-8.12.0/version-8.12.0-dashboard_intro": {
+        "title": "Introduction to the Dashboard Component",
+        "sidebar_label": "Introduction to the Dashboard Component"
+      },
+      "version-8.12.0/version-8.12.0-dashboard_plugins_api": {
+        "title": "Dashboard Plugin API",
+        "sidebar_label": "Dashboard Plugin API"
+      },
+      "version-8.12.0/version-8.12.0-dashboard_plugins": {
+        "title": "Dashboard Plugins",
+        "sidebar_label": "Dashboard Plugins"
+      },
+      "version-8.12.0/version-8.12.0-webcomponents_intro": {
+        "title": "Introduction to GoodData Web Components",
+        "sidebar_label": "Introduction to GoodData Web Components"
+      },
+      "version-8.12.0/version-8.12.0-ht_use_react_component_in_angular_2.x": {
+        "title": "Use Angular 9+",
+        "sidebar_label": "Use Angular 9+"
+      },
+      "version-8.12.0/version-8.12.0-execute_component": {
+        "title": "Execute an API Call",
+        "sidebar_label": "Execute an API Call"
+      },
+      "version-8.12.0/version-8.12.0-clean_up_your_code": {
+        "title": "Clean Up Your Code",
+        "sidebar_label": "Clean Up Your Code"
+      },
+      "version-8.12.0/version-8.12.0-data_layer": {
+        "title": "Access Low Level API (DataLayer)",
+        "sidebar_label": "Access Low Level API"
+      },
+      "version-8.12.0/version-8.12.0-table_totals_in_execution_object": {
+        "title": "Specify Table Totals",
+        "sidebar_label": "Specify Table Totals"
+      },
       "version-8.2.0/version-8.2.0-about_gooddataui": {
         "title": "About GoodData.UI",
         "sidebar_label": "About GoodData.UI"

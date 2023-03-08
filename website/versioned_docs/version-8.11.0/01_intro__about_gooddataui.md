@@ -8,25 +8,33 @@ original_id: about_gooddataui
 
 GoodData.UI is a TypeScript framework for building analytical web applications on top of [GoodData Cloud](https://www.gooddata.com/developers/cloud-native/doc/cloud/) and [GoodData Platform](https://help.gooddata.com/doc/enterprise/en).
 
+[//]: # (no ident in this markup otherwise broke images)
+
 <div class="intro__wrapper">
-    <div class="intro__tile">
-        <img src="assets/webcomponents-logo.svg" alt="WebComponents logo" />
-        <h2>Web Components</h2>
-        <p>Embed GoodData insights and dashboards into a web application in a framework agnostic way.</p>
-        <p><a href="#web-components">Learn more</a></p>
-    </div>
-    <div class="intro__tile">
-        <img src="assets/react-logo.svg" alt="React logo" />
-        <h2>React Components</h2>
-        <p>Embed GoodData analytics into a React web application and customize how they are displayed.</p>
-        <p><a href="#react-components">Learn more</a></p>
-    </div>
-    <div class="intro__tile">
-        <img src="assets/javascript-logo.svg" alt="Javascript logo" />
-        <h2>REST API Clients</h2>
-        <p>Load raw analytical data into your browser or NodeJS application. Use it for custom visualizations or for your app's business logic.</p>
-        <p><a href="#rest-api-clients">Learn more</a></p>
-    </div>
+<div class="intro__tile">
+
+![WebComponents](assets/webcomponents-logo.svg)
+
+<h2>Web Components</h2>
+<p>Embed GoodData insights and dashboards into a web application in a framework agnostic way.</p>
+<p><a href="#web-components">Learn more</a></p>
+</div>
+<div class="intro__tile">
+
+![React logo](assets/react-logo.svg)
+
+<h2>React Components</h2>
+<p>Embed GoodData analytics into a React web application and customize how they are displayed.</p>
+<p><a href="#react-components">Learn more</a></p>
+</div>
+<div class="intro__tile">
+
+![Javascript logo](assets/javascript-logo.svg)
+
+<h2>REST API Clients</h2>
+<p>Load raw analytical data into your browser or NodeJS application. Use it for custom visualizations or for your app's business logic.</p>
+<p><a href="#rest-api-clients">Learn more</a></p>
+</div>
 </div>
 
 GoodData.UI includes various libraries with specific functions, including low-level REST API clients and visualization libraries that provide React-based components for rendering various types of charts and tables.

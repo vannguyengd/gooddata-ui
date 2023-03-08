@@ -163,4 +163,4 @@ const filters = [
 
 ## More examples
 
-See the [live examples](https://gooddata-examples.herokuapp.com/time-over-time-comparison).
+See the [live examples](https://gdui-examples.herokuapp.com/time-over-time-comparison).
