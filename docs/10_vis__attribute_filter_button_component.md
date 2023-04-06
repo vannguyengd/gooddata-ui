@@ -109,6 +109,22 @@ You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_
     </div>
 ```
 
+## Define a single selection attribute filters
+
+By default, the attribute filter button is set to multi-selection, allowing multiple values to be chosen as the current selection. To restrict the attribute filter to only one selected value, you can set the ```selectionMode``` to ```single```. This will alter the component's appearance and functionality, so that only one item in the dropdown can be selected.
+
+```jsx
+    <div>
+        <AttributeFilterButton
+            filter={filter}
+            onApply={setFilter}
+            selectionMode="single"
+        />
+    </div>
+```
+**NOTE:** When the attribute filter is set to single-selection and either ```filter``` or ```connectToPlaceholder``` are also provided, they must represent a positive filter definition with a maximum of one selected element. Any other filter definition is considered invalid and will result in an error state for the component.
+Single selection mode can not be used for child filter of parent-child relationship.
+
 ## Properties
 
 | Name | Required? | Type | Description |
@@ -127,6 +143,7 @@ You can define the parent filter as an [AttributeFilter](30_tips__filter_visual_
 | titleWithSelection | false | string | The label displays the attribute title and also the applied selection. This option is not applied, if `title` property is set. |
 | hiddenElements | false | string[] | Specify elements that will be exluded from the selection list. Currently, elements can be specified only by their URIs. This feature is not yet supported by GoodData.CN and GoodData Cloud. |
 | staticElements | false | string[] | Provide elements to show in the selection list instead of loading them from the backend. |
+| selectionMode | false | "single"/"multi" | Selection mode defining how many elements can be selected. Default is "multi". |
 
 
 **NOTE:** The ```uri``` property (the URI of the attribute displayForm used in the filter) and the ```identifier``` property (the identifier of the attribute displayForm used in the filter) are **deprecated**. Do not use them.
