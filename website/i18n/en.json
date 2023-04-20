@@ -144,6 +144,10 @@
         "title": "Donut Chart",
         "sidebar_label": "Donut Chart"
       },
+      "funnel_chart_component": {
+        "title": "Funnel Chart",
+        "sidebar_label": "Funnel Chart"
+      },
       "geo_pushpin_chart_component": {
         "title": "Geo Pushpin Chart",
         "sidebar_label": "Geo Pushpin Chart"
@@ -179,6 +183,10 @@
       "pivot_table_component": {
         "title": "Pivot Table",
         "sidebar_label": "Pivot Table"
+      },
+      "pyramid_chart_component": {
+        "title": "Pyramid Chart",
+        "sidebar_label": "Pyramid Chart"
       },
       "ranking_filter_component": {
         "title": "Ranking Filter",

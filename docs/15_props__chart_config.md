@@ -46,6 +46,7 @@ This article describes the options for configuring a chart.
     },
     dataLabels: {
         visible: "auto" // "auto" | true | false
+        percentsVisible: false // true | false, applies for funnel chart only
     },
     dataPoints: {
         visible: true // "auto" | true | false
