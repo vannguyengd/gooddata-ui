@@ -50,6 +50,8 @@
             "pie_chart_component",
             "funnel_chart_component",
             "pyramid_chart_component",
+            "dependency_wheel_chart_component",
+            "sankey_chart_component",
             "pivot_table_component",
             "scatter_plot_component",
             "treemap_component",
