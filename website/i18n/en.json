@@ -140,6 +140,10 @@
         "title": "Date Filter",
         "sidebar_label": "Date Filter"
       },
+      "dependency_wheel_chart_component": {
+        "title": "Dependency wheel Chart",
+        "sidebar_label": "Dependency wheel Chart"
+      },
       "donut_chart_component": {
         "title": "Donut Chart",
         "sidebar_label": "Donut Chart"
@@ -191,6 +195,10 @@
       "ranking_filter_component": {
         "title": "Ranking Filter",
         "sidebar_label": "Ranking Filter"
+      },
+      "sankey_chart_component": {
+        "title": "Sankey Chart",
+        "sidebar_label": "Sankey Chart"
       },
       "scatter_plot_component": {
         "title": "Scatter Plot",
