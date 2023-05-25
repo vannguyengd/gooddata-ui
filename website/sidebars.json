@@ -55,6 +55,7 @@
             "pivot_table_component",
             "scatter_plot_component",
             "treemap_component",
+            "waterfall_chart_component",
             "visualization_component",
             "attribute_filter_component",
             "attribute_filter_button_component",
