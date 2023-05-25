@@ -216,6 +216,10 @@
         "title": "Treemap",
         "sidebar_label": "Treemap"
       },
+      "waterfall_chart_component": {
+        "title": "Waterfall Chart",
+        "sidebar_label": "Waterfall Chart"
+      },
       "attribute_element_option": {
         "title": "AttributeElements Component Options",
         "sidebar_label": "AttributeElements Component Options"
